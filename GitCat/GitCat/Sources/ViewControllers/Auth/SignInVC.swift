@@ -12,6 +12,7 @@ class SignInVC: UIViewController {
     @IBOutlet weak var loginBtnView: UIView!
     
     
+    @IBOutlet weak var loginBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         loginBtnView.addShadow()
@@ -19,13 +20,26 @@ class SignInVC: UIViewController {
     @IBAction func signInTouchUpAction(_ sender: UIButton) {
         print("로그인 버튼 선택")
         self.loginBtnView.backgroundColor = UIColor.white
+        
+        self.loginBtn.setTitleColor(UIColor.CustomColor.skyBlue, for: UIControl.State.normal)
+        
 //        sender.setTitleColor(UIColor.CustomColor.skyBlue, for: UIControl.State.normal)
+        
+        //상태에 따른 이동
+        //if github 계정이 있다면?
+        
+        guard let dvc = storyboard? .instantiateViewController(withIdentifier: "GetMoreInfo1VC") as? GetMoreInfo1VC else {return}
+
+        
 
     }
     
     @IBAction func signInTouchDownAction(_ sender: UIButton) {
         self.loginBtnView.backgroundColor = UIColor.CustomColor.skyBlue
-//        sender.setTitleColor(UIColor.white, for: UIControl.State.normal)
+
+        self.loginBtn.setTitleColor(UIColor.white, for: UIControl.State.normal)
+
+//        sender.setTitleColor(UIColor.white, for: UIControl.State.selected)
     }
 
     @IBAction func signUpAction(_ sender: Any) {
