@@ -15,7 +15,9 @@ class SignInVC: UIViewController {
     @IBOutlet weak var loginBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationBar()
         loginBtnView.addShadow()
+        
     }
     @IBAction func signInTouchUpAction(_ sender: UIButton) {
         print("로그인 버튼 선택")
@@ -28,7 +30,11 @@ class SignInVC: UIViewController {
         //상태에 따른 이동
         //if github 계정이 있다면?
         
-        guard let dvc = storyboard? .instantiateViewController(withIdentifier: "GetMoreInfo1VC") as? GetMoreInfo1VC else {return}
+        if let dvc = storyboard? .instantiateViewController(withIdentifier: "GetMoreInfo1VC") as? GetMoreInfo1VC {
+
+            self.navigationController?.pushViewController(dvc, animated: true)
+            
+        }
 
         
 

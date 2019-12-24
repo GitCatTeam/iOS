@@ -25,6 +25,12 @@ extension UIViewController {
             alert.dismiss(animated: true)
         }
     }
+    
+    //백버튼 색만 바꾸기
+    func setBackBtnColor(color : UIColor){
+        navigationItem.leftBarButtonItem?.tintColor = color
+        navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
+    }
     //커스텀 백버튼 설정
     func setBackBtn(color : UIColor){
         
