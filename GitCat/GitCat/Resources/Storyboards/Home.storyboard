@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="20958982_UTOIMAGE_유토이미지고딕_L_OTF.otf">
+            <string>BBTreeG_L</string>
+        </array>
+        <array key="20958984_UTOIMAGE_유토이미지고딕_R_OTF.otf">
+            <string>BBTreeGo_R</string>
+        </array>
+        <array key="나눔손글씨 배은혜체.ttf">
+            <string>NanumBaeEunHyeCe</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--HomeVC-->
+        <scene sceneID="xJU-mf-GF4">
+            <objects>
+                <viewController storyboardIdentifier="HomeVC" id="FHT-wQ-vku" customClass="HomeVC" customModule="GitCat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NJb-xP-jfo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLT-Kd-xxQ">
+                                <rect key="frame" x="0.0" y="779" width="414" height="83"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem title="중간점검" image="midCheckTabBarBtn" selectedImage="midCheckTabBarBtn" id="3W3-38-Brd"/>
+                                    <tabBarItem title="횸" image="homeTabBarBtn" selectedImage="homeTabBarSelectedBtn" id="vsM-nf-Eos"/>
+                                    <tabBarItem title="성적표" image="reportCardTabBarBtn" id="YxW-jo-tUT"/>
+                                    <tabBarItem title="냥이어리" id="gdq-XR-nQQ"/>
+                                </items>
+                            </tabBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 커밋수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bC-4w-vph">
+                                <rect key="frame" x="124" y="139" width="166" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="401-qp-hk2"/>
+                                    <constraint firstAttribute="width" constant="166" id="pff-JI-pxh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BBTreeG_L" family="BBTreeG_L" pointSize="30"/>
+                                <color key="textColor" name="brownishGrey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="lastBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="YsP-PD-MMI">
+                                <rect key="frame" x="148.5" y="136" width="117.5" height="149.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bQ-Ib-XKO">
+                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="149.5"/>
+                                        <fontDescription key="fontDescription" name="NanumBaeEunHyeCe" family="나눔손글씨 배은혜체" pointSize="130"/>
+                                        <color key="textColor" name="skyBlue"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHW-N4-5td">
+                                        <rect key="frame" x="86.5" y="89.5" width="31" height="35"/>
+                                        <fontDescription key="fontDescription" name="BBTreeG_L" family="BBTreeG_L" pointSize="35"/>
+                                        <color key="textColor" name="brownishGrey"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jpT-oy-ivw">
+                                <rect key="frame" x="24.5" y="267" width="365" height="277"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="365" id="M2d-Lf-qiC"/>
+                                    <constraint firstAttribute="height" constant="277" id="pTF-km-IR4"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j2J-3a-JaB">
+                                <rect key="frame" x="72" y="567" width="270" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="GqJ-7R-dvh"/>
+                                    <constraint firstAttribute="width" constant="270" id="Up7-LX-o99"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKz-VB-NUN">
+                                <rect key="frame" x="210" y="603" width="10.5" height="32.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32.5" id="9kL-E6-UIC"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10.5" id="VXc-uJ-x48"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBaeEunHyeCe" family="나눔손글씨 배은혜체" pointSize="28"/>
+                                <color key="textColor" name="brownishGrey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 득점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2p-dS-lmm">
+                                <rect key="frame" x="122.5" y="596" width="74.5" height="16"/>
+                                <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="16"/>
+                                <color key="textColor" name="brownishGrey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이템까지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ci6-vz-nw8">
+                                <rect key="frame" x="124.5" y="616" width="70.5" height="16"/>
+                                <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="16"/>
+                                <color key="textColor" name="brownishGrey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="riC-kw-MMl">
+                                <rect key="frame" x="122" y="603" width="78" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="78" id="GEm-7K-1wD"/>
+                                    <constraint firstAttribute="height" constant="12" id="TpQ-IZ-SOg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKA-DH-nse">
+                                <rect key="frame" x="210" y="582.5" width="7.5" height="32.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="7.5" id="E2X-4u-tDr"/>
+                                    <constraint firstAttribute="height" constant="32.5" id="vqA-gP-1XA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBaeEunHyeCe" family="나눔손글씨 배은혜체" pointSize="28"/>
+                                <color key="textColor" name="brownishGrey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(출석 1 + 누적 2)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1S-PR-vK4">
+                                <rect key="frame" x="218.5" y="594" width="77" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="77" id="SD6-TB-jWD"/>
+                                    <constraint firstAttribute="height" constant="21" id="pRw-li-uEH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBaeEunHyeCe" family="나눔손글씨 배은혜체" pointSize="18"/>
+                                <color key="textColor" name="brownishGrey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qT9-h2-DtU">
+                                <rect key="frame" x="122" y="623" width="78" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="1sp-v8-XCt"/>
+                                    <constraint firstAttribute="width" constant="78" id="hsh-IC-ax4"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(출석 1 + 누적 2)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYX-QE-N9x">
+                                <rect key="frame" x="219" y="609" width="77" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="77" id="POV-sH-IQy"/>
+                                    <constraint firstAttribute="height" constant="21" id="Pb8-lc-JMI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NanumBaeEunHyeCe" family="나눔손글씨 배은혜체" pointSize="18"/>
+                                <color key="textColor" name="brownishGrey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pLT-Kd-xxQ" secondAttribute="trailing" id="0CI-VR-pZ1"/>
+                            <constraint firstItem="j2J-3a-JaB" firstAttribute="top" secondItem="DKA-DH-nse" secondAttribute="bottom" constant="-48" id="1Bd-m8-uaH"/>
+                            <constraint firstItem="qT9-h2-DtU" firstAttribute="top" secondItem="Ci6-vz-nw8" secondAttribute="bottom" constant="-9" id="57j-Zn-JZl"/>
+                            <constraint firstItem="DKA-DH-nse" firstAttribute="leading" secondItem="riC-kw-MMl" secondAttribute="trailing" constant="10" id="CPx-PG-G79"/>
+                            <constraint firstItem="j2J-3a-JaB" firstAttribute="centerX" secondItem="NJb-xP-jfo" secondAttribute="centerX" id="FAQ-7c-bXQ"/>
+                            <constraint firstItem="j2J-3a-JaB" firstAttribute="top" secondItem="jpT-oy-ivw" secondAttribute="bottom" constant="23" id="Jxe-Kc-VSg"/>
+                            <constraint firstItem="jpT-oy-ivw" firstAttribute="top" secondItem="4bC-4w-vph" secondAttribute="bottom" constant="98" id="KCz-Jl-wR2"/>
+                            <constraint firstItem="T1S-PR-vK4" firstAttribute="leading" secondItem="DKA-DH-nse" secondAttribute="trailing" constant="1" id="KmQ-kM-Hqy"/>
+                            <constraint firstItem="jpT-oy-ivw" firstAttribute="centerX" secondItem="NJb-xP-jfo" secondAttribute="centerX" id="Luc-PE-Uff"/>
+                            <constraint firstItem="YsP-PD-MMI" firstAttribute="centerX" secondItem="NJb-xP-jfo" secondAttribute="centerX" id="MFx-ft-5ZR"/>
+                            <constraint firstItem="4bC-4w-vph" firstAttribute="top" secondItem="gFw-57-9Ui" secondAttribute="top" constant="51" id="SBC-HU-Nj2"/>
+                            <constraint firstItem="pLT-Kd-xxQ" firstAttribute="leading" secondItem="gFw-57-9Ui" secondAttribute="leading" id="TSK-Fl-cVc"/>
+                            <constraint firstItem="hYX-QE-N9x" firstAttribute="leading" secondItem="GKz-VB-NUN" secondAttribute="trailing" constant="-1.5" id="UO3-Z6-75t"/>
+                            <constraint firstItem="4bC-4w-vph" firstAttribute="centerX" secondItem="NJb-xP-jfo" secondAttribute="centerX" id="X3b-d5-0tX"/>
+                            <constraint firstItem="YsP-PD-MMI" firstAttribute="top" secondItem="gFw-57-9Ui" secondAttribute="top" constant="48" id="YDQ-B1-x2v"/>
+                            <constraint firstItem="j2J-3a-JaB" firstAttribute="leading" secondItem="Ci6-vz-nw8" secondAttribute="trailing" constant="-123" id="aaG-ao-yZZ"/>
+                            <constraint firstItem="qT9-h2-DtU" firstAttribute="top" secondItem="riC-kw-MMl" secondAttribute="bottom" constant="8" id="ceV-q0-KV3"/>
+                            <constraint firstItem="gFw-57-9Ui" firstAttribute="bottom" secondItem="pLT-Kd-xxQ" secondAttribute="bottom" id="i5S-fk-QZh"/>
+                            <constraint firstItem="GKz-VB-NUN" firstAttribute="leading" secondItem="qT9-h2-DtU" secondAttribute="trailing" constant="10" id="kV5-y5-eLI"/>
+                            <constraint firstItem="riC-kw-MMl" firstAttribute="top" secondItem="c2p-dS-lmm" secondAttribute="bottom" constant="-9" id="mV3-yZ-APW"/>
+                            <constraint firstItem="j2J-3a-JaB" firstAttribute="top" secondItem="T1S-PR-vK4" secondAttribute="bottom" constant="-48" id="neC-JU-VZE"/>
+                            <constraint firstItem="hYX-QE-N9x" firstAttribute="centerY" secondItem="GKz-VB-NUN" secondAttribute="centerY" id="oU9-Yg-vdT"/>
+                            <constraint firstItem="j2J-3a-JaB" firstAttribute="leading" secondItem="c2p-dS-lmm" secondAttribute="trailing" constant="-125" id="qz6-8j-ilS"/>
+                            <constraint firstItem="riC-kw-MMl" firstAttribute="bottom" secondItem="DKA-DH-nse" secondAttribute="bottom" id="u0c-KR-jZw"/>
+                            <constraint firstItem="j2J-3a-JaB" firstAttribute="leading" secondItem="qT9-h2-DtU" secondAttribute="trailing" constant="-128" id="ugx-Au-7YD"/>
+                            <constraint firstItem="j2J-3a-JaB" firstAttribute="leading" secondItem="riC-kw-MMl" secondAttribute="trailing" constant="-128" id="vka-k0-5Ny"/>
+                            <constraint firstItem="GKz-VB-NUN" firstAttribute="top" secondItem="DKA-DH-nse" secondAttribute="bottom" constant="-12" id="wvq-qk-RM8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gFw-57-9Ui"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="NaF-of-LMi">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="FQZ-Wp-Q4r"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="setting" id="trs-QX-mEU">
+                            <color key="tintColor" name="skyBlue"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hyo-MO-ZSP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="253.62318840579712" y="4.6875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5z5-QJ-pEC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Mu-4I-RCO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MuL-eg-jDg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FHT-wQ-vku" kind="relationship" relationship="rootViewController" id="Yzf-9G-w3B"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DrM-sB-nUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-656.52173913043487" y="4.6875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="homeTabBarBtn" width="25" height="24"/>
+        <image name="homeTabBarSelectedBtn" width="25" height="24"/>
+        <image name="midCheckTabBarBtn" width="23" height="24"/>
+        <image name="reportCardTabBarBtn" width="19" height="24"/>
+        <image name="setting" width="18" height="18"/>
+        <namedColor name="brownishGrey">
+            <color red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="skyBlue">
+            <color red="0.53333333333333333" green="0.80392156862745101" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

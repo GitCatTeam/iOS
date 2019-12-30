@@ -709,12 +709,12 @@
                                     <constraint firstAttribute="height" constant="39.5" id="oJO-tK-q7f"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="16"/>
-                                <state key="normal" title="다음으로">
+                                <state key="normal" title="시작하기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="moveNext3TouchDownAction:" destination="ZPh-b2-Qlm" eventType="touchDown" id="4aF-UT-Ue4"/>
-                                    <action selector="moveNext3TouchUpAction:" destination="ZPh-b2-Qlm" eventType="touchUpInside" id="9wa-eu-xaw"/>
+                                    <action selector="startTouchDownAction:" destination="RXV-pZ-VNs" eventType="touchDown" id="oMC-tr-FvZ"/>
+                                    <action selector="startTouchUpAction:" destination="RXV-pZ-VNs" eventType="touchUpInside" id="9O1-Qt-RTJ"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLf-v5-xiM">

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0D388BC21A1ECA16646E7A94 /* Pods_GitCat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDED2CBC0481737EEF6CC0FA /* Pods_GitCat.framework */; };
+		4C1035A623B8FEC60057F0B1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C1035A523B8FEC60057F0B1 /* Home.storyboard */; };
+		4C1035A923B9084D0057F0B1 /* 나눔손글씨 배은혜체.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C1035A723B907F50057F0B1 /* 나눔손글씨 배은혜체.ttf */; };
+		4C1035AC23B9D1430057F0B1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1035AB23B9D1430057F0B1 /* HomeVC.swift */; };
 		4C68D10623B09D3E00A8F813 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68D10523B09D3E00A8F813 /* AppDelegate.swift */; };
 		4C68D10D23B09D4000A8F813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C68D10C23B09D4000A8F813 /* Assets.xcassets */; };
 		4C68D11023B09D4000A8F813 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C68D10E23B09D4000A8F813 /* LaunchScreen.storyboard */; };
@@ -32,6 +35,9 @@
 /* Begin PBXFileReference section */
 		2A3DDF6957438C24576DA2E1 /* Pods-GitCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitCat.debug.xcconfig"; path = "Target Support Files/Pods-GitCat/Pods-GitCat.debug.xcconfig"; sourceTree = "<group>"; };
 		31A4904D021682BAC4E2667A /* Pods-GitCat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitCat.release.xcconfig"; path = "Target Support Files/Pods-GitCat/Pods-GitCat.release.xcconfig"; sourceTree = "<group>"; };
+		4C1035A523B8FEC60057F0B1 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		4C1035A723B907F50057F0B1 /* 나눔손글씨 배은혜체.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "나눔손글씨 배은혜체.ttf"; sourceTree = "<group>"; };
+		4C1035AB23B9D1430057F0B1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		4C68D10223B09D3E00A8F813 /* GitCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C68D10523B09D3E00A8F813 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C68D10C23B09D4000A8F813 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +80,14 @@
 				DDED2CBC0481737EEF6CC0FA /* Pods_GitCat.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C1035AA23B9D1260057F0B1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4C1035AB23B9D1430057F0B1 /* HomeVC.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		4C68D0F923B09D3E00A8F813 = {
@@ -165,6 +179,7 @@
 		4C68D11F23B0A3A100A8F813 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4C1035AA23B9D1260057F0B1 /* Home */,
 				4C68D13323B0CFB700A8F813 /* Auth */,
 			);
 			path = ViewControllers;
@@ -175,6 +190,7 @@
 			children = (
 				4C68D10E23B09D4000A8F813 /* LaunchScreen.storyboard */,
 				4C68D12423B0A5EC00A8F813 /* SignIn.storyboard */,
+				4C1035A523B8FEC60057F0B1 /* Home.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -182,6 +198,7 @@
 		4C68D12123B0A50A00A8F813 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				4C1035A723B907F50057F0B1 /* 나눔손글씨 배은혜체.ttf */,
 				4CC07FAE23B314A200851B45 /* 20958980_UTOIMAGE_유토이미지고딕_B_OTF.otf */,
 				4CC07FAD23B314A200851B45 /* 20958982_UTOIMAGE_유토이미지고딕_L_OTF.otf */,
 				4CC07FAC23B314A200851B45 /* 20958984_UTOIMAGE_유토이미지고딕_R_OTF.otf */,
@@ -270,12 +287,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C1035A623B8FEC60057F0B1 /* Home.storyboard in Resources */,
 				4CC07FB323B314F700851B45 /* 20958982_UTOIMAGE_유토이미지고딕_L_OTF.otf in Resources */,
 				4CC07FAF23B314A200851B45 /* 20958984_UTOIMAGE_유토이미지고딕_R_OTF.otf in Resources */,
 				4C68D11023B09D4000A8F813 /* LaunchScreen.storyboard in Resources */,
 				4C68D12523B0A5EC00A8F813 /* SignIn.storyboard in Resources */,
 				4C68D10D23B09D4000A8F813 /* Assets.xcassets in Resources */,
 				4CC07FB223B314F200851B45 /* 20958980_UTOIMAGE_유토이미지고딕_B_OTF.otf in Resources */,
+				4C1035A923B9084D0057F0B1 /* 나눔손글씨 배은혜체.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CC07FBF23B330A600851B45 /* LittleRoundBtn.swift in Sources */,
+				4C1035AC23B9D1430057F0B1 /* HomeVC.swift in Sources */,
 				4CC07FB723B31A2C00851B45 /* VCExtension.swift in Sources */,
 				4C68D10623B09D3E00A8F813 /* AppDelegate.swift in Sources */,
 				4CC07F9F23B2452700851B45 /* GetMoreInfo2VC.swift in Sources */,
