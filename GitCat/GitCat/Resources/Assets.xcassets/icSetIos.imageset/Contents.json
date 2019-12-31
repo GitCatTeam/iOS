@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "homeTabBarSelectedBtn.png",
+      "filename" : "icSetIos.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "homeTabBarSelectedBtn@2x.png",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "icSetIos@2x.png"
     },
     {
-      "filename" : "homeTabBarSelectedBtn@3x.png",
+      "filename" : "icSetIos@3x.png",
       "scale" : "3x",
       "idiom" : "universal"
     }

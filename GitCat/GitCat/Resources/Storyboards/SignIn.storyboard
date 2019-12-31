@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R2q-J7-9T4">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R2q-J7-9T4">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appTitle2" translatesAutoresizingMaskIntoConstraints="NO" id="Wq6-FX-2sP">
-                                <rect key="frame" x="100" y="230" width="214.00000000000006" height="72"/>
+                                <rect key="frame" x="100" y="230" width="214" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="214" id="MHu-bh-vNj"/>
                                     <constraint firstAttribute="height" constant="72" id="sRc-5y-7LE"/>
@@ -272,7 +270,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsr-GM-W1K">
-                                <rect key="frame" x="198" y="702.5" width="18.5" height="12"/>
+                                <rect key="frame" x="198.5" y="702.5" width="17.5" height="14"/>
                                 <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="12"/>
                                 <color key="textColor" name="brownishGrey"/>
                                 <nil key="highlightedColor"/>
@@ -319,17 +317,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="rz4-AC-WNI">
-                                <rect key="frame" x="47" y="480" width="320" height="114"/>
+                            <datePicker contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="rz4-AC-WNI">
+                                <rect key="frame" x="47" y="483" width="320" height="114"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="skyBlue"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="gnd-vR-MYU"/>
                                     <constraint firstAttribute="height" constant="114" id="zCp-pZ-p2Z"/>
                                 </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="598887165.577788">
-                                    <!--2019-12-24 13:32:45 +0000-->
-                                </date>
                                 <date key="maximumDate" timeIntervalSinceReferenceDate="1164970800">
                                     <!--2037-12-01 11:00:00 +0000-->
                                 </date>
@@ -389,13 +384,13 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생년월일을 알려주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaM-sQ-AjK">
-                                <rect key="frame" x="134.5" y="454" width="145" height="16"/>
+                                <rect key="frame" x="135.5" y="454" width="143" height="19"/>
                                 <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="16"/>
                                 <color key="textColor" name="brownishGrey"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vJ-qA-Pdb" customClass="RoundBtn" customModule="GitCat" customModuleProvider="target">
-                                <rect key="frame" x="139" y="645.5" width="136" height="40"/>
+                                <rect key="frame" x="139" y="648.5" width="136" height="40"/>
                                 <color key="backgroundColor" red="0.85504454370000005" green="0.8585307002" blue="0.87451320889999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="136" id="PTW-Ci-Phg"/>
@@ -411,7 +406,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzk-gS-Lnz">
-                                <rect key="frame" x="197" y="702.5" width="20" height="11"/>
+                                <rect key="frame" x="199" y="705.5" width="16" height="13"/>
                                 <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="11"/>
                                 <color key="textColor" name="brownishGrey"/>
                                 <nil key="highlightedColor"/>
@@ -552,13 +547,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFX-I3-SiH">
-                                <rect key="frame" x="197" y="702" width="20" height="11"/>
+                                <rect key="frame" x="199" y="702" width="16" height="13"/>
                                 <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="11"/>
                                 <color key="textColor" name="brownishGrey"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개발을 하신 지 얼마나 되었나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZe-L4-nEV">
-                                <rect key="frame" x="64" y="131" width="286" height="22"/>
+                                <rect key="frame" x="65" y="131" width="284.5" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Avr-Uh-Czi"/>
                                 </constraints>
@@ -612,10 +607,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signInCat" translatesAutoresizingMaskIntoConstraints="NO" id="hZA-P0-rod">
-                                <rect key="frame" x="52" y="169" width="310" height="232"/>
+                                <rect key="frame" x="-103" y="169" width="620" height="464"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="거의 다 왔어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbv-2J-cZy">
-                                <rect key="frame" x="139.5" y="131" width="135" height="22"/>
+                                <rect key="frame" x="141" y="131" width="132.5" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="bxo-JW-mdB"/>
                                 </constraints>
@@ -624,13 +619,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="함께 할 고양이를 선택해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kP8-GS-5Kt">
-                                <rect key="frame" x="109.5" y="416" width="195.5" height="16"/>
+                                <rect key="frame" x="110.5" y="648" width="193.5" height="19"/>
                                 <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="16"/>
                                 <color key="textColor" name="brownishGrey"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="0aq-ww-fZH">
-                                <rect key="frame" x="45" y="454" width="324" height="98"/>
+                                <rect key="frame" x="45" y="689" width="324" height="98"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yTz-Xm-oO5" customClass="RoundView" customModule="GitCat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="98" height="98"/>
@@ -681,12 +676,11 @@
                                 </constraints>
                             </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이름을 알려주세요(최대 8자)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uY6-po-KFK">
-                                <rect key="frame" x="120" y="590" width="174" height="16"/>
+                                <rect key="frame" x="120" y="825" width="174" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="KJc-E3-3mO"/>
                                     <constraint firstAttribute="width" constant="174" id="Z2N-6O-kzg"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -694,7 +688,7 @@
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0M4-E3-vgk">
-                                <rect key="frame" x="120" y="612.5" width="174.5" height="1"/>
+                                <rect key="frame" x="120" y="847.5" width="174.5" height="1"/>
                                 <color key="backgroundColor" red="0.75297731161117554" green="0.75285583734512329" blue="0.75686430931091309" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="krZ-qJ-sf4"/>
@@ -702,7 +696,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUA-Gu-9c2" customClass="RoundBtn" customModule="GitCat" customModuleProvider="target">
-                                <rect key="frame" x="139" y="645.5" width="136" height="39.5"/>
+                                <rect key="frame" x="139" y="880.5" width="136" height="39.5"/>
                                 <color key="backgroundColor" red="0.86288779969999996" green="0.86637359859999996" blue="0.88235628600000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="136" id="MBr-gA-lYk"/>
@@ -718,7 +712,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLf-v5-xiM">
-                                <rect key="frame" x="197" y="702" width="20" height="11"/>
+                                <rect key="frame" x="199" y="937" width="16" height="13"/>
                                 <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="11"/>
                                 <color key="textColor" name="brownishGrey"/>
                                 <nil key="highlightedColor"/>
@@ -784,10 +778,10 @@
         <image name="appTitle2" width="214" height="72"/>
         <image name="signInCat" width="310" height="232"/>
         <namedColor name="brownishGrey">
-            <color red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.3919999897480011" green="0.3919999897480011" blue="0.3919999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="skyBlue">
-            <color red="0.53333333333333333" green="0.80392156862745101" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.53299999237060547" green="0.80400002002716064" blue="0.9649999737739563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

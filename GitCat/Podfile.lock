@@ -3,14 +3,16 @@ PODS:
   - AlamofireObjectMapper (6.2.0):
     - Alamofire (= 5.0.0-rc.2)
     - ObjectMapper (~> 3.5.1)
+  - FSCalendar (2.8.1)
   - Kingfisher (5.12.0):
     - Kingfisher/Core (= 5.12.0)
   - Kingfisher/Core (5.12.0)
   - ObjectMapper (3.5.1)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (= 5.0.0-rc.2)
   - AlamofireObjectMapper
+  - FSCalendar
   - Kingfisher
   - ObjectMapper
 
@@ -18,15 +20,17 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireObjectMapper
+    - FSCalendar
     - Kingfisher
     - ObjectMapper
 
 SPEC CHECKSUMS:
   Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
   AlamofireObjectMapper: 74d1440c92c42bbcc2b5f4dc81654ac095ec669f
+  FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
 
-PODFILE CHECKSUM: 20c216a01e7301fd21950d2335ee87ffa88e39c3
+PODFILE CHECKSUM: 3737a69c5db429cc1504dbfe151ae5549e777f6d
 
 COCOAPODS: 1.8.4

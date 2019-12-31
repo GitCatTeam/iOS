@@ -77,7 +77,9 @@ class GetMoreInfo4VC: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func startTouchUpAction(_ sender: Any) {
-        let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "HomeVC") as! UINavigationController
+        let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainTabC") 
+        
+        dvc.modalPresentationStyle = .fullScreen
         
         self.present(dvc, animated: true, completion: nil)
     }
