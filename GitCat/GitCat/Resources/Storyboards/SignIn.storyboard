@@ -253,14 +253,13 @@
                                     <constraint firstAttribute="height" constant="64" id="xNQ-QQ-86d"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fp3-pL-fea" customClass="RoundBtn" customModule="GitCat" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fp3-pL-fea" customClass="RoundBtn" customModule="GitCat" customModuleProvider="target">
                                 <rect key="frame" x="139" y="645.5" width="136" height="40"/>
                                 <color key="backgroundColor" red="0.85504454374313354" green="0.85853070020675659" blue="0.87451320886611938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1Yp-nE-NBT"/>
                                     <constraint firstAttribute="width" constant="136" id="ned-LC-Taw"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="16"/>
                                 <state key="normal" title="다음으로">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -325,6 +324,9 @@
                                     <constraint firstAttribute="width" constant="320" id="gnd-vR-MYU"/>
                                     <constraint firstAttribute="height" constant="114" id="zCp-pZ-p2Z"/>
                                 </constraints>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="6976666800">
+                                    <!--2222-01-31 11:00:00 +0000-->
+                                </date>
                                 <date key="maximumDate" timeIntervalSinceReferenceDate="1164970800">
                                     <!--2037-12-01 11:00:00 +0000-->
                                 </date>
@@ -389,17 +391,14 @@
                                 <color key="textColor" name="brownishGrey"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vJ-qA-Pdb" customClass="RoundBtn" customModule="GitCat" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vJ-qA-Pdb" customClass="RoundBtn" customModule="GitCat" customModuleProvider="target">
                                 <rect key="frame" x="139" y="648.5" width="136" height="40"/>
                                 <color key="backgroundColor" red="0.85504454370000005" green="0.8585307002" blue="0.87451320889999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="136" id="PTW-Ci-Phg"/>
                                     <constraint firstAttribute="height" constant="40" id="Tvn-f3-xTX"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="16"/>
-                                <state key="normal" title="다음으로">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                                <state key="normal" title="다음으로"/>
                                 <connections>
                                     <action selector="moveNext2TouchDownAction:" destination="MPu-9V-fgp" eventType="touchDown" id="17T-0M-yTg"/>
                                     <action selector="moveNext2TouchUpAction:" destination="MPu-9V-fgp" eventType="touchUpInside" id="Rvr-Ek-eCn"/>

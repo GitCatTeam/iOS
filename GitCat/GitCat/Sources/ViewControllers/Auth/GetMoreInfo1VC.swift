@@ -65,12 +65,10 @@ class GetMoreInfo1VC: UIViewController {
     
     @IBAction func moveNextTouchDownAction(_ sender: UIButton) {
         sender.backgroundColor = UIColor.CustomColor.skyBlue
-        sender.setTitleColor(UIColor.white, for: UIControl.State.normal)
+ 
     }
 
     @IBAction func moveNextTouchUpAction(_ sender: UIButton) {
-        sender.backgroundColor = UIColor(red: 220/255, green: 221/255, blue: 225/255, alpha: 1)
-        
         if let dvc = storyboard? .instantiateViewController(withIdentifier: "GetMoreInfo2VC") as? GetMoreInfo2VC {
             
             self.navigationController?.pushViewController(dvc, animated: true)

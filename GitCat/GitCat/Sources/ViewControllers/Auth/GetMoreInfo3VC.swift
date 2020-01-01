@@ -105,7 +105,7 @@ class GetMoreInfo3VC: UIViewController {
     }
     
     @IBAction func moveNext3TouchUpAction(_ sender: UIButton) {
-        sender.backgroundColor = UIColor(red: 220/255, green: 221/255, blue: 225/255, alpha: 1)
+
         
         if let dvc = storyboard? .instantiateViewController(withIdentifier: "GetMoreInfo4VC") as? GetMoreInfo4VC {
             self.navigationController?.pushViewController(dvc, animated: true)
