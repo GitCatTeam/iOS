@@ -15,14 +15,57 @@ class GetMoreInfo1VC: UIViewController {
     @IBOutlet weak var otherBtn: UIButton!
     @IBOutlet weak var nextBtn: UIButton!
     
+    @IBOutlet weak var BigTitle: UILabel!
+    @IBOutlet weak var subTitle: UILabel!
+    @IBOutlet weak var userProfileImageView: UIImageView!
+    
+    @IBOutlet weak var userEmailLabel: UILabel!
+    @IBOutlet weak var userEmailUnderBarView: UIView!
+    
+    
+    @IBOutlet weak var sexLabel: UILabel!
+    @IBOutlet weak var sexStackView: UIStackView!
+    @IBOutlet weak var birthDatePicker: UIDatePicker!
+    @IBOutlet weak var pageCntLabel: UILabel!
+    
+    var clickBtnCnt = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        clickBtnCnt = 0
         
         setButtonSelect()
         setButtonColor()
         nextBtn.addShadow()
+        
+        initAlpha()
+    birthDatePicker.setValue(UIColor.CustomColor.skyBlue, forKey: "textColor")
+        
+        UIView.animate(withDuration: 0.5, delay: 0.5,animations: ({
+            self.BigTitle.alpha = 1
+            self.subTitle.alpha = 1
+            self.userProfileImageView.alpha = 1
+            self.userEmailLabel.alpha = 1
+            self.userEmailUnderBarView.alpha = 1
+        }))
+        UIView.animate(withDuration: 0.5, delay: 1.0, animations: ({
+            self.sexLabel.alpha = 1
+            self.sexStackView.alpha = 1
+            
+        }))
     }
 
+    func initAlpha() {
+        self.BigTitle.alpha = 0
+        self.subTitle.alpha = 0
+        self.userProfileImageView.alpha = 0
+        self.userEmailLabel.alpha = 0
+        self.userEmailUnderBarView.alpha = 0
+               
+        self.sexLabel.alpha = 0
+        self.sexStackView.alpha = 0
+        
+        self.birthDatePicker.alpha = 0
+    }
     
     @IBAction func selectGenderAction(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
@@ -69,12 +112,27 @@ class GetMoreInfo1VC: UIViewController {
     }
 
     @IBAction func moveNextTouchUpAction(_ sender: UIButton) {
-        if let dvc = storyboard? .instantiateViewController(withIdentifier: "GetMoreInfo2VC") as? GetMoreInfo2VC {
+        clickBtnCnt+=1
+        sender.backgroundColor = UIColor(red: 220/255, green: 221/255, blue: 225/255, alpha: 1)
+        if(clickBtnCnt == 1) {
             
-            self.navigationController?.pushViewController(dvc, animated: true)
+            UIView.animate(withDuration: 0.5, animations: ({
+                self.sexLabel.text = "생년월일을 알려주세요"
+                self.pageCntLabel.text = "2/4"
+                self.sexStackView.alpha = 0
+            }))
             
+            UIView.animate(withDuration: 0.5, delay:0.5, animations: ({
+                self.birthDatePicker.alpha = 1
+
+            }))
         }
-        
+        if(clickBtnCnt == 2) {
+            if let dvc = storyboard? .instantiateViewController(withIdentifier: "GetMoreInfo3VC") as? GetMoreInfo3VC {
+                
+                self.navigationController?.pushViewController(dvc, animated: true)
+            }
+        }
     }
     
     /*----------------------------------------------*/

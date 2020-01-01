@@ -16,11 +16,15 @@ class GetMoreInfo2VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nextBtn2.addShadow()
-    birthDatePicker.setValue(UIColor.CustomColor.skyBlue, forKey: "textColor")
+        birthDatePicker.setValue(UIColor.CustomColor.skyBlue, forKey: "textColor")
+        self.birthDatePicker.alpha = 0
+        UIView.animate(withDuration: 0.5, delay: 1.0, animations: ({
+            self.birthDatePicker.alpha = 1
+            
+        }))
         
-        
-
     }
+   
     @IBAction func moveNext2TouchDownAction(_ sender: UIButton) {
         sender.backgroundColor = UIColor.CustomColor.skyBlue
     }

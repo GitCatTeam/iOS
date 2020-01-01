@@ -192,7 +192,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별을 알려주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gra-sp-UqE">
                                 <rect key="frame" x="148.5" y="454" width="117" height="16"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="117" id="7F0-yM-Ra6"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="117" id="7F0-yM-Ra6"/>
                                     <constraint firstAttribute="height" constant="16" id="uzz-w0-3DT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="16"/>
@@ -274,6 +274,22 @@
                                 <color key="textColor" name="brownishGrey"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <datePicker alpha="0.0" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="66N-OR-JfD">
+                                <rect key="frame" x="47" y="480" width="320" height="114"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="skyBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="YxI-eL-ADG"/>
+                                    <constraint firstAttribute="height" constant="114" id="p7H-oL-8Wg"/>
+                                </constraints>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="6976666800">
+                                    <!--2222-01-31 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="1164970800">
+                                    <!--2037-12-01 11:00:00 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="ko_KR"/>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -285,12 +301,14 @@
                             <constraint firstItem="hsr-GM-W1K" firstAttribute="top" secondItem="fp3-pL-fea" secondAttribute="bottom" constant="16.800000000000001" id="a3L-DP-dIG"/>
                             <constraint firstItem="KU7-aF-kC2" firstAttribute="centerX" secondItem="O3h-jB-Va1" secondAttribute="centerX" id="b7Z-7F-pjM"/>
                             <constraint firstItem="fp3-pL-fea" firstAttribute="top" secondItem="NYl-0F-LLd" secondAttribute="bottom" constant="87.5" id="dZy-G7-Bep"/>
+                            <constraint firstItem="66N-OR-JfD" firstAttribute="top" secondItem="gra-sp-UqE" secondAttribute="bottom" constant="10" id="fO2-j8-Ee7"/>
                             <constraint firstItem="LHI-AX-Hmf" firstAttribute="centerX" secondItem="O3h-jB-Va1" secondAttribute="centerX" id="hO0-BU-Mhp"/>
                             <constraint firstItem="FCh-Gy-juI" firstAttribute="centerX" secondItem="O3h-jB-Va1" secondAttribute="centerX" id="kVb-eb-Azt"/>
                             <constraint firstItem="gra-sp-UqE" firstAttribute="top" secondItem="LHI-AX-Hmf" secondAttribute="bottom" constant="59.5" id="naY-2B-Wnr"/>
                             <constraint firstItem="cFx-Hd-tki" firstAttribute="top" secondItem="KU7-aF-kC2" secondAttribute="bottom" constant="11" id="nh9-5W-ZAm"/>
                             <constraint firstItem="LHI-AX-Hmf" firstAttribute="top" secondItem="FCh-Gy-juI" secondAttribute="bottom" constant="24" id="qk8-yo-9C8"/>
                             <constraint firstItem="gra-sp-UqE" firstAttribute="centerX" secondItem="O3h-jB-Va1" secondAttribute="centerX" id="vBj-Uz-bzs"/>
+                            <constraint firstItem="66N-OR-JfD" firstAttribute="centerX" secondItem="O3h-jB-Va1" secondAttribute="centerX" id="w4u-jQ-NjS"/>
                             <constraint firstItem="cFx-Hd-tki" firstAttribute="centerX" secondItem="O3h-jB-Va1" secondAttribute="centerX" id="w8B-iT-6Z0"/>
                             <constraint firstItem="KU7-aF-kC2" firstAttribute="top" secondItem="6i1-fy-y3y" secondAttribute="top" constant="84" id="x0n-Ul-nIg"/>
                             <constraint firstItem="hsr-GM-W1K" firstAttribute="centerX" secondItem="O3h-jB-Va1" secondAttribute="centerX" id="xiA-nK-Frn"/>
@@ -298,148 +316,24 @@
                         <viewLayoutGuide key="safeArea" id="6i1-fy-y3y"/>
                     </view>
                     <connections>
+                        <outlet property="BigTitle" destination="KU7-aF-kC2" id="8mH-KO-4If"/>
+                        <outlet property="birthDatePicker" destination="66N-OR-JfD" id="2aN-MH-hBD"/>
                         <outlet property="femaleBtn" destination="6wy-9J-ewu" id="T4q-ZG-7tZ"/>
                         <outlet property="maleBtn" destination="WLO-i8-lrb" id="7gK-5u-rhK"/>
                         <outlet property="nextBtn" destination="fp3-pL-fea" id="d4F-ZA-l7S"/>
                         <outlet property="otherBtn" destination="6zl-lW-tfH" id="3pA-9Y-Nsb"/>
+                        <outlet property="pageCntLabel" destination="hsr-GM-W1K" id="CTo-g4-qou"/>
+                        <outlet property="sexLabel" destination="gra-sp-UqE" id="I1w-6T-wgl"/>
+                        <outlet property="sexStackView" destination="NYl-0F-LLd" id="guc-5s-WKD"/>
+                        <outlet property="subTitle" destination="cFx-Hd-tki" id="608-HU-gad"/>
+                        <outlet property="userEmailLabel" destination="j9R-a0-QRY" id="i2x-D6-mDW"/>
+                        <outlet property="userEmailUnderBarView" destination="FBD-aO-tQ7" id="TUD-N1-Waw"/>
+                        <outlet property="userProfileImageView" destination="FCh-Gy-juI" id="Em6-rZ-MQq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BzV-05-MAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2953.6231884057975" y="-156.02678571428569"/>
-        </scene>
-        <!--Get More Info2VC-->
-        <scene sceneID="3Cr-N9-erB">
-            <objects>
-                <viewController storyboardIdentifier="GetMoreInfo2VC" id="MPu-9V-fgp" customClass="GetMoreInfo2VC" customModule="GitCat" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WV0-fh-8gN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <datePicker contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="rz4-AC-WNI">
-                                <rect key="frame" x="47" y="483" width="320" height="114"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" name="skyBlue"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="gnd-vR-MYU"/>
-                                    <constraint firstAttribute="height" constant="114" id="zCp-pZ-p2Z"/>
-                                </constraints>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="6976666800">
-                                    <!--2222-01-31 11:00:00 +0000-->
-                                </date>
-                                <date key="maximumDate" timeIntervalSinceReferenceDate="1164970800">
-                                    <!--2037-12-01 11:00:00 +0000-->
-                                </date>
-                                <locale key="locale" localeIdentifier="ko_KR"/>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개발자님에 대해 더 알고 싶어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35A-QU-vca">
-                                <rect key="frame" x="66.5" y="128" width="281.5" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="281.5" id="VgF-De-tga"/>
-                                    <constraint firstAttribute="height" constant="22" id="hDe-uy-AN5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="22"/>
-                                <color key="textColor" name="brownishGrey"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인 정보는 통계 이외의 다른 용도로 사용 되지 않아요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zd-d8-WX4">
-                                <rect key="frame" x="66" y="161" width="282" height="13"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="13" id="A7e-NJ-0MH"/>
-                                    <constraint firstAttribute="width" constant="282" id="gV2-NC-ksp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="13"/>
-                                <color key="textColor" name="brownishGrey"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uVs-zT-Vte">
-                                <rect key="frame" x="138" y="210.5" width="138" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="138" id="3hD-rj-Ft7"/>
-                                    <constraint firstAttribute="height" constant="128" id="gx4-9H-46A"/>
-                                </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="b7J-ej-98E">
-                                <rect key="frame" x="108" y="362.5" width="198" height="32"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yoon980208@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unh-a7-T8o">
-                                        <rect key="frame" x="0.0" y="0.0" width="198" height="18"/>
-                                        <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="18"/>
-                                        <color key="textColor" name="skyBlue"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zik-Nc-5al">
-                                        <rect key="frame" x="0.0" y="31" width="198" height="1"/>
-                                        <color key="backgroundColor" red="0.75295144319999996" green="0.75292283299999996" blue="0.75294226409999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="t9X-68-HRP"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="7e1-4V-Ixg"/>
-                                    <constraint firstItem="zik-Nc-5al" firstAttribute="leading" secondItem="b7J-ej-98E" secondAttribute="leading" id="LYx-Sh-adz"/>
-                                    <constraint firstItem="unh-a7-T8o" firstAttribute="leading" secondItem="b7J-ej-98E" secondAttribute="leading" id="pcX-2N-Y0h"/>
-                                    <constraint firstAttribute="trailing" secondItem="unh-a7-T8o" secondAttribute="trailing" id="rB0-UR-bIr"/>
-                                    <constraint firstItem="unh-a7-T8o" firstAttribute="top" secondItem="b7J-ej-98E" secondAttribute="top" id="sEB-q9-nHd"/>
-                                    <constraint firstAttribute="trailing" secondItem="zik-Nc-5al" secondAttribute="trailing" id="z1H-mN-D3a"/>
-                                </constraints>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생년월일을 알려주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaM-sQ-AjK">
-                                <rect key="frame" x="135.5" y="454" width="143" height="19"/>
-                                <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="16"/>
-                                <color key="textColor" name="brownishGrey"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vJ-qA-Pdb" customClass="RoundBtn" customModule="GitCat" customModuleProvider="target">
-                                <rect key="frame" x="139" y="648.5" width="136" height="40"/>
-                                <color key="backgroundColor" red="0.85504454370000005" green="0.8585307002" blue="0.87451320889999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="136" id="PTW-Ci-Phg"/>
-                                    <constraint firstAttribute="height" constant="40" id="Tvn-f3-xTX"/>
-                                </constraints>
-                                <state key="normal" title="다음으로"/>
-                                <connections>
-                                    <action selector="moveNext2TouchDownAction:" destination="MPu-9V-fgp" eventType="touchDown" id="17T-0M-yTg"/>
-                                    <action selector="moveNext2TouchUpAction:" destination="MPu-9V-fgp" eventType="touchUpInside" id="Rvr-Ek-eCn"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzk-gS-Lnz">
-                                <rect key="frame" x="199" y="705.5" width="16" height="13"/>
-                                <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="11"/>
-                                <color key="textColor" name="brownishGrey"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="qaM-sQ-AjK" firstAttribute="centerX" secondItem="WV0-fh-8gN" secondAttribute="centerX" id="2o9-V0-1XA"/>
-                            <constraint firstItem="qaM-sQ-AjK" firstAttribute="top" secondItem="b7J-ej-98E" secondAttribute="bottom" constant="59.5" id="KGS-Z9-mTd"/>
-                            <constraint firstItem="rz4-AC-WNI" firstAttribute="top" secondItem="qaM-sQ-AjK" secondAttribute="bottom" constant="10" id="Lsi-q7-eGS"/>
-                            <constraint firstItem="1vJ-qA-Pdb" firstAttribute="top" secondItem="rz4-AC-WNI" secondAttribute="bottom" constant="51.5" id="OKG-Zv-eAj"/>
-                            <constraint firstItem="1vJ-qA-Pdb" firstAttribute="centerX" secondItem="WV0-fh-8gN" secondAttribute="centerX" id="PEb-Le-kJf"/>
-                            <constraint firstItem="uVs-zT-Vte" firstAttribute="centerX" secondItem="WV0-fh-8gN" secondAttribute="centerX" id="Twy-sr-e6D"/>
-                            <constraint firstItem="rz4-AC-WNI" firstAttribute="centerX" secondItem="WV0-fh-8gN" secondAttribute="centerX" id="Xrb-zA-HWF"/>
-                            <constraint firstItem="b7J-ej-98E" firstAttribute="top" secondItem="uVs-zT-Vte" secondAttribute="bottom" constant="24" id="dhh-9a-yE3"/>
-                            <constraint firstItem="35A-QU-vca" firstAttribute="centerX" secondItem="WV0-fh-8gN" secondAttribute="centerX" id="f3O-LS-g7h"/>
-                            <constraint firstItem="35A-QU-vca" firstAttribute="top" secondItem="d07-OP-Pnh" secondAttribute="top" constant="84" id="fd2-27-4h3"/>
-                            <constraint firstItem="b7J-ej-98E" firstAttribute="centerX" secondItem="WV0-fh-8gN" secondAttribute="centerX" id="hh8-H0-cil"/>
-                            <constraint firstItem="8Zd-d8-WX4" firstAttribute="centerX" secondItem="WV0-fh-8gN" secondAttribute="centerX" id="l7W-hf-UqZ"/>
-                            <constraint firstItem="8Zd-d8-WX4" firstAttribute="top" secondItem="35A-QU-vca" secondAttribute="bottom" constant="11" id="lgm-eg-sXB"/>
-                            <constraint firstItem="dzk-gS-Lnz" firstAttribute="centerX" secondItem="WV0-fh-8gN" secondAttribute="centerX" id="m4H-nt-1mL"/>
-                            <constraint firstItem="dzk-gS-Lnz" firstAttribute="top" secondItem="1vJ-qA-Pdb" secondAttribute="bottom" constant="16.800000000000001" id="oly-KM-cqf"/>
-                            <constraint firstItem="uVs-zT-Vte" firstAttribute="top" secondItem="8Zd-d8-WX4" secondAttribute="bottom" constant="36.700000000000003" id="vVn-0v-2mG"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="d07-OP-Pnh"/>
-                    </view>
-                    <connections>
-                        <outlet property="birthDatePicker" destination="rz4-AC-WNI" id="RbA-bC-7ya"/>
-                        <outlet property="nextBtn2" destination="1vJ-qA-Pdb" id="08B-v7-mjA"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="310-Wv-dFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3676.811594202899" y="-156.02678571428569"/>
         </scene>
         <!--Get More Info3VC-->
         <scene sceneID="PSy-zZ-8qJ">
@@ -595,7 +489,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAz-UY-mb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4434.7826086956529" y="-156.02678571428569"/>
+            <point key="canvasLocation" x="3709" y="-156"/>
         </scene>
         <!--Get More Info4VC-->
         <scene sceneID="ZGr-9f-wvm">
@@ -752,7 +646,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ncS-II-K1c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5259.420289855073" y="-156.02678571428569"/>
+            <point key="canvasLocation" x="4468" y="-156"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qbp-ML-9nu">
