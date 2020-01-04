@@ -33,6 +33,7 @@ class GetMoreInfo1VC: UIViewController {
         super.viewDidLoad()
         clickBtnCnt = 0
         
+        setBackBtn(color: UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1))
         setButtonSelect()
         setButtonColor()
         nextBtn.addShadow()

@@ -22,6 +22,8 @@ class GetMoreInfo3VC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setBackBtn(color: UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1))
         setButtonSelect()
         setButtonColor()
         nextBtn3.addShadow()
