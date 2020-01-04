@@ -9,6 +9,8 @@
 import UIKit
 
 class GetMoreInfo3VC: UIViewController {
+    @IBOutlet weak var MainTitle: UILabel!
+    @IBOutlet weak var subTitle: UILabel!
     
     @IBOutlet weak var interestInDevBtn: LittleRoundBtn!
     @IBOutlet weak var studentBtn: LittleRoundBtn!
@@ -23,9 +25,34 @@ class GetMoreInfo3VC: UIViewController {
         setButtonSelect()
         setButtonColor()
         nextBtn3.addShadow()
+        initAlpha()
+        
+        nextBtn3.isEnabled = false
+        UIView.animate(withDuration: 0.5, delay: 0.5,animations: ({
+            self.MainTitle.alpha = 1
+            self.subTitle.alpha = 1
+            self.interestInDevBtn.alpha = 1
+            self.studentBtn.alpha = 1
+            self.OneYearDevBtn.alpha = 1
+            self.ThreeYearDevBtn.alpha = 1
+            self.MoreThanFiveYearDevBtn.alpha = 1
+        }))
+
     }
+    func initAlpha() {
+        self.MainTitle.alpha = 0
+        self.subTitle.alpha = 0
+        self.interestInDevBtn.alpha = 0
+        self.studentBtn.alpha = 0
+        self.OneYearDevBtn.alpha = 0
+        self.ThreeYearDevBtn.alpha = 0
+        self.MoreThanFiveYearDevBtn.alpha = 0
+    }
+    
     @IBAction func chooseCareer(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
+        nextBtn3.isEnabled = true
+        nextBtn3.backgroundColor = UIColor.CustomColor.skyBlue
         
         if sender == interestInDevBtn && interestInDevBtn.isSelected {
             
@@ -98,10 +125,6 @@ class GetMoreInfo3VC: UIViewController {
             ThreeYearDevBtn.isSelected = false
             ThreeYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
         }
-    }
-    
-    @IBAction func moveNext3TouchDownAction(_ sender: UIButton) {
-        sender.backgroundColor = UIColor.CustomColor.skyBlue
     }
     
     @IBAction func moveNext3TouchUpAction(_ sender: UIButton) {

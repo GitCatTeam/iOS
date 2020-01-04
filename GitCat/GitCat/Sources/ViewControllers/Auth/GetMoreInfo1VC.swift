@@ -52,6 +52,7 @@ class GetMoreInfo1VC: UIViewController {
             self.sexStackView.alpha = 1
             
         }))
+        nextBtn.isEnabled = false
     }
 
     func initAlpha() {
@@ -69,6 +70,8 @@ class GetMoreInfo1VC: UIViewController {
     
     @IBAction func selectGenderAction(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
+        nextBtn.isEnabled = true
+        nextBtn.backgroundColor = UIColor.CustomColor.skyBlue
         
         if sender == femaleBtn && femaleBtn.isSelected {//여자 버튼 선택되었을 경우
             femaleBtn.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
@@ -104,16 +107,11 @@ class GetMoreInfo1VC: UIViewController {
             otherBtn.layer.borderColor = UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255).cgColor
         }
     }
-    
-    
-    @IBAction func moveNextTouchDownAction(_ sender: UIButton) {
-        sender.backgroundColor = UIColor.CustomColor.skyBlue
- 
-    }
 
     @IBAction func moveNextTouchUpAction(_ sender: UIButton) {
+        
         clickBtnCnt+=1
-        sender.backgroundColor = UIColor(red: 220/255, green: 221/255, blue: 225/255, alpha: 1)
+//        sender.backgroundColor = UIColor(red: 220/255, green: 221/255, blue: 225/255, alpha: 1)
         if(clickBtnCnt == 1) {
             
             UIView.animate(withDuration: 0.5, animations: ({

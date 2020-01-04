@@ -19,6 +19,7 @@
 		4C68D12523B0A5EC00A8F813 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C68D12423B0A5EC00A8F813 /* SignIn.storyboard */; };
 		4C68D12C23B0AAB100A8F813 /* BasicExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68D12B23B0AAB100A8F813 /* BasicExtension.swift */; };
 		4C68D13523B0D02400A8F813 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68D13423B0D02400A8F813 /* SignInVC.swift */; };
+		4C9E8E8323C05564002BDE02 /* LittleRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E8E8223C05564002BDE02 /* LittleRoundView.swift */; };
 		4CC07F9123B0EE1000851B45 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC07F9023B0EE1000851B45 /* ColorPalette.swift */; };
 		4CC07F9323B0F28100851B45 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC07F9223B0F28100851B45 /* RoundView.swift */; };
 		4CC07F9523B1165200851B45 /* GetMoreInfo1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC07F9423B1165200851B45 /* GetMoreInfo1VC.swift */; };
@@ -48,6 +49,7 @@
 		4C68D12423B0A5EC00A8F813 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		4C68D12B23B0AAB100A8F813 /* BasicExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicExtension.swift; sourceTree = "<group>"; };
 		4C68D13423B0D02400A8F813 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		4C9E8E8223C05564002BDE02 /* LittleRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleRoundView.swift; sourceTree = "<group>"; };
 		4CC07F9023B0EE1000851B45 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		4CC07F9223B0F28100851B45 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		4CC07F9423B1165200851B45 /* GetMoreInfo1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMoreInfo1VC.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				4CC07F9223B0F28100851B45 /* RoundView.swift */,
+				4C9E8E8223C05564002BDE02 /* LittleRoundView.swift */,
 				4CC07FB423B317CA00851B45 /* RoundBtn.swift */,
 				4CC07FBE23B330A600851B45 /* LittleRoundBtn.swift */,
 				4CC07FC023B35A7300851B45 /* RoundImageView.swift */,
@@ -359,6 +362,7 @@
 				4C68D10623B09D3E00A8F813 /* AppDelegate.swift in Sources */,
 				4C4A923223BA2476002E5F35 /* MidRepoVC.swift in Sources */,
 				4CC07F9F23B2452700851B45 /* GetMoreInfo2VC.swift in Sources */,
+				4C9E8E8323C05564002BDE02 /* LittleRoundView.swift in Sources */,
 				4CC07F9323B0F28100851B45 /* RoundView.swift in Sources */,
 				4CC07FC123B35A7300851B45 /* RoundImageView.swift in Sources */,
 				4C0BAD8623BB087900A419A8 /* MainTabC.swift in Sources */,
