@@ -10,10 +10,11 @@ import UIKit
 
 class HomeVC: UIViewController {
     
-    var titleImage = UIImage(named: "appTitle2");
+    @IBOutlet weak var catChatLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        catChatLabel.setLineHeight(lineHeight: 0.8)
 
 
         // Do any additional setup after loading the view.

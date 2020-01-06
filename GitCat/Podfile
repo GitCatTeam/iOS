@@ -7,9 +7,10 @@ target 'GitCat' do
   
   # Pods for GitCat
   
-  pod 'Alamofire','= 5.0.0-rc.2'
-  pod 'AlamofireObjectMapper'
-  pod 'ObjectMapper'
+  pod 'Alamofire'
   pod 'Kingfisher'
   pod 'FSCalendar'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Analytics'
+  pod 'SwiftyJSON'
 end
