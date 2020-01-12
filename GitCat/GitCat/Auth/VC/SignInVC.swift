@@ -66,13 +66,14 @@ class SignInVC: UIViewController , UIWebViewDelegate{
         // Request read access to a user's email addresses.
         // This must be preconfigured in the app's API permissions.
         provider.scopes = ["user:email"]
-    
+        
+        
         provider.getCredentialWith(nil) { credential, error in
             if error != nil {
                 print(error!.localizedDescription)
             }
+            
             if credential != nil {
-                
                 Auth.auth().signIn(with: credential!) { authResult, error in
                     if error != nil {
                         print(error!.localizedDescription)

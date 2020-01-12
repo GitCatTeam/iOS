@@ -13,4 +13,5 @@ target 'GitCat' do
   pod 'Firebase/Auth'
   pod 'Firebase/Analytics'
   pod 'SwiftyJSON'
+  pod 'Charts'
 end

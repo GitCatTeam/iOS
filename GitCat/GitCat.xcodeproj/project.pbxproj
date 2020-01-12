@@ -18,6 +18,7 @@
 		4C68D12523B0A5EC00A8F813 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C68D12423B0A5EC00A8F813 /* SignIn.storyboard */; };
 		4C68D12C23B0AAB100A8F813 /* BasicExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68D12B23B0AAB100A8F813 /* BasicExtension.swift */; };
 		4C68D13523B0D02400A8F813 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68D13423B0D02400A8F813 /* SignInVC.swift */; };
+		4C8C9E6923CB574600E160B1 /* ReportDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C9E6823CB574600E160B1 /* ReportDetailVC.swift */; };
 		4C9E8E8323C05564002BDE02 /* LittleRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E8E8223C05564002BDE02 /* LittleRoundView.swift */; };
 		4C9E8E8523C0ECEE002BDE02 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C9E8E8423C0ECEE002BDE02 /* GoogleService-Info.plist */; };
 		4C9E8E8B23C1BF49002BDE02 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E8E8A23C1BF49002BDE02 /* AuthService.swift */; };
@@ -37,13 +38,15 @@
 		4CC07FBF23B330A600851B45 /* LittleRoundBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC07FBE23B330A600851B45 /* LittleRoundBtn.swift */; };
 		4CC07FC123B35A7300851B45 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC07FC023B35A7300851B45 /* RoundImageView.swift */; };
 		4CC07FC523B35BA400851B45 /* GetMoreInfo4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC07FC423B35BA400851B45 /* GetMoreInfo4VC.swift */; };
+		4CC7D9B923C63BD5004576BB /* ReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D9B823C63BD5004576BB /* ReportVC.swift */; };
+		4CC7D9BE23C64722004576BB /* ReportCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D9BD23C64722004576BB /* ReportCVCell.swift */; };
 		4CD5A5D023C2F45E00A8E225 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5A5CF23C2F45E00A8E225 /* CustomLabel.swift */; };
 		4CD5A5DB23C2FD7F00A8E225 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5A5DA23C2FD7F00A8E225 /* Key.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4C1035A523B8FEC60057F0B1 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		4C1035A723B907F50057F0B1 /* 나눔손글씨 배은혜체.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "나눔손글씨 배은혜체.ttf"; sourceTree = "<group>"; };
+		4C1035A723B907F50057F0B1 /* 나눔손글씨 배은혜체.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "나눔손글씨 배은혜체.ttf"; path = "GitCat/Resources/Fonts/나눔손글씨 배은혜체.ttf"; sourceTree = SOURCE_ROOT; };
 		4C1035AB23B9D1430057F0B1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		4C4A923123BA2476002E5F35 /* MidRepoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidRepoVC.swift; sourceTree = "<group>"; };
 		4C68D10223B09D3E00A8F813 /* GitCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +57,7 @@
 		4C68D12423B0A5EC00A8F813 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		4C68D12B23B0AAB100A8F813 /* BasicExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicExtension.swift; sourceTree = "<group>"; };
 		4C68D13423B0D02400A8F813 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		4C8C9E6823CB574600E160B1 /* ReportDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailVC.swift; sourceTree = "<group>"; };
 		4C9E8E8223C05564002BDE02 /* LittleRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleRoundView.swift; sourceTree = "<group>"; };
 		4C9E8E8423C0ECEE002BDE02 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C9E8E8A23C1BF49002BDE02 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -64,15 +68,17 @@
 		4CC07F9223B0F28100851B45 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		4CC07F9423B1165200851B45 /* GetMoreInfo1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMoreInfo1VC.swift; sourceTree = "<group>"; };
 		4CC07F9E23B2452700851B45 /* GetMoreInfo2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMoreInfo2VC.swift; sourceTree = "<group>"; };
-		4CC07FAC23B314A200851B45 /* 20958984_UTOIMAGE_유토이미지고딕_R_OTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "20958984_UTOIMAGE_유토이미지고딕_R_OTF.otf"; sourceTree = "<group>"; };
-		4CC07FAD23B314A200851B45 /* 20958982_UTOIMAGE_유토이미지고딕_L_OTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "20958982_UTOIMAGE_유토이미지고딕_L_OTF.otf"; sourceTree = "<group>"; };
-		4CC07FAE23B314A200851B45 /* 20958980_UTOIMAGE_유토이미지고딕_B_OTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "20958980_UTOIMAGE_유토이미지고딕_B_OTF.otf"; sourceTree = "<group>"; };
+		4CC07FAC23B314A200851B45 /* 20958984_UTOIMAGE_유토이미지고딕_R_OTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "20958984_UTOIMAGE_유토이미지고딕_R_OTF.otf"; path = "GitCat/Resources/Fonts/20958984_UTOIMAGE_유토이미지고딕_R_OTF.otf"; sourceTree = SOURCE_ROOT; };
+		4CC07FAD23B314A200851B45 /* 20958982_UTOIMAGE_유토이미지고딕_L_OTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "20958982_UTOIMAGE_유토이미지고딕_L_OTF.otf"; path = "GitCat/Resources/Fonts/20958982_UTOIMAGE_유토이미지고딕_L_OTF.otf"; sourceTree = SOURCE_ROOT; };
+		4CC07FAE23B314A200851B45 /* 20958980_UTOIMAGE_유토이미지고딕_B_OTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "20958980_UTOIMAGE_유토이미지고딕_B_OTF.otf"; path = "GitCat/Resources/Fonts/20958980_UTOIMAGE_유토이미지고딕_B_OTF.otf"; sourceTree = SOURCE_ROOT; };
 		4CC07FB423B317CA00851B45 /* RoundBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundBtn.swift; sourceTree = "<group>"; };
 		4CC07FB623B31A2C00851B45 /* VCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCExtension.swift; sourceTree = "<group>"; };
 		4CC07FBA23B3238C00851B45 /* GetMoreInfo3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMoreInfo3VC.swift; sourceTree = "<group>"; };
 		4CC07FBE23B330A600851B45 /* LittleRoundBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleRoundBtn.swift; sourceTree = "<group>"; };
 		4CC07FC023B35A7300851B45 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		4CC07FC423B35BA400851B45 /* GetMoreInfo4VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMoreInfo4VC.swift; sourceTree = "<group>"; };
+		4CC7D9B823C63BD5004576BB /* ReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportVC.swift; sourceTree = "<group>"; };
+		4CC7D9BD23C64722004576BB /* ReportCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCVCell.swift; sourceTree = "<group>"; };
 		4CD5A5CF23C2F45E00A8E225 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		4CD5A5DA23C2FD7F00A8E225 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		7467F6BE814B831147F82671 /* Pods-GitCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitCat.debug.xcconfig"; path = "Target Support Files/Pods-GitCat/Pods-GitCat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +109,7 @@
 		4C0BAD8423BB083000A419A8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				4CC7D9BA23C63BF4004576BB /* View */,
 				4CD5A5D923C2FCEA00A8E225 /* VC */,
 				4CD5A5D823C2FCD400A8E225 /* storyboard */,
 			);
@@ -204,6 +211,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		4CC7D9BA23C63BF4004576BB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4CC7D9BD23C64722004576BB /* ReportCVCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4CD5A5D123C2FB5500A8E225 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +296,8 @@
 			children = (
 				4C1035AB23B9D1430057F0B1 /* HomeVC.swift */,
 				4C4A923123BA2476002E5F35 /* MidRepoVC.swift */,
+				4CC7D9B823C63BD5004576BB /* ReportVC.swift */,
+				4C8C9E6823CB574600E160B1 /* ReportDetailVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -417,6 +434,7 @@
 			files = (
 				4CC07FBF23B330A600851B45 /* LittleRoundBtn.swift in Sources */,
 				4C1035AC23B9D1430057F0B1 /* HomeVC.swift in Sources */,
+				4CC7D9BE23C64722004576BB /* ReportCVCell.swift in Sources */,
 				4CC07FB723B31A2C00851B45 /* VCExtension.swift in Sources */,
 				4C68D10623B09D3E00A8F813 /* AppDelegate.swift in Sources */,
 				4C4A923223BA2476002E5F35 /* MidRepoVC.swift in Sources */,
@@ -427,10 +445,12 @@
 				4CC07FC123B35A7300851B45 /* RoundImageView.swift in Sources */,
 				4CC07FC523B35BA400851B45 /* GetMoreInfo4VC.swift in Sources */,
 				4CC07FBB23B3238C00851B45 /* GetMoreInfo3VC.swift in Sources */,
+				4C8C9E6923CB574600E160B1 /* ReportDetailVC.swift in Sources */,
 				4CD5A5D023C2F45E00A8E225 /* CustomLabel.swift in Sources */,
 				4CD5A5DB23C2FD7F00A8E225 /* Key.swift in Sources */,
 				4C68D12C23B0AAB100A8F813 /* BasicExtension.swift in Sources */,
 				4C68D13523B0D02400A8F813 /* SignInVC.swift in Sources */,
+				4CC7D9B923C63BD5004576BB /* ReportVC.swift in Sources */,
 				4C9E8EAE23C1F427002BDE02 /* Requestable.swift in Sources */,
 				4C9E8E8E23C1C366002BDE02 /* Token.swift in Sources */,
 				4CC07FB523B317CA00851B45 /* RoundBtn.swift in Sources */,

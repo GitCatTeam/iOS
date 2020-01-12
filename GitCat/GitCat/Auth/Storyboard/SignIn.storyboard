@@ -80,7 +80,7 @@
                                     <constraint firstAttribute="width" constant="206" id="bUW-wb-bof"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lp5-sC-Qdv" customClass="RoundBtn" customModule="GitCat" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lp5-sC-Qdv" customClass="RoundBtn" customModule="GitCat" customModuleProvider="target">
                                 <rect key="frame" x="85" y="615.5" width="244" height="39.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="244" id="KPi-h0-R4u"/>
@@ -90,14 +90,6 @@
                                 <state key="normal" title="Github 계정으로 시작하기">
                                     <color key="titleColor" name="skyBlue"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" cocoaTouchSystemColor="darkTextColor"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signInTouchDownAction:" destination="hAP-WK-8RI" eventType="touchDown" id="rXQ-WN-eWt"/>
                                     <action selector="signInTouchUpAction:" destination="hAP-WK-8RI" eventType="touchUpInside" id="iWg-dD-r9I"/>
@@ -565,7 +557,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="i7o-So-JfD">
                                 <rect key="frame" x="62" y="214" width="290" height="290"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0aq-ww-fZH">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0aq-ww-fZH">
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="140"/>
                                         <subviews>
                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="yTz-Xm-oO5" customClass="LittleRoundView" customModule="GitCat" customModuleProvider="target">
