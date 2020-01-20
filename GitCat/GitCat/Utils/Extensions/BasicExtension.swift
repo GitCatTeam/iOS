@@ -35,7 +35,7 @@ extension UIView {
     
     //뷰 테두리 설정
     func addBorder(_ mask: CAShapeLayer, borderWidth: CGFloat, borderColor: UIColor) {
-
+        self.layer.masksToBounds = true
         let borderLayer = CAShapeLayer()
         borderLayer.path = mask.path
         borderLayer.fillColor = UIColor.clear.cgColor

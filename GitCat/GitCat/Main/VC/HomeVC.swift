@@ -14,7 +14,8 @@ class HomeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        catChatLabel.setLineHeight(lineHeight: 0.8)
+        self.setNavigationBar()
+         catChatLabel.setLineHeight(lineHeight: 0.8)
 
 
         // Do any additional setup after loading the view.

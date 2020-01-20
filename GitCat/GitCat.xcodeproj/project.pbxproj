@@ -22,6 +22,8 @@
 		4C7C0E1123D4A11400669B38 /* CustomHeaderTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E1023D4A11400669B38 /* CustomHeaderTVCell.swift */; };
 		4C7C0E1323D4AB0100669B38 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E1223D4AB0100669B38 /* AlarmVC.swift */; };
 		4C7C0E1523D5650D00669B38 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E1423D5650D00669B38 /* MainTabBarVC.swift */; };
+		4C7C0E1723D587CF00669B38 /* CatCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E1623D587CF00669B38 /* CatCollectionVC.swift */; };
+		4C7C0E1923D59D2B00669B38 /* CatCollectionCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E1823D59D2B00669B38 /* CatCollectionCVCell.swift */; };
 		4C8C9E6923CB574600E160B1 /* ReportDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C9E6823CB574600E160B1 /* ReportDetailVC.swift */; };
 		4C9E8E8323C05564002BDE02 /* LittleRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E8E8223C05564002BDE02 /* LittleRoundView.swift */; };
 		4C9E8E8523C0ECEE002BDE02 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C9E8E8423C0ECEE002BDE02 /* GoogleService-Info.plist */; };
@@ -65,6 +67,8 @@
 		4C7C0E1023D4A11400669B38 /* CustomHeaderTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderTVCell.swift; sourceTree = "<group>"; };
 		4C7C0E1223D4AB0100669B38 /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
 		4C7C0E1423D5650D00669B38 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
+		4C7C0E1623D587CF00669B38 /* CatCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCollectionVC.swift; sourceTree = "<group>"; };
+		4C7C0E1823D59D2B00669B38 /* CatCollectionCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCollectionCVCell.swift; sourceTree = "<group>"; };
 		4C8C9E6823CB574600E160B1 /* ReportDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailVC.swift; sourceTree = "<group>"; };
 		4C9E8E8223C05564002BDE02 /* LittleRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleRoundView.swift; sourceTree = "<group>"; };
 		4C9E8E8423C0ECEE002BDE02 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -225,6 +229,7 @@
 				4CC7D9BD23C64722004576BB /* ReportCVCell.swift */,
 				4C7C0E0A23D489DA00669B38 /* CommitDetailTVCell.swift */,
 				4C7C0E1023D4A11400669B38 /* CustomHeaderTVCell.swift */,
+				4C7C0E1823D59D2B00669B38 /* CatCollectionCVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 				4C8C9E6823CB574600E160B1 /* ReportDetailVC.swift */,
 				4C7C0E1223D4AB0100669B38 /* AlarmVC.swift */,
 				4C7C0E1423D5650D00669B38 /* MainTabBarVC.swift */,
+				4C7C0E1623D587CF00669B38 /* CatCollectionVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -447,6 +453,7 @@
 				4CC07FBF23B330A600851B45 /* LittleRoundBtn.swift in Sources */,
 				4C1035AC23B9D1430057F0B1 /* HomeVC.swift in Sources */,
 				4CC7D9BE23C64722004576BB /* ReportCVCell.swift in Sources */,
+				4C7C0E1923D59D2B00669B38 /* CatCollectionCVCell.swift in Sources */,
 				4CC07FB723B31A2C00851B45 /* VCExtension.swift in Sources */,
 				4C68D10623B09D3E00A8F813 /* AppDelegate.swift in Sources */,
 				4C4A923223BA2476002E5F35 /* MidRepoVC.swift in Sources */,
@@ -457,6 +464,7 @@
 				4CC07F9323B0F28100851B45 /* RoundView.swift in Sources */,
 				4CC07FC123B35A7300851B45 /* RoundImageView.swift in Sources */,
 				4CC07FC523B35BA400851B45 /* GetMoreInfo4VC.swift in Sources */,
+				4C7C0E1723D587CF00669B38 /* CatCollectionVC.swift in Sources */,
 				4C7C0E1523D5650D00669B38 /* MainTabBarVC.swift in Sources */,
 				4CC07FBB23B3238C00851B45 /* GetMoreInfo3VC.swift in Sources */,
 				4C7C0E1323D4AB0100669B38 /* AlarmVC.swift in Sources */,

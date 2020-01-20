@@ -16,7 +16,16 @@ class ReportCVCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.layer.borderWidth = 1.0
+        
+        self.layer.borderColor = UIColor.clear.cgColor
         self.layer.cornerRadius = 8
+        
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 1, height: 1)
+        self.layer.shadowRadius = 3
+        self.layer.shadowOpacity = 0.12
+        self.layer.masksToBounds = false
         
     }
     
