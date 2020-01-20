@@ -20,6 +20,8 @@
 		4C68D13523B0D02400A8F813 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68D13423B0D02400A8F813 /* SignInVC.swift */; };
 		4C7C0E0B23D489DA00669B38 /* CommitDetailTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E0A23D489DA00669B38 /* CommitDetailTVCell.swift */; };
 		4C7C0E1123D4A11400669B38 /* CustomHeaderTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E1023D4A11400669B38 /* CustomHeaderTVCell.swift */; };
+		4C7C0E1323D4AB0100669B38 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E1223D4AB0100669B38 /* AlarmVC.swift */; };
+		4C7C0E1523D5650D00669B38 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E1423D5650D00669B38 /* MainTabBarVC.swift */; };
 		4C8C9E6923CB574600E160B1 /* ReportDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C9E6823CB574600E160B1 /* ReportDetailVC.swift */; };
 		4C9E8E8323C05564002BDE02 /* LittleRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E8E8223C05564002BDE02 /* LittleRoundView.swift */; };
 		4C9E8E8523C0ECEE002BDE02 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C9E8E8423C0ECEE002BDE02 /* GoogleService-Info.plist */; };
@@ -61,6 +63,8 @@
 		4C68D13423B0D02400A8F813 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		4C7C0E0A23D489DA00669B38 /* CommitDetailTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitDetailTVCell.swift; sourceTree = "<group>"; };
 		4C7C0E1023D4A11400669B38 /* CustomHeaderTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderTVCell.swift; sourceTree = "<group>"; };
+		4C7C0E1223D4AB0100669B38 /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
+		4C7C0E1423D5650D00669B38 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
 		4C8C9E6823CB574600E160B1 /* ReportDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailVC.swift; sourceTree = "<group>"; };
 		4C9E8E8223C05564002BDE02 /* LittleRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleRoundView.swift; sourceTree = "<group>"; };
 		4C9E8E8423C0ECEE002BDE02 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -304,6 +308,8 @@
 				4C4A923123BA2476002E5F35 /* MidRepoVC.swift */,
 				4CC7D9B823C63BD5004576BB /* ReportVC.swift */,
 				4C8C9E6823CB574600E160B1 /* ReportDetailVC.swift */,
+				4C7C0E1223D4AB0100669B38 /* AlarmVC.swift */,
+				4C7C0E1423D5650D00669B38 /* MainTabBarVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -451,7 +457,9 @@
 				4CC07F9323B0F28100851B45 /* RoundView.swift in Sources */,
 				4CC07FC123B35A7300851B45 /* RoundImageView.swift in Sources */,
 				4CC07FC523B35BA400851B45 /* GetMoreInfo4VC.swift in Sources */,
+				4C7C0E1523D5650D00669B38 /* MainTabBarVC.swift in Sources */,
 				4CC07FBB23B3238C00851B45 /* GetMoreInfo3VC.swift in Sources */,
+				4C7C0E1323D4AB0100669B38 /* AlarmVC.swift in Sources */,
 				4C8C9E6923CB574600E160B1 /* ReportDetailVC.swift in Sources */,
 				4CD5A5D023C2F45E00A8E225 /* CustomLabel.swift in Sources */,
 				4CD5A5DB23C2FD7F00A8E225 /* Key.swift in Sources */,

@@ -28,12 +28,16 @@ class GetMoreInfo1VC: UIViewController {
     @IBOutlet weak var birthDatePicker: UIDatePicker!
     @IBOutlet weak var pageCntLabel: UILabel!
     
+    
     var clickBtnCnt = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         clickBtnCnt = 0
         
+        
         setBackBtn(color: UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1))
+        
+        userProfileImageView.circleImageView()
         setButtonSelect()
         setButtonColor()
         nextBtn.addShadow()

@@ -148,15 +148,15 @@
                                 <color key="textColor" name="brownishGrey"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FCh-Gy-juI">
-                                <rect key="frame" x="138" y="210.5" width="138" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyProfile" translatesAutoresizingMaskIntoConstraints="NO" id="FCh-Gy-juI">
+                                <rect key="frame" x="138" y="210.5" width="138" height="138"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="C1I-ne-V2o"/>
+                                    <constraint firstAttribute="height" constant="138" id="C1I-ne-V2o"/>
                                     <constraint firstAttribute="width" constant="138" id="ExT-nV-AKm"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="LHI-AX-Hmf">
-                                <rect key="frame" x="108" y="362.5" width="198" height="32"/>
+                                <rect key="frame" x="108" y="372.5" width="198" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yoon980208@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9R-a0-QRY">
                                         <rect key="frame" x="0.0" y="0.0" width="198" height="18"/>
@@ -182,7 +182,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별을 알려주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gra-sp-UqE">
-                                <rect key="frame" x="148.5" y="454" width="117" height="16"/>
+                                <rect key="frame" x="148.5" y="464" width="117" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="117" id="7F0-yM-Ra6"/>
                                     <constraint firstAttribute="height" constant="16" id="uzz-w0-3DT"/>
@@ -192,7 +192,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NYl-0F-LLd">
-                                <rect key="frame" x="92.5" y="494" width="229" height="64"/>
+                                <rect key="frame" x="92.5" y="504" width="229" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wy-9J-ewu" customClass="RoundBtn" customModule="GitCat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="63" height="64"/>
@@ -246,7 +246,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fp3-pL-fea" customClass="RoundBtn" customModule="GitCat" customModuleProvider="target">
-                                <rect key="frame" x="139" y="645.5" width="136" height="40"/>
+                                <rect key="frame" x="139" y="655.5" width="136" height="40"/>
                                 <color key="backgroundColor" red="0.85504454374313354" green="0.85853070020675659" blue="0.87451320886611938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1Yp-nE-NBT"/>
@@ -260,13 +260,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsr-GM-W1K">
-                                <rect key="frame" x="198.5" y="702.5" width="17.5" height="14"/>
+                                <rect key="frame" x="198.5" y="712.5" width="17.5" height="14"/>
                                 <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="12"/>
                                 <color key="textColor" name="brownishGrey"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker alpha="0.0" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="66N-OR-JfD">
-                                <rect key="frame" x="47" y="480" width="320" height="114"/>
+                                <rect key="frame" x="47" y="490" width="320" height="114"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="skyBlue"/>
                                 <constraints>
@@ -563,7 +563,7 @@
                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="yTz-Xm-oO5" customClass="LittleRoundView" customModule="GitCat" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgCatNormal" translatesAutoresizingMaskIntoConstraints="NO" id="gnC-3J-0sj">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgCatPanda" translatesAutoresizingMaskIntoConstraints="NO" id="gnC-3J-0sj">
                                                         <rect key="frame" x="12" y="12" width="116" height="116"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="116" id="ZAQ-zw-2Ju"/>
@@ -612,7 +612,7 @@
                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="zvG-Sx-Xb8" customClass="LittleRoundView" customModule="GitCat" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgCatNormal" translatesAutoresizingMaskIntoConstraints="NO" id="Ewy-aR-Hwd">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgCatCheeze" translatesAutoresizingMaskIntoConstraints="NO" id="Ewy-aR-Hwd">
                                                         <rect key="frame" x="12" y="12" width="116" height="116"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="116" id="Gdk-wx-LVk"/>
@@ -632,7 +632,7 @@
                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="amy-zB-xDt" customClass="LittleRoundView" customModule="GitCat" customModuleProvider="target">
                                                 <rect key="frame" x="150" y="0.0" width="140" height="140"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgCatNormal" translatesAutoresizingMaskIntoConstraints="NO" id="h0D-ut-Um4">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgCatNero" translatesAutoresizingMaskIntoConstraints="NO" id="h0D-ut-Um4">
                                                         <rect key="frame" x="12" y="12" width="116" height="116"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="116" id="WW0-gp-uF4"/>
@@ -734,7 +734,11 @@
     </scenes>
     <resources>
         <image name="appTitle2" width="214" height="72"/>
+        <image name="dummyProfile" width="720" height="961"/>
+        <image name="imgCatCheeze" width="116" height="116"/>
+        <image name="imgCatNero" width="116" height="116"/>
         <image name="imgCatNormal" width="116" height="116"/>
+        <image name="imgCatPanda" width="116" height="116"/>
         <image name="signInCat" width="310" height="232"/>
         <namedColor name="brownishGrey">
             <color red="0.3919999897480011" green="0.3919999897480011" blue="0.3919999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

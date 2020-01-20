@@ -24,8 +24,8 @@ class MidRepoVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSC
     let headerIdentifier:String = "CustomHeaderTVcell";
     
     var somedays : Array = [String]()
-    var repositoryNameDummy: [String] = ["respository1","respository2","respository3"]
-    var commitDummy: [String] = ["commit1","commit2","commit3","commit4","commit5","commit1","commit2","commit3","commit4","commit5"]
+    var repositoryNameDummy: [String] = ["GitCat","카멜레On","이게뭐약"]
+    var commitDummy: [String] = ["[UPDATE]레포트 화면 스크롤 동작 추가","[UPDATE]라인차트 추가","[UPDATE]설정 화면 추가","[UPDATE]Github 연동 로그인 기능 추가","[UPDATE]파이차트 추가[UPDATE]백 버튼 커스텀 적[UPDATE]달력 커스텀 적용","[UPDATE]홈화면 탭바 반영","[UPDATE]앱 아이콘 적용","[UPDATE]gitignore 수정","[UPDATE]애니메이션 추가"]
 
     
     
@@ -64,7 +64,7 @@ class MidRepoVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSC
         self.calendar.select(Date())
         self.view.addGestureRecognizer(self.scopeGesture)
         self.tableView.panGestureRecognizer.require(toFail: self.scopeGesture)
-        self.calendar.scope = .week
+        self.calendar.scope = .month
         
         self.calendar.accessibilityIdentifier = "calendar"
         
@@ -113,7 +113,7 @@ class MidRepoVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSC
     }
     
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, borderDefaultColorFor date: Date) -> UIColor? {
-        somedays = ["2020-01-01"]
+        somedays = ["2020-01-20"]
         let dateString : String =  formatter.string(from: date)
         if self.somedays.contains(dateString) {
             return UIColor.CustomColor.skyBlue

@@ -1,0 +1,41 @@
+//
+//  AlarmVC.swift
+//  GitCat
+//
+//  Created by 조윤영 on 20/01/2020.
+//  Copyright © 2020 조윤영. All rights reserved.
+//
+
+import UIKit
+
+class AlarmVC: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setBackBtn(color: UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1))
+    }
+    @IBAction func selectAlarmSystemAction(_ sender: Any) {
+        let bellModeAction = UIAlertAction(title: "벨소리", style: .default) { (action) in
+            print("벨소리 선택")
+        }
+        let silentModeAction = UIAlertAction(title: "진동", style: .default) { (action) in
+            print("진동 선택")
+        }
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
+            print("취소")
+        }
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+        
+        alert.addAction(bellModeAction)
+        alert.addAction(silentModeAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated:true){
+            //함수가 성공적으로 수행된 후 작동되는 code
+        }
+        
+    }
+    
+
+}
