@@ -10,6 +10,16 @@ import Foundation
 import UIKit
 
 extension UIViewController {
+    
+    //네트워크 에러 팝업
+    func networkErrorAlert() {
+        
+        let alert = UIAlertController(title: "네트워크 오류", message: "네트워크 상태를 확인해주세요", preferredStyle: .alert)
+        alert.view.tintColor = UIColor.CustomColor.skyBlue
+        let okAction = UIAlertAction(title: "확인",style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
     //Toast
     func showToast(controller: UIViewController, message : String, seconds: Double) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)

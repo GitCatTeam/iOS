@@ -9,7 +9,6 @@
 import Foundation
 
 struct SignInCodeData: Codable {
-    
-    var code:String?
-
+    var message:String?
+    var data:String?
 }

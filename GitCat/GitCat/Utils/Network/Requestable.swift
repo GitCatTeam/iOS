@@ -9,29 +9,59 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
-protocol Requestable {}
+protocol Requestable {
+    associatedtype NetworkData : Codable
+    typealias networkResult = (resCode: Int, resResult: NetworkData)
+    func get(_ URL: String, method: HTTPMethod, completion: @escaping (Result<networkResult>) -> Void)
+}
 
 extension Requestable {
     
-    func getable<T: Codable>(url: String, type: T.Type, body: [String:Any]?, header: HTTPHeaders?, completion: @escaping (T?, Error?) -> Void) {
-        Alamofire.request(url, method: .get, parameters: body, encoding: JSONEncoding.default, headers: header)
-            .responseJSON {
-                response in
-                switch response.result {
+    func gino(_ value : Int?) -> Int {
+        return value ?? 0
+    }
+    
+    func getable(_ URL: String, method: HTTPMethod = .get, completion: @escaping (Result<networkResult>) -> Void) {
+        
+        guard let encodedUrl = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            print("Networking - invalid URL")
+            return
+        }
+        
+        print("URL은 \(encodedUrl)")
+        
+        Alamofire.request(encodedUrl, method: method, parameters: nil, headers: nil)
+            .responseData {
+                res in
+                switch res.result {
                 case .success:
-                    if let data = response.data {
+                    if let value = res.result.value {
+                        print("Networking Get Here!")
+                        print(JSON(value))
+                        
+                        let responseCode = self.gino(res.response?.statusCode)
+                        print(responseCode)
+                        
+                        let decoder = JSONDecoder()
+                        
                         do {
-                            let result = try JSONDecoder().decode(T.self, from: data)
+                            print("[해당 API에 접근 성공]")
+                            let data = try decoder.decode(NetworkData.self, from: value)
                             
-                            completion(result, nil)
+                            let result: networkResult = (responseCode, data)
+                            completion(.success(result))
+                            
                         } catch (let error) {
-                            print("catch: \(error.localizedDescription)")
+                            print("catch GET: \(error.localizedDescription)")
+                            completion(.error("\(responseCode)"))
                         }
                     }
+                    break
                 case .failure(let error):
                     print("failure: \(error.localizedDescription)")
-                    completion(nil, error)
+                    completion(.failure(error))
                 }
         }
     }

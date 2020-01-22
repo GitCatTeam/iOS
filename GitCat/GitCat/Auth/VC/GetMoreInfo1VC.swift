@@ -82,7 +82,7 @@ class GetMoreInfo1VC: UIViewController {
             femaleBtn.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
             
             maleBtn.isSelected = false;
-            maleBtn.layer.borderColor = UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255).cgColor
+            maleBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             otherBtn.isSelected = false;
             otherBtn.layer.borderColor = UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255).cgColor
             
