@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GetMoreInfo4VC: UIViewController, UITextFieldDelegate {
+class GetMoreInfo4VC: UIViewController {
     var keyboardHeight: CGFloat = 0.0
     
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
@@ -32,8 +32,6 @@ class GetMoreInfo4VC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var catNameUnderBar: UIView!
     
     
-    
-    
     @IBOutlet weak var nextMove4Btn: RoundBtn!
     
     @IBOutlet weak var nameTextField: UITextField!
@@ -44,39 +42,55 @@ class GetMoreInfo4VC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextMove4Btn.isEnabled = false
         
         setBackBtn(color: UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1))
         nextMove4Btn.addShadow()
 
+        setBorderColor()
+        
+        initAlpha()
+        
+        animateView()
+        
+        setUserInteration()
+    }
+    
+    
+    @IBAction func nameFieldEditingChangedAction(_ sender: Any) {
+        if catNameTextField.text!.isEmpty {
+            nextMove4Btn.isEnabled = false
+            nextMove4Btn.backgroundColor = UIColor(red: 220/255, green: 221/255, blue: 225/255, alpha: 1)
+        }else{
+            nextMove4Btn.isEnabled = true
+            nextMove4Btn.backgroundColor = UIColor.CustomColor.skyBlue
+        }
+    }
+    
+    
+    @IBAction func startTouchDownAction(_ sender: UIButton) {
+        sender.backgroundColor = UIColor.CustomColor.skyBlue
+    }
+    
+    
+    @IBAction func startTouchUpAction(_ sender: UIButton) {
+        
+        sender.backgroundColor = UIColor(red: 220/255, green: 221/255, blue: 225/255, alpha: 1)
+        let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainTabC") 
+        
+        dvc.modalPresentationStyle = .fullScreen
+        
+        self.present(dvc, animated: true, completion: nil)
+    }
+    
+    /**
+     구현 함수
+     */
+    func setBorderColor() {
         firstCatView.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
         secondCatView.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
         thirdCatView.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
         fourthCatView.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
-        
-        initAlpha()
-        
-        UIView.animate(withDuration: 0.5, delay: 0.5,animations: ({
-            self.mainTitle.alpha = 1
-            self.subTitle.alpha = 1
-            self.selectCatStackView.alpha = 1
-            
-        }))
-        
-        firstCatImageView.isUserInteractionEnabled = true
-        let tapGestureRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(GetMoreInfo4VC.imageTapped1(img:)))
-        firstCatImageView.addGestureRecognizer(tapGestureRecognizer1)
-        
-        secondCatImageView.isUserInteractionEnabled = true
-        let tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(GetMoreInfo4VC.imageTapped2(img:)))
-        secondCatImageView.addGestureRecognizer(tapGestureRecognizer2)
-        
-        thirdCatImageView.isUserInteractionEnabled = true
-        let tapGestureRecognizer3 = UITapGestureRecognizer(target: self, action: #selector(GetMoreInfo4VC.imageTapped3(img:)))
-        thirdCatImageView.addGestureRecognizer(tapGestureRecognizer3)
-        
-        fourthCatImageView.isUserInteractionEnabled = true
-        let tapGestureRecognizer4 = UITapGestureRecognizer(target: self, action: #selector(GetMoreInfo4VC.imageTapped4(img:)))
-        fourthCatImageView.addGestureRecognizer(tapGestureRecognizer4)
     }
     
     func initAlpha() {
@@ -139,40 +153,31 @@ class GetMoreInfo4VC: UIViewController, UITextFieldDelegate {
             
         }))
     }
-    
-    @IBAction func nameFieldEditingChangedAction(_ sender: Any) {
-        if catNameTextField.text!.isEmpty {
-            nextMove4Btn.isEnabled = false
-            nextMove4Btn.backgroundColor = UIColor(red: 220/255, green: 221/255, blue: 225/255, alpha: 1)
-        }else{
-            nextMove4Btn.isEnabled = true
-            nextMove4Btn.backgroundColor = UIColor.CustomColor.skyBlue
-        }
+    func animateView() {
+        UIView.animate(withDuration: 0.5, delay: 0.5,animations: ({
+            self.mainTitle.alpha = 1
+            self.subTitle.alpha = 1
+            self.selectCatStackView.alpha = 1
+            
+        }))
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-         let currentCharacterCount = textField.text?.count ?? 0
-           if range.length + range.location > currentCharacterCount {
-               return false
-           }
-           let newLength = currentCharacterCount + string.count - range.length
-           return newLength <= 5
-    }
-    
-    
-    @IBAction func startTouchDownAction(_ sender: UIButton) {
-        sender.backgroundColor = UIColor.CustomColor.skyBlue
-    }
-    
-    
-    @IBAction func startTouchUpAction(_ sender: UIButton) {
+    func setUserInteration() {
+        firstCatImageView.isUserInteractionEnabled = true
+        let tapGestureRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(GetMoreInfo4VC.imageTapped1(img:)))
+        firstCatImageView.addGestureRecognizer(tapGestureRecognizer1)
         
-        sender.backgroundColor = UIColor(red: 220/255, green: 221/255, blue: 225/255, alpha: 1)
-        let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainTabC") 
+        secondCatImageView.isUserInteractionEnabled = true
+        let tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(GetMoreInfo4VC.imageTapped2(img:)))
+        secondCatImageView.addGestureRecognizer(tapGestureRecognizer2)
         
-        dvc.modalPresentationStyle = .fullScreen
+        thirdCatImageView.isUserInteractionEnabled = true
+        let tapGestureRecognizer3 = UITapGestureRecognizer(target: self, action: #selector(GetMoreInfo4VC.imageTapped3(img:)))
+        thirdCatImageView.addGestureRecognizer(tapGestureRecognizer3)
         
-        self.present(dvc, animated: true, completion: nil)
+        fourthCatImageView.isUserInteractionEnabled = true
+        let tapGestureRecognizer4 = UITapGestureRecognizer(target: self, action: #selector(GetMoreInfo4VC.imageTapped4(img:)))
+        fourthCatImageView.addGestureRecognizer(tapGestureRecognizer4)
     }
     
     
@@ -230,5 +235,18 @@ class GetMoreInfo4VC: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    
 
+}
+
+extension GetMoreInfo4VC: UITextFieldDelegate{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+         let currentCharacterCount = textField.text?.count ?? 0
+           if range.length + range.location > currentCharacterCount {
+               return false
+           }
+           let newLength = currentCharacterCount + string.count - range.length
+           return newLength <= 5
+    }
 }

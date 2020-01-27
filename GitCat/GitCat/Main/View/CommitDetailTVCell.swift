@@ -15,15 +15,15 @@ class CommitDetailTVCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.circleView.layer.borderWidth = 1
         self.circleView.circleRadius()
-        
+        self.circleView.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
 }

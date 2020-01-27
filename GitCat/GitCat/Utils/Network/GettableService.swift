@@ -10,9 +10,10 @@ import Alamofire
 import SwiftyJSON
 
 protocol GettableService {
+    
     associatedtype NetworkData : Codable
     typealias networkResult = (resCode: Int, resResult: NetworkData)
-    func gettable(_ URL: String, method: HTTPMethod, completion: @escaping (Result<(resCode: Int, resResult: SignInCodeData)>) -> Void)
+    func gettable(_ URL: String, method: HTTPMethod, completion: @escaping (Result<networkResult>) -> Void)
 }
 
 extension GettableService {
@@ -21,7 +22,7 @@ extension GettableService {
         return value ?? 0
     }
     
-    func gettable(_ URL: String, method: HTTPMethod = .get, completion: @escaping (Result<networkResult>) -> Void) {
+    func gettable(_ URL: String, method:HTTPMethod = .get, completion: @escaping (Result<networkResult>) -> Void) {
         
         guard let encodedUrl = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             print("Networking - invalid URL")

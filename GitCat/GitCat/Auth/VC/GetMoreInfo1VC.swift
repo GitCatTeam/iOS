@@ -32,10 +32,9 @@ class GetMoreInfo1VC: UIViewController {
     var clickBtnCnt = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         clickBtnCnt = 0
-        
-        
-        setBackBtn(color: UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1))
         
         userProfileImageView.circleImageView()
         setButtonSelect()
@@ -43,34 +42,13 @@ class GetMoreInfo1VC: UIViewController {
         nextBtn.addShadow()
         
         initAlpha()
-    birthDatePicker.setValue(UIColor.CustomColor.skyBlue, forKey: "textColor")
+        animateView()
         
-        UIView.animate(withDuration: 0.5, delay: 0.5,animations: ({
-            self.BigTitle.alpha = 1
-            self.subTitle.alpha = 1
-            self.userProfileImageView.alpha = 1
-            self.userEmailLabel.alpha = 1
-            self.userEmailUnderBarView.alpha = 1
-        }))
-        UIView.animate(withDuration: 0.5, delay: 1.0, animations: ({
-            self.sexLabel.alpha = 1
-            self.sexStackView.alpha = 1
-            
-        }))
+        setBackBtn(color: UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1))
+        birthDatePicker.setValue(UIColor.CustomColor.skyBlue, forKey: "textColor")
+        
         nextBtn.isEnabled = false
-    }
-
-    func initAlpha() {
-        self.BigTitle.alpha = 0
-        self.subTitle.alpha = 0
-        self.userProfileImageView.alpha = 0
-        self.userEmailLabel.alpha = 0
-        self.userEmailUnderBarView.alpha = 0
-               
-        self.sexLabel.alpha = 0
-        self.sexStackView.alpha = 0
         
-        self.birthDatePicker.alpha = 0
     }
     
     @IBAction func selectGenderAction(_ sender: UIButton) {
@@ -116,7 +94,7 @@ class GetMoreInfo1VC: UIViewController {
     @IBAction func moveNextTouchUpAction(_ sender: UIButton) {
         
         clickBtnCnt+=1
-//        sender.backgroundColor = UIColor(red: 220/255, green: 221/255, blue: 225/255, alpha: 1)
+
         if(clickBtnCnt == 1) {
             
             UIView.animate(withDuration: 0.5, animations: ({
@@ -138,9 +116,39 @@ class GetMoreInfo1VC: UIViewController {
         }
     }
     
-    /*----------------------------------------------*/
-    /*구현 함수*/
-    /*----------------------------------------------*/
+    
+    /**
+    구현 함수
+    **/
+    func initAlpha() {
+           self.BigTitle.alpha = 0
+           self.subTitle.alpha = 0
+           self.userProfileImageView.alpha = 0
+           self.userEmailLabel.alpha = 0
+           self.userEmailUnderBarView.alpha = 0
+                  
+           self.sexLabel.alpha = 0
+           self.sexStackView.alpha = 0
+           
+           self.birthDatePicker.alpha = 0
+       }
+       
+       func animateView() {
+           
+           UIView.animate(withDuration: 0.5, delay: 0.5,animations: ({
+               self.BigTitle.alpha = 1
+               self.subTitle.alpha = 1
+               self.userProfileImageView.alpha = 1
+               self.userEmailLabel.alpha = 1
+               self.userEmailUnderBarView.alpha = 1
+           }))
+           UIView.animate(withDuration: 0.5, delay: 1.0, animations: ({
+               self.sexLabel.alpha = 1
+               self.sexStackView.alpha = 1
+               
+           }))
+       }
+    
     func setButtonSelect() {
         femaleBtn.isSelected = false
         maleBtn.isSelected = false

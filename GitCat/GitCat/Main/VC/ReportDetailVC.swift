@@ -19,13 +19,16 @@ class ReportDetailVC: UIViewController {
     //FIXME: PIECHART - 임의로 이해를 돕기 위해 넣어두는 더미 데이터
     var iosDataEntry = PieChartDataEntry(value: 20)
     var macDataEntry = PieChartDataEntry(value: 30)
+    var DataEntry3 = PieChartDataEntry(value: 50)
+    var DataEntry4 = PieChartDataEntry(value: 10)
     
     //FIXME: LINECHART - 임의로 이해를 돕기 위해 넣어두는 더미 데이터
     var numbers : [Double] = [10.0,40.0,20.0]
     
     //FIXME: BARCHART - 임의로 이해를 돕기 위해 넣어두는 더미 데이터
     var months: [String]!
-    var dataEntries = [BarChartDataEntry]()
+    var dataEntries1 = [BarChartDataEntry]()
+    var dataEntries2 = [BarChartDataEntry]()
     
     
     
@@ -82,29 +85,32 @@ class ReportDetailVC: UIViewController {
         var numberOfDownloadsDataEntries = [PieChartDataEntry]()
         
         pieChart.legend.enabled = false
-                iosDataEntry.label = nil
-                macDataEntry.label = nil
+        iosDataEntry.label = nil
+        macDataEntry.label = nil
                 
-                numberOfDownloadsDataEntries = [iosDataEntry, macDataEntry]
+        numberOfDownloadsDataEntries = [iosDataEntry, macDataEntry, DataEntry3, DataEntry4]
                 
-                pieChart.chartDescription?.text = ""
-                pieChart.centerText = "언어 비율\n(%)"
-                pieChart.drawCenterTextEnabled = true
-                
-                let paragraphStyle = NSMutableParagraphStyle(); paragraphStyle.alignment = .center
-                
-                let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "BBTreeGo_R", size: 12.0)!,
-                                    NSAttributedString.Key.foregroundColor : UIColor.CustomColor.brownishGrey, NSAttributedString.Key.paragraphStyle: paragraphStyle
-        ]
-                    let myAttrString = NSAttributedString(string: "언어 비율\n(%)", attributes: myAttribute)
+        pieChart.chartDescription?.text = ""
+        pieChart.centerText = "언어 비율\n(%)"
+        pieChart.drawCenterTextEnabled = true
+        pieChart.isOpaque = false
 
-                pieChart.centerAttributedText = myAttrString
+                
+        let paragraphStyle = NSMutableParagraphStyle(); paragraphStyle.alignment = .center
+                
+        let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "BBTreeGo_R", size: 12.0)!,
+                            NSAttributedString.Key.foregroundColor : UIColor.CustomColor.brownishGrey, NSAttributedString.Key.paragraphStyle: paragraphStyle
+        ]
+        let myAttrString = NSAttributedString(string: "언어 비율\n(%)", attributes: myAttribute)
+
+        pieChart.centerAttributedText = myAttrString
         let chartDataSet = PieChartDataSet(entries: numberOfDownloadsDataEntries, label: nil)
         
         let chartData = PieChartData(dataSet: chartDataSet)
         
         //색 리스트 초기화해주는 공간
-        let colors = [UIColor.CustomColor.skyBlue, UIColor.CustomColor.brownishGrey]
+        
+        let colors = [#colorLiteral(red: 0.4854287505, green: 0.7172181606, blue: 0.8653311133, alpha: 1),#colorLiteral(red: 0.797280252, green: 0.9200312495, blue: 1, alpha: 1), #colorLiteral(red: 0.9469732642, green: 0.981259644, blue: 0.9980216622, alpha: 1), #colorLiteral(red: 0.9332618117, green: 0.9333737493, blue: 0.9332236052, alpha: 1)]
         chartDataSet.colors = colors
         
         pieChart.data = chartData
@@ -112,21 +118,43 @@ class ReportDetailVC: UIViewController {
     
     func updateBarChartData() {
         
-        months = ["Jan", "Feb", "Mar"]
+        months = ["레파1", "레파2", "레파3"]
         let unitSold = [20.0, 4.0, 6.0]
         setBarChart(dataPoints: months, values: unitSold)
         
     }
     func setBarChart(dataPoints: [String], values: [Double]) {
-        barChart.noDataText = "You need to provide data for the chart."
+        barChart.noDataText = "데이터가 없습니다."
 
+
+        barChart.xAxis.drawLabelsEnabled = false
+        
+    
+        barChart.xAxis.drawGridLinesEnabled = false
+        barChart.xAxis.drawAxisLineEnabled = false
+
+        barChart.leftAxis.drawGridLinesEnabled = false
+        barChart.leftAxis.drawAxisLineEnabled = false
+        barChart.leftAxis.drawLabelsEnabled = false
+        
+        barChart.rightAxis.drawLabelsEnabled = false
+        barChart.rightAxis.drawAxisLineEnabled = false
+        barChart.rightAxis.drawGridLinesEnabled = false
+        
+        barChart.legend.enabled = false
+        barChart.doubleTapToZoomEnabled = false
+
+        barChart.alpha = 1
+        
         for i in 0..<dataPoints.count {
             let dataEntry = BarChartDataEntry(x: Double(i), yValues: [values[i]])
-            dataEntries.append(dataEntry)
+            dataEntries1.append(dataEntry)
         }
 
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Units Sold")
-
+        
+        let chartDataSet = BarChartDataSet(entries: dataEntries1, label: "Units Sold")
+        chartDataSet.colors = [#colorLiteral(red: 0.8022227883, green: 0.9198918939, blue: 1, alpha: 1), #colorLiteral(red: 0.5390568376, green: 0.7959131598, blue: 0.9652681947, alpha: 1), #colorLiteral(red: 0.8410330415, green: 0.8754420877, blue: 0.8878466487, alpha: 1)]
+        
         let chartData = BarChartData(dataSet: chartDataSet)
             
 

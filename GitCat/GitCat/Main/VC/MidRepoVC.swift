@@ -9,7 +9,8 @@
 import UIKit
 import FSCalendar
 
-class MidRepoVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance, UIGestureRecognizerDelegate, UITableViewDelegate, UITableViewDataSource {
+class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
+    
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
     
@@ -19,6 +20,7 @@ class MidRepoVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSC
     @IBOutlet weak var status3: UIView!
     @IBOutlet weak var status4: UIView!
     
+    var commitCountData: CommitCountModel?
     
     let cellIdentifier:String = "CommitDetailTVcell";
     let headerIdentifier:String = "CustomHeaderTVcell";
@@ -47,9 +49,16 @@ class MidRepoVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSC
         return panGesture
     }()
     
-    let selectedDates = ["2020-01-20", "2020-01-21","2020-01-22"]
-    let selectedDates2 = ["2020-01-17", "2020-01-18","2020-01-19"]
-    let selectedDates3 = ["2020-01-15", "2020-01-16"]
+    var commitLevel1 : Array = [String]()
+    var commitLevel2 : Array = [String]()
+    var commitLevel3 : Array = [String]()
+    
+//    let selectedDates = ["2020-01-20", "2020-01-21","2020-01-22"]
+//    let selectedDates2 = ["2020-01-17", "2020-01-18","2020-01-19"]
+//    let selectedDates3 = ["2020-01-15", "2020-01-16"]
+//
+    var selectedYear:String!
+    var selectedMonth:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,18 +69,24 @@ class MidRepoVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSC
         if UIDevice.current.model.hasPrefix("iPad") {
             self.calendarHeightConstraint.constant = 400
         }
+
+        let values = Calendar.current.dateComponents([Calendar.Component.month, Calendar.Component.year], from: self.calendar.currentPage)
         
-        self.calendar.select(Date())
+        let intYear:Int = gino(values.year)
+        let intMonth:Int = gino(values.month)
+
+//        setCalendarCommitBackgroundColor(year: intYear, month: intMonth)
         self.view.addGestureRecognizer(self.scopeGesture)
+
         self.tableView.panGestureRecognizer.require(toFail: self.scopeGesture)
-        self.calendar.scope = .month
-        
-        self.calendar.accessibilityIdentifier = "calendar"
-        
         self.tableView.rowHeight = 26;
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
 
     }
+    
+    
+    
+
     
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         let shouldBegin = self.tableView.contentOffset.y <= -self.tableView.contentInset.top
@@ -82,6 +97,8 @@ class MidRepoVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSC
                 return velocity.y < 0
             case .week:
                 return velocity.y > 0
+            @unknown default:
+                fatalError()
             }
         }
         return shouldBegin
@@ -105,41 +122,18 @@ class MidRepoVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSC
         
         calendar.appearance.todayColor = UIColor(red: 137/255, green: 204/255, blue: 246/255, alpha: 1)
         
+        self.calendar.select(Date())
+        self.calendar.scope = .month
+        self.calendar.accessibilityIdentifier = "calendar"
+        
+        
     }
-    
-    func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
-        self.calendarHeightConstraint.constant = bounds.height
-        self.view.layoutIfNeeded()
-    }
-    
-    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, borderDefaultColorFor date: Date) -> UIColor? {
-        somedays = ["2020-01-20"]
-        let dateString : String =  formatter.string(from: date)
-        if self.somedays.contains(dateString) {
-            return UIColor.CustomColor.skyBlue
-        }else{
-            return nil
-        }
-    }
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print("did select date \(self.formatter.string(from: date))")
-               let selectedDates = calendar.selectedDates.map({self.formatter.string(from: $0)})
-        print("selected dates is \(selectedDates)")
-        if monthPosition == .next || monthPosition == .previous {
-            calendar.setCurrentPage(date, animated: true)
-        }
+}
 
-    }
-    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
-         print("did deselect date \(self.formatter.string(from: date))")
-    }
-    
-    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
-        print("\(self.formatter.string(from: calendar.currentPage))")
-    }
-    
 
-     // MARK:- UITableViewDataSource
+extension MidRepoVC:  UITableViewDelegate, UITableViewDataSource  {
+    
+    // MARK:- UITableViewDataSource
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return repositoryNameDummy.count
@@ -154,7 +148,7 @@ class MidRepoVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSC
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CommitDetailTVCell
         
         cell.commitLabel.text = commitDummy[indexPath.row]
-        cell.circleView.layer.borderColor = UIColor.red.cgColor
+        
         
         if(indexPath.row == commitDummy.count-1) {
             cell.lineView.backgroundColor = UIColor.white
@@ -176,9 +170,6 @@ class MidRepoVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSC
         return 20
     }
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return repositoryNameDummy[section]
-//    }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         //header height : 20
         let headerCell = tableView.dequeueReusableCell(withIdentifier: headerIdentifier) as! CustomHeaderTVCell
@@ -189,39 +180,104 @@ class MidRepoVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSC
         
     }
     
-    @IBAction func toggleClickedAction(_ sender: Any) {
-        if self.calendar.scope == .month {
-            self.calendar.setScope(.week, animated: true)
-        } else {
-            self.calendar.setScope(.month, animated: true)
-        }
+}
+extension MidRepoVC: FSCalendarDelegateAppearance {
+    
+    func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
+        self.calendarHeightConstraint.constant = bounds.height
+        self.view.layoutIfNeeded()
     }
     
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, borderDefaultColorFor date: Date) -> UIColor? {
+        
+        let todayDate:String = formatter.string(from: Date())
+        
+        somedays = [todayDate]
+        let dateString : String =  formatter.string(from: date)
+        if self.somedays.contains(dateString) {
+            return UIColor.CustomColor.skyBlue
+        }else{
+            return nil
+        }
+    }
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        print("did select date \(self.formatter.string(from: date))")
+               let selectedDates = calendar.selectedDates.map({self.formatter.string(from: $0)})
+        print("selected dates is \(selectedDates)")
+        if monthPosition == .next || monthPosition == .previous {
+            calendar.setCurrentPage(date, animated: true)
+        }
+
+    }
+    
+    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
+         print("did deselect date \(self.formatter.string(from: date))")
+    }
+    
+    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+        print("\(self.formatter.string(from: calendar.currentPage))")
+    }
     
     //글자 색
-//    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
-//        somedays = ["2019-12-20", "2019-12-21","2019-12-22"]
-//        let dateString : String = formatter.string(from: date)
-//        if self.somedays.contains(dateString) {
-//            return UIColor.green
-//        }else{
-//            return nil
-//        }
-//    }
+    //    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
+    //        somedays = ["2019-12-20", "2019-12-21","2019-12-22"]
+    //        let dateString : String = formatter.string(from: date)
+    //        if self.somedays.contains(dateString) {
+    //            return UIColor.green
+    //        }else{
+    //            return nil
+    //        }
+    //    }
 
-    //글자 배경
-    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
-        let dateString = self.formatter.string(from: date)
+        //글자 배경
+        func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
+            let dateString = self.formatter.string(from: date)
 
-        if self.selectedDates.contains(dateString) {
-            return UIColor(red: 202/255, green: 235/255, blue: 1, alpha: 1)
-        } else if self.selectedDates2.contains(dateString) {
-            return UIColor(red: 221/255, green: 242/255, blue: 1, alpha: 1)
-        } else if self.selectedDates3.contains(dateString) {
-            return UIColor(red: 242/255, green: 250/255, blue: 1, alpha: 1)
+            if self.commitLevel1.contains(dateString) {
+                return UIColor(red: 202/255, green: 235/255, blue: 1, alpha: 1)
+            } else if self.commitLevel2.contains(dateString) {
+                return UIColor(red: 221/255, green: 242/255, blue: 1, alpha: 1)
+            } else if self.commitLevel3.contains(dateString) {
+                return UIColor(red: 242/255, green: 250/255, blue: 1, alpha: 1)
+            }
+
+            return appearance.selectionColor
         }
+}
 
-        return appearance.selectionColor
+
+extension MidRepoVC {
+    func setCalendarCommitBackgroundColor(year:Int, month:Int) {
+        
+        if (month<10) {
+            selectedMonth = ("0" + String(month))
+        }else{
+            selectedMonth = String(month)
+        }
+        selectedYear = String(year)
+        
+        CommitCountService.sharedInstance.getCommit(email: "yeji2039@gmail.com", month: "\(gsno(selectedYear))\(gsno(selectedMonth))") { (result) in
+            switch result {
+            case .networkSuccess(let data) :
+                let detailData = data as? CommitCountModel
+                
+                if let resResult = detailData {
+                    
+                    self.commitLevel1 = resResult.data?.level_1 ?? []
+                    self.commitLevel2 = resResult.data?.level_2 ?? []
+                    self.commitLevel3 = resResult.data?.level_3 ?? []
+                    
+
+                }
+                break
+                
+            case .networkFail :
+                self.networkErrorAlert()
+                
+            default:
+                self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
+                break
+            }
+        }
     }
-   
 }

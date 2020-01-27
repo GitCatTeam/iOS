@@ -7,12 +7,10 @@
 //
 
 import UIKit
-import FirebaseAuth
-import Firebase
 import WebKit
 import Alamofire
 
-class SignInVC: UIViewController , UIWebViewDelegate{
+class SignInVC: UIViewController{
     
     @IBOutlet weak var loginBtn: UIButton!
     
@@ -32,7 +30,7 @@ class SignInVC: UIViewController , UIWebViewDelegate{
         sender.backgroundColor = UIColor.white
         sender.setTitleColor(UIColor.CustomColor.skyBlue, for: UIControl.State.normal)
         
-        signIn()
+//        signIn()
         
         if let dvc = storyboard? .instantiateViewController(withIdentifier: "GetMoreInfo1VC") as? GetMoreInfo1VC {
 
@@ -44,7 +42,7 @@ class SignInVC: UIViewController , UIWebViewDelegate{
       
         
         sender.backgroundColor = UIColor.CustomColor.skyBlue
-        sender.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: UIControl.State.normal)
+        sender.setTitleColor(UIColor.white, for: UIControl.State.normal)
     }
 
     @IBAction func signUpAction(_ sender: Any) {
@@ -64,7 +62,7 @@ extension SignInVC {
                     
                     self.signInData = resResult
                     
-                    print(self.signInData?.message)
+                    print(self.signInData?.message ?? "")
                     self.userEmail = self.signInData?.data
                     UserDefaults.standard.set(self.userEmail, forKey: "userEmail")
                 }

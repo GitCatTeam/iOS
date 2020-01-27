@@ -28,15 +28,13 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appTitle2" translatesAutoresizingMaskIntoConstraints="NO" id="Wq6-FX-2sP">
                                 <rect key="frame" x="100" y="230" width="214" height="72"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="214" id="MHu-bh-vNj"/>
-                                    <constraint firstAttribute="height" constant="72" id="sRc-5y-7LE"/>
+                                    <constraint firstAttribute="width" secondItem="Wq6-FX-2sP" secondAttribute="height" multiplier="107:36" id="dwf-Ut-8aP"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signInCat" translatesAutoresizingMaskIntoConstraints="NO" id="rxY-id-23R">
                                 <rect key="frame" x="52" y="359" width="310" height="232"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="232" id="QLe-U3-Hef"/>
-                                    <constraint firstAttribute="width" constant="310" id="a0k-Sr-QCU"/>
+                                    <constraint firstAttribute="width" secondItem="rxY-id-23R" secondAttribute="height" multiplier="155:116" id="jyp-4b-BB1"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="고양이와 함께 하는 일일커밋!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXU-v3-CXa">
@@ -93,12 +91,15 @@
                                 <connections>
                                     <action selector="signInTouchDownAction:" destination="hAP-WK-8RI" eventType="touchDown" id="rXQ-WN-eWt"/>
                                     <action selector="signInTouchUpAction:" destination="hAP-WK-8RI" eventType="touchUpInside" id="iWg-dD-r9I"/>
+                                    <segue destination="N3i-Ck-RU8" kind="presentation" id="bgd-nB-vpE"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="rxY-id-23R" firstAttribute="height" secondItem="3Iy-eG-vQ1" secondAttribute="height" multiplier="0.258929" id="47b-3i-fh0"/>
                             <constraint firstItem="Wq6-FX-2sP" firstAttribute="top" secondItem="iP5-QS-fwv" secondAttribute="top" constant="142" id="5fq-tu-vaX"/>
+                            <constraint firstItem="Wq6-FX-2sP" firstAttribute="height" secondItem="3Iy-eG-vQ1" secondAttribute="height" multiplier="0.0803571" id="AwQ-cH-uKx"/>
                             <constraint firstItem="rxY-id-23R" firstAttribute="top" secondItem="pXU-v3-CXa" secondAttribute="bottom" constant="25.5" id="IZA-zV-NUI"/>
                             <constraint firstItem="rxY-id-23R" firstAttribute="centerX" secondItem="3Iy-eG-vQ1" secondAttribute="centerX" id="QIz-hL-cjx"/>
                             <constraint firstItem="Wq6-FX-2sP" firstAttribute="centerX" secondItem="3Iy-eG-vQ1" secondAttribute="centerX" id="asI-aC-nQ3"/>
@@ -119,6 +120,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCg-60-Xbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2139.130434782609" y="-156.02678571428569"/>
+        </scene>
+        <!--AuthVC-->
+        <scene sceneID="J4D-7N-SdO">
+            <objects>
+                <viewController id="N3i-Ck-RU8" customClass="OAuthVC" customModule="GitCat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WYP-Xc-8M3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KAf-uO-yZn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KAf-uO-yZn" firstAttribute="top" secondItem="bNH-pc-8lE" secondAttribute="top" id="IVx-hc-Bsw"/>
+                            <constraint firstItem="bNH-pc-8lE" firstAttribute="bottom" secondItem="KAf-uO-yZn" secondAttribute="bottom" id="Zta-kp-1bR"/>
+                            <constraint firstItem="KAf-uO-yZn" firstAttribute="leading" secondItem="bNH-pc-8lE" secondAttribute="leading" id="i7D-Nr-nQe"/>
+                            <constraint firstItem="bNH-pc-8lE" firstAttribute="trailing" secondItem="KAf-uO-yZn" secondAttribute="trailing" id="nHm-Cm-3Y1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bNH-pc-8lE"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="KAf-uO-yZn" id="o6o-jl-j1O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gdw-S5-UMK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2122" y="552"/>
         </scene>
         <!--Get More Info1VC-->
         <scene sceneID="2k3-85-uPn">
@@ -151,8 +186,9 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyProfile" translatesAutoresizingMaskIntoConstraints="NO" id="FCh-Gy-juI">
                                 <rect key="frame" x="138" y="210.5" width="138" height="138"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="138" id="C1I-ne-V2o"/>
-                                    <constraint firstAttribute="width" constant="138" id="ExT-nV-AKm"/>
+                                    <constraint firstAttribute="width" constant="138" id="2AD-Dl-AJG"/>
+                                    <constraint firstAttribute="width" secondItem="FCh-Gy-juI" secondAttribute="height" multiplier="1:1" id="UPk-bK-Aqd"/>
+                                    <constraint firstAttribute="height" constant="138" id="nss-Hh-uTz"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="LHI-AX-Hmf">
