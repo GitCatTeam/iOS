@@ -23,30 +23,30 @@ class OAuthVC: UIViewController , UIWebViewDelegate, UINavigationControllerDeleg
         // Do any additional setup after loading the view.
     }
     
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
-        print("shouldStartLoadWith")
-        
-//
+//    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebView.NavigationType) -> Bool {
+//        print("shouldStartLoadWith")
+//        
+////
+////        if ( self.webView!.url?.absoluteURL == OAuthURL)
+////        {
+//            print("SUCCESS")
+//            self.webView!.stopLoading()
+//            // do something here, like remove this from the nav controller
+//            self.navigationController?.popViewController(animated: true)
+//        return true
+//    }
+//    func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
+//        
+//         print("didReceiveServerRedirectForProvisionalNavigation")
 //        if ( self.webView!.url?.absoluteURL == OAuthURL)
 //        {
-            print("SUCCESS")
-            self.webView!.stopLoading()
-            // do something here, like remove this from the nav controller
-            self.navigationController?.popViewController(animated: true)
-        return true
-    }
-    func webView(_ webView: WKWebView, didReceiveServerRedirectForProvisionalNavigation navigation: WKNavigation!) {
-        
-         print("didReceiveServerRedirectForProvisionalNavigation")
-        if ( self.webView!.url?.absoluteURL == OAuthURL)
-        {
-            print("SUCCESS")
-            self.webView!.stopLoading()
-            // do something here, like remove this from the nav controller
-            self.navigationController?.popViewController(animated: true)
-        }
-        
-    }
+//            print("SUCCESS")
+//            self.webView!.stopLoading()
+//            // do something here, like remove this from the nav controller
+//            self.navigationController?.popViewController(animated: true)
+//        }
+//        
+//    }
 
     
 

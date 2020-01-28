@@ -13,6 +13,18 @@ import UIKit
 
 extension UIView {
     
+    func createDottedLine(width: CGFloat, color: CGColor) {
+       let caShapeLayer = CAShapeLayer()
+       caShapeLayer.strokeColor = color
+       caShapeLayer.lineWidth = width
+       caShapeLayer.lineDashPattern = [2,3]
+       let cgPath = CGMutablePath()
+       let cgPoint = [CGPoint(x: 0, y: 0), CGPoint(x: self.frame.width, y: 0)]
+       cgPath.addLines(between: cgPoint)
+       caShapeLayer.path = cgPath
+       layer.addSublayer(caShapeLayer)
+    }
+    
     //원형 뷰
     func circleRadius(){
         self.layer.cornerRadius = self.layer.frame.height/2
@@ -26,10 +38,11 @@ extension UIView {
         
     }
     func addShadow() {
-        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         self.layer.shadowOffset = CGSize(width: 1, height: 1)
+        
         self.layer.shadowRadius = 3
-        self.layer.shadowOpacity = 0.1
+        self.layer.shadowOpacity = 0.12
         self.layer.masksToBounds = false
     }
     
@@ -60,9 +73,14 @@ extension UIView {
         self.layer.shouldRasterize = true
         self.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
-    func sectionRound(){
+    func topSectionRound() {
         let maskLayer = CAShapeLayer()
-        maskLayer.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.topLeft, .topRight,.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 10, height: 10)).cgPath
+        maskLayer.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 10, height: 10)).cgPath
+        layer.mask = maskLayer
+    }
+    func bottomSectionRound(){
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 10, height: 8)).cgPath
         layer.mask = maskLayer
     }
 }
@@ -87,13 +105,6 @@ extension UITextView {
     }
     
 }
-
-extension CALayer {
-    
-   
-}
-
-
 extension UILabel {
    func setLineHeight(lineHeight: CGFloat) {
        let paragraphStyle = NSMutableParagraphStyle()
@@ -106,7 +117,7 @@ extension UILabel {
            attrString.append( self.attributedText!)
        } else {
            attrString.append( NSMutableAttributedString(string: self.text!))
-        attrString.addAttribute(NSAttributedString.Key.font, value: self.font, range: NSMakeRange(0, attrString.length))
+        attrString.addAttribute(NSAttributedString.Key.font, value: self.font ?? "", range: NSMakeRange(0, attrString.length))
        }
     attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
        self.attributedText = attrString

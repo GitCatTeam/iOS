@@ -309,11 +309,8 @@
                                     <constraint firstAttribute="width" constant="320" id="YxI-eL-ADG"/>
                                     <constraint firstAttribute="height" constant="114" id="p7H-oL-8Wg"/>
                                 </constraints>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="6976666800">
-                                    <!--2222-01-31 11:00:00 +0000-->
-                                </date>
-                                <date key="maximumDate" timeIntervalSinceReferenceDate="1164970800">
-                                    <!--2037-12-01 11:00:00 +0000-->
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-2556190800">
+                                    <!--1920-01-01 11:00:00 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="ko_KR"/>
                             </datePicker>

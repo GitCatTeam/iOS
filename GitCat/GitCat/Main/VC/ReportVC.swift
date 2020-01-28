@@ -12,11 +12,13 @@ class ReportVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
 
     @IBOutlet weak var collectionView: UICollectionView!
     let cellIdentifier = "ReportCVCell"
+
     
     let reportInfo: [String] = ["1월 레포트", "2월 레포트","3월 레포트","4월 레포트","5월 레포트","6월 레포트","7월 레포트","8월 레포트"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

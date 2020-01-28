@@ -13,6 +13,7 @@ class ReportCVCell: UICollectionViewCell {
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var commitCountLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
+    @IBOutlet weak var bottomView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,6 +28,7 @@ class ReportCVCell: UICollectionViewCell {
         self.layer.shadowOpacity = 0.12
         self.layer.masksToBounds = false
         
+        bottomView.bottomSectionRound()
     }
     
 }

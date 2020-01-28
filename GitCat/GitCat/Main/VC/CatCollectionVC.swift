@@ -16,7 +16,14 @@ class CatCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionV
     var catDummyName:[String] = ["깜냥이","구냥이","윤냥이","안냥이","첫냥이","테디","코코"]
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setBackBtn(color: #colorLiteral(red: 0.5307495594, green: 0.8041878939, blue: 0.9690385461, alpha: 1))
+        
+        let bar: UINavigationBar! = self.navigationController?.navigationBar
+        bar.backgroundColor = UIColor.white
+        
+        bar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        bar.shadowImage = UIImage()
+        
     }
     
     
