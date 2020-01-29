@@ -14,7 +14,11 @@ class CommitCountModel: Codable {
 }
 
 class CommitDataModel:Codable {
+    var commits: CommitLevelModel?
+}
+class CommitLevelModel:Codable {
     var level_1:[String]?
     var level_2:[String]?
     var level_3:[String]?
 }
+

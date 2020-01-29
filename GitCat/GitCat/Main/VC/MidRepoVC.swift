@@ -70,12 +70,12 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
             self.calendarHeightConstraint.constant = 400
         }
 
-//        let values = Calendar.current.dateComponents([Calendar.Component.month, Calendar.Component.year], from: self.calendar.currentPage)
+        let values = Calendar.current.dateComponents([Calendar.Component.month, Calendar.Component.year], from: self.calendar.currentPage)
         
-//        let intYear:Int = gino(values.year)
-//        let intMonth:Int = gino(values.month)
+        let intYear:Int = gino(values.year)
+        let intMonth:Int = gino(values.month)
 
-//        setCalendarCommitBackgroundColor(year: intYear, month: intMonth)
+        setCalendarCommitBackgroundColor(year: intYear, month: intMonth)
         self.view.addGestureRecognizer(self.scopeGesture)
 
         self.tableView.panGestureRecognizer.require(toFail: self.scopeGesture)
@@ -262,10 +262,10 @@ extension MidRepoVC {
                 let detailData = data as? CommitCountModel
                 
                 if let resResult = detailData {
-                    
-                    self.commitLevel1 = resResult.data?.level_1 ?? []
-                    self.commitLevel2 = resResult.data?.level_2 ?? []
-                    self.commitLevel3 = resResult.data?.level_3 ?? []
+    
+                    self.commitLevel1 = resResult.data?.commits?.level_1 ?? []
+                    self.commitLevel2 = resResult.data?.commits?.level_2 ?? []
+                    self.commitLevel3 = resResult.data?.commits?.level_3 ?? []
                     
 
                 }
