@@ -11,6 +11,7 @@
 		4C1035A623B8FEC60057F0B1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C1035A523B8FEC60057F0B1 /* Home.storyboard */; };
 		4C1035A923B9084D0057F0B1 /* 나눔손글씨 배은혜체.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C1035A723B907F50057F0B1 /* 나눔손글씨 배은혜체.ttf */; };
 		4C1035AC23B9D1430057F0B1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1035AB23B9D1430057F0B1 /* HomeVC.swift */; };
+		4C2DDD0A23EAEEF200FCB36B /* TutorialCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DDD0923EAEEF200FCB36B /* TutorialCVCell.swift */; };
 		4C4A923223BA2476002E5F35 /* MidRepoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A923123BA2476002E5F35 /* MidRepoVC.swift */; };
 		4C68D10623B09D3E00A8F813 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68D10523B09D3E00A8F813 /* AppDelegate.swift */; };
 		4C68D10D23B09D4000A8F813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C68D10C23B09D4000A8F813 /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		4C1035A523B8FEC60057F0B1 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		4C1035A723B907F50057F0B1 /* 나눔손글씨 배은혜체.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "나눔손글씨 배은혜체.ttf"; path = "GitCat/Resources/Fonts/나눔손글씨 배은혜체.ttf"; sourceTree = SOURCE_ROOT; };
 		4C1035AB23B9D1430057F0B1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		4C2DDD0923EAEEF200FCB36B /* TutorialCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCVCell.swift; sourceTree = "<group>"; };
 		4C4A923123BA2476002E5F35 /* MidRepoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidRepoVC.swift; sourceTree = "<group>"; };
 		4C68D10223B09D3E00A8F813 /* GitCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C68D10523B09D3E00A8F813 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				4C7C0E0A23D489DA00669B38 /* CommitDetailTVCell.swift */,
 				4C7C0E1023D4A11400669B38 /* CustomHeaderTVCell.swift */,
 				4C7C0E1823D59D2B00669B38 /* CatCollectionCVCell.swift */,
+				4C2DDD0923EAEEF200FCB36B /* TutorialCVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				4C7C0E7823D9816000669B38 /* CommitCountModel.swift in Sources */,
 				4CC7D9B923C63BD5004576BB /* ReportVC.swift in Sources */,
 				4C9E8EAE23C1F427002BDE02 /* Requestable.swift in Sources */,
+				4C2DDD0A23EAEEF200FCB36B /* TutorialCVCell.swift in Sources */,
 				4C7C0E7123D96CB900669B38 /* OAuthVC.swift in Sources */,
 				4C7C0E1123D4A11400669B38 /* CustomHeaderTVCell.swift in Sources */,
 				4C7C0E6723D8044B00669B38 /* HttpResponseCode.swift in Sources */,

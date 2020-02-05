@@ -15,17 +15,6 @@ class GetMoreInfo4VC: UIViewController {
     
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var subTitle: UILabel!
-    @IBOutlet weak var selectCatStackView: UIStackView!
-    
-    @IBOutlet weak var firstCatView: RoundView!
-    @IBOutlet weak var secondCatView: LittleRoundView!
-    @IBOutlet weak var thirdCatView: LittleRoundView!
-    @IBOutlet weak var fourthCatView: LittleRoundView!
-    
-    @IBOutlet weak var firstCatImageView: RoundImageView!
-    @IBOutlet weak var secondCatImageView: UIImageView!
-    @IBOutlet weak var thirdCatImageView: UIImageView!
-    @IBOutlet weak var fourthCatImageView: UIImageView!
     
     @IBOutlet weak var catNameLabel: UILabel!
     @IBOutlet weak var catNameTextField: UITextField!
@@ -46,14 +35,11 @@ class GetMoreInfo4VC: UIViewController {
         
         setBackBtn(color: UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1))
         nextMove4Btn.addShadow()
-
-        setBorderColor()
         
         initAlpha()
         
         animateView()
         
-        setUserInteration()
     }
     
     
@@ -86,65 +72,18 @@ class GetMoreInfo4VC: UIViewController {
     /**
      구현 함수
      */
-    func setBorderColor() {
-        firstCatView.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
-        secondCatView.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
-        thirdCatView.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
-        fourthCatView.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
-    }
+
     
     func initAlpha() {
         self.mainTitle.alpha = 0
         self.subTitle.alpha = 0
-        self.selectCatStackView.alpha = 0
+        //collectionView.alpha = 0
         self.catNameLabel.alpha = 0
         self.catNameTextField.alpha = 0
         self.catNameUnderBar.alpha = 0
     }
     
-    @objc func imageTapped1(img: AnyObject) {
-        
-        showCatNameTextField()
-        
-        firstCatView.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
-        
-        secondCatView.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
-        thirdCatView.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
-        fourthCatView.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
-        
-    }
-    @objc func imageTapped2(img: AnyObject) {
-        
-        showCatNameTextField()
-        
-        secondCatView.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
-        
-        firstCatView.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
-        thirdCatView.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
-        fourthCatView.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
-    }
-    @objc func imageTapped3(img: AnyObject) {
-        
-        showCatNameTextField()
-        
-        thirdCatView.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
-        
-        firstCatView.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
-        secondCatView.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
-        fourthCatView.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
-        
-    }
-    @objc func imageTapped4(img: AnyObject) {
-        
-        showCatNameTextField()
-        
-        fourthCatView.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
-        
-        firstCatView.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
-        secondCatView.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
-        thirdCatView.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
-        
-    }
+   
     func showCatNameTextField() {
         UIView.animate(withDuration: 0.5, delay: 0.5,animations: ({
             self.catNameLabel.alpha = 1
@@ -157,29 +96,12 @@ class GetMoreInfo4VC: UIViewController {
         UIView.animate(withDuration: 0.5, delay: 0.5,animations: ({
             self.mainTitle.alpha = 1
             self.subTitle.alpha = 1
-            self.selectCatStackView.alpha = 1
+//            self.collectionView.alpha = 1
             
         }))
     }
     
-    func setUserInteration() {
-        firstCatImageView.isUserInteractionEnabled = true
-        let tapGestureRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(GetMoreInfo4VC.imageTapped1(img:)))
-        firstCatImageView.addGestureRecognizer(tapGestureRecognizer1)
-        
-        secondCatImageView.isUserInteractionEnabled = true
-        let tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(GetMoreInfo4VC.imageTapped2(img:)))
-        secondCatImageView.addGestureRecognizer(tapGestureRecognizer2)
-        
-        thirdCatImageView.isUserInteractionEnabled = true
-        let tapGestureRecognizer3 = UITapGestureRecognizer(target: self, action: #selector(GetMoreInfo4VC.imageTapped3(img:)))
-        thirdCatImageView.addGestureRecognizer(tapGestureRecognizer3)
-        
-        fourthCatImageView.isUserInteractionEnabled = true
-        let tapGestureRecognizer4 = UITapGestureRecognizer(target: self, action: #selector(GetMoreInfo4VC.imageTapped4(img:)))
-        fourthCatImageView.addGestureRecognizer(tapGestureRecognizer4)
-    }
-    
+
     
     override func viewWillAppear(_ animated: Bool) {
         registerForKeyboardNotifications()

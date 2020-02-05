@@ -17,6 +17,7 @@ class ReportCVCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         self.layer.borderWidth = 1.0
         
         self.layer.borderColor = UIColor.clear.cgColor
