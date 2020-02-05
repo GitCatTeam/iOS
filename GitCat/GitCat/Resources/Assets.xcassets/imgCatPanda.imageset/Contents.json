@@ -1,18 +1,18 @@
 {
   "images" : [
     {
-      "filename" : "imgCatPanda.png",
+      "idiom" : "universal",
       "scale" : "1x",
+      "filename" : "imgCatPanda.png"
+    },
+    {
+      "filename" : "imgCatPanda@2x.png",
+      "scale" : "2x",
       "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
-      "filename" : "imgCatPanda@2x.png",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
       "scale" : "3x",
+      "idiom" : "universal",
       "filename" : "imgCatPanda@3x.png"
     }
   ],
