@@ -73,15 +73,22 @@ extension UIView {
         self.layer.shouldRasterize = true
         self.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
-    func topSectionRound() {
-        let maskLayer = CAShapeLayer()
-        maskLayer.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 10, height: 10)).cgPath
-        layer.mask = maskLayer
+    func topSectionRound(_radius:CGFloat = 10) {
+        self.clipsToBounds = true
+        self.layer.cornerRadius = _radius
+        self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        
     }
-    func bottomSectionRound(){
-        let maskLayer = CAShapeLayer()
-        maskLayer.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 10, height: 8)).cgPath
-        layer.mask = maskLayer
+    func sectionRoundWithoutLeft(_radius:CGFloat = 10) {
+        self.clipsToBounds = true
+        self.layer.cornerRadius = _radius
+        self.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        
+    }
+    func bottomSectionRound(_radius:CGFloat = 10){
+        self.clipsToBounds = true
+        self.layer.cornerRadius = _radius
+        self.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
     }
 }
 

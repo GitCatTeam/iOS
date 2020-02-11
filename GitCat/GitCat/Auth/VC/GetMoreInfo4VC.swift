@@ -24,6 +24,10 @@ class GetMoreInfo4VC: UIViewController {
     @IBOutlet weak var specialBtn: UIButton!
     @IBOutlet weak var eventBtn: UIButton!
     
+    @IBOutlet weak var basicBtnBottomBorder: UIView!
+    @IBOutlet weak var specialBtnBottomBorder: UIView!
+    @IBOutlet weak var eventBtnBottomBorder: UIView!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     
@@ -50,34 +54,44 @@ class GetMoreInfo4VC: UIViewController {
         nextMove4Btn.addShadow()
         
         initAlpha()
-        
+        setButtonSelect()
         setStyle()
         animateView()
-        
     }
-    func setStyle() {
-        self.basicBtn.layer.borderWidth = 1
-        self.basicBtn.layer.borderColor = #colorLiteral(red: 0.7528827786, green: 0.7529742718, blue: 0.752851665, alpha: 1)
-        self.basicBtn.topSectionRound()
+    
+    @IBAction func catTypeSelectedAction(_ sender: UIButton) {
+        sender.isSelected = true
         
-        self.specialBtn.layer.borderWidth = 1
-        self.specialBtn.layer.borderColor = #colorLiteral(red: 0.7528827786, green: 0.7529742718, blue: 0.752851665, alpha: 1)
-        self.specialBtn.topSectionRound()
+        if(sender.isSelected == true) {
+            sender.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            
+        }else{
+            sender.backgroundColor = #colorLiteral(red: 0.9725490196, green: 0.9725490196, blue: 0.9725490196, alpha: 1)
+        }
         
-        self.eventBtn.layer.borderWidth = 1
-        self.eventBtn.layer.borderColor = #colorLiteral(red: 0.7528827786, green: 0.7529742718, blue: 0.752851665, alpha: 1)
-        self.eventBtn.topSectionRound()
+        if(sender != self.basicBtn) {
+            self.basicBtn.backgroundColor = #colorLiteral(red: 0.9725490196, green: 0.9725490196, blue: 0.9725490196, alpha: 1)
+            self.basicBtn.isSelected = false
+            self.basicBtnBottomBorder.alpha = 0
+        }else{
+            self.basicBtnBottomBorder.alpha = 1
+        }
         
-        self.selectBoxView.layer.borderWidth = 1
-        self.selectBoxView.layer.borderColor = #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1)
-        self.selectBoxView.layer.cornerRadius = 7
+        if (sender != self.specialBtn) {
+            self.specialBtn.backgroundColor = #colorLiteral(red: 0.9725490196, green: 0.9725490196, blue: 0.9725490196, alpha: 1)
+            self.specialBtn.isSelected = false
+            self.specialBtnBottomBorder.alpha = 0
+        }else{
+            self.specialBtnBottomBorder.alpha = 1
+        }
         
-        self.collectionView.layer.borderWidth = 1
-        self.collectionView.layer.borderColor = #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1)
-        self.collectionView.layer.cornerRadius = 13
-        
-        
- 
+        if (sender != self.eventBtn) {
+            self.eventBtn.backgroundColor = #colorLiteral(red: 0.9725490196, green: 0.9725490196, blue: 0.9725490196, alpha: 1)
+            self.eventBtn.isSelected = false
+            self.eventBtnBottomBorder.alpha = 0
+        }else {
+            self.eventBtnBottomBorder.alpha = 1
+        }
     }
     
     @IBAction func nameFieldEditingChangedAction(_ sender: Any) {
@@ -109,7 +123,6 @@ class GetMoreInfo4VC: UIViewController {
     /**
      구현 함수
      */
-
     
     func initAlpha() {
         self.mainTitle.alpha = 0
@@ -136,6 +149,46 @@ class GetMoreInfo4VC: UIViewController {
             self.catSelectionView.alpha = 1
             
         }))
+    }
+    
+    func setStyle() {
+        self.basicBtn.layer.borderWidth = 1
+        self.basicBtn.layer.borderColor = #colorLiteral(red: 0.7528827786, green: 0.7529742718, blue: 0.752851665, alpha: 1)
+        self.basicBtn.topSectionRound(_radius: 7)
+        
+        self.specialBtn.layer.borderWidth = 1
+        self.specialBtn.layer.borderColor = #colorLiteral(red: 0.7528827786, green: 0.7529742718, blue: 0.752851665, alpha: 1)
+        self.specialBtn.topSectionRound(_radius: 7)
+        
+        self.eventBtn.layer.borderWidth = 1
+        self.eventBtn.layer.borderColor = #colorLiteral(red: 0.7528827786, green: 0.7529742718, blue: 0.752851665, alpha: 1)
+        self.eventBtn.topSectionRound(_radius: 7)
+        
+        self.selectBoxView.layer.borderWidth = 1
+        self.selectBoxView.layer.borderColor = #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1)
+        self.selectBoxView.sectionRoundWithoutLeft(_radius: 7)
+        
+        self.collectionView.layer.borderWidth = 1
+        self.collectionView.layer.borderColor = #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1)
+        self.collectionView.layer.cornerRadius = 13
+    }
+    
+    func setButtonSelect() {
+        
+        self.basicBtn.setTitleColor(#colorLiteral(red: 0.4576154947, green: 0.8046417236, blue: 0.9821793437, alpha: 1), for: UIControl.State.selected)
+        self.basicBtn.setTitleColor(#colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1), for: UIControl.State.normal)
+        
+        self.specialBtn.setTitleColor(#colorLiteral(red: 0.4576154947, green: 0.8046417236, blue: 0.9821793437, alpha: 1), for: UIControl.State.selected)
+        self.specialBtn.setTitleColor(#colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1), for: UIControl.State.normal)
+        
+        self.eventBtn.setTitleColor(#colorLiteral(red: 0.4576154947, green: 0.8046417236, blue: 0.9821793437, alpha: 1), for: UIControl.State.selected)
+        self.eventBtn.setTitleColor(#colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1), for: UIControl.State.normal)
+        
+        self.basicBtnBottomBorder.alpha = 1
+        self.specialBtnBottomBorder.alpha = 0
+        self.eventBtnBottomBorder.alpha = 0
+        self.basicBtn.isSelected = true
+        
     }
     
 
@@ -194,9 +247,6 @@ class GetMoreInfo4VC: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-    
-
 }
 
 extension GetMoreInfo4VC: UITextFieldDelegate{
@@ -210,9 +260,11 @@ extension GetMoreInfo4VC: UITextFieldDelegate{
     }
 }
 
-extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.dummyImageData.count
+        return dummyImageData.count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -221,5 +273,27 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource {
         cell?.catImageView.image = dummyImageData[indexPath.row]
         
         return cell!
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width: CGFloat = 76
+        let height: CGFloat = 76
+        return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //FIXME: 이거 안됨
+        
+        let cell = collectionView.cellForItem(at: indexPath) as? SelectCatCVCell
+
+        cell?.catImageView.layer.borderColor = #colorLiteral(red: 0.4652857184, green: 0.8005116582, blue: 0.9823767543, alpha: 1)
+        
+        showCatNameTextField()
+        
+
+    }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? SelectCatCVCell
+        cell?.catImageView.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
+        
     }
 }

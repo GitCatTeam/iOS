@@ -30,12 +30,8 @@ class SignInVC: UIViewController{
         sender.backgroundColor = UIColor.white
         sender.setTitleColor(UIColor.CustomColor.skyBlue, for: UIControl.State.normal)
         
-//        signIn()
+        signIn()
         
-        if let dvc = storyboard? .instantiateViewController(withIdentifier: "GetMoreInfo1VC") as? GetMoreInfo1VC {
-
-            self.navigationController?.pushViewController(dvc, animated: true)
-        }
     }
     
     @IBAction func signInTouchDownAction(_ sender: UIButton) {
@@ -51,6 +47,8 @@ class SignInVC: UIViewController{
     
 }
 
+
+
 extension SignInVC {
     func signIn() {
         AuthService.sharedInstance.getUserEmail(completion: { (result) in
@@ -63,8 +61,9 @@ extension SignInVC {
                     self.signInData = resResult
                     
                     print(self.signInData?.message ?? "")
-                    self.userEmail = self.signInData?.data
-                    UserDefaults.standard.set(self.userEmail, forKey: "userEmail")
+                    self.userEmail = self.signInData?.data?.email
+                    print("email:\(self.userEmail)")
+//                    UserDefaults.standard.set(self.userEmail, forKey: "userEmail")
                 }
                 break
                 

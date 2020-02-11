@@ -18,9 +18,13 @@ class SelectCatCVCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.baseView.layer.borderWidth = 1
-        self.baseView.layer.borderColor = #colorLiteral(red: 0.7480606437, green: 0.7532055974, blue: 0.7486153245, alpha: 1)
         self.baseView.layer.cornerRadius = 12
+        self.catImageView.layer.borderWidth = 1
+        self.catImageView.layer.borderColor = #colorLiteral(red: 0.7480606437, green: 0.7532055974, blue: 0.7486153245, alpha: 1)
+        self.catImageView.layer.cornerRadius = 12
+        
+        self.NewBadgeView.layer.cornerRadius = 7
+        self.BuyBadgeView.layer.cornerRadius = 7
         
         
     }

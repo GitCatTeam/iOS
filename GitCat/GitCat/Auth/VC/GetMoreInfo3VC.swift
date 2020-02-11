@@ -131,7 +131,7 @@ class GetMoreInfo3VC: UIViewController {
     
     func setButtonColor() {
         
-        interestInDevBtn.setTitleColor(UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1), for: UIControl.State.normal)
+        interestInDevBtn.setTitleColor(#colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1), for: UIControl.State.normal)
         interestInDevBtn.setTitleColor(UIColor.CustomColor.skyBlue, for: UIControl.State.selected)
         interestInDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
 

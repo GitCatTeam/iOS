@@ -13,7 +13,7 @@ struct AuthService: GettableService, APIServie {
     typealias NetworkData = SignInCodeData
     static let sharedInstance = AuthService()
     
-    //MARK: GET - https://a.chameleon4switch.cf/auth/github (Github 로그인을 통한 Personal Access Token 교환 코드 발급
+    //MARK: GET - https://a.gitcat.app/api/auth/github (Github 로그인을 통한 Personal Access Token 교환 코드 발급
     
     func getUserEmail(completion: @escaping (NetworkResult<Any>) -> Void) {
         let signInURL = self.url("/auth/github")

@@ -15,7 +15,7 @@ import SwiftyJSON
 extension APIServie {
     
     func url(_ path: String) -> String {
-        return "https://a.chameleon4switch.cf" + path
+        return "https://a.gitcat.app/api" + path
     }
 }
 

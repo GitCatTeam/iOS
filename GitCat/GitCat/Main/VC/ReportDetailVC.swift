@@ -35,7 +35,7 @@ class ReportDetailVC: UIViewController {
     var DataEntry4 = PieChartDataEntry(value: 10)
     
     //FIXME: LINECHART - 임의로 이해를 돕기 위해 넣어두는 더미 데이터
-    var numbers : [Double] = [10.0,40.0,20.0,10.0,40.0,20.0,60.0]
+    var numbers : [Double] = [10,40,20.0,10.0,40.0,20.0,60.0]
     
     //FIXME: BARCHART - 임의로 이해를 돕기 위해 넣어두는 더미 데이터
     var months: [String]!
@@ -154,7 +154,7 @@ class ReportDetailVC: UIViewController {
     func updateBarChartData() {
         
         months = ["레파1", "레파2", "레파3"]
-        let unitSold = [20.0, 4.0, 6.0]
+        let unitSold = [20, 4, 6.0]
         setBarChart(dataPoints: months, values: unitSold)
     }
     
