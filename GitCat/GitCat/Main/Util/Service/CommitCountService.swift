@@ -16,7 +16,7 @@ struct CommitCountService: GettableService, APIServie {
     
 
     func getCommit(email:String, month:String, completion: @escaping (NetworkResult<Any>) -> Void) {
-        let commitURL = self.url("/api/calender/monthCommitCount?email=\(email)&month=\(month)")
+        let commitURL = self.url("/calender/monthCommitCount?email=\(email)&month=\(month)")
 
         gettable(commitURL) { (result) in
             switch result {

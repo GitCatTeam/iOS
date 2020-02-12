@@ -17,7 +17,7 @@
 		4C68D10623B09D3E00A8F813 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68D10523B09D3E00A8F813 /* AppDelegate.swift */; };
 		4C68D10D23B09D4000A8F813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C68D10C23B09D4000A8F813 /* Assets.xcassets */; };
 		4C68D11023B09D4000A8F813 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C68D10E23B09D4000A8F813 /* LaunchScreen.storyboard */; };
-		4C68D12523B0A5EC00A8F813 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C68D12423B0A5EC00A8F813 /* SignIn.storyboard */; };
+		4C68D12523B0A5EC00A8F813 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C68D12423B0A5EC00A8F813 /* Auth.storyboard */; };
 		4C68D12C23B0AAB100A8F813 /* BasicExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68D12B23B0AAB100A8F813 /* BasicExtension.swift */; };
 		4C68D13523B0D02400A8F813 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68D13423B0D02400A8F813 /* SignInVC.swift */; };
 		4C7C0E0B23D489DA00669B38 /* CommitDetailTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E0A23D489DA00669B38 /* CommitDetailTVCell.swift */; };
@@ -70,7 +70,7 @@
 		4C68D10C23B09D4000A8F813 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C68D10F23B09D4000A8F813 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C68D11123B09D4000A8F813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C68D12423B0A5EC00A8F813 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		4C68D12423B0A5EC00A8F813 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		4C68D12B23B0AAB100A8F813 /* BasicExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicExtension.swift; sourceTree = "<group>"; };
 		4C68D13423B0D02400A8F813 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		4C7C0E0A23D489DA00669B38 /* CommitDetailTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitDetailTVCell.swift; sourceTree = "<group>"; };
@@ -310,7 +310,7 @@
 		4CD5A5D323C2FC7000A8E225 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				4C68D12423B0A5EC00A8F813 /* SignIn.storyboard */,
+				4C68D12423B0A5EC00A8F813 /* Auth.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -449,7 +449,7 @@
 				4CC07FB323B314F700851B45 /* 20958982_UTOIMAGE_유토이미지고딕_L_OTF.otf in Resources */,
 				4CC07FAF23B314A200851B45 /* 20958984_UTOIMAGE_유토이미지고딕_R_OTF.otf in Resources */,
 				4C68D11023B09D4000A8F813 /* LaunchScreen.storyboard in Resources */,
-				4C68D12523B0A5EC00A8F813 /* SignIn.storyboard in Resources */,
+				4C68D12523B0A5EC00A8F813 /* Auth.storyboard in Resources */,
 				4C68D10D23B09D4000A8F813 /* Assets.xcassets in Resources */,
 				4CC07FB223B314F200851B45 /* 20958980_UTOIMAGE_유토이미지고딕_B_OTF.otf in Resources */,
 				4C1035A923B9084D0057F0B1 /* 나눔손글씨 배은혜체.ttf in Resources */,

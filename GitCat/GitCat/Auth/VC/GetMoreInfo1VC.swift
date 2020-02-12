@@ -109,6 +109,7 @@ class GetMoreInfo1VC: UIViewController {
             }))
         }
         if(clickBtnCnt == 2) {
+            print("넘어가야하,는데")
             if let dvc = storyboard? .instantiateViewController(withIdentifier: "GetMoreInfo3VC") as? GetMoreInfo3VC {
                 
                 self.navigationController?.pushViewController(dvc, animated: true)

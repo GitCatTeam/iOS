@@ -16,11 +16,17 @@ protocol GettableService {
     func gettable(_ URL: String, method: HTTPMethod, completion: @escaping (Result<networkResult>) -> Void)
 }
 
+let headers: HTTPHeaders = [
+    "Authorization":UserDefaults.standard.string(forKey: "token") ?? ""
+]
+
 extension GettableService {
     
     func gino(_ value : Int?) -> Int {
         return value ?? 0
     }
+    
+    
     
     func gettable(_ URL: String, method:HTTPMethod = .get, completion: @escaping (Result<networkResult>) -> Void) {
         
@@ -31,7 +37,8 @@ extension GettableService {
         
         print("URL은 \(encodedUrl)")
         
-        Alamofire.request(encodedUrl, method: method, parameters: nil, headers: nil)
+        
+        Alamofire.request(encodedUrl, method: method, parameters: nil, headers: headers)
             .responseData {
                 res in
                 switch res.result {

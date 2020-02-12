@@ -30,7 +30,11 @@ class SignInVC: UIViewController{
         sender.backgroundColor = UIColor.white
         sender.setTitleColor(UIColor.CustomColor.skyBlue, for: UIControl.State.normal)
         
-        signIn()
+        let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "OAuthVC")
+        
+        dvc.modalPresentationStyle = .fullScreen
+        
+        self.present(dvc, animated: true, completion: nil)
         
     }
     
@@ -47,34 +51,3 @@ class SignInVC: UIViewController{
     
 }
 
-
-
-extension SignInVC {
-    func signIn() {
-        AuthService.sharedInstance.getUserEmail(completion: { (result) in
-            switch result {
-            case .networkSuccess(let data) :
-                let detailData = data as? SignInCodeData
-                
-                if let resResult = detailData {
-                    
-                    self.signInData = resResult
-                    
-                    print(self.signInData?.message ?? "")
-                    self.userEmail = self.signInData?.data?.email
-                    print("email:\(self.userEmail)")
-//                    UserDefaults.standard.set(self.userEmail, forKey: "userEmail")
-                }
-                break
-                
-            case .networkFail :
-                self.networkErrorAlert()
-                
-            default:
-                self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
-                break
-            }
-        })
-    }
-    
-}

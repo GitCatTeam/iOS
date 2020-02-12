@@ -94,12 +94,31 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
             let token = gsno(values["token"] as? String)
             let isFirst = gbno(values["isFirst"] as? Bool)
             
-            
+            print("[로그인 회원정보 가져오기 성공]")
             print("email:\(userEmail)")
             print("name:\(userName)")
             print("image:\(userImage)")
             print("token:\(token)")
             print("isFirst\(isFirst)")
+            
+            UserDefaults.standard.set(userEmail, forKey: "userEmail")
+            UserDefaults.standard.set(userName, forKey: "userName")
+            UserDefaults.standard.set(userImage, forKey: "userImage")
+            UserDefaults.standard.set(token, forKey: "token")
+            
+            
+            if(isFirst == true) {
+                let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "GetMoreInfo1VC")
+                
+                self.navigationController?.pushViewController(dvc, animated: true)
+                
+            }else{
+                let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainTabC")
+                
+                dvc.modalPresentationStyle = .fullScreen
+                
+                self.present(dvc, animated: true, completion: nil)
+            }
 
         }
     }

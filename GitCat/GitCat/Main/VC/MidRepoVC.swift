@@ -28,7 +28,9 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     var somedays : Array = [String]()
     var repositoryNameDummy: [String] = ["GitCat","카멜레On","이게뭐약"]
     var commitDummy: [String] = ["[UPDATE]레포트 화면 스크롤 동작 추가","[UPDATE]라인차트 추가","[UPDATE]설정 화면 추가","[UPDATE]Github 연동 로그인 기능 추가","[UPDATE]파이차트 추가[UPDATE]백 버튼 커스텀 적[UPDATE]달력 커스텀 적용","[UPDATE]홈화면 탭바 반영","[UPDATE]앱 아이콘 적용","[UPDATE]gitignore 수정","[UPDATE]애니메이션 추가"]
-
+    var visitedMonth:[Bool] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false]
+    var currentMonth:Int?
+    var currentYear:Int?
     
     
     //포맷터 초기화
@@ -74,14 +76,29 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         
         let intYear:Int = gino(values.year)
         let intMonth:Int = gino(values.month)
-
+        
+        print("초기화: \(intYear)년 \(intMonth)월")
+        currentMonth = intMonth
+        currentYear = intYear
         setCalendarCommitBackgroundColor(year: intYear, month: intMonth)
+        
         self.view.addGestureRecognizer(self.scopeGesture)
 
         self.tableView.panGestureRecognizer.require(toFail: self.scopeGesture)
         self.tableView.rowHeight = 26;
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let values = Calendar.current.dateComponents([Calendar.Component.month, Calendar.Component.year], from: self.calendar.currentPage)
+        
+        let intYear:Int = gino(values.year)
+        let intMonth:Int = gino(values.month)
+        
+        print("viewWillAppear 초기화: \(intYear)년 \(intMonth)월")
+
+        setCalendarCommitBackgroundColor(year: intYear, month: intMonth)
     }
     
     
@@ -216,6 +233,28 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         print("\(self.formatter.string(from: calendar.currentPage))")
+//        self.formatter.string(from: <#T##Date#>)
+        let values = Calendar.current.dateComponents([Calendar.Component.month, Calendar.Component.year], from: self.calendar.currentPage)
+               
+        let intYear:Int = gino(values.year)
+        let intMonth:Int = gino(values.month)
+        
+        if(currentYear != intYear) {
+            currentYear = intYear
+            visitedMonth[currentMonth ?? 0] = true
+            
+            print("새로운 년도, 달력 넘김: \(intYear)년 \(intMonth)월")
+            
+            setCalendarCommitBackgroundColor(year: intYear, month: intMonth)
+        }
+        else if(visitedMonth[currentMonth ?? 0] != true) {
+            visitedMonth[currentMonth ?? 0] = true
+            
+            print("새로운 달, 달력 넘김: \(intYear)년 \(intMonth)월")
+            
+            setCalendarCommitBackgroundColor(year: intYear, month: intMonth)
+        }
+        
     }
     
     //글자 색
@@ -256,17 +295,21 @@ extension MidRepoVC {
         }
         selectedYear = String(year)
         
-        CommitCountService.sharedInstance.getCommit(email: "yeji2039@gmail.com", month: "\(gsno(selectedYear))\(gsno(selectedMonth))") { (result) in
+        let userEmail = UserDefaults.standard.string(forKey: "userEmail") ?? ""
+        
+        CommitCountService.sharedInstance.getCommit(email: userEmail
+        , month: "\(gsno(selectedYear))\(gsno(selectedMonth))") { (result) in
             switch result {
             case .networkSuccess(let data) :
                 let detailData = data as? CommitCountModel
                 
                 if let resResult = detailData {
-    
-                    self.commitLevel1 = resResult.data?.commits?.level_1 ?? []
-                    self.commitLevel2 = resResult.data?.commits?.level_2 ?? []
-                    self.commitLevel3 = resResult.data?.commits?.level_3 ?? []
+                    print("level1:\(self.gono(resResult.data?.commits?.level_1))")
+                    self.commitLevel1 += resResult.data?.commits?.level_1 ?? []
+                    self.commitLevel2 += resResult.data?.commits?.level_2 ?? []
+                    self.commitLevel3 += resResult.data?.commits?.level_3 ?? []
                     
+                    self.calendar.reloadData()
 
                 }
                 break

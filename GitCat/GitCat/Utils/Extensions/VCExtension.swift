@@ -11,6 +11,13 @@ import UIKit
 
 extension UIViewController {
     
+    func gono(_ value: Any?) -> Any {
+        if let _value = value {
+            return _value
+        }else {
+            return []
+        }
+    }
     func gsno(_ value : String?) -> String{
         if let _value = value{
             return _value
