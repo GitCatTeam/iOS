@@ -241,6 +241,7 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
         
         if(currentYear != intYear) {
             currentYear = intYear
+            visitedMonth = [false, false, false, false, false, false, false, false, false, false, false, false, false, false]
             visitedMonth[currentMonth ?? 0] = true
             
             print("새로운 년도, 달력 넘김: \(intYear)년 \(intMonth)월")
