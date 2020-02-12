@@ -74,6 +74,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
     
     func loadURL() {
         
+        
         let OAuthURL = URL(string: "https://a.gitcat.app/api/auth/github")
         
         let request = URLRequest(url: OAuthURL!)
@@ -84,15 +85,23 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
     
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        print("dpgb")
-        if(message.name == "authCheckHandler") {
-            print("함수 호출 되기는 한다.")
-            print(message.body)
-            let values:[String:String] = message.body as! Dictionary
-            print("\(String(describing: values["email"]))")
-            print("(\(values["name"] ?? "없다")")
-        }
 
+        if(message.name == "authCheckHandler") {
+            let values:[String:AnyObject] = message.body as! Dictionary
+            let userEmail = gsno(values["email"] as? String)
+            let userName = gsno(values["name"] as? String)
+            let userImage = gsno(values["profile_img"] as? String)
+            let token = gsno(values["token"] as? String)
+            let isFirst = gbno(values["isFirst"] as? Bool)
+            
+            
+            print("email:\(userEmail)")
+            print("name:\(userName)")
+            print("image:\(userImage)")
+            print("token:\(token)")
+            print("isFirst\(isFirst)")
+
+        }
     }
     
     //중복적 리로드 방지
