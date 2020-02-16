@@ -36,7 +36,13 @@ class GetMoreInfo1VC: UIViewController {
         
         clickBtnCnt = 0
         
-        userProfileImageView.circleImageView()
+        ///////////////////////////////////////////////////
+        //FIXME:디폴트 이미지 넣기
+        ///////////////////////////////////////////////////
+        
+        let imageURL = UserDefaults.standard.string(forKey: "userImage")
+        userProfileImageView.setImage(with: imageURL ?? "")
+        
         setButtonSelect()
         setButtonColor()
         nextBtn.addShadow()
@@ -49,6 +55,13 @@ class GetMoreInfo1VC: UIViewController {
         
         nextBtn.isEnabled = false
         
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        userProfileImageView.circleImageView()
+        femaleBtn.circleRadius()
+        maleBtn.circleRadius()
+        otherBtn.circleRadius()
     }
     
     @IBAction func selectGenderAction(_ sender: UIButton) {

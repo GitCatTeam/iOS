@@ -109,7 +109,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
             
             if(isFirst == true) {
                 let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "GetMoreInfo1VC")
-                
+                dvc.modalPresentationStyle = .fullScreen
                 self.navigationController?.pushViewController(dvc, animated: true)
                 
             }else{

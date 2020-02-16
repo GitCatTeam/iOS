@@ -25,7 +25,6 @@ class SelectCatCVCell: UICollectionViewCell {
         
         self.NewBadgeView.layer.cornerRadius = 7
         self.BuyBadgeView.layer.cornerRadius = 7
-        
-        
+
     }
 }

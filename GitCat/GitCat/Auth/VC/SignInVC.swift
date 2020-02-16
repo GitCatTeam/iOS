@@ -31,10 +31,9 @@ class SignInVC: UIViewController{
         sender.setTitleColor(UIColor.CustomColor.skyBlue, for: UIControl.State.normal)
         
         let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "OAuthVC")
-        
         dvc.modalPresentationStyle = .fullScreen
-        
-        self.present(dvc, animated: true, completion: nil)
+
+       self.navigationController?.pushViewController(dvc, animated: true)
         
     }
     

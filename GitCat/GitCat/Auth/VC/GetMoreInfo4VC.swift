@@ -8,6 +8,8 @@
 
 import UIKit
 
+//FIXME: 콜렉션뷰 셀 오토 빼고 나서 계속 에러남 ㅋㅋㅋㅋㅋㅋㅋ
+
 class GetMoreInfo4VC: UIViewController {
     var keyboardHeight: CGFloat = 0.0
     
@@ -57,6 +59,7 @@ class GetMoreInfo4VC: UIViewController {
         setButtonSelect()
         setStyle()
         animateView()
+        
     }
     
     @IBAction func catTypeSelectedAction(_ sender: UIButton) {
@@ -275,9 +278,11 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
         return cell!
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width: CGFloat = 76
-        let height: CGFloat = 76
-        return CGSize(width: width, height: height)
+        
+        //76
+        let cellWidth: CGFloat = collectionView.frame.width / 3.4
+        let cellHeight: CGFloat = collectionView.frame.height / 3.15
+        return CGSize(width: cellWidth, height: cellHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
