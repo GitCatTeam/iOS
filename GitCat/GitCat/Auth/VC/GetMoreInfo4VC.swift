@@ -8,7 +8,6 @@
 
 import UIKit
 
-//FIXME: 콜렉션뷰 셀 오토 빼고 나서 계속 에러남 ㅋㅋㅋㅋㅋㅋㅋ
 
 class GetMoreInfo4VC: UIViewController {
     var keyboardHeight: CGFloat = 0.0
@@ -46,7 +45,7 @@ class GetMoreInfo4VC: UIViewController {
     
     let cellIdentifier = "SelectCatCVCell"
     
-    let dummyImageData:[UIImage] = [UIImage(named: "imgCatNero")!, UIImage(named: "imgCatPanda")!, UIImage(named: "imgCatCheeze")!, UIImage(named: "imgCatPanda")!, UIImage(named: "imgCatPanda")!, UIImage(named: "imgCatNormal")!, UIImage(named: "imgCatPanda")!, UIImage(named: "imgCatPanda")!, UIImage(named: "imgCatNormal")!, UIImage(named: "imgCatNormal")!, UIImage(named: "imgCatCheeze")!, UIImage(named: "imgCatCheeze")!, UIImage(named: "imgCatNero")!]
+    let dummyImageData:[UIImage] = [UIImage(named: "imgCatNero")!, UIImage(named: "imgCatPanda")!, UIImage(named: "imgCatCheeze")!, UIImage(named: "imgCatPanda")!, UIImage(named: "imgCatPanda")!, UIImage(named: "imgCatNormal")!]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +59,10 @@ class GetMoreInfo4VC: UIViewController {
         setStyle()
         animateView()
         
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.collectionViewLayout.invalidateLayout()
     }
     
     @IBAction func catTypeSelectedAction(_ sender: UIButton) {
@@ -280,25 +283,25 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         //76
-        let cellWidth: CGFloat = collectionView.frame.width / 3.4
-        let cellHeight: CGFloat = collectionView.frame.height / 3.15
+        let cellWidth: CGFloat = collectionView.frame.width / 3.4 - 1
+        let cellHeight: CGFloat = collectionView.frame.height / 3.15 - 1
         return CGSize(width: cellWidth, height: cellHeight)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //FIXME: 이거 안됨
-        
-        let cell = collectionView.cellForItem(at: indexPath) as? SelectCatCVCell
-
-        cell?.catImageView.layer.borderColor = #colorLiteral(red: 0.4652857184, green: 0.8005116582, blue: 0.9823767543, alpha: 1)
+        let selectedCell:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as! SelectCatCVCell
+        selectedCell.roundView.layer.borderColor = #colorLiteral(red: 0.4652857184, green: 0.8005116582, blue: 0.9823767543, alpha: 1)
         
         showCatNameTextField()
-        
 
     }
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as? SelectCatCVCell
-        cell?.catImageView.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         
+        let cellToDeselect:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as! SelectCatCVCell
+        cellToDeselect.roundView.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
+        
+
+
     }
 }
