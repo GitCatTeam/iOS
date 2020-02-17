@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReportVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
+class ReportVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
 
     @IBOutlet weak var collectionView: UICollectionView!
     let cellIdentifier = "ReportCVCell"
@@ -32,6 +32,17 @@ class ReportVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        //375 641
+        //345 124
+        let cellWidth: CGFloat = collectionView.frame.width / 1.08
+        let cellHeight: CGFloat = collectionView.frame.height / 5.17
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 

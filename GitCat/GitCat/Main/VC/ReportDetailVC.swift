@@ -13,6 +13,8 @@ class ReportDetailVC: UIViewController {
     @IBOutlet weak var view2: RoundView!
     @IBOutlet weak var view3: RoundView!
     @IBOutlet weak var view4: RoundView!
+    @IBOutlet weak var view5: RoundView!
+    
     @IBOutlet weak var dottedLine1: UIView!
     @IBOutlet weak var dottedLine2: UIView!
     @IBOutlet weak var dottedLine3: UIView!
@@ -204,11 +206,13 @@ class ReportDetailVC: UIViewController {
         self.view2.layer.cornerRadius = 8
         self.view3.layer.cornerRadius = 8
         self.view4.layer.cornerRadius = 8
+        self.view5.layer.cornerRadius = 8
         
         self.view1.addShadow()
         self.view2.addShadow()
         self.view3.addShadow()
         self.view4.addShadow()
+        self.view5.addShadow()
         
         self.dottedLine1.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
         self.dottedLine2.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
