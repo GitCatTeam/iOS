@@ -40,6 +40,8 @@
 		4C9E8E8B23C1BF49002BDE02 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E8E8A23C1BF49002BDE02 /* AuthService.swift */; };
 		4C9E8EA223C1DAC0002BDE02 /* SignInCodeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E8EA123C1DAC0002BDE02 /* SignInCodeData.swift */; };
 		4C9E8EAE23C1F427002BDE02 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E8EAD23C1F427002BDE02 /* Requestable.swift */; };
+		4CA7A75923FB9D36004FC110 /* ReportListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7A75823FB9D36004FC110 /* ReportListModel.swift */; };
+		4CA7A75B23FB9D51004FC110 /* ReportDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7A75A23FB9D51004FC110 /* ReportDetailModel.swift */; };
 		4CC07F9123B0EE1000851B45 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC07F9023B0EE1000851B45 /* ColorPalette.swift */; };
 		4CC07F9323B0F28100851B45 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC07F9223B0F28100851B45 /* RoundView.swift */; };
 		4CC07F9523B1165200851B45 /* GetMoreInfo1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC07F9423B1165200851B45 /* GetMoreInfo1VC.swift */; };
@@ -95,6 +97,8 @@
 		4C9E8E8A23C1BF49002BDE02 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		4C9E8EA123C1DAC0002BDE02 /* SignInCodeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCodeData.swift; sourceTree = "<group>"; };
 		4C9E8EAD23C1F427002BDE02 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		4CA7A75823FB9D36004FC110 /* ReportListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListModel.swift; sourceTree = "<group>"; };
+		4CA7A75A23FB9D51004FC110 /* ReportDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailModel.swift; sourceTree = "<group>"; };
 		4CC07F9023B0EE1000851B45 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		4CC07F9223B0F28100851B45 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		4CC07F9423B1165200851B45 /* GetMoreInfo1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMoreInfo1VC.swift; sourceTree = "<group>"; };
@@ -253,6 +257,8 @@
 			children = (
 				4C7C0E7723D9816000669B38 /* CommitCountModel.swift */,
 				4C7C0E7923D9826800669B38 /* CommitListModel.swift */,
+				4CA7A75823FB9D36004FC110 /* ReportListModel.swift */,
+				4CA7A75A23FB9D51004FC110 /* ReportDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -543,12 +549,14 @@
 				4C7C0E8023DF158B00669B38 /* SettingVC.swift in Sources */,
 				4C68D13523B0D02400A8F813 /* SignInVC.swift in Sources */,
 				4C7C0E7823D9816000669B38 /* CommitCountModel.swift in Sources */,
+				4CA7A75B23FB9D51004FC110 /* ReportDetailModel.swift in Sources */,
 				4CC7D9B923C63BD5004576BB /* ReportVC.swift in Sources */,
 				4C9E8EAE23C1F427002BDE02 /* Requestable.swift in Sources */,
 				4C2DDD0A23EAEEF200FCB36B /* TutorialCVCell.swift in Sources */,
 				4C7C0E7123D96CB900669B38 /* OAuthVC.swift in Sources */,
 				4C7C0E1123D4A11400669B38 /* CustomHeaderTVCell.swift in Sources */,
 				4C2DDD0D23EB1FD200FCB36B /* SelectCatCVCell.swift in Sources */,
+				4CA7A75923FB9D36004FC110 /* ReportListModel.swift in Sources */,
 				4C7C0E6723D8044B00669B38 /* HttpResponseCode.swift in Sources */,
 				4C7C0E6D23D8133200669B38 /* GettableService.swift in Sources */,
 				4CC07FB523B317CA00851B45 /* RoundBtn.swift in Sources */,
