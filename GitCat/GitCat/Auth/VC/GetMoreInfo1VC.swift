@@ -41,7 +41,7 @@ class GetMoreInfo1VC: UIViewController {
         ///////////////////////////////////////////////////
         
         let imageURL = UserDefaults.standard.string(forKey: "userImage")
-        userProfileImageView.setImage(with: imageURL ?? "")
+        userProfileImageView.setImage(imageURL, defaultImgPath: "")
         
         setButtonSelect()
         setButtonColor()

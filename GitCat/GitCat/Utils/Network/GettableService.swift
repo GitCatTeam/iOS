@@ -53,7 +53,7 @@ extension GettableService {
                         let decoder = JSONDecoder()
                         
                         do {
-                            print("[해당 API에 접근 성공]")
+                            print(("[해당 API에 접근 성공]"))
                             let data = try decoder.decode(NetworkData.self, from: value)
                             
                             let result: networkResult = (resCode, data)

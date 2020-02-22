@@ -88,21 +88,18 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
 
         if(message.name == "authCheckHandler") {
             let values:[String:AnyObject] = message.body as! Dictionary
-            let userEmail = gsno(values["email"] as? String)
-            let userName = gsno(values["name"] as? String)
-            let userImage = gsno(values["profile_img"] as? String)
+            let userEmail = gsno(values["githubId"] as? String)
+            let userImage = gsno(values["profileImg"] as? String)
             let token = gsno(values["token"] as? String)
             let isFirst = gbno(values["isFirst"] as? Bool)
             
             print("[로그인 회원정보 가져오기 성공]")
             print("email:\(userEmail)")
-            print("name:\(userName)")
             print("image:\(userImage)")
             print("token:\(token)")
             print("isFirst\(isFirst)")
             
             UserDefaults.standard.set(userEmail, forKey: "userEmail")
-            UserDefaults.standard.set(userName, forKey: "userName")
             UserDefaults.standard.set(userImage, forKey: "userImage")
             UserDefaults.standard.set(token, forKey: "token")
             

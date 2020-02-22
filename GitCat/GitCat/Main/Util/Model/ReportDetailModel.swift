@@ -17,21 +17,21 @@ class ReportDetailDataModel:Codable {
     var dailyCount:DailyCountModel?
     var languageRatio:LanguageRatioModel?
     var contributedRepository:ContributedRepositoryModel?
-    var comment:String?
+    var comment:[String]?
 }
 class DailyCountModel:Codable {
     var dayArray:[String?]
     var countArray:[Int?]
 }
 class LanguageRatioModel:Codable {
-    var percentArray:[Int?]
+    var percentArray:[Double?]
     var resultLanguages:[ResultLanguagesModel?]
 }
 class ContributedRepositoryModel:Codable {
-    var count:[String?]
+    var count:[Int?]
     var repoNames:[String?]
 }
 class ResultLanguagesModel:Codable {
-    var percent:Int?
+    var percent:Double?
     var language:String?
 }

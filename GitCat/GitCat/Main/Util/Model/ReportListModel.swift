@@ -8,14 +8,14 @@
 
 import Foundation
 
-class ReportListModel:Codable {
+struct ReportListModel:Codable {
     var message:String?
     var data:ReportListDataModel?
 }
-class ReportListDataModel:Codable {
+struct ReportListDataModel:Codable {
     var resultList:[ResultListDataModel]?
 }
-class ResultListDataModel:Codable {
+struct ResultListDataModel:Codable {
     var id:Int?
     var title:String?
     var totalCount:String?

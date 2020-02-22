@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //APNs 서버에 등록한 경우
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
          //token 값을 가지고 온다.
-        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "02X", $1)})
+        let deviceTokenString = deviceToken.map { String(format: "%02x", $0) }.joined()
         
         //console에 token 값을 표시해 준다.
         print("APNs device token: \(deviceTokenString)")

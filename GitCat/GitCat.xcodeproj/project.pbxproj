@@ -60,6 +60,8 @@
 		4CCBE95A23FADD11002FA879 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCBE95923FADD11002FA879 /* UserNotifications.framework */; };
 		4CCBE95C23FADD1A002FA879 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCBE95B23FADD1A002FA879 /* PushKit.framework */; };
 		4CD5A5D023C2F45E00A8E225 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5A5CF23C2F45E00A8E225 /* CustomLabel.swift */; };
+		4CE733ED23FCF0CD00DB97EB /* ReportListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE733EC23FCF0CD00DB97EB /* ReportListService.swift */; };
+		4CE733EF23FCF0D900DB97EB /* ReportDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE733EE23FCF0D900DB97EB /* ReportDetailService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +120,8 @@
 		4CCBE95B23FADD1A002FA879 /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
 		4CCBE95D23FADD7D002FA879 /* GitCatDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitCatDebug.entitlements; sourceTree = "<group>"; };
 		4CD5A5CF23C2F45E00A8E225 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		4CE733EC23FCF0CD00DB97EB /* ReportListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListService.swift; sourceTree = "<group>"; };
+		4CE733EE23FCF0D900DB97EB /* ReportDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailService.swift; sourceTree = "<group>"; };
 		7467F6BE814B831147F82671 /* Pods-GitCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitCat.debug.xcconfig"; path = "Target Support Files/Pods-GitCat/Pods-GitCat.debug.xcconfig"; sourceTree = "<group>"; };
 		C7FB3E5D46AAE40CBCA4F48F /* Pods_GitCat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitCat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1814F3437C4FE65FFA6ECC9 /* Pods-GitCat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitCat.release.xcconfig"; path = "Target Support Files/Pods-GitCat/Pods-GitCat.release.xcconfig"; sourceTree = "<group>"; };
@@ -268,6 +272,8 @@
 			children = (
 				4C7C0E7B23D985C200669B38 /* CommitCountService.swift */,
 				4C7C0E7D23D985D800669B38 /* CommitListService.swift */,
+				4CE733EC23FCF0CD00DB97EB /* ReportListService.swift */,
+				4CE733EE23FCF0D900DB97EB /* ReportDetailService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -521,6 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CE733EF23FCF0D900DB97EB /* ReportDetailService.swift in Sources */,
 				4CC07FBF23B330A600851B45 /* LittleRoundBtn.swift in Sources */,
 				4C1035AC23B9D1430057F0B1 /* HomeVC.swift in Sources */,
 				4CC7D9BE23C64722004576BB /* ReportCVCell.swift in Sources */,
@@ -556,6 +563,7 @@
 				4C7C0E7123D96CB900669B38 /* OAuthVC.swift in Sources */,
 				4C7C0E1123D4A11400669B38 /* CustomHeaderTVCell.swift in Sources */,
 				4C2DDD0D23EB1FD200FCB36B /* SelectCatCVCell.swift in Sources */,
+				4CE733ED23FCF0CD00DB97EB /* ReportListService.swift in Sources */,
 				4CA7A75923FB9D36004FC110 /* ReportListModel.swift in Sources */,
 				4C7C0E6723D8044B00669B38 /* HttpResponseCode.swift in Sources */,
 				4C7C0E6D23D8133200669B38 /* GettableService.swift in Sources */,
@@ -612,7 +620,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: yoonyoung.GitCat";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -673,7 +681,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: yoonyoung.GitCat";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -702,7 +710,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GitCat/GitCatDebug.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: yoonyoung Cho (K5LG683G2M)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
 				INFOPLIST_FILE = "$(SRCROOT)/GitCat/Resources/Info.plist";
@@ -723,7 +731,7 @@
 			baseConfigurationReference = D1814F3437C4FE65FFA6ECC9 /* Pods-GitCat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: yoonyoung Cho (K5LG683G2M)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
 				INFOPLIST_FILE = "$(SRCROOT)/GitCat/Resources/Info.plist";

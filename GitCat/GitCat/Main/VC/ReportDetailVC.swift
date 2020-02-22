@@ -20,50 +20,88 @@ class ReportDetailVC: UIViewController {
     @IBOutlet weak var dottedLine3: UIView!
     @IBOutlet weak var dottedLine4: UIView!
     
+    @IBOutlet weak var statusView1: UIView!
+    @IBOutlet weak var statusView2: UIView!
+    @IBOutlet weak var statusView3: UIView!
+    @IBOutlet weak var statusView4: UIView!
+    
     @IBOutlet weak var statusBox: RoundView!
     @IBOutlet weak var statusBox2: RoundView!
     @IBOutlet weak var statusBox3: RoundView!
     @IBOutlet weak var statusBox4: RoundView!
     
+    @IBOutlet weak var statusLabel1: UILabel!
+    @IBOutlet weak var statusLabel2: UILabel!
+    @IBOutlet weak var statusLabel3: UILabel!
+    @IBOutlet weak var statusLabel4: UILabel!
+    
+    @IBOutlet weak var statusPercentLabel1: UILabel!
+    @IBOutlet weak var statusPercentLabel2: UILabel!
+    @IBOutlet weak var statusPercentLabel3: UILabel!
+    @IBOutlet weak var statusPercentLabel4: UILabel!
+    
     
     @IBOutlet weak var pieChart: PieChartView!
     @IBOutlet weak var lineChart: LineChartView!
     @IBOutlet weak var barChart: BarChartView!
+    @IBOutlet weak var averageCount: UILabel!
+    @IBOutlet weak var totalCount: CustomLabel!
+    @IBOutlet weak var compareCount: CustomLabel!
+    
+    
+    
+    @IBOutlet weak var description1: UILabel!
+    @IBOutlet weak var description2: UILabel!
+    @IBOutlet weak var description3: UILabel!
+    
     
     //FIXME: PIECHART - 임의로 이해를 돕기 위해 넣어두는 더미 데이터
-    var iosDataEntry = PieChartDataEntry(value: 20)
-    var macDataEntry = PieChartDataEntry(value: 30)
-    var DataEntry3 = PieChartDataEntry(value: 50)
-    var DataEntry4 = PieChartDataEntry(value: 10)
+    var percentOfLanguageEntries = [PieChartDataEntry]()
+    
+//    var iosDataEntry = PieChartDataEntry(value: 20)
+//    var macDataEntry = PieChartDataEntry(value: 30)
+//    var DataEntry3 = PieChartDataEntry(value: 50)
+//    var DataEntry4 = PieChartDataEntry(value: 10)
     
     //FIXME: LINECHART - 임의로 이해를 돕기 위해 넣어두는 더미 데이터
-    var numbers : [Double] = [10,40,20.0,10.0,40.0,20.0,60.0]
+    var days : [String] = ["1", "5", "10", "15", "20", "25", "30"]//"1", "5", "10", "15", "20", "25", "30"
+    var commitNumbers : [Int] = [10, 40, 20 ,10 ,40 ,20 ,60]//10,40,20.0,10.0,40.0,20.0,60.0
+    
     
     //FIXME: BARCHART - 임의로 이해를 돕기 위해 넣어두는 더미 데이터
     var months: [String]!
     var dataEntries1 = [BarChartDataEntry]()
     var dataEntries2 = [BarChartDataEntry]()
     
+    var id:Int!
+    var totalCommit:String!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        updateLineChartData()
-        updatePieChartData()
-        updateBarChartData()
+
+       setReportDetailData(id: id)
+
+       updateLineChartData()
+       updatePieChartData()
+       updateBarChartData()
         
         setBackBtn(color: UIColor.CustomColor.brownishGrey)
         setStyle()
+    }
     
+    override func viewWillAppear(_ animated: Bool) {
+        totalCount.text = totalCommit
+        
+        
     }
     
     func updateLineChartData() {
         var lineChartEntries = [ChartDataEntry]()
         
         //나중에 통신으로 받아올거면 이렇게 하는게 더 낫겠지
-        for i in 0..<numbers.count {
-            let value = ChartDataEntry(x: Double(i), y: numbers[i])
+        for i in 0..<commitNumbers.count {
+            let value = ChartDataEntry(x: Double(i), y: Double(commitNumbers[i]))
             lineChartEntries.append(value)
         }
         
@@ -108,21 +146,21 @@ class ReportDetailVC: UIViewController {
         lineChart.pinchZoomEnabled = false
         
         
-        let days = ["1", "5", "10", "15", "20", "25", "30"]
+        
         lineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values:days)
         lineChart.xAxis.granularity = 1
         
         lineChart.data = data
         
     }
+    
     func updatePieChartData() {
         //일단 다 때려넣을테니 나중에 다시 정리 ^^
         
-        var numberOfDownloadsDataEntries = [PieChartDataEntry]()
         
         pieChart.legend.enabled = false
         
-        numberOfDownloadsDataEntries = [iosDataEntry, macDataEntry, DataEntry3, DataEntry4]
+        //numberOfDownloadsDataEntries = [] //iosDataEntry, macDataEntry, DataEntry3, DataEntry4
                 
         pieChart.chartDescription?.text = ""
         pieChart.centerText = "언어 비율\n(%)"
@@ -140,7 +178,7 @@ class ReportDetailVC: UIViewController {
         let myAttrString = NSAttributedString(string: "언어 비율\n(%)", attributes: myAttribute)
 
         pieChart.centerAttributedText = myAttrString
-        let chartDataSet = PieChartDataSet(entries: numberOfDownloadsDataEntries, label: nil)
+        let chartDataSet = PieChartDataSet(entries: percentOfLanguageEntries, label: nil)
         
         let chartData = PieChartData(dataSet: chartDataSet)
         
@@ -228,6 +266,124 @@ class ReportDetailVC: UIViewController {
         self.statusBox2.layer.borderColor = #colorLiteral(red: 0.4391697049, green: 0.4392478466, blue: 0.4391593933, alpha: 1)
         self.statusBox3.layer.borderColor = #colorLiteral(red: 0.4391697049, green: 0.4392478466, blue: 0.4391593933, alpha: 1)
         self.statusBox4.layer.borderColor = #colorLiteral(red: 0.4391697049, green: 0.4392478466, blue: 0.4391593933, alpha: 1)
+        
+        self.statusView1.alpha = 0
+        self.statusView2.alpha = 0
+        self.statusView3.alpha = 0
+
     }
 
 }
+
+
+extension ReportDetailVC {
+    func setReportDetailData(id:Int) {
+        ReportDetailService.sharedInstance.getReportDetail(id: id) { (result) in
+            switch result {
+            case .networkSuccess(let data):
+                let reportDetailData = data as? ReportDetailModel
+                
+                if let resResult = reportDetailData {
+                    print("[\(resResult.message)]")
+                    
+                    //comment
+                    self.description1.text = resResult.data?.comment?[0]
+                    self.description2.text = resResult.data?.comment?[1]
+                    self.description3.text = resResult.data?.comment?[2]
+      
+                    //상위 수치 3개
+                    self.averageCount.text = resResult.data?.avgCount
+                    self.compareCount.text = "+\(self.gsno(resResult.data?.comparedLastMonth))"
+                    
+                    //커밋수 통계 - Line Chart
+                    self.days = resResult.data?.dailyCount?.dayArray  as! [String]
+                    self.commitNumbers = resResult.data?.dailyCount?.countArray as! [Int]
+                    
+                    //사용 언어 빙율 - Pie Chart
+                    //PieChartDataEntry(value: 10)
+                    let ratios:[Double] = resResult.data?.languageRatio?.percentArray as! [Double]
+                    for ratio in ratios {
+                        print(ratio)
+                        self.percentOfLanguageEntries += [PieChartDataEntry(value: ratio)]
+                    }
+                    
+                    let resultLanguageList:[ResultLanguagesModel] = resResult.data?.languageRatio?.resultLanguages as! [ResultLanguagesModel]
+                    
+                    
+                    if (resultLanguageList.count == 1) {
+                        self.statusView1.alpha = 1
+                        
+                        self.statusLabel1.text = resultLanguageList[0].language
+                        
+                        self.statusPercentLabel1.text = "\(self.gdno(resultLanguageList[0].percent))"
+                        
+                    }else if (resultLanguageList.count == 2) {
+                        self.statusView1.alpha = 1
+                        self.statusView2.alpha = 1
+                        
+                        self.statusLabel1.text = resultLanguageList[0].language
+                        self.statusLabel2.text = resultLanguageList[1].language
+                        
+                        self.statusPercentLabel1.text = "\(self.gdno(resultLanguageList[0].percent))"
+                        self.statusPercentLabel2.text = "\(self.gdno(resultLanguageList[1].percent))"
+                        
+                    }else if (resultLanguageList.count == 3) {
+                        self.statusView1.alpha = 1
+                        self.statusView2.alpha = 1
+                        self.statusView3.alpha = 1
+                        
+                        self.statusLabel1.text = resultLanguageList[0].language
+                        self.statusLabel2.text = resultLanguageList[1].language
+                        self.statusLabel3.text = resultLanguageList[2].language
+                        
+                        self.statusPercentLabel1.text = "\(self.gdno(resultLanguageList[0].percent))"
+                        self.statusPercentLabel2.text = "\(self.gdno(resultLanguageList[1].percent))"
+                        self.statusPercentLabel3.text = "\(self.gdno(resultLanguageList[2].percent))"
+                        
+                    }else if (resultLanguageList.count == 4) {
+                        self.statusView1.alpha = 1
+                        self.statusView2.alpha = 1
+                        self.statusView3.alpha = 1
+                        self.statusView4.alpha = 1
+                        
+                        self.statusLabel1.text = resultLanguageList[0].language
+                        self.statusLabel2.text = resultLanguageList[1].language
+                        self.statusLabel3.text = resultLanguageList[2].language
+                        self.statusLabel4.text = resultLanguageList[3].language
+                        
+                        self.statusPercentLabel1.text = "\(self.gdno(resultLanguageList[0].percent))"
+                        self.statusPercentLabel2.text = "\(self.gdno(resultLanguageList[1].percent))"
+                        self.statusPercentLabel2.text = "\(self.gdno(resultLanguageList[2].percent))"
+                        self.statusPercentLabel2.text = "\(self.gdno(resultLanguageList[3].percent))"
+                    }
+
+                    /*
+                     {
+                       "data" : {
+                         
+                         "contributedRepository" : {
+                           "count" : [
+                             17,
+                             11
+                           ],
+                           "repoNames" : [
+                             "iOS",
+                             "Algorithm"
+                           ]
+                         },
+                       },
+                     }
+                     */
+                }
+                break
+                
+            case .networkFail:
+                self.networkErrorAlert()
+            default:
+                self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요.")
+                break
+            }
+        }
+    }
+}
+
