@@ -117,6 +117,12 @@ class GetMoreInfo3VC: UIViewController {
         sender.backgroundColor = UIColor(red: 220/255, green: 221/255, blue: 225/255, alpha: 1)
         if let dvc = storyboard? .instantiateViewController(withIdentifier: "GetMoreInfo4VC") as? GetMoreInfo4VC {
             self.navigationController?.pushViewController(dvc, animated: true)
+            
+//            let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainTabC")
+//
+//            dvc.modalPresentationStyle = .fullScreen
+//
+//            self.present(dvc, animated: true, completion: nil)
         }
     }
     

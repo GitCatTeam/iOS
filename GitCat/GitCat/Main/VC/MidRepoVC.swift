@@ -54,11 +54,7 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     var commitLevel1 : Array = [String]()
     var commitLevel2 : Array = [String]()
     var commitLevel3 : Array = [String]()
-    
-//    let selectedDates = ["2020-01-20", "2020-01-21","2020-01-22"]
-//    let selectedDates2 = ["2020-01-17", "2020-01-18","2020-01-19"]
-//    let selectedDates3 = ["2020-01-15", "2020-01-16"]
-//
+
     var selectedYear:String!
     var selectedMonth:String!
     
@@ -78,6 +74,7 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         let intMonth:Int = gino(values.month)
         
         print("초기화: \(intYear)년 \(intMonth)월")
+        
         currentMonth = intMonth
         currentYear = intYear
         setCalendarCommitBackgroundColor(year: intYear, month: intMonth)
@@ -91,20 +88,8 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let values = Calendar.current.dateComponents([Calendar.Component.month, Calendar.Component.year], from: self.calendar.currentPage)
-        
-        let intYear:Int = gino(values.year)
-        let intMonth:Int = gino(values.month)
-        
-        print("viewWillAppear 초기화: \(intYear)년 \(intMonth)월")
-
-        setCalendarCommitBackgroundColor(year: intYear, month: intMonth)
     }
-    
-    
-    
 
-    
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         let shouldBegin = self.tableView.contentOffset.y <= -self.tableView.contentInset.top
         if shouldBegin {
@@ -188,13 +173,12 @@ extension MidRepoVC:  UITableViewDelegate, UITableViewDataSource  {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        //header height : 20
+        
         let headerCell = tableView.dequeueReusableCell(withIdentifier: headerIdentifier) as! CustomHeaderTVCell
         
         headerCell.repoNameLabel.text = repositoryNameDummy[section]
         return headerCell.contentView
-        
-        
+
     }
     
 }
@@ -233,7 +217,7 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
     
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         print("\(self.formatter.string(from: calendar.currentPage))")
-//        self.formatter.string(from: <#T##Date#>)
+
         let values = Calendar.current.dateComponents([Calendar.Component.month, Calendar.Component.year], from: self.calendar.currentPage)
                
         let intYear:Int = gino(values.year)

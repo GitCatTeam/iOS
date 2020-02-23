@@ -61,6 +61,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
     override func viewDidLoad() {
         super.viewDidLoad()
         loadURL()
+        setBackBtn(color: UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1))
        
 
 

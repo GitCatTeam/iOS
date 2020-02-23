@@ -55,51 +55,47 @@ class ReportDetailVC: UIViewController {
     @IBOutlet weak var description3: UILabel!
     
     
-    //FIXME: PIECHART - 임의로 이해를 돕기 위해 넣어두는 더미 데이터
+    //MARK: PIECHART
     var percentOfLanguageEntries = [PieChartDataEntry]()
     
-//    var iosDataEntry = PieChartDataEntry(value: 20)
-//    var macDataEntry = PieChartDataEntry(value: 30)
-//    var DataEntry3 = PieChartDataEntry(value: 50)
-//    var DataEntry4 = PieChartDataEntry(value: 10)
-    
-    //FIXME: LINECHART - 임의로 이해를 돕기 위해 넣어두는 더미 데이터
-    var days : [String] = ["1", "5", "10", "15", "20", "25", "30"]//"1", "5", "10", "15", "20", "25", "30"
-    var commitNumbers : [Int] = [10, 40, 20 ,10 ,40 ,20 ,60]//10,40,20.0,10.0,40.0,20.0,60.0
+    //MARK: LINECHART
+    var days : [String] = []
+    var commitNumbers : [Int] = []
     
     
-    //FIXME: BARCHART - 임의로 이해를 돕기 위해 넣어두는 더미 데이터
-    var months: [String]!
+    //MARK: BARCHART
+    var repositories = [String]() // "레파1", "레파2", "레파3"
+    var repoCommits = [Double]() //20, 4, 6.0
     var dataEntries1 = [BarChartDataEntry]()
     var dataEntries2 = [BarChartDataEntry]()
     
     var id:Int!
+    var reportTitle:String!
     var totalCommit:String!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       setReportDetailData(id: id)
-
-       updateLineChartData()
-       updatePieChartData()
-       updateBarChartData()
+        self.navigationItem.title = reportTitle
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor(red: 137/255, green: 204/255, blue: 246/255, alpha: 1)]
+               navigationController?.navigationBar.titleTextAttributes = textAttributes
         
+        percentOfLanguageEntries = [] //사용언어비율 pieChart 데이터 초기화
         setBackBtn(color: UIColor.CustomColor.brownishGrey)
         setStyle()
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         totalCount.text = totalCommit
-        
-        
+        setReportDetailData(id: id)
     }
     
     func updateLineChartData() {
         var lineChartEntries = [ChartDataEntry]()
         
-        //나중에 통신으로 받아올거면 이렇게 하는게 더 낫겠지
         for i in 0..<commitNumbers.count {
             let value = ChartDataEntry(x: Double(i), y: Double(commitNumbers[i]))
             lineChartEntries.append(value)
@@ -112,7 +108,7 @@ class ReportDetailVC: UIViewController {
         line.drawFilledEnabled = true
         line.fillColor = UIColor.CustomColor.skyBlue
         line.circleColors = [#colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)]
-//        line.drawCirclesEnabled = false
+        line.drawCirclesEnabled = false
         line.circleRadius = 3
         line.circleHoleRadius = 1
         
@@ -155,12 +151,8 @@ class ReportDetailVC: UIViewController {
     }
     
     func updatePieChartData() {
-        //일단 다 때려넣을테니 나중에 다시 정리 ^^
-        
-        
+
         pieChart.legend.enabled = false
-        
-        //numberOfDownloadsDataEntries = [] //iosDataEntry, macDataEntry, DataEntry3, DataEntry4
                 
         pieChart.chartDescription?.text = ""
         pieChart.centerText = "언어 비율\n(%)"
@@ -192,10 +184,7 @@ class ReportDetailVC: UIViewController {
     }
     
     func updateBarChartData() {
-        
-        months = ["레파1", "레파2", "레파3"]
-        let unitSold = [20, 4, 6.0]
-        setBarChart(dataPoints: months, values: unitSold)
+        setBarChart(dataPoints: repositories, values: repoCommits)
     }
     
     func setBarChart(dataPoints: [String], values: [Double]) {
@@ -228,7 +217,7 @@ class ReportDetailVC: UIViewController {
             dataEntries1.append(dataEntry)
         }
 
-        let chartDataSet = BarChartDataSet(entries: dataEntries1, label: "Units Sold")
+        let chartDataSet = BarChartDataSet(entries: dataEntries1, label: nil)
         
         chartDataSet.colors = [#colorLiteral(red: 0.8022227883, green: 0.9198918939, blue: 1, alpha: 1), #colorLiteral(red: 0.5390568376, green: 0.7959131598, blue: 0.9652681947, alpha: 1), #colorLiteral(red: 0.8410330415, green: 0.8754420877, blue: 0.8878466487, alpha: 1)]
         
@@ -284,7 +273,7 @@ extension ReportDetailVC {
                 let reportDetailData = data as? ReportDetailModel
                 
                 if let resResult = reportDetailData {
-                    print("[\(resResult.message)]")
+                    print("[\(String(describing: resResult.message))]")
                     
                     //comment
                     self.description1.text = resResult.data?.comment?[0]
@@ -299,7 +288,7 @@ extension ReportDetailVC {
                     self.days = resResult.data?.dailyCount?.dayArray  as! [String]
                     self.commitNumbers = resResult.data?.dailyCount?.countArray as! [Int]
                     
-                    //사용 언어 빙율 - Pie Chart
+                    //사용 언어 비율 - Pie Chart
                     //PieChartDataEntry(value: 10)
                     let ratios:[Double] = resResult.data?.languageRatio?.percentArray as! [Double]
                     for ratio in ratios {
@@ -356,24 +345,14 @@ extension ReportDetailVC {
                         self.statusPercentLabel2.text = "\(self.gdno(resultLanguageList[2].percent))"
                         self.statusPercentLabel2.text = "\(self.gdno(resultLanguageList[3].percent))"
                     }
-
-                    /*
-                     {
-                       "data" : {
-                         
-                         "contributedRepository" : {
-                           "count" : [
-                             17,
-                             11
-                           ],
-                           "repoNames" : [
-                             "iOS",
-                             "Algorithm"
-                           ]
-                         },
-                       },
-                     }
-                     */
+                    
+                    self.repositories = resResult.data?.contributedRepository?.repoNames as! [String]
+                    self.repoCommits = resResult.data?.contributedRepository?.count as! [Double]
+                    
+                    self.updateLineChartData()
+                    self.updatePieChartData()
+                    self.updateBarChartData()
+                    
                 }
                 break
                 

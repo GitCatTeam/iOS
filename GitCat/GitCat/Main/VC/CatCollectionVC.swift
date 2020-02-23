@@ -15,8 +15,13 @@ class CatCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionV
     let cellIdentifier:String = "catCollectionViewcell"
     var catDummyName:[String] = ["깜냥이","구냥이","윤냥이","안냥이","첫냥이","테디","코코"]
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         setBackBtn(color: #colorLiteral(red: 0.5307495594, green: 0.8041878939, blue: 0.9690385461, alpha: 1))
+        
+        //TODO: navigation bar title 색 바꾸기
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor(red: 137/255, green: 204/255, blue: 246/255, alpha: 1)]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         
         let bar: UINavigationBar! = self.navigationController?.navigationBar
         bar.backgroundColor = UIColor.white

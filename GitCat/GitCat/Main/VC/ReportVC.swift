@@ -16,6 +16,9 @@ class ReportVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.CustomColor.brownishGrey]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
         
     }
     
@@ -55,6 +58,7 @@ class ReportVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         if let dvc = storyboard?.instantiateViewController(withIdentifier: "ReportDetailVC") as?ReportDetailVC {
             let report = reportDataList[indexPath.item]
             //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
+            dvc.reportTitle = report.title
             dvc.id = report.id
             dvc.totalCommit = report.totalCount
             navigationController?.pushViewController(dvc, animated: true)

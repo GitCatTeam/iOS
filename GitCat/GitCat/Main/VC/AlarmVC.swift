@@ -12,8 +12,13 @@ class AlarmVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "알림 설정"
 
-        setBackBtn(color: UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1))
+        setBackBtn(color: UIColor.CustomColor.brownishGrey)
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.CustomColor.brownishGrey]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
     }
     @IBAction func selectAlarmSystemAction(_ sender: Any) {
         let bellModeAction = UIAlertAction(title: "벨소리", style: .default) { (action) in

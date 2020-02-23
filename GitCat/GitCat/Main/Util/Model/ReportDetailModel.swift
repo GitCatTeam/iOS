@@ -28,7 +28,7 @@ class LanguageRatioModel:Codable {
     var resultLanguages:[ResultLanguagesModel?]
 }
 class ContributedRepositoryModel:Codable {
-    var count:[Int?]
+    var count:[Double?]
     var repoNames:[String?]
 }
 class ResultLanguagesModel:Codable {

@@ -13,6 +13,7 @@
 		4C1035AC23B9D1430057F0B1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1035AB23B9D1430057F0B1 /* HomeVC.swift */; };
 		4C2DDD0A23EAEEF200FCB36B /* TutorialCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DDD0923EAEEF200FCB36B /* TutorialCVCell.swift */; };
 		4C2DDD0D23EB1FD200FCB36B /* SelectCatCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DDD0C23EB1FD200FCB36B /* SelectCatCVCell.swift */; };
+		4C3B8E5B2402449C008735DE /* AuthManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3B8E5A2402449B008735DE /* AuthManageVC.swift */; };
 		4C4A923223BA2476002E5F35 /* MidRepoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A923123BA2476002E5F35 /* MidRepoVC.swift */; };
 		4C68D10623B09D3E00A8F813 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68D10523B09D3E00A8F813 /* AppDelegate.swift */; };
 		4C68D10D23B09D4000A8F813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C68D10C23B09D4000A8F813 /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		4C1035AB23B9D1430057F0B1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		4C2DDD0923EAEEF200FCB36B /* TutorialCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCVCell.swift; sourceTree = "<group>"; };
 		4C2DDD0C23EB1FD200FCB36B /* SelectCatCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCatCVCell.swift; sourceTree = "<group>"; };
+		4C3B8E5A2402449B008735DE /* AuthManageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManageVC.swift; sourceTree = "<group>"; };
 		4C4A923123BA2476002E5F35 /* MidRepoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidRepoVC.swift; sourceTree = "<group>"; };
 		4C68D10223B09D3E00A8F813 /* GitCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C68D10523B09D3E00A8F813 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 				4C7C0E1423D5650D00669B38 /* MainTabBarVC.swift */,
 				4C7C0E1623D587CF00669B38 /* CatCollectionVC.swift */,
 				4C7C0E7F23DF158B00669B38 /* SettingVC.swift */,
+				4C3B8E5A2402449B008735DE /* AuthManageVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				4C7C0E1523D5650D00669B38 /* MainTabBarVC.swift in Sources */,
 				4CC07FBB23B3238C00851B45 /* GetMoreInfo3VC.swift in Sources */,
 				4C7C0E1323D4AB0100669B38 /* AlarmVC.swift in Sources */,
+				4C3B8E5B2402449C008735DE /* AuthManageVC.swift in Sources */,
 				4C8C9E6923CB574600E160B1 /* ReportDetailVC.swift in Sources */,
 				4CD5A5D023C2F45E00A8E225 /* CustomLabel.swift in Sources */,
 				4C7C0E7E23D985D800669B38 /* CommitListService.swift in Sources */,
