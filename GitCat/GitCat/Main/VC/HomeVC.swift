@@ -13,7 +13,23 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     func startTutorialAction() {
         UIView.animate(withDuration: 0.5, animations: {
             self.OverlayView.alpha = 0
-            self.navigationController?.navigationBar.layer.zPosition = 1
+            
+            self.tabBarController?.tabBar.alpha = 1
+
+            let tabBarControllerItems = self.tabBarController?.tabBar.items
+
+            if let tabArray = tabBarControllerItems {
+                let tabBarItem1 = tabArray[0]
+                let tabBarItem2 = tabArray[1]
+                let tabBarItem3 = tabArray[2]
+
+                tabBarItem1.isEnabled = true
+                tabBarItem2.isEnabled = true
+                tabBarItem3.isEnabled = true
+            }
+            
+            self.catCollectionBarItem.isEnabled = true
+            self.settingBarItem.isEnabled = true
         });
         
     }
@@ -24,6 +40,9 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var catCollectionBarItem: UIBarButtonItem!
+    
+    @IBOutlet weak var settingBarItem: UIBarButtonItem!
     
     let cellIdentifier = "TutorialCVCell"
     
@@ -53,8 +72,8 @@ class HomeVC: UIViewController, TutorialCellDelegate {
             tabBarItem3.isEnabled = false
         }
         
-        OverlayView.layer.zPosition = 2
-        
+        catCollectionBarItem.isEnabled = false
+        settingBarItem.isEnabled = false
 
     }
 }
