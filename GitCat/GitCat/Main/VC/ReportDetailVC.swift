@@ -8,6 +8,7 @@
 
 import UIKit
 import Charts
+
 class ReportDetailVC: UIViewController {
     @IBOutlet weak var view1: RoundView!
     @IBOutlet weak var view2: RoundView!
@@ -54,6 +55,10 @@ class ReportDetailVC: UIViewController {
     @IBOutlet weak var description2: UILabel!
     @IBOutlet weak var description3: UILabel!
     
+    @IBOutlet weak var loadingBackgroundView: UIView!
+    
+    @IBOutlet weak var loadingView: UIImageView!
+    
     
     //MARK: PIECHART
     var percentOfLanguageEntries = [PieChartDataEntry]()
@@ -83,6 +88,8 @@ class ReportDetailVC: UIViewController {
         percentOfLanguageEntries = [] //사용언어비율 pieChart 데이터 초기화
         setBackBtn(color: UIColor.CustomColor.brownishGrey)
         setStyle()
+        
+        loadingView.loadGif(name: "gif_loading2")
         
         
     }
@@ -353,13 +360,20 @@ extension ReportDetailVC {
                     self.updatePieChartData()
                     self.updateBarChartData()
                     
+                    self.loadingView.alpha = 0
+                    self.loadingBackgroundView.alpha = 0
+                    
                 }
                 break
                 
             case .networkFail:
                 self.networkErrorAlert()
+                self.loadingView.alpha = 0
+                self.loadingBackgroundView.alpha = 0
             default:
                 self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요.")
+                self.loadingView.alpha = 0
+                self.loadingBackgroundView.alpha = 0
                 break
             }
         }

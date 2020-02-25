@@ -20,6 +20,9 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     @IBOutlet weak var status3: UIView!
     @IBOutlet weak var status4: UIView!
     
+    @IBOutlet weak var loadingBackgroundView: UIView!
+    @IBOutlet weak var loadingView: UIImageView!
+    
     var commitCountData: CommitCountModel?
     
     let cellIdentifier:String = "CommitDetailTVcell";
@@ -61,6 +64,10 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        loadingView.alpha = 0
+//        loadingBackgroundView.alpha = 0
+        loadingView.loadGif(name: "gif_loading2")
+        
         setStatusBorderColor()
         setCalendarAppearnce()
         
@@ -84,7 +91,8 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         self.tableView.panGestureRecognizer.require(toFail: self.scopeGesture)
         self.tableView.rowHeight = 26;
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -273,6 +281,9 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
 extension MidRepoVC {
     func setCalendarCommitBackgroundColor(year:Int, month:Int) {
         
+        loadingBackgroundView.alpha = 0.5
+        loadingView.alpha = 1
+        
         if (month<10) {
             selectedMonth = ("0" + String(month))
         }else{
@@ -285,7 +296,10 @@ extension MidRepoVC {
         CommitCountService.sharedInstance.getCommit(email: userEmail
         , month: "\(gsno(selectedYear))\(gsno(selectedMonth))") { (result) in
             switch result {
+                
+                
             case .networkSuccess(let data) :
+                
                 let detailData = data as? CommitCountModel
                 
                 if let resResult = detailData {
@@ -295,17 +309,27 @@ extension MidRepoVC {
                     self.commitLevel3 += resResult.data?.commits?.level_3 ?? []
                     
                     self.calendar.reloadData()
+                    self.loadingView.alpha = 0
+                    self.loadingBackgroundView.alpha = 0
 
                 }
                 break
                 
             case .networkFail :
                 self.networkErrorAlert()
+                self.loadingView.alpha = 0
+                self.loadingBackgroundView.alpha = 0
                 
             default:
                 self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
+                self.loadingView.alpha = 0
+                self.loadingBackgroundView.alpha = 0
                 break
             }
         }
+        
+        
+        
     }
+    
 }

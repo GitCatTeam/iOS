@@ -11,6 +11,8 @@ import UIKit
 class ReportVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var loadingView: UIImageView!
+    
     let cellIdentifier = "ReportCVCell"
     var reportDataList = [ResultListDataModel]()
     
@@ -19,7 +21,7 @@ class ReportVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.CustomColor.brownishGrey]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         
-        
+        loadingView.loadGif(name: "gif_loading2")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,14 +80,18 @@ extension ReportVC {
                 if let resResult = reportData {
                     self.reportDataList = resResult.data?.resultList ?? []
                     self.collectionView.reloadData()
+                    self.loadingView.alpha = 0
                 }
                 break
                     
                 case .networkFail :
                     self.networkErrorAlert()
+                    self.loadingView.alpha = 0
+                break
                     
                 default:
                     self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
+                    self.loadingView.alpha = 0
                     break
              }
             

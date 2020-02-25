@@ -35,6 +35,9 @@
 		4C7C0E7C23D985C200669B38 /* CommitCountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E7B23D985C200669B38 /* CommitCountService.swift */; };
 		4C7C0E7E23D985D800669B38 /* CommitListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E7D23D985D800669B38 /* CommitListService.swift */; };
 		4C7C0E8023DF158B00669B38 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E7F23DF158B00669B38 /* SettingVC.swift */; };
+		4C7C9AAE2404D0020047C610 /* GIFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C9AAD2404D0020047C610 /* GIFExtension.swift */; };
+		4C7C9AB02404D0D20047C610 /* DeveloperInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C9AAF2404D0D20047C610 /* DeveloperInfoVC.swift */; };
+		4C7C9AB22404D2590047C610 /* gif_loading2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4C7C9AB12404D2580047C610 /* gif_loading2.gif */; };
 		4C8C9E6923CB574600E160B1 /* ReportDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C9E6823CB574600E160B1 /* ReportDetailVC.swift */; };
 		4C99B3792403C46D003DFBA6 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C99B3782403C46D003DFBA6 /* Auth.storyboard */; };
 		4C99B37B2403C4C0003DFBA6 /* InstagramVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */; };
@@ -96,6 +99,9 @@
 		4C7C0E7B23D985C200669B38 /* CommitCountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitCountService.swift; sourceTree = "<group>"; };
 		4C7C0E7D23D985D800669B38 /* CommitListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitListService.swift; sourceTree = "<group>"; };
 		4C7C0E7F23DF158B00669B38 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		4C7C9AAD2404D0020047C610 /* GIFExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFExtension.swift; sourceTree = "<group>"; };
+		4C7C9AAF2404D0D20047C610 /* DeveloperInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperInfoVC.swift; sourceTree = "<group>"; };
+		4C7C9AB12404D2580047C610 /* gif_loading2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif_loading2.gif; sourceTree = "<group>"; };
 		4C8C9E6823CB574600E160B1 /* ReportDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailVC.swift; sourceTree = "<group>"; };
 		4C99B3782403C46D003DFBA6 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramVc.swift; sourceTree = "<group>"; };
@@ -209,6 +215,7 @@
 		4C68D11823B0A32D00A8F813 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4C7C9AB32404D47A0047C610 /* Gifs */,
 				4C68D11E23B0A39B00A8F813 /* Views */,
 				4C68D12123B0A50A00A8F813 /* Fonts */,
 				4C68D10C23B09D4000A8F813 /* Assets.xcassets */,
@@ -223,6 +230,7 @@
 				4C68D12B23B0AAB100A8F813 /* BasicExtension.swift */,
 				4CC07F9023B0EE1000851B45 /* ColorPalette.swift */,
 				4CC07FB623B31A2C00851B45 /* VCExtension.swift */,
+				4C7C9AAD2404D0020047C610 /* GIFExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -280,6 +288,14 @@
 				4CE733EE23FCF0D900DB97EB /* ReportDetailService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		4C7C9AB32404D47A0047C610 /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				4C7C9AB12404D2580047C610 /* gif_loading2.gif */,
+			);
+			path = Gifs;
 			sourceTree = "<group>";
 		};
 		4C9E8E9323C1D3F6002BDE02 /* Utils */ = {
@@ -400,6 +416,7 @@
 				4C7C0E7F23DF158B00669B38 /* SettingVC.swift */,
 				4C3B8E5A2402449B008735DE /* AuthManageVC.swift */,
 				4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */,
+				4C7C9AAF2404D0D20047C610 /* DeveloperInfoVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -481,6 +498,7 @@
 				4C68D10D23B09D4000A8F813 /* Assets.xcassets in Resources */,
 				4CC07FB223B314F200851B45 /* 20958980_UTOIMAGE_유토이미지고딕_B_OTF.otf in Resources */,
 				4C1035A923B9084D0057F0B1 /* 나눔손글씨 배은혜체.ttf in Resources */,
+				4C7C9AB22404D2590047C610 /* gif_loading2.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,8 +562,10 @@
 				4CC07F9F23B2452700851B45 /* GetMoreInfo2VC.swift in Sources */,
 				4C9E8E8B23C1BF49002BDE02 /* AuthService.swift in Sources */,
 				4C9E8E8323C05564002BDE02 /* LittleRoundView.swift in Sources */,
+				4C7C9AB02404D0D20047C610 /* DeveloperInfoVC.swift in Sources */,
 				4C7C0E0B23D489DA00669B38 /* CommitDetailTVCell.swift in Sources */,
 				4CC07F9323B0F28100851B45 /* RoundView.swift in Sources */,
+				4C7C9AAE2404D0020047C610 /* GIFExtension.swift in Sources */,
 				4C7C0E7C23D985C200669B38 /* CommitCountService.swift in Sources */,
 				4CC07FC123B35A7300851B45 /* RoundImageView.swift in Sources */,
 				4CC07FC523B35BA400851B45 /* GetMoreInfo4VC.swift in Sources */,

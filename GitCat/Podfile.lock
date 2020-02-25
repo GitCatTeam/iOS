@@ -83,6 +83,7 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - SwiftGifOrigin (1.7.0)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
@@ -92,6 +93,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - FSCalendar
   - Kingfisher
+  - SwiftGifOrigin
   - SwiftyJSON
 
 SPEC REPOS:
@@ -114,6 +116,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - Kingfisher
     - nanopb
+    - SwiftGifOrigin
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -135,8 +138,9 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: cea130bbfe5a7edc8d06d3f0d17288c32ffe9925
   Kingfisher: dc6e0f53bb5b12c3e75bedb0e01bbd7a640eea69
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 63df2c2b12c94830645940eea0e10876dfbb1b3b
+PODFILE CHECKSUM: 8bf811d489c5163914a4c1ba58b83bfe889d03d6
 
 COCOAPODS: 1.8.4
