@@ -334,6 +334,9 @@
                                     <!--1920-01-01 11:00:00 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="ko_KR"/>
+                                <connections>
+                                    <action selector="datePickerAction:" destination="4wc-bw-Ko5" eventType="valueChanged" id="SOP-bC-1qe"/>
+                                </connections>
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -766,6 +769,7 @@
                                             <color key="titleColor" red="0.54117647058823526" green="0.79607843137254897" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
+                                            <action selector="basicBtnAction:" destination="RXV-pZ-VNs" eventType="touchUpInside" id="hme-5a-Br5"/>
                                             <action selector="catTypeSelectedAction:" destination="RXV-pZ-VNs" eventType="touchUpInside" id="cZl-4U-SqF"/>
                                         </connections>
                                     </button>
@@ -781,6 +785,7 @@
                                         </state>
                                         <connections>
                                             <action selector="catTypeSelectedAction:" destination="RXV-pZ-VNs" eventType="touchUpInside" id="eSz-vn-b5e"/>
+                                            <action selector="specialBtnAction:" destination="RXV-pZ-VNs" eventType="touchUpInside" id="faI-GJ-vfA"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qk-KK-inb">
@@ -795,6 +800,7 @@
                                         </state>
                                         <connections>
                                             <action selector="catTypeSelectedAction:" destination="RXV-pZ-VNs" eventType="touchUpInside" id="Xzh-oW-rQy"/>
+                                            <action selector="eventBtnAction:" destination="RXV-pZ-VNs" eventType="touchUpInside" id="0uh-aQ-LS2"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tAh-Oc-jYm">
@@ -883,7 +889,7 @@
                         <outlet property="catNameTextField" destination="uY6-po-KFK" id="96t-uH-Jcd"/>
                         <outlet property="catNameUnderBar" destination="0M4-E3-vgk" id="KAn-BV-x9X"/>
                         <outlet property="catSelectionView" destination="qUz-D6-rcY" id="Dfb-XS-cIb"/>
-                        <outlet property="collectionView" destination="Fol-wU-0wU" id="NpK-Y8-Pkn"/>
+                        <outlet property="collectionView" destination="Fol-wU-0wU" id="9Mv-Yv-6l3"/>
                         <outlet property="eventBtn" destination="3Qk-KK-inb" id="M67-hb-M7c"/>
                         <outlet property="eventBtnBottomBorder" destination="xU6-MA-Zwq" id="v9T-tG-wc4"/>
                         <outlet property="mainTitle" destination="Pbv-2J-cZy" id="g8q-fJ-flu"/>

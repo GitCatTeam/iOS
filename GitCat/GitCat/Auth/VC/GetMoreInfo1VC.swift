@@ -30,18 +30,27 @@ class GetMoreInfo1VC: UIViewController {
     
     
     var clickBtnCnt = 0
+    
+    var userGender:String?
+    var userBirthday:String?
+    
+    //포맷터 초기화
+    fileprivate let gregorian = Calendar(identifier: .gregorian)
+    
+    fileprivate let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         clickBtnCnt = 0
-        
-        ///////////////////////////////////////////////////
-        //FIXME:디폴트 이미지 넣기
-        ///////////////////////////////////////////////////
-        
+
         let imageURL = UserDefaults.standard.string(forKey: "userImage")
-        userProfileImageView.setImage(imageURL, defaultImgPath: "")
+        userProfileImageView.setImage(imageURL, defaultImgPath: "imgEmptycat")
         
         setButtonSelect()
         setButtonColor()
@@ -77,6 +86,8 @@ class GetMoreInfo1VC: UIViewController {
             otherBtn.isSelected = false;
             otherBtn.layer.borderColor = UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255).cgColor
             
+            userGender = "F"
+            
             
         }else if sender == maleBtn && maleBtn.isSelected{//남자 버튼 선택일 경우
             maleBtn.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
@@ -86,6 +97,8 @@ class GetMoreInfo1VC: UIViewController {
             otherBtn.isSelected = false;
             otherBtn.layer.borderColor = UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255).cgColor
             
+            userGender = "M"
+            
         }else if sender == otherBtn && otherBtn.isSelected{//기타 버튼 선택일 경우
             otherBtn.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
             
@@ -93,6 +106,8 @@ class GetMoreInfo1VC: UIViewController {
             femaleBtn.layer.borderColor = UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255).cgColor
             maleBtn.isSelected = false;
             maleBtn.layer.borderColor = UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255).cgColor
+            
+            userGender = "E"
         } else{
             
             femaleBtn.isSelected = false;
@@ -123,10 +138,19 @@ class GetMoreInfo1VC: UIViewController {
         }
         if(clickBtnCnt == 2) {
             if let dvc = storyboard? .instantiateViewController(withIdentifier: "GetMoreInfo3VC") as? GetMoreInfo3VC {
+                userGender = "M"
                 
+                UserDefaults.standard.set(userGender, forKey: "userGender")
+                UserDefaults.standard.set(userBirthday, forKey:"userBirthday")
                 self.navigationController?.pushViewController(dvc, animated: true)
             }
         }
+    }
+    
+    @IBAction func datePickerAction(_ sender: Any) {
+        
+        userBirthday = gsno(formatter.string(from: birthDatePicker.date))
+        
     }
     
     

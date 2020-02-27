@@ -16,7 +16,7 @@ protocol GettableService {
     func gettable(_ URL: String, method: HTTPMethod, completion: @escaping (Result<networkResult>) -> Void)
 }
 
-let headers: HTTPHeaders = [
+let getHeaders: HTTPHeaders = [
     "Authorization":UserDefaults.standard.string(forKey: "token") ?? ""
 ]
 
@@ -31,14 +31,14 @@ extension GettableService {
     func gettable(_ URL: String, method:HTTPMethod = .get, completion: @escaping (Result<networkResult>) -> Void) {
         
         guard let encodedUrl = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
-            print("Networking - invalid URL")
+            print("Networking SUCCESS")
             return
         }
         
-        print("URL은 \(encodedUrl)")
+        print("URL: \(encodedUrl)")
         
         
-        Alamofire.request(encodedUrl, method: method, parameters: nil, headers: headers)
+        Alamofire.request(encodedUrl, method: method, parameters: nil, headers: getHeaders)
             .responseData {
                 res in
                 switch res.result {

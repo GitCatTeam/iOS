@@ -89,20 +89,23 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
 
         if(message.name == "authCheckHandler") {
             let values:[String:AnyObject] = message.body as! Dictionary
-            let userEmail = gsno(values["githubId"] as? String)
+            let userId = gsno(values["githubId"] as? String)
             let userImage = gsno(values["profileImg"] as? String)
             let token = gsno(values["token"] as? String)
             let isFirst = gbno(values["isFirst"] as? Bool)
             
             print("[로그인 회원정보 가져오기 성공]")
-            print("email:\(userEmail)")
+            print("email:\(userId)")
             print("image:\(userImage)")
             print("token:\(token)")
             print("isFirst\(isFirst)")
             
-            UserDefaults.standard.set(userEmail, forKey: "userEmail")
+            UserDefaults.standard.set(userId, forKey: "userId")
             UserDefaults.standard.set(userImage, forKey: "userImage")
             UserDefaults.standard.set(token, forKey: "token")
+            
+            //DeviceToken 전달
+            postDeviceToken()
             
             
             if(isFirst == true) {
@@ -141,8 +144,42 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
             self.present(networkCheckAlert, animated: true, completion: nil)
         }
     }
-    
+}
 
-    
-
+extension OAuthVC {
+    func postDeviceToken() {
+        
+        let deviceToken = UserDefaults.standard.string(forKey: "deviceToken") ?? ""
+        
+        let params : [String : Any] = [
+            "deviceToken" : deviceToken ,
+            "os" : "iOS"
+        ]
+        
+        PostDeviceTokenService.shareInstance.postDeviceToken(params: params) {(result) in
+                switch result {
+                case .networkSuccess( _): //201
+                    print("Device Token POST SUCCESS")
+                    break
+                    
+                //FIXME: 수정
+                case .badRequest: //400
+                    self.simpleAlert(title: "", message: "다시 시도해주세요")
+                    break
+                    
+                case .duplicated: //401
+                    
+                    self.simpleAlert(title: "", message: "권한이 없습니다.")
+                    break
+                    
+                case .networkFail:
+                    self.networkErrorAlert()
+                    break
+                    
+                default:
+                    self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                    break
+            }
+        }
+    }
 }

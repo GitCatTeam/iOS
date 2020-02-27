@@ -14,7 +14,6 @@ class SignInVC: UIViewController{
     
     @IBOutlet weak var loginBtn: UIButton!
     
-    var signInData : SignInCodeData?
     var userEmail:String?
     
     override func viewDidLoad() {

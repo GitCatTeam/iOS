@@ -15,12 +15,9 @@ class SettingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackBtn(color: #colorLiteral(red: 0.5307495594, green: 0.8041878939, blue: 0.9690385461, alpha: 1))
-        ///////////////////////////////////////////////////
-        //FIXME:디폴트 이미지 넣기
-        ///////////////////////////////////////////////////
         
         let imageURL = UserDefaults.standard.string(forKey: "userImage")
-        userProfileImage.setImage(imageURL, defaultImgPath: "")
+        userProfileImage.setImage(imageURL, defaultImgPath: "imgEmptycat")
     }
     @IBAction func initializeCatAction(_ sender: Any) {
         let cancleModeAction = UIAlertAction(title: "취소", style: .cancel) { (action) in

@@ -199,6 +199,7 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
     
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, borderDefaultColorFor date: Date) -> UIColor? {
         
+        
         let todayDate:String = formatter.string(from: Date())
         
         somedays = [todayDate]

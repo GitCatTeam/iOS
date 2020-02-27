@@ -20,6 +20,8 @@ class GetMoreInfo3VC: UIViewController {
     
     @IBOutlet weak var nextBtn3: RoundBtn!
     
+    var userCareer:String? = "개발에 관심이 있음"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +33,8 @@ class GetMoreInfo3VC: UIViewController {
         
         nextBtn3.isEnabled = false
         animateView()
+        
+
 
     }
     
@@ -41,6 +45,7 @@ class GetMoreInfo3VC: UIViewController {
         
         if sender == interestInDevBtn && interestInDevBtn.isSelected {
             
+            userCareer = "개발에 관심이 있음"
             interestInDevBtn.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
             
             studentBtn.isSelected = false
@@ -53,6 +58,8 @@ class GetMoreInfo3VC: UIViewController {
              MoreThanFiveYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
             
         }else if sender == studentBtn && studentBtn.isSelected {
+            userCareer = "관련 학부생/대학원생"
+            
             studentBtn.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
             
             interestInDevBtn.isSelected = false
@@ -65,6 +72,8 @@ class GetMoreInfo3VC: UIViewController {
             MoreThanFiveYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
             
         } else if sender == OneYearDevBtn && OneYearDevBtn.isSelected {
+            userCareer = "1년차"
+            
             OneYearDevBtn.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
             
             studentBtn.isSelected = false
@@ -76,6 +85,8 @@ class GetMoreInfo3VC: UIViewController {
             MoreThanFiveYearDevBtn.isSelected = false
             MoreThanFiveYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
         } else if sender == ThreeYearDevBtn && ThreeYearDevBtn.isSelected {
+            userCareer = "3년차"
+            
             ThreeYearDevBtn.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
             
             studentBtn.isSelected = false
@@ -87,6 +98,8 @@ class GetMoreInfo3VC: UIViewController {
             MoreThanFiveYearDevBtn.isSelected = false
             MoreThanFiveYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
         } else if sender == MoreThanFiveYearDevBtn && MoreThanFiveYearDevBtn.isSelected {
+            userCareer = "5년차 이상"
+            
             MoreThanFiveYearDevBtn.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
             
             studentBtn.isSelected = false
@@ -114,16 +127,15 @@ class GetMoreInfo3VC: UIViewController {
     
     @IBAction func moveNext3TouchUpAction(_ sender: UIButton) {
 
+        let name = UserDefaults.standard.string(forKey: "userId") ?? ""
+        let gender = UserDefaults.standard.string(forKey: "userGender") ?? ""
+        let birth = UserDefaults.standard.string(forKey: "userBirthday") ?? ""
+        
+        
+        putInfo(name: name, gender: gender, birth: birth, devCareer: userCareer ?? "개발에 관심이 있음")
+        
         sender.backgroundColor = UIColor(red: 220/255, green: 221/255, blue: 225/255, alpha: 1)
-        if let dvc = storyboard? .instantiateViewController(withIdentifier: "GetMoreInfo4VC") as? GetMoreInfo4VC {
-            self.navigationController?.pushViewController(dvc, animated: true)
-            
-//            let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainTabC")
-//
-//            dvc.modalPresentationStyle = .fullScreen
-//
-//            self.present(dvc, animated: true, completion: nil)
-        }
+        
     }
     
     
@@ -182,4 +194,41 @@ class GetMoreInfo3VC: UIViewController {
         self.MoreThanFiveYearDevBtn.alpha = 0
     }
     
+}
+
+//MARK: Networking Extension
+extension GetMoreInfo3VC {
+
+    func putInfo(name: String, gender: String, birth:String, devCareer:String) {
+
+
+        let params : [String : Any] = ["name" : name ,
+                                       "gender" : gender ,
+                                       "birth": birth ,
+                                       "devCareer":devCareer ]
+
+        PutAdditionalInfoService.shareInstance.putAdditionalInfo(params: params) { (result) in
+
+            switch result {
+            case .networkSuccess( _): //200
+                print("데이터 전송 성공")
+                let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainTabC")
+                dvc.modalPresentationStyle = .fullScreen
+                self.present(dvc, animated: true, completion: nil)
+                break
+
+            case .accessDenied, .badRequest: //401(없는 사용자), 400(비번 불일치)
+                self.simpleAlert(title: "로그인 실패", message: "아이디나 비밀번호가 일치하지 않습니다.")
+                break
+
+            case .networkFail :
+                self.networkErrorAlert()
+                break
+
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요.")
+                break
+            }
+        }
+    }
 }

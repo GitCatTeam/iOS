@@ -43,12 +43,25 @@ class GetMoreInfo4VC: UIViewController {
     var nameFieldShow:Bool = false //애니메이션 시작 플래그
     var originY:CGFloat? // 오브젝트의 기본 위치
     
+    var commonCatList = [CatDataModel]();
+    var specialCatList = [CatDataModel]();
+    var eventCatList = [CatDataModel]();
+    var currentCatList = [CatDataModel]();
+    
+    var catId:Int?
+    var catName:String?
+    
     let cellIdentifier = "SelectCatCVCell"
     
     let dummyImageData:[UIImage] = [UIImage(named: "imgCatNero")!, UIImage(named: "imgCatPanda")!, UIImage(named: "imgCatCheeze")!, UIImage(named: "imgCatPanda")!, UIImage(named: "imgCatPanda")!, UIImage(named: "imgCatNormal")!]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setCatList()
+        currentCatList = commonCatList;
+        self.collectionView.reloadData()
+        
         nextMove4Btn.isEnabled = false
         
         setBackBtn(color: UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1))
@@ -79,6 +92,7 @@ class GetMoreInfo4VC: UIViewController {
             self.basicBtn.backgroundColor = #colorLiteral(red: 0.9725490196, green: 0.9725490196, blue: 0.9725490196, alpha: 1)
             self.basicBtn.isSelected = false
             self.basicBtnBottomBorder.alpha = 0
+            
         }else{
             self.basicBtnBottomBorder.alpha = 1
         }
@@ -87,6 +101,7 @@ class GetMoreInfo4VC: UIViewController {
             self.specialBtn.backgroundColor = #colorLiteral(red: 0.9725490196, green: 0.9725490196, blue: 0.9725490196, alpha: 1)
             self.specialBtn.isSelected = false
             self.specialBtnBottomBorder.alpha = 0
+            
         }else{
             self.specialBtnBottomBorder.alpha = 1
         }
@@ -98,6 +113,25 @@ class GetMoreInfo4VC: UIViewController {
         }else {
             self.eventBtnBottomBorder.alpha = 1
         }
+    }
+    @IBAction func basicBtnAction(_ sender: Any) {
+        self.currentCatList = self.commonCatList;
+        self.collectionView.reloadData()
+        
+        print("common:\(currentCatList)")
+    }
+    
+    @IBAction func specialBtnAction(_ sender: Any) {
+        self.currentCatList = self.specialCatList;
+        self.collectionView.reloadData()
+        print("special:\(currentCatList)")
+    }
+    
+    @IBAction func eventBtnAction(_ sender: Any) {
+        self.currentCatList = self.eventCatList;
+        self.collectionView.reloadData()
+        
+        print("event:\(currentCatList)")
     }
     
     @IBAction func nameFieldEditingChangedAction(_ sender: Any) {
@@ -119,11 +153,10 @@ class GetMoreInfo4VC: UIViewController {
     @IBAction func startTouchUpAction(_ sender: UIButton) {
         
         sender.backgroundColor = UIColor(red: 220/255, green: 221/255, blue: 225/255, alpha: 1)
-        let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainTabC") 
         
-        dvc.modalPresentationStyle = .fullScreen
+        catName = self.catNameTextField.text
         
-        self.present(dvc, animated: true, completion: nil)
+        postCat(catId: catId, catName: catName)
     }
     
     /**
@@ -196,9 +229,7 @@ class GetMoreInfo4VC: UIViewController {
         self.basicBtn.isSelected = true
         
     }
-    
 
-    
     override func viewWillAppear(_ animated: Bool) {
         registerForKeyboardNotifications()
     }
@@ -269,14 +300,16 @@ extension GetMoreInfo4VC: UITextFieldDelegate{
 extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dummyImageData.count
+        return currentCatList.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? SelectCatCVCell
         
-        cell?.catImageView.image = dummyImageData[indexPath.row]
+        let imageURL = currentCatList[indexPath.row].profileImg
+        
+        cell?.catImageView.setImage(imageURL, defaultImgPath: "imgEmptycat")
         
         return cell!
     }
@@ -302,6 +335,81 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
         cellToDeselect.roundView.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         
 
+        catId = currentCatList[indexPath.row].id
 
+
+    }
+}
+extension GetMoreInfo4VC {
+    
+    func setCatList() {
+        
+        CatListService.sharedInstance.getCatList { (result) in
+            switch result {
+            case .networkSuccess(let data):
+                let catListData = data as? CatListModel
+                if let resResult = catListData {
+                    self.commonCatList = resResult.data?.common ?? []
+                    self.specialCatList = resResult.data?.special ?? []
+                    self.eventCatList = resResult.data?.event ?? []
+                    
+                    self.currentCatList = self.commonCatList;
+                    self.collectionView.reloadData()
+                    
+//                    self.loadingView.alpha = 0
+                }
+                break
+                    
+                case .networkFail :
+                    self.networkErrorAlert()
+//                    self.loadingView.alpha = 0
+                break
+                    
+                default:
+                    self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
+//                    self.loadingView.alpha = 0
+                    break
+             }
+        }
+        
+    }
+    
+    func postCat(catId:Int?, catName: String?) {
+        
+        let params : [String : Any] =
+            ["catId" : catId ?? "",
+             "catName" : catName ?? "",
+             ]
+        
+        PostCatSelectedService.shareInstance.postCatSelection(params: params) {(result) in
+            switch result {
+            case .networkSuccess( _): //201
+                print("Cat Selection POST SUCCESS")
+                let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainTabC")
+                
+                dvc.modalPresentationStyle = .fullScreen
+                
+                self.present(dvc, animated: true, completion: nil)
+                break
+                
+            //FIXME: 수정
+            case .badRequest: //400
+                self.simpleAlert(title: "", message: "다시 시도해주세요")
+                break
+                
+            case .duplicated: //401
+                
+                self.simpleAlert(title: "", message: "권한이 없습니다.")
+                break
+                
+            case .networkFail:
+                self.networkErrorAlert()
+                break
+                
+            default:
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        }
     }
 }

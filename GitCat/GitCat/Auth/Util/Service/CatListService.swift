@@ -1,37 +1,33 @@
 //
-//  AuthService.swift
+//  CatListService.swift
 //  GitCat
 //
-//  Created by 조윤영 on 05/01/2020.
+//  Created by 조윤영 on 27/02/2020.
 //  Copyright © 2020 조윤영. All rights reserved.
 //
 
-import Foundation
-
-struct AuthService: GettableService, APIServie {
-
-    typealias NetworkData = SignInCodeData
-    static let sharedInstance = AuthService()
+struct CatListService: GettableService, APIServie {
+     
+    typealias NetworkData = CatListModel
+    static let sharedInstance = CatListService()
     
-    //MARK: GET - https://a.gitcat.app/api/auth/github (Github 로그인을 통한 Personal Access Token 교환 코드 발급
+    //MARK: GET - https://a.gitcat.app/api/home/cats (선택할 수 있는 고양이 가져오기)
     
-    func getUserEmail(completion: @escaping (NetworkResult<Any>) -> Void) {
-        let signInURL = self.url("/auth/github")
+    func getCatList(completion: @escaping (NetworkResult<Any>) -> Void) {
         
-        gettable(signInURL) { (result) in
+        let catListURL = self.url("/home/cats")
+
+        gettable(catListURL) { (result) in
             switch result {
             case .success(let networkResult):
                 switch networkResult.resCode {
-                    
                 case HttpResponseCode.getSuccess.rawValue:
                     completion(.networkSuccess(networkResult.resResult))
-                    
                 case HttpResponseCode.serverErr.rawValue:
                     completion(.serverErr)
                 default:
                     print("SUCCESS: \(networkResult.resCode)")
                     break
-                    
                 }
                 break
                 
@@ -42,19 +38,16 @@ struct AuthService: GettableService, APIServie {
                     
                 case HttpResponseCode.conflict.rawValue.description:
                     completion(.duplicated)
-                    
                 default:
                     print("ERROR: \(resCode)")
                     break
                 }
                 break
                 
-            case .failure(_) :
+            case .failure(_):
                 completion(.networkFail)
                 print("FAIL: Network Fail")
             }
-    
         }
-        
     }
 }

@@ -42,15 +42,22 @@
 		4C99B3792403C46D003DFBA6 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C99B3782403C46D003DFBA6 /* Auth.storyboard */; };
 		4C99B37B2403C4C0003DFBA6 /* InstagramVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */; };
 		4C9E8E8323C05564002BDE02 /* LittleRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E8E8223C05564002BDE02 /* LittleRoundView.swift */; };
-		4C9E8E8B23C1BF49002BDE02 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E8E8A23C1BF49002BDE02 /* AuthService.swift */; };
-		4C9E8EA223C1DAC0002BDE02 /* SignInCodeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E8EA123C1DAC0002BDE02 /* SignInCodeData.swift */; };
 		4C9E8EAE23C1F427002BDE02 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E8EAD23C1F427002BDE02 /* Requestable.swift */; };
 		4CA7A75923FB9D36004FC110 /* ReportListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7A75823FB9D36004FC110 /* ReportListModel.swift */; };
 		4CA7A75B23FB9D51004FC110 /* ReportDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7A75A23FB9D51004FC110 /* ReportDetailModel.swift */; };
+		4CAB3BCA2407EA71007A84B6 /* CatListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAB3BC92407EA71007A84B6 /* CatListModel.swift */; };
+		4CAB3BCE2407ECDE007A84B6 /* PosttableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAB3BCD2407ECDE007A84B6 /* PosttableService.swift */; };
+		4CAB3BD02407F170007A84B6 /* DelettableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAB3BCF2407F170007A84B6 /* DelettableService.swift */; };
+		4CAB3BD22407FB89007A84B6 /* CatListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAB3BD12407FB89007A84B6 /* CatListService.swift */; };
+		4CAB3BD42407FE46007A84B6 /* DefaultData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAB3BD32407FE46007A84B6 /* DefaultData.swift */; };
+		4CAB3BD624082883007A84B6 /* CommonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAB3BD524082883007A84B6 /* CommonModel.swift */; };
+		4CAB3BDA24083C66007A84B6 /* PostDeviceTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAB3BD924083C66007A84B6 /* PostDeviceTokenService.swift */; };
+		4CAB3BDC24084737007A84B6 /* PuttableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAB3BDB24084737007A84B6 /* PuttableService.swift */; };
+		4CAB3BDE24085CF1007A84B6 /* PutAdditionalInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAB3BDD24085CF1007A84B6 /* PutAdditionalInfoService.swift */; };
+		4CAB3BE22408635B007A84B6 /* PostCatSelectedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAB3BE12408635B007A84B6 /* PostCatSelectedService.swift */; };
 		4CC07F9123B0EE1000851B45 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC07F9023B0EE1000851B45 /* ColorPalette.swift */; };
 		4CC07F9323B0F28100851B45 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC07F9223B0F28100851B45 /* RoundView.swift */; };
 		4CC07F9523B1165200851B45 /* GetMoreInfo1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC07F9423B1165200851B45 /* GetMoreInfo1VC.swift */; };
-		4CC07F9F23B2452700851B45 /* GetMoreInfo2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC07F9E23B2452700851B45 /* GetMoreInfo2VC.swift */; };
 		4CC07FAF23B314A200851B45 /* 20958984_UTOIMAGE_유토이미지고딕_R_OTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4CC07FAC23B314A200851B45 /* 20958984_UTOIMAGE_유토이미지고딕_R_OTF.otf */; };
 		4CC07FB223B314F200851B45 /* 20958980_UTOIMAGE_유토이미지고딕_B_OTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4CC07FAE23B314A200851B45 /* 20958980_UTOIMAGE_유토이미지고딕_B_OTF.otf */; };
 		4CC07FB323B314F700851B45 /* 20958982_UTOIMAGE_유토이미지고딕_L_OTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4CC07FAD23B314A200851B45 /* 20958982_UTOIMAGE_유토이미지고딕_L_OTF.otf */; };
@@ -106,15 +113,22 @@
 		4C99B3782403C46D003DFBA6 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramVc.swift; sourceTree = "<group>"; };
 		4C9E8E8223C05564002BDE02 /* LittleRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleRoundView.swift; sourceTree = "<group>"; };
-		4C9E8E8A23C1BF49002BDE02 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		4C9E8EA123C1DAC0002BDE02 /* SignInCodeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCodeData.swift; sourceTree = "<group>"; };
 		4C9E8EAD23C1F427002BDE02 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		4CA7A75823FB9D36004FC110 /* ReportListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListModel.swift; sourceTree = "<group>"; };
 		4CA7A75A23FB9D51004FC110 /* ReportDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailModel.swift; sourceTree = "<group>"; };
+		4CAB3BC92407EA71007A84B6 /* CatListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListModel.swift; sourceTree = "<group>"; };
+		4CAB3BCD2407ECDE007A84B6 /* PosttableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosttableService.swift; sourceTree = "<group>"; };
+		4CAB3BCF2407F170007A84B6 /* DelettableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelettableService.swift; sourceTree = "<group>"; };
+		4CAB3BD12407FB89007A84B6 /* CatListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListService.swift; sourceTree = "<group>"; };
+		4CAB3BD32407FE46007A84B6 /* DefaultData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultData.swift; sourceTree = "<group>"; };
+		4CAB3BD524082883007A84B6 /* CommonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonModel.swift; sourceTree = "<group>"; };
+		4CAB3BD924083C66007A84B6 /* PostDeviceTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDeviceTokenService.swift; sourceTree = "<group>"; };
+		4CAB3BDB24084737007A84B6 /* PuttableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuttableService.swift; sourceTree = "<group>"; };
+		4CAB3BDD24085CF1007A84B6 /* PutAdditionalInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutAdditionalInfoService.swift; sourceTree = "<group>"; };
+		4CAB3BE12408635B007A84B6 /* PostCatSelectedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCatSelectedService.swift; sourceTree = "<group>"; };
 		4CC07F9023B0EE1000851B45 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		4CC07F9223B0F28100851B45 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		4CC07F9423B1165200851B45 /* GetMoreInfo1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMoreInfo1VC.swift; sourceTree = "<group>"; };
-		4CC07F9E23B2452700851B45 /* GetMoreInfo2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMoreInfo2VC.swift; sourceTree = "<group>"; };
 		4CC07FAC23B314A200851B45 /* 20958984_UTOIMAGE_유토이미지고딕_R_OTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "20958984_UTOIMAGE_유토이미지고딕_R_OTF.otf"; path = "GitCat/Resources/Fonts/20958984_UTOIMAGE_유토이미지고딕_R_OTF.otf"; sourceTree = SOURCE_ROOT; };
 		4CC07FAD23B314A200851B45 /* 20958982_UTOIMAGE_유토이미지고딕_L_OTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "20958982_UTOIMAGE_유토이미지고딕_L_OTF.otf"; path = "GitCat/Resources/Fonts/20958982_UTOIMAGE_유토이미지고딕_L_OTF.otf"; sourceTree = SOURCE_ROOT; };
 		4CC07FAE23B314A200851B45 /* 20958980_UTOIMAGE_유토이미지고딕_B_OTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "20958980_UTOIMAGE_유토이미지고딕_B_OTF.otf"; path = "GitCat/Resources/Fonts/20958980_UTOIMAGE_유토이미지고딕_B_OTF.otf"; sourceTree = SOURCE_ROOT; };
@@ -314,6 +328,11 @@
 				4C7C0E6623D8044B00669B38 /* HttpResponseCode.swift */,
 				4C7C0E6823D80E9300669B38 /* APIService.swift */,
 				4C7C0E6C23D8133200669B38 /* GettableService.swift */,
+				4CAB3BCD2407ECDE007A84B6 /* PosttableService.swift */,
+				4CAB3BCF2407F170007A84B6 /* DelettableService.swift */,
+				4CAB3BD32407FE46007A84B6 /* DefaultData.swift */,
+				4CAB3BD524082883007A84B6 /* CommonModel.swift */,
+				4CAB3BDB24084737007A84B6 /* PuttableService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -362,7 +381,6 @@
 			children = (
 				4C68D13423B0D02400A8F813 /* SignInVC.swift */,
 				4CC07F9423B1165200851B45 /* GetMoreInfo1VC.swift */,
-				4CC07F9E23B2452700851B45 /* GetMoreInfo2VC.swift */,
 				4CC07FBA23B3238C00851B45 /* GetMoreInfo3VC.swift */,
 				4CC07FC423B35BA400851B45 /* GetMoreInfo4VC.swift */,
 				4C7C0E7023D96CB900669B38 /* OAuthVC.swift */,
@@ -382,7 +400,7 @@
 		4CD5A5D623C2FCBA00A8E225 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4C9E8EA123C1DAC0002BDE02 /* SignInCodeData.swift */,
+				4CAB3BC92407EA71007A84B6 /* CatListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -390,7 +408,10 @@
 		4CD5A5D723C2FCC600A8E225 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				4C9E8E8A23C1BF49002BDE02 /* AuthService.swift */,
+				4CAB3BD12407FB89007A84B6 /* CatListService.swift */,
+				4CAB3BD924083C66007A84B6 /* PostDeviceTokenService.swift */,
+				4CAB3BDD24085CF1007A84B6 /* PutAdditionalInfoService.swift */,
+				4CAB3BE12408635B007A84B6 /* PostCatSelectedService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -554,41 +575,49 @@
 				4CE733EF23FCF0D900DB97EB /* ReportDetailService.swift in Sources */,
 				4CC07FBF23B330A600851B45 /* LittleRoundBtn.swift in Sources */,
 				4C1035AC23B9D1430057F0B1 /* HomeVC.swift in Sources */,
+				4CAB3BDE24085CF1007A84B6 /* PutAdditionalInfoService.swift in Sources */,
 				4CC7D9BE23C64722004576BB /* ReportCVCell.swift in Sources */,
 				4C7C0E1923D59D2B00669B38 /* CatCollectionCVCell.swift in Sources */,
 				4CC07FB723B31A2C00851B45 /* VCExtension.swift in Sources */,
 				4C68D10623B09D3E00A8F813 /* AppDelegate.swift in Sources */,
 				4C4A923223BA2476002E5F35 /* MidRepoVC.swift in Sources */,
-				4CC07F9F23B2452700851B45 /* GetMoreInfo2VC.swift in Sources */,
-				4C9E8E8B23C1BF49002BDE02 /* AuthService.swift in Sources */,
+				4CAB3BDA24083C66007A84B6 /* PostDeviceTokenService.swift in Sources */,
 				4C9E8E8323C05564002BDE02 /* LittleRoundView.swift in Sources */,
 				4C7C9AB02404D0D20047C610 /* DeveloperInfoVC.swift in Sources */,
 				4C7C0E0B23D489DA00669B38 /* CommitDetailTVCell.swift in Sources */,
 				4CC07F9323B0F28100851B45 /* RoundView.swift in Sources */,
 				4C7C9AAE2404D0020047C610 /* GIFExtension.swift in Sources */,
+				4CAB3BD624082883007A84B6 /* CommonModel.swift in Sources */,
 				4C7C0E7C23D985C200669B38 /* CommitCountService.swift in Sources */,
 				4CC07FC123B35A7300851B45 /* RoundImageView.swift in Sources */,
 				4CC07FC523B35BA400851B45 /* GetMoreInfo4VC.swift in Sources */,
 				4C7C0E1723D587CF00669B38 /* CatCollectionVC.swift in Sources */,
 				4C7C0E1523D5650D00669B38 /* MainTabBarVC.swift in Sources */,
 				4CC07FBB23B3238C00851B45 /* GetMoreInfo3VC.swift in Sources */,
+				4CAB3BCA2407EA71007A84B6 /* CatListModel.swift in Sources */,
 				4C7C0E1323D4AB0100669B38 /* AlarmVC.swift in Sources */,
 				4C3B8E5B2402449C008735DE /* AuthManageVC.swift in Sources */,
 				4C8C9E6923CB574600E160B1 /* ReportDetailVC.swift in Sources */,
 				4CD5A5D023C2F45E00A8E225 /* CustomLabel.swift in Sources */,
 				4C7C0E7E23D985D800669B38 /* CommitListService.swift in Sources */,
+				4CAB3BDC24084737007A84B6 /* PuttableService.swift in Sources */,
 				4C68D12C23B0AAB100A8F813 /* BasicExtension.swift in Sources */,
+				4CAB3BD42407FE46007A84B6 /* DefaultData.swift in Sources */,
 				4C7C0E7A23D9826800669B38 /* CommitListModel.swift in Sources */,
 				4C7C0E6923D80E9300669B38 /* APIService.swift in Sources */,
+				4CAB3BD02407F170007A84B6 /* DelettableService.swift in Sources */,
+				4CAB3BE22408635B007A84B6 /* PostCatSelectedService.swift in Sources */,
 				4C7C0E8023DF158B00669B38 /* SettingVC.swift in Sources */,
 				4C68D13523B0D02400A8F813 /* SignInVC.swift in Sources */,
 				4C7C0E7823D9816000669B38 /* CommitCountModel.swift in Sources */,
+				4CAB3BCE2407ECDE007A84B6 /* PosttableService.swift in Sources */,
 				4CA7A75B23FB9D51004FC110 /* ReportDetailModel.swift in Sources */,
 				4CC7D9B923C63BD5004576BB /* ReportVC.swift in Sources */,
 				4C9E8EAE23C1F427002BDE02 /* Requestable.swift in Sources */,
 				4C99B37B2403C4C0003DFBA6 /* InstagramVc.swift in Sources */,
 				4C2DDD0A23EAEEF200FCB36B /* TutorialCVCell.swift in Sources */,
 				4C7C0E7123D96CB900669B38 /* OAuthVC.swift in Sources */,
+				4CAB3BD22407FB89007A84B6 /* CatListService.swift in Sources */,
 				4C7C0E1123D4A11400669B38 /* CustomHeaderTVCell.swift in Sources */,
 				4C2DDD0D23EB1FD200FCB36B /* SelectCatCVCell.swift in Sources */,
 				4CE733ED23FCF0CD00DB97EB /* ReportListService.swift in Sources */,
@@ -597,7 +626,6 @@
 				4C7C0E6D23D8133200669B38 /* GettableService.swift in Sources */,
 				4CC07FB523B317CA00851B45 /* RoundBtn.swift in Sources */,
 				4CC07F9523B1165200851B45 /* GetMoreInfo1VC.swift in Sources */,
-				4C9E8EA223C1DAC0002BDE02 /* SignInCodeData.swift in Sources */,
 				4CC07F9123B0EE1000851B45 /* ColorPalette.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
