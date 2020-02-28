@@ -17,7 +17,7 @@ struct ReportListService: GettableService, APIServie {
 
     func getReportList(completion: @escaping (NetworkResult<Any>) -> Void) {
         
-        let reportListURL = self.url("/monthly/repoList")
+        let reportListURL = self.url("/monthly/list")
 
         gettable(reportListURL) { (result) in
             switch result {
