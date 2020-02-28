@@ -672,12 +672,12 @@
                                                                             </constraints>
                                                                         </imageView>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JGO-Kk-wtt">
-                                                                            <rect key="frame" x="21" y="51" width="28" height="13.5"/>
+                                                                            <rect key="frame" x="20" y="49.5" width="30" height="15"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujh-QL-imw">
-                                                                                    <rect key="frame" x="9" y="-0.5" width="10.5" height="14"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구매" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujh-QL-imw">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="15"/>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="width" secondItem="ujh-QL-imw" secondAttribute="height" multiplier="3:4" id="wi2-8q-Gl6"/>
+                                                                                        <constraint firstAttribute="width" secondItem="ujh-QL-imw" secondAttribute="height" multiplier="2:1" id="JEi-Wg-2Qk"/>
                                                                                     </constraints>
                                                                                     <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="12"/>
                                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -686,17 +686,18 @@
                                                                             </subviews>
                                                                             <color key="backgroundColor" red="0.54117647059999996" green="0.79607843140000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <constraints>
-                                                                                <constraint firstItem="ujh-QL-imw" firstAttribute="centerX" secondItem="JGO-Kk-wtt" secondAttribute="centerX" id="HJW-BB-oP2"/>
                                                                                 <constraint firstItem="ujh-QL-imw" firstAttribute="centerY" secondItem="JGO-Kk-wtt" secondAttribute="centerY" id="Obc-z0-pLd"/>
-                                                                                <constraint firstAttribute="width" secondItem="JGO-Kk-wtt" secondAttribute="height" multiplier="2:1" id="WPF-OA-l7Q"/>
+                                                                                <constraint firstItem="ujh-QL-imw" firstAttribute="width" secondItem="JGO-Kk-wtt" secondAttribute="width" id="foA-mI-AJr"/>
+                                                                                <constraint firstAttribute="width" secondItem="JGO-Kk-wtt" secondAttribute="height" multiplier="2:1" id="qcK-3W-IyI"/>
+                                                                                <constraint firstItem="ujh-QL-imw" firstAttribute="centerX" secondItem="JGO-Kk-wtt" secondAttribute="centerX" id="wOq-Lg-ZqL"/>
                                                                             </constraints>
                                                                         </view>
                                                                     </subviews>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                     <constraints>
                                                                         <constraint firstItem="5fq-aj-k96" firstAttribute="centerY" secondItem="Miu-6m-Fnf" secondAttribute="centerY" id="3PJ-Fq-jtb"/>
+                                                                        <constraint firstItem="JGO-Kk-wtt" firstAttribute="width" secondItem="Miu-6m-Fnf" secondAttribute="width" multiplier="0.428571" id="6ob-bz-Vyq"/>
                                                                         <constraint firstAttribute="bottom" secondItem="JGO-Kk-wtt" secondAttribute="bottom" multiplier="76.5/70.5" id="9IJ-k4-MaT"/>
-                                                                        <constraint firstItem="JGO-Kk-wtt" firstAttribute="width" secondItem="Miu-6m-Fnf" secondAttribute="width" multiplier="0.392157" id="AO0-xg-D2P"/>
                                                                         <constraint firstItem="JGO-Kk-wtt" firstAttribute="centerX" secondItem="Miu-6m-Fnf" secondAttribute="centerX" id="FwC-AY-DeK"/>
                                                                         <constraint firstItem="5fq-aj-k96" firstAttribute="width" secondItem="Miu-6m-Fnf" secondAttribute="width" multiplier="0.9" id="nKg-rb-RIF"/>
                                                                         <constraint firstItem="5fq-aj-k96" firstAttribute="centerX" secondItem="Miu-6m-Fnf" secondAttribute="centerX" id="wTX-q7-yCE"/>
@@ -704,10 +705,10 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lv2-4q-Z8w">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="28" height="14"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="20" height="15"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="구매" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3X-jg-l4S">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="28" height="14"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3X-jg-l4S">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="20" height="15"/>
                                                                             <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="12"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -715,10 +716,10 @@
                                                                     </subviews>
                                                                     <color key="backgroundColor" red="0.54117647059999996" green="0.79607843140000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <constraints>
-                                                                        <constraint firstItem="o3X-jg-l4S" firstAttribute="centerX" secondItem="Lv2-4q-Z8w" secondAttribute="centerX" id="17N-jE-ukL"/>
+                                                                        <constraint firstAttribute="width" secondItem="Lv2-4q-Z8w" secondAttribute="height" multiplier="4:3" id="1tv-vu-sTF"/>
                                                                         <constraint firstItem="o3X-jg-l4S" firstAttribute="width" secondItem="Lv2-4q-Z8w" secondAttribute="width" id="IoC-IX-lVt"/>
-                                                                        <constraint firstItem="o3X-jg-l4S" firstAttribute="centerY" secondItem="Lv2-4q-Z8w" secondAttribute="centerY" id="Lo2-cJ-Ed7"/>
-                                                                        <constraint firstAttribute="width" secondItem="Lv2-4q-Z8w" secondAttribute="height" multiplier="2:1" id="aIk-qA-N6n"/>
+                                                                        <constraint firstItem="o3X-jg-l4S" firstAttribute="centerX" secondItem="Lv2-4q-Z8w" secondAttribute="centerX" id="Sr9-tR-wad"/>
+                                                                        <constraint firstItem="o3X-jg-l4S" firstAttribute="centerY" secondItem="Lv2-4q-Z8w" secondAttribute="centerY" id="bkq-IW-u5A"/>
                                                                         <constraint firstItem="o3X-jg-l4S" firstAttribute="height" secondItem="Lv2-4q-Z8w" secondAttribute="height" id="v7E-SE-0Qn"/>
                                                                     </constraints>
                                                                 </view>
@@ -729,6 +730,7 @@
                                                                 <constraint firstItem="Lv2-4q-Z8w" firstAttribute="top" secondItem="Kdm-pJ-unp" secondAttribute="top" id="3Mu-eN-TRu"/>
                                                                 <constraint firstItem="Miu-6m-Fnf" firstAttribute="centerX" secondItem="Kdm-pJ-unp" secondAttribute="centerX" id="Ucs-Z7-182"/>
                                                                 <constraint firstItem="Miu-6m-Fnf" firstAttribute="width" secondItem="Kdm-pJ-unp" secondAttribute="width" multiplier="0.9" id="VRG-2P-xxm"/>
+                                                                <constraint firstItem="Lv2-4q-Z8w" firstAttribute="width" secondItem="Kdm-pJ-unp" secondAttribute="width" multiplier="0.25641" id="hLp-vH-a0a"/>
                                                                 <constraint firstItem="Lv2-4q-Z8w" firstAttribute="leading" secondItem="Kdm-pJ-unp" secondAttribute="leading" id="mK3-95-wfF"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>

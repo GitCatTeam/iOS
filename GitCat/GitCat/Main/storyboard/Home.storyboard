@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tYd-Kv-jLQ">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -572,7 +572,7 @@
                                                         <constraint firstAttribute="width" secondItem="vPx-1j-uLA" secondAttribute="height" multiplier="23:20" id="Svj-9T-74G"/>
                                                     </constraints>
                                                 </view>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgCatSad" translatesAutoresizingMaskIntoConstraints="NO" id="o7t-GK-mBQ">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.88" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgCatByeNero" translatesAutoresizingMaskIntoConstraints="NO" id="o7t-GK-mBQ">
                                                     <rect key="frame" x="16" y="16" width="136" height="118"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="o7t-GK-mBQ" secondAttribute="height" multiplier="68:59" id="MDx-Nd-YJA"/>
@@ -1508,7 +1508,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6~10개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wz-dt-scy">
-                                                <rect key="frame" x="144.33333333333334" y="1" width="29" height="10"/>
+                                                <rect key="frame" x="147" y="1" width="29" height="10"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="3ml-Sj-UL6"/>
                                                     <constraint firstAttribute="width" constant="29" id="Slo-LZ-7Ig"/>
@@ -1518,7 +1518,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKT-mT-rLo" customClass="RoundView" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="199.33333333333334" y="0.0" width="12" height="12"/>
+                                                <rect key="frame" x="202.00000000000003" y="0.0" width="12" height="12"/>
                                                 <color key="backgroundColor" red="0.88318020109999995" green="0.94813674690000005" blue="0.99608689549999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="12" id="Dfp-cR-tUQ"/>
@@ -1526,7 +1526,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10+개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNL-OW-Awc">
-                                                <rect key="frame" x="217.33333333333334" y="1" width="25" height="10"/>
+                                                <rect key="frame" x="220.00000000000003" y="0.0" width="26" height="11.666666666666666"/>
                                                 <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="10"/>
                                                 <color key="textColor" name="brownishGrey"/>
                                                 <nil key="highlightedColor"/>
@@ -1540,7 +1540,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1~5개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bc1-9a-b5G">
-                                                <rect key="frame" x="77" y="1" width="23.333333333333329" height="10"/>
+                                                <rect key="frame" x="77" y="0.0" width="26" height="11.666666666666666"/>
                                                 <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="10"/>
                                                 <color key="textColor" name="brownishGrey"/>
                                                 <nil key="highlightedColor"/>
@@ -1565,7 +1565,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Gf-Ir-xXJ" customClass="RoundView" customModule="GitCat" customModuleProvider="target">
-                                        <rect key="frame" x="181" y="30.666666666666686" width="12" height="12"/>
+                                        <rect key="frame" x="183.66666666666666" y="30.666666666666686" width="12" height="12"/>
                                         <color key="backgroundColor" red="0.88318020105361938" green="0.94813674688339233" blue="0.99608689546585083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="12" id="Jcn-m3-6ii"/>
@@ -1682,7 +1682,7 @@
                                             </constraints>
                                         </view>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCalandarCommit" translatesAutoresizingMaskIntoConstraints="NO" id="E6K-Pc-VIW">
-                                            <rect key="frame" x="134.66666666666666" y="28" width="18" height="18"/>
+                                            <rect key="frame" x="116.66666666666669" y="19" width="36" height="36"/>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ll5-6V-kQN">
                                             <rect key="frame" x="244" y="82" width="1" height="36"/>
@@ -1730,7 +1730,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="커밋 내역 상세" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNt-qJ-udh" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                            <rect key="frame" x="147" y="198" width="81" height="14"/>
+                                            <rect key="frame" x="147" y="198" width="81" height="16.333333333333343"/>
                                             <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="14"/>
                                             <color key="textColor" red="0.39216253161430359" green="0.39214670658111572" blue="0.39215743541717529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
@@ -1741,14 +1741,14 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCalandarCommit" translatesAutoresizingMaskIntoConstraints="NO" id="20o-0Y-pJW">
-                                            <rect key="frame" x="127" y="196" width="18" height="18"/>
+                                            <rect key="frame" x="127" y="197.33333333333334" width="18" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="18" id="AJL-3G-3vS"/>
                                                 <constraint firstAttribute="height" constant="18" id="O6J-s0-vnZ"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최신형 냥북" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZ4-ds-mOG" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                            <rect key="frame" x="268.33333333333331" y="102" width="73.666666666666686" height="16"/>
+                                            <rect key="frame" x="268.33333333333331" y="102" width="73.666666666666686" height="18.666666666666671"/>
                                             <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="16"/>
                                             <color key="textColor" name="brownishGrey"/>
                                             <nil key="highlightedColor"/>
@@ -2180,7 +2180,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8d-z5-5Sf">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="930"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="950"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QFk-sK-AgQ">
                                                 <rect key="frame" x="15" y="18" width="345" height="79.666666666666671"/>
@@ -2359,7 +2359,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MdZ-Fc-MKK">
-                                                <rect key="frame" x="15" y="331" width="345" height="173"/>
+                                                <rect key="frame" x="15" y="331" width="345" height="176.66666666666663"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icReportLanguage" translatesAutoresizingMaskIntoConstraints="NO" id="Bgj-dn-faw">
                                                         <rect key="frame" x="12" y="14" width="14" height="14"/>
@@ -2383,7 +2383,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhN-3C-Zaw" customClass="PieChartView" customModule="Charts">
-                                                        <rect key="frame" x="202.66666666666663" y="22.333333333333314" width="128" height="128"/>
+                                                        <rect key="frame" x="202.66666666666663" y="24.333333333333314" width="128" height="128"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="dhN-3C-Zaw" secondAttribute="height" multiplier="1:1" id="29a-QX-KF7"/>
@@ -2628,7 +2628,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGp-iH-GYU">
-                                                <rect key="frame" x="15" y="514" width="345" height="190"/>
+                                                <rect key="frame" x="15" y="517.66666666666663" width="345" height="190"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icReportRepa" translatesAutoresizingMaskIntoConstraints="NO" id="GRq-iX-XOc">
                                                         <rect key="frame" x="10" y="12" width="18" height="18"/>
@@ -2690,7 +2690,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Jr-dT-txN">
-                                                <rect key="frame" x="15" y="714" width="345" height="122"/>
+                                                <rect key="frame" x="15" y="717.66666666666663" width="345" height="122"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이번달 세줄평" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlv-Pn-2ob" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
                                                         <rect key="frame" x="30" y="15" width="102" height="12"/>
@@ -2833,7 +2833,7 @@
                                     <constraint firstItem="D8d-z5-5Sf" firstAttribute="top" secondItem="sh5-ip-5Dv" secondAttribute="top" id="YX7-LF-z7x"/>
                                     <constraint firstItem="D8d-z5-5Sf" firstAttribute="trailing" secondItem="sh5-ip-5Dv" secondAttribute="trailing" id="bC7-Ct-0Wh"/>
                                     <constraint firstAttribute="bottom" secondItem="D8d-z5-5Sf" secondAttribute="bottom" id="bcS-cr-4b6"/>
-                                    <constraint firstItem="D8d-z5-5Sf" firstAttribute="height" secondItem="sh5-ip-5Dv" secondAttribute="height" multiplier="1.26703" id="vKD-hR-i3s"/>
+                                    <constraint firstItem="D8d-z5-5Sf" firstAttribute="height" secondItem="sh5-ip-5Dv" secondAttribute="height" multiplier="1.29428" id="ps2-kD-1yQ"/>
                                 </constraints>
                             </scrollView>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFu-Xc-3AF">
@@ -3149,6 +3149,7 @@
         <image name="imgArrow1" width="53.333332061767578" height="53.333332061767578"/>
         <image name="imgArrow2" width="66.666664123535156" height="66.666664123535156"/>
         <image name="imgArrow3" width="66.666664123535156" height="66.666664123535156"/>
+        <image name="imgCatByeNero" width="138" height="120"/>
         <image name="imgCatSad" width="120" height="90"/>
         <image name="imgHomebox" width="277" height="124"/>
         <image name="imgMedal" width="50" height="50"/>

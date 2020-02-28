@@ -114,10 +114,11 @@ class ReportDetailVC: UIViewController {
         line.mode = .cubicBezier
         line.drawFilledEnabled = true
         line.fillColor = UIColor.CustomColor.skyBlue
-        line.circleColors = [#colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)]
-        line.drawCirclesEnabled = false
-        line.circleRadius = 3
-        line.circleHoleRadius = 1
+        line.circleColors = [#colorLiteral(red: 0.537254902, green: 0.8, blue: 0.9647058824, alpha: 1)]
+        line.drawCirclesEnabled = true
+        line.drawCircleHoleEnabled = false
+        line.circleRadius = 1.5
+
         
         
         line.drawValuesEnabled = false
@@ -268,9 +269,7 @@ class ReportDetailVC: UIViewController {
         self.statusView3.alpha = 0
 
     }
-
 }
-
 
 extension ReportDetailVC {
     func setReportDetailData(id:Int) {
