@@ -20,6 +20,7 @@
 		4C68D11023B09D4000A8F813 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C68D10E23B09D4000A8F813 /* LaunchScreen.storyboard */; };
 		4C68D12C23B0AAB100A8F813 /* BasicExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68D12B23B0AAB100A8F813 /* BasicExtension.swift */; };
 		4C68D13523B0D02400A8F813 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68D13423B0D02400A8F813 /* SignInVC.swift */; };
+		4C7B568F2408DBBB001881FE /* DeleteTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B568E2408DBBB001881FE /* DeleteTokenService.swift */; };
 		4C7C0E0B23D489DA00669B38 /* CommitDetailTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E0A23D489DA00669B38 /* CommitDetailTVCell.swift */; };
 		4C7C0E1123D4A11400669B38 /* CustomHeaderTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E1023D4A11400669B38 /* CustomHeaderTVCell.swift */; };
 		4C7C0E1323D4AB0100669B38 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E1223D4AB0100669B38 /* AlarmVC.swift */; };
@@ -91,6 +92,7 @@
 		4C68D11123B09D4000A8F813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C68D12B23B0AAB100A8F813 /* BasicExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicExtension.swift; sourceTree = "<group>"; };
 		4C68D13423B0D02400A8F813 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		4C7B568E2408DBBB001881FE /* DeleteTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTokenService.swift; sourceTree = "<group>"; };
 		4C7C0E0A23D489DA00669B38 /* CommitDetailTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitDetailTVCell.swift; sourceTree = "<group>"; };
 		4C7C0E1023D4A11400669B38 /* CustomHeaderTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderTVCell.swift; sourceTree = "<group>"; };
 		4C7C0E1223D4AB0100669B38 /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				4C7C0E7D23D985D800669B38 /* CommitListService.swift */,
 				4CE733EC23FCF0CD00DB97EB /* ReportListService.swift */,
 				4CE733EE23FCF0D900DB97EB /* ReportDetailService.swift */,
+				4C7B568E2408DBBB001881FE /* DeleteTokenService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C7B568F2408DBBB001881FE /* DeleteTokenService.swift in Sources */,
 				4CE733EF23FCF0D900DB97EB /* ReportDetailService.swift in Sources */,
 				4CC07FBF23B330A600851B45 /* LittleRoundBtn.swift in Sources */,
 				4C1035AC23B9D1430057F0B1 /* HomeVC.swift in Sources */,
