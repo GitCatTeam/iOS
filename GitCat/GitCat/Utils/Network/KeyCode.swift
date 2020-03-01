@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 
 enum Secrets {
-    static let PrivatekeyData = ""
+    static let PrivatekeyData = ""//반영되나..?
     static let PrivateivData = ""
     
 }
