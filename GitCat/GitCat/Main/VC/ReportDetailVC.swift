@@ -118,6 +118,7 @@ class ReportDetailVC: UIViewController {
         line.drawCirclesEnabled = true
         line.drawCircleHoleEnabled = false
         line.circleRadius = 1.5
+//        line.circleHoleRadius
 
         
         

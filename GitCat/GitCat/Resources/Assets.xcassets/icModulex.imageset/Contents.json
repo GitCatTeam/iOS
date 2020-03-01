@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "icModulex.png",
+      "scale" : "1x",
+      "idiom" : "universal"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x",
+      "filename" : "icModulex@2x.png"
+    },
+    {
+      "filename" : "icModulex@3x.png",
+      "scale" : "3x",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

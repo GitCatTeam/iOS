@@ -38,5 +38,4 @@ enum NetworkResult<T> {
     case serverErr //500
     case requestFail //501
     case networkFail
-
 }

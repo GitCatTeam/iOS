@@ -34,11 +34,10 @@ class TutorialCVCell: UICollectionViewCell {
         super.awakeFromNib()
         self.baseView.layer.masksToBounds = false
         self.baseView.layer.cornerRadius = 10
+        self.baseView.customShadow(width: 1, height: 2, radius: 10, opacity: 0.16)
         self.imageBackgroundView.topSectionRound()
         
         self.chapterRoundView.layer.borderColor =  UIColor(red: 137/255, green: 204/255, blue: 246/255, alpha: 1).cgColor
-        
-        
     }
     
     

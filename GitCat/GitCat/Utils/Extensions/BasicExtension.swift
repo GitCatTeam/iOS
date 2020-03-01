@@ -47,6 +47,15 @@ extension UIView {
         self.layer.shadowOpacity = 0.12
         self.layer.masksToBounds = false
     }
+
+    func customShadow(width:CGFloat, height:CGFloat, radius:CGFloat, opacity:Float) {
+        self.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        self.layer.shadowOffset = CGSize(width: width, height: height)
+        
+        self.layer.shadowRadius = radius
+        self.layer.shadowOpacity = opacity
+        self.layer.masksToBounds = false
+    }
     
     //뷰 테두리 설정
     func addBorder(_ mask: CAShapeLayer, borderWidth: CGFloat, borderColor: UIColor) {

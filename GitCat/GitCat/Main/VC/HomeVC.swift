@@ -52,6 +52,12 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     
     @IBOutlet weak var highlightView: RoundView!
     
+    @IBOutlet weak var cardBackgroundView: UIView!
+    
+    @IBOutlet weak var graduateCardView: UIView!
+    @IBOutlet weak var itemUpgradeCardView: UIView!
+    
+    
     let cellIdentifier = "TutorialCVCell"
     
     let chapterData:[String] = ["01","02","03","04"]
@@ -67,6 +73,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         
         self.setNavigationBar()
         catChatLabel.setLineHeight(lineHeight: 0.8)
+        setItemCardBackgroundView()
         setStyle()
     }
     
@@ -95,8 +102,108 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         commitReportDescription.alpha = 0
 
         highlightView.layer.borderWidth = 0
+        
+        graduateCardView.alpha = 0
+        graduateCardView.roundRadius()
+        graduateCardView.customShadow(width: 1, height: 2, radius: 11, opacity: 0.16)
+//        itemUpgradeCardView.alpha = 0
+        itemUpgradeCardView.roundRadius()
+        itemUpgradeCardView.customShadow(width: 1, height: 2, radius: 11, opacity: 0.16)
+        
     }
+    
+    @IBAction func checkGraduateAction(_ sender: Any) {
+        cardBackgroundView.alpha = 0
+        graduateCardView.alpha = 0
+        let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "CatCollectionVC")
+         dvc.modalPresentationStyle = .fullScreen
+
+        self.navigationController?.pushViewController(dvc, animated: true)
+    }
+    
+    @IBAction func itemUpgradeCloseAction(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.itemUpgradeCardView.alpha = 0
+        });
+    }
+    
+    @IBAction func graduateCloseAction(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, animations: {
+        self.graduateCardView.alpha = 0
+        });
+    }
+    
+    @IBAction func closeCardViewAction(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.cardBackgroundView.alpha = 0
+            
+            self.tabBarController?.tabBar.alpha = 1
+
+            let tabBarControllerItems = self.tabBarController?.tabBar.items
+
+            if let tabArray = tabBarControllerItems {
+                let tabBarItem1 = tabArray[0]
+                let tabBarItem3 = tabArray[2]
+
+                tabBarItem1.isEnabled = true
+                tabBarItem3.isEnabled = true
+            
+            }
+            
+            self.catCollectionBarItem.isEnabled = true
+            self.settingBarItem.isEnabled = true
+        });
+    }
+    func setItemCardBackgroundView() {
+        let tapGestRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(cardBackScreenTapAction(sender:)))
+        cardBackgroundView.addGestureRecognizer(tapGestRecognizer1)
+        let tapGestRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(itemBackScreenTapAction(sender:)))
+        cardBackgroundView.addGestureRecognizer(tapGestRecognizer2)
+        
+    }
+    
+    @objc func cardBackScreenTapAction(sender: UITapGestureRecognizer) {
+        hideBackgroundView()
+        self.cardBackgroundView.alpha = 0
+        
+        
+    }
+    
+    @objc func itemBackScreenTapAction(sender: UITapGestureRecognizer) {
+        hideBackgroundView()
+    }
+    
+    
+    func hideBackgroundView() {
+
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            self.cardBackgroundView.alpha = 0
+            self.navigationController?.navigationBar.layer.zPosition = 1
+    
+            self.tabBarController?.tabBar.alpha = 1
+            self.navigationController?.navigationBar.alpha = 1
+            
+            let tabBarControllerItems = self.tabBarController?.tabBar.items
+            
+            if let tabArray = tabBarControllerItems {
+                           let tabBarItem1 = tabArray[0]
+                           let tabBarItem3 = tabArray[2]
+
+                           tabBarItem1.isEnabled = true
+                           tabBarItem3.isEnabled = true
+                       
+            }
+                       
+            self.catCollectionBarItem.isEnabled = true
+            self.settingBarItem.isEnabled = true
+            
+        })
+    }
+    
 }
+
+
 
 extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -132,6 +239,8 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate {
     }
 
 }
+
+
 extension HomeVC : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width
