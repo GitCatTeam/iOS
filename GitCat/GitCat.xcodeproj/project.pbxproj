@@ -22,7 +22,6 @@
 		4C68D13523B0D02400A8F813 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68D13423B0D02400A8F813 /* SignInVC.swift */; };
 		4C7B568F2408DBBB001881FE /* DeleteTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B568E2408DBBB001881FE /* DeleteTokenService.swift */; };
 		4C7B5691240951C3001881FE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7B5690240951C3001881FE /* Security.framework */; };
-		4C7B569324095421001881FE /* Decrytion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B569224095421001881FE /* Decrytion.swift */; };
 		4C7B569524095625001881FE /* KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B569424095625001881FE /* KeyCode.swift */; };
 		4C7C0E0B23D489DA00669B38 /* CommitDetailTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E0A23D489DA00669B38 /* CommitDetailTVCell.swift */; };
 		4C7C0E1123D4A11400669B38 /* CustomHeaderTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E1023D4A11400669B38 /* CustomHeaderTVCell.swift */; };
@@ -97,7 +96,6 @@
 		4C68D13423B0D02400A8F813 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		4C7B568E2408DBBB001881FE /* DeleteTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTokenService.swift; sourceTree = "<group>"; };
 		4C7B5690240951C3001881FE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		4C7B569224095421001881FE /* Decrytion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decrytion.swift; sourceTree = "<group>"; };
 		4C7B569424095625001881FE /* KeyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCode.swift; sourceTree = "<group>"; };
 		4C7C0E0A23D489DA00669B38 /* CommitDetailTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitDetailTVCell.swift; sourceTree = "<group>"; };
 		4C7C0E1023D4A11400669B38 /* CustomHeaderTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderTVCell.swift; sourceTree = "<group>"; };
@@ -344,7 +342,6 @@
 				4CAB3BD32407FE46007A84B6 /* DefaultData.swift */,
 				4CAB3BD524082883007A84B6 /* CommonModel.swift */,
 				4CAB3BDB24084737007A84B6 /* PuttableService.swift */,
-				4C7B569224095421001881FE /* Decrytion.swift */,
 				4C7B569424095625001881FE /* KeyCode.swift */,
 			);
 			path = Network;
@@ -638,7 +635,6 @@
 				4CE733ED23FCF0CD00DB97EB /* ReportListService.swift in Sources */,
 				4CA7A75923FB9D36004FC110 /* ReportListModel.swift in Sources */,
 				4C7C0E6723D8044B00669B38 /* HttpResponseCode.swift in Sources */,
-				4C7B569324095421001881FE /* Decrytion.swift in Sources */,
 				4C7C0E6D23D8133200669B38 /* GettableService.swift in Sources */,
 				4CC07FB523B317CA00851B45 /* RoundBtn.swift in Sources */,
 				4CC07F9523B1165200851B45 /* GetMoreInfo1VC.swift in Sources */,

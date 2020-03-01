@@ -12,7 +12,7 @@ import WebKit
 import SystemConfiguration
 import CryptoSwift
 
-public class Reachabilty : Decrytion{
+public class Reachabilty{
     class func isConnectedToNetwork() ->Bool {
         var zeroAddress = sockaddr_in(sin_len: 0, sin_family: 0, sin_port: 0, sin_addr: in_addr(s_addr:0), sin_zero: (0, 0, 0, 0, 0, 0, 0, 0))
         zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
@@ -92,25 +92,30 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
 
         if(message.name == "authCheckHandler") {
             
-            //복호화
-            print("=====================================")
-            print(message.body) //string 형태로 날아옴
-            print("=====================================")
-        //ehwcZXqJFwK80sv7S++kKRRy6x2njyYl1nZke9Bd5zQEzW3MbAxXa7BctWCbQkJ8ZQbpx04H71pBEdGZ2yQaHPIePUPJiWIqUvEYDjcqDVwiQdp7JaQNyIB1+lF6IieMxYtYDu84tvp04I+M+ovVuQNiWHMYNxoDerVG+ksHYWqCcHpK6t0hdqWBJN/WtlYFj9j2NXWa/BBq7sMMYBrhvbqsC+GRdDtT1NzL4fcTnRLE7sUssBVR8NE/k0w7I4MuZhCbuHOUfqSda8MZqdQpikXBrwNAYJlxD3Jbmz4K8rlXqPsuOxeNXKEEFW3MNpNK91JfBO3M7FA3FmRueZpRSX/7Ba8UGpKySu0NcIdu0oadLvl+5DeKT/llkjZ08KnEw6UMIPW9IzIiiWaGXo0Yz+oyOCwUetbaEmksNFvEV3M=
-
+            //복호
             let messageBody:String? = message.body as?  String
             
             let messageData:String?
             
             messageData = try! messageBody?.aesDecrypt()
             
-            print("복호화됐을까..?\(String(describing: messageData))") //응 안돼
-//
-//            let messageData:Data! = message.body as!  Data
-//            decrypt(data: messageData, keyData: keyData, ivData: ivData)
-//
-            //복호화한 데이터 저장
+            print("=================복호화======================")
+            print("\(gsno(messageData))")
+            print("=================복호화======================")
+
             
+            //복호화한 데이터 json으로 변형
+            //FIXME - 현재 복호화된 데이터가 잘려서 날아와서 온전한 json 형태로 전환 불가
+            let str = gsno(messageData)
+
+            let dict = convertToDictionary(text: str)
+            print("================JSON======================")
+            print("\(dict)")
+            print("=================JSON======================")
+            
+            
+            
+            //복호화한 데이터 저장
             let values:[String:AnyObject] = message.body as! Dictionary
             let userId = gsno(values["githubId"] as? String)
             let userImage = gsno(values["profileImg"] as? String)
@@ -169,6 +174,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
     }
 }
 
+//Networking
 extension OAuthVC {
     func postDeviceToken() {
         
@@ -207,26 +213,23 @@ extension OAuthVC {
     }
 }
 
-//extension OAuthVC {
-//    static func decryptArtisan(cryptedMessage: String , key:String) -> String? {
-//        var clairMessage:String? = nil;
-//
-//        if let cryptedData = Data(base64Encoded: cryptedMessage) {
-//            do {
-//                let aes = try AES(key: Array<UInt8>(key.utf8), blockMode: ECB(), padding: .pkcs5) // aes128
-//                let cipher = try aes.decrypt(Array<UInt8>(cryptedData))
-//                clairMessage = String(bytes: cipher, encoding: .utf8)
-//            }catch{
-//                let error = error as NSError
-//                print(error)
-//            }
-//        }
-//
-//        return clairMessage
-//    }
-//}
+//복호화 관련 함수
+extension OAuthVC {
+    
+    func convertToDictionary(text: String) -> [String: Any]? {
+        if let data = text.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
+}
 
-
+let keyData = Secrets.PrivatekeyData
+let ivData = Secrets.PrivateivData
 
 func dataToByteArray(data: NSData) -> [UInt8] {
     let pointer = data.bytes.assumingMemoryBound(to: UInt8.self)
@@ -235,10 +238,6 @@ func dataToByteArray(data: NSData) -> [UInt8] {
     
     return Array<UInt8>(buffer)
 }
-
-let keyData = Secrets.PrivatekeyData
-let ivData = Secrets.PrivateivData
-
 
 extension String {
 
@@ -251,76 +250,16 @@ extension String {
         
         let key: [UInt8] = Array(keyData.utf8)
         let iv: [UInt8] = Array(ivData.utf8)
-        print("key:\(key)")
-        print("iv:\(iv)")
-        
-        
         
         let encryptedData: NSData = self.hexStringToData()
-        print("encryptedData:\(encryptedData)")
         let encryptedBytes: [UInt8] = dataToByteArray(data: encryptedData)
-        print("encryptedBytes:\(encryptedBytes)")
         let decryptedBytes: [UInt8] = try AES(key: key, blockMode: CBC(iv: iv)).decrypt(encryptedBytes)
-        print("decryptedBytes:\(decryptedBytes)") //여기까지 복호화한 것 같긴한데..
 
-//        let decryptedString: String = bytesToString(bytes: decryptedBytes)
-//        print("Decrypted String Length: " + String(decryptedBytes.characters.count))
-//        print("Decrypted String:")
-//        print(decryptedString)
-//        print("")
-        
 
-//        let str = String(decoding: decryptedBytes, as: UTF8.self)
-        
-//        let ptr = UnsafeMutablePointer<UInt8>.allocate(capacity: 488)
-//        let bPtr = UnsafeMutableBufferPointer<UInt8>(start:ptr, count: 488)
-//
-//        for (i, c) in decryptedBytes.enumerated() {
-//            bPtr[i] = c
-//        }
-//
-
-//        // 시작번지를 가져와서...
-//        let string = String(cString:bPtr.baseAddress!)
-//        print("================================")
-//        print("1")
-//        print(string) // "hello"
-//        print("================================")
-    /*�k'^��3'*ӣ�p���0�����u�xZ��fa�Ώ�Fe�7V練A׃B}=��*�A��As��sP`#�8�̾���M��'�W��0����a�!V�)!E��M�{�����^F���Bt�o���̄"��̭6�.��@)����:I�}���1i���$��7�΂�<J��b[�w�P\/X��x>~�Փ4��B�h���0��ybOx���'�< �>��҈�r�o�k̮�BB=[>Hdr�9�F��T��Đsz"���^�n���%;,�
-        i�A���
-        �_�e�u�:��F����8Gޑ"G��b٣̑�s���_@Ym*/
-//
-//        let string2 = String(bytes:bPtr, encoding: .utf8)
-//        print("================================")
-//        print("2")
-//        print(string2) // "hello"
-//        print("================================")
-        
-
-//        return string ?? "흥"
         return String(bytes: decryptedBytes, encoding: .utf8)!
 
     }
 
-//    func bytesToString(bytes: Array<UInt8>) -> String {
-//        var encodedString = ""
-//        var decoder = UTF8()
-//        var generator = bytes.generate()
-//        var finished: Bool = false
-//        repeat {
-//            let decodingResult = decoder.decode(&generator)
-//            switch decodingResult {
-//            case .Result(let char):
-//                encodedString.append(char)
-//            case .EmptyInput:
-//                finished = true
-//            case .Error:
-//                finished = true
-//            }
-//        } while (!finished)
-//        return encodedString
-//    }
-//
     func hexStringToData() -> NSData {
         let data = NSMutableData()
         var temp = ""
