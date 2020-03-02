@@ -49,13 +49,13 @@ class GetMoreInfo3VC: UIViewController {
             interestInDevBtn.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
             
             studentBtn.isSelected = false
-             studentBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+             studentBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             OneYearDevBtn.isSelected = false
-             OneYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+             OneYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             ThreeYearDevBtn.isSelected = false
-             ThreeYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+             ThreeYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             MoreThanFiveYearDevBtn.isSelected = false
-             MoreThanFiveYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+             MoreThanFiveYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             
         }else if sender == studentBtn && studentBtn.isSelected {
             userCareer = "관련 학부생/대학원생"
@@ -63,13 +63,13 @@ class GetMoreInfo3VC: UIViewController {
             studentBtn.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
             
             interestInDevBtn.isSelected = false
-            interestInDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            interestInDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             OneYearDevBtn.isSelected = false
-            OneYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            OneYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             ThreeYearDevBtn.isSelected = false
-            ThreeYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            ThreeYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             MoreThanFiveYearDevBtn.isSelected = false
-            MoreThanFiveYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            MoreThanFiveYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             
         } else if sender == OneYearDevBtn && OneYearDevBtn.isSelected {
             userCareer = "1년차"
@@ -77,51 +77,53 @@ class GetMoreInfo3VC: UIViewController {
             OneYearDevBtn.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
             
             studentBtn.isSelected = false
-            studentBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            studentBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             interestInDevBtn.isSelected = false
-            interestInDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            interestInDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             ThreeYearDevBtn.isSelected = false
-            ThreeYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            ThreeYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             MoreThanFiveYearDevBtn.isSelected = false
-            MoreThanFiveYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            MoreThanFiveYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         } else if sender == ThreeYearDevBtn && ThreeYearDevBtn.isSelected {
             userCareer = "3년차"
             
             ThreeYearDevBtn.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
             
             studentBtn.isSelected = false
-            studentBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            studentBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             interestInDevBtn.isSelected = false
-            interestInDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            interestInDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             OneYearDevBtn.isSelected = false
-            OneYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            OneYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             MoreThanFiveYearDevBtn.isSelected = false
-            MoreThanFiveYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            MoreThanFiveYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         } else if sender == MoreThanFiveYearDevBtn && MoreThanFiveYearDevBtn.isSelected {
             userCareer = "5년차 이상"
             
             MoreThanFiveYearDevBtn.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
             
             studentBtn.isSelected = false
-            studentBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            studentBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             interestInDevBtn.isSelected = false
-            interestInDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            interestInDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             OneYearDevBtn.isSelected = false
-            OneYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            OneYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             ThreeYearDevBtn.isSelected = false
-            ThreeYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            ThreeYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         } else{
             
             interestInDevBtn.isSelected = false
-            interestInDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            interestInDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             studentBtn.isSelected = false
-            studentBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            studentBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             interestInDevBtn.isSelected = false
-            interestInDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            interestInDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             OneYearDevBtn.isSelected = false
-            OneYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            OneYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             ThreeYearDevBtn.isSelected = false
-            ThreeYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+            ThreeYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
+            MoreThanFiveYearDevBtn.isSelected = false
+            MoreThanFiveYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         }
     }
     
@@ -151,23 +153,23 @@ class GetMoreInfo3VC: UIViewController {
         
         interestInDevBtn.setTitleColor(#colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1), for: UIControl.State.normal)
         interestInDevBtn.setTitleColor(UIColor.CustomColor.skyBlue, for: UIControl.State.selected)
-        interestInDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+        interestInDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
 
-        studentBtn.setTitleColor(UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1), for: UIControl.State.normal)
+        studentBtn.setTitleColor(#colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1), for: UIControl.State.normal)
         studentBtn.setTitleColor(UIColor.CustomColor.skyBlue, for: UIControl.State.selected)
-        studentBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+        studentBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         
-        OneYearDevBtn.setTitleColor(UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1), for: UIControl.State.normal)
+        OneYearDevBtn.setTitleColor(#colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1), for: UIControl.State.normal)
         OneYearDevBtn.setTitleColor(UIColor.CustomColor.skyBlue, for: UIControl.State.selected)
-        OneYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+        OneYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         
-        ThreeYearDevBtn.setTitleColor(UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1), for: UIControl.State.normal)
+        ThreeYearDevBtn.setTitleColor(#colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1), for: UIControl.State.normal)
         ThreeYearDevBtn.setTitleColor(UIColor.CustomColor.skyBlue, for: UIControl.State.selected)
-        ThreeYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+        ThreeYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         
-        MoreThanFiveYearDevBtn.setTitleColor(UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1), for: UIControl.State.normal)
+        MoreThanFiveYearDevBtn.setTitleColor(#colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1), for: UIControl.State.normal)
         MoreThanFiveYearDevBtn.setTitleColor(UIColor.CustomColor.skyBlue, for: UIControl.State.selected)
-        MoreThanFiveYearDevBtn.layer.borderColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 1).cgColor
+        MoreThanFiveYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
     }
 
     /**

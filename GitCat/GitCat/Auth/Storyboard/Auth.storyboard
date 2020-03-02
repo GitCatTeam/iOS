@@ -76,6 +76,7 @@
                                         </state>
                                         <connections>
                                             <action selector="signUpAction:" destination="hAP-WK-8RI" eventType="touchUpInside" id="m7H-3g-MWr"/>
+                                            <segue destination="4wc-bw-Ko5" kind="show" id="Bbf-Ub-6Ll"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -199,7 +200,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyProfile" translatesAutoresizingMaskIntoConstraints="NO" id="FCh-Gy-juI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyProfile" translatesAutoresizingMaskIntoConstraints="NO" id="FCh-Gy-juI">
                                 <rect key="frame" x="114.5" y="211.5" width="185" height="185.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FCh-Gy-juI" secondAttribute="height" multiplier="1:1" id="bA3-aA-GXV"/>
@@ -365,6 +366,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6i1-fy-y3y"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Xpn-om-L3r"/>
                     <connections>
                         <outlet property="BigTitle" destination="KU7-aF-kC2" id="8mH-KO-4If"/>
                         <outlet property="birthDatePicker" destination="66N-OR-JfD" id="2aN-MH-hBD"/>

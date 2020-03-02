@@ -70,7 +70,6 @@
 		4CC07FBF23B330A600851B45 /* LittleRoundBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC07FBE23B330A600851B45 /* LittleRoundBtn.swift */; };
 		4CC07FC123B35A7300851B45 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC07FC023B35A7300851B45 /* RoundImageView.swift */; };
 		4CC07FC523B35BA400851B45 /* GetMoreInfo4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC07FC423B35BA400851B45 /* GetMoreInfo4VC.swift */; };
-		4CC3BC00240C395F00ABD2F7 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC3BBFF240C395F00ABD2F7 /* Key.swift */; };
 		4CC7D9B923C63BD5004576BB /* ReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D9B823C63BD5004576BB /* ReportVC.swift */; };
 		4CC7D9BE23C64722004576BB /* ReportCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D9BD23C64722004576BB /* ReportCVCell.swift */; };
 		4CCBE95A23FADD11002FA879 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCBE95923FADD11002FA879 /* UserNotifications.framework */; };
@@ -145,7 +144,6 @@
 		4CC07FBE23B330A600851B45 /* LittleRoundBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleRoundBtn.swift; sourceTree = "<group>"; };
 		4CC07FC023B35A7300851B45 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		4CC07FC423B35BA400851B45 /* GetMoreInfo4VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMoreInfo4VC.swift; sourceTree = "<group>"; };
-		4CC3BBFF240C395F00ABD2F7 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		4CC7D9B823C63BD5004576BB /* ReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportVC.swift; sourceTree = "<group>"; };
 		4CC7D9BD23C64722004576BB /* ReportCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCVCell.swift; sourceTree = "<group>"; };
 		4CCBE95923FADD11002FA879 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
@@ -345,7 +343,6 @@
 				4CAB3BD524082883007A84B6 /* CommonModel.swift */,
 				4CAB3BDB24084737007A84B6 /* PuttableService.swift */,
 				4C7B569424095625001881FE /* KeyCode.swift */,
-				4CC3BBFF240C395F00ABD2F7 /* Key.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -614,7 +611,6 @@
 				4C8C9E6923CB574600E160B1 /* ReportDetailVC.swift in Sources */,
 				4CD5A5D023C2F45E00A8E225 /* CustomLabel.swift in Sources */,
 				4C7C0E7E23D985D800669B38 /* CommitListService.swift in Sources */,
-				4CC3BC00240C395F00ABD2F7 /* Key.swift in Sources */,
 				4CAB3BDC24084737007A84B6 /* PuttableService.swift in Sources */,
 				4C68D12C23B0AAB100A8F813 /* BasicExtension.swift in Sources */,
 				4CAB3BD42407FE46007A84B6 /* DefaultData.swift in Sources */,

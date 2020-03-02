@@ -95,6 +95,9 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
             //복호
             let messageBody:String? = message.body as?  String
             
+            print("=================최초 string======================")
+            print("\(messageBody)")
+            print("=================최초 string======================")
             let messageData:String?
             
             messageData = try! messageBody?.aesDecrypt()
@@ -107,8 +110,12 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
             //복호화한 데이터 json으로 변형
             //FIXME - 현재 복호화된 데이터가 잘려서 날아와서 온전한 json 형태로 전환 불가
             let str = gsno(messageData)
+            let replaceStr = str.replacingOccurrences(of: "h.eu", with: "{\"gi")
+            print("=================복호화 결과 변경======================")
+            print(replaceStr)
+            print("=================복호화 결과 변경======================")
 
-            let dict = convertToDictionary(text: str)
+            let dict = convertToDictionary(text: replaceStr)
             print("================JSON======================")
             print("\(dict)")
             print("=================JSON======================")
@@ -116,7 +123,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
             
             
             //복호화한 데이터 저장
-            let values:[String:AnyObject] = message.body as! Dictionary
+            let values:[String:Any] = dict ?? [:]
             let userId = gsno(values["githubId"] as? String)
             let userImage = gsno(values["profileImg"] as? String)
             let token = gsno(values["token"] as? String)
@@ -250,14 +257,22 @@ extension String {
         
         let key: [UInt8] = Array(keyData.utf8)
         let iv: [UInt8] = Array(ivData.utf8)
+        print("key:\(key)")
+        print("iv:\(iv)")
         
         let encryptedData: NSData = self.hexStringToData()
+        print("encryptedData:\(encryptedData)")
+        print("======================================")
         let encryptedBytes: [UInt8] = dataToByteArray(data: encryptedData)
-        let decryptedBytes: [UInt8] = try AES(key: key, blockMode: CBC(iv: iv)).decrypt(encryptedBytes)
+        print("encryptedBytes:\(encryptedBytes)")
+        
+        let decryptedBytes: [UInt8] = try AES(key: key, blockMode: CBC(iv: iv), padding: .pkcs5).decrypt(encryptedBytes)
+        
+        let decrypted = try AES(key: keyData, iv: ivData, padding: .pkcs7).decrypt([UInt8](encryptedData))
+        print("======================================")
+        print("decrypted:\(decrypted)")
 
-
-        return String(bytes: decryptedBytes, encoding: .utf8)!
-
+        return String(bytes: decrypted, encoding: .utf8)!
     }
 
     func hexStringToData() -> NSData {

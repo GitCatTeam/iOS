@@ -62,7 +62,26 @@ class GetMoreInfo1VC: UIViewController {
         setBackBtn(color: UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1))
         birthDatePicker.setValue(UIColor.CustomColor.skyBlue, forKey: "textColor")
         
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("화면 나타남")
+        
+        clickBtnCnt = 0
+        nextBtn.backgroundColor = #colorLiteral(red: 0.862745098, green: 0.8666666667, blue: 0.8823529412, alpha: 1)
+        self.sexStackView.alpha = 1
+        self.birthDatePicker.alpha = 0
         nextBtn.isEnabled = false
+        
+        femaleBtn.isSelected = false
+        femaleBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
+
+        maleBtn.isSelected = false;
+        maleBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
+        
+        otherBtn.isSelected = false;
+        otherBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         
     }
     override func viewDidLayoutSubviews() {
@@ -84,7 +103,7 @@ class GetMoreInfo1VC: UIViewController {
             maleBtn.isSelected = false;
             maleBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             otherBtn.isSelected = false;
-            otherBtn.layer.borderColor = UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255).cgColor
+            otherBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             
             userGender = "F"
             
@@ -93,9 +112,9 @@ class GetMoreInfo1VC: UIViewController {
             maleBtn.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
             
             femaleBtn.isSelected = false;
-            femaleBtn.layer.borderColor = UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255).cgColor
+            femaleBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             otherBtn.isSelected = false;
-            otherBtn.layer.borderColor = UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255).cgColor
+            otherBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             
             userGender = "M"
             
@@ -103,19 +122,19 @@ class GetMoreInfo1VC: UIViewController {
             otherBtn.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
             
             femaleBtn.isSelected = false;
-            femaleBtn.layer.borderColor = UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255).cgColor
+            femaleBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             maleBtn.isSelected = false;
-            maleBtn.layer.borderColor = UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255).cgColor
+            maleBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             
             userGender = "E"
         } else{
             
             femaleBtn.isSelected = false;
-            femaleBtn.layer.borderColor = UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255).cgColor
+            femaleBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             maleBtn.isSelected = false;
-            maleBtn.layer.borderColor = UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255).cgColor
+            maleBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
             otherBtn.isSelected = false;
-            otherBtn.layer.borderColor = UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255).cgColor
+            otherBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         }
     }
 
@@ -193,20 +212,20 @@ class GetMoreInfo1VC: UIViewController {
     }
     func setButtonColor() {
         //여자 버튼 기본 상태 초기화
-        femaleBtn.setTitleColor(UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255), for: UIControl.State.normal)
-        femaleBtn.layer.borderColor = UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255).cgColor
+        femaleBtn.setTitleColor(#colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1), for: UIControl.State.normal)
+        femaleBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         //여자 버튼 선택할 경우
         femaleBtn.setTitleColor(UIColor.CustomColor.skyBlue, for: UIControl.State.selected)
         
         //남자 버튼 초기화
-        maleBtn.setTitleColor(UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255), for: UIControl.State.normal)
-        maleBtn.layer.borderColor = UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255).cgColor
+        maleBtn.setTitleColor(#colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1), for: UIControl.State.normal)
+        maleBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         //남자 버튼 선택할 경우
         maleBtn.setTitleColor(UIColor.CustomColor.skyBlue, for: UIControl.State.selected)
         
         //기타 버튼 초기화
-        otherBtn.setTitleColor(UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255), for: UIControl.State.normal)
-        otherBtn.layer.borderColor = UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255).cgColor
+        otherBtn.setTitleColor(#colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1), for: UIControl.State.normal)
+        otherBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         //기타 버튼 선택할 경우
         otherBtn.setTitleColor(UIColor.CustomColor.skyBlue, for: UIControl.State.selected)
     }
