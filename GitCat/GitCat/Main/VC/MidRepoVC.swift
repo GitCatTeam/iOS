@@ -84,6 +84,7 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         
         currentMonth = intMonth
         currentYear = intYear
+        visitedMonth[intMonth] = true
         setCalendarCommitBackgroundColor(year: intYear, month: intMonth)
         
         self.view.addGestureRecognizer(self.scopeGesture)
@@ -220,10 +221,6 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
 
     }
     
-    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
-         print("did deselect date \(self.formatter.string(from: date))")
-    }
-    
     func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
         print("\(self.formatter.string(from: calendar.currentPage))")
 
@@ -234,15 +231,17 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
         
         if(currentYear != intYear) {
             currentYear = intYear
+            print("바뀐년도:\(intYear)")
             visitedMonth = [false, false, false, false, false, false, false, false, false, false, false, false, false, false]
-            visitedMonth[currentMonth ?? 0] = true
             
+            visitedMonth[intMonth] = true
+            print(visitedMonth)
             print("새로운 년도, 달력 넘김: \(intYear)년 \(intMonth)월")
             
             setCalendarCommitBackgroundColor(year: intYear, month: intMonth)
         }
-        else if(visitedMonth[currentMonth ?? 0] != true) {
-            visitedMonth[currentMonth ?? 0] = true
+        else if(visitedMonth[intMonth] != true) {
+            visitedMonth[intMonth] = true
             
             print("새로운 달, 달력 넘김: \(intYear)년 \(intMonth)월")
             
@@ -267,11 +266,11 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
             let dateString = self.formatter.string(from: date)
 
             if self.commitLevel1.contains(dateString) {
-                return UIColor(red: 202/255, green: 235/255, blue: 1, alpha: 1)
+                return #colorLiteral(red: 0.9490196078, green: 0.9803921569, blue: 1, alpha: 1)
             } else if self.commitLevel2.contains(dateString) {
-                return UIColor(red: 221/255, green: 242/255, blue: 1, alpha: 1)
+                return #colorLiteral(red: 0.8666666667, green: 0.9490196078, blue: 1, alpha: 1)
             } else if self.commitLevel3.contains(dateString) {
-                return UIColor(red: 242/255, green: 250/255, blue: 1, alpha: 1)
+                return #colorLiteral(red: 0.7921568627, green: 0.9215686275, blue: 1, alpha: 1)
             }
 
             return appearance.selectionColor

@@ -40,7 +40,7 @@ public class Reachabilty{
 }
 class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler{
 
-    @IBOutlet weak var webView: WKWebView!
+    @IBOutlet var webView: WKWebView!
     
     
     override func loadView() {
@@ -96,7 +96,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
             let messageBody:String? = message.body as?  String
             
             print("=================최초 string======================")
-            print("\(messageBody)")
+            print("\(messageBody ?? "")")
             print("=================최초 string======================")
             let messageData:String?
             
@@ -117,7 +117,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
 
             let dict = convertToDictionary(text: replaceStr)
             print("================JSON======================")
-            print("\(dict)")
+            print("\(dict ?? [:])")
             print("=================JSON======================")
             
             
@@ -261,16 +261,10 @@ extension String {
         print("iv:\(iv)")
         
         let encryptedData: NSData = self.hexStringToData()
-        print("encryptedData:\(encryptedData)")
-        print("======================================")
-        let encryptedBytes: [UInt8] = dataToByteArray(data: encryptedData)
-        print("encryptedBytes:\(encryptedBytes)")
-        
-        let decryptedBytes: [UInt8] = try AES(key: key, blockMode: CBC(iv: iv), padding: .pkcs5).decrypt(encryptedBytes)
+//        let encryptedBytes: [UInt8] = dataToByteArray(data: encryptedData)
+//        let decryptedBytes: [UInt8] = try AES(key: key, blockMode: CBC(iv: iv), padding: .pkcs5).decrypt(encryptedBytes)
         
         let decrypted = try AES(key: keyData, iv: ivData, padding: .pkcs7).decrypt([UInt8](encryptedData))
-        print("======================================")
-        print("decrypted:\(decrypted)")
 
         return String(bytes: decrypted, encoding: .utf8)!
     }

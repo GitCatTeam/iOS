@@ -17,8 +17,15 @@ class SettingVC: UIViewController {
         setBackBtn(color: #colorLiteral(red: 0.5307495594, green: 0.8041878939, blue: 0.9690385461, alpha: 1))
         
         let imageURL = UserDefaults.standard.string(forKey: "userImage")
+        
         userProfileImage.setImage(imageURL, defaultImgPath: "imgEmptycat")
     }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        userProfileImage.circleRadius()
+        userProfileImage.layer.borderColor = UIColor.clear.cgColor
+    }
+    
     @IBAction func initializeCatAction(_ sender: Any) {
         let cancleModeAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
         }

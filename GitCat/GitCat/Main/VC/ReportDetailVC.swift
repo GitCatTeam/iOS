@@ -91,13 +91,10 @@ class ReportDetailVC: UIViewController {
         
         loadingView.loadGif(name: "gif_loading2")
         
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
         totalCount.text = totalCommit
         setReportDetailData(id: id)
+        
+        
     }
     
     func updateLineChartData() {
@@ -116,9 +113,9 @@ class ReportDetailVC: UIViewController {
         line.fillColor = UIColor.CustomColor.skyBlue
         line.circleColors = [#colorLiteral(red: 0.537254902, green: 0.8, blue: 0.9647058824, alpha: 1)]
         line.drawCirclesEnabled = true
-        line.drawCircleHoleEnabled = false
-        line.circleRadius = 1.5
-//        line.circleHoleRadius
+        line.drawCircleHoleEnabled = true
+        line.circleRadius = 2
+        line.circleHoleRadius = 1
 
         
         
@@ -169,6 +166,8 @@ class ReportDetailVC: UIViewController {
         pieChart.clipsToBounds = false
         pieChart.highlightPerTapEnabled = false
         pieChart.transparentCircleColor = nil
+
+        
         
                 
         let paragraphStyle = NSMutableParagraphStyle(); paragraphStyle.alignment = .center
@@ -180,6 +179,7 @@ class ReportDetailVC: UIViewController {
 
         pieChart.centerAttributedText = myAttrString
         let chartDataSet = PieChartDataSet(entries: percentOfLanguageEntries, label: nil)
+        chartDataSet.drawValuesEnabled = false
         
         let chartData = PieChartData(dataSet: chartDataSet)
         

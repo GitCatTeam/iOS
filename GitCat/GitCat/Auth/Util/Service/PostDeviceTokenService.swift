@@ -26,7 +26,6 @@ struct PostDeviceTokenService: PosttableService, APIServie {
                 switch networkResult.resCode {
                     
                 case HttpResponseCode.postSuccess.rawValue : //201
-                    print("여기까지는 오는데")
                     completion(.networkSuccess(networkResult.resResult))
                     
                 case HttpResponseCode.badRequest.rawValue : //400

@@ -54,7 +54,6 @@ extension PosttableService {
                     print(JSON(value))
                     
                     //성공 모델
-                    //TODO: ==을 !=로 바꿈, 이 부분 계속 예의주시할 것
                     if JSON(value) == JSON.null {
 
                         let result : networkResult = (resCode, CommonModel()) as! (resCode: Int, resResult: Self.NetworkData)
