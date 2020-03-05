@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        //화면 이동.
+        //MARK - 화면 이동.
         
         //로그인을 했다면,
         if(UserDefaults.standard.bool(forKey: "login")) {

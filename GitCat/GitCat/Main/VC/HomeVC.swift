@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftGifOrigin
 
 class HomeVC: UIViewController, TutorialCellDelegate {
     
@@ -57,7 +58,13 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     @IBOutlet weak var graduateCardView: UIView!
     @IBOutlet weak var itemUpgradeCardView: UIView!
     
+    @IBOutlet weak var todayCommitCountLabel: CustomLabel!
+    @IBOutlet weak var catNameLabel: UILabel!
+    @IBOutlet weak var todayScoreLabel: UILabel!
+    @IBOutlet weak var catImageView: UIImageView!
+    @IBOutlet weak var leftScoreLabel: UILabel!
     
+
     let cellIdentifier = "TutorialCVCell"
     
     let chapterData:[String] = ["01","02","03","04"]
@@ -72,6 +79,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         super.viewDidLoad()
         
         self.setNavigationBar()
+        setHomeData()
         catChatLabel.setLineHeight(lineHeight: 0.8)
         setItemCardBackgroundView()
         setStyle()
@@ -318,5 +326,40 @@ extension HomeVC : UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension HomeVC {
+    func setHomeData() {
+        
+        HomeService.sharedInstance.getReportList { (result) in
+            switch result {
+                    
+                    
+                case .networkSuccess(let data) :
+                    
+                    let detailData = data as? HomeModel
+                    
+                    if let resResult = detailData {
+                        self.todayCommitCountLabel.text = "\(resResult.data?.todayCommitCount ?? 0)"
+                        self.todayScoreLabel.text = "\(resResult.data?.todayScore ?? 0)"
+                        self.catNameLabel.text = resResult.data?.catName
+                        let url = URL(string: resResult.data?.catImg ?? "")
+                        self.catImageView.kf.setImage(with: url)
+                    }
+                    break
+                    
+                case .networkFail :
+                    self.networkErrorAlert()
+//                    self.loadingView.alpha = 0
+//                    self.loadingBackgroundView.alpha = 0
+                    
+                default:
+                    self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
+//                    self.loadingView.alpha = 0
+//                    self.loadingBackgroundView.alpha = 0
+                    break
+                }
+            }
+        }
+    
+}
 
 

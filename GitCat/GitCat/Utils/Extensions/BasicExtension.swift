@@ -105,6 +105,18 @@ extension UIView {
 
 extension UIImageView {
     
+    func loadGIFView(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
+    
     //이미지뷰 동그랗게 설정
     func circleImageView() {
         self.layer.cornerRadius = self.layer.frame.height/2
