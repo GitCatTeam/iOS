@@ -329,7 +329,7 @@ extension HomeVC : UICollectionViewDelegateFlowLayout {
 extension HomeVC {
     func setHomeData() {
         
-        HomeService.sharedInstance.getReportList { (result) in
+        HomeService.sharedInstance.getHomeData { (result) in
             switch result {
                     
                     

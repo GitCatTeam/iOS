@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // 스토리보드 인스턴스
             let storyboard = UIStoryboard(name: "Home", bundle: nil)
             // 뷰 컨트롤러 인스턴스
-            let viewController = storyboard.instantiateViewController(withIdentifier: "MainTabC")
+            let viewController = storyboard.instantiateViewController(withIdentifier: "UserDataInitVC")
 
             // 윈도우의 루트 뷰 컨트롤러 설정
             self.window?.rootViewController = viewController

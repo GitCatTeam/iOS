@@ -16,7 +16,7 @@ struct HomeService: GettableService, APIServie {
     //MARK: GET - https://a.gitcat.app/api/home/main (월간 레포트의 목록을 불러오는 API)
     
 
-    func getReportList(completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getHomeData(completion: @escaping (NetworkResult<Any>) -> Void) {
         
         let homeURL = self.url("/home/main")
 

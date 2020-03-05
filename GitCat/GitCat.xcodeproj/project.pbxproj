@@ -59,6 +59,8 @@
 		4CBA4D49241102D2002CED2F /* gif_loading2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4CBA4D48241102D2002CED2F /* gif_loading2.gif */; };
 		4CBA4D4B2411083F002CED2F /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA4D4A2411083F002CED2F /* HomeModel.swift */; };
 		4CBA4D4D24110998002CED2F /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA4D4C24110998002CED2F /* HomeService.swift */; };
+		4CBA4D5124112377002CED2F /* UserDataInitVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA4D5024112377002CED2F /* UserDataInitVC.swift */; };
+		4CBA4D55241123DC002CED2F /* PostUserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA4D54241123DC002CED2F /* PostUserDataService.swift */; };
 		4CC07F9123B0EE1000851B45 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC07F9023B0EE1000851B45 /* ColorPalette.swift */; };
 		4CC07F9323B0F28100851B45 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC07F9223B0F28100851B45 /* RoundView.swift */; };
 		4CC07F9523B1165200851B45 /* GetMoreInfo1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC07F9423B1165200851B45 /* GetMoreInfo1VC.swift */; };
@@ -134,6 +136,8 @@
 		4CBA4D48241102D2002CED2F /* gif_loading2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif_loading2.gif; sourceTree = "<group>"; };
 		4CBA4D4A2411083F002CED2F /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		4CBA4D4C24110998002CED2F /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		4CBA4D5024112377002CED2F /* UserDataInitVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataInitVC.swift; sourceTree = "<group>"; };
+		4CBA4D54241123DC002CED2F /* PostUserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUserDataService.swift; sourceTree = "<group>"; };
 		4CC07F9023B0EE1000851B45 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		4CC07F9223B0F28100851B45 /* RoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		4CC07F9423B1165200851B45 /* GetMoreInfo1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMoreInfo1VC.swift; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 				4CE733EE23FCF0D900DB97EB /* ReportDetailService.swift */,
 				4C7B568E2408DBBB001881FE /* DeleteTokenService.swift */,
 				4CBA4D4C24110998002CED2F /* HomeService.swift */,
+				4CBA4D54241123DC002CED2F /* PostUserDataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -451,6 +456,7 @@
 				4C3B8E5A2402449B008735DE /* AuthManageVC.swift */,
 				4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */,
 				4C7C9AAF2404D0D20047C610 /* DeveloperInfoVC.swift */,
+				4CBA4D5024112377002CED2F /* UserDataInitVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -585,6 +591,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CBA4D55241123DC002CED2F /* PostUserDataService.swift in Sources */,
 				4C7B568F2408DBBB001881FE /* DeleteTokenService.swift in Sources */,
 				4CE733EF23FCF0D900DB97EB /* ReportDetailService.swift in Sources */,
 				4CBA4D4B2411083F002CED2F /* HomeModel.swift in Sources */,
@@ -601,6 +608,7 @@
 				4C7C9AB02404D0D20047C610 /* DeveloperInfoVC.swift in Sources */,
 				4C7C0E0B23D489DA00669B38 /* CommitDetailTVCell.swift in Sources */,
 				4CBA4D4D24110998002CED2F /* HomeService.swift in Sources */,
+				4CBA4D5124112377002CED2F /* UserDataInitVC.swift in Sources */,
 				4CC07F9323B0F28100851B45 /* RoundView.swift in Sources */,
 				4CAB3BD624082883007A84B6 /* CommonModel.swift in Sources */,
 				4C7C0E7C23D985C200669B38 /* CommitCountService.swift in Sources */,
