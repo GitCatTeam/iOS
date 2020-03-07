@@ -59,26 +59,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             // 이제 화면에 보여주자.
             self.window?.makeKeyAndVisible()
-            
+
         }else{
             //회원가입을 해야하거나 로그아웃했을 경우
-            
+
             // window가 없으니 만들어준다.
             self.window = UIWindow(frame: UIScreen.main.bounds)
-                  
+
             // 스토리보드 인스턴스
             let storyboard = UIStoryboard(name: "Auth", bundle: nil)
             // 뷰 컨트롤러 인스턴스
             let viewController = storyboard.instantiateViewController(withIdentifier: "AuthInitiVC")
-                  
+
             // 윈도우의 루트 뷰 컨트롤러 설정
             self.window?.rootViewController = viewController
 
             // 이제 화면에 보여주자.
             self.window?.makeKeyAndVisible()
-            
+
         }
-    
+
         return true
         
     }

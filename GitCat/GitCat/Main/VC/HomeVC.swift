@@ -13,6 +13,8 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     
     func startTutorialAction() {
         UIView.animate(withDuration: 0.5, animations: {
+            
+            UserDefaults.standard.set(true, forKey: "tutorialDone")
             self.OverlayView.alpha = 0
             
             self.tabBarController?.tabBar.alpha = 1
@@ -64,7 +66,10 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     @IBOutlet weak var catImageView: UIImageView!
     @IBOutlet weak var leftScoreLabel: UILabel!
     
-
+    @IBOutlet weak var loadingView: UIImageView!
+    @IBOutlet weak var loadingBackgroundView: UIView!
+    
+    
     let cellIdentifier = "TutorialCVCell"
     
     let chapterData:[String] = ["01","02","03","04"]
@@ -78,28 +83,24 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        loadingView.alpha = 1
+//        loadingBackgroundView.alpha = 1
+        loadingView.loadGif(name: "gif_loading2")
+        
         self.setNavigationBar()
-        setHomeData()
+//        setHomeData()
         catChatLabel.setLineHeight(lineHeight: 0.8)
         setItemCardBackgroundView()
         setStyle()
+        let isTutorialDone = UserDefaults.standard.bool(forKey: "tutorialDone")
+        
+        if(isTutorialDone == false){
+            showTutorial()
+        }
     }
     
+    
     func setStyle() {
-        self.tabBarController?.tabBar.alpha = 0.5
-
-        let tabBarControllerItems = self.tabBarController?.tabBar.items
-
-        if let tabArray = tabBarControllerItems {
-            let tabBarItem1 = tabArray[0]
-            let tabBarItem3 = tabArray[2]
-
-            tabBarItem1.isEnabled = false
-            tabBarItem3.isEnabled = false
-        }
-               
-        catCollectionBarItem.isEnabled = false
-        settingBarItem.isEnabled = false
                
         catCollectionArrow.alpha = 0
         catCollectionDescription.alpha = 0
@@ -111,18 +112,74 @@ class HomeVC: UIViewController, TutorialCellDelegate {
 
         highlightView.layer.borderWidth = 0
         
+        cardBackgroundView.alpha = 0
         graduateCardView.alpha = 0
+        itemUpgradeCardView.alpha = 0
         graduateCardView.roundRadius()
         graduateCardView.customShadow(width: 1, height: 2, radius: 11, opacity: 0.16)
-//        itemUpgradeCardView.alpha = 0
         itemUpgradeCardView.roundRadius()
         itemUpgradeCardView.customShadow(width: 1, height: 2, radius: 11, opacity: 0.16)
         
+        OverlayView.alpha = 0
+        
+    }
+    
+    func showTutorial(){
+        
+        OverlayView.alpha = 1
+        setCardBackgorund()
+    }
+    
+    func showGraduateCard() {
+        cardBackgroundView.alpha = 1
+        graduateCardView.alpha = 1
+        setCardBackgorund()
+    }
+    
+    func showItemUpgradeCard() {
+        cardBackgroundView.alpha = 1
+        itemUpgradeCardView.alpha = 1
+        setCardBackgorund()
+    }
+    
+    func setCardBackgorund() {
+        self.tabBarController?.tabBar.alpha = 0.5
+
+        let tabBarControllerItems = self.tabBarController?.tabBar.items
+
+        if let tabArray = tabBarControllerItems {
+            let tabBarItem1 = tabArray[0]
+            let tabBarItem3 = tabArray[2]
+
+            tabBarItem1.isEnabled = false
+            tabBarItem3.isEnabled = false
+        }
+        
+        catCollectionBarItem.isEnabled = false
+        settingBarItem.isEnabled = false
     }
     
     @IBAction func checkGraduateAction(_ sender: Any) {
         cardBackgroundView.alpha = 0
         graduateCardView.alpha = 0
+        
+        self.tabBarController?.tabBar.alpha = 1
+
+        let tabBarControllerItems = self.tabBarController?.tabBar.items
+
+        if let tabArray = tabBarControllerItems {
+            let tabBarItem1 = tabArray[0]
+            let tabBarItem3 = tabArray[2]
+
+            tabBarItem1.isEnabled = true
+            tabBarItem3.isEnabled = true
+        
+        }
+        
+        self.catCollectionBarItem.isEnabled = true
+        self.settingBarItem.isEnabled = true
+        
+        
         let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "CatCollectionVC")
          dvc.modalPresentationStyle = .fullScreen
 
@@ -324,15 +381,16 @@ extension HomeVC : UICollectionViewDelegateFlowLayout {
 
         }
     }
+    
+    
 }
+
 
 extension HomeVC {
     func setHomeData() {
         
         HomeService.sharedInstance.getHomeData { (result) in
             switch result {
-                    
-                    
                 case .networkSuccess(let data) :
                     
                     let detailData = data as? HomeModel
@@ -343,18 +401,27 @@ extension HomeVC {
                         self.catNameLabel.text = resResult.data?.catName
                         let url = URL(string: resResult.data?.catImg ?? "")
                         self.catImageView.kf.setImage(with: url)
+                        
+                        if(resResult.data!.isLevelUp!) {
+                            self.showItemUpgradeCard()
+                        }
+                        if(resResult.data!.isGraduate!) {
+                            self.showGraduateCard()
+                        }
                     }
+                    self.loadingView.alpha = 0
+                    self.loadingBackgroundView.alpha = 0
                     break
                     
                 case .networkFail :
                     self.networkErrorAlert()
-//                    self.loadingView.alpha = 0
-//                    self.loadingBackgroundView.alpha = 0
+                    self.loadingView.alpha = 0
+                    self.loadingBackgroundView.alpha = 0
                     
                 default:
                     self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
-//                    self.loadingView.alpha = 0
-//                    self.loadingBackgroundView.alpha = 0
+                    self.loadingView.alpha = 0
+                    self.loadingBackgroundView.alpha = 0
                     break
                 }
             }
