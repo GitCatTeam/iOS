@@ -21,4 +21,7 @@ class HomeDataModel:Codable {
     var isGraduate:Bool?
     var todayScore:Int?
     var nextLevelScore:Int?
+    var nextLevelStr:String?
+    var ments:[String]?
+    var isLeave:Bool?
 }

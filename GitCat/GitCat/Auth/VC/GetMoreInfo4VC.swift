@@ -39,6 +39,8 @@ class GetMoreInfo4VC: UIViewController {
     @IBOutlet weak var nextMove4Btn: RoundBtn!
     @IBOutlet weak var nameTextField: UITextField!
     
+    @IBOutlet weak var pageLabel: UILabel!
+    
     var keyboardShown:Bool = false // 키보드 상태 확인
     var nameFieldShow:Bool = false //애니메이션 시작 플래그
     var originY:CGFloat? // 오브젝트의 기본 위치
@@ -69,13 +71,29 @@ class GetMoreInfo4VC: UIViewController {
         
         initAlpha()
         setButtonSelect()
-        setStyle()
         animateView()
+        setLabelSize()
         
     }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        collectionView.collectionViewLayout.invalidateLayout()
+    collectionView.collectionViewLayout.invalidateLayout()
+        setStyle()
+        nextMove4Btn.circleRadius()
+    }
+    
+    func setLabelSize() {
+        mainTitle.dynamicFont(fontSize: 22, name:"BBTreeG_B")
+        subTitle.dynamicFont(fontSize: 13, name:"BBTreeGo_R")
+        basicBtn.titleLabel?.dynamicFont(fontSize: 15, name:"BBTreeG_B")
+        specialBtn.titleLabel?.dynamicFont(fontSize: 15, name:"BBTreeG_B")
+        eventBtn.titleLabel?.dynamicFont(fontSize: 15, name:"BBTreeG_B")
+        catNameLabel.dynamicFont(fontSize: 16, name:"BBTreeG_B")
+//        //FIXME - TextField의 글자크기도 동적으로 바꿔야함.
+        pageLabel.dynamicFont(fontSize: 11, name:"BBTreeGo_R")
+        catNameTextField.adjustsFontSizeToFitWidth = true
+        
     }
     
     @IBAction func catTypeSelectedAction(_ sender: UIButton) {
@@ -309,7 +327,7 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
         
         let imageURL = currentCatList[indexPath.row].profileImg
         
-        cell?.catImageView.setImage(imageURL, defaultImgPath: "imgEmptycat")
+        cell?.catImageView.setImage(imageURL, defaultImgPath: "imgDefault")
         
         return cell!
     }

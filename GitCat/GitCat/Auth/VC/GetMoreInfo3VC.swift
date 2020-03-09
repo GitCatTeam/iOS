@@ -12,13 +12,14 @@ class GetMoreInfo3VC: UIViewController {
     @IBOutlet weak var MainTitle: UILabel!
     @IBOutlet weak var subTitle: UILabel!
     
-    @IBOutlet weak var interestInDevBtn: LittleRoundBtn!
-    @IBOutlet weak var studentBtn: LittleRoundBtn!
-    @IBOutlet weak var OneYearDevBtn: LittleRoundBtn!
-    @IBOutlet weak var ThreeYearDevBtn: LittleRoundBtn!
+    @IBOutlet weak var interestInDevBtn: UIButton!
+    @IBOutlet weak var studentBtn: UIButton!
+    @IBOutlet weak var OneYearDevBtn: UIButton!
+    @IBOutlet weak var ThreeYearDevBtn: UIButton!
     @IBOutlet weak var MoreThanFiveYearDevBtn: LittleRoundBtn!
     
     @IBOutlet weak var nextBtn3: RoundBtn!
+    @IBOutlet weak var pageLabel: UILabel!
     
     var userCareer:String? = "개발에 관심이 있음"
     
@@ -34,8 +35,41 @@ class GetMoreInfo3VC: UIViewController {
         nextBtn3.isEnabled = false
         animateView()
         
+        setLabelSize()
+    }
 
-
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+       
+        nextBtn3.circleRadius()
+        setButtonStyle()
+    }
+    
+    func setButtonStyle() {
+    self.interestInDevBtn.layer.borderWidth = 1.0
+        self.interestInDevBtn.layer.cornerRadius = 12
+        self.studentBtn.layer.borderWidth = 1.0
+        self.studentBtn.layer.cornerRadius = 12
+        self.OneYearDevBtn.layer.borderWidth = 1.0
+        self.OneYearDevBtn.layer.cornerRadius = 12
+        self.ThreeYearDevBtn.layer.borderWidth = 1.0
+        self.ThreeYearDevBtn.layer.cornerRadius = 12
+        self.MoreThanFiveYearDevBtn.layer.borderWidth = 1.0
+        self.MoreThanFiveYearDevBtn.layer.cornerRadius = 12
+    }
+    
+    func setLabelSize() {
+        MainTitle.dynamicFont(fontSize: 22, name:"BBTreeG_B")
+        subTitle.dynamicFont(fontSize: 13, name:"BBTreeGo_R")
+        
+        interestInDevBtn.titleLabel?.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
+    studentBtn.titleLabel?.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
+    OneYearDevBtn.titleLabel?.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
+    ThreeYearDevBtn.titleLabel?.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
+        MoreThanFiveYearDevBtn.titleLabel?.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
+        
+        nextBtn3.titleLabel?.dynamicFont(fontSize: 16, name:"BBTreeG_B")
+        pageLabel.dynamicFont(fontSize: 11, name:"BBTreeGo_R")
     }
     
     @IBAction func chooseCareer(_ sender: UIButton) {

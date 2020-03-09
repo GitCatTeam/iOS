@@ -18,7 +18,7 @@ class SettingVC: UIViewController {
         
         let imageURL = UserDefaults.standard.string(forKey: "userImage")
         
-        userProfileImage.setImage(imageURL, defaultImgPath: "imgEmptycat")
+        userProfileImage.setImage(imageURL, defaultImgPath: "imgDefault")
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

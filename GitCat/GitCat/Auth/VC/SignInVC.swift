@@ -13,15 +13,27 @@ import Alamofire
 class SignInVC: UIViewController{
     
     @IBOutlet weak var loginBtn: UIButton!
-    
+    @IBOutlet weak var subTitleLabel: CustomLabel!
+
     var userEmail:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
+        setLabelSize()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        loginBtn.circleRadius()
         loginBtn.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
         loginBtn.addShadow()
-
+    }
+    
+    func setLabelSize() {
+        subTitleLabel.dynamicFont(fontSize: 17, name: "BBTreeGo_R")
+        loginBtn.titleLabel?.dynamicFont(fontSize: 14, name:"BBTreeG_B")
+        
     }
 
     @IBAction func signInTouchUpAction(_ sender: UIButton) {
@@ -40,12 +52,9 @@ class SignInVC: UIViewController{
       
         
         sender.backgroundColor = UIColor.CustomColor.skyBlue
-        sender.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        sender.setTitleColor(UIColor.white, for: UIControl.State.highlighted)
     }
 
-    @IBAction func signUpAction(_ sender: Any) {
-        
-    }
     
 }
 

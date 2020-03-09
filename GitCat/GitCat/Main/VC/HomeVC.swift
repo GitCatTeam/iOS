@@ -36,6 +36,8 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         
     }
     
+    @IBOutlet weak var titleLabel: CustomLabel!
+    
     @IBOutlet weak var catChatLabel: UILabel!
 
     @IBOutlet weak var OverlayView: UIView!
@@ -61,6 +63,8 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     @IBOutlet weak var itemUpgradeCardView: UIView!
     
     @IBOutlet weak var todayCommitCountLabel: CustomLabel!
+    @IBOutlet weak var todayCommitShowLabel: CustomLabel!
+    
     @IBOutlet weak var catNameLabel: UILabel!
     @IBOutlet weak var todayScoreLabel: UILabel!
     @IBOutlet weak var catImageView: UIImageView!
@@ -69,6 +73,9 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     @IBOutlet weak var loadingView: UIImageView!
     @IBOutlet weak var loadingBackgroundView: UIView!
     
+    @IBOutlet weak var todayScoreDescLabel: CustomLabel!
+    @IBOutlet weak var leftScoreDescLabel: CustomLabel!
+    @IBOutlet weak var itemLabel: CustomLabel!
     
     let cellIdentifier = "TutorialCVCell"
     
@@ -83,12 +90,12 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        loadingView.alpha = 1
-//        loadingBackgroundView.alpha = 1
+        loadingView.alpha = 1
+        loadingBackgroundView.alpha = 1
         loadingView.loadGif(name: "gif_loading2")
         
         self.setNavigationBar()
-//        setHomeData()
+        setHomeData()
         catChatLabel.setLineHeight(lineHeight: 0.8)
         setItemCardBackgroundView()
         setStyle()
@@ -97,8 +104,23 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         if(isTutorialDone == false){
             showTutorial()
         }
+        setLabelFontSize()
     }
     
+    func setLabelFontSize() {
+        titleLabel.dynamicFont(fontSize: 28, name: "BBTreeG_L")
+        
+        todayCommitCountLabel.dynamicFont(fontSize: 130, name: "NanumBaeEunHyeCe")
+        todayCommitShowLabel.dynamicFont(fontSize: 35, name:"BBTreeG_L")
+        catChatLabel.dynamicFont(fontSize: 20, name: "NanumBaeEunHyeCe")
+        todayScoreDescLabel.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
+        todayScoreLabel.dynamicFont(fontSize: 28, name: "NanumBaeEunHyeCe")
+        leftScoreDescLabel.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
+        leftScoreLabel.dynamicFont(fontSize: 28, name:"NanumBaeEunHyeCe")
+        catNameLabel.dynamicFont(fontSize: 28, name:"NanumBaeEunHyeCe")
+        itemLabel.dynamicFont(fontSize: 18, name:"NanumBaeEunHyeCe")
+        
+    }
     
     func setStyle() {
                

@@ -28,14 +28,14 @@ class GetMoreInfo1VC: UIViewController {
     @IBOutlet weak var birthDatePicker: UIDatePicker!
     @IBOutlet weak var pageCntLabel: UILabel!
     
+    @IBOutlet weak var pageLabel: UILabel!
+    
+    
     
     var clickBtnCnt = 0
     
     var userGender:String?
     var userBirthday:String?
-    
-    //포맷터 초기화
-    fileprivate let gregorian = Calendar(identifier: .gregorian)
     
     fileprivate let formatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -43,26 +43,47 @@ class GetMoreInfo1VC: UIViewController {
         return formatter
     }()
     
+    
+    //포맷터 초기화
+    fileprivate let gregorian = Calendar(identifier: .gregorian)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         clickBtnCnt = 0
 
-        let imageURL = UserDefaults.standard.string(forKey: "userImage")
-        userProfileImageView.setImage(imageURL, defaultImgPath: "imgEmptycat")
-        
+        setStyle();
         setButtonSelect()
         setButtonColor()
         nextBtn.addShadow()
+        setLabelSize()
         
         initAlpha()
         animateView()
         
         setBackBtn(color: UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1))
-        birthDatePicker.setValue(UIColor.CustomColor.skyBlue, forKey: "textColor")
         
+        userBirthday = formatter.string(from: Date())
+
+    }
+    
+    func setStyle() {
+        let imageURL = UserDefaults.standard.string(forKey: "userImage")
+        userProfileImageView.setImage(imageURL, defaultImgPath: "imgDefault")
         
+    birthDatePicker.setValue(UIColor.CustomColor.skyBlue, forKey: "textColor")
+    }
+    
+    func setLabelSize() {
+        BigTitle.dynamicFont(fontSize: 22, name:"BBTreeG_B")
+        subTitle.dynamicFont(fontSize: 13, name:"BBTreeGo_R")
+        userEmailLabel.dynamicFont(fontSize: 18, name:"BBTreeG_B")
+        sexLabel.dynamicFont(fontSize: 16, name:"BBTreeG_B")
+        femaleBtn.titleLabel?.dynamicFont(fontSize: 14,  name:"BBTreeG_B")
+        maleBtn.titleLabel?.dynamicFont(fontSize: 14,  name:"BBTreeG_B")
+        otherBtn.titleLabel?.dynamicFont(fontSize: 14,  name:"BBTreeG_B")
+        pageLabel.dynamicFont(fontSize: 12, name:"BBTreeGo_R")
+        
+        nextBtn.titleLabel?.dynamicFont(fontSize: 16, name:"BBTreeG_B")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,9 +105,11 @@ class GetMoreInfo1VC: UIViewController {
         otherBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         
     }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         userProfileImageView.circleImageView()
+        nextBtn.circleRadius()
         femaleBtn.circleRadius()
         maleBtn.circleRadius()
         otherBtn.circleRadius()

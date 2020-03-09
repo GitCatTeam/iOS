@@ -64,9 +64,11 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        loadingView.alpha = 0
-//        loadingBackgroundView.alpha = 0
+        loadingView.alpha = 1
+        loadingBackgroundView.alpha = 1
         loadingView.loadGif(name: "gif_loading2")
+        
+        tableView.allowsSelection = false
         
         setStatusBorderColor()
         setCalendarAppearnce()

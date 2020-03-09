@@ -36,16 +36,16 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="lastBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="YsP-PD-MMI">
-                                        <rect key="frame" x="106.66666666666669" y="30" width="175" height="151.66666666666666"/>
+                                        <rect key="frame" x="135.33333333333334" y="30" width="117.66666666666666" height="149.66666666666666"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bQ-Ib-XKO" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="144.66666666666666" height="151.66666666666666"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86.666666666666671" height="149.66666666666666"/>
                                                 <fontDescription key="fontDescription" name="NanumBaeEunHyeCe" family="나눔손글씨 배은혜체" pointSize="130"/>
                                                 <color key="textColor" name="skyBlue"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHW-N4-5td" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="144.66666666666669" y="90.333333333333343" width="30.333333333333343" height="41"/>
+                                                <rect key="frame" x="86.666666666666657" y="89.666666666666657" width="31" height="35"/>
                                                 <fontDescription key="fontDescription" name="BBTreeG_L" family="BBTreeG_L" pointSize="35"/>
                                                 <color key="textColor" name="brownishGrey"/>
                                                 <nil key="highlightedColor"/>
@@ -61,7 +61,7 @@
                                         <rect key="frame" x="104.66666666666669" y="40" width="166" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="401-qp-hk2"/>
-                                            <constraint firstAttribute="width" constant="166" id="pff-JI-pxh"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="166" id="pff-JI-pxh"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BBTreeG_L" family="BBTreeG_L" pointSize="30"/>
                                         <color key="textColor" name="brownishGrey"/>
@@ -82,11 +82,8 @@
                                         <rect key="frame" x="50" y="461.99999999999994" width="275" height="135.33333333333331"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="손 아프다냥! 노트북이 필요해!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="GNY-8X-sDI" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                        <rect key="frame" x="248.66666666666663" y="183.33333333333331" width="75" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="75" id="D5s-cL-kJv"/>
-                                            <constraint firstAttribute="height" constant="50" id="VQK-F4-xUC"/>
-                                        </constraints>
+                                        <rect key="frame" x="257.66666666666669" y="153" width="75" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="NanumBaeEunHyeCe" family="나눔손글씨 배은혜체" pointSize="20"/>
                                         <color key="textColor" name="brownishGrey"/>
                                         <nil key="highlightedColor"/>
@@ -106,11 +103,11 @@
                                                     <constraint firstAttribute="width" constant="86" id="sOR-mc-EQy"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 득점 :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2p-dS-lmm" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="-9" y="48" width="83" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 득점 :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2p-dS-lmm" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
+                                                <rect key="frame" x="-4.6666666666666714" y="48" width="83" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="gMq-dA-hb8"/>
-                                                    <constraint firstAttribute="width" constant="83" id="yHQ-zj-pF7"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="83" id="yHQ-zj-pF7"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="16"/>
                                                 <color key="textColor" name="brownishGrey"/>
@@ -122,9 +119,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이템까지 :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ci6-vz-nw8" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="-9" y="77" width="82" height="16"/>
+                                                <rect key="frame" x="-4.6666666666666714" y="77" width="82" height="16"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="82" id="105-lI-D85"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="82" id="105-lI-D85"/>
                                                     <constraint firstAttribute="height" constant="16" id="5YD-Gc-Fap"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="16"/>
@@ -137,7 +134,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(중고 노트북)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1S-PR-vK4" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="101.66666666666669" y="74.666666666666742" width="92.333333333333314" height="21"/>
+                                                <rect key="frame" x="100.66666666666669" y="74.666666666666742" width="77" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="77" id="SD6-TB-jWD"/>
                                                     <constraint firstAttribute="height" constant="21" id="pRw-li-uEH"/>
@@ -152,7 +149,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="고양이이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rC4-QA-cSm">
-                                                <rect key="frame" x="29.333333333333336" y="8" width="121.33333333333331" height="32"/>
+                                                <rect key="frame" x="56.333333333333329" y="8" width="67" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="67" id="FVr-10-gVL"/>
                                                     <constraint firstAttribute="height" constant="32" id="Odh-lx-1y8"/>
@@ -162,7 +159,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKA-DH-nse">
-                                                <rect key="frame" x="81.999999999999986" y="40" width="15.666666666666671" height="32.333333333333343"/>
+                                                <rect key="frame" x="86.333333333333329" y="40" width="7.3333333333333286" height="32.333333333333343"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="7.3300000000000001" id="0nh-pR-MhV"/>
                                                     <constraint firstAttribute="height" constant="32.333333333333343" id="aSa-ub-bbq"/>
@@ -171,23 +168,8 @@
                                                 <color key="textColor" name="brownishGrey"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(출석 1 + 누적 2)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYX-QE-N9x" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="102.66666666666669" y="45.666666666666742" width="77" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="77" id="CRg-XB-Dfd"/>
-                                                    <constraint firstAttribute="height" constant="21" id="PQW-Fj-q4b"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="NanumBaeEunHyeCe" family="나눔손글씨 배은혜체" pointSize="18"/>
-                                                <color key="textColor" name="brownishGrey"/>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                                        <real key="value" value="-0.54000000000000004"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKz-VB-NUN">
-                                                <rect key="frame" x="80.999999999999986" y="69" width="15.666666666666671" height="32.333333333333343"/>
+                                                <rect key="frame" x="85.333333333333329" y="69" width="10.333333333333329" height="32.333333333333343"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32.5" id="9kL-E6-UIC"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10.5" id="VXc-uJ-x48"/>
@@ -207,12 +189,10 @@
                                             <constraint firstAttribute="width" constant="180" id="QR9-0G-xra"/>
                                             <constraint firstItem="T1S-PR-vK4" firstAttribute="centerY" secondItem="GKz-VB-NUN" secondAttribute="centerY" id="QtH-lc-5d4"/>
                                             <constraint firstItem="T1S-PR-vK4" firstAttribute="leading" secondItem="GKz-VB-NUN" secondAttribute="trailing" constant="5" id="RiI-aG-6Ur"/>
-                                            <constraint firstItem="hYX-QE-N9x" firstAttribute="leading" secondItem="DKA-DH-nse" secondAttribute="trailing" constant="5" id="Syf-cP-mxK"/>
                                             <constraint firstItem="Ci6-vz-nw8" firstAttribute="leading" secondItem="c2p-dS-lmm" secondAttribute="leading" id="Uxd-UQ-usd"/>
                                             <constraint firstItem="rC4-QA-cSm" firstAttribute="centerX" secondItem="s6a-2e-nyq" secondAttribute="centerX" id="V8l-U3-5Cb"/>
                                             <constraint firstItem="c2p-dS-lmm" firstAttribute="centerY" secondItem="DKA-DH-nse" secondAttribute="centerY" id="fzx-qL-fmE"/>
                                             <constraint firstItem="rC4-QA-cSm" firstAttribute="top" secondItem="s6a-2e-nyq" secondAttribute="top" constant="8" id="kTl-AQ-fAr"/>
-                                            <constraint firstItem="hYX-QE-N9x" firstAttribute="centerY" secondItem="DKA-DH-nse" secondAttribute="centerY" id="kpz-Wj-yVB"/>
                                             <constraint firstItem="GKz-VB-NUN" firstAttribute="centerY" secondItem="Ci6-vz-nw8" secondAttribute="centerY" id="r14-fW-VkC"/>
                                             <constraint firstItem="F0Z-am-QuV" firstAttribute="top" secondItem="rC4-QA-cSm" secondAttribute="bottom" constant="-17.666666666666629" id="vba-x7-FMv"/>
                                             <constraint firstItem="GKz-VB-NUN" firstAttribute="leading" secondItem="Ci6-vz-nw8" secondAttribute="trailing" constant="8.0000000000000142" id="vdV-KM-Nai"/>
@@ -220,7 +200,7 @@
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icTalk" translatesAutoresizingMaskIntoConstraints="NO" id="Ij8-R6-xin">
-                                        <rect key="frame" x="235.33333333333337" y="181" width="102" height="67"/>
+                                        <rect key="frame" x="244.33333333333337" y="153" width="102" height="67"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Ij8-R6-xin" secondAttribute="height" multiplier="102:67" id="CcT-Wh-snc"/>
                                         </constraints>
@@ -232,20 +212,22 @@
                                     <constraint firstItem="s6a-2e-nyq" firstAttribute="centerY" secondItem="j2J-3a-JaB" secondAttribute="centerY" id="3Fl-3u-2aO"/>
                                     <constraint firstItem="Ij8-R6-xin" firstAttribute="width" secondItem="jpT-oy-ivw" secondAttribute="width" multiplier="0.274933" id="9DO-EE-p1X"/>
                                     <constraint firstItem="4bC-4w-vph" firstAttribute="centerX" secondItem="BAz-MP-jtV" secondAttribute="centerX" id="AKU-qi-WMe"/>
-                                    <constraint firstItem="GNY-8X-sDI" firstAttribute="top" secondItem="Ij8-R6-xin" secondAttribute="centerY" multiplier="65/76" id="F2N-xT-8zq"/>
+                                    <constraint firstItem="GNY-8X-sDI" firstAttribute="top" secondItem="Ij8-R6-xin" secondAttribute="top" id="F2N-xT-8zq"/>
                                     <constraint firstItem="YsP-PD-MMI" firstAttribute="top" secondItem="BAz-MP-jtV" secondAttribute="bottom" multiplier="30/641" id="GiD-cg-rag"/>
                                     <constraint firstItem="4bC-4w-vph" firstAttribute="top" secondItem="BAz-MP-jtV" secondAttribute="bottom" multiplier="40/641" id="Gpc-oi-EJf"/>
                                     <constraint firstItem="j2J-3a-JaB" firstAttribute="centerX" secondItem="BAz-MP-jtV" secondAttribute="centerX" id="KZc-wF-N2F"/>
                                     <constraint firstItem="YsP-PD-MMI" firstAttribute="centerX" secondItem="BAz-MP-jtV" secondAttribute="centerX" constant="6.75" id="OZf-se-TqT"/>
+                                    <constraint firstItem="GNY-8X-sDI" firstAttribute="width" secondItem="Ij8-R6-xin" secondAttribute="width" multiplier="0.735294" id="REx-Z7-CRi"/>
                                     <constraint firstItem="jpT-oy-ivw" firstAttribute="width" secondItem="BAz-MP-jtV" secondAttribute="width" multiplier="0.989333" id="SUB-g1-sep"/>
                                     <constraint firstAttribute="trailing" secondItem="j2J-3a-JaB" secondAttribute="trailing" multiplier="375/325" id="VAw-GW-NAo"/>
                                     <constraint firstItem="s6a-2e-nyq" firstAttribute="centerX" secondItem="j2J-3a-JaB" secondAttribute="centerX" id="VSG-Vt-wBG"/>
                                     <constraint firstItem="GNY-8X-sDI" firstAttribute="centerX" secondItem="Ij8-R6-xin" secondAttribute="centerX" id="VWT-mc-1NG"/>
-                                    <constraint firstItem="Ij8-R6-xin" firstAttribute="leading" secondItem="jpT-oy-ivw" secondAttribute="trailing" multiplier="226/371" constant="8" symbolic="YES" id="XQL-Ia-q7S"/>
+                                    <constraint firstItem="Ij8-R6-xin" firstAttribute="leading" secondItem="jpT-oy-ivw" secondAttribute="trailing" multiplier="235/371" constant="8" symbolic="YES" id="XQL-Ia-q7S"/>
                                     <constraint firstItem="jpT-oy-ivw" firstAttribute="top" secondItem="4bC-4w-vph" secondAttribute="bottom" multiplier="100/40" id="k9J-Rw-Ffw"/>
+                                    <constraint firstItem="GNY-8X-sDI" firstAttribute="height" secondItem="Ij8-R6-xin" secondAttribute="height" multiplier="0.746269" id="lve-FX-MPi"/>
                                     <constraint firstItem="j2J-3a-JaB" firstAttribute="leading" secondItem="BAz-MP-jtV" secondAttribute="trailing" multiplier="50/375" id="mfh-bY-7BD"/>
                                     <constraint firstItem="j2J-3a-JaB" firstAttribute="top" secondItem="jpT-oy-ivw" secondAttribute="bottom" constant="10" id="nz8-oR-wei"/>
-                                    <constraint firstItem="jpT-oy-ivw" firstAttribute="top" secondItem="Ij8-R6-xin" secondAttribute="bottom" constant="-73" id="sjn-kt-WE5"/>
+                                    <constraint firstItem="jpT-oy-ivw" firstAttribute="top" secondItem="Ij8-R6-xin" secondAttribute="bottom" constant="-45" id="sjn-kt-WE5"/>
                                     <constraint firstAttribute="bottom" secondItem="j2J-3a-JaB" secondAttribute="bottom" constant="43.670000000000002" id="t8P-VO-GNY"/>
                                 </constraints>
                             </view>
@@ -253,7 +235,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AUr-sS-Tib">
-                                        <rect key="frame" x="15" y="160" width="345" height="390"/>
+                                        <rect key="frame" x="15" y="211" width="345" height="390"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="AUr-sS-Tib" secondAttribute="height" multiplier="23:26" id="bUY-dc-nyr"/>
@@ -288,11 +270,11 @@
                                                                 <constraint firstAttribute="width" secondItem="M5I-Gt-Slq" secondAttribute="height" multiplier="23:12" id="vEX-pA-GxE"/>
                                                             </constraints>
                                                         </view>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goy-Mn-TpX" customClass="RoundView" customModule="GitCat" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goy-Mn-TpX">
                                                             <rect key="frame" x="154.66666666666666" y="203" width="36" height="36"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McM-ZB-b0U" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                                    <rect key="frame" x="7.6666666666666838" y="7.6666666666666572" width="20.333333333333329" height="21"/>
+                                                                    <rect key="frame" x="9.6666666666666874" y="9" width="16.666666666666671" height="18"/>
                                                                     <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="18"/>
                                                                     <color key="textColor" red="0.53725490196078429" green="0.80000000000000004" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -305,8 +287,6 @@
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="36" id="48l-ln-1kY"/>
-                                                                <constraint firstAttribute="width" constant="36" id="Qhh-Oi-KDK"/>
                                                                 <constraint firstItem="McM-ZB-b0U" firstAttribute="centerX" secondItem="goy-Mn-TpX" secondAttribute="centerX" id="szP-Ff-nQA"/>
                                                                 <constraint firstItem="McM-ZB-b0U" firstAttribute="centerY" secondItem="goy-Mn-TpX" secondAttribute="centerY" id="y5Y-4m-xRU"/>
                                                             </constraints>
@@ -314,7 +294,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="달력과 레포트로 나의 커밋 돌아보기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gP-Za-gSn" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
                                                             <rect key="frame" x="39.666666666666657" y="260.33333333333331" width="266" height="15"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="266" id="Aqi-JU-VFY"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="266" id="Aqi-JU-VFY"/>
                                                                 <constraint firstAttribute="height" constant="15" id="Hgz-sr-pam"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="15"/>
@@ -342,9 +322,9 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="꾸준한 커밋으로, 고양이의 졸업과 미래를 도와줍시다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iD0-F6-646" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                            <rect key="frame" x="24" y="321.66666666666669" width="297" height="14"/>
+                                                            <rect key="frame" x="24" y="327.33333333333331" width="297" height="14"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="297" id="lhJ-Ph-gVV"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="297" id="lhJ-Ph-gVV"/>
                                                                 <constraint firstAttribute="height" constant="14" id="p7h-aH-Ut9"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="14"/>
@@ -357,7 +337,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8om-MB-OYj" customClass="RoundBtn" customModule="GitCat" customModuleProvider="target">
-                                                            <rect key="frame" x="55" y="301.33333333333331" width="235" height="35"/>
+                                                            <rect key="frame" x="55" y="302.33333333333331" width="235" height="35"/>
                                                             <color key="backgroundColor" name="skyBlue"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="8om-MB-OYj" secondAttribute="height" multiplier="47:7" id="fy8-0V-XRR"/>
@@ -373,9 +353,11 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="9eY-Lg-j4R" firstAttribute="centerX" secondItem="jLu-GA-v1S" secondAttribute="centerX" id="1AI-3F-ZTl"/>
+                                                        <constraint firstItem="goy-Mn-TpX" firstAttribute="width" secondItem="jLu-GA-v1S" secondAttribute="width" multiplier="0.104348" id="1K0-z6-0qX"/>
+                                                        <constraint firstItem="goy-Mn-TpX" firstAttribute="height" secondItem="jLu-GA-v1S" secondAttribute="height" multiplier="0.0918367" id="8jp-rs-zNE"/>
                                                         <constraint firstItem="goy-Mn-TpX" firstAttribute="top" secondItem="M5I-Gt-Slq" secondAttribute="bottom" multiplier="203/180" id="9hb-ak-tlI"/>
-                                                        <constraint firstItem="8om-MB-OYj" firstAttribute="top" secondItem="6gP-Za-gSn" secondAttribute="bottom" constant="26" id="ADO-s0-OAh"/>
-                                                        <constraint firstItem="iD0-F6-646" firstAttribute="top" secondItem="9eY-Lg-j4R" secondAttribute="bottom" constant="5" id="Kiz-e1-MGb"/>
+                                                        <constraint firstItem="8om-MB-OYj" firstAttribute="top" secondItem="6gP-Za-gSn" secondAttribute="bottom" multiplier="286/260.33" id="ADO-s0-OAh"/>
+                                                        <constraint firstItem="iD0-F6-646" firstAttribute="top" secondItem="9eY-Lg-j4R" secondAttribute="bottom" multiplier="312/302" id="Kiz-e1-MGb"/>
                                                         <constraint firstItem="goy-Mn-TpX" firstAttribute="centerX" secondItem="jLu-GA-v1S" secondAttribute="centerX" id="LRf-Lt-KOE"/>
                                                         <constraint firstItem="9eY-Lg-j4R" firstAttribute="top" secondItem="6gP-Za-gSn" secondAttribute="bottom" multiplier="286/260" id="VFL-7m-rOy"/>
                                                         <constraint firstItem="M5I-Gt-Slq" firstAttribute="top" secondItem="jLu-GA-v1S" secondAttribute="top" id="VX1-Mm-NQA"/>
@@ -408,8 +390,11 @@
                                             <outlet property="delegate" destination="FHT-wQ-vku" id="pIi-bD-P7q"/>
                                         </connections>
                                     </collectionView>
-                                    <pageControl opaque="NO" contentMode="scaleAspectFit" placeholderIntrinsicWidth="84" placeholderIntrinsicHeight="12" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="tWN-Ku-0e8">
-                                        <rect key="frame" x="145.66666666666666" y="561.33333333333337" width="84" height="12"/>
+                                    <pageControl opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="tWN-Ku-0e8">
+                                        <rect key="frame" x="145.66666666666666" y="613.33333333333337" width="84" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="tWN-Ku-0e8" secondAttribute="height" multiplier="7:1" id="X4w-WF-Er5"/>
+                                        </constraints>
                                         <color key="pageIndicatorTintColor" red="0.75294117647058822" green="0.75294117647058822" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </pageControl>
@@ -474,9 +459,11 @@
                                     <constraint firstItem="Rrq-hb-fkk" firstAttribute="centerX" secondItem="XBn-Zb-Elt" secondAttribute="centerX" id="2wT-20-eam"/>
                                     <constraint firstItem="UZi-OL-kRu" firstAttribute="width" secondItem="XBn-Zb-Elt" secondAttribute="width" multiplier="0.141333" id="7IR-GA-bQX"/>
                                     <constraint firstAttribute="trailing" secondItem="zgB-Pj-ULw" secondAttribute="trailing" constant="7.5" id="7wg-77-jkj"/>
+                                    <constraint firstItem="tWN-Ku-0e8" firstAttribute="width" secondItem="XBn-Zb-Elt" secondAttribute="width" multiplier="0.224" id="Bm7-bP-krp"/>
                                     <constraint firstItem="AUr-sS-Tib" firstAttribute="centerX" secondItem="XBn-Zb-Elt" secondAttribute="centerX" id="Db5-MA-cuH"/>
                                     <constraint firstItem="UZi-OL-kRu" firstAttribute="top" secondItem="XBn-Zb-Elt" secondAttribute="bottom" multiplier="70/812" id="Eit-ix-eLr"/>
                                     <constraint firstAttribute="bottom" secondItem="zgB-Pj-ULw" secondAttribute="bottom" multiplier="812/750.5" id="GQp-Sy-aMx"/>
+                                    <constraint firstItem="AUr-sS-Tib" firstAttribute="centerY" secondItem="XBn-Zb-Elt" secondAttribute="centerY" id="I2P-QT-US6"/>
                                     <constraint firstItem="qKA-xN-7iO" firstAttribute="width" secondItem="XBn-Zb-Elt" secondAttribute="width" multiplier="0.177778" id="J21-dF-YXT"/>
                                     <constraint firstItem="tWN-Ku-0e8" firstAttribute="top" secondItem="AUr-sS-Tib" secondAttribute="bottom" multiplier="400 /392" id="J6d-v6-o5M"/>
                                     <constraint firstItem="Rrq-hb-fkk" firstAttribute="width" secondItem="XBn-Zb-Elt" secondAttribute="width" multiplier="0.761778" id="L9s-N5-AfR"/>
@@ -492,7 +479,6 @@
                                     <constraint firstItem="uuA-I6-aE7" firstAttribute="width" secondItem="XBn-Zb-Elt" secondAttribute="width" multiplier="0.12" id="vIO-0Z-kh4"/>
                                     <constraint firstItem="zgB-Pj-ULw" firstAttribute="width" secondItem="XBn-Zb-Elt" secondAttribute="width" multiplier="0.177778" id="vOE-a5-lxM"/>
                                     <constraint firstItem="qKA-xN-7iO" firstAttribute="leading" secondItem="XBn-Zb-Elt" secondAttribute="leading" constant="7" id="yE2-VX-7nm"/>
-                                    <constraint firstItem="AUr-sS-Tib" firstAttribute="top" secondItem="XBn-Zb-Elt" secondAttribute="bottom" multiplier="160/812" id="z58-rp-F79"/>
                                 </constraints>
                             </view>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zqy-NB-6Hv">
@@ -566,7 +552,7 @@
                                                 <rect key="frame" x="16.666666666666671" y="225" width="212" height="21"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="고양이이름" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K03-1g-SIi" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                        <rect key="frame" x="11.333333333333325" y="2.3333333333333144" width="60.666666666666657" height="16.333333333333332"/>
+                                                        <rect key="frame" x="10.333333333333325" y="3.6666666666666856" width="61.666666666666657" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="H5n-tA-DUH"/>
                                                         </constraints>
@@ -580,7 +566,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="씨가 졸업하게 되었어요." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCf-Tc-o5W" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                        <rect key="frame" x="72" y="2.3333333333333144" width="140" height="16.333333333333332"/>
+                                                        <rect key="frame" x="72" y="3.6666666666666856" width="140" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="YZG-WX-prr"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="s6l-fG-QDi"/>
@@ -667,7 +653,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업그레이드 되었어요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoP-FS-FTA" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="64" y="221" width="117" height="16.333333333333343"/>
+                                                <rect key="frame" x="63.33333333333335" y="221" width="118.66666666666669" height="14"/>
                                                 <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="14"/>
                                                 <color key="textColor" name="brownishGrey"/>
                                                 <nil key="highlightedColor"/>
@@ -678,7 +664,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개발이 좀 더 수월해지겠어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gW1-LU-f5l" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="40.666666666666671" y="240.33333333333331" width="164" height="20.333333333333314"/>
+                                                <rect key="frame" x="40.666666666666671" y="238" width="164" height="20.333333333333314"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20.333333333333332" id="5SC-S1-HfK"/>
                                                     <constraint firstAttribute="width" constant="164" id="7NX-xe-uiB"/>
@@ -693,7 +679,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYx-iG-t6d" customClass="RoundBtn" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="174" y="11" width="60" height="60"/>
+                                                <rect key="frame" x="204" y="11" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="GYx-iG-t6d" secondAttribute="height" multiplier="1:1" id="A7g-9t-1ve"/>
                                                 </constraints>
@@ -703,7 +689,7 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icModulex" translatesAutoresizingMaskIntoConstraints="NO" id="0kA-HH-Lyi">
-                                                <rect key="frame" x="190" y="27" width="28" height="28"/>
+                                                <rect key="frame" x="212" y="19" width="14" height="14"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZ1-D5-8me">
                                                 <rect key="frame" x="52.666666666666671" y="204" width="140" height="14"/>
@@ -842,14 +828,19 @@
                         <outlet property="commitReportDescription" destination="Rrq-hb-fkk" id="OAh-hO-Nlg"/>
                         <outlet property="graduateCardView" destination="4uT-oU-thp" id="A8Q-TN-ls7"/>
                         <outlet property="highlightView" destination="uuA-I6-aE7" id="T08-vE-gaP"/>
+                        <outlet property="itemLabel" destination="T1S-PR-vK4" id="WQ0-4P-usR"/>
                         <outlet property="itemUpgradeCardView" destination="qFR-MW-nvy" id="ruI-Jd-QSG"/>
+                        <outlet property="leftScoreDescLabel" destination="Ci6-vz-nw8" id="fFL-5Y-YeX"/>
                         <outlet property="leftScoreLabel" destination="GKz-VB-NUN" id="oLp-pM-2lJ"/>
                         <outlet property="loadingBackgroundView" destination="uv1-EH-2ok" id="rXr-6K-phq"/>
                         <outlet property="loadingView" destination="wlb-rZ-2TI" id="ej4-LD-t2V"/>
                         <outlet property="pageControl" destination="tWN-Ku-0e8" id="iGN-6J-IkE"/>
                         <outlet property="reportArrow" destination="zgB-Pj-ULw" id="LAd-yT-8Qn"/>
                         <outlet property="settingBarItem" destination="xdh-Gr-8CC" id="9lI-bd-aV6"/>
+                        <outlet property="titleLabel" destination="4bC-4w-vph" id="haW-WA-4Rf"/>
                         <outlet property="todayCommitCountLabel" destination="6bQ-Ib-XKO" id="QZh-Du-eGK"/>
+                        <outlet property="todayCommitShowLabel" destination="QHW-N4-5td" id="8FM-lY-6y6"/>
+                        <outlet property="todayScoreDescLabel" destination="c2p-dS-lmm" id="Kyu-ao-BA2"/>
                         <outlet property="todayScoreLabel" destination="DKA-DH-nse" id="gLx-F7-1ye"/>
                     </connections>
                 </viewController>
@@ -1107,7 +1098,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yoon980208@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWk-Oa-rat" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                <rect key="frame" x="99.666666666666686" y="254" width="176" height="16"/>
+                                <rect key="frame" x="101" y="254" width="173" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="173" id="8ce-tM-BpS"/>
                                     <constraint firstAttribute="height" constant="16" id="gWn-bb-8UV"/>
@@ -1192,14 +1183,14 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="722-qp-gFd">
-                                <rect key="frame" x="0.0" y="509" width="375" height="1"/>
+                                <rect key="frame" x="0.0" y="506" width="375" height="1"/>
                                 <color key="backgroundColor" red="0.75295144319999996" green="0.75292283299999996" blue="0.75294226409999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="dlf-Fe-nG1"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jNd-YX-ZgU">
-                                <rect key="frame" x="0.0" y="510" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="507" width="375" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기타" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5K-YJ-1dz" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
                                         <rect key="frame" x="16" y="28" width="21.666666666666671" height="12"/>
@@ -1225,7 +1216,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개발자 소개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IW1-hs-EBt" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                <rect key="frame" x="16" y="572" width="74.666666666666671" height="16"/>
+                                <rect key="frame" x="16" y="569" width="74.666666666666671" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="74.5" id="dNj-sr-ZId"/>
                                     <constraint firstAttribute="height" constant="16" id="eah-e9-Kbc"/>
@@ -1240,14 +1231,14 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2P-MK-uHY">
-                                <rect key="frame" x="17" y="600" width="358" height="1"/>
+                                <rect key="frame" x="17" y="597" width="358" height="1"/>
                                 <color key="backgroundColor" red="0.75295144319999996" green="0.75292283299999996" blue="0.75294226409999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="DIi-ww-QfW"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앱 평점주기 / 리뷰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P36-Ey-Rrj" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                <rect key="frame" x="16" y="613" width="121" height="16"/>
+                                <rect key="frame" x="16" y="610" width="121" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="LpO-Cv-HZc"/>
                                     <constraint firstAttribute="width" constant="121" id="fWA-KG-AaL"/>
@@ -1262,14 +1253,14 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Qx-aA-01V">
-                                <rect key="frame" x="17" y="641" width="358" height="1"/>
+                                <rect key="frame" x="17" y="638" width="358" height="1"/>
                                 <color key="backgroundColor" red="0.75295144319999996" green="0.75292283299999996" blue="0.75294226409999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="jYe-Q3-4Z6"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="깃캣 인스타그램" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dug-ss-V76" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                <rect key="frame" x="16" y="654" width="121" height="16"/>
+                                <rect key="frame" x="16" y="651" width="121" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="121" id="g7w-W2-ILc"/>
                                     <constraint firstAttribute="height" constant="16" id="xfS-TB-Fna"/>
@@ -1318,36 +1309,36 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSettingNext" translatesAutoresizingMaskIntoConstraints="NO" id="F27-9g-7Wp">
-                                <rect key="frame" x="353" y="574" width="7" height="12"/>
+                                <rect key="frame" x="353" y="571" width="7" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="0XE-dQ-rKS"/>
                                     <constraint firstAttribute="width" constant="7" id="cdY-fY-TUW"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHR-5j-rCD">
-                                <rect key="frame" x="344.66666666666669" y="566.66666666666663" width="24" height="27"/>
+                                <rect key="frame" x="344.66666666666669" y="563.66666666666663" width="24" height="27"/>
                                 <connections>
                                     <segue destination="bfm-4c-0qW" kind="show" id="gmb-Vf-7Xk"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSettingNext" translatesAutoresizingMaskIntoConstraints="NO" id="xMu-aU-Gkf">
-                                <rect key="frame" x="353" y="615" width="7" height="12"/>
+                                <rect key="frame" x="353" y="612" width="7" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="XhG-4n-OwJ"/>
                                     <constraint firstAttribute="width" constant="7" id="wUl-Cz-pwo"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GnR-s3-v3s">
-                                <rect key="frame" x="344.66666666666669" y="607.66666666666663" width="24" height="27"/>
+                                <rect key="frame" x="344.66666666666669" y="604.66666666666663" width="24" height="27"/>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSettingNext" translatesAutoresizingMaskIntoConstraints="NO" id="1S6-M7-PVz">
-                                <rect key="frame" x="353" y="656" width="7" height="12"/>
+                                <rect key="frame" x="353" y="653" width="7" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="Wk4-7h-AXQ"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uyj-Jf-Db8">
-                                <rect key="frame" x="344.66666666666669" y="648.66666666666663" width="24" height="27"/>
+                                <rect key="frame" x="344.66666666666669" y="645.66666666666663" width="24" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="56V-dl-hpA"/>
                                     <constraint firstAttribute="height" constant="27" id="DZq-Mj-01d"/>
@@ -1357,11 +1348,11 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPK-rf-Hyd">
-                                <rect key="frame" x="0.0" y="687.66666666666663" width="375" height="124.33333333333337"/>
+                                <rect key="frame" x="0.0" y="684.66666666666663" width="375" height="127.33333333333337"/>
                                 <color key="backgroundColor" red="0.97256201505661011" green="0.97252553701400757" blue="0.97255033254623413" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DlI-0k-c4L">
-                                <rect key="frame" x="16" y="471" width="88" height="31"/>
+                                <rect key="frame" x="16" y="471" width="89" height="28"/>
                                 <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="16"/>
                                 <state key="normal" title="고양씨 초기화">
                                     <color key="titleColor" name="brownishGrey"/>
@@ -1753,11 +1744,11 @@
                                     <outlet property="delegate" destination="ndN-Js-Gsz" id="9Jk-Tr-61B"/>
                                 </connections>
                             </view>
-                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FpF-hI-U5N">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FpF-hI-U5N">
                                 <rect key="frame" x="0.0" y="114" width="375" height="360"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QyW-gS-Cqy" customClass="AnimatedImageView" customModule="Kingfisher">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QyW-gS-Cqy" customClass="AnimatedImageView" customModule="Kingfisher">
                                 <rect key="frame" x="147.66666666666666" y="273.66666666666669" width="80" height="80"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2UO-qD-yYf">
@@ -1813,7 +1804,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6~10개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wz-dt-scy">
-                                                <rect key="frame" x="147" y="1" width="29" height="10"/>
+                                                <rect key="frame" x="144.33333333333334" y="1" width="29" height="10"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="3ml-Sj-UL6"/>
                                                     <constraint firstAttribute="width" constant="29" id="Slo-LZ-7Ig"/>
@@ -1823,7 +1814,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKT-mT-rLo" customClass="RoundView" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="202.00000000000003" y="0.0" width="12" height="12"/>
+                                                <rect key="frame" x="199.33333333333334" y="0.0" width="12" height="12"/>
                                                 <color key="backgroundColor" red="0.88318020109999995" green="0.94813674690000005" blue="0.99608689549999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="12" id="Dfp-cR-tUQ"/>
@@ -1831,7 +1822,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10+개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNL-OW-Awc">
-                                                <rect key="frame" x="220.00000000000003" y="0.0" width="26" height="11.666666666666666"/>
+                                                <rect key="frame" x="217.33333333333334" y="1" width="25" height="10"/>
                                                 <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="10"/>
                                                 <color key="textColor" name="brownishGrey"/>
                                                 <nil key="highlightedColor"/>
@@ -1845,7 +1836,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1~5개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bc1-9a-b5G">
-                                                <rect key="frame" x="77" y="0.0" width="26" height="11.666666666666666"/>
+                                                <rect key="frame" x="77" y="1" width="23.333333333333329" height="10"/>
                                                 <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="10"/>
                                                 <color key="textColor" name="brownishGrey"/>
                                                 <nil key="highlightedColor"/>
@@ -1870,7 +1861,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Gf-Ir-xXJ" customClass="RoundView" customModule="GitCat" customModuleProvider="target">
-                                        <rect key="frame" x="183.66666666666666" y="30.666666666666686" width="12" height="12"/>
+                                        <rect key="frame" x="181" y="30.666666666666686" width="12" height="12"/>
                                         <color key="backgroundColor" red="0.88318020105361938" green="0.94813674688339233" blue="0.99608689546585083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="12" id="Jcn-m3-6ii"/>
@@ -1987,7 +1978,7 @@
                                             </constraints>
                                         </view>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCalandarCommit" translatesAutoresizingMaskIntoConstraints="NO" id="E6K-Pc-VIW">
-                                            <rect key="frame" x="116.66666666666669" y="19" width="36" height="36"/>
+                                            <rect key="frame" x="134.66666666666666" y="28" width="18" height="18"/>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ll5-6V-kQN">
                                             <rect key="frame" x="244" y="82" width="1" height="36"/>
@@ -2035,7 +2026,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="커밋 내역 상세" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNt-qJ-udh" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                            <rect key="frame" x="147" y="198" width="81" height="16.333333333333343"/>
+                                            <rect key="frame" x="147" y="198" width="81" height="14"/>
                                             <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="14"/>
                                             <color key="textColor" red="0.39216253161430359" green="0.39214670658111572" blue="0.39215743541717529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
@@ -2046,14 +2037,14 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCalandarCommit" translatesAutoresizingMaskIntoConstraints="NO" id="20o-0Y-pJW">
-                                            <rect key="frame" x="127" y="197.33333333333334" width="18" height="18"/>
+                                            <rect key="frame" x="127" y="196" width="18" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="18" id="AJL-3G-3vS"/>
                                                 <constraint firstAttribute="height" constant="18" id="O6J-s0-vnZ"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최신형 냥북" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZ4-ds-mOG" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                            <rect key="frame" x="268.33333333333331" y="102" width="73.666666666666686" height="18.666666666666671"/>
+                                            <rect key="frame" x="268.33333333333331" y="102" width="73.666666666666686" height="16"/>
                                             <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="16"/>
                                             <color key="textColor" name="brownishGrey"/>
                                             <nil key="highlightedColor"/>
@@ -2170,7 +2161,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomHeaderTVcell" rowHeight="100" id="4lw-a0-KCg" customClass="CustomHeaderTVCell" customModule="GitCat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="333.33333206176758" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="389.33333206176758" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4lw-a0-KCg" id="yg3-ye-1eD">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
@@ -2746,7 +2737,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9XB-oD-cv3">
-                                                                <rect key="frame" x="109.33333333333334" y="0.0" width="25.666666666666657" height="12"/>
+                                                                <rect key="frame" x="115" y="0.0" width="20" height="12"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="ckx-92-g3S"/>
                                                                     <constraint firstAttribute="height" constant="12" id="haV-Ub-348"/>
@@ -2756,7 +2747,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghg-ga-kLD">
-                                                                <rect key="frame" x="55" y="5.6666666666666856" width="48.333333333333343" height="1"/>
+                                                                <rect key="frame" x="55" y="5.6666666666666856" width="54" height="1"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="SIc-F7-h1t"/>
@@ -2799,7 +2790,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPL-gb-aNb">
-                                                                <rect key="frame" x="109.33333333333334" y="0.0" width="25.666666666666657" height="12"/>
+                                                                <rect key="frame" x="115" y="0.0" width="20" height="12"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="12" id="JQW-Fr-L5h"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="Kg7-bC-8gN"/>
@@ -2809,7 +2800,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nSW-AX-QJc">
-                                                                <rect key="frame" x="72" y="5.6666666666666856" width="31.333333333333329" height="1"/>
+                                                                <rect key="frame" x="72" y="5.6666666666666856" width="37" height="1"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="V2D-WY-20A"/>
@@ -2852,7 +2843,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iyd-xr-DMx">
-                                                                <rect key="frame" x="109.33333333333334" y="0.0" width="25.666666666666657" height="12"/>
+                                                                <rect key="frame" x="115" y="0.0" width="20" height="12"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="0ET-bE-Afv"/>
                                                                     <constraint firstAttribute="height" constant="12" id="QqJ-L8-D58"/>
@@ -2862,7 +2853,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4T3-jb-Zkx">
-                                                                <rect key="frame" x="55" y="5.6666666666666856" width="48.333333333333343" height="1"/>
+                                                                <rect key="frame" x="55" y="5.6666666666666856" width="54" height="1"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="Pvo-6D-a7K"/>
@@ -2906,7 +2897,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72Y-MQ-b6U">
-                                                                <rect key="frame" x="109.33333333333334" y="0.0" width="25.666666666666657" height="12"/>
+                                                                <rect key="frame" x="115" y="0.0" width="20" height="12"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="12" id="KoK-J8-NOI"/>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="kkA-8D-tSC"/>
@@ -2916,7 +2907,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIw-r4-2QK">
-                                                                <rect key="frame" x="55" y="5.6666666666666856" width="48.333333333333343" height="1"/>
+                                                                <rect key="frame" x="55" y="5.6666666666666856" width="54" height="1"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="D0b-DO-eTx"/>
@@ -3277,7 +3268,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yoon980208@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZr-Ji-g4f" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                <rect key="frame" x="184" y="141" width="176" height="16"/>
+                                <rect key="frame" x="188" y="141" width="172" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="oQZ-bI-28O"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="172" id="sSC-YC-DLF"/>
