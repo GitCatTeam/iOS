@@ -10,6 +10,11 @@ import UIKit
 import Charts
 
 class ReportDetailVC: UIViewController {
+    
+    @IBOutlet var realBaseView: UIView!
+    
+    @IBOutlet var baseView: UIView!
+    
     @IBOutlet weak var view1: RoundView!
     @IBOutlet weak var view2: RoundView!
     @IBOutlet weak var view3: RoundView!
@@ -114,6 +119,16 @@ class ReportDetailVC: UIViewController {
         setReportDetailData(id: id)
         
         setStyle()
+        
+        let bounds = UIScreen.main.bounds
+        let height = bounds.size.height
+        
+        if(height == 1366.0) {//iPad 3세대 12.9inch
+            view5.alpha = 0
+
+        }
+        
+        
         setFontSize()
         
     }
@@ -195,13 +210,26 @@ class ReportDetailVC: UIViewController {
         
         lineChart.xAxis.gridColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         lineChart.xAxis.labelTextColor = UIColor.CustomColor.brownishGrey
-        lineChart.xAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 11)!
         
+        let bounds = UIScreen.main.bounds
+        let height = bounds.size.height
+        
+        if(height == 1366.0) {
+            lineChart.xAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 18)!
+        }else{
+            lineChart.xAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 11)!
+        }
+            
         
         lineChart.leftAxis.drawAxisLineEnabled = false
         lineChart.leftAxis.gridColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         lineChart.leftAxis.labelTextColor = #colorLiteral(red: 0.5320672393, green: 0.8002378345, blue: 0.9608486295, alpha: 1)
-        lineChart.leftAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 11)!
+        
+        if(height == 1366.0) {
+            lineChart.leftAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 18)!
+        }else{
+            lineChart.leftAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 11)!
+        }
     
         lineChart.rightAxis.drawAxisLineEnabled = false
         lineChart.rightAxis.drawGridLinesEnabled = false
@@ -237,12 +265,24 @@ class ReportDetailVC: UIViewController {
                 
         let paragraphStyle = NSMutableParagraphStyle(); paragraphStyle.alignment = .center
                 
-        let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "BBTreeGo_R", size: 12.0)!,
-                            NSAttributedString.Key.foregroundColor : UIColor.CustomColor.brownishGrey, NSAttributedString.Key.paragraphStyle: paragraphStyle
-        ]
-        let myAttrString = NSAttributedString(string: "언어 비율\n(%)", attributes: myAttribute)
-
-        pieChart.centerAttributedText = myAttrString
+        let bounds = UIScreen.main.bounds
+        let height = bounds.size.height
+               
+        if(height == 1366.0) {
+            let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "BBTreeGo_R", size: 20.0)!,
+                                       NSAttributedString.Key.foregroundColor : UIColor.CustomColor.brownishGrey, NSAttributedString.Key.paragraphStyle: paragraphStyle
+                   ]
+            let myAttrString = NSAttributedString(string: "언어 비율\n(%)", attributes: myAttribute)
+            pieChart.centerAttributedText = myAttrString
+        }
+        else{
+            let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "BBTreeGo_R", size: 12.0)!,
+                                NSAttributedString.Key.foregroundColor : UIColor.CustomColor.brownishGrey, NSAttributedString.Key.paragraphStyle: paragraphStyle
+            ]
+            let myAttrString = NSAttributedString(string: "언어 비율\n(%)", attributes: myAttribute)
+            pieChart.centerAttributedText = myAttrString
+        }
+                   
         let chartDataSet = PieChartDataSet(entries: percentOfLanguageEntries, label: nil)
         chartDataSet.drawValuesEnabled = false
         
@@ -268,7 +308,16 @@ class ReportDetailVC: UIViewController {
         barChart.xAxis.granularity = 1
         barChart.xAxis.labelPosition = .bottom
         barChart.xAxis.labelTextColor = UIColor.CustomColor.brownishGrey
-        barChart.xAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 11)!
+        
+        let bounds = UIScreen.main.bounds
+        let height = bounds.size.height
+               
+        if(height == 1366.0) {
+            barChart.xAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 18)!
+        }else{
+             barChart.xAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 11)!
+        }
+        
         barChart.xAxis.drawGridLinesEnabled = false
 
         barChart.leftAxis.drawGridLinesEnabled = false
@@ -358,7 +407,6 @@ extension ReportDetailVC {
                     //PieChartDataEntry(value: 10)
                     let ratios:[Double] = resResult.data?.languageRatio?.percentArray as! [Double]
                     for ratio in ratios {
-                        print(ratio)
                         self.percentOfLanguageEntries += [PieChartDataEntry(value: ratio)]
                     }
                     

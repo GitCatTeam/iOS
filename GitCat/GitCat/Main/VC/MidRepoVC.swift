@@ -23,6 +23,19 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     @IBOutlet weak var loadingBackgroundView: UIView!
     @IBOutlet weak var loadingView: UIImageView!
     
+    @IBOutlet weak var desc1: CustomLabel!
+    @IBOutlet weak var desc2: CustomLabel!
+    @IBOutlet weak var desc3: CustomLabel!
+    @IBOutlet weak var desc4: CustomLabel!
+    
+    @IBOutlet weak var scoreLabel: CustomLabel!
+    
+    @IBOutlet weak var totalCommitLabel: CustomLabel!
+    @IBOutlet weak var itemLabel: CustomLabel!
+    
+    @IBOutlet weak var desc5: CustomLabel!
+    
+    
     var commitCountData: CommitCountModel?
     
     let cellIdentifier:String = "CommitDetailTVcell";
@@ -94,11 +107,20 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         self.tableView.panGestureRecognizer.require(toFail: self.scopeGesture)
         self.tableView.rowHeight = 26;
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-        
-        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    func setFontSize() {
+        desc1.dynamicFont(fontSize: 14, name: "BBTreeG_B")
+        desc2.dynamicFont(fontSize: 14, name: "BBTreeG_B")
+        desc3.dynamicFont(fontSize: 14, name: "BBTreeG_B")
+        desc4.dynamicFont(fontSize: 14, name: "BBTreeG_B")
+        desc5.dynamicFont(fontSize: 14, name: "BBTreeG_B")
+        scoreLabel.dynamicFont(fontSize: 32, name: "BBTreeGo_R")
+        totalCommitLabel.dynamicFont(fontSize: 32, name: "BBTreeGo_R")
+        itemLabel.dynamicFont(fontSize: 32, name: "BBTreeGo_R")
+        
+        
+        
     }
 
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {

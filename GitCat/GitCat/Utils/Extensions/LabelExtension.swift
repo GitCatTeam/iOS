@@ -13,7 +13,7 @@ extension UILabel {
     func dynamicFont(fontSize size: CGFloat, name: String) {
     let bounds = UIScreen.main.bounds
     let height = bounds.size.height
-    
+
     switch height {
     case 480.0: //Iphone 3,4S => 3.5 inch
       self.font = UIFont(name: name, size: size * 0.7)
