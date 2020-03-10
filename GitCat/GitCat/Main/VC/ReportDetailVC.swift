@@ -60,6 +60,22 @@ class ReportDetailVC: UIViewController {
     @IBOutlet weak var loadingView: UIImageView!
     
     
+    @IBOutlet weak var descLabel1: CustomLabel!
+    @IBOutlet weak var descLabel2: CustomLabel!
+    
+    @IBOutlet weak var descLabel3: CustomLabel!
+    
+    @IBOutlet weak var commitDescLabel: CustomLabel!
+    
+    @IBOutlet weak var languageDescLabel: CustomLabel!
+    
+    @IBOutlet weak var repoDescLabel: CustomLabel!
+    
+    @IBOutlet weak var finalDescLabel: CustomLabel!
+    
+    @IBOutlet weak var top3Label: CustomLabel!
+    
+    
     //MARK: PIECHART
     var percentOfLanguageEntries = [PieChartDataEntry]()
     
@@ -81,19 +97,69 @@ class ReportDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadingView.alpha = 1
+        loadingBackgroundView.alpha = 1
+        
         self.navigationItem.title = reportTitle
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor(red: 137/255, green: 204/255, blue: 246/255, alpha: 1)]
                navigationController?.navigationBar.titleTextAttributes = textAttributes
         
         percentOfLanguageEntries = [] //사용언어비율 pieChart 데이터 초기화
         setBackBtn(color: UIColor.CustomColor.brownishGrey)
-        setStyle()
         
         loadingView.loadGif(name: "gif_loading2")
         
         totalCount.text = totalCommit
         setReportDetailData(id: id)
         
+        setStyle()
+        setFontSize()
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.dottedLine1.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
+        self.dottedLine2.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
+        self.dottedLine3.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
+        self.dottedLine4.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
+        
+    }
+    
+    
+    func setFontSize() {
+        descLabel1.dynamicFont(fontSize: 14, name: "BBTreeG_B")
+        descLabel2.dynamicFont(fontSize: 14, name: "BBTreeG_B")
+        descLabel3.dynamicFont(fontSize: 14, name: "BBTreeG_B")
+        
+        compareCount.dynamicFont(fontSize: 20, name: "BBTreeG_B")
+        totalCount.dynamicFont(fontSize: 20, name: "BBTreeG_B")
+        averageCount.dynamicFont(fontSize: 20, name: "BBTreeG_B")
+        
+        commitDescLabel.dynamicFont(fontSize: 12, name: "BBTreeG_B")
+        languageDescLabel.dynamicFont(fontSize: 12, name: "BBTreeG_B")
+        
+        repoDescLabel.dynamicFont(fontSize: 12, name: "BBTreeG_B")
+        
+        finalDescLabel.dynamicFont(fontSize: 12, name: "BBTreeG_B")
+        
+        top3Label.dynamicFont(fontSize: 12, name: "BBTreeG_B")
+        statusLabel1.dynamicFont(fontSize: 11, name: "BBTreeGo_R")
+        statusPercentLabel1.dynamicFont(fontSize: 12, name: "BBTreeG_B")
+        
+        statusLabel2.dynamicFont(fontSize: 11, name: "BBTreeGo_R")
+        statusPercentLabel2.dynamicFont(fontSize: 12, name: "BBTreeG_B")
+        
+        statusLabel3.dynamicFont(fontSize: 11, name: "BBTreeGo_R")
+        statusPercentLabel3.dynamicFont(fontSize: 12, name: "BBTreeG_B")
+        
+        statusLabel4.dynamicFont(fontSize: 11, name: "BBTreeGo_R")
+        statusPercentLabel4.dynamicFont(fontSize: 12, name: "BBTreeG_B")
+        
+        description1.dynamicFont(fontSize: 11, name: "BBTreeGo_R")
+        description2.dynamicFont(fontSize: 11, name: "BBTreeGo_R")
+        description3.dynamicFont(fontSize: 11, name: "BBTreeGo_R")
         
     }
     
@@ -117,7 +183,6 @@ class ReportDetailVC: UIViewController {
         line.circleRadius = 2
         line.circleHoleRadius = 1
 
-        
         
         line.drawValuesEnabled = false
         let data = LineChartData()
@@ -236,7 +301,7 @@ class ReportDetailVC: UIViewController {
 
         barChart.data = chartData
     }
-    
+
     func setStyle() {
         self.view1.layer.cornerRadius = 8
         self.view2.layer.cornerRadius = 8
@@ -249,12 +314,6 @@ class ReportDetailVC: UIViewController {
         self.view3.addShadow()
         self.view4.addShadow()
         self.view5.addShadow()
-        
-        self.dottedLine1.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
-        self.dottedLine2.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
-        self.dottedLine3.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
-        self.dottedLine4.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
-        
         
         self.statusBox.layer.borderWidth = 0.5
         self.statusBox2.layer.borderWidth = 0.5

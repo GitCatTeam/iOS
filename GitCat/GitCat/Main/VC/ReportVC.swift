@@ -40,7 +40,7 @@ class ReportVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         
         cell.mainTitle.text = reportDataList[indexPath.row].title
         cell.languageLabel.text = reportDataList[indexPath.row].mainLanguage
-        cell.commitCountLabel.text = reportDataList[indexPath.row].totalCount
+        cell.commitCountLabel.text = (reportDataList[indexPath.row].totalCount ?? "") + "회"
         
         return cell
     }
@@ -68,8 +68,6 @@ class ReportVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
             
         }
     }
-
-
 }
 
 extension ReportVC {

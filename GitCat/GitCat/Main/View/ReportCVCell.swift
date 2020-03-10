@@ -11,8 +11,11 @@ import UIKit
 class ReportCVCell: UICollectionViewCell {
     
     @IBOutlet weak var mainTitle: UILabel!
+    
+    @IBOutlet weak var commitCountDescLabel: CustomLabel!
     @IBOutlet weak var commitCountLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
+    @IBOutlet weak var languageDescLabel: CustomLabel!
     @IBOutlet weak var bottomView: UIView!
     
     override func awakeFromNib() {
@@ -30,6 +33,17 @@ class ReportCVCell: UICollectionViewCell {
         self.layer.masksToBounds = false
         
         bottomView.bottomSectionRound()
+        setFontSize()
+    }
+    
+    func setFontSize() {
+        mainTitle.dynamicFont(fontSize: 20, name: "BBTreeG_B")
+        commitCountDescLabel.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
+        commitCountLabel.dynamicFont(fontSize: 14, name: "BBTreeG_B")
+        
+        languageLabel.dynamicFont(fontSize: 14, name: "BBTreeG_B")
+        languageDescLabel.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
+        
     }
     
 }

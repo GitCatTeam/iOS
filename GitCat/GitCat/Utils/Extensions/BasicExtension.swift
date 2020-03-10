@@ -15,6 +15,7 @@ import Kingfisher
 extension UIView {
     
     func createDottedLine(width: CGFloat, color: CGColor) {
+        print(self.frame.width)
        let caShapeLayer = CAShapeLayer()
        caShapeLayer.strokeColor = color
        caShapeLayer.lineWidth = width

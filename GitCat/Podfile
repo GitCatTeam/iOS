@@ -6,8 +6,7 @@ target 'GitCat' do
   use_frameworks!
   
   # Pods for GitCat
-  
-  pod 'Alamofire'
+  pod 'Alamofire', '4.7.3'
   pod 'Kingfisher'
   pod 'FSCalendar'
   pod 'Firebase/Auth'
