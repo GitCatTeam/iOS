@@ -210,6 +210,7 @@ extension MidRepoVC:  UITableViewDelegate, UITableViewDataSource  {
         let headerCell = tableView.dequeueReusableCell(withIdentifier: headerIdentifier) as! CustomHeaderTVCell
         
         headerCell.repoNameLabel.text = repositoryNameDummy[section]
+        headerCell.repoNameLabel.dynamicFont(fontSize: 12, name: "BBTreeG_B")
         return headerCell.contentView
 
     }

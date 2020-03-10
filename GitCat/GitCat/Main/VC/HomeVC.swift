@@ -454,7 +454,9 @@ extension HomeVC {
                         }
                     }
                     
-                    let timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
+                    //let timer
+                    
+                    _ = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
                     
                     
                     self.loadingView.alpha = 0
