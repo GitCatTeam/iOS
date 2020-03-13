@@ -55,8 +55,6 @@ class GetMoreInfo4VC: UIViewController {
     
     let cellIdentifier = "SelectCatCVCell"
     
-    let dummyImageData:[UIImage] = [UIImage(named: "imgCatNero")!, UIImage(named: "imgCatPanda")!, UIImage(named: "imgCatCheeze")!, UIImage(named: "imgCatPanda")!, UIImage(named: "imgCatPanda")!, UIImage(named: "imgCatNormal")!]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

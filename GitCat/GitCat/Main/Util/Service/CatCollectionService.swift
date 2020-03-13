@@ -1,25 +1,23 @@
 //
-//  ReportListService.swift
+//  CatCollectionService.swift
 //  GitCat
 //
-//  Created by 조윤영 on 19/02/2020.
+//  Created by 조윤영 on 13/03/2020.
 //  Copyright © 2020 조윤영. All rights reserved.
 //
 
 import Foundation
-struct ReportListService: GettableService, APIServie {
-     
-    typealias NetworkData = ReportListModel
-    static let sharedInstance = ReportListService()
+struct CatCollectionService: GettableService, APIServie {
     
-    //MARK: GET - https://a.gitcat.app/api/report/repoList (월간 레포트의 목록을 불러오는 API)
+    typealias NetworkData = CatCollectionModel
+    static let sharedInstance = CatCollectionService()
     
-
-    func getReportList(completion: @escaping (NetworkResult<Any>) -> Void) {
+    //MARK: GET - https://a.gitcat.app/api/collection/list (냥컬렉션 리스트 가져오기 API)
+    
+    func getGraduateCats(completion: @escaping (NetworkResult<Any>) -> Void) {
         
-        let reportListURL = self.url("/report/list")
-
-        gettable(reportListURL) { (result) in
+        let catCollectionURL = self.url("/collection/list")
+        gettable(catCollectionURL) { (result) in
             switch result {
             case .success(let networkResult):
                 switch networkResult.resCode {

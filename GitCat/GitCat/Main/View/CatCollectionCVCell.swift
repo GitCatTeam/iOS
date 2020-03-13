@@ -37,7 +37,6 @@ class CatCollectionCVCell: UICollectionViewCell {
         self.layer.masksToBounds = false
 
         
-//        carBoderView.layer.masksToBounds = true
         carBoderView.layer.borderColor = UIColor(red: 236/255, green: 236/255, blue: 236/255, alpha: 1).cgColor
         carBoderView.layer.borderWidth = 1
         

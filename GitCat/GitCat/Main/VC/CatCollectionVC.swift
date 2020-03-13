@@ -11,13 +11,20 @@ import UIKit
 class CatCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var loadingBackgroundView: UIView!
+    @IBOutlet weak var loadingView: UIImageView!
     
     let cellIdentifier:String = "catCollectionViewcell"
-    var catDummyName:[String] = ["깜냥이","구냥이","윤냥이","안냥이","첫냥이","테디","코코"]
+    var catCollectionList = [CatCollectionDataModel]()
     override func viewDidLoad() {
         
         super.viewDidLoad()
         setBackBtn(color: #colorLiteral(red: 0.5307495594, green: 0.8041878939, blue: 0.9690385461, alpha: 1))
+        
+        loadingView.alpha = 1
+        loadingBackgroundView.alpha = 1
+        
+        getCatCollection()
         
         //TODO: navigation bar title 색 바꾸기
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor(red: 137/255, green: 204/255, blue: 246/255, alpha: 1)]
@@ -33,15 +40,24 @@ class CatCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionV
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return catDummyName.count
+        return catCollectionList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! CatCollectionCVCell
         
-        cell.catNameLabel.text = catDummyName[indexPath.row]
+        cell.catNameLabel.text = catCollectionList[indexPath.row].name
+        cell.resultLabel.text = catCollectionList[indexPath.row].endingMent
         
+        let imageURL = catCollectionList[indexPath.row].img
+        cell.catImageView.setImage(imageURL, defaultImgPath: "imgDefault")
+        
+        if(catCollectionList[indexPath.row].isMedal == true) {
+            cell.medalImageView.alpha = 1
+        }else {
+            cell.medalImageView.alpha = 0
+        }
         
         return cell
     }
@@ -57,4 +73,37 @@ class CatCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionV
         }
 
 
+}
+
+
+extension CatCollectionVC {
+    func getCatCollection() {
+        CatCollectionService.sharedInstance.getGraduateCats { (result) in
+            switch result {
+                case .networkSuccess(let data):
+                    let graduateCatData = data as? CatCollectionModel
+                    if let resResult = graduateCatData {
+                        self.catCollectionList = resResult.data ?? []
+                        self.collectionView.reloadData()
+                        self.loadingView.alpha = 0
+                        self.loadingBackgroundView.alpha = 0
+                    }
+                    break
+                                
+                case .networkFail :
+                    self.networkErrorAlert()
+                    self.loadingView.alpha = 0
+                    self.loadingBackgroundView.alpha = 0
+                    break
+                                
+                default:
+                    self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
+                    self.loadingView.alpha = 0
+                    self.loadingBackgroundView.alpha = 0
+                    break
+            }
+                        
+        }
+    }
+                
 }

@@ -46,6 +46,8 @@
 		4C99B37B2403C4C0003DFBA6 /* InstagramVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */; };
 		4C9E8E8323C05564002BDE02 /* LittleRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E8E8223C05564002BDE02 /* LittleRoundView.swift */; };
 		4C9E8EAE23C1F427002BDE02 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E8EAD23C1F427002BDE02 /* Requestable.swift */; };
+		4CA54838241BB043002B2966 /* CatCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA54837241BB043002B2966 /* CatCollectionModel.swift */; };
+		4CA5483A241BB053002B2966 /* CatCollectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA54839241BB053002B2966 /* CatCollectionService.swift */; };
 		4CA7A75923FB9D36004FC110 /* ReportListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7A75823FB9D36004FC110 /* ReportListModel.swift */; };
 		4CA7A75B23FB9D51004FC110 /* ReportDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7A75A23FB9D51004FC110 /* ReportDetailModel.swift */; };
 		4CAB3BCA2407EA71007A84B6 /* CatListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CAB3BC92407EA71007A84B6 /* CatListModel.swift */; };
@@ -125,6 +127,8 @@
 		4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramVc.swift; sourceTree = "<group>"; };
 		4C9E8E8223C05564002BDE02 /* LittleRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleRoundView.swift; sourceTree = "<group>"; };
 		4C9E8EAD23C1F427002BDE02 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		4CA54837241BB043002B2966 /* CatCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCollectionModel.swift; sourceTree = "<group>"; };
+		4CA54839241BB053002B2966 /* CatCollectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCollectionService.swift; sourceTree = "<group>"; };
 		4CA7A75823FB9D36004FC110 /* ReportListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListModel.swift; sourceTree = "<group>"; };
 		4CA7A75A23FB9D51004FC110 /* ReportDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailModel.swift; sourceTree = "<group>"; };
 		4CAB3BC92407EA71007A84B6 /* CatListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListModel.swift; sourceTree = "<group>"; };
@@ -309,6 +313,7 @@
 				4CA7A75823FB9D36004FC110 /* ReportListModel.swift */,
 				4CA7A75A23FB9D51004FC110 /* ReportDetailModel.swift */,
 				4CBA4D4A2411083F002CED2F /* HomeModel.swift */,
+				4CA54837241BB043002B2966 /* CatCollectionModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 				4C7B568E2408DBBB001881FE /* DeleteTokenService.swift */,
 				4CBA4D4C24110998002CED2F /* HomeService.swift */,
 				4CBA4D54241123DC002CED2F /* PostUserDataService.swift */,
+				4CA54839241BB053002B2966 /* CatCollectionService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -639,6 +645,7 @@
 				4CAB3BE22408635B007A84B6 /* PostCatSelectedService.swift in Sources */,
 				4C7C0E8023DF158B00669B38 /* SettingVC.swift in Sources */,
 				4C68D13523B0D02400A8F813 /* SignInVC.swift in Sources */,
+				4CA5483A241BB053002B2966 /* CatCollectionService.swift in Sources */,
 				4C7B569524095625001881FE /* KeyCode.swift in Sources */,
 				4C7C0E7823D9816000669B38 /* CommitCountModel.swift in Sources */,
 				4CAB3BCE2407ECDE007A84B6 /* PosttableService.swift in Sources */,
@@ -656,6 +663,7 @@
 				4CA7A75923FB9D36004FC110 /* ReportListModel.swift in Sources */,
 				4C7C0E6723D8044B00669B38 /* HttpResponseCode.swift in Sources */,
 				4C7C0E6D23D8133200669B38 /* GettableService.swift in Sources */,
+				4CA54838241BB043002B2966 /* CatCollectionModel.swift in Sources */,
 				4CC07FB523B317CA00851B45 /* RoundBtn.swift in Sources */,
 				4CC07F9523B1165200851B45 /* GetMoreInfo1VC.swift in Sources */,
 				4CC07F9123B0EE1000851B45 /* ColorPalette.swift in Sources */,
