@@ -2117,14 +2117,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wuk-kK-Ovp" customClass="RoundView" customModule="GitCat" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wuk-kK-Ovp" customClass="RoundView" customModule="GitCat" customModuleProvider="target">
                                                     <rect key="frame" x="48" y="0.0" width="8" height="8"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Wuk-kK-Ovp" secondAttribute="height" multiplier="1:1" id="xpy-3S-5d0"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDl-1P-KYp">
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gDl-1P-KYp">
                                                     <rect key="frame" x="51.5" y="8" width="1" height="19"/>
                                                     <color key="backgroundColor" red="0.75295144319534302" green="0.75292283296585083" blue="0.75294226408004761" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
@@ -2132,8 +2132,8 @@
                                                         <constraint firstAttribute="height" constant="19" id="mNU-dS-3pO"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il1-re-rri" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                    <rect key="frame" x="300" y="3" width="30" height="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="08:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il1-re-rri" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
+                                                    <rect key="frame" x="300" y="3" width="30" height="10"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="Jqc-0D-nhZ"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="jje-Fq-uAC"/>
@@ -2147,8 +2147,8 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연구실 문제 효율성을 떨어지지만  정확하게연구실 문제 효율성을 떨어지지만  정확하게" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9C-eD-enJ" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                    <rect key="frame" x="64" y="2" width="230" height="14"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="연구실 문제 효율성을 떨어지지만  정확하게연구실 문제 효율성을 떨어지지만  정확하게" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9C-eD-enJ" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
+                                                    <rect key="frame" x="64" y="2" width="230" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="12" id="aTM-MN-iVJ"/>
                                                     </constraints>
@@ -2168,8 +2168,8 @@
                                                 <constraint firstItem="Il1-re-rri" firstAttribute="centerY" secondItem="l9C-eD-enJ" secondAttribute="centerY" id="6Xg-Vz-u85"/>
                                                 <constraint firstItem="Wuk-kK-Ovp" firstAttribute="top" secondItem="qEW-Wn-bcQ" secondAttribute="top" id="9cS-ob-yHv"/>
                                                 <constraint firstItem="l9C-eD-enJ" firstAttribute="leading" secondItem="Wuk-kK-Ovp" secondAttribute="trailing" constant="8" id="HE5-ye-b3o"/>
+                                                <constraint firstItem="Wuk-kK-Ovp" firstAttribute="leading" secondItem="qEW-Wn-bcQ" secondAttribute="leading" constant="48" id="L45-Tl-Fgq"/>
                                                 <constraint firstItem="l9C-eD-enJ" firstAttribute="top" secondItem="qEW-Wn-bcQ" secondAttribute="top" constant="2" id="LR7-bN-Mkl"/>
-                                                <constraint firstItem="Wuk-kK-Ovp" firstAttribute="leading" secondItem="qEW-Wn-bcQ" secondAttribute="leading" constant="48" id="NF5-uP-eiX"/>
                                                 <constraint firstItem="gDl-1P-KYp" firstAttribute="centerX" secondItem="Wuk-kK-Ovp" secondAttribute="centerX" id="O28-kh-KHl"/>
                                                 <constraint firstItem="gDl-1P-KYp" firstAttribute="top" secondItem="Wuk-kK-Ovp" secondAttribute="bottom" id="V3j-Zl-1y9"/>
                                                 <constraint firstItem="l9C-eD-enJ" firstAttribute="width" secondItem="qEW-Wn-bcQ" secondAttribute="width" multiplier="0.613333" id="i6c-2V-doZ"/>
