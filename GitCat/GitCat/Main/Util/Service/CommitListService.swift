@@ -11,10 +11,10 @@ struct CommitListService: GettableService, APIServie {
     typealias NetworkData = CommitListModel
     static let sharedInstance = CommitListService()
     
-    //MARK: GET - https://a.chameleon4switch.cf/calender/monthCommitCount?email=\(email)&day=\(day) (해당 날짜의 커밋 내역 리스트 반환)
+    //MARK: GET - https://a.gitcat.app/api/calender/commit?date=\(date) (해당 날짜의 커밋 내역 리스트 반환)
     
-    func getCommit(email:String, day:String, completion: @escaping (NetworkResult<Any>) -> Void) {
-        let commitURL = self.url("/api/calender/monthCommitCount?email=\(email)&day=\(day)")
+    func getCommitData(date:String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        let commitURL = self.url("/calender/commit?date=\(date)")
         gettable(commitURL) { (result) in
             switch result {
             case .success(let networkResult):

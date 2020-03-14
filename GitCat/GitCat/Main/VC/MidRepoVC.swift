@@ -44,6 +44,7 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     var somedays : Array = [String]()
     var repositoryNameDummy: [String] = ["GitCat","카멜레On","이게뭐약"]
     var commitDummy: [String] = ["[UPDATE]레포트 화면 스크롤 동작 추가","[UPDATE]라인차트 추가","[UPDATE]설정 화면 추가","[UPDATE]Github 연동 로그인 기능 추가","[UPDATE]파이차트 추가[UPDATE]백 버튼 커스텀 적[UPDATE]달력 커스텀 적용","[UPDATE]홈화면 탭바 반영","[UPDATE]앱 아이콘 적용","[UPDATE]gitignore 수정","[UPDATE]애니메이션 추가"]
+    
     var visitedMonth:[Bool] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false]
     var currentMonth:Int?
     var currentYear:Int?
@@ -56,6 +57,12 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
+    }()
+    
+    fileprivate let formatter2: DateFormatter = {
+        let formatter2 = DateFormatter()
+        formatter2.dateFormat = "yyyyMMdd"
+        return formatter2
     }()
     
     fileprivate lazy var scopeGesture: UIPanGestureRecognizer = {
@@ -107,6 +114,9 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         self.tableView.panGestureRecognizer.require(toFail: self.scopeGesture)
         self.tableView.rowHeight = 26;
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        
+        let showCommitDate:String = formatter2.string(from: Date())
+        setCommitData(date: showCommitDate)
     }
     
     func setFontSize() {
@@ -238,11 +248,12 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
     }
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         print("did select date \(self.formatter.string(from: date))")
-               let selectedDates = calendar.selectedDates.map({self.formatter.string(from: $0)})
-        print("selected dates is \(selectedDates)")
+
         if monthPosition == .next || monthPosition == .previous {
             calendar.setCurrentPage(date, animated: true)
         }
+        
+        setCommitData(date:self.formatter2.string(from: date))
 
     }
     
@@ -304,6 +315,8 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
 
 
 extension MidRepoVC {
+    
+    //커밋 잔디 불러오기
     func setCalendarCommitBackgroundColor(year:Int, month:Int) {
         
         loadingBackgroundView.alpha = 0.5
@@ -318,10 +331,8 @@ extension MidRepoVC {
         
         let userEmail = UserDefaults.standard.string(forKey: "userEmail") ?? ""
         
-        CommitCountService.sharedInstance.getCommit(email: userEmail
-        , month: "\(gsno(selectedYear))\(gsno(selectedMonth))") { (result) in
+        CommitCountService.sharedInstance.getCommit(month: "\(gsno(selectedYear))\(gsno(selectedMonth))") { (result) in
             switch result {
-                
                 
             case .networkSuccess(let data) :
                 
@@ -357,4 +368,41 @@ extension MidRepoVC {
         
     }
     
+    //커밋내역 불러오기
+    func setCommitData(date:String?) {
+
+        CommitListService.sharedInstance.getCommitData(date: date!) { (result) in
+           switch result {
+           
+           case .networkSuccess(let data) :
+            let detailData = data as? CommitListModel
+                            
+            if let resResult = detailData {
+                self.scoreLabel.text = "+\(resResult.data?.score)"
+                self.totalCommitLabel.text = "\(resResult.data?.totalCommit)"
+                self.itemLabel.text = resResult.data?.item ?? "없음"
+                if(resResult.data?.item == "없음") {
+                    //다른 label alpha값 1로 변경(교체)
+                }
+                
+                
+                
+
+
+                
+            }
+            break
+                            
+           case .networkFail :
+            self.networkErrorAlert()
+                            
+           default:
+            self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
+
+            break
+            
+            }
+        }
+    }
+                
 }

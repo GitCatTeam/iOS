@@ -37,7 +37,7 @@ class InstagramVc: UIViewController , WKUIDelegate, WKNavigationDelegate{
     
     func loadURL() {
 
-        let InstagramURL = URL(string: "https://instagram.com/gitcat_app?igshid=r48e9phg6a1g")
+        let InstagramURL = URL(string: "https://instagram.com/gitcat_story")
         let request = URLRequest(url: InstagramURL!)
         
         webView.load(request)

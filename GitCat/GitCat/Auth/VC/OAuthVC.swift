@@ -190,10 +190,13 @@ extension OAuthVC {
     func postDeviceToken() {
         
         let deviceToken = UserDefaults.standard.string(forKey: "deviceToken") ?? ""
+        UserDefaults.standard.set(UUID().uuidString, forKey: "UUID")
+        let uuid = UserDefaults.standard.string(forKey: "UUID")
         
         let params : [String : Any] = [
             "deviceToken" : deviceToken ,
-            "os" : "iOS"
+            "os" : "iOS",
+            "deviceId": uuid!
         ]
         
         PostDeviceTokenService.shareInstance.postDeviceToken(params: params) {(result) in

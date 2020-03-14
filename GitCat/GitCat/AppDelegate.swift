@@ -26,12 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //사용 여부를 묻는다.
             center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
                 guard granted else {
+                    UserDefaults.standard.set(false, forKey: "pushAlarm")
                     print("사용자가 push alarm을 허락하지 않았습니다.")
                     return
                 }
                 
+                UserDefaults.standard.set(true, forKey: "pushAlarm")
                 print("사용자가 push alarm을 허락했습니다.")
-                
+
                 DispatchQueue.main.async {
                     
                     //APNs에 스마트폰을 등록하는 메소드. (네트워크)

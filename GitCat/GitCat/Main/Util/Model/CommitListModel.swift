@@ -12,10 +12,16 @@ class CommitListModel:Codable {
     var data:CommitListDataModel?
 }
 class CommitListDataModel:Codable {
-    var repoName:String?
-    var commit:[CommitListDataDetailModel]?
+    var score:Int?
+    var totalCommit:Int?
+    var item:String?
+    var commits:[CommitListDataDetailModel]?
 }
 class CommitListDataDetailModel:Codable {
+    var repoName:String?
+    var commit:[CommitInfoModel]?
+}
+class CommitInfoModel:Codable {
     var time:String?
     var message:String?
 }

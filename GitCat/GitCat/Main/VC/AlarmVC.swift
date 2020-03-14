@@ -10,6 +10,7 @@ import UIKit
 
 class AlarmVC: UIViewController {
 
+    @IBOutlet weak var pushAlarmSwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,6 +20,15 @@ class AlarmVC: UIViewController {
         
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.CustomColor.brownishGrey]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
+        
+        if(UserDefaults.standard.bool(forKey: "pushAlarm")) {
+            pushAlarmSwitch.isOn = true;
+        }else {
+            pushAlarmSwitch.isOn = false;
+        }
+        
+        
     }
     @IBAction func selectAlarmSystemAction(_ sender: Any) {
         let bellModeAction = UIAlertAction(title: "벨소리", style: .default) { (action) in

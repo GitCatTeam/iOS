@@ -15,7 +15,7 @@ struct CommitCountService: GettableService, APIServie {
     //MARK: GET - https://a.chameleon4switch.cf/calender/monthCommitCount?email=\(email)&month=\(month) (해당 달의 커밋달력 잔디 색 레벨 값 반환)
     
 
-    func getCommit(email:String, month:String, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getCommit(month:String, completion: @escaping (NetworkResult<Any>) -> Void) {
         let commitURL = self.url("/calender/commit-count?date=\(month)")
 
         gettable(commitURL) { (result) in

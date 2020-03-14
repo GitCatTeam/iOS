@@ -11,6 +11,7 @@ import UIKit
 class SettingVC: UIViewController {
 
     @IBOutlet weak var userProfileImage: RoundImageView!
+    @IBOutlet weak var userIdLabel: CustomLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class SettingVC: UIViewController {
         let imageURL = UserDefaults.standard.string(forKey: "userImage")
         
         userProfileImage.setImage(imageURL, defaultImgPath: "imgDefault")
+        userIdLabel.text = UserDefaults.standard.string(forKey: "userId")
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
