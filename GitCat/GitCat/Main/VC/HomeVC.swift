@@ -120,7 +120,6 @@ class HomeVC: UIViewController, TutorialCellDelegate {
 
     @objc func fireTimer() {
         mentPos += 1
-        print("\(mentPos) seconds left")
         self.catChatLabel.text = mentsBox[mentPos]
 
         if mentPos >= 7 {

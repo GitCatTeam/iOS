@@ -22,7 +22,9 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     
     @IBOutlet weak var loadingBackgroundView: UIView!
     @IBOutlet weak var loadingView: UIImageView!
+    @IBOutlet weak var loadingBackgroundView2: UIView!
     
+    @IBOutlet weak var loadingView2: UIImageView!
     @IBOutlet weak var desc1: CustomLabel!
     @IBOutlet weak var desc2: CustomLabel!
     @IBOutlet weak var desc3: CustomLabel!
@@ -35,6 +37,8 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     
     @IBOutlet weak var desc5: CustomLabel!
     
+    @IBOutlet weak var noneItem: CustomLabel!
+    
     
     var commitCountData: CommitCountModel?
     
@@ -42,6 +46,9 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     let headerIdentifier:String = "CustomHeaderTVcell";
     
     var somedays : Array = [String]()
+    
+    var commits = [CommitListDataDetailModel]()
+    
     var repositoryNameDummy: [String] = ["GitCat","카멜레On","이게뭐약"]
     var commitDummy: [String] = ["[UPDATE]레포트 화면 스크롤 동작 추가","[UPDATE]라인차트 추가","[UPDATE]설정 화면 추가","[UPDATE]Github 연동 로그인 기능 추가","[UPDATE]파이차트 추가[UPDATE]백 버튼 커스텀 적[UPDATE]달력 커스텀 적용","[UPDATE]홈화면 탭바 반영","[UPDATE]앱 아이콘 적용","[UPDATE]gitignore 수정","[UPDATE]애니메이션 추가"]
     
@@ -88,6 +95,8 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         loadingBackgroundView.alpha = 1
         loadingView.loadGif(name: "gif_loading2")
         
+        loadingBackgroundView2.alpha = 1
+        loadingView2.loadGif(name: "gif_loading2")
         tableView.allowsSelection = false
         
         setStatusBorderColor()
@@ -128,6 +137,7 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         scoreLabel.dynamicFont(fontSize: 32, name: "BBTreeGo_R")
         totalCommitLabel.dynamicFont(fontSize: 32, name: "BBTreeGo_R")
         itemLabel.dynamicFont(fontSize: 32, name: "BBTreeGo_R")
+        noneItem.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         
         
         
@@ -181,21 +191,24 @@ extension MidRepoVC:  UITableViewDelegate, UITableViewDataSource  {
     // MARK:- UITableViewDataSource
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return repositoryNameDummy.count
+        return commits.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return commitDummy.count
+        
+        
+        return commits.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! CommitDetailTVCell
         
-        cell.commitLabel.text = commitDummy[indexPath.row]
+        cell.commitLabel.text = commits[indexPath.section].commit?[indexPath.row].message ?? ""
+        cell.timeLabel.text = commits[indexPath.section].commit?[indexPath.row].time ?? ""
+ 
         
-        
-        if(indexPath.row == commitDummy.count-1) {
+        if(indexPath.row == commits.count-1) {
             cell.lineView.backgroundColor = UIColor.white
         }else{
              cell.lineView.backgroundColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255)
@@ -219,7 +232,8 @@ extension MidRepoVC:  UITableViewDelegate, UITableViewDataSource  {
         
         let headerCell = tableView.dequeueReusableCell(withIdentifier: headerIdentifier) as! CustomHeaderTVCell
         
-        headerCell.repoNameLabel.text = repositoryNameDummy[section]
+        headerCell.repoNameLabel.text = commits[section].repoName
+        
         headerCell.repoNameLabel.dynamicFont(fontSize: 12, name: "BBTreeG_B")
         return headerCell.contentView
 
@@ -319,8 +333,7 @@ extension MidRepoVC {
     //커밋 잔디 불러오기
     func setCalendarCommitBackgroundColor(year:Int, month:Int) {
         
-        loadingBackgroundView.alpha = 0.5
-        loadingView.alpha = 1
+        loadingBackgroundView.alpha = 1
         
         if (month<10) {
             selectedMonth = ("0" + String(month))
@@ -328,8 +341,6 @@ extension MidRepoVC {
             selectedMonth = String(month)
         }
         selectedYear = String(year)
-        
-        let userEmail = UserDefaults.standard.string(forKey: "userEmail") ?? ""
         
         CommitCountService.sharedInstance.getCommit(month: "\(gsno(selectedYear))\(gsno(selectedMonth))") { (result) in
             switch result {
@@ -345,7 +356,6 @@ extension MidRepoVC {
                     self.commitLevel3 += resResult.data?.commits?.level_3 ?? []
                     
                     self.calendar.reloadData()
-                    self.loadingView.alpha = 0
                     self.loadingBackgroundView.alpha = 0
 
                 }
@@ -353,12 +363,10 @@ extension MidRepoVC {
                 
             case .networkFail :
                 self.networkErrorAlert()
-                self.loadingView.alpha = 0
                 self.loadingBackgroundView.alpha = 0
                 
             default:
                 self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
-                self.loadingView.alpha = 0
                 self.loadingBackgroundView.alpha = 0
                 break
             }
@@ -370,7 +378,7 @@ extension MidRepoVC {
     
     //커밋내역 불러오기
     func setCommitData(date:String?) {
-
+        self.loadingBackgroundView2.alpha = 1
         CommitListService.sharedInstance.getCommitData(date: date!) { (result) in
            switch result {
            
@@ -378,26 +386,32 @@ extension MidRepoVC {
             let detailData = data as? CommitListModel
                             
             if let resResult = detailData {
-                self.scoreLabel.text = "+\(resResult.data?.score)"
-                self.totalCommitLabel.text = "\(resResult.data?.totalCommit)"
+                self.scoreLabel.text = "+\(self.gino(resResult.data?.score))"
+                self.totalCommitLabel.text = "\(self.gino(resResult.data?.totalCommit))"
                 self.itemLabel.text = resResult.data?.item ?? "없음"
                 if(resResult.data?.item == "없음") {
                     //다른 label alpha값 1로 변경(교체)
+                    self.noneItem.alpha = 1
+                    self.itemLabel.alpha = 0
+                }else {
+                    self.noneItem.alpha = 0
+                    self.itemLabel.alpha = 1
                 }
                 
-                
-                
-
-
+                self.commits = resResult.data?.commits ?? []
                 
             }
+            self.tableView.reloadData()
+            self.loadingBackgroundView2.alpha = 0
             break
                             
            case .networkFail :
             self.networkErrorAlert()
+            self.loadingBackgroundView2.alpha = 0
                             
            default:
             self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
+            self.loadingBackgroundView2.alpha = 0
 
             break
             
