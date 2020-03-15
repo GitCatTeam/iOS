@@ -49,9 +49,6 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     
     var commits = [CommitListDataDetailModel]()
     
-    var repositoryNameDummy: [String] = ["GitCat","카멜레On","이게뭐약"]
-    var commitDummy: [String] = ["[UPDATE]레포트 화면 스크롤 동작 추가","[UPDATE]라인차트 추가","[UPDATE]설정 화면 추가","[UPDATE]Github 연동 로그인 기능 추가","[UPDATE]파이차트 추가[UPDATE]백 버튼 커스텀 적[UPDATE]달력 커스텀 적용","[UPDATE]홈화면 탭바 반영","[UPDATE]앱 아이콘 적용","[UPDATE]gitignore 수정","[UPDATE]애니메이션 추가"]
-    
     var visitedMonth:[Bool] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false]
     var currentMonth:Int?
     var currentYear:Int?
