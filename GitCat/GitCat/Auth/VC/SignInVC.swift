@@ -27,7 +27,7 @@ class SignInVC: UIViewController{
         super.viewDidLayoutSubviews()
         loginBtn.circleRadius()
         loginBtn.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
-        loginBtn.addShadow()
+        loginBtn.customShadow(width: 1, height: 1, radius: 2, opacity: 0.1)
     }
     
     func setLabelSize() {

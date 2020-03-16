@@ -20,3 +20,13 @@ class RoundBtn: UIButton {
     
     
 }
+
+class CircleBtn:UIButton {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        self.layer.cornerRadius = self.bounds.width/2
+        self.layer.masksToBounds = true
+        self.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
+    }
+}

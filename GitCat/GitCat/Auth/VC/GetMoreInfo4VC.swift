@@ -23,11 +23,9 @@ class GetMoreInfo4VC: UIViewController {
     
     @IBOutlet weak var basicBtn: UIButton!
     @IBOutlet weak var specialBtn: UIButton!
-    @IBOutlet weak var eventBtn: UIButton!
     
     @IBOutlet weak var basicBtnBottomBorder: UIView!
     @IBOutlet weak var specialBtnBottomBorder: UIView!
-    @IBOutlet weak var eventBtnBottomBorder: UIView!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -47,7 +45,6 @@ class GetMoreInfo4VC: UIViewController {
     
     var commonCatList = [CatDataModel]();
     var specialCatList = [CatDataModel]();
-    var eventCatList = [CatDataModel]();
     var currentCatList = [CatDataModel]();
     
     var catId:Int?
@@ -86,7 +83,6 @@ class GetMoreInfo4VC: UIViewController {
         subTitle.dynamicFont(fontSize: 13, name:"BBTreeGo_R")
         basicBtn.titleLabel?.dynamicFont(fontSize: 15, name:"BBTreeG_B")
         specialBtn.titleLabel?.dynamicFont(fontSize: 15, name:"BBTreeG_B")
-        eventBtn.titleLabel?.dynamicFont(fontSize: 15, name:"BBTreeG_B")
         catNameLabel.dynamicFont(fontSize: 16, name:"BBTreeG_B")
 //        //FIXME - TextField의 글자크기도 동적으로 바꿔야함.
         pageLabel.dynamicFont(fontSize: 11, name:"BBTreeGo_R")
@@ -122,13 +118,7 @@ class GetMoreInfo4VC: UIViewController {
             self.specialBtnBottomBorder.alpha = 1
         }
         
-        if (sender != self.eventBtn) {
-            self.eventBtn.backgroundColor = #colorLiteral(red: 0.9725490196, green: 0.9725490196, blue: 0.9725490196, alpha: 1)
-            self.eventBtn.isSelected = false
-            self.eventBtnBottomBorder.alpha = 0
-        }else {
-            self.eventBtnBottomBorder.alpha = 1
-        }
+
     }
     @IBAction func basicBtnAction(_ sender: Any) {
         self.currentCatList = self.commonCatList;
@@ -141,13 +131,6 @@ class GetMoreInfo4VC: UIViewController {
         self.currentCatList = self.specialCatList;
         self.collectionView.reloadData()
         print("special:\(currentCatList)")
-    }
-    
-    @IBAction func eventBtnAction(_ sender: Any) {
-        self.currentCatList = self.eventCatList;
-        self.collectionView.reloadData()
-        
-        print("event:\(currentCatList)")
     }
     
     @IBAction func nameFieldEditingChangedAction(_ sender: Any) {
@@ -214,10 +197,7 @@ class GetMoreInfo4VC: UIViewController {
         self.specialBtn.layer.borderWidth = 1
         self.specialBtn.layer.borderColor = #colorLiteral(red: 0.7528827786, green: 0.7529742718, blue: 0.752851665, alpha: 1)
         self.specialBtn.topSectionRound(_radius: 7)
-        
-        self.eventBtn.layer.borderWidth = 1
-        self.eventBtn.layer.borderColor = #colorLiteral(red: 0.7528827786, green: 0.7529742718, blue: 0.752851665, alpha: 1)
-        self.eventBtn.topSectionRound(_radius: 7)
+
         
         self.selectBoxView.layer.borderWidth = 1
         self.selectBoxView.layer.borderColor = #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1)
@@ -236,12 +216,9 @@ class GetMoreInfo4VC: UIViewController {
         self.specialBtn.setTitleColor(#colorLiteral(red: 0.4576154947, green: 0.8046417236, blue: 0.9821793437, alpha: 1), for: UIControl.State.selected)
         self.specialBtn.setTitleColor(#colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1), for: UIControl.State.normal)
         
-        self.eventBtn.setTitleColor(#colorLiteral(red: 0.4576154947, green: 0.8046417236, blue: 0.9821793437, alpha: 1), for: UIControl.State.selected)
-        self.eventBtn.setTitleColor(#colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1), for: UIControl.State.normal)
-        
         self.basicBtnBottomBorder.alpha = 1
         self.specialBtnBottomBorder.alpha = 0
-        self.eventBtnBottomBorder.alpha = 0
+
         self.basicBtn.isSelected = true
         
     }
@@ -367,23 +344,19 @@ extension GetMoreInfo4VC {
                 if let resResult = catListData {
                     self.commonCatList = resResult.data?.common ?? []
                     self.specialCatList = resResult.data?.special ?? []
-                    self.eventCatList = resResult.data?.event ?? []
                     
                     self.currentCatList = self.commonCatList;
                     self.collectionView.reloadData()
                     
-//                    self.loadingView.alpha = 0
                 }
                 break
                     
                 case .networkFail :
                     self.networkErrorAlert()
-//                    self.loadingView.alpha = 0
                 break
                     
                 default:
                     self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
-//                    self.loadingView.alpha = 0
                     break
              }
         }

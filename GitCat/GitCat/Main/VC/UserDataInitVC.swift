@@ -10,11 +10,15 @@ import UIKit
 
 class UserDataInitVC: UIViewController {
 
+    @IBOutlet weak var loadingView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadingView.loadGif(name: "gif_cat_loading")
         postUserData()
     
     }
+    
+    
     func postUserData() {
 
         PostUserDataService.shareInstance.postUserData { (result) in

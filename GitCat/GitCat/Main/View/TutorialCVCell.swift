@@ -46,11 +46,6 @@ class TutorialCVCell: UICollectionViewCell {
                 
         self.chapterRoundView.layer.borderColor =  UIColor(red: 137/255, green: 204/255, blue: 246/255, alpha: 1).cgColor
         tutorialStartBtn.circleRadius()
-                
-        self.chapterRoundView.layer.borderColor = #colorLiteral(red: 0.537254902, green: 0.8, blue: 0.9647058824, alpha: 1)
-        self.chapterRoundView.layer.borderWidth = 1.5
-        self.chapterRoundView.layer.cornerRadius = self.chapterRoundView.layer.frame.height/2
-        self.chapterRoundView.layer.masksToBounds = true
         
     }
     

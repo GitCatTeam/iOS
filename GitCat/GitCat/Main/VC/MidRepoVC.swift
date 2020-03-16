@@ -100,7 +100,7 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         setCalendarAppearnce()
         
         if UIDevice.current.model.hasPrefix("iPad") {
-            self.calendarHeightConstraint.constant = 400
+            self.calendarHeightConstraint.constant = 450
         }
 
         let values = Calendar.current.dateComponents([Calendar.Component.month, Calendar.Component.year], from: self.calendar.currentPage)
@@ -177,8 +177,7 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         self.calendar.select(Date())
         self.calendar.scope = .month
         self.calendar.accessibilityIdentifier = "calendar"
-        
-        
+
     }
 }
 
@@ -203,7 +202,8 @@ extension MidRepoVC:  UITableViewDelegate, UITableViewDataSource  {
         
         cell.commitLabel.text = commits[indexPath.section].commit?[indexPath.row].message ?? ""
         cell.timeLabel.text = commits[indexPath.section].commit?[indexPath.row].time ?? ""
- 
+        
+        cell.circleView.circleRadius()
         
         if(indexPath.row == commits.count-1) {
             cell.lineView.backgroundColor = UIColor.white
@@ -222,8 +222,15 @@ extension MidRepoVC:  UITableViewDelegate, UITableViewDataSource  {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20
+        
+        let height = tableView.frame.width/30.4
+        return height
     }
+    
+//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+////        let height = tableView.frame.width/8.62
+//        return 200
+//    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         

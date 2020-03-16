@@ -10,9 +10,11 @@ import UIKit
 
 class GetMoreInfo1VC: UIViewController {
     
-    @IBOutlet weak var femaleBtn: UIButton!
-    @IBOutlet weak var maleBtn: UIButton!
-    @IBOutlet weak var otherBtn: UIButton!
+    @IBOutlet weak var femaleBtn: CircleBtn!
+    @IBOutlet weak var maleBtn: CircleBtn!
+    @IBOutlet weak var otherBtn: CircleBtn!
+    
+  
     @IBOutlet weak var nextBtn: UIButton!
     
     @IBOutlet weak var BigTitle: UILabel!
@@ -70,7 +72,12 @@ class GetMoreInfo1VC: UIViewController {
         let imageURL = UserDefaults.standard.string(forKey: "userImage")
         userProfileImageView.setImage(imageURL, defaultImgPath: "imgDefault")
         
-    birthDatePicker.setValue(UIColor.CustomColor.skyBlue, forKey: "textColor")
+        birthDatePicker.setValue(UIColor.CustomColor.skyBlue, forKey: "textColor")
+        
+        nextBtn.circleRadius()
+        femaleBtn.circleRadius()
+        maleBtn.circleRadius()
+        otherBtn.circleRadius()
     }
     
     func setLabelSize() {
@@ -116,11 +123,12 @@ class GetMoreInfo1VC: UIViewController {
     }
     
     @IBAction func selectGenderAction(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
+        sender.isSelected = true
         nextBtn.isEnabled = true
         nextBtn.backgroundColor = UIColor.CustomColor.skyBlue
         
         if sender == femaleBtn && femaleBtn.isSelected {//여자 버튼 선택되었을 경우
+            
             femaleBtn.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
             
             maleBtn.isSelected = false;

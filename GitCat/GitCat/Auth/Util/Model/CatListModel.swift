@@ -16,7 +16,6 @@ class CatListModel: Codable {
 class CatListDataModel:Codable {
     var common: [CatDataModel]?
     var special: [CatDataModel]?
-    var event: [CatDataModel]?
 }
 class CatDataModel:Codable {
     var id: Int?

@@ -62,12 +62,28 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     
     @IBOutlet weak var catChatBox: UIImageView!
     
+    @IBOutlet weak var graduateTitleLabel: CustomLabel!
+    @IBOutlet weak var graduateSubTitle1: CustomLabel!
+    @IBOutlet weak var graduateSubTitle2: CustomLabel!
+    @IBOutlet weak var graduateCatLabel: CustomLabel!
+    @IBOutlet weak var grduateSubTitle3: CustomLabel!
+    @IBOutlet weak var graduateBtn: RoundBtn!
+    
+    @IBOutlet weak var itemTitleLabel: UILabel!
+    @IBOutlet weak var itemSubTitleLabel: CustomLabel!
+    @IBOutlet weak var itemSubTitleLabel2: CustomLabel!
+    @IBOutlet weak var itemTitleLabel3: CustomLabel!
+    @IBOutlet weak var itemTitleLabel4: CustomLabel!
+    
+    
     @IBOutlet weak var leaveCardTitleLabel: CustomLabel!
     @IBOutlet weak var leaveSubTitle1: CustomLabel!
     @IBOutlet weak var leaveSubTitle2: CustomLabel!
     @IBOutlet weak var leaveSubTitle3: CustomLabel!
     @IBOutlet weak var leaveSubTitle4: CustomLabel!
     @IBOutlet weak var leaveSubTitle5: CustomLabel!
+    @IBOutlet weak var leaveSubTitle6: CustomLabel!
+    
     
     @IBOutlet weak var chatBoxLeadingConstraint: NSLayoutConstraint!
     
@@ -242,7 +258,6 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         
         OverlayView.alpha = 0
         
-        loadingView.alpha = 1
         loadingBackgroundView.alpha = 1
     }
     
@@ -315,11 +330,27 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         catChatLabel.dynamicFont(fontSize: 20, name: "NanumBaeEunHyeCe")
         todayScoreDescLabel.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
         todayScoreLabel.dynamicFont(fontSize: 28, name: "NanumBaeEunHyeCe")
+        
+        
         leftScoreDescLabel.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
         leftScoreLabel.dynamicFont(fontSize: 28, name:"NanumBaeEunHyeCe")
         catNameLabel.dynamicFont(fontSize: 28, name:"NanumBaeEunHyeCe")
         itemLabel.dynamicFont(fontSize: 18, name:"NanumBaeEunHyeCe")
         selectCatBtn.titleLabel?.dynamicFont(fontSize: 14, name: "BBTreeG_B")
+        
+        graduateTitleLabel.dynamicFont(fontSize: 20, name: "BBTreeG_B")
+        graduateSubTitle1.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
+        graduateSubTitle2.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
+        grduateSubTitle3.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
+        graduateCatLabel.dynamicFont(fontSize: 14, name: "BBTreeG_B")
+        graduateBtn.titleLabel?.dynamicFont(fontSize: 14, name: "BBTreeG_B")
+        
+        itemTitleLabel.dynamicFont(fontSize: 20, name: "BBTreeG_B")
+        itemSubTitleLabel.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
+        itemSubTitleLabel2.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
+        itemTitleLabel3.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
+        itemTitleLabel4.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
+        
         
         leaveCardTitleLabel.dynamicFont(fontSize: 20, name: "BBTreeG_B")
         leaveSubTitle1.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
@@ -327,6 +358,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         leaveSubTitle3.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         leaveSubTitle4.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         leaveSubTitle5.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
+        leaveSubTitle6.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         
         
     }

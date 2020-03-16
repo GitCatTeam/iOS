@@ -73,7 +73,7 @@ class GetMoreInfo3VC: UIViewController {
     }
     
     @IBAction func chooseCareer(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
+        sender.isSelected = true
         nextBtn3.isEnabled = true
         nextBtn3.backgroundColor = UIColor.CustomColor.skyBlue
         
