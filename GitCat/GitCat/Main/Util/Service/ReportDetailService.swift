@@ -17,7 +17,7 @@ struct ReportDetailService: GettableService, APIServie {
 
     func getReportDetail(id:Int, completion: @escaping (NetworkResult<Any>) -> Void) {
         
-        let reportDetailURL = self.url("/monthly/detail?id=\(id)")
+        let reportDetailURL = self.url("/report/detail?id=\(id)")
 
         gettable(reportDetailURL) { (result) in
             switch result {

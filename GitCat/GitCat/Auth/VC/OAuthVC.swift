@@ -153,7 +153,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
             }else{
                 UserDefaults.standard.set(true, forKey: "login")
                 
-                let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainTabC")
+                let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "UserDataInitVC")
                 
                 dvc.modalPresentationStyle = .fullScreen
                 

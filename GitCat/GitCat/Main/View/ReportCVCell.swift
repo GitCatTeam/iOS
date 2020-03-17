@@ -32,7 +32,7 @@ class ReportCVCell: UICollectionViewCell {
         self.layer.shadowOpacity = 0.12
         self.layer.masksToBounds = false
         
-        bottomView.bottomSectionRound()
+        bottomView.bottomSectionRound(_radius: 8)
         setFontSize()
     }
     

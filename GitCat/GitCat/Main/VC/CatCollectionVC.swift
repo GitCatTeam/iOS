@@ -65,6 +65,12 @@ class CatCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionV
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width: CGFloat = (view.frame.width - 42) / 2
         let height: CGFloat = ((view.frame.width - 42) / 2) * 0.8 + 53
+        
+        if UIDevice.current.model.hasPrefix("iPad") {
+            let width: CGFloat = (view.frame.width - 42) / 3 - 10
+            let height: CGFloat = ((view.frame.width - 42) / 3) + 53
+            return CGSize(width: width, height: height)
+        }
         return CGSize(width: width, height: height)
     }
     

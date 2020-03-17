@@ -103,7 +103,7 @@ class ReportDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadingView.alpha = 1
+
         loadingBackgroundView.alpha = 1
         
         self.navigationItem.title = reportTitle
@@ -131,17 +131,26 @@ class ReportDetailVC: UIViewController {
         
         setFontSize()
         
+        
     }
-    
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.dottedLine1.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
+        self.dottedLine2.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
+        self.dottedLine3.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
+        self.dottedLine4.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
+    }
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.dottedLine1.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
         self.dottedLine2.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
         self.dottedLine3.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
         self.dottedLine4.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
-        
+
     }
-    
+//
     
     func setFontSize() {
         descLabel1.dynamicFont(fontSize: 14, name: "BBTreeG_B")
@@ -258,11 +267,10 @@ class ReportDetailVC: UIViewController {
         pieChart.drawCenterTextEnabled = true
         pieChart.clipsToBounds = false
         pieChart.highlightPerTapEnabled = false
-        pieChart.transparentCircleColor = nil
+        pieChart.transparentCircleColor = UIColor.clear
+        pieChart.transparentCircleRadiusPercent = 0.0
 
-        
-        
-                
+
         let paragraphStyle = NSMutableParagraphStyle(); paragraphStyle.alignment = .center
                 
         let bounds = UIScreen.main.bounds
@@ -290,7 +298,7 @@ class ReportDetailVC: UIViewController {
         
         //색 리스트 초기화해주는 공간
         
-        let colors = [#colorLiteral(red: 0.4854287505, green: 0.7172181606, blue: 0.8653311133, alpha: 1),#colorLiteral(red: 0.797280252, green: 0.9200312495, blue: 1, alpha: 1), #colorLiteral(red: 0.9469732642, green: 0.981259644, blue: 0.9980216622, alpha: 1), #colorLiteral(red: 0.9332618117, green: 0.9333737493, blue: 0.9332236052, alpha: 1)]
+        let colors = [#colorLiteral(red: 0.537254902, green: 0.8, blue: 0.9647058824, alpha: 1),#colorLiteral(red: 0.797280252, green: 0.9200312495, blue: 1, alpha: 1), #colorLiteral(red: 0.9490196078, green: 0.981259644, blue: 1, alpha: 1), #colorLiteral(red: 0.9332618117, green: 0.9333737493, blue: 0.9332236052, alpha: 1)]
         chartDataSet.colors = colors
         
         
@@ -418,7 +426,7 @@ extension ReportDetailVC {
                         
                         self.statusLabel1.text = resultLanguageList[0].language
                         
-                        self.statusPercentLabel1.text = "\(self.gdno(resultLanguageList[0].percent))"
+                        self.statusPercentLabel1.text = "\(self.gdno(resResult.data?.languageRatio?.percentArray[0]))%"
                         
                     }else if (resultLanguageList.count == 2) {
                         self.statusView1.alpha = 1
@@ -427,8 +435,8 @@ extension ReportDetailVC {
                         self.statusLabel1.text = resultLanguageList[0].language
                         self.statusLabel2.text = resultLanguageList[1].language
                         
-                        self.statusPercentLabel1.text = "\(self.gdno(resultLanguageList[0].percent))"
-                        self.statusPercentLabel2.text = "\(self.gdno(resultLanguageList[1].percent))"
+                        self.statusPercentLabel1.text = "\(self.gdno(resResult.data?.languageRatio?.percentArray[0]))%"
+                        self.statusPercentLabel2.text = "\(self.gdno(resResult.data?.languageRatio?.percentArray[1]))%"
                         
                     }else if (resultLanguageList.count == 3) {
                         self.statusView1.alpha = 1
@@ -439,9 +447,9 @@ extension ReportDetailVC {
                         self.statusLabel2.text = resultLanguageList[1].language
                         self.statusLabel3.text = resultLanguageList[2].language
                         
-                        self.statusPercentLabel1.text = "\(self.gdno(resultLanguageList[0].percent))"
-                        self.statusPercentLabel2.text = "\(self.gdno(resultLanguageList[1].percent))"
-                        self.statusPercentLabel3.text = "\(self.gdno(resultLanguageList[2].percent))"
+                        self.statusPercentLabel1.text = "\(self.gdno(resResult.data?.languageRatio?.percentArray[0]))%"
+                        self.statusPercentLabel2.text = "\(self.gdno(resResult.data?.languageRatio?.percentArray[1]))%"
+                        self.statusPercentLabel3.text = "\(self.gdno(resResult.data?.languageRatio?.percentArray[2]))%"
                         
                     }else if (resultLanguageList.count == 4) {
                         self.statusView1.alpha = 1
@@ -454,10 +462,12 @@ extension ReportDetailVC {
                         self.statusLabel3.text = resultLanguageList[2].language
                         self.statusLabel4.text = resultLanguageList[3].language
                         
-                        self.statusPercentLabel1.text = "\(self.gdno(resultLanguageList[0].percent))"
-                        self.statusPercentLabel2.text = "\(self.gdno(resultLanguageList[1].percent))"
-                        self.statusPercentLabel2.text = "\(self.gdno(resultLanguageList[2].percent))"
-                        self.statusPercentLabel2.text = "\(self.gdno(resultLanguageList[3].percent))"
+                        self.statusPercentLabel1.text = "\(self.gdno(resResult.data?.languageRatio?.percentArray[0]))%"
+                        self.statusPercentLabel2.text = "\(self.gdno(resResult.data?.languageRatio?.percentArray[1]))%"
+                        self.statusPercentLabel3.text = "\(self.gdno(resResult.data?.languageRatio?.percentArray[2]))%"
+                        self.statusPercentLabel4.text = "\(self.gdno(resResult.data?.languageRatio?.percentArray[3]))%"
+                        
+        
                     }
                     
                     self.repositories = resResult.data?.contributedRepository?.repoNames as! [String]

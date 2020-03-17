@@ -17,9 +17,9 @@ class CatCollectionCVCell: UICollectionViewCell {
     @IBOutlet weak var carBoderView: UIView!
     @IBOutlet weak var catImageView: UIImageView!
     
+    @IBOutlet weak var catNameDescLabel: CustomLabel!
+    @IBOutlet weak var catResultDescLabel: CustomLabel!
     @IBOutlet weak var catNameLabel: UILabel!
-    
-    @IBOutlet weak var majorLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     
     override func awakeFromNib() {
@@ -40,6 +40,14 @@ class CatCollectionCVCell: UICollectionViewCell {
         carBoderView.layer.borderColor = UIColor(red: 236/255, green: 236/255, blue: 236/255, alpha: 1).cgColor
         carBoderView.layer.borderWidth = 1
         
+        setFontSize() 
+    }
+    
+    func setFontSize() {
+        catNameLabel.dynamicFont(fontSize: 16, name: "NanumBaeEunHyeCe")
+        catNameDescLabel.dynamicFont(fontSize: 16, name: "NanumBaeEunHyeCe")
+        catResultDescLabel.dynamicFont(fontSize: 16, name: "NanumBaeEunHyeCe")
+        resultLabel.dynamicFont(fontSize: 16, name: "NanumBaeEunHyeCe")
     }
     
 }
