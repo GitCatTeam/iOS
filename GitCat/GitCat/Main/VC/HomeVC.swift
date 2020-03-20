@@ -554,7 +554,7 @@ extension HomeVC {
 
                         self.catImageView.kf.setImage(with: url)
                         self.itemLabel.text = "("+(resResult.data?.nextLevelStr ?? "")+")"
-                        
+                        self.leftScoreLabel.text = "\(self.gino(resResult.data?.nextLevelScore))"
                         self.catChatLabel.text = resResult.data?.ments?[0]
                         self.mentsBox = resResult.data?.ments ?? []
                         

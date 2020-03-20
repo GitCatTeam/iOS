@@ -19,7 +19,6 @@ class CatListDataModel:Codable {
 }
 class CatDataModel:Codable {
     var id: Int?
-    var code: String?
     var profileImg: String?
     var const: Int?
     var payType: String?
