@@ -94,6 +94,7 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         
         loadingBackgroundView2.alpha = 1
         loadingView2.loadGif(name: "gif_loading2")
+        
         tableView.allowsSelection = false
         
         setStatusBorderColor()
@@ -135,9 +136,7 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         totalCommitLabel.dynamicFont(fontSize: 32, name: "BBTreeGo_R")
         itemLabel.dynamicFont(fontSize: 32, name: "BBTreeGo_R")
         noneItem.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
-        
-        
-        
+
     }
 
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -227,11 +226,6 @@ extension MidRepoVC:  UITableViewDelegate, UITableViewDataSource  {
         return height
     }
     
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-////        let height = tableView.frame.width/8.62
-//        return 200
-//    }
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let headerCell = tableView.dequeueReusableCell(withIdentifier: headerIdentifier) as! CustomHeaderTVCell
@@ -265,7 +259,6 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
         }
     }
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        print("did select date \(self.formatter.string(from: date))")
 
         if monthPosition == .next || monthPosition == .previous {
             calendar.setCurrentPage(date, animated: true)
@@ -285,19 +278,15 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
         
         if(currentYear != intYear) {
             currentYear = intYear
-            print("바뀐년도:\(intYear)")
             visitedMonth = [false, false, false, false, false, false, false, false, false, false, false, false, false, false]
             
             visitedMonth[intMonth] = true
-            print(visitedMonth)
-            print("새로운 년도, 달력 넘김: \(intYear)년 \(intMonth)월")
+
             
             setCalendarCommitBackgroundColor(year: intYear, month: intMonth)
         }
         else if(visitedMonth[intMonth] != true) {
             visitedMonth[intMonth] = true
-            
-            print("새로운 달, 달력 넘김: \(intYear)년 \(intMonth)월")
             
             setCalendarCommitBackgroundColor(year: intYear, month: intMonth)
         }

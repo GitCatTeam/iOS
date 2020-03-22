@@ -63,9 +63,9 @@ class GetMoreInfo3VC: UIViewController {
         subTitle.dynamicFont(fontSize: 13, name:"BBTreeGo_R")
         
         interestInDevBtn.titleLabel?.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
-    studentBtn.titleLabel?.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
-    OneYearDevBtn.titleLabel?.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
-    ThreeYearDevBtn.titleLabel?.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
+        studentBtn.titleLabel?.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
+        OneYearDevBtn.titleLabel?.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
+        ThreeYearDevBtn.titleLabel?.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
         MoreThanFiveYearDevBtn.titleLabel?.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
         
         nextBtn3.titleLabel?.dynamicFont(fontSize: 16, name:"BBTreeG_B")

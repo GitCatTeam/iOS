@@ -15,9 +15,6 @@ class CustomHeaderTVCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    
 
-
-    
 
 }

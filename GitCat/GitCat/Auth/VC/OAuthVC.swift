@@ -13,6 +13,7 @@ import SystemConfiguration
 import CryptoSwift
 
 public class Reachabilty{
+    
     class func isConnectedToNetwork() ->Bool {
         var zeroAddress = sockaddr_in(sin_len: 0, sin_family: 0, sin_port: 0, sin_addr: in_addr(s_addr:0), sin_zero: (0, 0, 0, 0, 0, 0, 0, 0))
         zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
@@ -38,6 +39,7 @@ public class Reachabilty{
         return ret
     }
 }
+
 class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler{
 
     @IBOutlet var webView: WKWebView!
@@ -61,13 +63,11 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
         self.view.addSubview(webView)
         
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadURL()
         setBackBtn(color: UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1))
-       
-
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -78,13 +78,11 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
     
     func loadURL() {
         
-        
         let OAuthURL = URL(string: "https://a.gitcat.app/api/auth/github")
         
         let request = URLRequest(url: OAuthURL!)
         
         webView.load(request)
-        
     }
     
     

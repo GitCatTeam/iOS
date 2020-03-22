@@ -127,20 +127,11 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         }
         
     }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         setStyle()
         setLabelFontSize()
-        
-    }
-
-    @objc func fireTimer() {
-        mentPos += 1
-        self.catChatLabel.text = mentsBox[mentPos]
-
-        if mentPos >= 7 {
-            mentPos = -1
-        }
     }
 
     
@@ -215,6 +206,15 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         });
     }
     
+    @objc func fireTimer() {
+        mentPos += 1
+        self.catChatLabel.text = mentsBox[mentPos]
+
+        if mentPos >= 7 {
+            mentPos = -1
+        }
+    }
+    
     func startTutorialAction() {
         UIView.animate(withDuration: 0.5, animations: {
             
@@ -264,9 +264,9 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     func setStyle() {
         highlightView.layer.borderWidth = 0
         
-        graduateCardView.roundRadius()
+        graduateCardView.roundRadius(radius: 10)
         graduateCardView.customShadow(width: 1, height: 2, radius: 11, opacity: 0.16)
-        itemUpgradeCardView.roundRadius()
+        itemUpgradeCardView.roundRadius(radius: 10)
         itemUpgradeCardView.customShadow(width: 1, height: 2, radius: 11, opacity: 0.16)
         
         loadingView.loadGif(name: "gif_loading2")
@@ -276,7 +276,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         selectCatBtn.customShadow(width: 1, height: 1, radius: 56.5, opacity: 0.1)
         catChatLabel.setLineHeight(lineHeight: 0.8)
         
-        leaveCardView.roundRadius()
+        leaveCardView.roundRadius(radius: 10)
         leaveCardView.customShadow(width: 1, height: 1, radius: 56.5, opacity: 0.1)
         
     }
@@ -409,10 +409,8 @@ class HomeVC: UIViewController, TutorialCellDelegate {
             
         })
     }
-
     
 }
-
 
 
 extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -526,7 +524,6 @@ extension HomeVC : UICollectionViewDelegateFlowLayout {
 
         }
     }
-    
     
 }
 

@@ -150,7 +150,6 @@ class ReportDetailVC: UIViewController {
         self.dottedLine4.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
 
     }
-//
     
     func setFontSize() {
         descLabel1.dynamicFont(fontSize: 14, name: "BBTreeG_B")

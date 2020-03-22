@@ -26,7 +26,6 @@ class CatCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionV
         
         getCatCollection()
         
-        //TODO: navigation bar title 색 바꾸기
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor(red: 137/255, green: 204/255, blue: 246/255, alpha: 1)]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         

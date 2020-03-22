@@ -49,6 +49,11 @@ class TutorialCVCell: UICollectionViewCell {
         
     }
     
+    @IBAction func startTutorialAction(_ sender: Any) {
+        self.delegate.startTutorialAction()
+        
+    }
+    
     func setLabelFontSize() {
         title.dynamicFont(fontSize: 20, name: "BBTreeG_B")
         
@@ -58,11 +63,6 @@ class TutorialCVCell: UICollectionViewCell {
         chapterNumberLabel.dynamicFont(fontSize: 18, name: "BBTreeG_B")
         
         tutorialStartBtn.titleLabel?.dynamicFont(fontSize: 14, name: "BBTreeG_B")
-    }
-    
-    @IBAction func startTutorialAction(_ sender: Any) {
-        self.delegate.startTutorialAction()
-        
     }
     
 }

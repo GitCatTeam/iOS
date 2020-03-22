@@ -22,6 +22,7 @@ class SettingVC: UIViewController {
         userProfileImage.setImage(imageURL, defaultImgPath: "imgDefault")
         userIdLabel.text = UserDefaults.standard.string(forKey: "userId")
     }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         userProfileImage.circleRadius()
@@ -39,13 +40,10 @@ class SettingVC: UIViewController {
         alert.addAction(confirmModeAction)
         alert.addAction(cancleModeAction)
         
-        
-        
         present(alert, animated:true){
             //함수가 성공적으로 수행된 후 작동되는 code
         }
         
     }
-    
 
 }

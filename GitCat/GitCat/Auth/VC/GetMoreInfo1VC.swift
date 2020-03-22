@@ -35,7 +35,6 @@ class GetMoreInfo1VC: UIViewController {
     
     
     var clickBtnCnt = 0
-    
     var userGender:String?
     var userBirthday:String?
     
@@ -80,26 +79,12 @@ class GetMoreInfo1VC: UIViewController {
         otherBtn.circleRadius()
     }
     
-    func setLabelSize() {
-        BigTitle.dynamicFont(fontSize: 22, name:"BBTreeG_B")
-        subTitle.dynamicFont(fontSize: 13, name:"BBTreeGo_R")
-        userEmailLabel.dynamicFont(fontSize: 18, name:"BBTreeG_B")
-        sexLabel.dynamicFont(fontSize: 16, name:"BBTreeG_B")
-        femaleBtn.titleLabel?.dynamicFont(fontSize: 14,  name:"BBTreeG_B")
-        maleBtn.titleLabel?.dynamicFont(fontSize: 14,  name:"BBTreeG_B")
-        otherBtn.titleLabel?.dynamicFont(fontSize: 14,  name:"BBTreeG_B")
-        pageLabel.dynamicFont(fontSize: 12, name:"BBTreeGo_R")
-        
-        nextBtn.titleLabel?.dynamicFont(fontSize: 16, name:"BBTreeG_B")
-    }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("화면 나타남")
         
         clickBtnCnt = 0
+        
         nextBtn.backgroundColor = #colorLiteral(red: 0.862745098, green: 0.8666666667, blue: 0.8823529412, alpha: 1)
-        self.sexStackView.alpha = 1
-        self.birthDatePicker.alpha = 0
         nextBtn.isEnabled = false
         
         femaleBtn.isSelected = false
@@ -208,6 +193,7 @@ class GetMoreInfo1VC: UIViewController {
     구현 함수
     **/
     func initAlpha() {
+        
            self.BigTitle.alpha = 0
            self.subTitle.alpha = 0
            self.userProfileImageView.alpha = 0
@@ -234,13 +220,27 @@ class GetMoreInfo1VC: UIViewController {
                self.sexStackView.alpha = 1
                
            }))
-       }
+    }
+    
+    func setLabelSize() {
+        BigTitle.dynamicFont(fontSize: 22, name:"BBTreeG_B")
+        subTitle.dynamicFont(fontSize: 13, name:"BBTreeGo_R")
+        userEmailLabel.dynamicFont(fontSize: 18, name:"BBTreeG_B")
+        sexLabel.dynamicFont(fontSize: 16, name:"BBTreeG_B")
+        femaleBtn.titleLabel?.dynamicFont(fontSize: 14,  name:"BBTreeG_B")
+        maleBtn.titleLabel?.dynamicFont(fontSize: 14,  name:"BBTreeG_B")
+        otherBtn.titleLabel?.dynamicFont(fontSize: 14,  name:"BBTreeG_B")
+        pageLabel.dynamicFont(fontSize: 12, name:"BBTreeGo_R")
+        
+        nextBtn.titleLabel?.dynamicFont(fontSize: 16, name:"BBTreeG_B")
+    }
     
     func setButtonSelect() {
         femaleBtn.isSelected = false
         maleBtn.isSelected = false
         otherBtn.isSelected = false
     }
+    
     func setButtonColor() {
         //여자 버튼 기본 상태 초기화
         femaleBtn.setTitleColor(#colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1), for: UIControl.State.normal)

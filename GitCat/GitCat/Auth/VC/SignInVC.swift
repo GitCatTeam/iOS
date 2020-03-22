@@ -29,12 +29,6 @@ class SignInVC: UIViewController{
         loginBtn.layer.borderColor = UIColor.CustomColor.skyBlue.cgColor
         loginBtn.customShadow(width: 1, height: 1, radius: 2, opacity: 0.1)
     }
-    
-    func setLabelSize() {
-        subTitleLabel.dynamicFont(fontSize: 17, name: "BBTreeGo_R")
-        loginBtn.titleLabel?.dynamicFont(fontSize: 14, name:"BBTreeG_B")
-        
-    }
 
     @IBAction func signInTouchUpAction(_ sender: UIButton) {
         
@@ -53,6 +47,12 @@ class SignInVC: UIViewController{
         
         sender.backgroundColor = UIColor.CustomColor.skyBlue
         sender.setTitleColor(UIColor.white, for: UIControl.State.highlighted)
+    }
+    
+    func setLabelSize() {
+        subTitleLabel.dynamicFont(fontSize: 17, name: "BBTreeGo_R")
+        loginBtn.titleLabel?.dynamicFont(fontSize: 14, name:"BBTreeG_B")
+        
     }
 
     

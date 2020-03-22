@@ -34,9 +34,9 @@ extension UIView {
         self.layer.masksToBounds = true
     }
     
-    func roundRadius(){ //조금 라운드 주는 extension 만들 예정
+    func roundRadius(radius:CGFloat){ //조금 라운드 주는 extension 만들 예정
         
-        self.layer.cornerRadius = 10
+        self.layer.cornerRadius = radius
         self.layer.masksToBounds = true
         
     }
@@ -57,34 +57,9 @@ extension UIView {
         self.layer.shadowOpacity = opacity
         self.layer.masksToBounds = false
     }
-    
-    //뷰 테두리 설정
-    func addBorder(_ mask: CAShapeLayer, borderWidth: CGFloat, borderColor: UIColor) {
-        self.layer.masksToBounds = true
-        let borderLayer = CAShapeLayer()
-        borderLayer.path = mask.path
-        borderLayer.fillColor = UIColor.clear.cgColor
-        borderLayer.strokeColor = borderColor.cgColor
-        borderLayer.lineWidth = borderWidth
-        borderLayer.frame = bounds
-        layer.addSublayer(borderLayer)
-        
-    }
-    
+
     //그림자 추가
-    func dropShadow(scale: Bool = true) {
-        self.clipsToBounds = true
-        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: 10).cgPath
-        
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOpacity = 0.5
-        self.layer.shadowOffset = CGSize(width: -1, height: 1)
-        self.layer.shadowRadius = 3
-        
-        self.layer.shadowPath = UIBezierPath(rect: bounds).cgPath
-        self.layer.shouldRasterize = true
-        self.layer.rasterizationScale = scale ? UIScreen.main.scale : 1
-    }
+
     func topSectionRound(_radius:CGFloat = 10) {
         self.clipsToBounds = true
         self.layer.cornerRadius = _radius
