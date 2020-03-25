@@ -191,7 +191,6 @@ extension MidRepoVC:  UITableViewDelegate, UITableViewDataSource  {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        print("count:\(commits[section].commit?.count)")
         return commits[section].commit?.count ?? 0
     }
     

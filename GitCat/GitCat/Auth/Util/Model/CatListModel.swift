@@ -14,13 +14,14 @@ class CatListModel: Codable {
 }
 
 class CatListDataModel:Codable {
-    var common: [CatDataModel]?
+    var normal: [CatDataModel]?
     var special: [CatDataModel]?
 }
 class CatDataModel:Codable {
     var id: Int?
     var profileImg: String?
-    var const: Int?
+    var cost: Int?
+    var description:String?
     var payType: String?
     var isAvailable: Bool?
 }

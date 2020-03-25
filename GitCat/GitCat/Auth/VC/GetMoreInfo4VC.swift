@@ -39,6 +39,14 @@ class GetMoreInfo4VC: UIViewController {
     
     @IBOutlet weak var pageLabel: UILabel!
     
+    @IBOutlet weak var preparingView: UIImageView!
+    @IBOutlet weak var preparingLavel: UILabel!
+    
+    @IBOutlet weak var alertView: UIView!
+    
+    @IBOutlet weak var alertTitleLabel: CustomLabel!
+    @IBOutlet weak var alertSubTitleLabel: CustomLabel!
+    
     var keyboardShown:Bool = false // 키보드 상태 확인
     var nameFieldShow:Bool = false //애니메이션 시작 플래그
     var originY:CGFloat? // 오브젝트의 기본 위치
@@ -86,7 +94,10 @@ class GetMoreInfo4VC: UIViewController {
         catNameLabel.dynamicFont(fontSize: 16, name:"BBTreeG_B")
 //        //FIXME - TextField의 글자크기도 동적으로 바꿔야함.
         pageLabel.dynamicFont(fontSize: 11, name:"BBTreeGo_R")
+        preparingLavel.dynamicFont(fontSize: 15, name: "BBTreeG_B")
         catNameTextField.adjustsFontSizeToFitWidth = true
+        alertTitleLabel.dynamicFont(fontSize: 20, name: "BBTreeG_B")
+        alertSubTitleLabel.dynamicFont(fontSize: 14, name: "BBTreeGo_R ")
         
     }
     
@@ -125,12 +136,20 @@ class GetMoreInfo4VC: UIViewController {
         self.collectionView.reloadData()
         
         print("common:\(currentCatList)")
+        
+        preparingLavel.alpha = 0
+        preparingView.alpha = 0
     }
     
     @IBAction func specialBtnAction(_ sender: Any) {
         self.currentCatList = self.specialCatList;
         self.collectionView.reloadData()
         print("special:\(currentCatList)")
+        
+        preparingLavel.alpha = 1
+        preparingView.alpha = 1
+        
+        
     }
     
     @IBAction func nameFieldEditingChangedAction(_ sender: Any) {
@@ -158,6 +177,12 @@ class GetMoreInfo4VC: UIViewController {
         postCat(catId: catId, catName: catName)
     }
     
+    @IBAction func closeAlertViewAction(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.alertView.alpha = 0
+        });
+    }
+    
     /**
      구현 함수
      */
@@ -169,6 +194,10 @@ class GetMoreInfo4VC: UIViewController {
         self.catNameLabel.alpha = 0
         self.catNameTextField.alpha = 0
         self.catNameUnderBar.alpha = 0
+        self.preparingLavel.alpha = 0
+        self.preparingView.alpha = 0
+        
+        self.alertView.alpha = 0
     }
     
    
@@ -206,6 +235,9 @@ class GetMoreInfo4VC: UIViewController {
         self.collectionView.layer.borderWidth = 1
         self.collectionView.layer.borderColor = #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1)
         self.collectionView.layer.cornerRadius = 13
+        
+        alertView.roundRadius(radius: 10)
+        alertView.customShadow(width: 1, height: 2, radius: 11, opacity: 0.16)
     }
     
     func setButtonSelect() {
@@ -315,13 +347,17 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //FIXME: 이거 안됨
-        let selectedCell:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as! SelectCatCVCell
-        selectedCell.roundView.layer.borderColor = #colorLiteral(red: 0.4652857184, green: 0.8005116582, blue: 0.9823767543, alpha: 1)
-        
-        showCatNameTextField()
-
+        if(currentCatList[indexPath.row].isAvailable! != false) {
+            let selectedCell:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as! SelectCatCVCell
+            selectedCell.roundView.layer.borderColor = #colorLiteral(red: 0.4652857184, green: 0.8005116582, blue: 0.9823767543, alpha: 1)
+            
+            showCatNameTextField()
+        }else{
+            showAlertView()
+            alertSubTitleLabel.text = gsno(currentCatList[indexPath.row].description)
+        }
     }
+    
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
         let cellToDeselect:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as! SelectCatCVCell
@@ -331,6 +367,12 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
         catId = currentCatList[indexPath.row].id
 
 
+    }
+    
+    func showAlertView() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.alertView.alpha = 1
+        });
     }
 }
 extension GetMoreInfo4VC {
@@ -342,7 +384,7 @@ extension GetMoreInfo4VC {
             case .networkSuccess(let data):
                 let catListData = data as? CatListModel
                 if let resResult = catListData {
-                    self.commonCatList = resResult.data?.common ?? []
+                    self.commonCatList = resResult.data?.normal ?? []
                     self.specialCatList = resResult.data?.special ?? []
                     
                     self.currentCatList = self.commonCatList;

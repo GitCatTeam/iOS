@@ -100,7 +100,7 @@
                                         <rect key="frame" x="117" y="521.5" width="180" height="100"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icBluelineIos" translatesAutoresizingMaskIntoConstraints="NO" id="F0Z-am-QuV">
-                                                <rect key="frame" x="47" y="22.5" width="86" height="14"/>
+                                                <rect key="frame" x="47" y="22" width="86" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="cOU-EX-XMH"/>
                                                     <constraint firstAttribute="width" constant="86" id="sOR-mc-EQy"/>
@@ -162,7 +162,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKA-DH-nse">
-                                                <rect key="frame" x="86.5" y="40" width="7" height="32.5"/>
+                                                <rect key="frame" x="86.5" y="40" width="7" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="7.3300000000000001" id="0nh-pR-MhV"/>
                                                     <constraint firstAttribute="height" constant="32.333333333333343" id="aSa-ub-bbq"/>
@@ -172,7 +172,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GKz-VB-NUN">
-                                                <rect key="frame" x="85.5" y="69" width="10.5" height="32.5"/>
+                                                <rect key="frame" x="85.5" y="68.5" width="10.5" height="32.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32.5" id="9kL-E6-UIC"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10.5" id="VXc-uJ-x48"/>
@@ -246,7 +246,7 @@
                                     <constraint firstItem="jpT-oy-ivw" firstAttribute="top" secondItem="Ij8-R6-xin" secondAttribute="top" id="sjn-kt-WE5"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XBn-Zb-Elt">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XBn-Zb-Elt">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AUr-sS-Tib">
@@ -501,16 +501,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFR-MW-nvy">
-                                        <rect key="frame" x="-53" y="140.5" width="520" height="615"/>
+                                        <rect key="frame" x="84.5" y="302.5" width="245" height="291"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgModuleItem" translatesAutoresizingMaskIntoConstraints="NO" id="8Qs-UX-men">
-                                                <rect key="frame" x="35" y="20" width="450" height="369"/>
+                                                <rect key="frame" x="16.5" y="20" width="212" height="174"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="8Qs-UX-men" secondAttribute="height" multiplier="106:87" id="aMe-Jw-AZm"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이템 업그레이드!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugs-4V-pt6">
-                                                <rect key="frame" x="196.5" y="52" width="127" height="21"/>
+                                                <rect key="frame" x="59" y="52" width="127" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="XTs-sb-KDx"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="127" id="YaH-Nc-lW1"/>
@@ -520,10 +520,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZ1-D5-8me">
-                                                <rect key="frame" x="110.5" y="399" width="299" height="14"/>
+                                                <rect key="frame" x="52" y="204" width="141" height="14"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="고양이이름" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gD-6d-BiD" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                        <rect key="frame" x="1.5" y="0.0" width="131.5" height="14"/>
+                                                        <rect key="frame" x="0.5" y="0.0" width="62.5" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="q7A-Xc-EIA"/>
                                                         </constraints>
@@ -537,7 +537,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="씨의 아이템이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfe-NI-uW8" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                        <rect key="frame" x="133" y="0.0" width="166" height="14"/>
+                                                        <rect key="frame" x="63" y="0.0" width="78" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="14" id="bri-Mg-2ky"/>
                                                         </constraints>
@@ -563,7 +563,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="업그레이드 되었어요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoP-FS-FTA" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="200.5" y="432.5" width="119" height="14"/>
+                                                <rect key="frame" x="63" y="221" width="119" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="119" id="86y-Rh-pwE"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="kPH-ob-X50"/>
@@ -578,7 +578,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개발이 좀 더 수월해지겠어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gW1-LU-f5l" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="178" y="465.5" width="164" height="20"/>
+                                                <rect key="frame" x="40.5" y="238" width="164" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20.329999999999998" id="5SC-S1-HfK"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="164" id="7NX-xe-uiB"/>
@@ -593,7 +593,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYx-iG-t6d" customClass="RoundBtn" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="479" y="11" width="30" height="30"/>
+                                                <rect key="frame" x="204" y="11" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="GYx-iG-t6d" secondAttribute="height" multiplier="1:1" id="A7g-9t-1ve"/>
                                                 </constraints>
@@ -603,7 +603,7 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icModulex" translatesAutoresizingMaskIntoConstraints="NO" id="0kA-HH-Lyi">
-                                                <rect key="frame" x="487" y="19" width="14" height="14"/>
+                                                <rect key="frame" x="212" y="19" width="14" height="14"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -619,27 +619,27 @@
                                             <constraint firstItem="8Qs-UX-men" firstAttribute="top" secondItem="qFR-MW-nvy" secondAttribute="top" constant="20" id="N4L-9D-NNj"/>
                                             <constraint firstAttribute="trailing" secondItem="GYx-iG-t6d" secondAttribute="trailing" constant="11" id="Tcz-bF-Npc"/>
                                             <constraint firstItem="Ugs-4V-pt6" firstAttribute="centerX" secondItem="qFR-MW-nvy" secondAttribute="centerX" id="aDq-XF-ZeZ"/>
+                                            <constraint firstAttribute="width" secondItem="qFR-MW-nvy" secondAttribute="height" multiplier="245:291" id="jk4-bZ-LPv"/>
                                             <constraint firstItem="gW1-LU-f5l" firstAttribute="top" secondItem="eoP-FS-FTA" secondAttribute="top" multiplier="240/223" id="nza-KB-88T"/>
                                             <constraint firstItem="sZ1-D5-8me" firstAttribute="top" secondItem="8Qs-UX-men" secondAttribute="bottom" constant="10" id="oJR-bh-9X8"/>
                                             <constraint firstItem="0kA-HH-Lyi" firstAttribute="width" secondItem="GYx-iG-t6d" secondAttribute="width" multiplier="0.466667" id="pk8-3d-JCB"/>
                                             <constraint firstItem="8Qs-UX-men" firstAttribute="centerX" secondItem="qFR-MW-nvy" secondAttribute="centerX" id="sJH-IM-m1g"/>
-                                            <constraint firstAttribute="width" secondItem="qFR-MW-nvy" secondAttribute="height" multiplier="49:58" id="tMf-3d-hys"/>
                                             <constraint firstItem="0kA-HH-Lyi" firstAttribute="height" secondItem="GYx-iG-t6d" secondAttribute="height" multiplier="0.466667" id="wGA-7y-5fQ"/>
                                             <constraint firstItem="0kA-HH-Lyi" firstAttribute="centerX" secondItem="GYx-iG-t6d" secondAttribute="centerX" id="xhM-wD-Wkr"/>
                                             <constraint firstItem="sZ1-D5-8me" firstAttribute="centerX" secondItem="qFR-MW-nvy" secondAttribute="centerX" id="yJo-9d-uzW"/>
                                         </constraints>
                                     </view>
                                     <view opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4uT-oU-thp">
-                                        <rect key="frame" x="-53" y="68" width="520" height="760"/>
+                                        <rect key="frame" x="84.5" y="269" width="245" height="358"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgModuleGradu" translatesAutoresizingMaskIntoConstraints="NO" id="57L-EZ-9kA">
-                                                <rect key="frame" x="35" y="42.5" width="450" height="369.5"/>
+                                                <rect key="frame" x="16.5" y="20" width="212" height="174"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="57L-EZ-9kA" secondAttribute="height" multiplier="106:87" id="zHB-ee-UAB"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="졸업을 축하해요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xe-fH-EJa" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="192.5" y="110.5" width="135" height="20"/>
+                                                <rect key="frame" x="55" y="52" width="135" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="135" id="eRg-8H-9R5"/>
                                                     <constraint firstAttribute="height" constant="20" id="jgo-M7-IbS"/>
@@ -654,7 +654,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="축하합니다~!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLs-zq-PQw" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="215" y="422" width="90" height="21"/>
+                                                <rect key="frame" x="77.5" y="204" width="90" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="Mer-0b-fbX"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="eCA-lE-QJ5"/>
@@ -669,10 +669,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KwY-UZ-IHy">
-                                                <rect key="frame" x="35" y="465" width="450" height="21"/>
+                                                <rect key="frame" x="16.5" y="225" width="212" height="21"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="고양이이름" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K03-1g-SIi" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                        <rect key="frame" x="21.5" y="3.5" width="131.5" height="14"/>
+                                                        <rect key="frame" x="10" y="3.5" width="62" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="H5n-tA-DUH"/>
                                                         </constraints>
@@ -686,7 +686,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="씨가 졸업하게 되었어요." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCf-Tc-o5W" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                        <rect key="frame" x="153" y="3.5" width="297" height="14"/>
+                                                        <rect key="frame" x="72" y="3.5" width="140" height="14"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="YZG-WX-prr"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="s6l-fG-QDi"/>
@@ -713,7 +713,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="그동안 수고하셨어요 :)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i40-F7-cgt" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="196" y="508.5" width="128" height="14"/>
+                                                <rect key="frame" x="58.5" y="246" width="128" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="127.67" id="WIe-6f-fuw"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="lct-ZI-9cS"/>
@@ -728,7 +728,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rti-7X-lTq" customClass="RoundBtn" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="85" y="649" width="350" height="76.5"/>
+                                                <rect key="frame" x="40" y="287.5" width="165" height="36"/>
                                                 <color key="backgroundColor" name="skyBlue"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="rti-7X-lTq" secondAttribute="height" multiplier="55:12" id="70w-O5-6w8"/>
@@ -741,7 +741,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qth-FX-gQb">
-                                                <rect key="frame" x="468.5" y="11" width="40.5" height="40.5"/>
+                                                <rect key="frame" x="215" y="11" width="19" height="19"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="qth-FX-gQb" secondAttribute="height" multiplier="1:1" id="OBQ-XF-zAU"/>
                                                 </constraints>
@@ -750,11 +750,12 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icModulex" translatesAutoresizingMaskIntoConstraints="NO" id="sdI-eS-lMK">
-                                                <rect key="frame" x="474" y="16.5" width="29.5" height="29.5"/>
+                                                <rect key="frame" x="217.5" y="13.5" width="14" height="14"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" secondItem="4uT-oU-thp" secondAttribute="height" multiplier="245:358" id="1b3-Md-ZJG"/>
                                             <constraint firstItem="57L-EZ-9kA" firstAttribute="top" secondItem="4uT-oU-thp" secondAttribute="bottom" multiplier="20/358" id="H5D-85-NwB"/>
                                             <constraint firstItem="sdI-eS-lMK" firstAttribute="centerX" secondItem="qth-FX-gQb" secondAttribute="centerX" id="HbV-Oq-FIA"/>
                                             <constraint firstItem="sdI-eS-lMK" firstAttribute="width" secondItem="qth-FX-gQb" secondAttribute="width" multiplier="0.736842" id="I0P-qT-xbT"/>
@@ -771,7 +772,6 @@
                                             <constraint firstItem="i40-F7-cgt" firstAttribute="top" secondItem="KwY-UZ-IHy" secondAttribute="top" multiplier="246/225" id="hoi-El-IgO"/>
                                             <constraint firstItem="hLs-zq-PQw" firstAttribute="top" secondItem="57L-EZ-9kA" secondAttribute="bottom" constant="10" id="iJi-ZX-JcA"/>
                                             <constraint firstItem="qth-FX-gQb" firstAttribute="top" secondItem="4uT-oU-thp" secondAttribute="top" constant="11" id="mF3-eT-E5h"/>
-                                            <constraint firstAttribute="width" secondItem="4uT-oU-thp" secondAttribute="height" multiplier="245:358" id="pXU-6V-dTo"/>
                                             <constraint firstItem="rti-7X-lTq" firstAttribute="centerX" secondItem="4uT-oU-thp" secondAttribute="centerX" id="qpq-35-vdM"/>
                                             <constraint firstItem="qth-FX-gQb" firstAttribute="width" secondItem="4uT-oU-thp" secondAttribute="width" multiplier="0.077551" id="s1L-Ax-4QQ"/>
                                             <constraint firstItem="1Xe-fH-EJa" firstAttribute="top" secondItem="4uT-oU-thp" secondAttribute="bottom" multiplier="52/358" id="tkL-MS-Mf5"/>
@@ -781,10 +781,10 @@
                                         </constraints>
                                     </view>
                                     <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k65-nd-SAp">
-                                        <rect key="frame" x="-53" y="68" width="520" height="760"/>
+                                        <rect key="frame" x="84.5" y="269" width="245" height="358"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[속보] 고양씨 떠나다..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34U-CK-Dbo" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="62.5" y="110.5" width="395" height="42.5"/>
+                                                <rect key="frame" x="29.5" y="52" width="186" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="34U-CK-Dbo" secondAttribute="height" multiplier="93:10" id="SIL-Wb-LcF"/>
                                                 </constraints>
@@ -798,19 +798,19 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgCatByebye" translatesAutoresizingMaskIntoConstraints="NO" id="WvC-5n-2yq">
-                                                <rect key="frame" x="90" y="170" width="340" height="312"/>
+                                                <rect key="frame" x="42.5" y="80" width="160" height="147"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="WvC-5n-2yq" secondAttribute="height" multiplier="160:147" id="4mt-m9-O51"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icModulex" translatesAutoresizingMaskIntoConstraints="NO" id="2ge-eZ-hWl">
-                                                <rect key="frame" x="474" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="215" y="16" width="14" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="2ge-eZ-hWl" secondAttribute="height" multiplier="1:1" id="s5R-Yh-c9E"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저런!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4H-KM-kgc" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="242.5" y="496.5" width="35" height="14"/>
+                                                <rect key="frame" x="105" y="234" width="35" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="U4H-KM-kgc" secondAttribute="height" multiplier="5:2" id="slK-aZ-W2F"/>
                                                 </constraints>
@@ -824,7 +824,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QYX-t7-Pzp">
-                                                <rect key="frame" x="167.5" y="537" width="185" height="14"/>
+                                                <rect key="frame" x="30" y="253" width="185" height="14"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="컴냥컴냥해" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDA-3M-JKe" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="62" height="14"/>
@@ -863,7 +863,7 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앞으로 다른 고양씨들도" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2g2-lH-Bp5" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="121" y="577.5" width="278" height="29.5"/>
+                                                <rect key="frame" x="57" y="272" width="131" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="2g2-lH-Bp5" secondAttribute="height" multiplier="131:14" id="o2z-yR-Ykm"/>
                                                 </constraints>
@@ -877,7 +877,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="떠나보내지 않으려면" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYc-Ui-orc" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="138" y="617.5" width="244" height="30"/>
+                                                <rect key="frame" x="65" y="291" width="115" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="cYc-Ui-orc" secondAttribute="height" multiplier="115:14" id="HGx-j5-Eb6"/>
                                                 </constraints>
@@ -891,7 +891,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="조금 더 꾸준한 커밋이 필요해요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Qt-0q-xbu" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="70" y="658" width="380" height="29.5"/>
+                                                <rect key="frame" x="33" y="310" width="179" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="3Qt-0q-xbu" secondAttribute="height" multiplier="179:14" id="9A5-zZ-tSD"/>
                                                 </constraints>
@@ -905,7 +905,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDs-mM-jUg">
-                                                <rect key="frame" x="462.5" y="4.5" width="53" height="53"/>
+                                                <rect key="frame" x="209.5" y="10.5" width="25" height="25"/>
                                                 <connections>
                                                     <action selector="leaveCloseAction:" destination="FHT-wQ-vku" eventType="touchUpInside" id="lvj-OO-NW6"/>
                                                 </connections>
@@ -922,21 +922,21 @@
                                             <constraint firstItem="2g2-lH-Bp5" firstAttribute="centerX" secondItem="k65-nd-SAp" secondAttribute="centerX" id="8HQ-Ry-50f"/>
                                             <constraint firstItem="34U-CK-Dbo" firstAttribute="centerX" secondItem="k65-nd-SAp" secondAttribute="centerX" id="9du-hp-kew"/>
                                             <constraint firstItem="WvC-5n-2yq" firstAttribute="top" secondItem="34U-CK-Dbo" secondAttribute="top" multiplier="80/52" id="9uQ-Ef-PBu"/>
-                                            <constraint firstAttribute="width" secondItem="k65-nd-SAp" secondAttribute="height" multiplier="245:358" id="COp-ab-qfb"/>
                                             <constraint firstItem="3Qt-0q-xbu" firstAttribute="width" secondItem="k65-nd-SAp" secondAttribute="width" multiplier="0.730612" id="FKB-Qa-Dke"/>
                                             <constraint firstItem="cYc-Ui-orc" firstAttribute="centerX" secondItem="k65-nd-SAp" secondAttribute="centerX" id="Kuu-hC-lbJ"/>
                                             <constraint firstItem="2g2-lH-Bp5" firstAttribute="top" secondItem="QYX-t7-Pzp" secondAttribute="top" multiplier="272/253" id="Mfu-rU-CMs"/>
                                             <constraint firstItem="QYX-t7-Pzp" firstAttribute="top" secondItem="U4H-KM-kgc" secondAttribute="top" multiplier="253/234" id="UQ5-gG-dhs"/>
                                             <constraint firstItem="cYc-Ui-orc" firstAttribute="width" secondItem="k65-nd-SAp" secondAttribute="width" multiplier="0.469388" id="VEa-62-dbn"/>
                                             <constraint firstAttribute="trailing" secondItem="2ge-eZ-hWl" secondAttribute="trailing" constant="16" id="aAI-VJ-Jj6"/>
+                                            <constraint firstAttribute="width" secondItem="k65-nd-SAp" secondAttribute="height" multiplier="245:358" id="dM6-IX-80m"/>
                                             <constraint firstItem="3Qt-0q-xbu" firstAttribute="centerX" secondItem="k65-nd-SAp" secondAttribute="centerX" id="e1h-oq-GlG"/>
                                             <constraint firstItem="cYc-Ui-orc" firstAttribute="top" secondItem="2g2-lH-Bp5" secondAttribute="top" multiplier="291/272" id="hrX-HG-PJr"/>
+                                            <constraint firstItem="QYX-t7-Pzp" firstAttribute="centerX" secondItem="k65-nd-SAp" secondAttribute="centerX" id="mCj-R1-a6I"/>
                                             <constraint firstItem="WvC-5n-2yq" firstAttribute="width" secondItem="k65-nd-SAp" secondAttribute="width" multiplier="0.653061" id="oe4-0o-Tuj"/>
                                             <constraint firstItem="3Qt-0q-xbu" firstAttribute="top" secondItem="cYc-Ui-orc" secondAttribute="top" multiplier="310/291" id="ojK-28-nIO"/>
                                             <constraint firstItem="34U-CK-Dbo" firstAttribute="width" secondItem="k65-nd-SAp" secondAttribute="width" multiplier="0.759184" id="osu-6t-6Jb"/>
                                             <constraint firstItem="U4H-KM-kgc" firstAttribute="top" secondItem="WvC-5n-2yq" secondAttribute="top" multiplier="234/80" id="tp9-UD-bpZ"/>
                                             <constraint firstItem="ZDs-mM-jUg" firstAttribute="centerX" secondItem="2ge-eZ-hWl" secondAttribute="centerX" id="uui-uG-Knq"/>
-                                            <constraint firstItem="QYX-t7-Pzp" firstAttribute="centerX" secondItem="k65-nd-SAp" secondAttribute="centerX" id="wJ2-1X-3Ol"/>
                                             <constraint firstItem="ZDs-mM-jUg" firstAttribute="width" secondItem="2ge-eZ-hWl" secondAttribute="width" multiplier="1.78571" id="whp-3f-v2V"/>
                                             <constraint firstItem="2g2-lH-Bp5" firstAttribute="width" secondItem="k65-nd-SAp" secondAttribute="width" multiplier="0.534694" id="yfD-a7-9Su"/>
                                             <constraint firstItem="34U-CK-Dbo" firstAttribute="top" secondItem="k65-nd-SAp" secondAttribute="bottom" multiplier="52/358" id="zHC-0Z-WEx"/>
@@ -945,15 +945,15 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="4uT-oU-thp" firstAttribute="centerY" secondItem="zqy-NB-6Hv" secondAttribute="centerY" id="1n9-di-gYa"/>
-                                    <constraint firstItem="4uT-oU-thp" firstAttribute="centerX" secondItem="zqy-NB-6Hv" secondAttribute="centerX" id="3Av-FE-nbQ"/>
-                                    <constraint firstItem="k65-nd-SAp" firstAttribute="centerY" secondItem="zqy-NB-6Hv" secondAttribute="centerY" id="Ry3-QV-cvD"/>
-                                    <constraint firstItem="4uT-oU-thp" firstAttribute="height" secondItem="zqy-NB-6Hv" secondAttribute="height" multiplier="0.847826" id="TZP-hs-hdm"/>
+                                    <constraint firstItem="k65-nd-SAp" firstAttribute="centerX" secondItem="zqy-NB-6Hv" secondAttribute="centerX" id="BBC-4I-aMB"/>
+                                    <constraint firstItem="4uT-oU-thp" firstAttribute="height" secondItem="zqy-NB-6Hv" secondAttribute="height" multiplier="0.399554" id="DL6-ZE-k9s"/>
+                                    <constraint firstItem="4uT-oU-thp" firstAttribute="centerX" secondItem="zqy-NB-6Hv" secondAttribute="centerX" id="RKp-5p-adS"/>
+                                    <constraint firstItem="k65-nd-SAp" firstAttribute="height" secondItem="zqy-NB-6Hv" secondAttribute="height" multiplier="0.399554" id="Wy8-Kq-2uX"/>
                                     <constraint firstItem="qFR-MW-nvy" firstAttribute="centerX" secondItem="zqy-NB-6Hv" secondAttribute="centerX" id="YNz-fv-ZMY"/>
-                                    <constraint firstItem="k65-nd-SAp" firstAttribute="height" secondItem="zqy-NB-6Hv" secondAttribute="height" multiplier="0.847826" id="eWR-Z3-mfE"/>
-                                    <constraint firstItem="qFR-MW-nvy" firstAttribute="height" secondItem="zqy-NB-6Hv" secondAttribute="height" multiplier="0.686657" id="wee-ta-SDJ"/>
+                                    <constraint firstItem="qFR-MW-nvy" firstAttribute="height" secondItem="zqy-NB-6Hv" secondAttribute="height" multiplier="0.324777" id="brg-0M-esb"/>
+                                    <constraint firstItem="4uT-oU-thp" firstAttribute="centerY" secondItem="zqy-NB-6Hv" secondAttribute="centerY" id="hsD-N3-sgR"/>
+                                    <constraint firstItem="k65-nd-SAp" firstAttribute="centerY" secondItem="zqy-NB-6Hv" secondAttribute="centerY" id="wp2-Kx-N3A"/>
                                     <constraint firstItem="qFR-MW-nvy" firstAttribute="centerY" secondItem="zqy-NB-6Hv" secondAttribute="centerY" id="xxA-yi-hXS"/>
-                                    <constraint firstItem="k65-nd-SAp" firstAttribute="centerX" secondItem="zqy-NB-6Hv" secondAttribute="centerX" id="ypK-EA-89Y"/>
                                 </constraints>
                             </view>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uv1-EH-2ok">
@@ -3366,7 +3366,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Xqh-du-SSJ" firstAttribute="centerX" secondItem="wFu-Xc-3AF" secondAttribute="centerX" id="ENC-2K-BWE"/>
                                     <constraint firstItem="Xqh-du-SSJ" firstAttribute="centerY" secondItem="wFu-Xc-3AF" secondAttribute="centerY" id="Lwz-dl-Z5k"/>
