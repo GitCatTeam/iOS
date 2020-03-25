@@ -263,6 +263,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     
     func setStyle() {
         highlightView.layer.borderWidth = 0
+        highlightView.circleRadius()
         
         graduateCardView.roundRadius(radius: 10)
         graduateCardView.customShadow(width: 1, height: 2, radius: 11, opacity: 0.16)
@@ -474,7 +475,6 @@ extension HomeVC : UICollectionViewDelegateFlowLayout {
         
         let currentPosition = targetContentOffset.pointee.x
         if(currentPosition == 0.0) {
-            
             catCollectionArrow.alpha = 0
             catCollectionDescription.alpha = 0
             highlightView.alpha = 0
@@ -486,8 +486,7 @@ extension HomeVC : UICollectionViewDelegateFlowLayout {
             self.tabBarController?.tabBar.alpha = 0.5
 
         }
-        else if(currentPosition == 345.0) {
-            
+        else if(currentPosition == collectionView.frame.width) {
             catCollectionArrow.alpha = 1
             catCollectionDescription.alpha = 1
             highlightView.alpha = 1
@@ -498,8 +497,7 @@ extension HomeVC : UICollectionViewDelegateFlowLayout {
             
             self.tabBarController?.tabBar.alpha = 0.5
         }
-        else if(currentPosition == 690.0) {
-            
+        else if(currentPosition == collectionView.frame.width*2) {
             catCollectionArrow.alpha = 0
             catCollectionDescription.alpha = 0
             highlightView.alpha = 0
@@ -511,7 +509,7 @@ extension HomeVC : UICollectionViewDelegateFlowLayout {
             self.tabBarController?.tabBar.alpha = 1
             
         }
-        else if(currentPosition == 1035.0) {
+        else if(currentPosition == collectionView.frame.width*3) {
             catCollectionArrow.alpha = 0
             catCollectionDescription.alpha = 0
             highlightView.alpha = 0

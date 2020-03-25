@@ -191,8 +191,8 @@ extension MidRepoVC:  UITableViewDelegate, UITableViewDataSource  {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        
-        return commits.count
+        print("count:\(commits[section].commit?.count)")
+        return commits[section].commit?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -204,7 +204,7 @@ extension MidRepoVC:  UITableViewDelegate, UITableViewDataSource  {
         
         cell.circleView.circleRadius()
         
-        if(indexPath.row == commits.count-1) {
+        if(indexPath.row == commits[indexPath.section].commit!.count-1) {
             cell.lineView.backgroundColor = UIColor.white
         }else{
              cell.lineView.backgroundColor = UIColor(red: 192/255, green: 192/255, blue: 192/255, alpha: 192/255)
@@ -381,9 +381,8 @@ extension MidRepoVC {
             if let resResult = detailData {
                 self.scoreLabel.text = "+\(self.gino(resResult.data?.score))"
                 self.totalCommitLabel.text = "\(self.gino(resResult.data?.totalCommit))"
-                self.itemLabel.text = resResult.data?.item ?? "없음"
-                if(resResult.data?.item == "없음") {
-                    //다른 label alpha값 1로 변경(교체)
+                self.itemLabel.text = resResult.data?.item ?? ""
+                if(resResult.data?.item == "") {
                     self.noneItem.alpha = 1
                     self.itemLabel.alpha = 0
                 }else {
