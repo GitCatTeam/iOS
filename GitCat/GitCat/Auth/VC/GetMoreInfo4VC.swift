@@ -342,7 +342,9 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
         
         //76
         let cellWidth: CGFloat = collectionView.frame.width / 3.4 - 1
+        
         let cellHeight: CGFloat = collectionView.frame.height / 3.15 - 1
+        
         return CGSize(width: cellWidth, height: cellHeight)
     }
     
