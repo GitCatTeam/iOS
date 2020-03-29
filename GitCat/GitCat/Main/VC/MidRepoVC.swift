@@ -88,6 +88,8 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tabBarController?.tabBar.alpha = 1
+        
         loadingView.alpha = 1
         loadingBackgroundView.alpha = 1
         loadingView.loadGif(name: "gif_loading2")

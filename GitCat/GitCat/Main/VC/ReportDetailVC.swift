@@ -106,6 +106,7 @@ class ReportDetailVC: UIViewController {
 
         loadingBackgroundView.alpha = 1
         
+        
         self.navigationItem.title = reportTitle
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor(red: 137/255, green: 204/255, blue: 246/255, alpha: 1)]
                navigationController?.navigationBar.titleTextAttributes = textAttributes
@@ -133,6 +134,7 @@ class ReportDetailVC: UIViewController {
         
         
     }
+
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()

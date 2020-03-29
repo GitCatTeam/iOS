@@ -18,6 +18,8 @@ class ReportVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.CustomColor.brownishGrey]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -26,6 +28,7 @@ class ReportVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.alpha = 1
         setReportList()
     }
     

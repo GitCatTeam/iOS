@@ -16,7 +16,7 @@ class AuthManageVC: UIViewController {
         setBackBtn(color: UIColor.CustomColor.brownishGrey)
         
         userIdLabel.text = UserDefaults.standard.string(forKey: "userId")
-        
+
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.CustomColor.brownishGrey]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
     }

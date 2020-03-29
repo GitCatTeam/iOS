@@ -23,6 +23,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     @IBOutlet weak var catCollectionBarItem: UIBarButtonItem!
     
     @IBOutlet weak var settingBarItem: UIBarButtonItem!
+    @IBOutlet weak var refreshBarItem: UIBarButtonItem!
     
     @IBOutlet weak var catCollectionArrow: UIImageView!
     @IBOutlet weak var catCollectionDescription: CustomLabel!
@@ -127,6 +128,10 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         }
         
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tabBarController?.tabBar.alpha = 1
+    }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -203,12 +208,14 @@ class HomeVC: UIViewController, TutorialCellDelegate {
             
             self.catCollectionBarItem.isEnabled = true
             self.settingBarItem.isEnabled = true
-            //TODO - 새로고치 버튼도 isEnabled = false 풀기
+            self.refreshBarItem.isEnabled = true
         });
     }
     
     @IBAction func refreshDataAction(_ sender: Any) {
         print("refresh")
+        loadData()
+        setHomeData()
     }
     
     
@@ -249,6 +256,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     }
     
     func setAlpha() {
+        
         
         selectCatBtn.alpha = 0
         catCollectionArrow.alpha = 0
@@ -346,7 +354,8 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         
         catCollectionBarItem.isEnabled = false
         settingBarItem.isEnabled = false
-        //TODO - 새로고치 버튼도 isEnabled = false로 바꾸기
+        refreshBarItem.isEnabled = false
+
     }
     
     func setLabelFontSize() {
@@ -552,14 +561,18 @@ extension HomeVC : UICollectionViewDelegateFlowLayout {
 }
 
 extension HomeVC {
+    
+    
     func setHomeData() {
-        
         HomeService.sharedInstance.getHomeData { (result) in
             switch result {
                 case .networkSuccess(let data) :
                     let detailData = data as? HomeModel
                     
                     if let resResult = detailData {
+                        
+                        self.catChatBox.alpha = 1
+                        
                         self.todayCommitCountLabel.text = "\(resResult.data?.todayCommitCount ?? 0)"
                         self.todayScoreLabel.text = "\(resResult.data?.todayScore ?? 0)"
                         self.catNameLabel.text = resResult.data?.catName
@@ -617,6 +630,39 @@ extension HomeVC {
             }
         }
     
+    func loadData() {
+        PostUserDataService.shareInstance.postUserData { (result) in
+                switch result {
+                    case .networkSuccess( _): //201
+                        print("UserData POST SUCCESS")
+                        let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainTabC")
+                        
+                        dvc.modalPresentationStyle = .fullScreen
+                        
+                        self.present(dvc, animated: true, completion: nil)
+                        break
+                        
+                    //FIXME: 수정
+                    case .badRequest: //400
+                        self.simpleAlert(title: "", message: "다시 시도해주세요")
+                        break
+                        
+                    case .duplicated: //401
+                        
+                        self.simpleAlert(title: "", message: "권한이 없습니다.")
+                        break
+                        
+                    case .networkFail:
+                        self.networkErrorAlert()
+                        break
+                        
+                    default:
+                        self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                        break
+            }
+        }
+    }
 }
+
 
 

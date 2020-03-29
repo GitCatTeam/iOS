@@ -46,16 +46,7 @@ class GetMoreInfo3VC: UIViewController {
     }
     
     func setButtonStyle() {
-    self.interestInDevBtn.layer.borderWidth = 1.0
-        self.interestInDevBtn.layer.cornerRadius = 12
-        self.studentBtn.layer.borderWidth = 1.0
-        self.studentBtn.layer.cornerRadius = 12
-        self.OneYearDevBtn.layer.borderWidth = 1.0
-        self.OneYearDevBtn.layer.cornerRadius = 12
-        self.ThreeYearDevBtn.layer.borderWidth = 1.0
-        self.ThreeYearDevBtn.layer.cornerRadius = 12
-        self.MoreThanFiveYearDevBtn.layer.borderWidth = 1.0
-        self.MoreThanFiveYearDevBtn.layer.cornerRadius = 12
+
     }
     
     func setLabelSize() {
