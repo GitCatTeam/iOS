@@ -1,19 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "imgTutorial3.png",
       "idiom" : "universal",
+      "filename" : "img_tutorial3.jpg",
       "scale" : "1x"
     },
     {
-      "scale" : "2x",
-      "filename" : "imgTutorial3@2x.png",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "scale" : "2x"
     },
     {
-      "scale" : "3x",
       "idiom" : "universal",
-      "filename" : "imgTutorial3@3x.png"
+      "scale" : "3x"
     }
   ],
   "info" : {

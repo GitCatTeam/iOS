@@ -247,7 +247,6 @@ extension GetMoreInfo3VC {
 
             switch result {
             case .networkSuccess( _): //200
-                print("데이터 전송 성공")
                 let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "UserDataInitVC")
                 dvc.modalPresentationStyle = .fullScreen
                 self.present(dvc, animated: true, completion: nil)

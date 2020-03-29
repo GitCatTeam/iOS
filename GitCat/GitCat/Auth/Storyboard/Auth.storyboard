@@ -26,7 +26,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appTitle2" translatesAutoresizingMaskIntoConstraints="NO" id="Wq6-FX-2sP">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgLogoBlue" translatesAutoresizingMaskIntoConstraints="NO" id="Wq6-FX-2sP">
                                 <rect key="frame" x="100" y="192.5" width="214" height="72"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Wq6-FX-2sP" secondAttribute="height" multiplier="107:36" id="dwf-Ut-8aP"/>
@@ -167,7 +167,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummyProfile" translatesAutoresizingMaskIntoConstraints="NO" id="FCh-Gy-juI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgDefault" translatesAutoresizingMaskIntoConstraints="NO" id="FCh-Gy-juI">
                                 <rect key="frame" x="114.5" y="216.5" width="185" height="185.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FCh-Gy-juI" secondAttribute="height" multiplier="1:1" id="bA3-aA-GXV"/>
@@ -539,7 +539,7 @@
         <!--Get More Info4VC-->
         <scene sceneID="ZGr-9f-wvm">
             <objects>
-                <viewController storyboardIdentifier="GetMoreInfo4VC" id="RXV-pZ-VNs" customClass="GetMoreInfo4VC" customModule="GitCat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="GetMoreInfo4VC" storyboardIdentifier="GetMoreInfo4VC" id="RXV-pZ-VNs" customClass="GetMoreInfo4VC" customModule="GitCat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GAO-2H-XYz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -648,7 +648,7 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Miu-6m-Fnf">
                                                                     <rect key="frame" x="4" y="4" width="70" height="70"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgCatPanda" translatesAutoresizingMaskIntoConstraints="NO" id="5fq-aj-k96">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgDefault" translatesAutoresizingMaskIntoConstraints="NO" id="5fq-aj-k96">
                                                                             <rect key="frame" x="3.5" y="4" width="63" height="62"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" secondItem="5fq-aj-k96" secondAttribute="height" multiplier="63:62" id="Fje-gL-Yrb"/>
@@ -834,7 +834,7 @@
                                     <constraint firstAttribute="height" constant="1" id="krZ-qJ-sf4"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVD-St-Ma2">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVD-St-Ma2">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BGj-u3-9bY">
@@ -993,12 +993,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="appTitle2" width="214" height="72"/>
-        <image name="dummyProfile" width="720" height="961"/>
         <image name="icModulex" width="14" height="14"/>
         <image name="imgCatLoading" width="200" height="200"/>
-        <image name="imgCatPanda" width="63" height="62"/>
         <image name="imgCatQuest02" width="120" height="120"/>
+        <image name="imgDefault" width="180" height="180"/>
+        <image name="imgLogoBlue" width="220" height="74.5"/>
         <image name="signInCat" width="310" height="232"/>
         <namedColor name="brownishGrey">
             <color red="0.3919999897480011" green="0.3919999897480011" blue="0.3919999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -91,7 +91,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     
     let chapterData:[String] = ["01","02","03","04"]
     
-    let imageData:[UIImage] = [ UIImage(named: "imgTutorial1")!, UIImage(named: "imgTutorial2")!, UIImage(named: "imgTutorial3")!, UIImage(named: "imgTutorial4")!]
+    let imageData:[UIImage] = [ UIImage(named: "imgTutorial1")!, UIImage(named: "imgTutorial2")!, UIImage(named: "img_tutorial3")!, UIImage(named: "imgTutorial4")!]
 
     let titleData:[String] = ["커밋으로 고양씨 성장시키기", "고양씨 졸업시키기", "달력과 리포트로 나의 개발 돌아보기", "튜토리얼 완료하고 고양이 받자!"]
     let content1Data:[String] = ["매일 꾸준히 커밋해보세요.", "4단계 고양씨는 졸업하게 되지만, 걱정 마세요!", "하단의 커밋달력을 통해 일일 커밋 현황을,", "어플 사용에 익숙해 지는 겸, 간단한 미션을 완료하면"]
@@ -203,8 +203,14 @@ class HomeVC: UIViewController, TutorialCellDelegate {
             
             self.catCollectionBarItem.isEnabled = true
             self.settingBarItem.isEnabled = true
+            //TODO - 새로고치 버튼도 isEnabled = false 풀기
         });
     }
+    
+    @IBAction func refreshDataAction(_ sender: Any) {
+        print("refresh")
+    }
+    
     
     @objc func fireTimer() {
         mentPos += 1
@@ -221,6 +227,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
             UserDefaults.standard.set(true, forKey: "tutorialDone")
             self.OverlayView.alpha = 0
             
+            
             self.tabBarController?.tabBar.alpha = 1
 
             let tabBarControllerItems = self.tabBarController?.tabBar.items
@@ -236,6 +243,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
             
             self.catCollectionBarItem.isEnabled = true
             self.settingBarItem.isEnabled = true
+
         });
         
     }
@@ -305,6 +313,23 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         leaveCardView.alpha = 1
         setCardBackgorund()
     }
+    func showSelectNewCat() {
+        self.catImageView.image = UIImage(named: "imgCatNull")
+        self.selectCatBtn.alpha = 1
+        
+        self.todayScoreLabel.text = "-"
+        self.bottomBox.alpha = 0
+        self.bottomBoxBorder.alpha = 0
+        self.catChatBox.alpha = 0
+        self.catChatLabel.alpha = 0
+        
+    }
+    @IBAction func gotoSelectCatViewAction(_ sender: Any) {
+        //present
+        let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "GetMoreInfo4VC")
+        dvc.modalPresentationStyle = .fullScreen
+    }
+    
     
     func setCardBackgorund() {
         self.tabBarController?.tabBar.alpha = 0.5
@@ -321,6 +346,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         
         catCollectionBarItem.isEnabled = false
         settingBarItem.isEnabled = false
+        //TODO - 새로고치 버튼도 isEnabled = false로 바꾸기
     }
     
     func setLabelFontSize() {
@@ -561,14 +587,7 @@ extension HomeVC {
                         
                         if(resResult.data!.isLeave!) {
                             self.showLeaveCard()
-                            self.catImageView.image = UIImage(named: "imgCatNull")
-                            self.selectCatBtn.alpha = 1
-                            
-                            self.todayScoreLabel.text = "-"
-                            self.bottomBox.alpha = 0
-                            self.bottomBoxBorder.alpha = 0
-                            self.catChatBox.alpha = 0
-                            self.catChatLabel.alpha = 0
+                            self.showSelectNewCat()
                             
                         }
                     }
@@ -580,9 +599,10 @@ extension HomeVC {
                     
                     self.loadingView.alpha = 0
                     self.loadingBackgroundView.alpha = 0
+                    
                     break
                 case .dataNeeded:
-                    print("hi")
+                    self.showSelectNewCat()
                 case .networkFail :
                     self.networkErrorAlert()
                     self.loadingView.alpha = 0

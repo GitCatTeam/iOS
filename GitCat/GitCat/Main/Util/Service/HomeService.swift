@@ -22,16 +22,10 @@ struct HomeService: GettableService, APIServie {
 
         gettable(homeURL) { (result) in
             switch result {
-                
-//                case .networkSuccess(let data) :
-//
-//                                   let detailData = data as? HomeModel
+            
             case .success(let networkResult):
                 switch networkResult.resCode {
                 case HttpResponseCode.getSuccess.rawValue:
-                    print("*******************************")
-                    print(networkResult.resResult)
-                    print("*******************************")
                     completion(.networkSuccess(networkResult.resResult))
                 case HttpResponseCode.needData.rawValue:
                     completion(.dataNeeded)
