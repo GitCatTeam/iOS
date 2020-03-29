@@ -531,7 +531,6 @@ extension HomeVC {
         HomeService.sharedInstance.getHomeData { (result) in
             switch result {
                 case .networkSuccess(let data) :
-                    
                     let detailData = data as? HomeModel
                     
                     if let resResult = detailData {
@@ -582,7 +581,8 @@ extension HomeVC {
                     self.loadingView.alpha = 0
                     self.loadingBackgroundView.alpha = 0
                     break
-                    
+                case .dataNeeded:
+                    print("hi")
                 case .networkFail :
                     self.networkErrorAlert()
                     self.loadingView.alpha = 0

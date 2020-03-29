@@ -10,13 +10,18 @@ import Foundation
 enum HttpResponseCode: Int{
     case getSuccess = 200
     case postSuccess = 201
+    case needData = 204 //현재 고양이 없음
+    
     case selectErr = 300
+    
     case badRequest = 400
+    
     case accessDenied = 401
     case forbidden = 403
     case nullValue = 404
     case conflict = 409
     case large = 413
+    
     case serverErr = 500
     case notImplemented = 501
 }
@@ -29,6 +34,7 @@ enum Result<T> {
 
 enum NetworkResult<T> {
     case networkSuccess(T) //200
+    case dataNeeded //204
     case badRequest //400
     case accessDenied //401
     case nullValue //404
