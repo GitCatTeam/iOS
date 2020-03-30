@@ -162,7 +162,7 @@ class GetMoreInfo1VC: UIViewController {
             
             UIView.animate(withDuration: 0.5, animations: ({
                 self.sexLabel.text = "생년월일을 알려주세요"
-                self.pageCntLabel.text = "2/4"
+                self.pageCntLabel.text = "2/3"
                 self.sexStackView.alpha = 0
             }))
             

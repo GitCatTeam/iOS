@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftGifOrigin
+
 
 class HomeVC: UIViewController, TutorialCellDelegate {
     
@@ -119,13 +119,13 @@ class HomeVC: UIViewController, TutorialCellDelegate {
             showTutorial()
         }
         
-        let bounds = UIScreen.main.bounds
-        let height = bounds.size.height
-               
-        if(height == 1366.0) {
+
+        
+        if UIDevice.current.model.hasPrefix("iPad") {
             catChatLabel.alpha = 0
             catChatBox.alpha = 0
         }
+
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -214,8 +214,9 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     
     @IBAction func refreshDataAction(_ sender: Any) {
         print("refresh")
+        self.loadingView.alpha = 1
+        self.loadingBackgroundView.alpha = 1
         loadData()
-        setHomeData()
     }
     
     
@@ -237,19 +238,11 @@ class HomeVC: UIViewController, TutorialCellDelegate {
             
             self.tabBarController?.tabBar.alpha = 1
 
-            let tabBarControllerItems = self.tabBarController?.tabBar.items
-
-            if let tabArray = tabBarControllerItems {
-                let tabBarItem1 = tabArray[0]
-                let tabBarItem3 = tabArray[2]
-
-                tabBarItem1.isEnabled = true
-                tabBarItem3.isEnabled = true
-            
-            }
+            self.tabBarController?.tabBar.isUserInteractionEnabled = true
             
             self.catCollectionBarItem.isEnabled = true
             self.settingBarItem.isEnabled = true
+            self.refreshBarItem.isEnabled = true
 
         });
         
@@ -342,16 +335,8 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     func setCardBackgorund() {
         self.tabBarController?.tabBar.alpha = 0.5
 
-        let tabBarControllerItems = self.tabBarController?.tabBar.items
+        tabBarController?.tabBar.isUserInteractionEnabled = false
 
-        if let tabArray = tabBarControllerItems {
-            let tabBarItem1 = tabArray[0]
-            let tabBarItem3 = tabArray[2]
-
-            tabBarItem1.isEnabled = false
-            tabBarItem3.isEnabled = false
-        }
-        
         catCollectionBarItem.isEnabled = false
         settingBarItem.isEnabled = false
         refreshBarItem.isEnabled = false
@@ -429,16 +414,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
             self.tabBarController?.tabBar.alpha = 1
             self.navigationController?.navigationBar.alpha = 1
             
-            let tabBarControllerItems = self.tabBarController?.tabBar.items
-            
-            if let tabArray = tabBarControllerItems {
-                           let tabBarItem1 = tabArray[0]
-                           let tabBarItem3 = tabArray[2]
-
-                           tabBarItem1.isEnabled = true
-                           tabBarItem3.isEnabled = true
-                       
-            }
+            self.tabBarController?.tabBar.isUserInteractionEnabled = true
                        
             self.catCollectionBarItem.isEnabled = true
             self.settingBarItem.isEnabled = true
@@ -522,9 +498,15 @@ extension HomeVC : UICollectionViewDelegateFlowLayout {
 
         }
         else if(currentPosition == collectionView.frame.width) {
-            catCollectionArrow.alpha = 1
-            catCollectionDescription.alpha = 1
-            highlightView.alpha = 1
+
+
+            if UIDevice.current.model.hasPrefix("iPad") {
+                       
+            }else{
+                catCollectionArrow.alpha = 1
+                catCollectionDescription.alpha = 1
+                highlightView.alpha = 1
+            }
             
             reportArrow.alpha = 0
             commitCalendarArrow.alpha = 0
@@ -571,7 +553,7 @@ extension HomeVC {
                     
                     if let resResult = detailData {
                         
-                        self.catChatBox.alpha = 1
+//                        self.catChatBox.alpha = 1
                         
                         self.todayCommitCountLabel.text = "\(resResult.data?.todayCommitCount ?? 0)"
                         self.todayScoreLabel.text = "\(resResult.data?.todayScore ?? 0)"
@@ -635,11 +617,8 @@ extension HomeVC {
                 switch result {
                     case .networkSuccess( _): //201
                         print("UserData POST SUCCESS")
-                        let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainTabC")
                         
-                        dvc.modalPresentationStyle = .fullScreen
-                        
-                        self.present(dvc, animated: true, completion: nil)
+                        self.setHomeData()
                         break
                         
                     //FIXME: 수정

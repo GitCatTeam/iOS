@@ -121,12 +121,9 @@ class ReportDetailVC: UIViewController {
         
         setStyle()
         
-        let bounds = UIScreen.main.bounds
-        let height = bounds.size.height
         
-        if(height == 1366.0) {//iPad 3세대 12.9inch
-            view5.alpha = 0
-
+        if UIDevice.current.model.hasPrefix("iPad") {
+                   view5.alpha = 0
         }
         
         
@@ -220,11 +217,8 @@ class ReportDetailVC: UIViewController {
         
         lineChart.xAxis.gridColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         lineChart.xAxis.labelTextColor = UIColor.CustomColor.brownishGrey
-        
-        let bounds = UIScreen.main.bounds
-        let height = bounds.size.height
-        
-        if(height == 1366.0) {
+
+        if UIDevice.current.model.hasPrefix("iPad") {
             lineChart.xAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 18)!
         }else{
             lineChart.xAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 11)!
@@ -235,7 +229,7 @@ class ReportDetailVC: UIViewController {
         lineChart.leftAxis.gridColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         lineChart.leftAxis.labelTextColor = #colorLiteral(red: 0.5320672393, green: 0.8002378345, blue: 0.9608486295, alpha: 1)
         
-        if(height == 1366.0) {
+        if UIDevice.current.model.hasPrefix("iPad") {
             lineChart.leftAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 18)!
         }else{
             lineChart.leftAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 11)!
@@ -273,11 +267,8 @@ class ReportDetailVC: UIViewController {
 
 
         let paragraphStyle = NSMutableParagraphStyle(); paragraphStyle.alignment = .center
-                
-        let bounds = UIScreen.main.bounds
-        let height = bounds.size.height
-               
-        if(height == 1366.0) {
+        
+        if UIDevice.current.model.hasPrefix("iPad") {
             let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "BBTreeGo_R", size: 20.0)!,
                                        NSAttributedString.Key.foregroundColor : UIColor.CustomColor.brownishGrey, NSAttributedString.Key.paragraphStyle: paragraphStyle
                    ]
@@ -318,10 +309,8 @@ class ReportDetailVC: UIViewController {
         barChart.xAxis.labelPosition = .bottom
         barChart.xAxis.labelTextColor = UIColor.CustomColor.brownishGrey
         
-        let bounds = UIScreen.main.bounds
-        let height = bounds.size.height
                
-        if(height == 1366.0) {
+        if UIDevice.current.model.hasPrefix("iPad") {
             barChart.xAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 18)!
         }else{
              barChart.xAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 11)!

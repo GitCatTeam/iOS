@@ -280,7 +280,7 @@
                                     <action selector="moveNextTouchUpAction:" destination="4wc-bw-Ko5" eventType="touchUpInside" id="gvb-bM-RwH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsr-GM-W1K">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsr-GM-W1K">
                                 <rect key="frame" x="198" y="813.5" width="18.5" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="12" id="UhP-em-s4t"/>
@@ -456,14 +456,14 @@
                                     <constraint firstAttribute="width" secondItem="TfO-jC-rPS" secondAttribute="height" multiplier="17:5" id="Djx-h7-kWe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="16"/>
-                                <state key="normal" title="다음으로">
+                                <state key="normal" title="시작하기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="moveNext3TouchUpAction:" destination="ZPh-b2-Qlm" eventType="touchUpInside" id="bhs-qn-hZk"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFX-I3-SiH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3/3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFX-I3-SiH">
                                 <rect key="frame" x="197.5" y="814.5" width="19.5" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="11" id="4g9-Ym-nNY"/>
@@ -586,16 +586,6 @@
                                     <action selector="startTouchUpAction:" destination="RXV-pZ-VNs" eventType="touchUpInside" id="9O1-Qt-RTJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLf-v5-xiM">
-                                <rect key="frame" x="197" y="814.5" width="20" height="13"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="11" id="et1-k1-Jg0"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="phD-2L-bvy"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="11"/>
-                                <color key="textColor" name="brownishGrey"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="즐거운 커밋을 위해 우리 모두 집사가 되어보아요~" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVu-HR-aYI" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
                                 <rect key="frame" x="54.5" y="167" width="305.5" height="15.5"/>
                                 <constraints>
@@ -925,13 +915,11 @@
                             <constraint firstItem="NVD-St-Ma2" firstAttribute="leading" secondItem="9Km-On-Fya" secondAttribute="leading" id="7Qo-EI-OMn"/>
                             <constraint firstItem="uY6-po-KFK" firstAttribute="width" secondItem="GAO-2H-XYz" secondAttribute="width" multiplier="0.323671" id="G7D-FP-rNv"/>
                             <constraint firstItem="0M4-E3-vgk" firstAttribute="top" secondItem="uY6-po-KFK" secondAttribute="bottom" constant="5" id="I5G-ag-P7T"/>
-                            <constraint firstItem="mLf-v5-xiM" firstAttribute="centerX" secondItem="GAO-2H-XYz" secondAttribute="centerX" id="LPj-cu-pU5"/>
                             <constraint firstAttribute="bottom" secondItem="NVD-St-Ma2" secondAttribute="bottom" id="MZG-Qc-eia"/>
                             <constraint firstItem="NVD-St-Ma2" firstAttribute="trailing" secondItem="9Km-On-Fya" secondAttribute="trailing" id="QFq-5a-bwq"/>
                             <constraint firstItem="Pbv-2J-cZy" firstAttribute="centerX" secondItem="GAO-2H-XYz" secondAttribute="centerX" id="QxT-dO-zIB"/>
                             <constraint firstItem="9Km-On-Fya" firstAttribute="bottom" secondItem="UUA-Gu-9c2" secondAttribute="bottom" multiplier="812/751" id="VSp-9l-gYT"/>
                             <constraint firstItem="uY6-po-KFK" firstAttribute="centerX" secondItem="9Km-On-Fya" secondAttribute="centerX" id="Ygh-NE-82h"/>
-                            <constraint firstItem="9Km-On-Fya" firstAttribute="bottom" secondItem="mLf-v5-xiM" secondAttribute="bottom" multiplier="896/860" id="eLG-wS-V6C"/>
                             <constraint firstItem="uY6-po-KFK" firstAttribute="top" secondItem="6CH-Id-QY0" secondAttribute="bottom" constant="25" id="f1a-zi-IrU"/>
                             <constraint firstItem="6CH-Id-QY0" firstAttribute="centerX" secondItem="GAO-2H-XYz" secondAttribute="centerX" id="ie9-NL-DLJ"/>
                             <constraint firstItem="NVD-St-Ma2" firstAttribute="top" secondItem="GAO-2H-XYz" secondAttribute="top" id="mgy-RN-FoD"/>
@@ -959,7 +947,6 @@
                         <outlet property="mainTitle" destination="Pbv-2J-cZy" id="g8q-fJ-flu"/>
                         <outlet property="nameTextField" destination="uY6-po-KFK" id="T5B-hV-LIB"/>
                         <outlet property="nextMove4Btn" destination="UUA-Gu-9c2" id="uBh-jB-FNm"/>
-                        <outlet property="pageLabel" destination="mLf-v5-xiM" id="FAc-2D-8Ou"/>
                         <outlet property="preparingLavel" destination="Uq7-Wm-oSU" id="fmY-ML-hvO"/>
                         <outlet property="preparingView" destination="uxP-BU-G9S" id="yy1-wG-0Jb"/>
                         <outlet property="selectBoxView" destination="TVx-gT-OK6" id="jT9-bC-dwY"/>

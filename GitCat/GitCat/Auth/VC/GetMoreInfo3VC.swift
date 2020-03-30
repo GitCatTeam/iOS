@@ -46,6 +46,25 @@ class GetMoreInfo3VC: UIViewController {
     }
     
     func setButtonStyle() {
+        interestInDevBtn.layer.borderWidth = 1.0
+        interestInDevBtn.layer.cornerRadius = 12
+        interestInDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
+        
+        studentBtn.layer.borderWidth = 1.0
+        studentBtn.layer.cornerRadius = 12
+        studentBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
+        
+        OneYearDevBtn.layer.borderWidth = 1.0
+        OneYearDevBtn.layer.cornerRadius = 12
+        OneYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
+        
+        ThreeYearDevBtn.layer.borderWidth = 1.0
+        ThreeYearDevBtn.layer.cornerRadius = 12
+        ThreeYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
+        
+        MoreThanFiveYearDevBtn.layer.borderWidth = 1.0
+        MoreThanFiveYearDevBtn.layer.cornerRadius = 12
+        MoreThanFiveYearDevBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
 
     }
     
@@ -160,6 +179,8 @@ class GetMoreInfo3VC: UIViewController {
         
         
         putInfo(name: name, gender: gender, birth: birth, devCareer: userCareer ?? "개발에 관심이 있음")
+        
+        UserDefaults.standard.set(true, forKey: "login")
         
         sender.backgroundColor = UIColor(red: 220/255, green: 221/255, blue: 225/255, alpha: 1)
         

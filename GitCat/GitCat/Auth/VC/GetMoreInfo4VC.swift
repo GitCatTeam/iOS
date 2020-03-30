@@ -37,8 +37,6 @@ class GetMoreInfo4VC: UIViewController {
     @IBOutlet weak var nextMove4Btn: RoundBtn!
     @IBOutlet weak var nameTextField: UITextField!
     
-    @IBOutlet weak var pageLabel: UILabel!
-    
     @IBOutlet weak var preparingView: UIImageView!
     @IBOutlet weak var preparingLavel: UILabel!
     
@@ -93,7 +91,6 @@ class GetMoreInfo4VC: UIViewController {
         specialBtn.titleLabel?.dynamicFont(fontSize: 15, name:"BBTreeG_B")
         catNameLabel.dynamicFont(fontSize: 16, name:"BBTreeG_B")
 //        //FIXME - TextField의 글자크기도 동적으로 바꿔야함.
-        pageLabel.dynamicFont(fontSize: 11, name:"BBTreeGo_R")
         preparingLavel.dynamicFont(fontSize: 15, name: "BBTreeG_B")
         catNameTextField.adjustsFontSizeToFitWidth = true
         alertTitleLabel.dynamicFont(fontSize: 20, name: "BBTreeG_B")
