@@ -39,7 +39,7 @@ class DeveloperInfoVC: UIViewController {
     
     @IBOutlet weak var role6: CustomLabel!
     @IBOutlet weak var name6: CustomLabel!
-    @IBOutlet weak var detail6: CustomLabel!
+//    @IBOutlet weak var detail6: CustomLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,7 +104,7 @@ class DeveloperInfoVC: UIViewController {
         detail3.dynamicFont(fontSize: 12, name: "BBTreeGo_R")
         detail4.dynamicFont(fontSize: 12, name: "BBTreeGo_R")
         detail5.dynamicFont(fontSize: 12, name: "BBTreeGo_R")
-        detail6.dynamicFont(fontSize: 12, name: "BBTreeGo_R")
+//        detail6.dynamicFont(fontSize: 12, name: "BBTreeGo_R")
         
     }
 
