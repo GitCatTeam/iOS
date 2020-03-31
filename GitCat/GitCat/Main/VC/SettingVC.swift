@@ -33,6 +33,7 @@ class SettingVC: UIViewController {
         let cancleModeAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
         }
         let confirmModeAction = UIAlertAction(title: "확인", style: .destructive) { (action) in
+            self.setCatInitialized()
         }
         
         let alert = UIAlertController(title: "고양이 초기화", message: "귀여운 고양이들을 보내시겠습니까?     한 번 떠난 고양이는 되돌아오지 못합니다!", preferredStyle: UIAlertController.Style.alert)
@@ -46,4 +47,26 @@ class SettingVC: UIViewController {
         
     }
 
+}
+
+extension SettingVC {
+    func setCatInitialized() {
+        DeleteCatService.shareInstance.deleteCat { (result) in
+            switch result {
+            case .networkSuccess(_):
+                break
+            case .dataNeeded:
+                let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "GetMoreInfo4VC")
+                dvc.modalPresentationStyle = .fullScreen
+                self.present(dvc, animated: true, completion: nil)
+                break
+            case .networkFail :
+                self.networkErrorAlert()
+                
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        }
+    }
 }

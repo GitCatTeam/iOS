@@ -50,19 +50,24 @@ extension GettableService {
                         let resCode = self.gino(res.response?.statusCode)
                         print(resCode)
                         
-                        let decoder = JSONDecoder()
-                        
-                        do {
-                            print(("[해당 API에 접근 성공]"))
-                            let data = try decoder.decode(NetworkData.self, from: value)
+                        if(resCode == 204) {
+                            completion(.noContents)
+                        }else{
+                            let decoder = JSONDecoder()
                             
-                            let result: networkResult = (resCode, data)
-                            completion(.success(result))
-                            
-                        } catch (let error) {
-                            print("catch GET: \(error.localizedDescription)")
-                            completion(.error("\(resCode)"))
+                            do {
+                                print(("[해당 API에 접근 성공]"))
+                                let data = try decoder.decode(NetworkData.self, from: value)
+                                
+                                let result: networkResult = (resCode, data)
+                                completion(.success(result))
+                                
+                            } catch (let error) {
+                                print("catch GET: \(error.localizedDescription)")
+                                completion(.error("\(resCode)"))
+                            }
                         }
+                        
                     }
                     break
                 case .failure(let error):

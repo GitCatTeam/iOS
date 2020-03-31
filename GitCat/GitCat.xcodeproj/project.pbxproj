@@ -41,6 +41,7 @@
 		4C7C0E7E23D985D800669B38 /* CommitListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E7D23D985D800669B38 /* CommitListService.swift */; };
 		4C7C0E8023DF158B00669B38 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E7F23DF158B00669B38 /* SettingVC.swift */; };
 		4C7C9AB02404D0D20047C610 /* DeveloperInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C9AAF2404D0D20047C610 /* DeveloperInfoVC.swift */; };
+		4C892FEA24323D7500DC61CA /* DeleteCatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C892FE924323D7500DC61CA /* DeleteCatService.swift */; };
 		4C8C9E6923CB574600E160B1 /* ReportDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C9E6823CB574600E160B1 /* ReportDetailVC.swift */; };
 		4C99B3792403C46D003DFBA6 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C99B3782403C46D003DFBA6 /* Auth.storyboard */; };
 		4C99B37B2403C4C0003DFBA6 /* InstagramVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */; };
@@ -123,6 +124,7 @@
 		4C7C0E7D23D985D800669B38 /* CommitListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitListService.swift; sourceTree = "<group>"; };
 		4C7C0E7F23DF158B00669B38 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		4C7C9AAF2404D0D20047C610 /* DeveloperInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperInfoVC.swift; sourceTree = "<group>"; };
+		4C892FE924323D7500DC61CA /* DeleteCatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCatService.swift; sourceTree = "<group>"; };
 		4C8C9E6823CB574600E160B1 /* ReportDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailVC.swift; sourceTree = "<group>"; };
 		4C99B3782403C46D003DFBA6 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramVc.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				4CBA4D4C24110998002CED2F /* HomeService.swift */,
 				4CBA4D54241123DC002CED2F /* PostUserDataService.swift */,
 				4CA54839241BB053002B2966 /* CatCollectionService.swift */,
+				4C892FE924323D7500DC61CA /* DeleteCatService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				4CA5483A241BB053002B2966 /* CatCollectionService.swift in Sources */,
 				4C7B569524095625001881FE /* KeyCode.swift in Sources */,
 				4C7C0E7823D9816000669B38 /* CommitCountModel.swift in Sources */,
+				4C892FEA24323D7500DC61CA /* DeleteCatService.swift in Sources */,
 				4CAB3BCE2407ECDE007A84B6 /* PosttableService.swift in Sources */,
 				4CA7A75B23FB9D51004FC110 /* ReportDetailModel.swift in Sources */,
 				4CC7D9B923C63BD5004576BB /* ReportVC.swift in Sources */,

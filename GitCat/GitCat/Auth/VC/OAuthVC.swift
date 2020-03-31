@@ -149,6 +149,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
                 
             }else{
                 UserDefaults.standard.set(true, forKey: "login")
+                UserDefaults.standard.set(true, forKey: "tutorialDone")
                 
                 let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "UserDataInitVC")
                 

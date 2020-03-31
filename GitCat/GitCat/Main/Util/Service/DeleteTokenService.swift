@@ -14,7 +14,7 @@ struct DeleteTokenService: DelettableService, APIServie {
     static let shareInstance = DeleteTokenService()
     
     //MARK: Delete - https://a.gitcat.app/api/notification/device-token (댓글 삭제)
-    func deleteToken(photoUrl: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+    func deleteToken(completion: @escaping (NetworkResult<Any>) -> Void) {
         
         let deleteURL = self.url("/notification/device-token")
         
@@ -54,6 +54,9 @@ struct DeleteTokenService: DelettableService, APIServie {
             case .failure(_):
                 completion(.networkFail)
                 print("Fail: Network Fail")
+                break
+            case .noContents:
+                break
             }
         }
         

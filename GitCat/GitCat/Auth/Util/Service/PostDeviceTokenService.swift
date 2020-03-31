@@ -62,6 +62,10 @@ struct PostDeviceTokenService: PosttableService, APIServie {
             case .failure(_):
                 completion(.networkFail)
                 print("Fail: Network Fail")
+                break
+            case .noContents:
+                break
+
             }
         }
         

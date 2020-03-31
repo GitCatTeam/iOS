@@ -1,39 +1,34 @@
 //
-//  PutAdditionalInfoService.swift
+//  DeleteCatService.swift
 //  GitCat
 //
-//  Created by 조윤영 on 28/02/2020.
+//  Created by 조윤영 on 30/03/2020.
 //  Copyright © 2020 조윤영. All rights reserved.
 //
 
 
-struct PutAdditionalInfoService: PuttableService, APIServie {
+struct DeleteCatService: DelettableService, APIServie {
     
     typealias NetworkData = CommonModel
-    static let shareInstance = PutAdditionalInfoService()
+    static let shareInstance = DeleteCatService()
     
-    //MARK: PUT - https://a.gitcat.app/api/auth/additional (부가정보 서버롤 보내기)
-    func putAdditionalInfo(params: [String : Any], completion: @escaping (NetworkResult<Any>) -> Void) {
+    //MARK: Delete - https://a.gitcat.app/api/home/cats (댓글 삭제)
+    func deleteCat(completion: @escaping (NetworkResult<Any>) -> Void) {
         
-        let modURL = self.url("/auth/additional")
+        let deleteURL = self.url("/home/cats")
         
-        put(modURL, params: params) { (result) in
+        delete(deleteURL, params: [:]) { (result) in
             switch result {
-                
+            
+            
             case .success(let networkResult):
                 switch networkResult.resCode {
                     
-                case HttpResponseCode.getSuccess.rawValue : //200
+                case HttpResponseCode.needData.rawValue : //204
                     completion(.networkSuccess(networkResult.resResult))
-                    
-                case HttpResponseCode.badRequest.rawValue : //400
-                    completion(.badRequest)
-                    
+
                 case HttpResponseCode.accessDenied.rawValue : //401
                     completion(.accessDenied)
-                    
-                case HttpResponseCode.conflict.rawValue : //409
-                    completion(.duplicated)
                     
                 case HttpResponseCode.serverErr.rawValue : //500
                     completion(.serverErr)
@@ -47,14 +42,8 @@ struct PutAdditionalInfoService: PuttableService, APIServie {
             case .error(let resCode):
                 switch resCode {
                     
-                case HttpResponseCode.badRequest.rawValue.description : //400
-                    completion(.badRequest)
-                    
                 case HttpResponseCode.accessDenied.rawValue.description : //401
                     completion(.accessDenied)
-                    
-                case HttpResponseCode.conflict.rawValue.description : //409
-                    completion(.duplicated)
                     
                 default :
                     print("Error: \(resCode)")
@@ -65,7 +54,9 @@ struct PutAdditionalInfoService: PuttableService, APIServie {
             case .failure(_):
                 completion(.networkFail)
                 print("Fail: Network Fail")
+                break
             case .noContents:
+                completion(.dataNeeded)
                 break
             }
         }

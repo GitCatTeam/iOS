@@ -45,6 +45,9 @@ struct CommitListService: GettableService, APIServie {
             case .failure(_):
                 completion(.networkFail)
                 print("FAIL: Network Fail")
+                break
+            case .noContents:
+                break
             }
         }
     }

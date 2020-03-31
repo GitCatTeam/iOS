@@ -73,16 +73,17 @@ class GetMoreInfo4VC: UIViewController {
         initAlpha()
         setButtonSelect()
         animateView()
-        setLabelSize()
         
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-    collectionView.collectionViewLayout.invalidateLayout()
+        collectionView.collectionViewLayout.invalidateLayout()
         setStyle()
         nextMove4Btn.circleRadius()
+        setLabelSize()
     }
+
     
     func setLabelSize() {
         mainTitle.dynamicFont(fontSize: 22, name:"BBTreeG_B")
@@ -90,11 +91,11 @@ class GetMoreInfo4VC: UIViewController {
         basicBtn.titleLabel?.dynamicFont(fontSize: 15, name:"BBTreeG_B")
         specialBtn.titleLabel?.dynamicFont(fontSize: 15, name:"BBTreeG_B")
         catNameLabel.dynamicFont(fontSize: 16, name:"BBTreeG_B")
-//        //FIXME - TextField의 글자크기도 동적으로 바꿔야함.
+
         preparingLavel.dynamicFont(fontSize: 15, name: "BBTreeG_B")
         catNameTextField.adjustsFontSizeToFitWidth = true
         alertTitleLabel.dynamicFont(fontSize: 20, name: "BBTreeG_B")
-        alertSubTitleLabel.dynamicFont(fontSize: 14, name: "BBTreeGo_R ")
+        alertSubTitleLabel.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         
     }
     
@@ -206,6 +207,19 @@ class GetMoreInfo4VC: UIViewController {
             
         }))
     }
+    func dismissCatNameTextField() {
+        UIView.animate(withDuration: 0.5, delay: 0.5,animations: ({
+            self.catNameLabel.alpha = 0
+            self.catNameTextField.alpha = 0
+            self.catNameUnderBar.alpha = 0
+            
+        }))
+        
+        nextMove4Btn.isEnabled = false
+        nextMove4Btn.backgroundColor = UIColor(red: 220/255, green: 221/255, blue: 225/255, alpha: 1)
+        
+        
+    }
     func animateView() {
         UIView.animate(withDuration: 0.5, delay: 0.5,animations: ({
             self.mainTitle.alpha = 1
@@ -216,6 +230,7 @@ class GetMoreInfo4VC: UIViewController {
     }
     
     func setStyle() {
+
         self.basicBtn.layer.borderWidth = 1
         self.basicBtn.layer.borderColor = #colorLiteral(red: 0.7528827786, green: 0.7529742718, blue: 0.752851665, alpha: 1)
         self.basicBtn.topSectionRound(_radius: 7)
@@ -233,8 +248,8 @@ class GetMoreInfo4VC: UIViewController {
         self.collectionView.layer.borderColor = #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1)
         self.collectionView.layer.cornerRadius = 13
         
-        alertView.roundRadius(radius: 10)
-        alertView.customShadow(width: 1, height: 2, radius: 11, opacity: 0.16)
+        self.alertView.roundRadius(radius: 10)
+        self.alertView.customShadow(width: 1, height: 2, radius: 11, opacity: 0.16)
     }
     
     func setButtonSelect() {
@@ -329,9 +344,15 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? SelectCatCVCell
         
-        let imageURL = currentCatList[indexPath.row].profileImg
+        if(currentCatList[indexPath.row].isAvailable == true) {
+            let imageURL = currentCatList[indexPath.row].profileImg
+            
+            cell?.catImageView.setImage(imageURL, defaultImgPath: "imgDefault")
+        }else{
+            cell?.catImageView.image = UIImage(named: "imgCatQuest02")
+        }
         
-        cell?.catImageView.setImage(imageURL, defaultImgPath: "imgDefault")
+        
         
         return cell!
     }
@@ -349,11 +370,19 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
         if(currentCatList[indexPath.row].isAvailable! != false) {
             let selectedCell:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as! SelectCatCVCell
             selectedCell.roundView.layer.borderColor = #colorLiteral(red: 0.4652857184, green: 0.8005116582, blue: 0.9823767543, alpha: 1)
+            catId = currentCatList[indexPath.row].id
             
             showCatNameTextField()
         }else{
             showAlertView()
             alertSubTitleLabel.text = gsno(currentCatList[indexPath.row].description)
+            
+            let cell:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as! SelectCatCVCell
+            cell.isSelected = false
+            
+            dismissCatNameTextField()
+            
+            
         }
     }
     
@@ -361,9 +390,7 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
         
         let cellToDeselect:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as! SelectCatCVCell
         cellToDeselect.roundView.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
-        
-
-        catId = currentCatList[indexPath.row].id
+    
 
 
     }

@@ -51,32 +51,37 @@ extension DelettableService {
                     let resCode = self.gino(res.response?.statusCode)
                     print(resCode)
                     
-                    print(JSON(value))
-                    
-                    //성공 모델
-                    if JSON(value) == JSON.null {
+                    if(resCode == 204){
+                        completion(.noContents)
+                    }else{
+                        print(JSON(value))
                         
-                        let result : networkResult = (resCode, DefaultData()) as! (resCode: Int, resResult: Self.NetworkData)
-                        completion(.success(result))
-                        break
+                        //성공 모델
+                        if JSON(value) == JSON.null {
+                            
+                            let result : networkResult = (resCode, DefaultData()) as! (resCode: Int, resResult: Self.NetworkData)
+                            completion(.success(result))
+                            break
+                            
+                        }
                         
+                        let decoder = JSONDecoder()
+                        
+                        //실패 모델
+                        do {
+                            
+                            let resData = try decoder.decode(NetworkData.self, from: value)
+                            
+                            let result : networkResult = (resCode, resData)
+                            
+                            completion(.success(result))
+                        }catch{ //변수 문제 예외 예상
+                            print("Catch Delete")
+                            
+                            completion(.error("\(resCode)"))
+                        }
                     }
                     
-                    let decoder = JSONDecoder()
-                    
-                    //실패 모델
-                    do {
-                        
-                        let resData = try decoder.decode(NetworkData.self, from: value)
-                        
-                        let result : networkResult = (resCode, resData)
-                        
-                        completion(.success(result))
-                    }catch{ //변수 문제 예외 예상
-                        print("Catch Delete")
-                        
-                        completion(.error("\(resCode)"))
-                    }
                 }
                 break
                 

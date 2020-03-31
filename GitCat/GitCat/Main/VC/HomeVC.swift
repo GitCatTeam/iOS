@@ -329,6 +329,8 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         //present
         let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "GetMoreInfo4VC")
         dvc.modalPresentationStyle = .fullScreen
+        self.present(dvc, animated: true, completion: nil)
+        
     }
     
     
@@ -380,6 +382,9 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         leaveSubTitle4.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         leaveSubTitle5.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         leaveSubTitle6.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
+        
+        commitReportDescription.dynamicFont(fontSize: 32, name: "NanumBaeEunHyeCe")
+        catCollectionDescription.dynamicFont(fontSize: 32, name: "NanumBaeEunHyeCe")
         
         
     }
@@ -570,7 +575,11 @@ extension HomeVC {
                         self.catImageView.kf.setImage(with: url)
                         self.itemLabel.text = "("+(resResult.data?.nextLevelStr ?? "")+")"
                         self.leftScoreLabel.text = "\(self.gino(resResult.data?.nextLevelScore))"
-                        self.catChatLabel.text = resResult.data?.ments?[0]
+                        
+                        if(resResult.data?.ments?.count != 0) {
+                            self.catChatLabel.text = resResult.data?.ments?[0]
+                        }
+                        
                         self.mentsBox = resResult.data?.ments ?? []
                         
                         if(resResult.data!.isLevelUp!) {
@@ -598,6 +607,8 @@ extension HomeVC {
                     break
                 case .dataNeeded:
                     self.showSelectNewCat()
+                    self.loadingView.alpha = 0
+                    self.loadingBackgroundView.alpha = 0
                 case .networkFail :
                     self.networkErrorAlert()
                     self.loadingView.alpha = 0
@@ -621,7 +632,6 @@ extension HomeVC {
                         self.setHomeData()
                         break
                         
-                    //FIXME: 수정
                     case .badRequest: //400
                         self.simpleAlert(title: "", message: "다시 시도해주세요")
                         break

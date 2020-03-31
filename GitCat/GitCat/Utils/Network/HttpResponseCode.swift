@@ -28,6 +28,7 @@ enum HttpResponseCode: Int{
 
 enum Result<T> {
     case success(T)
+    case noContents
     case error(String)
     case failure(Error)
 }
