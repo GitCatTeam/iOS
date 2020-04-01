@@ -16,33 +16,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        let notificationCenter = UNUserNotificationCenter.current()
         
-        notificationCenter.getNotificationSettings { (settings) in
-            //User NotifyCation 센터를 가져온다
-            let center = UNUserNotificationCenter.current()
-            
-            //사용 여부를 묻는다.
-            center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-                guard granted else {
-                    UserDefaults.standard.set(false, forKey: "pushAlarm")
-                    print("사용자가 push alarm을 허락하지 않았습니다.")
-                    return
-                }
-                
-                UserDefaults.standard.set(true, forKey: "pushAlarm")
-                print("사용자가 push alarm을 허락했습니다.")
-
-                DispatchQueue.main.async {
-                    
-                    //APNs에 스마트폰을 등록하는 메소드. (네트워크)
-                    UIApplication.shared.registerForRemoteNotifications()
-                }
-                
-                
-            }
-        }
+        //MARK - push alarm 허용 부분 - Notification
+        
+        // Override point for customization after application launch.
+//        let notificationCenter = UNUserNotificationCenter.current()
+//
+//        notificationCenter.getNotificationSettings { (settings) in
+//            //User NotifyCation 센터를 가져온다
+//            let center = UNUserNotificationCenter.current()
+//
+//            //사용 여부를 묻는다.
+//            center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+//                guard granted else {
+//                    UserDefaults.standard.set(false, forKey: "pushAlarm")
+//                    print("사용자가 push alarm을 허락하지 않았습니다.")
+//                    return
+//                }
+//
+//                UserDefaults.standard.set(true, forKey: "pushAlarm")
+//                print("사용자가 push alarm을 허락했습니다.")
+//
+//                DispatchQueue.main.async {
+//
+//                    //APNs에 스마트폰을 등록하는 메소드. (네트워크)
+//                    UIApplication.shared.registerForRemoteNotifications()
+//                }
+//
+//
+//            }
+//        }
         
         //MARK - 화면 이동.
         

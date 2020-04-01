@@ -1,13 +1,13 @@
 {
   "images" : [
     {
-      "filename" : "imgLogoWhite1.png",
+      "idiom" : "universal",
       "scale" : "1x",
-      "idiom" : "universal"
+      "filename" : "imgLogoWhite1.png"
     },
     {
-      "idiom" : "universal",
       "filename" : "imgLogoWhite1@2x.png",
+      "idiom" : "universal",
       "scale" : "2x"
     },
     {
