@@ -12,7 +12,7 @@ struct CommitCountService: GettableService, APIServie {
     typealias NetworkData = CommitCountModel
     static let sharedInstance = CommitCountService()
     
-    //MARK: GET - https://a.chameleon4switch.cf/calender/monthCommitCount?email=\(email)&month=\(month) (해당 달의 커밋달력 잔디 색 레벨 값 반환)
+    //MARK: GET - https://a.chameleon4switch.cf/calender/monthCommitCount?email=\(email)&month=\(month) (해당 달의 커밋달력 잔디 색 레벨 값 반환 API)
     
 
     func getCommit(month:String, completion: @escaping (NetworkResult<Any>) -> Void) {

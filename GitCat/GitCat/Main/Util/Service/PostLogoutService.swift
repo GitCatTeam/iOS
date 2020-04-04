@@ -1,37 +1,42 @@
 //
-//  DeleteTokenService.swift
+//  PostLogoutService.swift
 //  GitCat
 //
-//  Created by 조윤영 on 28/02/2020.
+//  Created by 조윤영 on 04/04/2020.
 //  Copyright © 2020 조윤영. All rights reserved.
 //
 
 import Foundation
 
-struct DeleteTokenService: DelettableService, APIServie {
+struct PostLogoutService: PosttableService, APIServie {
     
     typealias NetworkData = CommonModel
-    static let shareInstance = DeleteTokenService()
+    static let shareInstance = PostLogoutService()
     
-    //MARK: Delete - https://a.gitcat.app/api/notification/device-token (토큰 삭제 API)
-    func deleteToken(completion: @escaping (NetworkResult<Any>) -> Void) {
+    //MARK: POST - https://a.gitcat.app/api/auth/logout (로그아웃 API)
+    
+    func postLogout(completion: @escaping (NetworkResult<Any>) -> Void) {
         
-        let deleteURL = self.url("/notification/device-token")
+        let userDataURL = self.url("/auth/logout")
         
-        delete(deleteURL, params: [:]) { (result) in
+        post(userDataURL, params: [:]) { (result) in
             switch result {
                 
             case .success(let networkResult):
                 switch networkResult.resCode {
                     
-                case HttpResponseCode.getSuccess.rawValue : //200
+                case HttpResponseCode.postSuccess.rawValue : //201
                     completion(.networkSuccess(networkResult.resResult))
-
+                    
+                case HttpResponseCode.badRequest.rawValue : //400
+                    completion(.badRequest)
+                    
                 case HttpResponseCode.accessDenied.rawValue : //401
                     completion(.accessDenied)
                     
                 case HttpResponseCode.serverErr.rawValue : //500
                     completion(.serverErr)
+                    
                     
                 default :
                     print("Success: \(networkResult.resCode)")
@@ -41,6 +46,9 @@ struct DeleteTokenService: DelettableService, APIServie {
                 
             case .error(let resCode):
                 switch resCode {
+                    
+                case HttpResponseCode.badRequest.rawValue.description : //400
+                    completion(.badRequest)
                     
                 case HttpResponseCode.accessDenied.rawValue.description : //401
                     completion(.accessDenied)

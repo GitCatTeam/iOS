@@ -13,7 +13,7 @@ struct PostUserDataService: PosttableService, APIServie {
     typealias NetworkData = CommonModel
     static let shareInstance = PostUserDataService()
     
-    //MARK: POST - https://a.gitcat.app/api/home/commits (새로운 고양이 선택하기)
+    //MARK: POST - https://a.gitcat.app/api/home/commits (로딩과정에서 사용자의 Github 커밋 데이터 불러오기 API)
     
     func postUserData(completion: @escaping (NetworkResult<Any>) -> Void) {
         

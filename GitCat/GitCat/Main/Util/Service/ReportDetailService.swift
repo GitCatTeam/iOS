@@ -13,7 +13,6 @@ struct ReportDetailService: GettableService, APIServie {
     static let sharedInstance = ReportDetailService()
     
     //MARK: GET - https://a.gitcat.app/api/monthly/repoDetail?id=1 (월간 레포트의 상세 데이터를 불러오는 API)
-    
 
     func getReportDetail(id:Int, completion: @escaping (NetworkResult<Any>) -> Void) {
         

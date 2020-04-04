@@ -66,6 +66,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        deleteCache()
         loadURL()
         setBackBtn(color: UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1))
     }
@@ -74,6 +75,16 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
         super.viewDidAppear(true)
         
         checkNetworkConnect()
+    }
+    
+    func deleteCache() {
+        WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(), completionHandler: {
+            (records) -> Void in
+            for record in records{
+                WKWebsiteDataStore.default().removeData(ofTypes: record.dataTypes, for: [record], completionHandler: {})
+               //remove callback
+            }
+        })
     }
     
     func loadURL() {

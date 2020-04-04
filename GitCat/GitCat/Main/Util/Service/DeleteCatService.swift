@@ -12,7 +12,7 @@ struct DeleteCatService: DelettableService, APIServie {
     typealias NetworkData = CommonModel
     static let shareInstance = DeleteCatService()
     
-    //MARK: Delete - https://a.gitcat.app/api/home/cats (댓글 삭제)
+    //MARK: Delete - https://a.gitcat.app/api/home/cats (고양씨 초기화 API)
     func deleteCat(completion: @escaping (NetworkResult<Any>) -> Void) {
         
         let deleteURL = self.url("/home/cats")

@@ -11,7 +11,7 @@ struct CommitListService: GettableService, APIServie {
     typealias NetworkData = CommitListModel
     static let sharedInstance = CommitListService()
     
-    //MARK: GET - https://a.gitcat.app/api/calender/commit?date=\(date) (해당 날짜의 커밋 내역 리스트 반환)
+    //MARK: GET - https://a.gitcat.app/api/calender/commit?date=\(date) (해당 날짜의 커밋 내역 리스트 반환 API)
     
     func getCommitData(date:String, completion: @escaping (NetworkResult<Any>) -> Void) {
         let commitURL = self.url("/calender/commit?date=\(date)")

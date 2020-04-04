@@ -13,7 +13,7 @@ struct HomeService: GettableService, APIServie {
     typealias NetworkData = HomeModel
     static let sharedInstance = HomeService()
     
-    //MARK: GET - https://a.gitcat.app/api/home/main (월간 레포트의 목록을 불러오는 API)
+    //MARK: GET - https://a.gitcat.app/api/home/main (업데이트된 홈 데이터를 불러오는 API)
     
 
     func getHomeData(completion: @escaping (NetworkResult<Any>) -> Void) {
