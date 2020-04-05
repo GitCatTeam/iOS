@@ -18,6 +18,7 @@
 		4C3B8E5B2402449C008735DE /* AuthManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3B8E5A2402449B008735DE /* AuthManageVC.swift */; };
 		4C4A923223BA2476002E5F35 /* MidRepoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A923123BA2476002E5F35 /* MidRepoVC.swift */; };
 		4C60E75D24383DE6007495DB /* PostLogoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C60E75C24383DE6007495DB /* PostLogoutService.swift */; };
+		4C60E75F24385B70007495DB /* CustomDashedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C60E75E24385B70007495DB /* CustomDashedView.swift */; };
 		4C64F6382431E8D40009EC46 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C64F6372431E8D40009EC46 /* Splash.storyboard */; };
 		4C64F63A2431EA400009EC46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C64F6392431EA400009EC46 /* LaunchScreen.storyboard */; };
 		4C68D10623B09D3E00A8F813 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68D10523B09D3E00A8F813 /* AppDelegate.swift */; };
@@ -99,6 +100,7 @@
 		4C3B8E5A2402449B008735DE /* AuthManageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManageVC.swift; sourceTree = "<group>"; };
 		4C4A923123BA2476002E5F35 /* MidRepoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidRepoVC.swift; sourceTree = "<group>"; };
 		4C60E75C24383DE6007495DB /* PostLogoutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLogoutService.swift; sourceTree = "<group>"; };
+		4C60E75E24385B70007495DB /* CustomDashedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDashedView.swift; sourceTree = "<group>"; };
 		4C64F6372431E8D40009EC46 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		4C64F6392431EA400009EC46 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C68D10223B09D3E00A8F813 /* GitCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -285,6 +287,7 @@
 				4CC07FBE23B330A600851B45 /* LittleRoundBtn.swift */,
 				4CC07FC023B35A7300851B45 /* RoundImageView.swift */,
 				4CD5A5CF23C2F45E00A8E225 /* CustomLabel.swift */,
+				4C60E75E24385B70007495DB /* CustomDashedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 				4CC07FC523B35BA400851B45 /* GetMoreInfo4VC.swift in Sources */,
 				4CB9BC15242CF4DB00F143A1 /* DefaultData.swift in Sources */,
 				4C7C0E1723D587CF00669B38 /* CatCollectionVC.swift in Sources */,
+				4C60E75F24385B70007495DB /* CustomDashedView.swift in Sources */,
 				4C7C0E1523D5650D00669B38 /* MainTabBarVC.swift in Sources */,
 				4CC07FBB23B3238C00851B45 /* GetMoreInfo3VC.swift in Sources */,
 				4CAB3BCA2407EA71007A84B6 /* CatListModel.swift in Sources */,

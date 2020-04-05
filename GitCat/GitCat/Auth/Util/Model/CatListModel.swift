@@ -14,6 +14,7 @@ class CatListModel: Codable {
 }
 
 class CatListDataModel:Codable {
+    var isNewExist: Bool?
     var normal: [CatDataModel]?
     var special: [CatDataModel]?
 }
@@ -24,6 +25,7 @@ class CatDataModel:Codable {
     var description:String?
     var payType: String?
     var isAvailable: Bool?
+    var isNew: Bool?
 }
 
 

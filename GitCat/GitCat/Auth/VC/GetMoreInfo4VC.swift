@@ -344,9 +344,18 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? SelectCatCVCell
         
+        //새로 지급된 고양이인지 판별
+        if(currentCatList[indexPath.row].isNew == true) {
+            cell?.NewBadgeView.alpha = 1
+        }else{
+            cell?.NewBadgeView.alpha = 0
+        }
+        
+        //접근 가능한 고양이인지 판별
         if(currentCatList[indexPath.row].isAvailable == true) {
             let imageURL = currentCatList[indexPath.row].profileImg
             
+            //FIXME - 투명도 + 물음표 디자인 적용
             cell?.catImageView.setImage(imageURL, defaultImgPath: "imgDefault")
         }else{
             cell?.catImageView.image = UIImage(named: "imgCatQuest02")
@@ -412,6 +421,10 @@ extension GetMoreInfo4VC {
                 if let resResult = catListData {
                     self.commonCatList = resResult.data?.normal ?? []
                     self.specialCatList = resResult.data?.special ?? []
+                    
+                    if(resResult.data?.isNewExist == true) {
+                        //TODO - 새로운 고양이 지급됐다고 다이얼로그 창 띄우기
+                    }
                     
                     self.currentCatList = self.commonCatList;
                     self.collectionView.reloadData()

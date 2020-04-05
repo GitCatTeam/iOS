@@ -148,8 +148,8 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
             UserDefaults.standard.set(userImage, forKey: "userImage")
             UserDefaults.standard.set(token, forKey: "token")
             
-            //DeviceToken 전달
-            postDeviceToken()
+            //FIXME: DeviceToken 전달
+//            postDeviceToken()
             
             
             if(isFirst == true) {
