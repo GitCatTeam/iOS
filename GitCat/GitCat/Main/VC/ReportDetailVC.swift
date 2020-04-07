@@ -128,27 +128,8 @@ class ReportDetailVC: UIViewController {
         
         
         setFontSize()
-        
-        
     }
 
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        self.dottedLine1.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
-        self.dottedLine2.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
-        self.dottedLine3.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
-        self.dottedLine4.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        self.dottedLine1.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
-        self.dottedLine2.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
-        self.dottedLine3.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
-        self.dottedLine4.createDottedLine(width: 1, color: #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1))
-
-    }
     
     func setFontSize() {
         descLabel1.dynamicFont(fontSize: 14, name: "BBTreeG_B")

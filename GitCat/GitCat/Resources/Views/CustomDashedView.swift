@@ -8,36 +8,22 @@
 
 import UIKit
 
+
 class CustomDashedView: UIView {
 
-    @IBInspectable var cornerRadius: CGFloat = 0 {
-        didSet {
-            layer.cornerRadius = cornerRadius
-            layer.masksToBounds = cornerRadius > 0
-        }
-    }
-    @IBInspectable var dashWidth: CGFloat = 0
-    @IBInspectable var dashColor: UIColor = .clear
-    @IBInspectable var dashLength: CGFloat = 0
-    @IBInspectable var betweenDashesSpace: CGFloat = 0
 
-    var dashBorder: CAShapeLayer?
+    override func draw(_ rect: CGRect) {
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        dashBorder?.removeFromSuperlayer()
-        let dashBorder = CAShapeLayer()
-        dashBorder.lineWidth = dashWidth
-        dashBorder.strokeColor = dashColor.cgColor
-        dashBorder.lineDashPattern = [dashLength, betweenDashesSpace] as [NSNumber]
-        dashBorder.frame = bounds
-        dashBorder.fillColor = nil
-        if cornerRadius > 0 {
-            dashBorder.path = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
-        } else {
-            dashBorder.path = UIBezierPath(rect: bounds).cgPath
-        }
-        layer.addSublayer(dashBorder)
-        self.dashBorder = dashBorder
+        let path = UIBezierPath()
+        // >> define the pattern & apply it
+        let dashPattern: [CGFloat] = [5.0, 3.0]
+        path.setLineDash(dashPattern, count: dashPattern.count, phase: 0)
+        // <<
+        path.lineWidth = 1
+        path.move(to: CGPoint(x: 0, y: 0))
+        path.addLine(to: CGPoint(x: self.bounds.width, y: 0))
+        path.stroke()
+
     }
 }
+
