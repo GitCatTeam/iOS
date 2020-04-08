@@ -53,6 +53,16 @@ extension UIViewController {
             return false
         }
     }
+    
+    func deleteNavigationUnderbar(){
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = false
+    }
+    
+    func showNavigationUnderBar() {
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+    }
     //네트워크 에러 팝업
     func networkErrorAlert() {
         

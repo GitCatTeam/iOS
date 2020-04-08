@@ -19,6 +19,9 @@ class AuthManageVC: UIViewController {
 
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.CustomColor.brownishGrey]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
+        
+        self.showNavigationUnderBar()
     }
     
     @IBAction func LogoutAction(_ sender: Any) {

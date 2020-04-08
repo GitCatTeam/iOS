@@ -223,7 +223,7 @@ extension MidRepoVC:  UITableViewDelegate, UITableViewDataSource  {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        let height = tableView.frame.width/30.4
+        let height = tableView.frame.width/20
         return height
     }
     

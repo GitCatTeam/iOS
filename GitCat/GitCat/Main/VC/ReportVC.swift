@@ -20,10 +20,10 @@ class ReportVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         super.viewDidLoad()
         
         
-        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.CustomColor.brownishGrey]
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.CustomColor.skyBlue]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
+        self.deleteNavigationUnderbar()
         loadingView.loadGif(name: "gif_loading2")
     }
     

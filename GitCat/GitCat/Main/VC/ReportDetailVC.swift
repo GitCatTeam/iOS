@@ -128,6 +128,8 @@ class ReportDetailVC: UIViewController {
         
         
         setFontSize()
+        self.deleteNavigationUnderbar()
+    
     }
 
     
@@ -195,7 +197,6 @@ class ReportDetailVC: UIViewController {
         lineChart.xAxis.labelPosition = .bottom
         lineChart.xAxis.drawGridLinesEnabled = false
         lineChart.xAxis.axisLineDashPhase = CGFloat(signOf: 0,magnitudeOf: 0)
-        
         lineChart.xAxis.gridColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         lineChart.xAxis.labelTextColor = UIColor.CustomColor.brownishGrey
 
@@ -209,6 +210,7 @@ class ReportDetailVC: UIViewController {
         lineChart.leftAxis.drawAxisLineEnabled = false
         lineChart.leftAxis.gridColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         lineChart.leftAxis.labelTextColor = #colorLiteral(red: 0.5320672393, green: 0.8002378345, blue: 0.9608486295, alpha: 1)
+        lineChart.leftAxis.gridLineDashLengths = [2,3]
         
         if UIDevice.current.model.hasPrefix("iPad") {
             lineChart.leftAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 18)!
