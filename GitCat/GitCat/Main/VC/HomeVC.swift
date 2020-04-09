@@ -66,9 +66,8 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     @IBOutlet weak var graduateTitleLabel: CustomLabel!
     @IBOutlet weak var graduateSubTitle1: CustomLabel!
     @IBOutlet weak var graduateSubTitle2: CustomLabel!
-    @IBOutlet weak var graduateCatLabel: CustomLabel!
-    @IBOutlet weak var grduateSubTitle3: CustomLabel!
     @IBOutlet weak var graduateBtn: RoundBtn!
+    @IBOutlet weak var graduateCatName: UILabel!
     
     @IBOutlet weak var itemTitleLabel: UILabel!
     @IBOutlet weak var itemSubTitleLabel: CustomLabel!
@@ -365,10 +364,8 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         graduateTitleLabel.dynamicFont(fontSize: 20, name: "BBTreeG_B")
         graduateSubTitle1.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         graduateSubTitle2.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
-        grduateSubTitle3.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
-        graduateCatLabel.dynamicFont(fontSize: 14, name: "BBTreeG_B")
-        graduateBtn.titleLabel?.dynamicFont(fontSize: 14, name: "BBTreeG_B")
-        
+        graduateCatName.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
+
         itemTitleLabel.dynamicFont(fontSize: 20, name: "BBTreeG_B")
         itemSubTitleLabel.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         itemSubTitleLabel2.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
@@ -590,6 +587,7 @@ extension HomeVC {
                             self.showItemUpgradeCard()
                         }
                         if(resResult.data!.isGraduate!) {
+                            self.graduateCatName.text = "\(self.gsno(resResult.data?.catName))씨가 졸업하게 되었어요."
                             self.showGraduateCard()
                         }
                         
