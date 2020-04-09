@@ -896,7 +896,7 @@
                                             <constraint firstItem="zB5-hp-UMR" firstAttribute="width" secondItem="BGj-u3-9bY" secondAttribute="width" multiplier="0.626087" id="yb8-ta-AeB"/>
                                         </constraints>
                                     </view>
-                                    <collectionView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jz5-Ti-1Fl">
+                                    <collectionView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jz5-Ti-1Fl">
                                         <rect key="frame" x="56" y="345" width="302" height="206"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
