@@ -38,6 +38,11 @@ class AuthManageVC: UIViewController {
             //함수가 성공적으로 수행된 후 작동되는 code
         }
     }
+    
+    @IBAction func wthdrawalAction(_ sender: Any) {
+        widthdrawl()
+    }
+    
 
 }
 
@@ -73,5 +78,25 @@ extension AuthManageVC {
                     break
             }
         })
+    }
+    
+    func widthdrawl() {
+        DeleteUserInfo.shareInstance.withdrawal { (result) in
+                switch result {
+                case .networkSuccess(_):
+                    break
+                case .dataNeeded:
+                    let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "SignInVC")
+                    dvc.modalPresentationStyle = .fullScreen
+                    self.present(dvc, animated: true, completion: nil)
+                    break
+                case .networkFail :
+                    self.networkErrorAlert()
+                    
+                default :
+                    self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                    break
+            }
+        }
     }
 }

@@ -17,6 +17,7 @@ class CatListDataModel:Codable {
     var isNewExist: Bool?
     var normal: [CatDataModel]?
     var special: [CatDataModel]?
+    var new: [CatNewDataModel]?
 }
 class CatDataModel:Codable {
     var id: Int?
@@ -28,4 +29,8 @@ class CatDataModel:Codable {
     var isNew: Bool?
 }
 
+class CatNewDataModel:Codable {
+    var profileImg:String?
+    var description:String?
+}
 

@@ -15,6 +15,7 @@
 		4C10BCF824162CFC00CDC16D /* ButtonLabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C10BCF724162CFC00CDC16D /* ButtonLabelExtension.swift */; };
 		4C2DDD0A23EAEEF200FCB36B /* TutorialCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DDD0923EAEEF200FCB36B /* TutorialCVCell.swift */; };
 		4C2DDD0D23EB1FD200FCB36B /* SelectCatCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DDD0C23EB1FD200FCB36B /* SelectCatCVCell.swift */; };
+		4C317176243F512F004F8FA7 /* NewCatCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C317175243F512F004F8FA7 /* NewCatCVCell.swift */; };
 		4C3B8E5B2402449C008735DE /* AuthManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3B8E5A2402449B008735DE /* AuthManageVC.swift */; };
 		4C4A923223BA2476002E5F35 /* MidRepoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A923123BA2476002E5F35 /* MidRepoVC.swift */; };
 		4C60E75D24383DE6007495DB /* PostLogoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C60E75C24383DE6007495DB /* PostLogoutService.swift */; };
@@ -82,6 +83,7 @@
 		4CC07FC523B35BA400851B45 /* GetMoreInfo4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC07FC423B35BA400851B45 /* GetMoreInfo4VC.swift */; };
 		4CC7D9B923C63BD5004576BB /* ReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D9B823C63BD5004576BB /* ReportVC.swift */; };
 		4CC7D9BE23C64722004576BB /* ReportCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D9BD23C64722004576BB /* ReportCVCell.swift */; };
+		4CCAABCF243D9DFC00CBF56A /* DeleteUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCAABCE243D9DFC00CBF56A /* DeleteUserInfo.swift */; };
 		4CCBE95A23FADD11002FA879 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCBE95923FADD11002FA879 /* UserNotifications.framework */; };
 		4CCBE95C23FADD1A002FA879 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCBE95B23FADD1A002FA879 /* PushKit.framework */; };
 		4CD5A5D023C2F45E00A8E225 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5A5CF23C2F45E00A8E225 /* CustomLabel.swift */; };
@@ -97,6 +99,7 @@
 		4C10BCF724162CFC00CDC16D /* ButtonLabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabelExtension.swift; sourceTree = "<group>"; };
 		4C2DDD0923EAEEF200FCB36B /* TutorialCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCVCell.swift; sourceTree = "<group>"; };
 		4C2DDD0C23EB1FD200FCB36B /* SelectCatCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCatCVCell.swift; sourceTree = "<group>"; };
+		4C317175243F512F004F8FA7 /* NewCatCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCatCVCell.swift; sourceTree = "<group>"; };
 		4C3B8E5A2402449B008735DE /* AuthManageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManageVC.swift; sourceTree = "<group>"; };
 		4C4A923123BA2476002E5F35 /* MidRepoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidRepoVC.swift; sourceTree = "<group>"; };
 		4C60E75C24383DE6007495DB /* PostLogoutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLogoutService.swift; sourceTree = "<group>"; };
@@ -167,6 +170,7 @@
 		4CC07FC423B35BA400851B45 /* GetMoreInfo4VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMoreInfo4VC.swift; sourceTree = "<group>"; };
 		4CC7D9B823C63BD5004576BB /* ReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportVC.swift; sourceTree = "<group>"; };
 		4CC7D9BD23C64722004576BB /* ReportCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCVCell.swift; sourceTree = "<group>"; };
+		4CCAABCE243D9DFC00CBF56A /* DeleteUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserInfo.swift; sourceTree = "<group>"; };
 		4CCBE95923FADD11002FA879 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		4CCBE95B23FADD1A002FA879 /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
 		4CCBE95D23FADD7D002FA879 /* GitCatDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitCatDebug.entitlements; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				4C2DDD0C23EB1FD200FCB36B /* SelectCatCVCell.swift */,
+				4C317175243F512F004F8FA7 /* NewCatCVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 				4CA54839241BB053002B2966 /* CatCollectionService.swift */,
 				4C892FE924323D7500DC61CA /* DeleteCatService.swift */,
 				4C60E75C24383DE6007495DB /* PostLogoutService.swift */,
+				4CCAABCE243D9DFC00CBF56A /* DeleteUserInfo.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -616,6 +622,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CBA4D55241123DC002CED2F /* PostUserDataService.swift in Sources */,
+				4CCAABCF243D9DFC00CBF56A /* DeleteUserInfo.swift in Sources */,
 				4C7B568F2408DBBB001881FE /* DeleteTokenService.swift in Sources */,
 				4CE733EF23FCF0D900DB97EB /* ReportDetailService.swift in Sources */,
 				4CBA4D4B2411083F002CED2F /* HomeModel.swift in Sources */,
@@ -674,6 +681,7 @@
 				4C7C0E1123D4A11400669B38 /* CustomHeaderTVCell.swift in Sources */,
 				4C2DDD0D23EB1FD200FCB36B /* SelectCatCVCell.swift in Sources */,
 				4CE733ED23FCF0CD00DB97EB /* ReportListService.swift in Sources */,
+				4C317176243F512F004F8FA7 /* NewCatCVCell.swift in Sources */,
 				4CA7A75923FB9D36004FC110 /* ReportListModel.swift in Sources */,
 				4C7C0E6723D8044B00669B38 /* HttpResponseCode.swift in Sources */,
 				4C7C0E6D23D8133200669B38 /* GettableService.swift in Sources */,

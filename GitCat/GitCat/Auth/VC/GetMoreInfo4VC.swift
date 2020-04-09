@@ -29,6 +29,8 @@ class GetMoreInfo4VC: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var newCatCollectionView: UICollectionView!
+    
     
     @IBOutlet weak var catNameLabel: UILabel!
     @IBOutlet weak var catNameTextField: UITextField!
@@ -42,8 +44,13 @@ class GetMoreInfo4VC: UIViewController {
     
     @IBOutlet weak var alertView: UIView!
     
+    @IBOutlet weak var alertcardView: UIView!
+    
     @IBOutlet weak var alertTitleLabel: CustomLabel!
     @IBOutlet weak var alertSubTitleLabel: CustomLabel!
+    
+    @IBOutlet weak var pageControl: UIPageControl!
+    
     
     var keyboardShown:Bool = false // 키보드 상태 확인
     var nameFieldShow:Bool = false //애니메이션 시작 플래그
@@ -53,10 +60,13 @@ class GetMoreInfo4VC: UIViewController {
     var specialCatList = [CatDataModel]();
     var currentCatList = [CatDataModel]();
     
+    var newCatList = [CatNewDataModel]();
+    
     var catId:Int?
     var catName:String?
     
     let cellIdentifier = "SelectCatCVCell"
+    let cellIdentifier2 = "NewCatCVCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,13 +85,17 @@ class GetMoreInfo4VC: UIViewController {
         animateView()
         
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
         collectionView.collectionViewLayout.invalidateLayout()
+        newCatCollectionView.collectionViewLayout.invalidateLayout()
+        
         setStyle()
         nextMove4Btn.circleRadius()
         setLabelSize()
+
     }
 
     
@@ -133,8 +147,6 @@ class GetMoreInfo4VC: UIViewController {
         self.currentCatList = self.commonCatList;
         self.collectionView.reloadData()
         
-        print("common:\(currentCatList)")
-        
         preparingLavel.alpha = 0
         preparingView.alpha = 0
     }
@@ -142,12 +154,9 @@ class GetMoreInfo4VC: UIViewController {
     @IBAction func specialBtnAction(_ sender: Any) {
         self.currentCatList = self.specialCatList;
         self.collectionView.reloadData()
-        print("special:\(currentCatList)")
         
         preparingLavel.alpha = 1
         preparingView.alpha = 1
-        
-        
     }
     
     @IBAction func nameFieldEditingChangedAction(_ sender: Any) {
@@ -178,6 +187,7 @@ class GetMoreInfo4VC: UIViewController {
     @IBAction func closeAlertViewAction(_ sender: Any) {
         UIView.animate(withDuration: 0.5, animations: {
             self.alertView.alpha = 0
+            self.alertcardView.alpha = 0
         });
     }
     
@@ -196,6 +206,9 @@ class GetMoreInfo4VC: UIViewController {
         self.preparingView.alpha = 0
         
         self.alertView.alpha = 0
+        self.alertcardView.alpha = 0
+        self.newCatCollectionView.alpha = 0
+        self.pageControl.alpha = 0
     }
     
    
@@ -321,6 +334,32 @@ class GetMoreInfo4VC: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    func showAlertView() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.alertView.alpha = 1
+            self.alertcardView.alpha = 1
+        });
+    }
+    
+    func showNewCatListView() {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.alertView.alpha = 1
+            self.newCatCollectionView.alpha = 1
+            self.pageControl.alpha = 1
+        });
+    }
+    
+    @IBAction func closeNewCatViewAction(_ sender: Any) {
+        print("닫는버튼 선택")
+        UIView.animate(withDuration: 0.5, animations: {
+            self.alertView.alpha = 0
+            self.newCatCollectionView.alpha = 0
+            self.pageControl.alpha = 0
+        });
+    }
+    
+    
 }
 
 extension GetMoreInfo4VC: UITextFieldDelegate{
@@ -337,78 +376,121 @@ extension GetMoreInfo4VC: UITextFieldDelegate{
 extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return currentCatList.count
+        
+        
+        if(collectionView == self.collectionView) {
+                print(currentCatList.count)
+                return currentCatList.count
+        }
+        if(collectionView == self.newCatCollectionView){
+            return newCatList.count
+        }
+       
+        return 0
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? SelectCatCVCell
-        
-        //새로 지급된 고양이인지 판별
-        if(currentCatList[indexPath.row].isNew == true) {
-            cell?.NewBadgeView.alpha = 1
-        }else{
-            cell?.NewBadgeView.alpha = 0
-        }
-        
-        //접근 가능한 고양이인지 판별
-        if(currentCatList[indexPath.row].isAvailable == true) {
-            let imageURL = currentCatList[indexPath.row].profileImg
+        if(collectionView == self.newCatCollectionView ){
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier2, for: indexPath) as? NewCatCVCell
+
+            let imageURL = gsno(self.newCatList[indexPath.row].profileImg)
+
+            cell?.newCatImageView.setImage(imageURL, defaultImgPath: "imgDefault")
+            cell?.newCatDescriptionLabel.text = gsno(newCatList[indexPath.row].description)
             
-            //FIXME - 투명도 + 물음표 디자인 적용
-            cell?.catImageView.setImage(imageURL, defaultImgPath: "imgDefault")
-        }else{
-            cell?.catImageView.image = UIImage(named: "imgCatQuest02")
+            if(indexPath.row == newCatList.count) {
+                cell?.closedBtnImageView.alpha = 0
+                cell?.closedBtn.alpha = 0
+            }else{
+                cell?.closedBtnImageView.alpha = 1
+                cell?.closedBtn.alpha = 1
+            }
+            
+            return cell!
         }
         
+        //선택 고양이 리스트 셀 구현
+        if(collectionView == self.collectionView) {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? SelectCatCVCell
+                
+            //새로 지급된 고양이인지 판별
+            if(currentCatList[indexPath.row].isNew == true) {
+                cell?.NewBadgeView.alpha = 1
+            }else{
+                cell?.NewBadgeView.alpha = 0
+            }
+                
+            let imageURL = gsno(currentCatList[indexPath.row].profileImg)
+            cell?.catImageView.setImage(imageURL, defaultImgPath: "imgDefault")
+
+            return cell!
+        }
         
-        
-        return cell!
+        return UICollectionViewCell()
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        if(collectionView == self.newCatCollectionView) {
+            
+            let cellWidth: CGFloat = newCatCollectionView.frame.width / 1.04
+            let cellHeight: CGFloat = newCatCollectionView.frame.height
         
-        //76
-        let cellWidth: CGFloat = collectionView.frame.width / 3.4 - 1
+            return CGSize(width: cellWidth, height: cellHeight)
+        }
+        if(collectionView == self.collectionView) {
+            let cellWidth: CGFloat = collectionView.frame.width / 3.4 - 1
+            
+            let cellHeight: CGFloat = collectionView.frame.height / 3.15 - 1
+            
+            return CGSize(width: cellWidth, height: cellHeight)
+        }
         
-        let cellHeight: CGFloat = collectionView.frame.height / 3.15 - 1
-        
-        return CGSize(width: cellWidth, height: cellHeight)
+        return CGSize(width: 0, height: 0)
+
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if(currentCatList[indexPath.row].isAvailable! != false) {
-            let selectedCell:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as! SelectCatCVCell
-            selectedCell.roundView.layer.borderColor = #colorLiteral(red: 0.4652857184, green: 0.8005116582, blue: 0.9823767543, alpha: 1)
-            catId = currentCatList[indexPath.row].id
-            
-            showCatNameTextField()
-        }else{
-            showAlertView()
-            alertSubTitleLabel.text = gsno(currentCatList[indexPath.row].description)
-            
-            let cell:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as! SelectCatCVCell
-            cell.isSelected = false
-            
-            dismissCatNameTextField()
-            
-            
+        
+        if(collectionView == self.collectionView ) {
+            if(currentCatList[indexPath.row].isAvailable! != false) {
+                let selectedCell:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as! SelectCatCVCell
+                selectedCell.roundView.layer.borderColor = #colorLiteral(red: 0.4652857184, green: 0.8005116582, blue: 0.9823767543, alpha: 1)
+                catId = currentCatList[indexPath.row].id
+                
+                showCatNameTextField()
+            }else{
+                showAlertView()
+                alertSubTitleLabel.text = gsno(currentCatList[indexPath.row].description)
+                
+                let cell:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as! SelectCatCVCell
+                cell.isSelected = false
+                
+                dismissCatNameTextField()
+                
+                
+            }
         }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
-        let cellToDeselect:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as! SelectCatCVCell
-        cellToDeselect.roundView.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
-    
-
-
+        if(collectionView == self.collectionView ) {
+            
+            let cellToDeselect:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as! SelectCatCVCell
+            cellToDeselect.roundView.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
+        }
     }
     
-    func showAlertView() {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.alertView.alpha = 1
-        });
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        let page = Int(targetContentOffset.pointee.x / newCatCollectionView.frame.width)
+        self.pageControl.currentPage = page
+        
     }
+    
 }
 extension GetMoreInfo4VC {
     
@@ -421,11 +503,14 @@ extension GetMoreInfo4VC {
                 if let resResult = catListData {
                     self.commonCatList = resResult.data?.normal ?? []
                     self.specialCatList = resResult.data?.special ?? []
-                    
+
                     if(resResult.data?.isNewExist == true) {
-                        //TODO - 새로운 고양이 지급됐다고 다이얼로그 창 띄우기
+                        self.newCatList = resResult.data?.new ?? []
+
+                        self.newCatCollectionView.reloadData()
+                        self.showNewCatListView()
                     }
-                    
+
                     self.currentCatList = self.commonCatList;
                     self.collectionView.reloadData()
                     
