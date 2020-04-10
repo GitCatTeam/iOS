@@ -611,6 +611,7 @@ extension HomeVC {
                             
                             self.showItemUpgradeCard()
                         }
+                        
                         if(resResult.data!.isGraduate!) {
                             self.isCatGraduate = true
                             
@@ -620,7 +621,7 @@ extension HomeVC {
                         
                         if(resResult.data!.isLeave!) {
                             
-                            self.isCatLeave = false
+                            self.isCatLeave = true
                             
                             self.showLeaveCard()
                             self.showSelectNewCat()
