@@ -46,6 +46,8 @@ class GetMoreInfo4VC: UIViewController {
     
     @IBOutlet weak var alertcardView: UIView!
     
+    @IBOutlet weak var hiddenCatImageView: UIImageView!
+    
     @IBOutlet weak var alertTitleLabel: CustomLabel!
     @IBOutlet weak var alertSubTitleLabel: CustomLabel!
     
@@ -261,8 +263,9 @@ class GetMoreInfo4VC: UIViewController {
         self.collectionView.layer.borderColor = #colorLiteral(red: 0.7528660893, green: 0.7529937625, blue: 0.7528492808, alpha: 1)
         self.collectionView.layer.cornerRadius = 13
         
-        self.alertView.roundRadius(radius: 10)
-        self.alertView.customShadow(width: 1, height: 2, radius: 11, opacity: 0.16)
+        self.alertcardView.layer.masksToBounds = false
+        self.alertcardView.layer.cornerRadius = 10
+        self.alertcardView.customShadow(width: 1, height: 2, radius: 4, opacity: 0.16)
     }
     
     func setButtonSelect() {
@@ -469,8 +472,13 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
                 
                 showCatNameTextField()
             }else{
-                showAlertView()
+            
                 alertSubTitleLabel.text = gsno(currentCatList[indexPath.row].description)
+               
+                let imageURL = gsno(self.currentCatList[indexPath.row].profileImg)
+                hiddenCatImageView.setImage(imageURL, defaultImgPath: "imgDefault")
+                
+                showAlertView()
                 
                 let cell:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as! SelectCatCVCell
                 cell.isSelected = false

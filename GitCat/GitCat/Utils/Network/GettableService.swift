@@ -14,11 +14,14 @@ protocol GettableService {
     associatedtype NetworkData : Codable
     typealias networkResult = (resCode: Int, resResult: NetworkData)
     func gettable(_ URL: String, method: HTTPMethod, completion: @escaping (Result<networkResult>) -> Void)
+    
 }
 
 let getHeaders: HTTPHeaders = [
     "Authorization":UserDefaults.standard.string(forKey: "token") ?? ""
 ]
+
+
 
 extension GettableService {
     
@@ -26,9 +29,10 @@ extension GettableService {
         return value ?? 0
     }
     
-    
-    
     func gettable(_ URL: String, method:HTTPMethod = .get, completion: @escaping (Result<networkResult>) -> Void) {
+        
+        let manager = Alamofire.SessionManager.default
+        manager.session.configuration.timeoutIntervalForRequest = 30000
         
         guard let encodedUrl = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             print("Networking SUCCESS")
@@ -38,7 +42,7 @@ extension GettableService {
         print("URL: \(encodedUrl)")
         
         
-        Alamofire.request(encodedUrl, method: method, parameters: nil, headers: getHeaders)
+        manager.request(encodedUrl, method: method, parameters: nil, headers: getHeaders)
             .responseData {
                 res in
                 switch res.result {

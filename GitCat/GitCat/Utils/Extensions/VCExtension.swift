@@ -53,6 +53,7 @@ extension UIViewController {
             return false
         }
     }
+
     
     func deleteNavigationUnderbar(){
         self.navigationController?.navigationBar.shadowImage = UIImage()

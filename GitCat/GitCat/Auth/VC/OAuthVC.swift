@@ -125,6 +125,8 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
             let token = gsno(values["token"] as? String)
             let isFirst = gbno(values["isFirst"] as? Bool)
             
+            print("새로운 토큰:\(token)")
+            
             
             UserDefaults.standard.set(userId, forKey: "userId")
             UserDefaults.standard.set(userImage, forKey: "userImage")

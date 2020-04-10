@@ -31,6 +31,10 @@ extension PosttableService {
     
     func post(_ URL: String, params: [String : Any], completion: @escaping (Result<networkResult>) -> Void){
         
+        let manager = Alamofire.SessionManager.default
+        manager.session.configuration.timeoutIntervalForRequest = 300000
+        
+        
         guard let encodedUrl = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             print("Networking - invalid URL")
             return
@@ -39,7 +43,7 @@ extension PosttableService {
         print("URL은 \(encodedUrl)")
         
         
-        Alamofire.request(encodedUrl, method: .post, parameters: params, encoding: JSONEncoding.default, headers: postHeaders).responseData(){
+        manager.request(encodedUrl, method: .post, parameters: params, encoding: JSONEncoding.default, headers: postHeaders).responseData(){
             (res) in
             
             switch res.result {
@@ -84,6 +88,11 @@ extension PosttableService {
             case .failure(let err):
                 print(err.localizedDescription)
                 completion(.failure(err))
+                if let err = res.result.error {
+                    if(err._code == NSURLErrorTimedOut) {
+                        print("맞아 타임에러야 이거")
+                    }
+                }
                 break
             }
         }

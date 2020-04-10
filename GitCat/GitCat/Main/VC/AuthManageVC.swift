@@ -53,11 +53,13 @@ extension AuthManageVC {
             switch result {
                 case .networkSuccess( _): //201
                     print("UserData POST SUCCESS")
-                    let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "SignInVC")
                     
+                    UserDefaults.standard.set(false, forKey: "login")
+                    let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "AuthInitiVC")
                     dvc.modalPresentationStyle = .fullScreen
                     
                     self.present(dvc, animated: true, completion: nil)
+                    
                     break
                     
                 case .badRequest: //400
@@ -84,9 +86,12 @@ extension AuthManageVC {
         DeleteUserInfo.shareInstance.withdrawal { (result) in
                 switch result {
                 case .networkSuccess(_):
-                    let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "SignInVC")
+                    UserDefaults.standard.set(false, forKey: "login")
+                    
+                    let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "AuthInitiVC")
                     dvc.modalPresentationStyle = .fullScreen
                     self.present(dvc, animated: true, completion: nil)
+                    
                     break
                 case .dataNeeded:
                     break
