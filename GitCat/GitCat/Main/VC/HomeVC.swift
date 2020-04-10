@@ -174,17 +174,17 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         isCatLeave = false
         
         UIView.animate(withDuration: 0.5, animations: {
-            if(self.isCatItemUpgrade == false && self.isCatGraduate == false) {
-                self.cardBackgroundView.alpha = 0
-            }
-            self.leaveCardView.alpha = 0
-        });
+             self.itemUpgradeCardView.alpha = 0
+         })
+
+         if(self.isCatGraduate == false && self.isCatItemUpgrade == false) {
+             dismissCardBackground()
+         }
+        
     }
     
     @IBAction func itemUpgradeCloseAction(_ sender: Any) {
         isCatItemUpgrade = false
-        print("graduate?\(isCatGraduate)")
-        print("leave?\(isCatLeave)")
         
         UIView.animate(withDuration: 0.5, animations: {
             self.itemUpgradeCardView.alpha = 0
@@ -200,36 +200,14 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         isCatGraduate = false
         
         UIView.animate(withDuration: 0.5, animations: {
-            if(self.isCatItemUpgrade == false && self.isCatLeave == false) {
-                self.cardBackgroundView.alpha = 0
-            }
-            self.graduateCardView.alpha = 0
-        });
+            self.itemUpgradeCardView.alpha = 0
+        })
+
+        if(self.isCatItemUpgrade == false && self.isCatLeave == false) {
+            dismissCardBackground()
+        }
     }
-//
-//    @IBAction func closeCardViewAction(_ sender: Any) {
-//        UIView.animate(withDuration: 0.5, animations: {
-//            self.cardBackgroundView.alpha = 0
-//
-//            self.tabBarController?.tabBar.alpha = 1
-//
-//            let tabBarControllerItems = self.tabBarController?.tabBar.items
-//
-//            if let tabArray = tabBarControllerItems {
-//                let tabBarItem1 = tabArray[0]
-//                let tabBarItem3 = tabArray[2]
-//
-//                tabBarItem1.isEnabled = true
-//                tabBarItem3.isEnabled = true
-//
-//            }
-//
-//            self.catCollectionBarItem.isEnabled = true
-//            self.settingBarItem.isEnabled = true
-//            self.refreshBarItem.isEnabled = true
-//        });
-//    }
-    
+
     @IBAction func refreshDataAction(_ sender: Any) {
         print("refresh")
         self.loadingView.alpha = 1
