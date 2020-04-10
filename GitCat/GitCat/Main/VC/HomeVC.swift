@@ -183,7 +183,8 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     
     @IBAction func itemUpgradeCloseAction(_ sender: Any) {
         isCatItemUpgrade = false
-        
+        print("graduate?\(isCatGraduate)")
+        print("leave?\(isCatLeave)")
         UIView.animate(withDuration: 0.5, animations: {
             if(self.isCatGraduate == false && self.isCatLeave == false) {
                 self.cardBackgroundView.alpha = 0
