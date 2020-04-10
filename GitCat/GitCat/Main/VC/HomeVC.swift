@@ -185,12 +185,18 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         isCatItemUpgrade = false
         print("graduate?\(isCatGraduate)")
         print("leave?\(isCatLeave)")
-        UIView.animate(withDuration: 0.5, animations: {
-            if(self.isCatGraduate == false && self.isCatLeave == false) {
+        
+        if(self.isCatGraduate == false && self.isCatLeave == false) {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.itemUpgradeCardView.alpha = 0
+            });
+        }else{
+            UIView.animate(withDuration: 0.5, animations: {
+                self.itemUpgradeCardView.alpha = 0
                 self.cardBackgroundView.alpha = 0
-            }
-            self.itemUpgradeCardView.alpha = 0
-        });
+            })
+        }
+       
     }
     
     @IBAction func graduateCloseAction(_ sender: Any) {
