@@ -186,16 +186,13 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         print("graduate?\(isCatGraduate)")
         print("leave?\(isCatLeave)")
         
-        if(self.isCatGraduate == false && self.isCatLeave == false) {
-            UIView.animate(withDuration: 0.5, animations: {
-                self.itemUpgradeCardView.alpha = 0
-            });
-        }else{
-            UIView.animate(withDuration: 0.5, animations: {
-                self.itemUpgradeCardView.alpha = 0
-                self.cardBackgroundView.alpha = 0
-            })
-        }
+        UIView.animate(withDuration: 0.5, animations: {
+            self.itemUpgradeCardView.alpha = 0
+        })
+//        
+//        if(self.isCatGraduate == false && self.isCatLeave == false) {
+//            dismissCardBackground()
+//        }
        
     }
     
@@ -365,6 +362,15 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         settingBarItem.isEnabled = false
         refreshBarItem.isEnabled = false
 
+    }
+    func dismissCardBackground() {
+        self.tabBarController?.tabBar.alpha = 0
+
+        tabBarController?.tabBar.isUserInteractionEnabled = true
+
+        catCollectionBarItem.isEnabled = true
+        settingBarItem.isEnabled = true
+        refreshBarItem.isEnabled = true
     }
     
     func setLabelFontSize() {

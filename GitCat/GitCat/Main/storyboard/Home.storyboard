@@ -500,7 +500,7 @@
                                     <constraint firstItem="qKA-xN-7iO" firstAttribute="leading" secondItem="XBn-Zb-Elt" secondAttribute="leading" constant="7" id="yE2-VX-7nm"/>
                                 </constraints>
                             </view>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zqy-NB-6Hv">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zqy-NB-6Hv">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4uT-oU-thp">
@@ -786,7 +786,7 @@
                                             <constraint firstItem="34U-CK-Dbo" firstAttribute="top" secondItem="k65-nd-SAp" secondAttribute="bottom" multiplier="52/358" id="zHC-0Z-WEx"/>
                                         </constraints>
                                     </view>
-                                    <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFR-MW-nvy">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFR-MW-nvy">
                                         <rect key="frame" x="84.5" y="302.5" width="245" height="291"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgModuleItem" translatesAutoresizingMaskIntoConstraints="NO" id="8Qs-UX-men">
