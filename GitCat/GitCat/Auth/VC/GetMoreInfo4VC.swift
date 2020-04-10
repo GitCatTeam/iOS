@@ -303,8 +303,12 @@ class GetMoreInfo4VC: UIViewController {
             {
                 return
             }
+            
             originY = topConstraint.constant
-            topConstraint.constant = originY! - (keyboardSize.height-40)
+            let bounds = UIScreen.main.bounds
+            let hollowHeight = bounds.size.height*0.2
+            
+            topConstraint.constant = originY! - (keyboardSize.height-hollowHeight)
         
             UIView.animate(withDuration: 2, animations: {
                 () -> Void in
@@ -321,7 +325,10 @@ class GetMoreInfo4VC: UIViewController {
             }
 
             originY = topConstraint.constant
-            topConstraint.constant = originY! + (keyboardSize.height-40)
+            let bounds = UIScreen.main.bounds
+            let hollowHeight = bounds.size.height*0.2
+            
+            topConstraint.constant = originY! + (keyboardSize.height-hollowHeight)
             
             UIView.animate(withDuration: 2, animations: {
                 () -> Void in
@@ -400,13 +407,12 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
             cell?.newCatDescriptionLabel.text = gsno(newCatList[indexPath.row].description)
             
             
-            //FIXME - 현재 닫기 버튼이 모든 페이지에서 나타나고 있음 확인해볼 것
-            if(indexPath.row == newCatList.count) {
-                cell?.closedBtnImageView.alpha = 0
-                cell?.closedBtn.alpha = 0
-            }else{
+            if(indexPath.row == newCatList.count-1) {
                 cell?.closedBtnImageView.alpha = 1
                 cell?.closedBtn.alpha = 1
+            }else{
+                cell?.closedBtnImageView.alpha = 0
+                cell?.closedBtn.alpha = 0
             }
             
             return cell!
@@ -488,7 +494,8 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
-        let page = Int(targetContentOffset.pointee.x / newCatCollectionView.frame.width)
+        let page = Int(targetContentOffset.pointee.x / (newCatCollectionView.frame.width-12))
+        
         self.pageControl.currentPage = page
         
     }
@@ -508,8 +515,7 @@ extension GetMoreInfo4VC {
 
                     if(resResult.data?.isNewExist == true) {
                         self.newCatList = resResult.data?.new ?? []
-                        self.pageControl.numberOfPages = newCatList.count //MARK - 잘 작동하는지 확인해보기
-
+                        self.pageControl.numberOfPages = self.newCatList.count
 
                         self.newCatCollectionView.reloadData()
                         self.showNewCatListView()

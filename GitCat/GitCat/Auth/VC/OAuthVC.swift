@@ -64,6 +64,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
         
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         deleteCache()
@@ -103,32 +104,18 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
             
             //복호
             let messageBody:String? = message.body as?  String
-            
-            print("=================최초 string======================")
-            print("\(messageBody ?? "")")
-            print("=================최초 string======================")
+
             let messageData:String?
             
             messageData = try! messageBody?.aesDecrypt()
-            
-            print("=================복호화======================")
-            print("\(gsno(messageData))")
-            print("=================복호화======================")
 
             
             //복호화한 데이터 json으로 변형
             //FIXME - 현재 복호화된 데이터가 잘려서 날아와서 온전한 json 형태로 전환 불가
             let str = gsno(messageData)
             let replaceStr = str.replacingOccurrences(of: "h.eu", with: "{\"gi")
-            print("=================복호화 결과 변경======================")
-            print(replaceStr)
-            print("=================복호화 결과 변경======================")
 
             let dict = convertToDictionary(text: replaceStr)
-            print("================JSON======================")
-            print("\(dict ?? [:])")
-            print("=================JSON======================")
-            
             
             
             //복호화한 데이터 저장
@@ -138,11 +125,6 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
             let token = gsno(values["token"] as? String)
             let isFirst = gbno(values["isFirst"] as? Bool)
             
-            print("[로그인 회원정보 가져오기 성공]")
-            print("email:\(userId)")
-            print("image:\(userImage)")
-            print("token:\(token)")
-            print("isFirst\(isFirst)")
             
             UserDefaults.standard.set(userId, forKey: "userId")
             UserDefaults.standard.set(userImage, forKey: "userImage")
@@ -271,14 +253,7 @@ extension String {
     
     func aesDecrypt() throws -> String {
         
-        let key: [UInt8] = Array(keyData.utf8)
-        let iv: [UInt8] = Array(ivData.utf8)
-        print("key:\(key)")
-        print("iv:\(iv)")
-        
         let encryptedData: NSData = self.hexStringToData()
-//        let encryptedBytes: [UInt8] = dataToByteArray(data: encryptedData)
-//        let decryptedBytes: [UInt8] = try AES(key: key, blockMode: CBC(iv: iv), padding: .pkcs5).decrypt(encryptedBytes)
         
         let decrypted = try AES(key: keyData, iv: ivData, padding: .pkcs7).decrypt([UInt8](encryptedData))
 

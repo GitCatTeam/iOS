@@ -267,6 +267,7 @@ class ReportDetailVC: UIViewController {
         }
                    
         let chartDataSet = PieChartDataSet(entries: percentOfLanguageEntries, label: nil)
+        
         chartDataSet.drawValuesEnabled = false
         
         let chartData = PieChartData(dataSet: chartDataSet)
@@ -288,6 +289,7 @@ class ReportDetailVC: UIViewController {
         barChart.noDataText = "데이터가 없습니다."
 
         barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values:dataPoints)
+
         barChart.xAxis.granularity = 1
         barChart.xAxis.labelPosition = .bottom
         barChart.xAxis.labelTextColor = UIColor.CustomColor.brownishGrey
@@ -316,7 +318,9 @@ class ReportDetailVC: UIViewController {
         barChart.highlightPerTapEnabled = false
         barChart.highlightPerDragEnabled = false
         
+
         for i in 0..<dataPoints.count {
+            
             let dataEntry = BarChartDataEntry(x: Double(i), yValues: [values[i]])
             dataEntries1.append(dataEntry)
         }
@@ -327,7 +331,7 @@ class ReportDetailVC: UIViewController {
         
         
         let chartData = BarChartData(dataSet: chartDataSet)
-        chartData.barWidth = 0.5
+        chartData.barWidth = 0.3
 
         barChart.data = chartData
     }
@@ -379,6 +383,7 @@ extension ReportDetailVC {
                     //상위 수치 3개
                     self.averageCount.text = resResult.data?.avgCount
                     self.compareCount.text = "+\(self.gsno(resResult.data?.comparedLastMonth))"
+                    
                     
                     //커밋수 통계 - Line Chart
                     self.days = resResult.data?.dailyCount?.dayArray  as! [String]
@@ -445,7 +450,20 @@ extension ReportDetailVC {
                     
                     self.repositories = resResult.data?.contributedRepository?.repoNames as! [String]
                     self.repoCommits = resResult.data?.contributedRepository?.count as! [Double]
-                    
+
+                    print("==========================")
+                    for i in 0..<self.repositories.count {
+
+                        if(self.repositories[i].count > 10) {
+
+                            let index = self.repositories[i].index(self.repositories[i].startIndex, offsetBy: 10)
+
+                            self.repositories[i] = "\(self.repositories[i].substring(to: index)).."
+                            
+                            print(self.repositories[i])
+                        }
+                    }
+                    print("==========================")
                     self.updateLineChartData()
                     self.updatePieChartData()
                     self.updateBarChartData()

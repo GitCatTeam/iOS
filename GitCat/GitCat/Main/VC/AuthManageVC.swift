@@ -84,11 +84,11 @@ extension AuthManageVC {
         DeleteUserInfo.shareInstance.withdrawal { (result) in
                 switch result {
                 case .networkSuccess(_):
-                    break
-                case .dataNeeded:
                     let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "SignInVC")
                     dvc.modalPresentationStyle = .fullScreen
                     self.present(dvc, animated: true, completion: nil)
+                    break
+                case .dataNeeded:
                     break
                 case .networkFail :
                     self.networkErrorAlert()

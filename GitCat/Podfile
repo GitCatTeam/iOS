@@ -15,4 +15,5 @@ target 'GitCat' do
   pod 'Charts'
   pod 'SwiftGifOrigin'
   pod 'CryptoSwift'
+  pod 'JWTDecode'
 end

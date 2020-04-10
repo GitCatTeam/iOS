@@ -560,7 +560,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="(최대 5자)" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="uY6-po-KFK">
-                                <rect key="frame" x="140" y="642.5" width="134" height="16"/>
+                                <rect key="frame" x="140" y="620" width="134" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="uY6-po-KFK" secondAttribute="height" multiplier="67:8" id="VYw-Mb-6Iq"/>
                                 </constraints>
@@ -601,7 +601,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름을 정해주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CH-Id-QY0" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                <rect key="frame" x="149.5" y="600.5" width="115.5" height="19"/>
+                                <rect key="frame" x="149.5" y="579.5" width="115.5" height="19"/>
                                 <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="16"/>
                                 <color key="textColor" name="brownishGrey"/>
                                 <nil key="highlightedColor"/>
@@ -817,13 +817,13 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0M4-E3-vgk">
-                                <rect key="frame" x="120" y="663.5" width="174.5" height="1"/>
+                                <rect key="frame" x="120" y="641" width="174.5" height="1"/>
                                 <color key="backgroundColor" red="0.75297731161117554" green="0.75285583734512329" blue="0.75686430931091309" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="krZ-qJ-sf4"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVD-St-Ma2">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVD-St-Ma2">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BGj-u3-9bY">
@@ -896,11 +896,11 @@
                                             <constraint firstItem="zB5-hp-UMR" firstAttribute="width" secondItem="BGj-u3-9bY" secondAttribute="width" multiplier="0.626087" id="yb8-ta-AeB"/>
                                         </constraints>
                                     </view>
-                                    <collectionView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jz5-Ti-1Fl">
-                                        <rect key="frame" x="56" y="345" width="302" height="206"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jz5-Ti-1Fl">
+                                        <rect key="frame" x="54" y="343.5" width="306" height="209"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="jz5-Ti-1Fl" secondAttribute="height" multiplier="151:103" id="yTk-G5-L93"/>
+                                            <constraint firstAttribute="width" secondItem="jz5-Ti-1Fl" secondAttribute="height" multiplier="306:209" id="Wlh-Ay-1LH"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OuF-3l-i0a">
                                             <size key="itemSize" width="278" height="206"/>
@@ -910,7 +910,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewCatCVCell" id="aVg-ys-M4U" customClass="NewCatCVCell" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="1" width="290" height="204"/>
+                                                <rect key="frame" x="0.0" y="2.5" width="290" height="204"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="I4j-0h-hDW">
                                                     <rect key="frame" x="0.0" y="0.0" width="290" height="204"/>
@@ -937,8 +937,8 @@
                                                                 <constraint firstAttribute="width" secondItem="jbX-em-ABA" secondAttribute="height" multiplier="1:1" id="L2I-Te-H9P"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숯처럼 까만 털에숯처럼 까만 털에숯처럼 까만 털에" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5d-v1-eHq" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                            <rect key="frame" x="155" y="96" width="94" height="53.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숯처럼 까만 털에숯처럼 까만 털에숯처럼 까만 털에" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5d-v1-eHq" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
+                                                            <rect key="frame" x="155" y="96" width="107.5" height="61"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="i5d-v1-eHq" secondAttribute="height" multiplier="95:54" id="Dil-RU-41r"/>
                                                             </constraints>
@@ -976,7 +976,7 @@
                                                         <constraint firstItem="QNl-WA-fmv" firstAttribute="width" secondItem="4yd-7M-Lx9" secondAttribute="width" multiplier="2.14286" id="XyH-N7-lcv"/>
                                                         <constraint firstItem="jbX-em-ABA" firstAttribute="height" secondItem="I4j-0h-hDW" secondAttribute="height" multiplier="0.582524" id="ZeV-MN-heS"/>
                                                         <constraint firstItem="i5d-v1-eHq" firstAttribute="leading" secondItem="jbX-em-ABA" secondAttribute="leading" multiplier="155/20" id="ari-06-KRK"/>
-                                                        <constraint firstItem="i5d-v1-eHq" firstAttribute="height" secondItem="I4j-0h-hDW" secondAttribute="height" multiplier="0.262136" id="b9A-EC-BrU"/>
+                                                        <constraint firstItem="i5d-v1-eHq" firstAttribute="height" secondItem="I4j-0h-hDW" secondAttribute="height" multiplier="0.3" id="b9A-EC-BrU"/>
                                                         <constraint firstItem="pY3-hT-tO7" firstAttribute="top" secondItem="I4j-0h-hDW" secondAttribute="bottom" multiplier="36/204" id="fVB-IY-Hcg"/>
                                                         <constraint firstItem="i5d-v1-eHq" firstAttribute="top" secondItem="pY3-hT-tO7" secondAttribute="top" multiplier="96/36" id="h4R-9v-qna"/>
                                                         <constraint firstItem="4yd-7M-Lx9" firstAttribute="top" secondItem="I4j-0h-hDW" secondAttribute="bottom" multiplier="16/204" id="jEk-uI-MEp"/>
@@ -1002,13 +1002,13 @@
                                         </connections>
                                     </collectionView>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="oF5-89-Ofy">
-                                        <rect key="frame" x="187.5" y="569" width="39" height="37"/>
+                                        <rect key="frame" x="187.5" y="570.5" width="39" height="37"/>
                                     </pageControl>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="jz5-Ti-1Fl" firstAttribute="centerY" secondItem="NVD-St-Ma2" secondAttribute="centerY" id="20u-ao-oOW"/>
-                                    <constraint firstItem="jz5-Ti-1Fl" firstAttribute="width" secondItem="NVD-St-Ma2" secondAttribute="width" multiplier="0.729469" id="3aO-yp-iof"/>
+                                    <constraint firstItem="jz5-Ti-1Fl" firstAttribute="width" secondItem="NVD-St-Ma2" secondAttribute="width" multiplier="0.74" id="3aO-yp-iof"/>
                                     <constraint firstItem="jz5-Ti-1Fl" firstAttribute="centerX" secondItem="NVD-St-Ma2" secondAttribute="centerX" id="9Qb-zg-J2U"/>
                                     <constraint firstItem="BGj-u3-9bY" firstAttribute="centerY" secondItem="NVD-St-Ma2" secondAttribute="centerY" id="HAb-Or-6F3"/>
                                     <constraint firstItem="oF5-89-Ofy" firstAttribute="top" secondItem="jz5-Ti-1Fl" secondAttribute="bottom" constant="18" id="Uvy-4o-4ds"/>
@@ -1037,7 +1037,7 @@
                             <constraint firstItem="6CH-Id-QY0" firstAttribute="centerX" secondItem="GAO-2H-XYz" secondAttribute="centerX" id="ie9-NL-DLJ"/>
                             <constraint firstItem="NVD-St-Ma2" firstAttribute="top" secondItem="GAO-2H-XYz" secondAttribute="top" id="mgy-RN-FoD"/>
                             <constraint firstItem="UUA-Gu-9c2" firstAttribute="centerX" secondItem="9Km-On-Fya" secondAttribute="centerX" id="s03-C3-hme"/>
-                            <constraint firstItem="6CH-Id-QY0" firstAttribute="top" secondItem="qUz-D6-rcY" secondAttribute="top" multiplier="582.5/234" id="sV6-Dg-wvK"/>
+                            <constraint firstItem="6CH-Id-QY0" firstAttribute="top" secondItem="qUz-D6-rcY" secondAttribute="bottom" multiplier="572.5/548.5" id="sV6-Dg-wvK"/>
                             <constraint firstItem="0M4-E3-vgk" firstAttribute="width" secondItem="uY6-po-KFK" secondAttribute="width" multiplier="1.30224" id="tnR-eG-1cp"/>
                             <constraint firstItem="uVu-HR-aYI" firstAttribute="centerX" secondItem="GAO-2H-XYz" secondAttribute="centerX" id="u0t-xy-Xnx"/>
                             <constraint firstItem="UUA-Gu-9c2" firstAttribute="height" secondItem="GAO-2H-XYz" secondAttribute="height" multiplier="0.0446429" id="uhh-Zl-9xK"/>
@@ -1069,7 +1069,7 @@
                         <outlet property="specialBtn" destination="VBe-Ka-sVd" id="2eW-QT-4iK"/>
                         <outlet property="specialBtnBottomBorder" destination="kSe-Wh-vvU" id="1XG-hJ-hs0"/>
                         <outlet property="subTitle" destination="uVu-HR-aYI" id="VZS-Rc-lgU"/>
-                        <outlet property="topConstraint" destination="3UB-Ih-3oW" id="Md4-9X-cHI"/>
+                        <outlet property="topConstraint" destination="3UB-Ih-3oW" id="yvc-6v-Z9c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ncS-II-K1c" userLabel="First Responder" sceneMemberID="firstResponder"/>

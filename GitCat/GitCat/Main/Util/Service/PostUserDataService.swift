@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import JWTDecode
 
 struct PostUserDataService: PosttableService, APIServie {
     
@@ -19,6 +20,25 @@ struct PostUserDataService: PosttableService, APIServie {
         
         let userDataURL = self.url("/home/commits")
         
+        //만약 토큰이 만료되었다면 갱신
+        do {
+            let jwt = try decode(jwt: UserDefaults.standard.string(forKey: "token")!)
+            print("========================this is token!!!=============================")
+            print(jwt)
+            print("========================this is token!!!=============================")
+            
+            
+            print(jwt.issuedAt)
+            print(jwt.expiresAt)
+            //all fine with jsonData here
+        } catch {
+            //handle error
+            print(error)
+        }
+        
+        
+        
+        //커밋 데이터 업데이트
         post(userDataURL, params: [:]) { (result) in
             switch result {
                 

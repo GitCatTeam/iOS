@@ -96,6 +96,12 @@ class GetMoreInfo1VC: UIViewController {
         otherBtn.isSelected = false;
         otherBtn.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         
+        userProfileImageView.circleImageView()
+        nextBtn.circleRadius()
+        femaleBtn.circleRadius()
+        maleBtn.circleRadius()
+        otherBtn.circleRadius()
+        
     }
     
     override func viewDidLayoutSubviews() {
