@@ -161,6 +161,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         
         self.catCollectionBarItem.isEnabled = true
         self.settingBarItem.isEnabled = true
+        self.refreshBarItem.isEnabled = true
         
         
         let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "CatCollectionVC")
@@ -341,6 +342,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         refreshBarItem.isEnabled = false
 
     }
+    
     func dismissCardBackground() {
         self.tabBarController?.tabBar.alpha = 0
 
@@ -427,6 +429,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
                        
             self.catCollectionBarItem.isEnabled = true
             self.settingBarItem.isEnabled = true
+            self.refreshBarItem.isEnabled = true
             
         })
     }
