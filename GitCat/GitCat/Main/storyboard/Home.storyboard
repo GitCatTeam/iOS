@@ -884,7 +884,6 @@
                                                     <constraint firstAttribute="width" secondItem="GYx-iG-t6d" secondAttribute="height" multiplier="1:1" id="A7g-9t-1ve"/>
                                                 </constraints>
                                                 <connections>
-                                                    <action selector="closeCardViewAction:" destination="FHT-wQ-vku" eventType="touchUpInside" id="EXZ-bu-OXF"/>
                                                     <action selector="itemUpgradeCloseAction:" destination="FHT-wQ-vku" eventType="touchUpInside" id="ATu-w2-Wkg"/>
                                                 </connections>
                                             </button>

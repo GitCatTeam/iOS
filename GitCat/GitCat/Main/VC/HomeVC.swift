@@ -189,10 +189,10 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         UIView.animate(withDuration: 0.5, animations: {
             self.itemUpgradeCardView.alpha = 0
         })
-//        
-//        if(self.isCatGraduate == false && self.isCatLeave == false) {
-//            dismissCardBackground()
-//        }
+
+        if(self.isCatGraduate == false && self.isCatLeave == false) {
+            dismissCardBackground()
+        }
        
     }
     
@@ -206,29 +206,29 @@ class HomeVC: UIViewController, TutorialCellDelegate {
             self.graduateCardView.alpha = 0
         });
     }
-    
-    @IBAction func closeCardViewAction(_ sender: Any) {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.cardBackgroundView.alpha = 0
-            
-            self.tabBarController?.tabBar.alpha = 1
-
-            let tabBarControllerItems = self.tabBarController?.tabBar.items
-
-            if let tabArray = tabBarControllerItems {
-                let tabBarItem1 = tabArray[0]
-                let tabBarItem3 = tabArray[2]
-
-                tabBarItem1.isEnabled = true
-                tabBarItem3.isEnabled = true
-            
-            }
-            
-            self.catCollectionBarItem.isEnabled = true
-            self.settingBarItem.isEnabled = true
-            self.refreshBarItem.isEnabled = true
-        });
-    }
+//
+//    @IBAction func closeCardViewAction(_ sender: Any) {
+//        UIView.animate(withDuration: 0.5, animations: {
+//            self.cardBackgroundView.alpha = 0
+//
+//            self.tabBarController?.tabBar.alpha = 1
+//
+//            let tabBarControllerItems = self.tabBarController?.tabBar.items
+//
+//            if let tabArray = tabBarControllerItems {
+//                let tabBarItem1 = tabArray[0]
+//                let tabBarItem3 = tabArray[2]
+//
+//                tabBarItem1.isEnabled = true
+//                tabBarItem3.isEnabled = true
+//
+//            }
+//
+//            self.catCollectionBarItem.isEnabled = true
+//            self.settingBarItem.isEnabled = true
+//            self.refreshBarItem.isEnabled = true
+//        });
+//    }
     
     @IBAction func refreshDataAction(_ sender: Any) {
         print("refresh")
