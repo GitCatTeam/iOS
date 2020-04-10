@@ -14,15 +14,12 @@ class UserDataInitVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingView.loadGif(name: "gif_cat_loading")
-        checkTokenExpired()
+ 
         postUserData()
     
     }
     
-    func checkTokenExpired() {
-        PostUserDataService.shareInstance.checkTokenExpired()
-    }
-    
+
     
     func postUserData() {
 

@@ -40,7 +40,19 @@ class AuthManageVC: UIViewController {
     }
     
     @IBAction func wthdrawalAction(_ sender: Any) {
-        widthdrawl()
+        let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
+            self.widthdrawl()
+            
+        }
+        
+        let alert = UIAlertController(title: "회원탈퇴", message: "정말 회원탈퇴 하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(confirmModeAction)
+
+        present(alert, animated:true){
+            //함수가 성공적으로 수행된 후 작동되는 code
+        }
+        
     }
     
 

@@ -73,7 +73,6 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     @IBOutlet weak var itemSubTitleLabel: CustomLabel!
     @IBOutlet weak var itemSubTitleLabel2: CustomLabel!
     @IBOutlet weak var itemTitleLabel3: CustomLabel!
-    @IBOutlet weak var itemTitleLabel4: CustomLabel!
     
     
     @IBOutlet weak var leaveCardTitleLabel: CustomLabel!
@@ -374,11 +373,11 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         graduateSubTitle2.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         graduateCatName.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
 
-        itemTitleLabel.dynamicFont(fontSize: 20, name: "BBTreeG_B")
+        itemTitleLabel.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         itemSubTitleLabel.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         itemSubTitleLabel2.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         itemTitleLabel3.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
-        itemTitleLabel4.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
+    
         
         
         leaveCardTitleLabel.dynamicFont(fontSize: 20, name: "BBTreeG_B")
@@ -596,6 +595,7 @@ extension HomeVC {
                             
                             self.isCatItemUpgrade = true
                             
+                            self.itemTitleLabel.text = "\(self.gsno(resResult.data?.catName))씨의 아이템이"
                             self.showItemUpgradeCard()
                         }
                         
@@ -658,7 +658,11 @@ extension HomeVC {
                         
                     case .duplicated: //401
                         
-                        self.simpleAlert(title: "", message: "권한이 없습니다.")
+//                        self.simpleAlert(title: "", message: "권한이 없으므로 다시 시도합니다.")
+                        print("권한이 없으므로 다시 시도")
+                        //TODO - Refresh API 호출
+                        self.loadData()
+                        
                         break
                         
                     case .networkFail:

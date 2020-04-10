@@ -32,7 +32,8 @@ extension PosttableService {
     func post(_ URL: String, params: [String : Any], completion: @escaping (Result<networkResult>) -> Void){
         
         let manager = Alamofire.SessionManager.default
-        manager.session.configuration.timeoutIntervalForRequest = 300000
+        manager.session.configuration.timeoutIntervalForRequest = 3000000
+        
         
         
         guard let encodedUrl = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
