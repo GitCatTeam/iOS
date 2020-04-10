@@ -102,6 +102,9 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     var timer = Timer()
 
     var count = 0
+    var isCatGraduate:Bool = false
+    var isCatItemUpgrade:Bool = false
+    var isCatLeave:Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -168,23 +171,35 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     
     
     @IBAction func leaveCloseAction(_ sender: Any) {
+        isCatLeave = false
+        
         UIView.animate(withDuration: 0.5, animations: {
-            self.cardBackgroundView.alpha = 0
+            if(self.isCatItemUpgrade == false && self.isCatGraduate == false) {
+                self.cardBackgroundView.alpha = 0
+            }
             self.leaveCardView.alpha = 0
         });
     }
     
     @IBAction func itemUpgradeCloseAction(_ sender: Any) {
+        isCatItemUpgrade = false
+        
         UIView.animate(withDuration: 0.5, animations: {
-            self.cardBackgroundView.alpha = 0
+            if(self.isCatGraduate == false && self.isCatLeave == false) {
+                self.cardBackgroundView.alpha = 0
+            }
             self.itemUpgradeCardView.alpha = 0
         });
     }
     
     @IBAction func graduateCloseAction(_ sender: Any) {
+        isCatGraduate = false
+        
         UIView.animate(withDuration: 0.5, animations: {
-            self.cardBackgroundView.alpha = 0
-        self.graduateCardView.alpha = 0
+            if(self.isCatItemUpgrade == false && self.isCatLeave == false) {
+                self.cardBackgroundView.alpha = 0
+            }
+            self.graduateCardView.alpha = 0
         });
     }
     
@@ -584,14 +599,22 @@ extension HomeVC {
                         
                         
                         if(resResult.data!.isLevelUp!) {
+                            
+                            self.isCatItemUpgrade = true
+                            
                             self.showItemUpgradeCard()
                         }
                         if(resResult.data!.isGraduate!) {
+                            self.isCatGraduate = true
+                            
                             self.graduateCatName.text = "\(self.gsno(resResult.data?.catName))씨가 졸업하게 되었어요."
                             self.showGraduateCard()
                         }
                         
                         if(resResult.data!.isLeave!) {
+                            
+                            self.isCatLeave = false
+                            
                             self.showLeaveCard()
                             self.showSelectNewCat()
                             
