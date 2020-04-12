@@ -19,14 +19,19 @@ struct ReportListService: GettableService, APIServie {
         
         let reportListURL = self.url("/report/list")
 
-        gettable(reportListURL) { (result) in
+        gettable(ReportListModel(),reportListURL) { (result) in
             switch result {
             case .success(let networkResult):
                 switch networkResult.resCode {
                 case HttpResponseCode.getSuccess.rawValue:
                     completion(.networkSuccess(networkResult.resResult))
+                    break
+                case HttpResponseCode.accessDenied.rawValue: //401
+                    completion(.accessDenied)
+                    break
                 case HttpResponseCode.serverErr.rawValue:
                     completion(.serverErr)
+                    break
                 default:
                     print("SUCCESS: \(networkResult.resCode)")
                     break

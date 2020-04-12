@@ -16,6 +16,9 @@
 		4C2DDD0A23EAEEF200FCB36B /* TutorialCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DDD0923EAEEF200FCB36B /* TutorialCVCell.swift */; };
 		4C2DDD0D23EB1FD200FCB36B /* SelectCatCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DDD0C23EB1FD200FCB36B /* SelectCatCVCell.swift */; };
 		4C317176243F512F004F8FA7 /* NewCatCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C317175243F512F004F8FA7 /* NewCatCVCell.swift */; };
+		4C31717E2440D3D4004F8FA7 /* RefreshJWTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C31717D2440D3D4004F8FA7 /* RefreshJWTService.swift */; };
+		4C3171802440D5AE004F8FA7 /* RefreshGettableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C31717F2440D5AE004F8FA7 /* RefreshGettableService.swift */; };
+		4C3A3D7B2442FF5400093C50 /* RefreshTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3A3D7A2442FF5300093C50 /* RefreshTokenModel.swift */; };
 		4C3B8E5B2402449C008735DE /* AuthManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3B8E5A2402449B008735DE /* AuthManageVC.swift */; };
 		4C4A923223BA2476002E5F35 /* MidRepoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A923123BA2476002E5F35 /* MidRepoVC.swift */; };
 		4C60E75D24383DE6007495DB /* PostLogoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C60E75C24383DE6007495DB /* PostLogoutService.swift */; };
@@ -100,6 +103,9 @@
 		4C2DDD0923EAEEF200FCB36B /* TutorialCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCVCell.swift; sourceTree = "<group>"; };
 		4C2DDD0C23EB1FD200FCB36B /* SelectCatCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCatCVCell.swift; sourceTree = "<group>"; };
 		4C317175243F512F004F8FA7 /* NewCatCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCatCVCell.swift; sourceTree = "<group>"; };
+		4C31717D2440D3D4004F8FA7 /* RefreshJWTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshJWTService.swift; sourceTree = "<group>"; };
+		4C31717F2440D5AE004F8FA7 /* RefreshGettableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshGettableService.swift; sourceTree = "<group>"; };
+		4C3A3D7A2442FF5300093C50 /* RefreshTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenModel.swift; sourceTree = "<group>"; };
 		4C3B8E5A2402449B008735DE /* AuthManageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManageVC.swift; sourceTree = "<group>"; };
 		4C4A923123BA2476002E5F35 /* MidRepoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidRepoVC.swift; sourceTree = "<group>"; };
 		4C60E75C24383DE6007495DB /* PostLogoutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLogoutService.swift; sourceTree = "<group>"; };
@@ -326,6 +332,7 @@
 				4CA7A75A23FB9D51004FC110 /* ReportDetailModel.swift */,
 				4CBA4D4A2411083F002CED2F /* HomeModel.swift */,
 				4CA54837241BB043002B2966 /* CatCollectionModel.swift */,
+				4C3A3D7A2442FF5300093C50 /* RefreshTokenModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -344,6 +351,7 @@
 				4C892FE924323D7500DC61CA /* DeleteCatService.swift */,
 				4C60E75C24383DE6007495DB /* PostLogoutService.swift */,
 				4CCAABCE243D9DFC00CBF56A /* DeleteUserInfo.swift */,
+				4C31717D2440D3D4004F8FA7 /* RefreshJWTService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -378,6 +386,7 @@
 				4CAB3BDB24084737007A84B6 /* PuttableService.swift */,
 				4CB9BC14242CF4DB00F143A1 /* DefaultData.swift */,
 				4C7B569424095625001881FE /* KeyCode.swift */,
+				4C31717F2440D5AE004F8FA7 /* RefreshGettableService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -636,6 +645,7 @@
 				4C4A923223BA2476002E5F35 /* MidRepoVC.swift in Sources */,
 				4CAB3BDA24083C66007A84B6 /* PostDeviceTokenService.swift in Sources */,
 				4C9E8E8323C05564002BDE02 /* LittleRoundView.swift in Sources */,
+				4C31717E2440D3D4004F8FA7 /* RefreshJWTService.swift in Sources */,
 				4C7C9AB02404D0D20047C610 /* DeveloperInfoVC.swift in Sources */,
 				4C7C0E0B23D489DA00669B38 /* CommitDetailTVCell.swift in Sources */,
 				4CBA4D4D24110998002CED2F /* HomeService.swift in Sources */,
@@ -662,9 +672,11 @@
 				4C7C0E7A23D9826800669B38 /* CommitListModel.swift in Sources */,
 				4C7C0E6923D80E9300669B38 /* APIService.swift in Sources */,
 				4CAB3BD02407F170007A84B6 /* DelettableService.swift in Sources */,
+				4C3A3D7B2442FF5400093C50 /* RefreshTokenModel.swift in Sources */,
 				4CAB3BE22408635B007A84B6 /* PostCatSelectedService.swift in Sources */,
 				4C7C0E8023DF158B00669B38 /* SettingVC.swift in Sources */,
 				4C68D13523B0D02400A8F813 /* SignInVC.swift in Sources */,
+				4C3171802440D5AE004F8FA7 /* RefreshGettableService.swift in Sources */,
 				4C60E75D24383DE6007495DB /* PostLogoutService.swift in Sources */,
 				4CA5483A241BB053002B2966 /* CatCollectionService.swift in Sources */,
 				4C7B569524095625001881FE /* KeyCode.swift in Sources */,

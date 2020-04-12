@@ -84,28 +84,41 @@ class CatCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionV
 extension CatCollectionVC {
     func getCatCollection() {
         CatCollectionService.sharedInstance.getGraduateCats { (result) in
-            switch result {
-                case .networkSuccess(let data):
-                    let graduateCatData = data as? CatCollectionModel
-                    if let resResult = graduateCatData {
-                        self.catCollectionList = resResult.data ?? []
-                        self.collectionView.reloadData()
-                        self.loadingView.alpha = 0
-                        self.loadingBackgroundView.alpha = 0
-                    }
-                    break
+        switch result {
+        case .networkSuccess(let data):
+            let graduateCatData = data as? CatCollectionModel
+            if let resResult = graduateCatData {
+                self.catCollectionList = resResult.data ?? []
+                self.collectionView.reloadData()
+                self.loadingView.alpha = 0
+                self.loadingBackgroundView.alpha = 0
+            }
+            break
+        case .accessDenied:
+            let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
+                UserDefaults.standard.set(false, forKey: "login")
+                let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "AuthInitiVC")
+                dvc.modalPresentationStyle = .fullScreen
+                               
+                self.present(dvc, animated: true, completion: nil)
+             }
+                           
+            let alert = UIAlertController(title: "로그인 필요", message: "재로그인이 필요합니다", preferredStyle: UIAlertController.Style.alert)
+                           
+            alert.addAction(confirmModeAction)
+            self.present(alert, animated:true)
+            break
+        case .networkFail :
+            self.networkErrorAlert()
+            self.loadingView.alpha = 0
+            self.loadingBackgroundView.alpha = 0
+            break
                                 
-                case .networkFail :
-                    self.networkErrorAlert()
-                    self.loadingView.alpha = 0
-                    self.loadingBackgroundView.alpha = 0
-                    break
-                                
-                default:
-                    self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
-                    self.loadingView.alpha = 0
-                    self.loadingBackgroundView.alpha = 0
-                    break
+        default:
+            self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
+            self.loadingView.alpha = 0
+            self.loadingBackgroundView.alpha = 0
+            break
             }
                         
         }

@@ -20,16 +20,21 @@ struct HomeService: GettableService, APIServie {
         
         let homeURL = self.url("/home/main")
 
-        gettable(homeURL) { (result) in
+        gettable(HomeModel(),homeURL) { (result) in
             switch result {
             
             case .success(let networkResult):
                 switch networkResult.resCode {
                     
-                case HttpResponseCode.getSuccess.rawValue:
+                case HttpResponseCode.getSuccess.rawValue: //200
                     completion(.networkSuccess(networkResult.resResult))
+                    break
+                case HttpResponseCode.accessDenied.rawValue: //401
+                    completion(.accessDenied)
+                    break
                 case HttpResponseCode.serverErr.rawValue:
                     completion(.serverErr)
+                    break
                 default:
                     print("SUCCESS: \(networkResult.resCode)")
                     break

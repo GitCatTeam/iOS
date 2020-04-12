@@ -67,7 +67,11 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        deleteCache()
+        
+        if(UserDefaults.standard.bool(forKey: "signUp") == false) {
+            deleteCache()
+        }
+
         loadURL()
         setBackBtn(color: UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1))
     }
@@ -99,9 +103,9 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
     
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-
+        print("??????????????????")
         if(message.name == "authCheckHandler") {
-            
+            print("들어오는거 맞지?????")
             //복호
             let messageBody:String? = message.body as?  String
 
@@ -124,19 +128,22 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
             let userImage = gsno(values["profileImg"] as? String)
             let token = gsno(values["token"] as? String)
             let isFirst = gbno(values["isFirst"] as? Bool)
+            let refreshToken = gsno(values["refreshToken"] as? String)
             
             print("새로운 토큰:\(token)")
-            
+            print("refresh 토큰:\(refreshToken)")
             
             UserDefaults.standard.set(userId, forKey: "userId")
             UserDefaults.standard.set(userImage, forKey: "userImage")
             UserDefaults.standard.set(token, forKey: "token")
+            UserDefaults.standard.set(refreshToken, forKey: "refreshToken")
             
             //FIXME: DeviceToken 전달
 //            postDeviceToken()
             
             
             if(isFirst == true) {
+                UserDefaults.standard.set(false, forKey: "signUp")
                 UserDefaults.standard.set(false, forKey: "tutorialDone")
                 let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "GetMoreInfo1VC")
                 dvc.modalPresentationStyle = .fullScreen
@@ -144,6 +151,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
                 
             }else{
                 UserDefaults.standard.set(true, forKey: "login")
+                UserDefaults.standard.set(true, forKey: "signUp")
                 UserDefaults.standard.set(true, forKey: "tutorialDone")
                 
                 let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "UserDataInitVC")
@@ -203,7 +211,7 @@ extension OAuthVC {
                     self.simpleAlert(title: "", message: "다시 시도해주세요")
                     break
                     
-                case .duplicated: //401
+                case .accessDenied: //401
                     
                     self.simpleAlert(title: "", message: "권한이 없습니다.")
                     break

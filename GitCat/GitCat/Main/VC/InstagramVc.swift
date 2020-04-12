@@ -64,8 +64,5 @@ class InstagramVc: UIViewController , WKUIDelegate, WKNavigationDelegate{
             self.present(networkCheckAlert, animated: true, completion: nil)
         }
     }
-    
-
-    
 
 }

@@ -1,38 +1,33 @@
 //
-//  GettableService.swift
+//  RefreshGettableService.swift
 //  GitCat
 //
-//  Created by 조윤영 on 22/01/2020.
+//  Created by 조윤영 on 11/04/2020.
 //  Copyright © 2020 조윤영. All rights reserved.
 //
+
 import Foundation
 import Alamofire
 import SwiftyJSON
 
-protocol GettableService {
+protocol RefreshGettableService {
     
     associatedtype NetworkData : Codable
     typealias networkResult = (resCode: Int, resResult: NetworkData)
-    func gettable(_ model:Codable,_ URL: String, method: HTTPMethod, completion: @escaping (Result<networkResult>) -> Void)
+    func ref_gettable(_ model:Codable,_ URL: String,  _ getRefreshHeaders:HTTPHeaders,method: HTTPMethod, completion: @escaping (Result<networkResult>) -> Void)
     
 }
 
 
 
-extension GettableService {
+
+extension RefreshGettableService {
     
     func gino(_ value : Int?) -> Int {
-        return value ?? 0
+           return value ?? 0
     }
     
-    func gettable(_ model:Codable, _ URL: String, method:HTTPMethod = .get, completion: @escaping (Result<networkResult>) -> Void) {
-        
-        let manager = Alamofire.SessionManager.default
-        manager.session.configuration.timeoutIntervalForRequest = 30000
-        
-        let getHeaders: HTTPHeaders = [
-            "Authorization":UserDefaults.standard.string(forKey: "token") ?? ""
-        ]
+    func ref_gettable(_ model:Codable, _ URL: String, _ getRefreshHeaders:HTTPHeaders, method:HTTPMethod = .get, completion: @escaping (Result<networkResult> ) -> Void) {
         
         guard let encodedUrl = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             print("Networking SUCCESS")
@@ -42,9 +37,7 @@ extension GettableService {
         print("URL: \(encodedUrl)")
         
         
-        
-        
-        manager.request(encodedUrl, method: method, parameters: nil, headers: getHeaders)
+        Alamofire.request(encodedUrl, method: method, parameters: nil, headers: getRefreshHeaders)
             .responseData {
                 res in
                 switch res.result {
@@ -56,6 +49,8 @@ extension GettableService {
                         let resCode = self.gino(res.response?.statusCode)
                         print(resCode)
                         
+
+                        //성공 모델
                         if JSON(value) == JSON.null {
 
                             let result : networkResult = (resCode, model) as! (resCode: Int, resResult: Self.NetworkData)
@@ -64,24 +59,20 @@ extension GettableService {
                             
                         }
                         
-                        if(resCode == 204) {
-                            completion(.noContents)
-                        }else{
-                            let decoder = JSONDecoder()
-                            
-                            do {
-                                print(("[해당 API에 접근 성공]"))
-                                let data = try decoder.decode(NetworkData.self, from: value)
-                                
-                                let result: networkResult = (resCode, data)
-                                completion(.success(result))
-                                
-                            } catch (let error) {
-                                print("catch GET: \(error.localizedDescription)")
-                                completion(.error("\(resCode)"))
-                            }
-                        }
                         
+                        let decoder = JSONDecoder()
+                        
+                        do {
+                            print(("[해당 API에 접근 성공]"))
+                            let data = try decoder.decode(NetworkData.self, from: value)
+                            
+                            let result: networkResult = (resCode, data)
+                            completion(.success(result))
+                                
+                        } catch (let error) {
+                            print("catch GET: \(error.localizedDescription)")
+                            completion(.error("\(resCode)"))
+                        }
                     }
                     break
                 case .failure(let error):

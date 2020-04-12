@@ -18,14 +18,19 @@ struct CommitCountService: GettableService, APIServie {
     func getCommit(month:String, completion: @escaping (NetworkResult<Any>) -> Void) {
         let commitURL = self.url("/calender/commit-count?date=\(month)")
 
-        gettable(commitURL) { (result) in
+        gettable(CommitCountModel(),commitURL) { (result) in
             switch result {
             case .success(let networkResult):
                 switch networkResult.resCode {
                 case HttpResponseCode.getSuccess.rawValue:
                     completion(.networkSuccess(networkResult.resResult))
+                    break
+                case HttpResponseCode.accessDenied.rawValue: //401
+                    completion(.accessDenied)
+                    break
                 case HttpResponseCode.serverErr.rawValue:
                     completion(.serverErr)
+                    break
                 default:
                     print("SUCCESS: \(networkResult.resCode)")
                     break

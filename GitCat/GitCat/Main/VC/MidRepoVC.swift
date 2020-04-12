@@ -354,7 +354,21 @@ extension MidRepoVC {
 
                 }
                 break
-                
+            case .accessDenied: //401
+                let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
+                    UserDefaults.standard.set(false, forKey: "login")
+                    let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "AuthInitiVC")
+                    dvc.modalPresentationStyle = .fullScreen
+                                   
+                    self.present(dvc, animated: true, completion: nil)
+                 }
+                               
+                let alert = UIAlertController(title: "로그인 필요", message: "재로그인이 필요합니다", preferredStyle: UIAlertController.Style.alert)
+                               
+                alert.addAction(confirmModeAction)
+                self.present(alert, animated:true)
+                break
+                break
             case .networkFail :
                 self.networkErrorAlert()
                 self.loadingBackgroundView.alpha = 0
@@ -374,9 +388,9 @@ extension MidRepoVC {
     func setCommitData(date:String?) {
         self.loadingBackgroundView2.alpha = 1
         CommitListService.sharedInstance.getCommitData(date: date!) { (result) in
-           switch result {
+        switch result {
            
-           case .networkSuccess(let data) :
+        case .networkSuccess(let data) :
             let detailData = data as? CommitListModel
                             
             if let resResult = detailData {
@@ -397,11 +411,24 @@ extension MidRepoVC {
             self.tableView.reloadData()
             self.loadingBackgroundView2.alpha = 0
             break
-                            
-           case .networkFail :
+        case .accessDenied:
+            let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
+                UserDefaults.standard.set(false, forKey: "login")
+                let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "AuthInitiVC")
+                dvc.modalPresentationStyle = .fullScreen
+                               
+                self.present(dvc, animated: true, completion: nil)
+             }
+                           
+            let alert = UIAlertController(title: "로그인 필요", message: "재로그인이 필요합니다", preferredStyle: UIAlertController.Style.alert)
+                           
+            alert.addAction(confirmModeAction)
+            self.present(alert, animated:true)
+            break
+        case .networkFail :
             self.networkErrorAlert()
             self.loadingBackgroundView2.alpha = 0
-                            
+            break
            default:
             self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
             self.loadingBackgroundView2.alpha = 0

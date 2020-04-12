@@ -147,16 +147,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         
         self.tabBarController?.tabBar.alpha = 1
 
-        let tabBarControllerItems = self.tabBarController?.tabBar.items
-
-        if let tabArray = tabBarControllerItems {
-            let tabBarItem1 = tabArray[0]
-            let tabBarItem3 = tabArray[2]
-
-            tabBarItem1.isEnabled = true
-            tabBarItem3.isEnabled = true
-        
-        }
+        self.tabBarController?.tabBar.isUserInteractionEnabled = true
         
         self.catCollectionBarItem.isEnabled = true
         self.settingBarItem.isEnabled = true
@@ -198,14 +189,18 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     
     @IBAction func graduateCloseAction(_ sender: Any) {
         isCatGraduate = false
-        
         UIView.animate(withDuration: 0.5, animations: {
-            self.itemUpgradeCardView.alpha = 0
-        })
+            self.cardBackgroundView.alpha = 0
+            self.graduateCardView.alpha = 0
+            
+            self.tabBarController?.tabBar.alpha = 1
 
-        if(self.isCatItemUpgrade == false && self.isCatLeave == false) {
-            dismissCardBackground()
-        }
+            self.tabBarController?.tabBar.isUserInteractionEnabled = true
+            
+            self.catCollectionBarItem.isEnabled = true
+            self.settingBarItem.isEnabled = true
+            self.refreshBarItem.isEnabled = true
+        })
     }
 
     @IBAction func refreshDataAction(_ sender: Any) {
@@ -322,6 +317,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         self.catChatLabel.alpha = 0
         
     }
+    
     @IBAction func gotoSelectCatViewAction(_ sender: Any) {
         //present
         let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "GetMoreInfo4VC")
@@ -343,6 +339,8 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     }
     
     func dismissCardBackground() {
+        
+        
         self.tabBarController?.tabBar.alpha = 0
 
         tabBarController?.tabBar.isUserInteractionEnabled = true
@@ -419,7 +417,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         UIView.animate(withDuration: 0.5, animations: {
             
             self.cardBackgroundView.alpha = 0
-            self.navigationController?.navigationBar.layer.zPosition = 1
+//            self.navigationController?.navigationBar.layer.zPosition = 1
     
             self.tabBarController?.tabBar.alpha = 1
             self.navigationController?.navigationBar.alpha = 1
@@ -559,89 +557,101 @@ extension HomeVC {
     func setHomeData() {
         HomeService.sharedInstance.getHomeData { (result) in
             switch result {
-                case .networkSuccess(let data) :
-                    let detailData = data as? HomeModel
+            case .networkSuccess(let data) :
+                let detailData = data as? HomeModel
                     
-                    if let resResult = detailData {
+                if let resResult = detailData {
                         
-//                        self.catChatBox.alpha = 1
-                        
-                        self.todayCommitCountLabel.text = "\(resResult.data?.todayCommitCount ?? 0)"
-                        self.todayScoreLabel.text = "\(resResult.data?.todayScore ?? 0)"
-                        self.catNameLabel.text = resResult.data?.catName
+                    self.todayCommitCountLabel.text = "\(resResult.data?.todayCommitCount ?? 0)"
+                    self.todayScoreLabel.text = "\(resResult.data?.todayScore ?? 0)"
+                    self.catNameLabel.text = resResult.data?.catName
+                    
                     if((resResult.data?.catImg?.contains("first"))!) {
                         self.chatBoxLeadingConstraint.constant = -20
                     }else if((resResult.data?.catImg?.contains("second"))! || (resResult.data?.catImg?.contains("third"))!) {
                         self.chatBoxLeadingConstraint.constant = -10
-                        }
-
-
-                        let url = URL(string: resResult.data?.catImg ?? "")
-
-                        self.catImageView.kf.setImage(with: url)
-                        self.itemLabel.text = "("+(resResult.data?.nextLevelStr ?? "")+")"
-                        self.leftScoreLabel.text = "\(self.gino(resResult.data?.nextLevelScore))"
-                        
-                        if(resResult.data?.ments?.count != 0) {
-                            self.catChatLabel.text = resResult.data?.ments?[0]
-                        }
-                        
-                        if(resResult.data?.ments?.count != 0) {
-                            self.mentsBox = resResult.data?.ments ?? []
-                        }
-                        
-                        
-                        if(resResult.data!.isLevelUp!) {
-                            
-                            self.isCatItemUpgrade = true
-                            
-                            self.itemTitleLabel.text = "\(self.gsno(resResult.data?.catName))씨의 아이템이"
-                            self.showItemUpgradeCard()
-                        }
-                        
-                        if(resResult.data!.isGraduate!) {
-                            self.isCatGraduate = true
-                            
-                            self.graduateCatName.text = "\(self.gsno(resResult.data?.catName))씨가 졸업하게 되었어요."
-                            self.showGraduateCard()
-                        }
-                        
-                        if(resResult.data!.isLeave!) {
-                            
-                            self.isCatLeave = true
-                            
-                            self.showLeaveCard()
-                            self.showSelectNewCat()
-                            
-                        }
                     }
-                    
-                    //let timer
-                    
-                    _ = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
-                    
-                    
-                    self.loadingView.alpha = 0
-                    self.loadingBackgroundView.alpha = 0
-                    
-                    break
-                case .dataNeeded:
-                    self.showSelectNewCat()
-                    self.loadingView.alpha = 0
-                    self.loadingBackgroundView.alpha = 0
-                case .networkFail :
-                    self.networkErrorAlert()
-                    self.loadingView.alpha = 0
-                    self.loadingBackgroundView.alpha = 0
-                    
-                default:
-                    self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
-                    self.loadingView.alpha = 0
-                    self.loadingBackgroundView.alpha = 0
-                    break
+
+
+                    let url = URL(string: resResult.data?.catImg ?? "")
+
+                    self.catImageView.kf.setImage(with: url)
+                    self.itemLabel.text = "("+(resResult.data?.nextLevelStr ?? "")+")"
+                    self.leftScoreLabel.text = "\(self.gino(resResult.data?.nextLevelScore))"
+                        
+                    if(resResult.data?.ments?.count != 0) {
+                        self.catChatLabel.text = resResult.data?.ments?[0]
+                    }
+                        
+                    if(resResult.data?.ments?.count != 0) {
+                        self.mentsBox = resResult.data?.ments ?? []
+                    }
+                    //
+                        
+                    if(resResult.data!.isLevelUp!) {
+                            
+                        self.isCatItemUpgrade = true
+  
+                        self.itemTitleLabel3.text = "\(self.gsno(resResult.data?.catName))씨의 아이템이"
+                        self.showItemUpgradeCard()
+                    }
+                    if(resResult.data!.isGraduate!) {
+                        self.isCatGraduate = true
+                            
+                        self.graduateCatName.text = "\(self.gsno(resResult.data?.catName))씨가 졸업하게 되었어요."
+                        self.showGraduateCard()
+                        self.showSelectNewCat()
+                    }
+                        
+                    if(resResult.data!.isLeave!) {
+                            
+                        self.isCatLeave = true
+                            
+                        self.showLeaveCard()
+                        self.showSelectNewCat()
+                    }
                 }
+                    
+                //let timer
+                    
+                _ = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
+                    
+                self.loadingView.alpha = 0
+                self.loadingBackgroundView.alpha = 0
+                break
+            case .accessDenied:
+                let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
+                    UserDefaults.standard.set(false, forKey: "login")
+                    let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "AuthInitiVC")
+                    dvc.modalPresentationStyle = .fullScreen
+                                   
+                    self.present(dvc, animated: true, completion: nil)
+                 }
+                               
+                let alert = UIAlertController(title: "로그인 필요", message: "재로그인이 필요합니다", preferredStyle: UIAlertController.Style.alert)
+                               
+                alert.addAction(confirmModeAction)
+                self.present(alert, animated:true)
+                break
+            case .dataNeeded:
+                self.showSelectNewCat()
+                self.loadingView.alpha = 0
+                self.loadingBackgroundView.alpha = 0
+                break
+            case .networkFail :
+                self.networkErrorAlert()
+                self.loadingView.alpha = 0
+                self.loadingBackgroundView.alpha = 0
+                break
+                    
+            default:
+                self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
+                self.loadingView.alpha = 0
+                self.loadingBackgroundView.alpha = 0
+                break
             }
         }
+    }
     
     func loadData() {
         PostUserDataService.shareInstance.postUserData { (result) in
@@ -656,13 +666,20 @@ extension HomeVC {
                         self.simpleAlert(title: "", message: "다시 시도해주세요")
                         break
                         
-                    case .duplicated: //401
-                        
-//                        self.simpleAlert(title: "", message: "권한이 없으므로 다시 시도합니다.")
-                        print("권한이 없으므로 다시 시도")
-                        //TODO - Refresh API 호출
-                        self.loadData()
-                        
+                    case .accessDenied: //401
+
+                        let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
+                            UserDefaults.standard.set(false, forKey: "login")
+                            let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "AuthInitiVC")
+                            dvc.modalPresentationStyle = .fullScreen
+                                           
+                            self.present(dvc, animated: true, completion: nil)
+                         }
+                                       
+                        let alert = UIAlertController(title: "로그인 필요", message: "재로그인이 필요합니다", preferredStyle: UIAlertController.Style.alert)
+                                       
+                        alert.addAction(confirmModeAction)
+                        self.present(alert, animated:true)
                         break
                         
                     case .networkFail:

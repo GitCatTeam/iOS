@@ -17,14 +17,20 @@ struct CatCollectionService: GettableService, APIServie {
     func getGraduateCats(completion: @escaping (NetworkResult<Any>) -> Void) {
         
         let catCollectionURL = self.url("/collection/list")
-        gettable(catCollectionURL) { (result) in
+        
+        gettable(CatCollectionModel(),catCollectionURL) { (result) in
             switch result {
             case .success(let networkResult):
                 switch networkResult.resCode {
-                case HttpResponseCode.getSuccess.rawValue:
+                case HttpResponseCode.getSuccess.rawValue: //200
                     completion(.networkSuccess(networkResult.resResult))
-                case HttpResponseCode.serverErr.rawValue:
+                    break
+                case HttpResponseCode.serverErr.rawValue: //500
                     completion(.serverErr)
+                    break
+                case HttpResponseCode.accessDenied.rawValue: //401
+                    completion(.accessDenied)
+                    break
                 default:
                     print("SUCCESS: \(networkResult.resCode)")
                     break

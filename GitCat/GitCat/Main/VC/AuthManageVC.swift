@@ -78,9 +78,19 @@ extension AuthManageVC {
                     self.simpleAlert(title: "", message: "다시 시도해주세요")
                     break
                     
-                case .duplicated: //401
-                    
-                    self.simpleAlert(title: "", message: "권한이 없습니다.")
+                case .accessDenied: //401
+                    let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
+                        UserDefaults.standard.set(false, forKey: "login")
+                        let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "AuthInitiVC")
+                        dvc.modalPresentationStyle = .fullScreen
+                                       
+                        self.present(dvc, animated: true, completion: nil)
+                     }
+                                   
+                    let alert = UIAlertController(title: "로그인 필요", message: "재로그인이 필요합니다", preferredStyle: UIAlertController.Style.alert)
+                                   
+                    alert.addAction(confirmModeAction)
+                    self.present(alert, animated:true)
                     break
                     
                 case .networkFail:
@@ -99,6 +109,7 @@ extension AuthManageVC {
                 switch result {
                 case .networkSuccess(_):
                     UserDefaults.standard.set(false, forKey: "login")
+                    UserDefaults.standard.set(false, forKey: "signUp")
                     
                     let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "AuthInitiVC")
                     dvc.modalPresentationStyle = .fullScreen

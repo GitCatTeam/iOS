@@ -17,14 +17,19 @@ struct CatListService: GettableService, APIServie {
         
         let catListURL = self.url("/home/cats")
 
-        gettable(catListURL) { (result) in
+        gettable(CatListModel(),catListURL) { (result) in
             switch result {
             case .success(let networkResult):
                 switch networkResult.resCode {
-                case HttpResponseCode.getSuccess.rawValue:
+                case HttpResponseCode.getSuccess.rawValue: //200
                     completion(.networkSuccess(networkResult.resResult))
-                case HttpResponseCode.serverErr.rawValue:
+                    break
+                case HttpResponseCode.serverErr.rawValue: //500
                     completion(.serverErr)
+                    break
+                case HttpResponseCode.accessDenied.rawValue: //401
+                    completion(.accessDenied)
+                    break
                 default:
                     print("SUCCESS: \(networkResult.resCode)")
                     break

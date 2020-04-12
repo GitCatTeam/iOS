@@ -10,10 +10,6 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-let postHeaders: HTTPHeaders = [
-    "Authorization":UserDefaults.standard.string(forKey: "token") ?? "",
-    "Content-Type":"application/json"
-]
 
 
 protocol PosttableService {
@@ -28,13 +24,16 @@ extension PosttableService {
     func gino(_ value : Int?) -> Int {
         return value ?? 0
     }
-    
+
     func post(_ URL: String, params: [String : Any], completion: @escaping (Result<networkResult>) -> Void){
         
         let manager = Alamofire.SessionManager.default
-        manager.session.configuration.timeoutIntervalForRequest = 3000000
+        manager.session.configuration.timeoutIntervalForRequest = 300000000000
         
-        
+        let postHeaders: HTTPHeaders = [
+            "Authorization":UserDefaults.standard.string(forKey: "token")!,
+            "Content-Type":"application/json"
+        ]
         
         guard let encodedUrl = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             print("Networking - invalid URL")
@@ -51,6 +50,7 @@ extension PosttableService {
             case .success:
 
                 print("Networking Post Here")
+                
                 
                 if let value = res.result.value {
                     let resCode = self.gino(res.response?.statusCode)

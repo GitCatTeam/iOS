@@ -473,7 +473,20 @@ extension ReportDetailVC {
                     
                 }
                 break
-                
+            case .accessDenied:
+                let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
+                    UserDefaults.standard.set(false, forKey: "login")
+                    let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "AuthInitiVC")
+                    dvc.modalPresentationStyle = .fullScreen
+                                   
+                    self.present(dvc, animated: true, completion: nil)
+                 }
+                               
+                let alert = UIAlertController(title: "로그인 필요", message: "재로그인이 필요합니다", preferredStyle: UIAlertController.Style.alert)
+                               
+                alert.addAction(confirmModeAction)
+                self.present(alert, animated:true)
+                break
             case .networkFail:
                 self.networkErrorAlert()
                 self.loadingView.alpha = 0

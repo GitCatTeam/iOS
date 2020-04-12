@@ -51,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //로그인을 했다면,
         if(UserDefaults.standard.bool(forKey: "login")) {
             print("token:\(String(describing: UserDefaults.standard.string(forKey: "token")))")
+            print("refreshToken:\(String(describing: UserDefaults.standard.string(forKey:"refreshToken")))")
              //window가 없으니 만들어준다.
             self.window = UIWindow(frame: UIScreen.main.bounds)
 

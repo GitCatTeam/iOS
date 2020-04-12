@@ -37,6 +37,7 @@ struct PostUserDataService: PosttableService, APIServie {
                     completion(.badRequest)
                     
                 case HttpResponseCode.accessDenied.rawValue : //401
+                    print("401 맞는데 뭐지")
                     completion(.accessDenied)
 
                     

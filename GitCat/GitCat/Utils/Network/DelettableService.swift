@@ -59,7 +59,7 @@ extension DelettableService {
                         //성공 모델
                         if JSON(value) == JSON.null {
                             
-                            let result : networkResult = (resCode, DefaultData()) as! (resCode: Int, resResult: Self.NetworkData)
+                            let result : networkResult = (resCode,  CommonModel()) as! (resCode: Int, resResult: Self.NetworkData)
                             completion(.success(result))
                             break
                             

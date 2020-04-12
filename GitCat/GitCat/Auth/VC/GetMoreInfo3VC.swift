@@ -181,6 +181,7 @@ class GetMoreInfo3VC: UIViewController {
         putInfo(name: name, gender: gender, birth: birth, devCareer: userCareer ?? "개발에 관심이 있음")
         
         UserDefaults.standard.set(true, forKey: "login")
+        UserDefaults.standard.set(true, forKey: "signUp")
         
         sender.backgroundColor = UIColor(red: 220/255, green: 221/255, blue: 225/255, alpha: 1)
         
@@ -265,7 +266,7 @@ extension GetMoreInfo3VC {
                 break
 
             case .accessDenied, .badRequest: //401(없는 사용자), 400(비번 불일치)
-                self.simpleAlert(title: "로그인 실패", message: "아이디나 비밀번호가 일치하지 않습니다.")
+                self.simpleAlert(title: "회원가입 실패", message: "다시 시도해주세요.")
                 break
 
             case .networkFail :
