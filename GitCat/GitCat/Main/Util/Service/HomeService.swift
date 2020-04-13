@@ -35,14 +35,13 @@ struct HomeService: GettableService, APIServie {
                 case HttpResponseCode.serverErr.rawValue:
                     completion(.serverErr)
                     break
+                case HttpResponseCode.needData.rawValue:
+                    completion(.dataNeeded)
                 default:
                     print("SUCCESS: \(networkResult.resCode)")
                     break
                 }
                 break
-            case .noContents:
-                completion(.dataNeeded)
-                
             case .error(let resCode):
                 switch resCode {
                 case HttpResponseCode.badRequest.rawValue.description:
@@ -59,6 +58,8 @@ struct HomeService: GettableService, APIServie {
             case .failure(_):
                 completion(.networkFail)
                 print("FAIL: Network Fail")
+            case .noContents:
+                break
             }
         }
     }

@@ -19,16 +19,24 @@ protocol PosttableService {
     func post(_ URL: String, params: [String : Any], completion: @escaping (Result<networkResult>) -> Void)
 }
 
+private var alamoFireManager: SessionManager? = {
+    let configuration = URLSessionConfiguration.default
+    configuration.timeoutIntervalForRequest = 180000
+    configuration.timeoutIntervalForResource = 180000
+    let alamoFireManager = Alamofire.SessionManager(configuration: configuration)
+    return alamoFireManager
+
+}()
+
 extension PosttableService {
     
     func gino(_ value : Int?) -> Int {
         return value ?? 0
     }
-
+    
     func post(_ URL: String, params: [String : Any], completion: @escaping (Result<networkResult>) -> Void){
+
         
-        let manager = Alamofire.SessionManager.default
-        manager.session.configuration.timeoutIntervalForRequest = 300000000000
         
         let postHeaders: HTTPHeaders = [
             "Authorization":UserDefaults.standard.string(forKey: "token")!,
@@ -43,7 +51,7 @@ extension PosttableService {
         print("URL은 \(encodedUrl)")
         
         
-        manager.request(encodedUrl, method: .post, parameters: params, encoding: JSONEncoding.default, headers: postHeaders).responseData(){
+        alamoFireManager?.request(encodedUrl, method: .post, parameters: params, encoding: JSONEncoding.default, headers: postHeaders).responseData(){
             (res) in
             
             switch res.result {
