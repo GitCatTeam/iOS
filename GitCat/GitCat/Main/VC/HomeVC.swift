@@ -83,6 +83,19 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     @IBOutlet weak var leaveSubTitle5: CustomLabel!
     @IBOutlet weak var leaveSubTitle6: CustomLabel!
     
+    @IBOutlet weak var scoreAlertView: UIView!
+    
+    @IBOutlet weak var scoreAlertTitleLabel1: CustomLabel!
+    @IBOutlet weak var scoreAlertTitleLabel2: CustomLabel!
+    @IBOutlet weak var scoreAlertSubLabel1: CustomLabel!
+    @IBOutlet weak var scoreAlertSubLabel2: CustomLabel!
+    @IBOutlet weak var scoreAlertSubLabel3: CustomLabel!
+    @IBOutlet weak var scoreAlertSubLabel4: CustomLabel!
+    
+    @IBOutlet weak var scoreAlertSubLabel5: CustomLabel!
+    @IBOutlet weak var scoreAlertSubLabel6: CustomLabel!
+    @IBOutlet weak var scoreAlertSubLabel7: CustomLabel!
+    
     
     @IBOutlet weak var chatBoxLeadingConstraint: NSLayoutConstraint!
     
@@ -139,7 +152,25 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         setStyle()
         setLabelFontSize()
     }
+    
+    @IBAction func catCollectionAction(_ sender: Any) {
+        let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "CatCollectionNavVC")
+         dvc.modalPresentationStyle = .fullScreen
+                       
+        self.present(dvc, animated: true, completion: nil)
+    }
+    
+    @IBAction func settingAction(_ sender: Any) {
+        
+        let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "SettingNavVC")
+         dvc.modalPresentationStyle = .fullScreen
+                       
+        self.present(dvc, animated: true, completion: nil)
 
+        
+    }
+    
+    
     
     @IBAction func checkGraduateAction(_ sender: Any) {
         cardBackgroundView.alpha = 0
@@ -182,6 +213,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         })
 
         if(self.isCatGraduate == false && self.isCatLeave == false) {
+            print("ww")
             dismissCardBackground()
         }
        
@@ -256,10 +288,13 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         graduateCardView.alpha = 0
         itemUpgradeCardView.alpha = 0
         leaveCardView.alpha = 0
+        scoreAlertView.alpha = 0
         
         OverlayView.alpha = 0
         
         loadingBackgroundView.alpha = 1
+        
+        
     }
     
     func setStyle() {
@@ -281,6 +316,8 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         leaveCardView.roundRadius(radius: 10)
         leaveCardView.customShadow(width: 1, height: 1, radius: 56.5, opacity: 0.1)
         
+        scoreAlertView.roundRadius(radius: 10)
+        scoreAlertView.customShadow(width: 1, height: 2, radius: 11, opacity: 0.16)
     }
     
     func showTutorial(){
@@ -318,6 +355,20 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         
     }
     
+    @IBAction func showScoreInfoAction(_ sender: Any) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.cardBackgroundView.alpha = 1
+            self.scoreAlertView.alpha = 1
+        })
+        
+    }
+    
+    @IBAction func closeScoreInfoAction(_ sender: Any) {
+        dismissCardBackground()
+        self.scoreAlertView.alpha = 0
+    }
+    
+    
     @IBAction func gotoSelectCatViewAction(_ sender: Any) {
         //present
         let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "GetMoreInfo4VC")
@@ -340,14 +391,16 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     
     func dismissCardBackground() {
         
-        
-        self.tabBarController?.tabBar.alpha = 0
+        UIView.animate(withDuration: 0.5, animations: {
+            self.cardBackgroundView.alpha = 0
+            self.tabBarController?.tabBar.alpha = 1
 
-        tabBarController?.tabBar.isUserInteractionEnabled = true
+            self.tabBarController?.tabBar.isUserInteractionEnabled = true
 
-        catCollectionBarItem.isEnabled = true
-        settingBarItem.isEnabled = true
-        refreshBarItem.isEnabled = true
+            self.catCollectionBarItem.isEnabled = true
+            self.settingBarItem.isEnabled = true
+            self.refreshBarItem.isEnabled = true
+        })
     }
     
     func setLabelFontSize() {
@@ -389,6 +442,16 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         commitReportDescription.dynamicFont(fontSize: 32, name: "NanumBaeEunHyeCe")
         catCollectionDescription.dynamicFont(fontSize: 32, name: "NanumBaeEunHyeCe")
         
+        
+        scoreAlertTitleLabel1.dynamicFont(fontSize: 20, name: "BBTreeG_B")
+        scoreAlertTitleLabel2.dynamicFont(fontSize: 20, name: "BBTreeG_B")
+        scoreAlertSubLabel1.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
+        scoreAlertSubLabel2.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
+        scoreAlertSubLabel3.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
+        scoreAlertSubLabel4.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
+        scoreAlertSubLabel5.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
+        scoreAlertSubLabel6.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
+        scoreAlertSubLabel7.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         
     }
     
@@ -568,9 +631,10 @@ extension HomeVC {
                     
                     if((resResult.data?.catImg?.contains("first"))!) {
                         self.chatBoxLeadingConstraint.constant = -20
-                    }else if((resResult.data?.catImg?.contains("second"))! || (resResult.data?.catImg?.contains("third"))!) {
-                        self.chatBoxLeadingConstraint.constant = -10
                     }
+//                    else if((resResult.data?.catImg?.contains("second"))! || (resResult.data?.catImg?.contains("third"))!) {
+//                        self.chatBoxLeadingConstraint.constant = -10
+//                    }
 
 
                     let url = URL(string: resResult.data?.catImg ?? "")
@@ -610,11 +674,17 @@ extension HomeVC {
                         self.showLeaveCard()
                         self.showSelectNewCat()
                     }
+                    
+                    if(resResult.data?.ments?.count != 0 ) {
+                        //let timer
+                            
+                        _ = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
+                    }
                 }
+                
+                
                     
-                //let timer
-                    
-                _ = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
+                
                     
                 self.loadingView.alpha = 0
                 self.loadingBackgroundView.alpha = 0

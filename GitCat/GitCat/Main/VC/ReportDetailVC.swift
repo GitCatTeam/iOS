@@ -112,12 +112,12 @@ class ReportDetailVC: UIViewController {
                navigationController?.navigationBar.titleTextAttributes = textAttributes
         
         percentOfLanguageEntries = [] //사용언어비율 pieChart 데이터 초기화
-        setBackBtn(color: UIColor.CustomColor.brownishGrey)
         
         loadingView.loadGif(name: "gif_loading2")
         
         totalCount.text = totalCommit
         setReportDetailData(id: id)
+        
         
         setStyle()
         
@@ -128,7 +128,7 @@ class ReportDetailVC: UIViewController {
         
         
         setFontSize()
-        self.deleteNavigationUnderbar()
+//        self.deleteNavigationUnderbar()
     
     }
 
@@ -167,6 +167,11 @@ class ReportDetailVC: UIViewController {
         description3.dynamicFont(fontSize: 11, name: "BBTreeGo_R")
         
     }
+    
+    @IBAction func goBackAction(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
     
     func updateLineChartData() {
         var lineChartEntries = [ChartDataEntry]()

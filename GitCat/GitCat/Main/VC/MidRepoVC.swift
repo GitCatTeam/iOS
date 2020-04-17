@@ -368,7 +368,6 @@ extension MidRepoVC {
                 alert.addAction(confirmModeAction)
                 self.present(alert, animated:true)
                 break
-                break
             case .networkFail :
                 self.networkErrorAlert()
                 self.loadingBackgroundView.alpha = 0

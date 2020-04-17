@@ -19,11 +19,11 @@ class CatCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionV
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        setBackBtn(color: #colorLiteral(red: 0.5307495594, green: 0.8041878939, blue: 0.9690385461, alpha: 1))
+
         
         loadingView.alpha = 1
         loadingBackgroundView.alpha = 1
-        
+    
         getCatCollection()
         
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor(red: 137/255, green: 204/255, blue: 246/255, alpha: 1)]
@@ -35,6 +35,9 @@ class CatCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionV
         bar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         bar.shadowImage = UIImage()
         
+    }
+    @IBAction func goBackAction(_ sender: Any) {
+        self.dismiss(animated: true)
     }
     
     

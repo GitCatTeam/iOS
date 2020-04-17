@@ -11,6 +11,20 @@ import UIKit
 class AuthManageVC: UIViewController {
 
     @IBOutlet weak var userIdLabel: CustomLabel!
+    
+    @IBOutlet weak var withdrawTitleLabel: CustomLabel!
+    @IBOutlet weak var withdrawSubTitleLabel1: CustomLabel!
+    @IBOutlet weak var withdrawSubTitleLabel2: UILabel!
+    @IBOutlet weak var withdrawSubTitleLabel3: UILabel!
+    
+    @IBOutlet weak var withdrawOkBtn: UIButton!
+    @IBOutlet weak var withdrawCancelBtn: UIButton!
+    
+    @IBOutlet weak var backgroundView: UIView!
+    
+    @IBOutlet weak var withdrawCardView: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackBtn(color: UIColor.CustomColor.brownishGrey)
@@ -22,6 +36,18 @@ class AuthManageVC: UIViewController {
         self.navigationController?.navigationBar.backgroundColor = UIColor.white
         
         self.showNavigationUnderBar()
+        setAlpha()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        withdrawCardView.roundRadius(radius: 10)
+        withdrawCardView.customShadow(width: 1, height: 2, radius: 11, opacity: 0.16)
+    }
+    
+    func setAlpha() {
+        backgroundView.alpha = 0;
     }
     
     @IBAction func LogoutAction(_ sender: Any) {
@@ -39,20 +65,42 @@ class AuthManageVC: UIViewController {
         }
     }
     
+    func setFontSize() {
+        self.withdrawTitleLabel.dynamicFont(fontSize: 17, name: "System Bold")
+        self.withdrawSubTitleLabel1.dynamicFont(fontSize: 13, name: "System")
+        self.withdrawSubTitleLabel2.dynamicFont(fontSize: 13, name: "System")
+        self.withdrawSubTitleLabel3.dynamicFont(fontSize: 13, name: "System Bold")
+        
+        self.withdrawOkBtn.titleLabel?.dynamicFont(fontSize: 17, name: "System")
+        self.withdrawCancelBtn.titleLabel?.dynamicFont(fontSize: 17, name: "System")
+        
+    }
+    
     @IBAction func wthdrawalAction(_ sender: Any) {
-        let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
-            self.widthdrawl()
+        showWithDrawalAlertSheet()
+    }
+    
+    @IBAction func okWithdrawal(_ sender: Any) {
+        self.widthdrawl()
+    }
+    
+    @IBAction func cancelWithdraw(_ sender: Any) {
+        dismissWithDrawalAlertSheet()
+    }
+    
+    
+    func showWithDrawalAlertSheet() {
+        UIView.animate(withDuration: 0.5, delay: 0.5,animations: ({
+            self.backgroundView.alpha = 1
             
-        }
-        
-        let alert = UIAlertController(title: "회원탈퇴", message: "정말 회원탈퇴 하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
-        
-        alert.addAction(confirmModeAction)
-
-        present(alert, animated:true){
-            //함수가 성공적으로 수행된 후 작동되는 code
-        }
-        
+        }))
+    }
+    
+    func dismissWithDrawalAlertSheet() {
+        UIView.animate(withDuration: 0.5, delay: 0.5,animations: ({
+            self.backgroundView.alpha = 0
+            
+        }))
     }
     
 
