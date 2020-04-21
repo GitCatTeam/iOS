@@ -194,10 +194,10 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         self.refreshBarItem.isEnabled = true
         
         
-        let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "CatCollectionVC")
+        let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "CatCollectionNavVC")
          dvc.modalPresentationStyle = .fullScreen
-
-        self.navigationController?.pushViewController(dvc, animated: true)
+                       
+        self.present(dvc, animated: true, completion: nil)
     }
     
     
