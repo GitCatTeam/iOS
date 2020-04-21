@@ -450,7 +450,6 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         commitReportDescription.dynamicFont(fontSize: 32, name: "NanumBaeEunHyeCe")
         catCollectionDescription.dynamicFont(fontSize: 32, name: "NanumBaeEunHyeCe")
         
-        
         scoreAlertTitleLabel1.dynamicFont(fontSize: 20, name: "BBTreeG_B")
         scoreAlertTitleLabel2.dynamicFont(fontSize: 20, name: "BBTreeG_B")
         scoreAlertSubLabel1.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
@@ -474,8 +473,6 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     @objc func cardBackScreenTapAction(sender: UITapGestureRecognizer) {
         hideBackgroundView()
         self.cardBackgroundView.alpha = 0
-        
-        
     }
     
     @objc func itemBackScreenTapAction(sender: UITapGestureRecognizer) {
@@ -488,8 +485,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         UIView.animate(withDuration: 0.3, animations: {
             
             self.cardBackgroundView.alpha = 0
-//            self.navigationController?.navigationBar.layer.zPosition = 1
-    
+
             self.tabBarController?.tabBar.alpha = 1
             self.navigationController?.navigationBar.alpha = 1
             
@@ -501,13 +497,11 @@ class HomeVC: UIViewController, TutorialCellDelegate {
             
         })
     }
-    
 }
 
 
 extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate {
     
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
@@ -543,7 +537,7 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate {
 
 extension HomeVC : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.frame.width-10
+        let width = collectionView.frame.width - 10
         let height = collectionView.frame.height
         return CGSize(width: width, height: height)
     }
@@ -636,8 +630,9 @@ extension HomeVC {
                     
                     if((resResult.data?.catImg?.contains("first"))!) {
                         self.chatBoxLeadingConstraint.constant = -20
+                    }else{
+                        self.chatBoxLeadingConstraint.constant = 0
                     }
-
 
 
                     let url = URL(string: resResult.data?.catImg ?? "")
