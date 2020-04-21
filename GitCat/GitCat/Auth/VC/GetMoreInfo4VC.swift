@@ -445,8 +445,8 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
 
         if(collectionView == self.newCatCollectionView) {
             
-            let cellWidth: CGFloat = newCatCollectionView.frame.width / 1.04
-            let cellHeight: CGFloat = newCatCollectionView.frame.height
+            let cellWidth: CGFloat = newCatCollectionView.frame.width - 20
+            let cellHeight: CGFloat = newCatCollectionView.frame.height - 10
         
             return CGSize(width: cellWidth, height: cellHeight)
         }
@@ -460,6 +460,19 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
         
         return CGSize(width: 0, height: 0)
 
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        if(collectionView == self.newCatCollectionView) {
+            return UIEdgeInsets(top: 0, left:20, bottom: 0, right:0)
+        }
+        
+        return UIEdgeInsets(top: 14.2, left:12, bottom: 14.2, right: 13)
+
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
