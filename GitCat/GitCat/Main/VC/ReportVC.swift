@@ -61,15 +61,18 @@ class ReportVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        if let dvc = storyboard?.instantiateViewController(withIdentifier: "ReportDetailNavVC") as?ReportDetailVC {
-            let report = reportDataList[indexPath.item]
-            //네비게이션 컨트롤러를 이용하여 push를 해줍니다.
-            dvc.reportTitle = report.title
-            dvc.id = report.id
-            dvc.totalCommit = report.totalCount
-            dvc.modalPresentationStyle = .fullScreen
-            self.present(dvc, animated: true, completion: nil)
-        }
+        print("hi")
+        let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "ReportDetailNavVC")
+        
+        dvc.modalPresentationStyle = .fullScreen
+        
+        let report = reportDataList[indexPath.row]
+        UserDefaults.standard.set(report.title, forKey:"reportTitle")
+        UserDefaults.standard.set(report.id, forKey:"reportId")
+        UserDefaults.standard.set(report.totalCount, forKey: "reportTotalCount")
+
+        self.present(dvc, animated: true, completion: nil)
+
     }
 }
 

@@ -67,7 +67,7 @@ extension UIViewController {
     //네트워크 에러 팝업
     func networkErrorAlert() {
         
-        let alert = UIAlertController(title: "네트워크 오류", message: "네트워크 상태를 확인해주세요", preferredStyle: .alert)
+        let alert = UIAlertController(title: "네트워크 오류", message: "잠시 후에 다시 시도해주세요!", preferredStyle: .alert)
         alert.view.tintColor = UIColor.CustomColor.skyBlue
         let okAction = UIAlertAction(title: "확인",style: .default)
         alert.addAction(okAction)
@@ -104,6 +104,14 @@ extension UIViewController {
         navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
     }
     //네비게이션 바 투명하게 하는 함수
+    func setNavigationBarWhite() {
+        let bar: UINavigationBar! = self.navigationController?.navigationBar
+        bar.backgroundColor = UIColor.white
+        
+        bar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        bar.shadowImage = UIImage()
+    }
+    
     func setNavigationBar() {
         let bar: UINavigationBar! = self.navigationController?.navigationBar
         bar.backgroundColor = UIColor.clear

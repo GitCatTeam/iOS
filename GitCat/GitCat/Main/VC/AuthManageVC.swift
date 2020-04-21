@@ -51,29 +51,19 @@ class AuthManageVC: UIViewController {
     }
     
     @IBAction func LogoutAction(_ sender: Any) {
+        let cancelModeAction = UIAlertAction(title: "취소", style: .cancel)
         let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
             self.postLogout()
             
         }
         
         let alert = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
-        
+        alert.addAction(cancelModeAction)
         alert.addAction(confirmModeAction)
 
         present(alert, animated:true){
             //함수가 성공적으로 수행된 후 작동되는 code
         }
-    }
-    
-    func setFontSize() {
-        self.withdrawTitleLabel.dynamicFont(fontSize: 17, name: "System Bold")
-        self.withdrawSubTitleLabel1.dynamicFont(fontSize: 13, name: "System")
-        self.withdrawSubTitleLabel2.dynamicFont(fontSize: 13, name: "System")
-        self.withdrawSubTitleLabel3.dynamicFont(fontSize: 13, name: "System Bold")
-        
-        self.withdrawOkBtn.titleLabel?.dynamicFont(fontSize: 17, name: "System")
-        self.withdrawCancelBtn.titleLabel?.dynamicFont(fontSize: 17, name: "System")
-        
     }
     
     @IBAction func wthdrawalAction(_ sender: Any) {

@@ -50,6 +50,8 @@ class GetMoreInfo1VC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        userEmailLabel.text = UserDefaults.standard.string(forKey: "userId")
         clickBtnCnt = 0
 
         setStyle();
@@ -71,12 +73,10 @@ class GetMoreInfo1VC: UIViewController {
         let imageURL = UserDefaults.standard.string(forKey: "userImage")
         userProfileImageView.setImage(imageURL, defaultImgPath: "imgDefault")
         
-        birthDatePicker.setValue(UIColor.CustomColor.skyBlue, forKey: "textColor")
-        
-        nextBtn.circleRadius()
-        femaleBtn.circleRadius()
-        maleBtn.circleRadius()
-        otherBtn.circleRadius()
+    birthDatePicker.setValue(UIColor.CustomColor.skyBlue, forKey: "textColor")
+    
+        birthDatePicker.setValue(false, forKey: "highlightsToday")
+
     }
     
     

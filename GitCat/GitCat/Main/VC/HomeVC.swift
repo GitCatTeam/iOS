@@ -111,17 +111,19 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     
     var mentsBox:[String] = ["안냥"]
     var mentPos = 0
-    var timer = Timer()
 
     var count = 0
     var isCatGraduate:Bool = false
     var isCatItemUpgrade:Bool = false
     var isCatLeave:Bool = false
 
+    
+    var timer = Timer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setNavigationBar()
+        setNavigationBar()
         setAlpha()
         setHomeData()
         
@@ -133,8 +135,6 @@ class HomeVC: UIViewController, TutorialCellDelegate {
             showTutorial()
         }
         
-
-        
         if UIDevice.current.model.hasPrefix("iPad") {
             catChatLabel.alpha = 0
             catChatBox.alpha = 0
@@ -145,6 +145,12 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         tabBarController?.tabBar.alpha = 1
+        
+        self.timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        timer.invalidate()
     }
     
     override func viewWillLayoutSubviews() {
@@ -195,7 +201,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     @IBAction func leaveCloseAction(_ sender: Any) {
         isCatLeave = false
         
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
              self.itemUpgradeCardView.alpha = 0
          })
 
@@ -208,7 +214,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     @IBAction func itemUpgradeCloseAction(_ sender: Any) {
         isCatItemUpgrade = false
         
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.itemUpgradeCardView.alpha = 0
         })
 
@@ -221,7 +227,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     
     @IBAction func graduateCloseAction(_ sender: Any) {
         isCatGraduate = false
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.cardBackgroundView.alpha = 0
             self.graduateCardView.alpha = 0
             
@@ -254,7 +260,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     }
     
     func startTutorialAction() {
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             
             UserDefaults.standard.set(true, forKey: "tutorialDone")
             self.OverlayView.alpha = 0
@@ -355,13 +361,15 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         
     }
     
-    @IBAction func showScoreInfoAction(_ sender: Any) {
-        UIView.animate(withDuration: 0.5, animations: {
+    @IBAction func showScoreDetailAction(_ sender: Any) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.setCardBackgorund()
             self.cardBackgroundView.alpha = 1
             self.scoreAlertView.alpha = 1
         })
-        
     }
+    
+    
     
     @IBAction func closeScoreInfoAction(_ sender: Any) {
         dismissCardBackground()
@@ -391,7 +399,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     
     func dismissCardBackground() {
         
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.cardBackgroundView.alpha = 0
             self.tabBarController?.tabBar.alpha = 1
 
@@ -477,7 +485,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     
     func hideBackgroundView() {
 
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             
             self.cardBackgroundView.alpha = 0
 //            self.navigationController?.navigationBar.layer.zPosition = 1
@@ -535,20 +543,17 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate {
 
 extension HomeVC : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.frame.width
+        let width = collectionView.frame.width-10
         let height = collectionView.frame.height
         return CGSize(width: width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left:0, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 0, left:0, bottom: 0, right: 10)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 3
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
@@ -632,9 +637,7 @@ extension HomeVC {
                     if((resResult.data?.catImg?.contains("first"))!) {
                         self.chatBoxLeadingConstraint.constant = -20
                     }
-//                    else if((resResult.data?.catImg?.contains("second"))! || (resResult.data?.catImg?.contains("third"))!) {
-//                        self.chatBoxLeadingConstraint.constant = -10
-//                    }
+
 
 
                     let url = URL(string: resResult.data?.catImg ?? "")
@@ -676,9 +679,8 @@ extension HomeVC {
                     }
                     
                     if(resResult.data?.ments?.count != 0 ) {
-                        //let timer
                             
-                        _ = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
+                        self.timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
                     }
                 }
                 

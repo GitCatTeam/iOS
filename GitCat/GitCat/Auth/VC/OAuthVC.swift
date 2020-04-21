@@ -176,7 +176,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
         } else{
             print("Network Error:Github 연동 로그인 시 네트워크 연결이 되어 있지 않음.")
             
-            let networkCheckAlert = UIAlertController(title: "네트워크 오류", message: "네트워크 연결 상태를 확인해주세요", preferredStyle: UIAlertController.Style.alert)
+            let networkCheckAlert = UIAlertController(title: "네트워크 오류", message: "잠시 후에 다시 시도해주세요!", preferredStyle: UIAlertController.Style.alert)
             
             networkCheckAlert.addAction(UIAlertAction(title: "네", style: .default, handler: { (action:UIAlertAction) in
                 print("로그인 화면으로 돌아가기")

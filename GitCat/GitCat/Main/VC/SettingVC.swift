@@ -42,7 +42,7 @@ class SettingVC: UIViewController {
             self.setCatInitialized()
         }
         
-        let alert = UIAlertController(title: "고양이 초기화", message: "귀여운 고양이들을 보내시겠습니까?     한 번 떠난 고양이는 되돌아오지 못합니다!", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "고양이 초기화", message: "귀여운 고양이들을 보내시겠습니까?             한 번 떠난 고양이는 되돌아오지 못합니다!", preferredStyle: UIAlertController.Style.alert)
         
         alert.addAction(confirmModeAction)
         alert.addAction(cancleModeAction)

@@ -106,15 +106,24 @@ class ReportDetailVC: UIViewController {
 
         loadingBackgroundView.alpha = 1
         
-        
-        self.navigationItem.title = reportTitle
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor(red: 137/255, green: 204/255, blue: 246/255, alpha: 1)]
-               navigationController?.navigationBar.titleTextAttributes = textAttributes
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
+        let bar: UINavigationBar! = self.navigationController?.navigationBar
+        bar.backgroundColor = UIColor.white
+        
+        bar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        bar.shadowImage = UIImage()
+        
+        id = UserDefaults.standard.integer(forKey: "reportId")
+        reportTitle = UserDefaults.standard.string(forKey: "reportTitle")
+        totalCommit = UserDefaults.standard.string(forKey: "reportTotalCount")
         
         percentOfLanguageEntries = [] //사용언어비율 pieChart 데이터 초기화
         
         loadingView.loadGif(name: "gif_loading2")
         
+        self.navigationItem.title = reportTitle
         totalCount.text = totalCommit
         setReportDetailData(id: id)
         
