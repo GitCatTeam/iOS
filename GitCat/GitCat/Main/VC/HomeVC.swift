@@ -109,7 +109,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     let content1Data:[String] = ["매일 꾸준히 커밋해보세요.", "4단계 고양씨는 졸업하게 되지만, 걱정 마세요!", "하단의 커밋달력을 통해 일일 커밋 현황을,", "어플 사용에 익숙해 지는 겸, 간단한 미션을 완료하면"]
     let content2Data:[String] = ["고양씨의 개발환경이 4단계에 걸쳐 개선됩니다.", "우측 상단의 수집 버튼을 통해 졸업앨범을 볼 수 있어요.", " 리포트를 통해 매달 개발 통계를 확인할 수 있어요.", "고양이 한 마리를 데려갈 수 있어요."]
     
-    var mentsBox:[String] = ["안냥"]
+    var mentsBox = [String]()
     var mentPos = 0
 
     var count = 0
@@ -146,7 +146,10 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         super.viewWillAppear(true)
         tabBarController?.tabBar.alpha = 1
         
-        self.timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
+        if(self.mentsBox.count != 0 ) {
+            self.timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
+        }
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
