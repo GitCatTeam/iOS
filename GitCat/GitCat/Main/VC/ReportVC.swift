@@ -13,6 +13,8 @@ class ReportVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var loadingView: UIImageView!
     
+    @IBOutlet weak var noDataImageView: UIImageView!
+    
     let cellIdentifier = "ReportCVCell"
     var reportDataList = [ResultListDataModel]()
     
@@ -25,6 +27,7 @@ class ReportVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.deleteNavigationUnderbar()
         loadingView.loadGif(name: "gif_loading2")
+        noDataImageView.alpha = 0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,6 +89,12 @@ extension ReportVC {
                     self.reportDataList = resResult.data?.resultList ?? []
                     self.collectionView.reloadData()
                     self.loadingView.alpha = 0
+                    
+                    if(self.reportDataList.count == 0) {
+                        self.noDataImageView.alpha = 1
+                    }else{
+                        self.noDataImageView.alpha = 0
+                    }
                 }
                 break
                 

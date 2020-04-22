@@ -564,10 +564,12 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="uY6-po-KFK" secondAttribute="height" multiplier="67:8" id="VYw-Mb-6Iq"/>
                                 </constraints>
+                                <color key="textColor" name="brownishGrey"/>
                                 <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="nameFieldEditingChangedAction:" destination="RXV-pZ-VNs" eventType="editingChanged" id="Ili-NV-YHJ"/>
+                                    <outlet property="delegate" destination="RXV-pZ-VNs" id="kAn-26-i72"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UUA-Gu-9c2" customClass="RoundBtn" customModule="GitCat" customModuleProvider="target">
@@ -725,7 +727,7 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgCatLoading" translatesAutoresizingMaskIntoConstraints="NO" id="uxP-BU-G9S">
                                                 <rect key="frame" x="51.5" y="3" width="200" height="200"/>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스페셜 냥이는 준비중입니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uq7-Wm-oSU">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스페셜 냥이는 준비중입니다!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uq7-Wm-oSU">
                                                 <rect key="frame" x="66" y="203" width="171" height="17.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="171" id="G46-Or-hTW"/>
@@ -739,7 +741,6 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="uxP-BU-G9S" firstAttribute="height" secondItem="Fol-wU-0wU" secondAttribute="height" multiplier="0.776699" id="1D8-vD-Fan"/>
-                                            <constraint firstItem="uxP-BU-G9S" firstAttribute="centerX" secondItem="Fol-wU-0wU" secondAttribute="centerX" id="7qi-PK-OK3"/>
                                             <constraint firstItem="Fol-wU-0wU" firstAttribute="height" secondItem="TVx-gT-OK6" secondAttribute="height" multiplier="0.952475" id="Cgz-tc-PHp"/>
                                             <constraint firstItem="Fol-wU-0wU" firstAttribute="width" secondItem="TVx-gT-OK6" secondAttribute="width" multiplier="0.915194" id="DFp-9J-RHE"/>
                                             <constraint firstAttribute="width" secondItem="TVx-gT-OK6" secondAttribute="height" multiplier="1.12:1" id="NC5-Sx-asm"/>
@@ -802,6 +803,7 @@
                                     <constraint firstItem="kSe-Wh-vvU" firstAttribute="width" secondItem="VBe-Ka-sVd" secondAttribute="width" multiplier="0.96" id="13A-Uh-lx6"/>
                                     <constraint firstItem="tAh-Oc-jYm" firstAttribute="leading" secondItem="i71-sn-3pn" secondAttribute="leading" constant="1" id="9A4-bR-VLo"/>
                                     <constraint firstAttribute="width" secondItem="qUz-D6-rcY" secondAttribute="height" multiplier="303:314" id="9jO-bC-2ER"/>
+                                    <constraint firstItem="uxP-BU-G9S" firstAttribute="centerX" secondItem="qUz-D6-rcY" secondAttribute="centerX" id="Gub-5l-w20"/>
                                     <constraint firstItem="tAh-Oc-jYm" firstAttribute="top" secondItem="i71-sn-3pn" secondAttribute="bottom" constant="-4" id="IDK-0i-A8G"/>
                                     <constraint firstItem="VBe-Ka-sVd" firstAttribute="width" secondItem="TVx-gT-OK6" secondAttribute="width" multiplier="0.219081" id="MYd-F5-Az8"/>
                                     <constraint firstItem="tAh-Oc-jYm" firstAttribute="width" secondItem="i71-sn-3pn" secondAttribute="width" multiplier="0.96" id="OT9-nq-mBK"/>
@@ -823,7 +825,7 @@
                                     <constraint firstAttribute="height" constant="1" id="krZ-qJ-sf4"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVD-St-Ma2">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVD-St-Ma2">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BGj-u3-9bY">
@@ -896,7 +898,7 @@
                                             <constraint firstItem="zB5-hp-UMR" firstAttribute="width" secondItem="BGj-u3-9bY" secondAttribute="width" multiplier="0.626087" id="yb8-ta-AeB"/>
                                         </constraints>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jz5-Ti-1Fl">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jz5-Ti-1Fl">
                                         <rect key="frame" x="44" y="343.5" width="326" height="209"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -938,10 +940,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숯처럼 까만 털에숯처럼 까만 털에숯처럼 까만 털에" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5d-v1-eHq" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                            <rect key="frame" x="155" y="96" width="107.5" height="61"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="i5d-v1-eHq" secondAttribute="height" multiplier="95:54" id="Dil-RU-41r"/>
-                                                            </constraints>
+                                                            <rect key="frame" x="155" y="96" width="107.5" height="49"/>
                                                             <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="14"/>
                                                             <color key="textColor" name="brownishGrey"/>
                                                             <nil key="highlightedColor"/>
@@ -971,12 +970,12 @@
                                                         <constraint firstItem="jbX-em-ABA" firstAttribute="leading" secondItem="I4j-0h-hDW" secondAttribute="leading" constant="20" id="Co8-k5-3cC"/>
                                                         <constraint firstItem="jbX-em-ABA" firstAttribute="top" secondItem="pY3-hT-tO7" secondAttribute="bottom" constant="7" id="FJ5-es-kwc"/>
                                                         <constraint firstItem="QNl-WA-fmv" firstAttribute="centerY" secondItem="4yd-7M-Lx9" secondAttribute="centerY" id="G6Q-wa-WJW"/>
+                                                        <constraint firstItem="i5d-v1-eHq" firstAttribute="width" secondItem="I4j-0h-hDW" secondAttribute="width" multiplier="0.37069" id="GhN-bF-ME7"/>
                                                         <constraint firstItem="4yd-7M-Lx9" firstAttribute="height" secondItem="I4j-0h-hDW" secondAttribute="height" multiplier="0.0679612" id="HZv-Go-2pZ"/>
                                                         <constraint firstItem="QNl-WA-fmv" firstAttribute="centerX" secondItem="4yd-7M-Lx9" secondAttribute="centerX" id="Ib3-3L-ofd"/>
                                                         <constraint firstItem="QNl-WA-fmv" firstAttribute="width" secondItem="4yd-7M-Lx9" secondAttribute="width" multiplier="2.14286" id="XyH-N7-lcv"/>
                                                         <constraint firstItem="jbX-em-ABA" firstAttribute="height" secondItem="I4j-0h-hDW" secondAttribute="height" multiplier="0.582524" id="ZeV-MN-heS"/>
                                                         <constraint firstItem="i5d-v1-eHq" firstAttribute="leading" secondItem="jbX-em-ABA" secondAttribute="leading" multiplier="155/20" id="ari-06-KRK"/>
-                                                        <constraint firstItem="i5d-v1-eHq" firstAttribute="height" secondItem="I4j-0h-hDW" secondAttribute="height" multiplier="0.3" id="b9A-EC-BrU"/>
                                                         <constraint firstItem="pY3-hT-tO7" firstAttribute="top" secondItem="I4j-0h-hDW" secondAttribute="bottom" multiplier="36/204" id="fVB-IY-Hcg"/>
                                                         <constraint firstItem="i5d-v1-eHq" firstAttribute="top" secondItem="pY3-hT-tO7" secondAttribute="top" multiplier="96/36" id="h4R-9v-qna"/>
                                                         <constraint firstItem="4yd-7M-Lx9" firstAttribute="top" secondItem="I4j-0h-hDW" secondAttribute="bottom" multiplier="16/204" id="jEk-uI-MEp"/>

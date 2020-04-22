@@ -13,6 +13,7 @@ class CatCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionV
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var loadingBackgroundView: UIView!
     @IBOutlet weak var loadingView: UIImageView!
+    @IBOutlet weak var noDataImageView: UIImageView!
     
     let cellIdentifier:String = "catCollectionViewcell"
     var catCollectionList = [CatCollectionDataModel]()
@@ -23,7 +24,9 @@ class CatCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionV
         
         loadingView.alpha = 1
         loadingBackgroundView.alpha = 1
-    
+        
+        self.noDataImageView.alpha = 0
+        
         getCatCollection()
         
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor(red: 137/255, green: 204/255, blue: 246/255, alpha: 1)]
@@ -95,6 +98,12 @@ extension CatCollectionVC {
                 self.collectionView.reloadData()
                 self.loadingView.alpha = 0
                 self.loadingBackgroundView.alpha = 0
+                
+                if(self.catCollectionList.count == 0) {
+                    self.noDataImageView.alpha = 1
+                }else{
+                    self.noDataImageView.alpha = 0
+                }
             }
             break
         case .accessDenied:

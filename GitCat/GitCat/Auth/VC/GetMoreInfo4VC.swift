@@ -102,6 +102,11 @@ class GetMoreInfo4VC: UIViewController {
 
     
     func setLabelSize() {
+        
+        
+        catNameTextField.font = UIFont(name: "BBTreeGo_R", size: 16)
+        catNameTextField.adjustsFontSizeToFitWidth = true
+        
         mainTitle.dynamicFont(fontSize: 22, name:"BBTreeG_B")
         subTitle.dynamicFont(fontSize: 13, name:"BBTreeGo_R")
         basicBtn.titleLabel?.dynamicFont(fontSize: 15, name:"BBTreeG_B")
@@ -109,7 +114,7 @@ class GetMoreInfo4VC: UIViewController {
         catNameLabel.dynamicFont(fontSize: 16, name:"BBTreeG_B")
 
         preparingLavel.dynamicFont(fontSize: 15, name: "BBTreeG_B")
-        catNameTextField.adjustsFontSizeToFitWidth = true
+        
         alertTitleLabel.dynamicFont(fontSize: 20, name: "BBTreeG_B")
         alertSubTitleLabel.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         
@@ -146,16 +151,30 @@ class GetMoreInfo4VC: UIViewController {
 
     }
     @IBAction func basicBtnAction(_ sender: Any) {
-        self.currentCatList = self.commonCatList;
-        self.collectionView.reloadData()
-        
+        currentCatList = self.commonCatList;
+        collectionView.indexPathsForSelectedItems?
+        .forEach {
+            self.collectionView.deselectItem(at: $0, animated: false)
+            let eachCell:SelectCatCVCell = collectionView.cellForItem(at: $0)! as! SelectCatCVCell
+            eachCell.roundView.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
+        }
+        collectionView.reloadData()
+        dismissCatNameTextField()
+    
         preparingLavel.alpha = 0
         preparingView.alpha = 0
     }
     
     @IBAction func specialBtnAction(_ sender: Any) {
-        self.currentCatList = self.specialCatList;
-        self.collectionView.reloadData()
+        currentCatList = self.specialCatList;
+        collectionView.indexPathsForSelectedItems?
+        .forEach {
+            self.collectionView.deselectItem(at: $0, animated: false)
+            let eachCell:SelectCatCVCell = collectionView.cellForItem(at: $0)! as! SelectCatCVCell
+            eachCell.roundView.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
+        }
+        collectionView.reloadData()
+        dismissCatNameTextField()
         
         preparingLavel.alpha = 1
         preparingView.alpha = 1
@@ -308,10 +327,8 @@ class GetMoreInfo4VC: UIViewController {
             }
             
             originY = topConstraint.constant
-            let bounds = UIScreen.main.bounds
-            let hollowHeight = bounds.size.height*0.2
-            
-            topConstraint.constant = originY! - (keyboardSize.height-hollowHeight)
+
+            topConstraint.constant = originY! - keyboardSize.height
         
             UIView.animate(withDuration: 2, animations: {
                 () -> Void in
@@ -328,10 +345,8 @@ class GetMoreInfo4VC: UIViewController {
             }
 
             originY = topConstraint.constant
-            let bounds = UIScreen.main.bounds
-            let hollowHeight = bounds.size.height*0.2
-            
-            topConstraint.constant = originY! + (keyboardSize.height-hollowHeight)
+
+            topConstraint.constant = originY! + keyboardSize.height
             
             UIView.animate(withDuration: 2, animations: {
                 () -> Void in
@@ -374,7 +389,11 @@ class GetMoreInfo4VC: UIViewController {
 
 extension GetMoreInfo4VC: UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-         let currentCharacterCount = textField.text?.count ?? 0
+
+        
+        let currentCharacterCount = textField.text?.count ?? 0
+        print(currentCharacterCount)
+        
            if range.length + range.location > currentCharacterCount {
                return false
            }
