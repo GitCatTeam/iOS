@@ -21,8 +21,6 @@ class CatCollectionVC: UIViewController, UICollectionViewDelegate, UICollectionV
         
         super.viewDidLoad()
 
-        
-        loadingView.alpha = 1
         loadingBackgroundView.alpha = 1
         
         self.noDataImageView.alpha = 0
@@ -96,7 +94,6 @@ extension CatCollectionVC {
             if let resResult = graduateCatData {
                 self.catCollectionList = resResult.data ?? []
                 self.collectionView.reloadData()
-                self.loadingView.alpha = 0
                 self.loadingBackgroundView.alpha = 0
                 
                 if(self.catCollectionList.count == 0) {
@@ -122,13 +119,11 @@ extension CatCollectionVC {
             break
         case .networkFail :
             self.networkErrorAlert()
-            self.loadingView.alpha = 0
             self.loadingBackgroundView.alpha = 0
             break
                                 
         default:
             self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
-            self.loadingView.alpha = 0
             self.loadingBackgroundView.alpha = 0
             break
             }
