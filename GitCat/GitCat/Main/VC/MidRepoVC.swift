@@ -88,6 +88,11 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.CustomColor.skyBlue]
+    navigationController?.navigationBar.titleTextAttributes = textAttributes
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.deleteNavigationUnderbar()
+        
         tabBarController?.tabBar.alpha = 1
         
         loadingView.alpha = 1
@@ -173,6 +178,7 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         calendar.appearance.titleFont = UIFont(name: "BBTree_R", size: 14)
         calendar.appearance.borderSelectionColor = UIColor.CustomColor.brownishGrey
         
+
         calendar.appearance.todayColor = UIColor(red: 137/255, green: 204/255, blue: 246/255, alpha: 1)
         
         self.calendar.select(Date())
@@ -293,7 +299,8 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
         }
         
     }
-    
+
+
     //글자 색
     //    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
     //        somedays = ["2019-12-20", "2019-12-21","2019-12-22"]
@@ -315,9 +322,9 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
                 return #colorLiteral(red: 0.8666666667, green: 0.9490196078, blue: 1, alpha: 1)
             } else if self.commitLevel3.contains(dateString) {
                 return #colorLiteral(red: 0.7921568627, green: 0.9215686275, blue: 1, alpha: 1)
+            }else{
+                return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             }
-
-            return appearance.selectionColor
         }
 }
 
