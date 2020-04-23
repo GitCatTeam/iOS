@@ -483,7 +483,7 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if(collectionView == self.newCatCollectionView) {
-            return UIEdgeInsets(top: 0, left:20, bottom: 0, right:0)
+            return UIEdgeInsets(top: 0, left:0, bottom: 0, right:0)
         }
         
         return UIEdgeInsets(top: 14.2, left:12, bottom: 14.2, right: 13)

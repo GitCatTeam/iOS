@@ -193,6 +193,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         self.settingBarItem.isEnabled = true
         self.refreshBarItem.isEnabled = true
         
+        self.catImageView.image = UIImage(named: "imgCatNull")
         
         let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "CatCollectionNavVC")
          dvc.modalPresentationStyle = .fullScreen
@@ -237,7 +238,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
             self.tabBarController?.tabBar.alpha = 1
 
             self.tabBarController?.tabBar.isUserInteractionEnabled = true
-            
+            self.catImageView.image = UIImage(named: "imgCatNull")
             self.catCollectionBarItem.isEnabled = true
             self.settingBarItem.isEnabled = true
             self.refreshBarItem.isEnabled = true
