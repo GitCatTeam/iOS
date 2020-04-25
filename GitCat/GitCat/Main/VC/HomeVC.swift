@@ -145,15 +145,10 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         tabBarController?.tabBar.alpha = 1
-        
-        if(self.mentsBox.count != 0 ) {
-            self.timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
-        }
 
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        timer.invalidate()
     }
     
     override func viewWillLayoutSubviews() {
@@ -632,16 +627,18 @@ extension HomeVC {
                     self.todayScoreLabel.text = "\(resResult.data?.todayScore ?? 0)"
                     self.catNameLabel.text = resResult.data?.catName
                     
+
+                    let url = URL(string: resResult.data?.catImg ?? "")
+
+
+                    self.catImageView.kf.setImage(with: url)
+                    
                     if((resResult.data?.catImg?.contains("first"))!) {
-                        self.chatBoxLeadingConstraint.constant = -20
+                        self.chatBoxLeadingConstraint.constant = 20
                     }else{
                         self.chatBoxLeadingConstraint.constant = 0
                     }
 
-
-                    let url = URL(string: resResult.data?.catImg ?? "")
-
-                    self.catImageView.kf.setImage(with: url)
                     self.itemLabel.text = "("+(resResult.data?.nextLevelStr ?? "")+")"
                     self.leftScoreLabel.text = "\(self.gino(resResult.data?.nextLevelScore))"
                         
@@ -678,7 +675,7 @@ extension HomeVC {
                     }
                     
                     if(resResult.data?.ments?.count != 0 ) {
-                            
+                        self.timer.invalidate()
                         self.timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
                     }
                 }

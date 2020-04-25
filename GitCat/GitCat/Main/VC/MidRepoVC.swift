@@ -22,7 +22,7 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     
     @IBOutlet weak var loadingBackgroundView: UIView!
     @IBOutlet weak var loadingView: UIImageView!
-    @IBOutlet weak var loadingBackgroundView2: UIView!
+
     
     @IBOutlet weak var loadingView2: UIImageView!
     @IBOutlet weak var desc1: CustomLabel!
@@ -95,11 +95,10 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         
         tabBarController?.tabBar.alpha = 1
         
-        loadingView.alpha = 1
         loadingBackgroundView.alpha = 1
         loadingView.loadGif(name: "gif_loading2")
         
-        loadingBackgroundView2.alpha = 1
+        loadingView2.alpha = 1
         loadingView2.loadGif(name: "gif_loading2")
         
         tableView.allowsSelection = false
@@ -392,7 +391,7 @@ extension MidRepoVC {
     
     //커밋내역 불러오기
     func setCommitData(date:String?) {
-        self.loadingBackgroundView2.alpha = 1
+        self.loadingView2.alpha = 1
         CommitListService.sharedInstance.getCommitData(date: date!) { (result) in
         switch result {
            
@@ -415,7 +414,7 @@ extension MidRepoVC {
                 
             }
             self.tableView.reloadData()
-            self.loadingBackgroundView2.alpha = 0
+            self.loadingView2.alpha = 0
             break
         case .accessDenied:
             let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
@@ -433,11 +432,11 @@ extension MidRepoVC {
             break
         case .networkFail :
             self.networkErrorAlert()
-            self.loadingBackgroundView2.alpha = 0
+            self.loadingView.alpha = 0
             break
            default:
             self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
-            self.loadingBackgroundView2.alpha = 0
+            self.loadingView.alpha = 0
 
             break
             

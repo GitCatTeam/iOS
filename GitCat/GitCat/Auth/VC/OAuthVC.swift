@@ -68,9 +68,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if(UserDefaults.standard.bool(forKey: "signUp") == false) {
-            deleteCache()
-        }
+        deleteCache()
 
         loadURL()
         setBackBtn(color: UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1))
@@ -103,9 +101,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
     
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        print("??????????????????")
         if(message.name == "authCheckHandler") {
-            print("들어오는거 맞지?????")
             //복호
             let messageBody:String? = message.body as?  String
 
