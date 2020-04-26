@@ -174,6 +174,7 @@ class GetMoreInfo4VC: UIViewController {
             eachCell.roundView.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
         }
         collectionView.reloadData()
+        self.catNameTextField.text = ""
         dismissCatNameTextField()
         
         preparingLavel.alpha = 1

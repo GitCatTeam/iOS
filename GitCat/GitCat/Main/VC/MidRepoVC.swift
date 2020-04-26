@@ -39,6 +39,10 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     
     @IBOutlet weak var noneItem: CustomLabel!
     
+    @IBOutlet weak var noneCommitView: UIView!
+    @IBOutlet weak var noneCommitLabel: UILabel!
+    
+    
     
     var commitCountData: CommitCountModel?
     
@@ -96,6 +100,8 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         
         tabBarController?.tabBar.alpha = 1
         
+        noneCommitView.alpha = 0
+        
         loadingBackgroundView.alpha = 1
         loadingView.loadGif(name: "gif_loading2")
         
@@ -124,28 +130,8 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         
         
         
-        setCalendarCommitBackgroundColor(year: intYear, month: intMonth)
+        setCalendarCommitBackgroundColor(year: intYear, month: intMonth, isFirst:true)
         
-        let detailDate:String = formatter.string(from: Date())
-        if(commitCountDetailData.data?.detailCommits[detailDate] == nil) {
-            self.scoreLabel.text = "0"
-            self.totalCommitLabel.text = "0"
-            self.noneItem.alpha = 1
-            self.itemLabel.alpha = 0
-        }else{
-            self.scoreLabel.text = "+\(self.gino(commitCountDetailData.data?.detailCommits[detailDate]?.score))"
-            self.totalCommitLabel.text = "+\(self.gino(commitCountDetailData.data?.detailCommits[detailDate]?.count))"
-            
-            let item = gsno(commitCountDetailData.data?.detailCommits[detailDate]?.levelUp)
-            self.itemLabel.text = item
-            if(item == "") {
-                self.noneItem.alpha = 1
-                self.itemLabel.alpha = 0
-            }else {
-                self.noneItem.alpha = 0
-                self.itemLabel.alpha = 1
-            }
-        }
         
         
         self.view.addGestureRecognizer(self.scopeGesture)
@@ -158,7 +144,12 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         setCommitData(date: showCommitDate)
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+    }
     func setFontSize() {
+        noneCommitLabel.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         desc1.dynamicFont(fontSize: 14, name: "BBTreeG_B")
         desc2.dynamicFont(fontSize: 14, name: "BBTreeG_B")
         desc3.dynamicFont(fontSize: 14, name: "BBTreeG_B")
@@ -297,14 +288,16 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
         }
         
         if(commitCountDetailData.data?.detailCommits[self.formatter.string(from: date)] == nil) {
-            self.scoreLabel.text = "0"
-            self.totalCommitLabel.text = "0"
-            self.noneItem.alpha = 1
-            self.itemLabel.alpha = 0
+            noneCommitView.alpha = 1
+            tableView.alpha = 0
         }else{
+
+            noneCommitView.alpha = 0
+            tableView.alpha = 1
+            
             self.scoreLabel.text = "+\(self.gino(commitCountDetailData.data?.detailCommits[self.formatter.string(from: date)]?.score))"
             self.totalCommitLabel.text = "+\(self.gino(commitCountDetailData.data?.detailCommits[self.formatter.string(from: date)]?.count))"
-            
+
             let item = gsno(commitCountDetailData.data?.detailCommits[self.formatter.string(from: date)]?.levelUp)
             self.itemLabel.text = item
             if(item == "") {
@@ -314,9 +307,11 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
                 self.noneItem.alpha = 0
                 self.itemLabel.alpha = 1
             }
+            
+            setCommitData(date:self.formatter2.string(from: date))
         }
         
-        setCommitData(date:self.formatter2.string(from: date))
+        
 
     }
     
@@ -335,12 +330,12 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
             visitedMonth[intMonth] = true
 
             
-            setCalendarCommitBackgroundColor(year: intYear, month: intMonth)
+            setCalendarCommitBackgroundColor(year: intYear, month: intMonth, isFirst: false)
         }
         else if(visitedMonth[intMonth] != true) {
             visitedMonth[intMonth] = true
             
-            setCalendarCommitBackgroundColor(year: intYear, month: intMonth)
+            setCalendarCommitBackgroundColor(year: intYear, month: intMonth, isFirst:false)
         }
         
     }
@@ -365,7 +360,7 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
 extension MidRepoVC {
     
     //커밋 잔디 불러오기
-    func setCalendarCommitBackgroundColor(year:Int, month:Int) {
+    func setCalendarCommitBackgroundColor(year:Int, month:Int, isFirst:Bool) {
         
         loadingBackgroundView.alpha = 1
         
@@ -390,11 +385,36 @@ extension MidRepoVC {
                     self.commitLevel2 += resResult.data?.commits?.level_2 ?? []
                     self.commitLevel3 += resResult.data?.commits?.level_3 ?? []
                     
-                    self.calendar.reloadData()
-                    self.loadingBackgroundView.alpha = 0
+                    if(isFirst == true){
+                        
+                        if(self.commitCountDetailData.data?.detailCommits[self.formatter.string(from: Date())] != nil) {
+                            
+                            self.noneCommitView.alpha = 0
+                            self.tableView.alpha = 1
 
+                            self.scoreLabel.text = "+\(self.gino(detailData?.data?.detailCommits[self.formatter.string(from: Date())]?.score))"
+                            self.totalCommitLabel.text = "+\(self.gino(detailData?.data?.detailCommits[self.formatter.string(from: Date())]?.count))"
+                            
+                            let item = self.gsno(detailData?.data?.detailCommits[self.formatter.string(from: Date())]?.levelUp)
+                            self.itemLabel.text = item
+                            if(item == "") {
+                                self.noneItem.alpha = 1
+                                self.itemLabel.alpha = 0
+                            }else {
+                                self.noneItem.alpha = 0
+                                self.itemLabel.alpha = 1
+                            }
+                    }else{
+                        self.noneCommitView.alpha = 1
+                        self.tableView.alpha = 0
+                    }
                 }
-                break
+                    
+                self.calendar.reloadData()
+                self.loadingBackgroundView.alpha = 0
+
+            }
+            break
             case .accessDenied: //401
                 let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
                     UserDefaults.standard.set(false, forKey: "login")
@@ -436,6 +456,8 @@ extension MidRepoVC {
             if let resResult = detailData {
                 
                 self.commits = resResult.data?.commits ?? []
+                
+
                 
             }
             self.tableView.reloadData()

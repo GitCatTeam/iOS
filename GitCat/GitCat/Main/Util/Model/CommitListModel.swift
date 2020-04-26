@@ -12,9 +12,6 @@ class CommitListModel:Codable {
     var data:CommitListDataModel?
 }
 class CommitListDataModel:Codable {
-    var score:Int?
-    var totalCommit:Int?
-    var item:String?
     var commits:[CommitListDataDetailModel]?
 }
 class CommitListDataDetailModel:Codable {
