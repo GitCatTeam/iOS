@@ -15,7 +15,6 @@ enum HttpResponseCode: Int{
     case selectErr = 300
     
     case badRequest = 400
-    
     case accessDenied = 401
     case forbidden = 403
     case nullValue = 404
@@ -24,6 +23,7 @@ enum HttpResponseCode: Int{
     
     case serverErr = 500
     case notImplemented = 501
+    
 }
 
 enum Result<T> {

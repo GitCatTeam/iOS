@@ -53,6 +53,7 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     var currentMonth:Int?
     var currentYear:Int?
     
+    var commitCountDetailData = CommitCountModel()
     
     //포맷터 초기화
     fileprivate let gregorian = Calendar(identifier: .gregorian)
@@ -120,7 +121,32 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         currentMonth = intMonth
         currentYear = intYear
         visitedMonth[intMonth] = true
+        
+        
+        
         setCalendarCommitBackgroundColor(year: intYear, month: intMonth)
+        
+        let detailDate:String = formatter.string(from: Date())
+        if(commitCountDetailData.data?.detailCommits[detailDate] == nil) {
+            self.scoreLabel.text = "0"
+            self.totalCommitLabel.text = "0"
+            self.noneItem.alpha = 1
+            self.itemLabel.alpha = 0
+        }else{
+            self.scoreLabel.text = "+\(self.gino(commitCountDetailData.data?.detailCommits[detailDate]?.score))"
+            self.totalCommitLabel.text = "+\(self.gino(commitCountDetailData.data?.detailCommits[detailDate]?.count))"
+            
+            let item = gsno(commitCountDetailData.data?.detailCommits[detailDate]?.levelUp)
+            self.itemLabel.text = item
+            if(item == "") {
+                self.noneItem.alpha = 1
+                self.itemLabel.alpha = 0
+            }else {
+                self.noneItem.alpha = 0
+                self.itemLabel.alpha = 1
+            }
+        }
+        
         
         self.view.addGestureRecognizer(self.scopeGesture)
 
@@ -270,6 +296,26 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
             calendar.setCurrentPage(date, animated: true)
         }
         
+        if(commitCountDetailData.data?.detailCommits[self.formatter.string(from: date)] == nil) {
+            self.scoreLabel.text = "0"
+            self.totalCommitLabel.text = "0"
+            self.noneItem.alpha = 1
+            self.itemLabel.alpha = 0
+        }else{
+            self.scoreLabel.text = "+\(self.gino(commitCountDetailData.data?.detailCommits[self.formatter.string(from: date)]?.score))"
+            self.totalCommitLabel.text = "+\(self.gino(commitCountDetailData.data?.detailCommits[self.formatter.string(from: date)]?.count))"
+            
+            let item = gsno(commitCountDetailData.data?.detailCommits[self.formatter.string(from: date)]?.levelUp)
+            self.itemLabel.text = item
+            if(item == "") {
+                self.noneItem.alpha = 1
+                self.itemLabel.alpha = 0
+            }else {
+                self.noneItem.alpha = 0
+                self.itemLabel.alpha = 1
+            }
+        }
+        
         setCommitData(date:self.formatter2.string(from: date))
 
     }
@@ -298,18 +344,6 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
         }
         
     }
-
-
-    //글자 색
-    //    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
-    //        somedays = ["2019-12-20", "2019-12-21","2019-12-22"]
-    //        let dateString : String = formatter.string(from: date)
-    //        if self.somedays.contains(dateString) {
-    //            return UIColor.green
-    //        }else{
-    //            return nil
-    //        }
-    //    }
 
         //글자 배경
         func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
@@ -348,6 +382,7 @@ extension MidRepoVC {
             case .networkSuccess(let data) :
                 
                 let detailData = data as? CommitCountModel
+                self.commitCountDetailData = (data as? CommitCountModel)!
                 
                 if let resResult = detailData {
                     print("level1:\(self.gono(resResult.data?.commits?.level_1))")
@@ -399,16 +434,6 @@ extension MidRepoVC {
             let detailData = data as? CommitListModel
                             
             if let resResult = detailData {
-                self.scoreLabel.text = "+\(self.gino(resResult.data?.score))"
-                self.totalCommitLabel.text = "\(self.gino(resResult.data?.totalCommit))"
-                self.itemLabel.text = resResult.data?.item ?? ""
-                if(resResult.data?.item == "") {
-                    self.noneItem.alpha = 1
-                    self.itemLabel.alpha = 0
-                }else {
-                    self.noneItem.alpha = 0
-                    self.itemLabel.alpha = 1
-                }
                 
                 self.commits = resResult.data?.commits ?? []
                 
