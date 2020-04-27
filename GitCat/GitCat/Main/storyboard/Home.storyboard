@@ -211,7 +211,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g13-dk-Wul">
-                                        <rect key="frame" x="72.5" y="596" width="269" height="44"/>
+                                        <rect key="frame" x="73" y="596" width="268" height="44"/>
                                         <color key="backgroundColor" name="skyBlue"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="g13-dk-Wul" secondAttribute="height" multiplier="61:10" id="zaL-4g-zbI"/>
@@ -228,8 +228,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="s6a-2e-nyq" firstAttribute="centerY" secondItem="j2J-3a-JaB" secondAttribute="centerY" id="3Fl-3u-2aO"/>
+                                    <constraint firstItem="g13-dk-Wul" firstAttribute="height" secondItem="BAz-MP-jtV" secondAttribute="height" multiplier="0.0606897" id="3XO-pz-I0U"/>
                                     <constraint firstItem="s6a-2e-nyq" firstAttribute="height" secondItem="j2J-3a-JaB" secondAttribute="height" multiplier="0.785714" id="4Nj-Ph-KHQ"/>
-                                    <constraint firstItem="g13-dk-Wul" firstAttribute="width" secondItem="BAz-MP-jtV" secondAttribute="width" multiplier="0.650667" id="9DJ-cq-mIr"/>
                                     <constraint firstItem="4bC-4w-vph" firstAttribute="centerX" secondItem="BAz-MP-jtV" secondAttribute="centerX" id="AKU-qi-WMe"/>
                                     <constraint firstItem="YsP-PD-MMI" firstAttribute="top" secondItem="BAz-MP-jtV" secondAttribute="bottom" multiplier="30/641" id="GiD-cg-rag"/>
                                     <constraint firstItem="4bC-4w-vph" firstAttribute="top" secondItem="BAz-MP-jtV" secondAttribute="bottom" multiplier="40/641" id="Gpc-oi-EJf"/>
@@ -2013,7 +2013,7 @@
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FpF-hI-U5N">
                                 <rect key="frame" x="0.0" y="100" width="414" height="360"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QyW-gS-Cqy" customClass="AnimatedImageView" customModule="Kingfisher">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QyW-gS-Cqy" customClass="AnimatedImageView" customModule="Kingfisher">
                                         <rect key="frame" x="167" y="140" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="QyW-gS-Cqy" secondAttribute="height" multiplier="1:1" id="eAd-Ss-cHp"/>

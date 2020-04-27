@@ -12,6 +12,7 @@ import UIKit
 class GetMoreInfo4VC: UIViewController {
     var keyboardHeight: CGFloat = 0.0
     
+    
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var mainTitle: UILabel!
@@ -73,6 +74,8 @@ class GetMoreInfo4VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         setCatList()
         currentCatList = commonCatList;
         self.collectionView.reloadData()
@@ -87,9 +90,13 @@ class GetMoreInfo4VC: UIViewController {
         animateView()
         
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        topConstraint.constant = 0
+    }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
         
         collectionView.collectionViewLayout.invalidateLayout()
         newCatCollectionView.collectionViewLayout.invalidateLayout()
@@ -180,6 +187,8 @@ class GetMoreInfo4VC: UIViewController {
         preparingLavel.alpha = 1
         preparingView.alpha = 1
     }
+    
+    //박훈
     
     @IBAction func nameFieldEditingChangedAction(_ sender: Any) {
         if catNameTextField.text!.isEmpty {
@@ -328,9 +337,16 @@ class GetMoreInfo4VC: UIViewController {
             }
             
             originY = topConstraint.constant
-
-            topConstraint.constant = originY! - keyboardSize.height
-        
+            
+            print("======================")
+            print(keyboardSize.height)
+            print("======================")
+            
+            let bounds = UIScreen.main.bounds
+            let height = bounds.size.height
+            
+            topConstraint.constant = originY! - (keyboardSize.height - height/8)
+            
             UIView.animate(withDuration: 2, animations: {
                 () -> Void in
                 self.view.layoutIfNeeded()
@@ -345,9 +361,7 @@ class GetMoreInfo4VC: UIViewController {
                 return
             }
 
-            originY = topConstraint.constant
-
-            topConstraint.constant = originY! + keyboardSize.height
+            topConstraint.constant = 0
             
             UIView.animate(withDuration: 2, animations: {
                 () -> Void in

@@ -53,7 +53,6 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     
     var commits = [CommitListDataDetailModel]()
     
-    var visitedMonth:[Bool] = [false, false, false, false, false, false, false, false, false, false, false, false, false, false]
     var currentMonth:Int?
     var currentYear:Int?
     
@@ -126,7 +125,6 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         
         currentMonth = intMonth
         currentYear = intYear
-        visitedMonth[intMonth] = true
         
         
         
@@ -322,22 +320,8 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
                
         let intYear:Int = gino(values.year)
         let intMonth:Int = gino(values.month)
-        
-        if(currentYear != intYear) {
-            currentYear = intYear
-            visitedMonth = [false, false, false, false, false, false, false, false, false, false, false, false, false, false]
-            
-            visitedMonth[intMonth] = true
 
-            
-            setCalendarCommitBackgroundColor(year: intYear, month: intMonth, isFirst: false)
-        }
-        else if(visitedMonth[intMonth] != true) {
-            visitedMonth[intMonth] = true
-            
-            setCalendarCommitBackgroundColor(year: intYear, month: intMonth, isFirst:false)
-        }
-        
+        setCalendarCommitBackgroundColor(year: intYear, month: intMonth, isFirst:false)
     }
 
         //글자 배경
