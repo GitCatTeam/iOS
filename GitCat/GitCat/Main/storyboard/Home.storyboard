@@ -1367,7 +1367,10 @@
                                 </connections>
                             </collectionView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgNogradu" translatesAutoresizingMaskIntoConstraints="NO" id="KJt-xi-LyC">
-                                <rect key="frame" x="37" y="278" width="340" height="340"/>
+                                <rect key="frame" x="7" y="275" width="400" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KJt-xi-LyC" secondAttribute="height" multiplier="1:1" id="DgF-IJ-SiP"/>
+                                </constraints>
                             </imageView>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vbr-xM-ueE">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
@@ -1391,17 +1394,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Vbr-xM-ueE" firstAttribute="trailing" secondItem="jMR-PN-Whi" secondAttribute="trailing" id="798-Uz-zy5"/>
-                            <constraint firstItem="KJt-xi-LyC" firstAttribute="centerY" secondItem="opT-1P-TSP" secondAttribute="centerY" id="7xa-1C-BFS"/>
                             <constraint firstItem="raG-OJ-uR9" firstAttribute="leading" secondItem="jMR-PN-Whi" secondAttribute="leading" id="86Z-rD-TYP"/>
-                            <constraint firstItem="KJt-xi-LyC" firstAttribute="centerX" secondItem="opT-1P-TSP" secondAttribute="centerX" id="AZH-w5-ZZ3"/>
-                            <constraint firstItem="KJt-xi-LyC" firstAttribute="width" secondItem="KJt-xi-LyC" secondAttribute="height" multiplier="1:1" id="HH7-AK-PKi"/>
+                            <constraint firstItem="KJt-xi-LyC" firstAttribute="height" secondItem="jMR-PN-Whi" secondAttribute="height" multiplier="0.516796" id="8Di-S3-1zt"/>
                             <constraint firstItem="jMR-PN-Whi" firstAttribute="trailing" secondItem="raG-OJ-uR9" secondAttribute="trailing" id="I8q-Pw-omI"/>
                             <constraint firstItem="Vbr-xM-ueE" firstAttribute="bottom" secondItem="jMR-PN-Whi" secondAttribute="bottom" id="QHW-tQ-GP4"/>
                             <constraint firstItem="raG-OJ-uR9" firstAttribute="bottom" secondItem="jMR-PN-Whi" secondAttribute="bottom" id="Qdq-lI-aV9"/>
                             <constraint firstItem="raG-OJ-uR9" firstAttribute="top" secondItem="jMR-PN-Whi" secondAttribute="top" id="gQh-KY-SgV"/>
                             <constraint firstItem="Vbr-xM-ueE" firstAttribute="top" secondItem="jMR-PN-Whi" secondAttribute="top" id="hv9-Er-KJQ"/>
-                            <constraint firstItem="KJt-xi-LyC" firstAttribute="height" secondItem="opT-1P-TSP" secondAttribute="height" multiplier="0.379464" id="kgO-Yy-6Pt"/>
                             <constraint firstItem="Vbr-xM-ueE" firstAttribute="leading" secondItem="jMR-PN-Whi" secondAttribute="leading" id="p1a-7o-oUr"/>
+                            <constraint firstItem="KJt-xi-LyC" firstAttribute="centerY" secondItem="jMR-PN-Whi" secondAttribute="centerY" id="p8i-UB-rpX"/>
+                            <constraint firstItem="KJt-xi-LyC" firstAttribute="centerX" secondItem="jMR-PN-Whi" secondAttribute="centerX" id="vsx-wL-8CJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jMR-PN-Whi"/>
                     </view>
@@ -2777,9 +2779,9 @@
                                 </connections>
                             </collectionView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgNoreport" translatesAutoresizingMaskIntoConstraints="NO" id="HCi-JJ-3tY">
-                                <rect key="frame" x="37" y="280.5" width="340" height="340"/>
+                                <rect key="frame" x="7" y="250.5" width="400" height="400"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="HCi-JJ-3tY" secondAttribute="height" multiplier="1:1" id="OSa-fI-nvn"/>
+                                    <constraint firstAttribute="width" secondItem="HCi-JJ-3tY" secondAttribute="height" multiplier="1:1" id="aSk-Vm-Muh"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lA8-Ln-iNK" customClass="AnimatedImageView" customModule="Kingfisher">
@@ -2791,11 +2793,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="HCi-JJ-3tY" firstAttribute="centerY" secondItem="Pts-o3-jny" secondAttribute="centerY" id="0zk-TK-40i"/>
+                            <constraint firstItem="HCi-JJ-3tY" firstAttribute="height" secondItem="4OF-a3-kdk" secondAttribute="height" multiplier="0.446429" id="ASH-Re-qI7"/>
+                            <constraint firstItem="HCi-JJ-3tY" firstAttribute="centerX" secondItem="Pts-o3-jny" secondAttribute="centerX" id="C0s-pd-Upm"/>
                             <constraint firstItem="1iS-5E-rBo" firstAttribute="leading" secondItem="Pts-o3-jny" secondAttribute="leading" id="LIa-Bu-93S"/>
                             <constraint firstItem="Pts-o3-jny" firstAttribute="bottom" secondItem="1iS-5E-rBo" secondAttribute="bottom" id="Tg3-If-i0s"/>
-                            <constraint firstItem="HCi-JJ-3tY" firstAttribute="height" secondItem="4OF-a3-kdk" secondAttribute="height" multiplier="0.379464" id="ZEE-dE-USN"/>
-                            <constraint firstItem="HCi-JJ-3tY" firstAttribute="centerX" secondItem="Pts-o3-jny" secondAttribute="centerX" id="dTp-IF-xPO"/>
+                            <constraint firstItem="HCi-JJ-3tY" firstAttribute="centerY" secondItem="Pts-o3-jny" secondAttribute="centerY" id="a2y-R9-qA5"/>
                             <constraint firstItem="lA8-Ln-iNK" firstAttribute="centerY" secondItem="Pts-o3-jny" secondAttribute="centerY" id="eIc-bU-eUw"/>
                             <constraint firstItem="lA8-Ln-iNK" firstAttribute="centerX" secondItem="Pts-o3-jny" secondAttribute="centerX" id="iFB-t2-bW2"/>
                             <constraint firstItem="1iS-5E-rBo" firstAttribute="top" secondItem="Pts-o3-jny" secondAttribute="top" id="ja1-pa-cxd"/>
