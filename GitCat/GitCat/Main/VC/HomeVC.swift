@@ -218,13 +218,13 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         })
 
         if(self.isCatGraduate == false && self.isCatLeave == false) {
-            print("ww")
             dismissCardBackground()
         }
        
     }
     
     @IBAction func graduateCloseAction(_ sender: Any) {
+        
         isCatGraduate = false
         UIView.animate(withDuration: 0.3, animations: {
             self.cardBackgroundView.alpha = 0
@@ -679,11 +679,7 @@ extension HomeVC {
                         self.timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
                     }
                 }
-                
-                
-                    
-                
-                    
+
                 self.loadingView.alpha = 0
                 self.loadingBackgroundView.alpha = 0
                 break

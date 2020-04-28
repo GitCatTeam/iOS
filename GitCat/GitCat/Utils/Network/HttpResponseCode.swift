@@ -23,6 +23,7 @@ enum HttpResponseCode: Int{
     
     case serverErr = 500
     case notImplemented = 501
+    case nginXErr = 502
     
 }
 

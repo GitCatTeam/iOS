@@ -88,8 +88,6 @@
 		4CC7D9B923C63BD5004576BB /* ReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D9B823C63BD5004576BB /* ReportVC.swift */; };
 		4CC7D9BE23C64722004576BB /* ReportCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D9BD23C64722004576BB /* ReportCVCell.swift */; };
 		4CCAABCF243D9DFC00CBF56A /* DeleteUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCAABCE243D9DFC00CBF56A /* DeleteUserInfo.swift */; };
-		4CCBE95A23FADD11002FA879 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCBE95923FADD11002FA879 /* UserNotifications.framework */; };
-		4CCBE95C23FADD1A002FA879 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCBE95B23FADD1A002FA879 /* PushKit.framework */; };
 		4CD5A5D023C2F45E00A8E225 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5A5CF23C2F45E00A8E225 /* CustomLabel.swift */; };
 		4CE33B3D244AF2AA000B1FC3 /* ReportDetailNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE33B3C244AF2AA000B1FC3 /* ReportDetailNavVC.swift */; };
 		4CE733ED23FCF0CD00DB97EB /* ReportListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE733EC23FCF0CD00DB97EB /* ReportListService.swift */; };
@@ -180,9 +178,6 @@
 		4CC7D9B823C63BD5004576BB /* ReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportVC.swift; sourceTree = "<group>"; };
 		4CC7D9BD23C64722004576BB /* ReportCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCVCell.swift; sourceTree = "<group>"; };
 		4CCAABCE243D9DFC00CBF56A /* DeleteUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserInfo.swift; sourceTree = "<group>"; };
-		4CCBE95923FADD11002FA879 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		4CCBE95B23FADD1A002FA879 /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
-		4CCBE95D23FADD7D002FA879 /* GitCatDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitCatDebug.entitlements; sourceTree = "<group>"; };
 		4CD5A5CF23C2F45E00A8E225 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		4CE33B3C244AF2AA000B1FC3 /* ReportDetailNavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailNavVC.swift; sourceTree = "<group>"; };
 		4CE733EC23FCF0CD00DB97EB /* ReportListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListService.swift; sourceTree = "<group>"; };
@@ -197,8 +192,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CCBE95C23FADD1A002FA879 /* PushKit.framework in Frameworks */,
-				4CCBE95A23FADD11002FA879 /* UserNotifications.framework in Frameworks */,
 				4C00F1D3823749A4A6E0DE0C /* Pods_GitCat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,8 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				4C7B5690240951C3001881FE /* Security.framework */,
-				4CCBE95B23FADD1A002FA879 /* PushKit.framework */,
-				4CCBE95923FADD11002FA879 /* UserNotifications.framework */,
 				C7FB3E5D46AAE40CBCA4F48F /* Pods_GitCat.framework */,
 			);
 			name = Frameworks;
@@ -258,7 +249,6 @@
 		4C68D10423B09D3E00A8F813 /* GitCat */ = {
 			isa = PBXGroup;
 			children = (
-				4CCBE95D23FADD7D002FA879 /* GitCatDebug.entitlements */,
 				4C9E8E9323C1D3F6002BDE02 /* Utils */,
 				4C68D11823B0A32D00A8F813 /* Resources */,
 				4CD5A5D123C2FB5500A8E225 /* Splash */,
@@ -837,18 +827,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GitCat/GitCatDebug.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Distribution: yoonyoung Cho (KT2XM3Z9DZ)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 202004275;
+				CURRENT_PROJECT_VERSION = 2020042710;
 				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
 				INFOPLIST_FILE = "$(SRCROOT)/GitCat/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = yoonyoung.GitCat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yoonyoung.GitCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = yoonyoung98;
+				PROVISIONING_PROFILE_SPECIFIER = dist_appstore;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -859,18 +849,19 @@
 			baseConfigurationReference = D1814F3437C4FE65FFA6ECC9 /* Pods-GitCat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Distribution: yoonyoung Cho (KT2XM3Z9DZ)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 202004275;
+				CURRENT_PROJECT_VERSION = 2020042710;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
 				INFOPLIST_FILE = "$(SRCROOT)/GitCat/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = yoonyoung.GitCat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yoonyoung.GitCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = yoonyoung98;
+				PROVISIONING_PROFILE_SPECIFIER = dist_appstore;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
