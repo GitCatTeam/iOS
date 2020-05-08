@@ -57,6 +57,7 @@ class ReportVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         //345 124
         let cellWidth: CGFloat = collectionView.frame.width / 1.08
         let cellHeight: CGFloat = collectionView.frame.height / 5.17
+        
         return CGSize(width: cellWidth, height: cellHeight)
     }
     

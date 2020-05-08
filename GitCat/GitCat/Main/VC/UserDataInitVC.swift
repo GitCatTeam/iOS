@@ -12,6 +12,9 @@ import Alamofire
 class UserDataInitVC: UIViewController {
 
     @IBOutlet weak var loadingView: UIImageView!
+    
+    var backgroundTask: UIBackgroundTaskIdentifier = .invalid
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingView.loadGif(name: "gif_cat_loading")
@@ -20,10 +23,10 @@ class UserDataInitVC: UIViewController {
     
     }
     
-
-    
     func postUserData() {
-
+        
+        registerBackgroundTask()
+        
         PostUserDataService.shareInstance.postUserData { (result) in
             switch result {
                 case .networkSuccess( _): //201
@@ -33,6 +36,10 @@ class UserDataInitVC: UIViewController {
                     dvc.modalPresentationStyle = .fullScreen
                     
                     self.present(dvc, animated: true, completion: nil)
+                    
+                    if self.backgroundTask != .invalid {
+                        self.endBackgroundTask()
+                    }
                     break
                     
                 //FIXME: 수정
@@ -52,6 +59,10 @@ class UserDataInitVC: UIViewController {
                     self.simpleAlert(title: "오류", message: "다시 시도해주세요")
                     break
             }
+            
+            if self.backgroundTask != .invalid {
+                self.endBackgroundTask()
+            }
         }
     }
     
@@ -60,6 +71,7 @@ class UserDataInitVC: UIViewController {
         let getRefreshHeaders: HTTPHeaders = [
             "Authorization":UserDefaults.standard.string(forKey: "refreshToken")!
         ]
+        registerBackgroundTask()
     
         RefreshJWTService.sharedInstance.getRefreshToken(headers: getRefreshHeaders) { (result) in
             switch result {
@@ -75,8 +87,6 @@ class UserDataInitVC: UIViewController {
                         
                      self.postUserData()
                     }
-                 
-                 
                 break
                 case .accessDenied:
                     let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
@@ -101,7 +111,25 @@ class UserDataInitVC: UIViewController {
                 default:
                     break
             }
+            
+            if self.backgroundTask != .invalid {
+                self.endBackgroundTask()
+            }
         }
+    }
+    
+    func registerBackgroundTask() {
+        backgroundTask = UIApplication.shared.beginBackgroundTask {
+            [weak self] in self?.endBackgroundTask()
+        }
+        assert(backgroundTask != .invalid)
+    }
+    
+    func endBackgroundTask() {
+        print("Background task ended.")
+        UIApplication.shared.endBackgroundTask(backgroundTask)
+        backgroundTask = .invalid
+        
     }
 
 }

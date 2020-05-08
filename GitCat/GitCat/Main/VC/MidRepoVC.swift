@@ -42,7 +42,7 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     @IBOutlet weak var noneCommitView: UIView!
     @IBOutlet weak var noneCommitLabel: UILabel!
     
-    
+    //백그라운드로 가게되면 API 호출을 뭔가 중단하는듯하다.
     
     var commitCountData: CommitCountModel?
     
@@ -88,6 +88,9 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
 
     var selectedYear:String!
     var selectedMonth:String!
+    
+    var backgroundTask: UIBackgroundTaskIdentifier = .invalid
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -196,9 +199,25 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         calendar.appearance.todayColor = UIColor(red: 137/255, green: 204/255, blue: 246/255, alpha: 1)
         
         self.calendar.select(Date())
+        
+        setTodayColor(commitCount: self.gino(commitCountDetailData.data?.detailCommits[self.formatter.string(from: Date())]?.count))
+        
         self.calendar.scope = .month
         self.calendar.accessibilityIdentifier = "calendar"
 
+    }
+    
+    func setTodayColor(commitCount:Int) {
+        print(commitCount)
+        
+        if(1 <= commitCount && commitCount <= 5) {
+            calendar.appearance.todaySelectionColor = #colorLiteral(red: 0.9373893142, green: 0.9814968705, blue: 1, alpha: 1)
+        }else if(6 <= commitCount && commitCount <= 10){
+            calendar.appearance.todaySelectionColor = #colorLiteral(red: 0.8480588198, green: 0.9513098598, blue: 1, alpha: 1)
+        }else if(10 <= commitCount) {
+            calendar.appearance.todaySelectionColor = #colorLiteral(red: 0.8480588198, green: 0.9513098598, blue: 1, alpha: 1)
+        }
+        
     }
 }
 
@@ -423,56 +442,76 @@ extension MidRepoVC {
                 break
             }
         }
-        
-        
-        
     }
     
     //커밋내역 불러오기
     func setCommitData(date:String?) {
+        registerBackgroundTask()
+        self.commits = []
+        self.tableView.reloadData()
+        
         self.loadingView2.alpha = 1
         CommitListService.sharedInstance.getCommitData(date: date!) { (result) in
-        switch result {
-           
-        case .networkSuccess(let data) :
-            let detailData = data as? CommitListModel
-                            
-            if let resResult = detailData {
+            switch result {
+               
+            case .networkSuccess(let data) :
                 
-                self.commits = resResult.data?.commits ?? []
-                
-
-                
-            }
-            self.tableView.reloadData()
-            self.loadingView2.alpha = 0
-            break
-        case .accessDenied:
-            let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
-                UserDefaults.standard.set(false, forKey: "login")
-                let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "AuthInitiVC")
-                dvc.modalPresentationStyle = .fullScreen
+                let detailData = data as? CommitListModel
+                                
+                if let resResult = detailData {
+                    
+                    self.commits = resResult.data?.commits ?? []
+                    
+                }
+                self.tableView.reloadData()
+                self.loadingView2.alpha = 0
+                break
+            case .accessDenied:
+                let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
+                    UserDefaults.standard.set(false, forKey: "login")
+                    let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "AuthInitiVC")
+                    dvc.modalPresentationStyle = .fullScreen
+                                   
+                    self.present(dvc, animated: true, completion: nil)
+                 }
                                
-                self.present(dvc, animated: true, completion: nil)
-             }
-                           
-            let alert = UIAlertController(title: "로그인 필요", message: "재로그인이 필요합니다", preferredStyle: UIAlertController.Style.alert)
-                           
-            alert.addAction(confirmModeAction)
-            self.present(alert, animated:true)
-            break
-        case .networkFail :
-            self.networkErrorAlert()
-            self.loadingView.alpha = 0
-            break
-           default:
-            self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
-            self.loadingView.alpha = 0
-
-            break
+                let alert = UIAlertController(title: "로그인 필요", message: "재로그인이 필요합니다", preferredStyle: UIAlertController.Style.alert)
+                               
+                alert.addAction(confirmModeAction)
+                self.present(alert, animated:true)
             
+                break
+            case .networkFail :
+                self.networkErrorAlert()
+                self.loadingView.alpha = 0
+                break
+            default:
+                self.simpleAlert(title: "오류 발생!", message: "다시 시도해주세요")
+                self.loadingView.alpha = 0
+                break
+            
+            }
+            
+            if self.backgroundTask != .invalid {
+                self.endBackgroundTask()
             }
         }
     }
+    
+    func registerBackgroundTask() {
+        backgroundTask = UIApplication.shared.beginBackgroundTask {
+            [weak self] in self?.endBackgroundTask()
+        }
+        assert(backgroundTask != .invalid)
+    }
+    
+    func endBackgroundTask() {
+        print("Background task ended.")
+        UIApplication.shared.endBackgroundTask(backgroundTask)
+        backgroundTask = .invalid
+        
+    }
+
+    
                 
 }

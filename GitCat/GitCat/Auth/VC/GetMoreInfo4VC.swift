@@ -38,7 +38,6 @@ class GetMoreInfo4VC: UIViewController {
     @IBOutlet weak var catNameUnderBar: UIView!
     
     @IBOutlet weak var nextMove4Btn: RoundBtn!
-    @IBOutlet weak var nameTextField: UITextField!
     
     @IBOutlet weak var preparingView: UIImageView!
     @IBOutlet weak var preparingLavel: UILabel!
@@ -71,6 +70,8 @@ class GetMoreInfo4VC: UIViewController {
     let cellIdentifier = "SelectCatCVCell"
     let cellIdentifier2 = "NewCatCVCell"
     
+    private let MAX_LENGTH = 5
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,7 +90,34 @@ class GetMoreInfo4VC: UIViewController {
         setButtonSelect()
         animateView()
         
+        catNameTextField.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(_:)), name: UITextField.textDidChangeNotification, object: catNameTextField)
+        
     }
+    
+    @objc private func textDidChange(_ notification: Notification) {
+
+        if let textField = notification.object as? UITextField {
+
+            if let text = textField.text {
+
+                // 초과되는 텍스트 제거
+                if text.count > 5 {
+                    print("?")
+                    let index = text.index(text.startIndex, offsetBy: 5)
+
+                    let newString = text.substring(to: index)
+
+                    textField.text = newString
+
+                }
+
+            }
+
+        }
+
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         topConstraint.constant = 0
@@ -413,7 +441,7 @@ extension GetMoreInfo4VC: UITextFieldDelegate{
                return false
            }
            let newLength = currentCharacterCount + string.count - range.length
-           return newLength <= 5
+        return newLength <= 6
     }
 }
 

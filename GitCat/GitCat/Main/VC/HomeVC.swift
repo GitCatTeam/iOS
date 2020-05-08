@@ -106,7 +106,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     let imageData:[UIImage] = [ UIImage(named: "imgTutorial1")!, UIImage(named: "imgTutorial2")!, UIImage(named: "img_tutorial3")!, UIImage(named: "imgTutorial4")!]
 
     let titleData:[String] = ["커밋으로 고양씨 성장시키기", "고양씨 졸업시키기", "달력과 리포트로 나의 개발 돌아보기", "튜토리얼 완료하고 고양이 받자!"]
-    let content1Data:[String] = ["매일 꾸준히 커밋해보세요.", "졸업한 고양씨들은, 우측 상단의 냥콜렉션에서", "하단의 커밋달력을 통해 일일 커밋 현황을,", "어플 사용에 익숙해 지는 겸, 간단한 미션을 완료하면"]
+    let content1Data:[String] = ["매일 꾸준히 커밋해보세요.", "졸업한 고양씨들은, 우측 상단의 냥컬렉션에서", "하단의 커밋달력을 통해 일일 커밋 현황을,", "어플 사용에 익숙해 지는 겸, 간단한 미션을 완료하면"]
     let content2Data:[String] = ["고양씨의 개발환경이 4단계에 걸쳐 개선됩니다.", "졸업 사진으로 만나볼 수 있어요! ", " 리포트를 통해 매달 개발 통계를 확인할 수 있어요.", "고양이 한 마리를 데려갈 수 있어요."]
     
     var mentsBox = [String]()
@@ -119,6 +119,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
 
     
     var timer = Timer()
+    var backgroundTask: UIBackgroundTaskIdentifier = .invalid
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -170,11 +171,8 @@ class HomeVC: UIViewController, TutorialCellDelegate {
          dvc.modalPresentationStyle = .fullScreen
                        
         self.present(dvc, animated: true, completion: nil)
-
         
     }
-    
-    
     
     @IBAction func checkGraduateAction(_ sender: Any) {
         cardBackgroundView.alpha = 0
@@ -616,6 +614,7 @@ extension HomeVC {
     
     
     func setHomeData() {
+        registerBackgroundTask()
         HomeService.sharedInstance.getHomeData { (result) in
             switch result {
             case .networkSuccess(let data) :
@@ -676,7 +675,7 @@ extension HomeVC {
                     
                     if(resResult.data?.ments?.count != 0 ) {
                         self.timer.invalidate()
-                        self.timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
+                        self.timer = Timer.scheduledTimer(timeInterval: 8.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
                     }
                 }
 
@@ -715,9 +714,13 @@ extension HomeVC {
                 break
             }
         }
+        if self.backgroundTask != .invalid {
+            self.endBackgroundTask()
+        }
     }
     
     func loadData() {
+        registerBackgroundTask()
         PostUserDataService.shareInstance.postUserData { (result) in
                 switch result {
                     case .networkSuccess( _): //201
@@ -755,6 +758,24 @@ extension HomeVC {
                         break
             }
         }
+        
+        if self.backgroundTask != .invalid {
+            self.endBackgroundTask()
+        }
+    }
+    
+    func registerBackgroundTask() {
+        backgroundTask = UIApplication.shared.beginBackgroundTask {
+            [weak self] in self?.endBackgroundTask()
+        }
+        assert(backgroundTask != .invalid)
+    }
+    
+    func endBackgroundTask() {
+        print("Background task ended.")
+        UIApplication.shared.endBackgroundTask(backgroundTask)
+        backgroundTask = .invalid
+        
     }
 }
 

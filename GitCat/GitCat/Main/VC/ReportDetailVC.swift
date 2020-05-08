@@ -99,6 +99,8 @@ class ReportDetailVC: UIViewController {
     var reportTitle:String!
     var totalCommit:String!
     
+    var backgroundTask: UIBackgroundTaskIdentifier = .invalid
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -381,6 +383,7 @@ class ReportDetailVC: UIViewController {
 
 extension ReportDetailVC {
     func setReportDetailData(id:Int) {
+        registerBackgroundTask()
         ReportDetailService.sharedInstance.getReportDetail(id: id) { (result) in
             switch result {
             case .networkSuccess(let data):
@@ -512,6 +515,23 @@ extension ReportDetailVC {
                 break
             }
         }
+        if self.backgroundTask != .invalid {
+            self.endBackgroundTask()
+        }
+    }
+    
+    func registerBackgroundTask() {
+        backgroundTask = UIApplication.shared.beginBackgroundTask {
+            [weak self] in self?.endBackgroundTask()
+        }
+        assert(backgroundTask != .invalid)
+    }
+    
+    func endBackgroundTask() {
+        print("Background task ended.")
+        UIApplication.shared.endBackgroundTask(backgroundTask)
+        backgroundTask = .invalid
+        
     }
 }
 

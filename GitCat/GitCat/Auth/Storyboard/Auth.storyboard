@@ -815,7 +815,7 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="nameFieldEditingChangedAction:" destination="RXV-pZ-VNs" eventType="editingChanged" id="Ili-NV-YHJ"/>
-                                    <outlet property="delegate" destination="RXV-pZ-VNs" id="kAn-26-i72"/>
+                                    <outlet property="delegate" destination="RXV-pZ-VNs" id="ntY-N1-PSN"/>
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0M4-E3-vgk">
@@ -1055,13 +1055,12 @@
                         <outlet property="basicBtn" destination="i71-sn-3pn" id="Nb2-ay-YEy"/>
                         <outlet property="basicBtnBottomBorder" destination="tAh-Oc-jYm" id="7U6-2s-qDa"/>
                         <outlet property="catNameLabel" destination="6CH-Id-QY0" id="psB-8s-uw4"/>
-                        <outlet property="catNameTextField" destination="uY6-po-KFK" id="96t-uH-Jcd"/>
+                        <outlet property="catNameTextField" destination="uY6-po-KFK" id="VCf-iB-QLN"/>
                         <outlet property="catNameUnderBar" destination="0M4-E3-vgk" id="KAn-BV-x9X"/>
                         <outlet property="catSelectionView" destination="qUz-D6-rcY" id="Dfb-XS-cIb"/>
                         <outlet property="collectionView" destination="Fol-wU-0wU" id="9Mv-Yv-6l3"/>
                         <outlet property="hiddenCatImageView" destination="pEt-AP-i0X" id="h7X-fS-uSy"/>
                         <outlet property="mainTitle" destination="Pbv-2J-cZy" id="g8q-fJ-flu"/>
-                        <outlet property="nameTextField" destination="uY6-po-KFK" id="T5B-hV-LIB"/>
                         <outlet property="newCatCollectionView" destination="jz5-Ti-1Fl" id="iez-16-cMT"/>
                         <outlet property="nextMove4Btn" destination="UUA-Gu-9c2" id="uBh-jB-FNm"/>
                         <outlet property="pageControl" destination="oF5-89-Ofy" id="0Aw-Rm-gZk"/>
