@@ -200,25 +200,11 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         
         self.calendar.select(Date())
         
-        setTodayColor(commitCount: self.gino(commitCountDetailData.data?.detailCommits[self.formatter.string(from: Date())]?.count))
-        
         self.calendar.scope = .month
         self.calendar.accessibilityIdentifier = "calendar"
 
     }
     
-    func setTodayColor(commitCount:Int) {
-        print(commitCount)
-        
-        if(1 <= commitCount && commitCount <= 5) {
-            calendar.appearance.todaySelectionColor = #colorLiteral(red: 0.9373893142, green: 0.9814968705, blue: 1, alpha: 1)
-        }else if(6 <= commitCount && commitCount <= 10){
-            calendar.appearance.todaySelectionColor = #colorLiteral(red: 0.8480588198, green: 0.9513098598, blue: 1, alpha: 1)
-        }else if(10 <= commitCount) {
-            calendar.appearance.todaySelectionColor = #colorLiteral(red: 0.8480588198, green: 0.9513098598, blue: 1, alpha: 1)
-        }
-        
-    }
 }
 
 
@@ -304,11 +290,16 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
             calendar.setCurrentPage(date, animated: true)
         }
         
-        if(commitCountDetailData.data?.detailCommits[self.formatter.string(from: date)] == nil) {
+    if(commitCountDetailData.data?.detailCommits[self.formatter.string(from: date)] == nil) {
+        
             noneCommitView.alpha = 1
             tableView.alpha = 0
+        
+            calendar.appearance.selectionColor = UIColor.white
+        
         }else{
-
+            self.setCurrentDayColor(commitCount: self.gino(self.commitCountDetailData.data?.detailCommits[self.formatter.string(from: date)]?.count))
+        
             noneCommitView.alpha = 0
             tableView.alpha = 1
             
@@ -412,6 +403,7 @@ extension MidRepoVC {
                         self.tableView.alpha = 0
                     }
                 }
+                self.setTodayColor(commitCount: self.gino(self.commitCountDetailData.data?.detailCommits[self.formatter.string(from: Date())]?.count))
                     
                 self.calendar.reloadData()
                 self.loadingBackgroundView.alpha = 0
@@ -512,6 +504,34 @@ extension MidRepoVC {
         
     }
 
+    func setTodayColor(commitCount:Int) {
+        print(commitCount)
+        
+        if(1 <= commitCount && commitCount <= 5) {
+            calendar.appearance.todaySelectionColor = #colorLiteral(red: 0.9373893142, green: 0.9814968705, blue: 1, alpha: 1)
+        }else if(6 <= commitCount && commitCount <= 10){
+            calendar.appearance.todaySelectionColor = #colorLiteral(red: 0.8480588198, green: 0.9513098598, blue: 1, alpha: 1)
+        }else if(10 <= commitCount) {
+            calendar.appearance.todaySelectionColor = #colorLiteral(red: 0.8480588198, green: 0.9513098598, blue: 1, alpha: 1)
+        }else{
+            calendar.appearance.todaySelectionColor = UIColor.white
+        }
+        
+    }
     
+    func setCurrentDayColor(commitCount:Int) {
+        print(commitCount)
+        
+        if(1 <= commitCount && commitCount <= 5) {
+            calendar.appearance.selectionColor = #colorLiteral(red: 0.9373893142, green: 0.9814968705, blue: 1, alpha: 1)
+        }else if(6 <= commitCount && commitCount <= 10){
+            calendar.appearance.selectionColor = #colorLiteral(red: 0.8480588198, green: 0.9513098598, blue: 1, alpha: 1)
+        }else if(10 <= commitCount) {
+            calendar.appearance.selectionColor = #colorLiteral(red: 0.8480588198, green: 0.9513098598, blue: 1, alpha: 1)
+        }else{
+            calendar.appearance.selectionColor = UIColor.white
+        }
+        
+    }
                 
 }
