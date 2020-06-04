@@ -40,7 +40,7 @@ public class Reachabilty{
     }
 }
 
-class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler{
+class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler {
 
     @IBOutlet var webView: WKWebView!
     
@@ -61,9 +61,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
         webView.navigationDelegate = self
         
         self.view.addSubview(webView)
-        
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,14 +107,12 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
             
             messageData = try! messageBody?.aesDecrypt()
 
-            
             //복호화한 데이터 json으로 변형
             //FIXME - 현재 복호화된 데이터가 잘려서 날아와서 온전한 json 형태로 전환 불가
             let str = gsno(messageData)
             let replaceStr = str.replacingOccurrences(of: "h.eu", with: "{\"gi")
 
             let dict = convertToDictionary(text: replaceStr)
-            
             
             //복호화한 데이터 저장
             let values:[String:Any] = dict ?? [:]
@@ -141,7 +137,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
             if(isFirst == true) {
                 UserDefaults.standard.set(false, forKey: "signUp")
                 UserDefaults.standard.set(false, forKey: "tutorialDone")
-                let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "GetMoreInfo1VC")
+                let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "GetMoreInfo3VC")
                 dvc.modalPresentationStyle = .fullScreen
                 self.navigationController?.pushViewController(dvc, animated: true)
                 
@@ -156,7 +152,6 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
                 
                 self.present(dvc, animated: true, completion: nil)
             }
-
         }
     }
     
@@ -242,25 +237,11 @@ extension OAuthVC {
 let keyData = Secrets.PrivatekeyData
 let ivData = Secrets.PrivateivData
 
-func dataToByteArray(data: NSData) -> [UInt8] {
-    let pointer = data.bytes.assumingMemoryBound(to: UInt8.self)
-    
-    let buffer = UnsafeBufferPointer(start: pointer, count: data.length)
-    
-    return Array<UInt8>(buffer)
-}
-
 extension String {
-
-    func aesEncrypt() throws -> String {
-        let encrypted = try AES(key: keyData, iv: ivData).encrypt([UInt8](self.data(using: .utf8)!))
-        return Data(encrypted).base64EncodedString()
-    }
     
     func aesDecrypt() throws -> String {
         
         let encryptedData: NSData = self.hexStringToData()
-        
         let decrypted = try AES(key: keyData, iv: ivData, padding: .pkcs7).decrypt([UInt8](encryptedData))
 
         return String(bytes: decrypted, encoding: .utf8)!

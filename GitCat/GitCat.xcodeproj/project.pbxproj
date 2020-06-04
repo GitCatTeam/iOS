@@ -13,7 +13,6 @@
 		4C1035AC23B9D1430057F0B1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1035AB23B9D1430057F0B1 /* HomeVC.swift */; };
 		4C10BCF62416293D00CDC16D /* LabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C10BCF52416293D00CDC16D /* LabelExtension.swift */; };
 		4C10BCF824162CFC00CDC16D /* ButtonLabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C10BCF724162CFC00CDC16D /* ButtonLabelExtension.swift */; };
-		4C1EDB1524552E3F001C4B76 /* gif_cat_loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4C1EDB1424552E3F001C4B76 /* gif_cat_loading.gif */; };
 		4C2DDD0A23EAEEF200FCB36B /* TutorialCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DDD0923EAEEF200FCB36B /* TutorialCVCell.swift */; };
 		4C2DDD0D23EB1FD200FCB36B /* SelectCatCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DDD0C23EB1FD200FCB36B /* SelectCatCVCell.swift */; };
 		4C317176243F512F004F8FA7 /* NewCatCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C317175243F512F004F8FA7 /* NewCatCVCell.swift */; };
@@ -50,6 +49,7 @@
 		4C7C0E8023DF158B00669B38 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E7F23DF158B00669B38 /* SettingVC.swift */; };
 		4C7C9AB02404D0D20047C610 /* DeveloperInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C9AAF2404D0D20047C610 /* DeveloperInfoVC.swift */; };
 		4C892FEA24323D7500DC61CA /* DeleteCatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C892FE924323D7500DC61CA /* DeleteCatService.swift */; };
+		4C89DC81246B993F00BBAA84 /* gif_cat_loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4C89DC80246B993F00BBAA84 /* gif_cat_loading.gif */; };
 		4C8C9E6923CB574600E160B1 /* ReportDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C9E6823CB574600E160B1 /* ReportDetailVC.swift */; };
 		4C99B3792403C46D003DFBA6 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C99B3782403C46D003DFBA6 /* Auth.storyboard */; };
 		4C99B37B2403C4C0003DFBA6 /* InstagramVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */; };
@@ -100,7 +100,6 @@
 		4C1035AB23B9D1430057F0B1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		4C10BCF52416293D00CDC16D /* LabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExtension.swift; sourceTree = "<group>"; };
 		4C10BCF724162CFC00CDC16D /* ButtonLabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabelExtension.swift; sourceTree = "<group>"; };
-		4C1EDB1424552E3F001C4B76 /* gif_cat_loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif_cat_loading.gif; sourceTree = "<group>"; };
 		4C2DDD0923EAEEF200FCB36B /* TutorialCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCVCell.swift; sourceTree = "<group>"; };
 		4C2DDD0C23EB1FD200FCB36B /* SelectCatCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCatCVCell.swift; sourceTree = "<group>"; };
 		4C317175243F512F004F8FA7 /* NewCatCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCatCVCell.swift; sourceTree = "<group>"; };
@@ -140,6 +139,7 @@
 		4C7C0E7F23DF158B00669B38 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		4C7C9AAF2404D0D20047C610 /* DeveloperInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperInfoVC.swift; sourceTree = "<group>"; };
 		4C892FE924323D7500DC61CA /* DeleteCatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCatService.swift; sourceTree = "<group>"; };
+		4C89DC80246B993F00BBAA84 /* gif_cat_loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif_cat_loading.gif; sourceTree = "<group>"; };
 		4C8C9E6823CB574600E160B1 /* ReportDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailVC.swift; sourceTree = "<group>"; };
 		4C99B3782403C46D003DFBA6 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramVc.swift; sourceTree = "<group>"; };
@@ -353,7 +353,7 @@
 		4C7C9AB32404D47A0047C610 /* Gifs */ = {
 			isa = PBXGroup;
 			children = (
-				4C1EDB1424552E3F001C4B76 /* gif_cat_loading.gif */,
+				4C89DC80246B993F00BBAA84 /* gif_cat_loading.gif */,
 				4C6284102453125C00E07552 /* gif_imac_cat.gif */,
 				4CBA4D48241102D2002CED2F /* gif_loading2.gif */,
 			);
@@ -564,7 +564,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C99B3792403C46D003DFBA6 /* Auth.storyboard in Resources */,
-				4C1EDB1524552E3F001C4B76 /* gif_cat_loading.gif in Resources */,
+				4C89DC81246B993F00BBAA84 /* gif_cat_loading.gif in Resources */,
 				4C1035A623B8FEC60057F0B1 /* Home.storyboard in Resources */,
 				4CC07FB323B314F700851B45 /* 20958982_UTOIMAGE_유토이미지고딕_L_OTF.otf in Resources */,
 				4CC07FAF23B314A200851B45 /* 20958984_UTOIMAGE_유토이미지고딕_R_OTF.otf in Resources */,
@@ -829,7 +829,7 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 20200510;
+				CURRENT_PROJECT_VERSION = 20200513;
 				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
 				INFOPLIST_FILE = "$(SRCROOT)/GitCat/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -851,7 +851,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 20200510;
+				CURRENT_PROJECT_VERSION = 20200513;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
 				INFOPLIST_FILE = "$(SRCROOT)/GitCat/Resources/Info.plist";

@@ -174,9 +174,17 @@ class GetMoreInfo3VC: UIViewController {
     @IBAction func moveNext3TouchUpAction(_ sender: UIButton) {
 
         let name = UserDefaults.standard.string(forKey: "userId") ?? ""
-        let gender = UserDefaults.standard.string(forKey: "userGender") ?? ""
-        let birth = UserDefaults.standard.string(forKey: "userBirthday") ?? ""
+//        let gender = UserDefaults.standard.string(forKey: "userGender") ?? ""
+//        let birth = UserDefaults.standard.string(forKey: "userBirthday") ?? ""
         
+        let formatter: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd"
+            return formatter
+        }()
+        
+        let gender = "E"
+        let birth = gsno(formatter.string(from: Date()))
         
         putInfo(name: name, gender: gender, birth: birth, devCareer: userCareer ?? "개발에 관심이 있음")
         

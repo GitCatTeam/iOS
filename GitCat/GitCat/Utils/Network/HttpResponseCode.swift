@@ -7,6 +7,8 @@
 //
 
 import Foundation
+
+//service manager layer status
 enum HttpResponseCode: Int{
     case getSuccess = 200
     case postSuccess = 201
@@ -24,9 +26,9 @@ enum HttpResponseCode: Int{
     case serverErr = 500
     case notImplemented = 501
     case nginXErr = 502
-    
 }
 
+//Access API status
 enum Result<T> {
     case success(T)
     case noContents
@@ -34,6 +36,7 @@ enum Result<T> {
     case failure(Error)
 }
 
+//middle layer status
 enum NetworkResult<T> {
     case networkSuccess(T) //200
     case dataNeeded //204

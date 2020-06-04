@@ -17,7 +17,14 @@ protocol GettableService {
     
 }
 
-
+/*
+ enum Result<T> {
+     case success(T)
+     case noContents
+     case error(String)
+     case failure(Error)
+ }
+ */
 
 extension GettableService {
     
@@ -41,9 +48,6 @@ extension GettableService {
         
         print("URL: \(encodedUrl)")
         
-        
-        
-        
         manager.request(encodedUrl, method: method, parameters: nil, headers: getHeaders)
             .responseData {
                 res in
@@ -61,7 +65,6 @@ extension GettableService {
                             let result : networkResult = (resCode, model) as! (resCode: Int, resResult: Self.NetworkData)
                             completion(.success(result))
                             break
-                            
                         }
                         
                         let decoder = JSONDecoder()
@@ -77,7 +80,6 @@ extension GettableService {
                             print("catch GET: \(error.localizedDescription)")
                             completion(.error("\(resCode)"))
                         }
-                        
                     }
                     break
                 case .failure(let error):

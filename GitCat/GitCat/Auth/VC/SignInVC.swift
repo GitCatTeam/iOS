@@ -40,6 +40,7 @@ class SignInVC: UIViewController{
         dvc.modalPresentationStyle = .fullScreen
 
        self.navigationController?.pushViewController(dvc, animated: true)
+
         
     }
     

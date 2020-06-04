@@ -354,11 +354,11 @@ extension MidRepoVC: FSCalendarDelegateAppearance {
             let dateString = self.formatter.string(from: date)
 
             if self.commitLevel1.contains(dateString) {
-                return #colorLiteral(red: 0.9490196078, green: 0.9803921569, blue: 1, alpha: 1)
+                return #colorLiteral(red: 0.8705882353, green: 0.9450980392, blue: 0.9882352941, alpha: 1)
             } else if self.commitLevel2.contains(dateString) {
-                return #colorLiteral(red: 0.8666666667, green: 0.9490196078, blue: 1, alpha: 1)
+                return #colorLiteral(red: 0.7294117647, green: 0.8784313725, blue: 0.968627451, alpha: 1)
             } else if self.commitLevel3.contains(dateString) {
-                return #colorLiteral(red: 0.7921568627, green: 0.9215686275, blue: 1, alpha: 1)
+                return #colorLiteral(red: 0.537254902, green: 0.8039215686, blue: 0.9647058824, alpha: 1)
             }else{
                 return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             }
@@ -583,11 +583,11 @@ extension MidRepoVC {
 
     func setTodayColor(commitCount:Int) {
         if(1 <= commitCount && commitCount <= 5) {
-            calendar.appearance.todaySelectionColor = #colorLiteral(red: 0.9373893142, green: 0.9814968705, blue: 1, alpha: 1)
+            calendar.appearance.todaySelectionColor = #colorLiteral(red: 0.8705882353, green: 0.9450980392, blue: 0.9882352941, alpha: 1)
         }else if(6 <= commitCount && commitCount <= 10){
-            calendar.appearance.todaySelectionColor = #colorLiteral(red: 0.8480588198, green: 0.9513098598, blue: 1, alpha: 1)
+            calendar.appearance.todaySelectionColor = #colorLiteral(red: 0.7294117647, green: 0.8784313725, blue: 0.968627451, alpha: 1)
         }else if(10 <= commitCount) {
-            calendar.appearance.todaySelectionColor = #colorLiteral(red: 0.8480588198, green: 0.9513098598, blue: 1, alpha: 1)
+            calendar.appearance.todaySelectionColor = #colorLiteral(red: 0.537254902, green: 0.8039215686, blue: 0.9647058824, alpha: 1)
         }else{
             calendar.appearance.todaySelectionColor = UIColor.white
         }
@@ -598,11 +598,11 @@ extension MidRepoVC {
         print(commitCount)
         
         if(1 <= commitCount && commitCount <= 5) {
-            calendar.appearance.selectionColor = #colorLiteral(red: 0.9373893142, green: 0.9814968705, blue: 1, alpha: 1)
+            calendar.appearance.selectionColor = #colorLiteral(red: 0.8705882353, green: 0.9450980392, blue: 0.9882352941, alpha: 1)
         }else if(6 <= commitCount && commitCount <= 10){
-            calendar.appearance.selectionColor = #colorLiteral(red: 0.8480588198, green: 0.9513098598, blue: 1, alpha: 1)
+            calendar.appearance.selectionColor = #colorLiteral(red: 0.7294117647, green: 0.8784313725, blue: 0.968627451, alpha: 1)
         }else if(10 <= commitCount) {
-            calendar.appearance.selectionColor = #colorLiteral(red: 0.8480588198, green: 0.9513098598, blue: 1, alpha: 1)
+            calendar.appearance.selectionColor = #colorLiteral(red: 0.537254902, green: 0.8039215686, blue: 0.9647058824, alpha: 1)
         }else{
             calendar.appearance.selectionColor = UIColor.white
         }

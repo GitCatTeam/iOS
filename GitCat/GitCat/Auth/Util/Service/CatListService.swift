@@ -35,7 +35,7 @@ struct CatListService: GettableService, APIServie {
                     break
                 }
                 break
-                
+
             case .error(let resCode):
                 switch resCode {
                 case HttpResponseCode.badRequest.rawValue.description:

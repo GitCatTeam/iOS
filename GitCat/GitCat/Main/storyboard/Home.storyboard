@@ -2071,14 +2071,14 @@
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Gf-Ir-xXJ" customClass="RoundView" customModule="GitCat" customModuleProvider="target">
                                                 <rect key="frame" x="129" y="0.0" width="12" height="12"/>
-                                                <color key="backgroundColor" red="0.88318020105361938" green="0.94813674688339233" blue="0.99608689546585083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.72941176470588232" green="0.8784313725490196" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="3Gf-Ir-xXJ" secondAttribute="height" multiplier="1:1" id="qkv-xx-6Cy"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKT-mT-rLo" customClass="RoundView" customModule="GitCat" customModuleProvider="target">
                                                 <rect key="frame" x="204.5" y="0.0" width="12" height="12"/>
-                                                <color key="backgroundColor" red="0.88318020109999995" green="0.94813674690000005" blue="0.99608689549999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.53725490196078429" green="0.80392156862745101" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="rKT-mT-rLo" secondAttribute="height" multiplier="1:1" id="fho-ge-HYQ"/>
                                                 </constraints>
@@ -2095,7 +2095,7 @@
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebW-ge-MAq" customClass="RoundView" customModule="GitCat" customModuleProvider="target">
                                                 <rect key="frame" x="59" y="0.0" width="12" height="12"/>
-                                                <color key="backgroundColor" red="0.95324760675430298" green="0.98008507490158081" blue="0.99608224630355835" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.87058823529411766" green="0.94509803921568625" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ebW-ge-MAq" secondAttribute="height" multiplier="1:1" id="fTM-Re-tFq"/>
                                                 </constraints>
@@ -2367,10 +2367,10 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CommitDetailTVCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommitDetailTVcell" id="erJ-Qa-b7z" customClass="CommitDetailTVCell" customModule="GitCat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="289.5" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="289.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="erJ-Qa-b7z" id="qEW-Wn-bcQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wuk-kK-Ovp" customClass="CircleView" customModule="GitCat" customModuleProvider="target">
@@ -2381,14 +2381,14 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDl-1P-KYp">
-                                                    <rect key="frame" x="51.5" y="8" width="1" height="36"/>
+                                                    <rect key="frame" x="51.5" y="8" width="1" height="35.5"/>
                                                     <color key="backgroundColor" red="0.75295144319534302" green="0.75292283296585083" blue="0.75294226408004761" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="gDl-1P-KYp" secondAttribute="height" multiplier="1:35" id="dse-qv-erP"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il1-re-rri" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                    <rect key="frame" x="340.5" y="3" width="28.5" height="10"/>
+                                                    <rect key="frame" x="340.5" y="3" width="35" height="10"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="Jqc-0D-nhZ"/>
                                                     </constraints>
@@ -2417,18 +2417,18 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Il1-re-rri" secondAttribute="trailing" constant="45" id="1HU-ex-agA"/>
                                                 <constraint firstItem="gDl-1P-KYp" firstAttribute="height" secondItem="qEW-Wn-bcQ" secondAttribute="height" multiplier="0.816092" id="8j5-Z0-Lll"/>
                                                 <constraint firstItem="Wuk-kK-Ovp" firstAttribute="top" secondItem="qEW-Wn-bcQ" secondAttribute="top" id="9cS-ob-yHv"/>
-                                                <constraint firstItem="Il1-re-rri" firstAttribute="width" secondItem="qEW-Wn-bcQ" secondAttribute="width" multiplier="0.0693333" id="Crb-Mb-XL8"/>
                                                 <constraint firstItem="l9C-eD-enJ" firstAttribute="leading" secondItem="Wuk-kK-Ovp" secondAttribute="trailing" constant="8" id="HE5-ye-b3o"/>
                                                 <constraint firstItem="Wuk-kK-Ovp" firstAttribute="leading" secondItem="qEW-Wn-bcQ" secondAttribute="leading" constant="48" id="L45-Tl-Fgq"/>
                                                 <constraint firstItem="l9C-eD-enJ" firstAttribute="top" secondItem="qEW-Wn-bcQ" secondAttribute="top" constant="2" id="LR7-bN-Mkl"/>
+                                                <constraint firstItem="Il1-re-rri" firstAttribute="width" secondItem="qEW-Wn-bcQ" secondAttribute="width" multiplier="0.0845411" id="NqS-s7-qtQ"/>
                                                 <constraint firstItem="gDl-1P-KYp" firstAttribute="centerX" secondItem="Wuk-kK-Ovp" secondAttribute="centerX" id="O28-kh-KHl"/>
                                                 <constraint firstItem="gDl-1P-KYp" firstAttribute="top" secondItem="Wuk-kK-Ovp" secondAttribute="bottom" id="V3j-Zl-1y9"/>
                                                 <constraint firstItem="Wuk-kK-Ovp" firstAttribute="height" secondItem="qEW-Wn-bcQ" secondAttribute="height" multiplier="0.183908" id="ZSi-2f-1ch"/>
-                                                <constraint firstItem="Il1-re-rri" firstAttribute="centerY" secondItem="l9C-eD-enJ" secondAttribute="centerY" id="hGh-TP-ngm"/>
+                                                <constraint firstAttribute="trailing" secondItem="Il1-re-rri" secondAttribute="trailing" constant="38.5" id="hII-zz-hfy"/>
                                                 <constraint firstItem="l9C-eD-enJ" firstAttribute="width" secondItem="qEW-Wn-bcQ" secondAttribute="width" multiplier="0.613333" id="i6c-2V-doZ"/>
+                                                <constraint firstItem="Il1-re-rri" firstAttribute="centerY" secondItem="l9C-eD-enJ" secondAttribute="centerY" id="wNB-R7-dGx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -2439,13 +2439,13 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomHeaderTVcell" id="4lw-a0-KCg" customClass="CustomHeaderTVCell" customModule="GitCat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="333.5" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="333" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4lw-a0-KCg" id="yg3-ye-1eD">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koo-ek-ndb" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koo-ek-ndb" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
                                                     <rect key="frame" x="50" y="0.0" width="300" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="12" id="O28-Vi-8bh"/>
