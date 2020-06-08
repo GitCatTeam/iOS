@@ -23,7 +23,7 @@
 ## [ Preview ]
 | 홈                    | 잔디달력                                  | 리포트                                  |
 |:------------------------------:|:---------------------------------:|:---------------------------------:|
-|![](ReadmeResource/screenshot_1.png) |![](ReadmeResource/screenshot_2.png) |![](ReadmeResource/screenshot_3.png) |
+|![](ReadmeResource/screenshot_1.jpeg) |![](ReadmeResource/screenshot_2.jpeg) |![](ReadmeResource/screenshot_3.jpeg) |
 
 
 ## [ Develop Environment ]
