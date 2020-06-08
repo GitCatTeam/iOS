@@ -20,7 +20,10 @@
 
 ## [ WorkFlow ]             
 
-![workflow](https://github.com/Choyoonyoung98/APPJAM2019_Refactoring/blob/master/WorkFlow.jpg)
+## [ Preview ]
+| 스크린샷1                    | 스크린샷2                                  |
+|:------------------------------:|:---------------------------------:|
+|![](ReadMeResource/screenshot_1.png) |![](ReadMeResource/screenshot_2.png) |
 
 
 ## [ Develop Environment ]
