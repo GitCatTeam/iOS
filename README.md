@@ -21,9 +21,9 @@
 ## [ WorkFlow ]             
 
 ## [ Preview ]
-| 스크린샷1                    | 스크린샷2                                  |
-|:------------------------------:|:---------------------------------:|
-|![](ReadMeResource/screenshot_1.png) |![](ReadMeResource/screenshot_2.png) |
+| 홈                    | 잔디달력                                  | 리포트                                  |
+|:------------------------------:|:---------------------------------:|:---------------------------------:|
+|![](ReadmeResource/screenshot_1.png) |![](ReadmeResource/screenshot_2.png) |![](ReadmeResource/screenshot_3.png) |
 
 
 ## [ Develop Environment ]
