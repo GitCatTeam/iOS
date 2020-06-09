@@ -1,6 +1,6 @@
 # GitCat 깃캣
 
-**AppStore 출시**
+**[AppStore 출시](https://apps.apple.com/kr/app/gitcat/id1510368007)**
 
 개발 기간 : 2020년 01월 01일 ~ 
 
