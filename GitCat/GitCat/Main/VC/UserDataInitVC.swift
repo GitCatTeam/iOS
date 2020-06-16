@@ -14,19 +14,20 @@ class UserDataInitVC: UIViewController {
     @IBOutlet weak var loadingView: UIImageView!
     
     var backgroundTask: UIBackgroundTaskIdentifier = .invalid
+    var cnt:Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingView.loadGif(name: "gif_cat_loading")
- 
         postUserData()
-    
+        cnt = 0
+
     }
     
     func postUserData() {
         
         registerBackgroundTask()
-        
+
         PostUserDataService.shareInstance.postUserData { (result) in
             switch result {
                 case .networkSuccess( _): //201
@@ -76,16 +77,32 @@ class UserDataInitVC: UIViewController {
         RefreshJWTService.sharedInstance.getRefreshToken(headers: getRefreshHeaders) { (result) in
             switch result {
                 case .networkSuccess(let data) :
-                 print("들어오기는 하는거야?")
                     let refreshData = data as? RefreshTokenModel
-                        
+                    
                     if let resResult = refreshData {
-                            
-                     //FIXME
-                     UserDefaults.standard.set(resResult.data?.accessToken, forKey: "token")
-                     UserDefaults.standard.set(resResult.data?.refreshToken, forKey: "refreshToken")
+                        UserDefaults.standard.set(resResult.data?.accessToken, forKey: "token")
+                        UserDefaults.standard.set(resResult.data?.refreshToken, forKey: "refreshToken")
+                    }
+                    
+                    defer {
+                        self.cnt += 1
                         
-                     self.postUserData()
+                        if self.cnt == 3 {
+                            let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
+                                UserDefaults.standard.set(false, forKey: "login")
+                                let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "AuthInitiVC")
+                                dvc.modalPresentationStyle = .fullScreen
+                                               
+                                self.present(dvc, animated: true, completion: nil)
+                             }
+                                           
+                            let alert = UIAlertController(title: "로그인 필요", message: "재로그인이 필요합니다", preferredStyle: UIAlertController.Style.alert)
+                                           
+                            alert.addAction(confirmModeAction)
+                            self.present(alert, animated:true)
+                        }else {
+                            self.postUserData()
+                        }
                     }
                 break
                 case .accessDenied:
