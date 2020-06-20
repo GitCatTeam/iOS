@@ -10,6 +10,7 @@ import UIKit
 
 class GetMoreInfo4VC: UIViewController {
     var keyboardHeight: CGFloat = 0.0
+    var isClicked:Bool = false
     
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
 
@@ -68,6 +69,8 @@ class GetMoreInfo4VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        isClicked = false
+        
         setCatList()
         currentCatList = commonCatList;
         self.collectionView.reloadData()
@@ -83,7 +86,6 @@ class GetMoreInfo4VC: UIViewController {
         
         catNameTextField.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(_:)), name: UITextField.textDidChangeNotification, object: catNameTextField)
-        
     }
     
     @objc private func textDidChange(_ notification: Notification) {
@@ -343,7 +345,7 @@ class GetMoreInfo4VC: UIViewController {
             let bounds = UIScreen.main.bounds
             let height = bounds.size.height
             
-            topConstraint.constant = originY! - (keyboardSize.height - height/8)
+            topConstraint.constant -= keyboardSize.height/1.5
             
             UIView.animate(withDuration: 2, animations: {
                 () -> Void in
@@ -359,7 +361,13 @@ class GetMoreInfo4VC: UIViewController {
             if keyboardShown == false {
                 return
             }
-            topConstraint.constant = 0
+            if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)? .cgRectValue {
+
+                let bounds = UIScreen.main.bounds
+                let height = bounds.size.height
+            
+                topConstraint.constant += keyboardSize.height/1.5
+            }
             
             UIView.animate(withDuration: 2, animations: {
                 () -> Void in

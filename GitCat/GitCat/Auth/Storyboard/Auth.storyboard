@@ -1034,10 +1034,11 @@
                             <constraint firstItem="Pbv-2J-cZy" firstAttribute="centerX" secondItem="GAO-2H-XYz" secondAttribute="centerX" id="QxT-dO-zIB"/>
                             <constraint firstItem="9Km-On-Fya" firstAttribute="bottom" secondItem="UUA-Gu-9c2" secondAttribute="bottom" multiplier="812/751" id="VSp-9l-gYT"/>
                             <constraint firstItem="uY6-po-KFK" firstAttribute="centerX" secondItem="9Km-On-Fya" secondAttribute="centerX" id="Ygh-NE-82h"/>
-                            <constraint firstItem="qUz-D6-rcY" firstAttribute="width" secondItem="GAO-2H-XYz" secondAttribute="width" multiplier="0.731884" id="gzu-ZK-hLU"/>
+                            <constraint firstItem="qUz-D6-rcY" firstAttribute="width" secondItem="GAO-2H-XYz" secondAttribute="width" multiplier="0.731884" priority="200" id="gzu-ZK-hLU"/>
                             <constraint firstItem="6CH-Id-QY0" firstAttribute="centerX" secondItem="GAO-2H-XYz" secondAttribute="centerX" id="ie9-NL-DLJ"/>
                             <constraint firstItem="NVD-St-Ma2" firstAttribute="top" secondItem="GAO-2H-XYz" secondAttribute="top" id="mgy-RN-FoD"/>
                             <constraint firstItem="UUA-Gu-9c2" firstAttribute="centerX" secondItem="9Km-On-Fya" secondAttribute="centerX" id="s03-C3-hme"/>
+                            <constraint firstItem="qUz-D6-rcY" firstAttribute="height" secondItem="GAO-2H-XYz" secondAttribute="height" multiplier="0.350446" priority="300" id="sRO-oy-Mc4"/>
                             <constraint firstItem="6CH-Id-QY0" firstAttribute="top" secondItem="qUz-D6-rcY" secondAttribute="bottom" multiplier="572.5/548.5" id="sV6-Dg-wvK"/>
                             <constraint firstItem="0M4-E3-vgk" firstAttribute="width" secondItem="uY6-po-KFK" secondAttribute="width" multiplier="1.30224" id="tnR-eG-1cp"/>
                             <constraint firstItem="uVu-HR-aYI" firstAttribute="centerX" secondItem="GAO-2H-XYz" secondAttribute="centerX" id="u0t-xy-Xnx"/>
