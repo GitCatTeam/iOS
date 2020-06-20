@@ -184,7 +184,6 @@ class GetMoreInfo3VC: UIViewController {
         let name = UserDefaults.standard.string(forKey: "userId") ?? ""
 //        let gender = UserDefaults.standard.string(forKey: "userGender") ?? ""
 //        let birth = UserDefaults.standard.string(forKey: "userBirthday") ?? ""
-        
         let gender = "E"
         let birth = gsno(formatter.string(from: Date()))
         
@@ -193,8 +192,7 @@ class GetMoreInfo3VC: UIViewController {
         UserDefaults.standard.set(true, forKey: "login")
         UserDefaults.standard.set(true, forKey: "signUp")
         
-        sender.backgroundColor = UIColor(red: 220/255, green: 221/255, blue: 225/255, alpha: 1)
-        
+        sender.backgroundColor = #colorLiteral(red: 0.862745098, green: 0.8666666667, blue: 0.8823529412, alpha: 1)
     }
     
     func setButtonSelect() {

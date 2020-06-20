@@ -69,7 +69,6 @@ extension GetMoreInfo4VC {
                 let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "MainTabC")
                 
                 dvc.modalPresentationStyle = .fullScreen
-                
                 self.present(dvc, animated: true, completion: nil)
                 break
                 
@@ -89,6 +88,7 @@ extension GetMoreInfo4VC {
                 
             default:
                 self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                self.catNameTextField.text = ""
                 break
             }
         }

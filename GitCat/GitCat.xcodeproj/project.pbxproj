@@ -479,11 +479,11 @@
 		4CD5A5D423C2FC8400A8E225 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				4CE10E25249DE95D00453011 /* OAuthVC */,
-				4CE10E1E249DE31F00453011 /* GetMoreInfo4VC */,
 				4CE10E1C249DE28600453011 /* SignInVC */,
+				4CE10E25249DE95D00453011 /* OAuthVC */,
 				4CE10E1D249DE2F900453011 /* GetMoreInfo1VC */,
 				4CE10E19249DE10200453011 /* GetMoreInfo3VC */,
+				4CE10E1E249DE31F00453011 /* GetMoreInfo4VC */,
 			);
 			path = VC;
 			sourceTree = "<group>";

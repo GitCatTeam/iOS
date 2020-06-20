@@ -117,7 +117,6 @@ class GetMoreInfo4VC: UIViewController {
 
     }
 
-    
     func setLabelSize() {
         catNameTextField.font = UIFont(name: "BBTreeGo_R", size: 16)
         catNameTextField.adjustsFontSizeToFitWidth = true
@@ -203,7 +202,7 @@ class GetMoreInfo4VC: UIViewController {
     @IBAction func nameFieldEditingChangedAction(_ sender: Any) {
         if catNameTextField.text!.isEmpty {
             nextMove4Btn.isEnabled = false
-            nextMove4Btn.backgroundColor = UIColor(red: 220/255, green: 221/255, blue: 225/255, alpha: 1)
+            nextMove4Btn.backgroundColor = #colorLiteral(red: 0.862745098, green: 0.8666666667, blue: 0.8823529412, alpha: 1)
         } else {
             nextMove4Btn.isEnabled = true
             nextMove4Btn.backgroundColor = UIColor.CustomColor.skyBlue
@@ -212,15 +211,13 @@ class GetMoreInfo4VC: UIViewController {
     
     @IBAction func startTouchDownAction(_ sender: UIButton) {
         sender.backgroundColor = UIColor.CustomColor.skyBlue
-        
     }
     
     @IBAction func startTouchUpAction(_ sender: UIButton) {
-        sender.backgroundColor = UIColor(red: 220/255, green: 221/255, blue: 225/255, alpha: 1)
+        sender.backgroundColor = #colorLiteral(red: 0.862745098, green: 0.8666666667, blue: 0.8823529412, alpha: 1)
         catName = gsno(self.catNameTextField.text)
         
         postCat(catId: catId, catName: catName)
-        
     }
     
     @IBAction func closeAlertViewAction(_ sender: Any) {
@@ -362,7 +359,6 @@ class GetMoreInfo4VC: UIViewController {
             if keyboardShown == false {
                 return
             }
-
             topConstraint.constant = 0
             
             UIView.animate(withDuration: 2, animations: {
