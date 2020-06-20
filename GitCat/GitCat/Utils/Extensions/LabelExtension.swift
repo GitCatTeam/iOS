@@ -33,6 +33,9 @@ extension UILabel {
     case 896.0: //iphone XR => 6.1 inch  // iphone XS MAX => 6.5 inch
         self.font = UIFont(name: name, size: size * 1.1)
       break
+    case 1194.0:
+        self.font = UIFont(name: name, size: size * 1.7)
+        break
     case 1366.0: //iPad 12.9 inch
         self.font = UIFont(name: name, size: size * 1.7)
         break

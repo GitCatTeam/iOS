@@ -102,7 +102,7 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
                 
                 if(!isClicked) {
                     isClicked = true
-                    UIView.animate(withDuration: 0.5, animations: ({
+                    UIView.animate(withDuration: 1, animations: ({
                         self.topConstraint.constant -= 50
                     }))
                 }
