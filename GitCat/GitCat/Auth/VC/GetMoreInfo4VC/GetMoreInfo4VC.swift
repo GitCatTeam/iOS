@@ -340,7 +340,6 @@ class GetMoreInfo4VC: UIViewController {
                 return
             }
             
-            originY = topConstraint.constant
             
             let bounds = UIScreen.main.bounds
             let height = bounds.size.height
