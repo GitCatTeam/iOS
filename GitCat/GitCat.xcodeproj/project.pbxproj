@@ -89,7 +89,31 @@
 		4CC7D9BE23C64722004576BB /* ReportCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7D9BD23C64722004576BB /* ReportCVCell.swift */; };
 		4CCAABCF243D9DFC00CBF56A /* DeleteUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCAABCE243D9DFC00CBF56A /* DeleteUserInfo.swift */; };
 		4CD5A5D023C2F45E00A8E225 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5A5CF23C2F45E00A8E225 /* CustomLabel.swift */; };
-		4CE33B3D244AF2AA000B1FC3 /* ReportDetailNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE33B3C244AF2AA000B1FC3 /* ReportDetailNavVC.swift */; };
+		4CE10E1B249DE12D00453011 /* GetMoreInto3VC+NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E1A249DE12D00453011 /* GetMoreInto3VC+NetworkExtension.swift */; };
+		4CE10E20249DE35500453011 /* GetMoreInto4VC+UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E1F249DE35500453011 /* GetMoreInto4VC+UITextFieldExtension.swift */; };
+		4CE10E22249DE43A00453011 /* GetMoreInfo4VC+CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E21249DE43A00453011 /* GetMoreInfo4VC+CollectionViewExtension.swift */; };
+		4CE10E24249DE83000453011 /* GetMoreInfo4VC+NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E23249DE83000453011 /* GetMoreInfo4VC+NetworkExtension.swift */; };
+		4CE10E27249DE97600453011 /* OAuthVC+NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E26249DE97600453011 /* OAuthVC+NetworkExtension.swift */; };
+		4CE10E29249DE9CF00453011 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E28249DE9CF00453011 /* StringExtension.swift */; };
+		4CE10E2B249DEA5500453011 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E2A249DEA5500453011 /* Reachability.swift */; };
+		4CE10E2E249DED5D00453011 /* HomeVC+CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E2D249DED5D00453011 /* HomeVC+CollectionViewExtension.swift */; };
+		4CE10E30249DEE2500453011 /* HomeVC+NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E2F249DEE2500453011 /* HomeVC+NetworkExtension.swift */; };
+		4CE10E32249DF88800453011 /* HomeVC+DynamicFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E31249DF88800453011 /* HomeVC+DynamicFont.swift */; };
+		4CE10E35249E0E3600453011 /* MidRepoVC+DynamicFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E34249E0E3600453011 /* MidRepoVC+DynamicFont.swift */; };
+		4CE10E37249E0FC900453011 /* MidRepoVC+NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E36249E0FC900453011 /* MidRepoVC+NetworkExtension.swift */; };
+		4CE10E39249E140800453011 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E38249E140800453011 /* Debouncer.swift */; };
+		4CE10E3B249E143000453011 /* MidRepoVC+TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E3A249E143000453011 /* MidRepoVC+TableViewExtension.swift */; };
+		4CE10E3E249E157D00453011 /* ReportVC+CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E3D249E157D00453011 /* ReportVC+CollectionViewExtension.swift */; };
+		4CE10E40249E15C500453011 /* ReportVC+NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E3F249E15C500453011 /* ReportVC+NetworkExtension.swift */; };
+		4CE10E43249E167F00453011 /* ReportDetailVC+DynamicFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E42249E167F00453011 /* ReportDetailVC+DynamicFont.swift */; };
+		4CE10E45249E16FE00453011 /* UpdateChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E44249E16FE00453011 /* UpdateChartData.swift */; };
+		4CE10E47249E17D200453011 /* ReportDetailVC+NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E46249E17D200453011 /* ReportDetailVC+NetworkExtension.swift */; };
+		4CE10E4A249E1E3300453011 /* CatCollectionVC+CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E49249E1E3300453011 /* CatCollectionVC+CollectionViewExtension.swift */; };
+		4CE10E4C249E1EA200453011 /* CatCollcetionView+NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E4B249E1EA200453011 /* CatCollcetionView+NetworkExtension.swift */; };
+		4CE10E4F249E1F9C00453011 /* SettingVC+NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E4E249E1F9C00453011 /* SettingVC+NetworkExtension.swift */; };
+		4CE10E52249E1FE400453011 /* AuthManageVC+NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E51249E1FE400453011 /* AuthManageVC+NetworkExtension.swift */; };
+		4CE10E55249E20A000453011 /* DeveloperInfoVC+DynamicFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E54249E20A000453011 /* DeveloperInfoVC+DynamicFont.swift */; };
+		4CE10E58249E222000453011 /* UserDataInitVC+NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E57249E222000453011 /* UserDataInitVC+NetworkExtension.swift */; };
 		4CE733ED23FCF0CD00DB97EB /* ReportListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE733EC23FCF0CD00DB97EB /* ReportListService.swift */; };
 		4CE733EF23FCF0D900DB97EB /* ReportDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE733EE23FCF0D900DB97EB /* ReportDetailService.swift */; };
 /* End PBXBuildFile section */
@@ -179,7 +203,31 @@
 		4CC7D9BD23C64722004576BB /* ReportCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCVCell.swift; sourceTree = "<group>"; };
 		4CCAABCE243D9DFC00CBF56A /* DeleteUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserInfo.swift; sourceTree = "<group>"; };
 		4CD5A5CF23C2F45E00A8E225 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
-		4CE33B3C244AF2AA000B1FC3 /* ReportDetailNavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailNavVC.swift; sourceTree = "<group>"; };
+		4CE10E1A249DE12D00453011 /* GetMoreInto3VC+NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetMoreInto3VC+NetworkExtension.swift"; sourceTree = "<group>"; };
+		4CE10E1F249DE35500453011 /* GetMoreInto4VC+UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GetMoreInto4VC+UITextFieldExtension.swift"; path = "/Users/cho-yoonyoung/GitCat/GitCat/GitCat/Auth/View/GetMoreInto4VC+UITextFieldExtension.swift"; sourceTree = "<absolute>"; };
+		4CE10E21249DE43A00453011 /* GetMoreInfo4VC+CollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetMoreInfo4VC+CollectionViewExtension.swift"; sourceTree = "<group>"; };
+		4CE10E23249DE83000453011 /* GetMoreInfo4VC+NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetMoreInfo4VC+NetworkExtension.swift"; sourceTree = "<group>"; };
+		4CE10E26249DE97600453011 /* OAuthVC+NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OAuthVC+NetworkExtension.swift"; sourceTree = "<group>"; };
+		4CE10E28249DE9CF00453011 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		4CE10E2A249DEA5500453011 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		4CE10E2D249DED5D00453011 /* HomeVC+CollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC+CollectionViewExtension.swift"; sourceTree = "<group>"; };
+		4CE10E2F249DEE2500453011 /* HomeVC+NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC+NetworkExtension.swift"; sourceTree = "<group>"; };
+		4CE10E31249DF88800453011 /* HomeVC+DynamicFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC+DynamicFont.swift"; sourceTree = "<group>"; };
+		4CE10E34249E0E3600453011 /* MidRepoVC+DynamicFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MidRepoVC+DynamicFont.swift"; sourceTree = "<group>"; };
+		4CE10E36249E0FC900453011 /* MidRepoVC+NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MidRepoVC+NetworkExtension.swift"; sourceTree = "<group>"; };
+		4CE10E38249E140800453011 /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
+		4CE10E3A249E143000453011 /* MidRepoVC+TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MidRepoVC+TableViewExtension.swift"; sourceTree = "<group>"; };
+		4CE10E3D249E157D00453011 /* ReportVC+CollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReportVC+CollectionViewExtension.swift"; sourceTree = "<group>"; };
+		4CE10E3F249E15C500453011 /* ReportVC+NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReportVC+NetworkExtension.swift"; sourceTree = "<group>"; };
+		4CE10E42249E167F00453011 /* ReportDetailVC+DynamicFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReportDetailVC+DynamicFont.swift"; sourceTree = "<group>"; };
+		4CE10E44249E16FE00453011 /* UpdateChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateChartData.swift; sourceTree = "<group>"; };
+		4CE10E46249E17D200453011 /* ReportDetailVC+NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReportDetailVC+NetworkExtension.swift"; sourceTree = "<group>"; };
+		4CE10E49249E1E3300453011 /* CatCollectionVC+CollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatCollectionVC+CollectionViewExtension.swift"; sourceTree = "<group>"; };
+		4CE10E4B249E1EA200453011 /* CatCollcetionView+NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatCollcetionView+NetworkExtension.swift"; sourceTree = "<group>"; };
+		4CE10E4E249E1F9C00453011 /* SettingVC+NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingVC+NetworkExtension.swift"; sourceTree = "<group>"; };
+		4CE10E51249E1FE400453011 /* AuthManageVC+NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthManageVC+NetworkExtension.swift"; sourceTree = "<group>"; };
+		4CE10E54249E20A000453011 /* DeveloperInfoVC+DynamicFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeveloperInfoVC+DynamicFont.swift"; sourceTree = "<group>"; };
+		4CE10E57249E222000453011 /* UserDataInitVC+NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDataInitVC+NetworkExtension.swift"; sourceTree = "<group>"; };
 		4CE733EC23FCF0CD00DB97EB /* ReportListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListService.swift; sourceTree = "<group>"; };
 		4CE733EE23FCF0D900DB97EB /* ReportDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailService.swift; sourceTree = "<group>"; };
 		7467F6BE814B831147F82671 /* Pods-GitCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitCat.debug.xcconfig"; path = "Target Support Files/Pods-GitCat/Pods-GitCat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -213,7 +261,7 @@
 			children = (
 				4C7C0E7223D9802300669B38 /* Util */,
 				4CC7D9BA23C63BF4004576BB /* View */,
-				4CD5A5D923C2FCEA00A8E225 /* VC */,
+				4CD5A5D923C2FCEA00A8E225 /* ViewController */,
 				4CD5A5D823C2FCD400A8E225 /* storyboard */,
 			);
 			path = Main;
@@ -279,6 +327,7 @@
 				4CC07FB623B31A2C00851B45 /* VCExtension.swift */,
 				4C10BCF52416293D00CDC16D /* LabelExtension.swift */,
 				4C10BCF724162CFC00CDC16D /* ButtonLabelExtension.swift */,
+				4CE10E28249DE9CF00453011 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -382,6 +431,7 @@
 				4CB9BC14242CF4DB00F143A1 /* DefaultData.swift */,
 				4C7B569424095625001881FE /* KeyCode.swift */,
 				4C31717F2440D5AE004F8FA7 /* RefreshGettableService.swift */,
+				4CE10E2A249DEA5500453011 /* Reachability.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -429,11 +479,11 @@
 		4CD5A5D423C2FC8400A8E225 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				4C68D13423B0D02400A8F813 /* SignInVC.swift */,
-				4CC07F9423B1165200851B45 /* GetMoreInfo1VC.swift */,
-				4CC07FBA23B3238C00851B45 /* GetMoreInfo3VC.swift */,
-				4CC07FC423B35BA400851B45 /* GetMoreInfo4VC.swift */,
-				4C7C0E7023D96CB900669B38 /* OAuthVC.swift */,
+				4CE10E25249DE95D00453011 /* OAuthVC */,
+				4CE10E1E249DE31F00453011 /* GetMoreInfo4VC */,
+				4CE10E1C249DE28600453011 /* SignInVC */,
+				4CE10E1D249DE2F900453011 /* GetMoreInfo1VC */,
+				4CE10E19249DE10200453011 /* GetMoreInfo3VC */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -474,24 +524,158 @@
 			path = storyboard;
 			sourceTree = "<group>";
 		};
-		4CD5A5D923C2FCEA00A8E225 /* VC */ = {
+		4CD5A5D923C2FCEA00A8E225 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4CE10E2C249DED3D00453011 /* HomeVC */,
+				4CE10E33249E0E1B00453011 /* MidRepoVC */,
+				4CE10E3C249E156400453011 /* ReportVC */,
+				4CE10E41249E166200453011 /* ReportDetailVC */,
+				4CE10E48249E1E0500453011 /* CatCollectionVC */,
+				4CE10E4D249E1F8A00453011 /* SettingVC */,
+				4CE10E50249E1FD000453011 /* AuthManageVC */,
+				4CE10E53249E208700453011 /* DeveloperInfoVC */,
+				4CE10E56249E220900453011 /* UserDataInitVC */,
+				4C7C0E1223D4AB0100669B38 /* AlarmVC.swift */,
+				4C7C0E1423D5650D00669B38 /* MainTabBarVC.swift */,
+				4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4CE10E19249DE10200453011 /* GetMoreInfo3VC */ = {
+			isa = PBXGroup;
+			children = (
+				4CC07FBA23B3238C00851B45 /* GetMoreInfo3VC.swift */,
+				4CE10E1A249DE12D00453011 /* GetMoreInto3VC+NetworkExtension.swift */,
+			);
+			path = GetMoreInfo3VC;
+			sourceTree = "<group>";
+		};
+		4CE10E1C249DE28600453011 /* SignInVC */ = {
+			isa = PBXGroup;
+			children = (
+				4C68D13423B0D02400A8F813 /* SignInVC.swift */,
+			);
+			path = SignInVC;
+			sourceTree = "<group>";
+		};
+		4CE10E1D249DE2F900453011 /* GetMoreInfo1VC */ = {
+			isa = PBXGroup;
+			children = (
+				4CC07F9423B1165200851B45 /* GetMoreInfo1VC.swift */,
+			);
+			path = GetMoreInfo1VC;
+			sourceTree = "<group>";
+		};
+		4CE10E1E249DE31F00453011 /* GetMoreInfo4VC */ = {
+			isa = PBXGroup;
+			children = (
+				4CC07FC423B35BA400851B45 /* GetMoreInfo4VC.swift */,
+				4CE10E1F249DE35500453011 /* GetMoreInto4VC+UITextFieldExtension.swift */,
+				4CE10E21249DE43A00453011 /* GetMoreInfo4VC+CollectionViewExtension.swift */,
+				4CE10E23249DE83000453011 /* GetMoreInfo4VC+NetworkExtension.swift */,
+			);
+			path = GetMoreInfo4VC;
+			sourceTree = "<group>";
+		};
+		4CE10E25249DE95D00453011 /* OAuthVC */ = {
+			isa = PBXGroup;
+			children = (
+				4C7C0E7023D96CB900669B38 /* OAuthVC.swift */,
+				4CE10E26249DE97600453011 /* OAuthVC+NetworkExtension.swift */,
+			);
+			path = OAuthVC;
+			sourceTree = "<group>";
+		};
+		4CE10E2C249DED3D00453011 /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
 				4C1035AB23B9D1430057F0B1 /* HomeVC.swift */,
-				4C4A923123BA2476002E5F35 /* MidRepoVC.swift */,
-				4CC7D9B823C63BD5004576BB /* ReportVC.swift */,
-				4C8C9E6823CB574600E160B1 /* ReportDetailVC.swift */,
-				4C7C0E1223D4AB0100669B38 /* AlarmVC.swift */,
-				4C7C0E1423D5650D00669B38 /* MainTabBarVC.swift */,
-				4C7C0E1623D587CF00669B38 /* CatCollectionVC.swift */,
-				4C7C0E7F23DF158B00669B38 /* SettingVC.swift */,
-				4C3B8E5A2402449B008735DE /* AuthManageVC.swift */,
-				4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */,
-				4C7C9AAF2404D0D20047C610 /* DeveloperInfoVC.swift */,
-				4CBA4D5024112377002CED2F /* UserDataInitVC.swift */,
-				4CE33B3C244AF2AA000B1FC3 /* ReportDetailNavVC.swift */,
+				4CE10E2D249DED5D00453011 /* HomeVC+CollectionViewExtension.swift */,
+				4CE10E2F249DEE2500453011 /* HomeVC+NetworkExtension.swift */,
+				4CE10E31249DF88800453011 /* HomeVC+DynamicFont.swift */,
 			);
-			path = VC;
+			path = HomeVC;
+			sourceTree = "<group>";
+		};
+		4CE10E33249E0E1B00453011 /* MidRepoVC */ = {
+			isa = PBXGroup;
+			children = (
+				4C4A923123BA2476002E5F35 /* MidRepoVC.swift */,
+				4CE10E34249E0E3600453011 /* MidRepoVC+DynamicFont.swift */,
+				4CE10E36249E0FC900453011 /* MidRepoVC+NetworkExtension.swift */,
+				4CE10E38249E140800453011 /* Debouncer.swift */,
+				4CE10E3A249E143000453011 /* MidRepoVC+TableViewExtension.swift */,
+			);
+			path = MidRepoVC;
+			sourceTree = "<group>";
+		};
+		4CE10E3C249E156400453011 /* ReportVC */ = {
+			isa = PBXGroup;
+			children = (
+				4CC7D9B823C63BD5004576BB /* ReportVC.swift */,
+				4CE10E3D249E157D00453011 /* ReportVC+CollectionViewExtension.swift */,
+				4CE10E3F249E15C500453011 /* ReportVC+NetworkExtension.swift */,
+			);
+			path = ReportVC;
+			sourceTree = "<group>";
+		};
+		4CE10E41249E166200453011 /* ReportDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				4C8C9E6823CB574600E160B1 /* ReportDetailVC.swift */,
+				4CE10E42249E167F00453011 /* ReportDetailVC+DynamicFont.swift */,
+				4CE10E44249E16FE00453011 /* UpdateChartData.swift */,
+				4CE10E46249E17D200453011 /* ReportDetailVC+NetworkExtension.swift */,
+			);
+			path = ReportDetailVC;
+			sourceTree = "<group>";
+		};
+		4CE10E48249E1E0500453011 /* CatCollectionVC */ = {
+			isa = PBXGroup;
+			children = (
+				4C7C0E1623D587CF00669B38 /* CatCollectionVC.swift */,
+				4CE10E49249E1E3300453011 /* CatCollectionVC+CollectionViewExtension.swift */,
+				4CE10E4B249E1EA200453011 /* CatCollcetionView+NetworkExtension.swift */,
+			);
+			path = CatCollectionVC;
+			sourceTree = "<group>";
+		};
+		4CE10E4D249E1F8A00453011 /* SettingVC */ = {
+			isa = PBXGroup;
+			children = (
+				4C7C0E7F23DF158B00669B38 /* SettingVC.swift */,
+				4CE10E4E249E1F9C00453011 /* SettingVC+NetworkExtension.swift */,
+			);
+			path = SettingVC;
+			sourceTree = "<group>";
+		};
+		4CE10E50249E1FD000453011 /* AuthManageVC */ = {
+			isa = PBXGroup;
+			children = (
+				4C3B8E5A2402449B008735DE /* AuthManageVC.swift */,
+				4CE10E51249E1FE400453011 /* AuthManageVC+NetworkExtension.swift */,
+			);
+			path = AuthManageVC;
+			sourceTree = "<group>";
+		};
+		4CE10E53249E208700453011 /* DeveloperInfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				4C7C9AAF2404D0D20047C610 /* DeveloperInfoVC.swift */,
+				4CE10E54249E20A000453011 /* DeveloperInfoVC+DynamicFont.swift */,
+			);
+			path = DeveloperInfoVC;
+			sourceTree = "<group>";
+		};
+		4CE10E56249E220900453011 /* UserDataInitVC */ = {
+			isa = PBXGroup;
+			children = (
+				4CBA4D5024112377002CED2F /* UserDataInitVC.swift */,
+				4CE10E57249E222000453011 /* UserDataInitVC+NetworkExtension.swift */,
+			);
+			path = UserDataInitVC;
 			sourceTree = "<group>";
 		};
 		538C12053FE7C5153A087EC7 /* Pods */ = {
@@ -636,16 +820,22 @@
 				4C1035AC23B9D1430057F0B1 /* HomeVC.swift in Sources */,
 				4CAB3BDE24085CF1007A84B6 /* PutAdditionalInfoService.swift in Sources */,
 				4CC7D9BE23C64722004576BB /* ReportCVCell.swift in Sources */,
+				4CE10E40249E15C500453011 /* ReportVC+NetworkExtension.swift in Sources */,
+				4CE10E1B249DE12D00453011 /* GetMoreInto3VC+NetworkExtension.swift in Sources */,
+				4CE10E45249E16FE00453011 /* UpdateChartData.swift in Sources */,
 				4C7C0E1923D59D2B00669B38 /* CatCollectionCVCell.swift in Sources */,
 				4CC07FB723B31A2C00851B45 /* VCExtension.swift in Sources */,
 				4C68D10623B09D3E00A8F813 /* AppDelegate.swift in Sources */,
+				4CE10E22249DE43A00453011 /* GetMoreInfo4VC+CollectionViewExtension.swift in Sources */,
 				4C4A923223BA2476002E5F35 /* MidRepoVC.swift in Sources */,
 				4CAB3BDA24083C66007A84B6 /* PostDeviceTokenService.swift in Sources */,
+				4CE10E2E249DED5D00453011 /* HomeVC+CollectionViewExtension.swift in Sources */,
 				4C9E8E8323C05564002BDE02 /* LittleRoundView.swift in Sources */,
 				4C31717E2440D3D4004F8FA7 /* RefreshJWTService.swift in Sources */,
 				4C7C9AB02404D0D20047C610 /* DeveloperInfoVC.swift in Sources */,
 				4C7C0E0B23D489DA00669B38 /* CommitDetailTVCell.swift in Sources */,
 				4CBA4D4D24110998002CED2F /* HomeService.swift in Sources */,
+				4CE10E4A249E1E3300453011 /* CatCollectionVC+CollectionViewExtension.swift in Sources */,
 				4CBA4D5124112377002CED2F /* UserDataInitVC.swift in Sources */,
 				4CC07F9323B0F28100851B45 /* RoundView.swift in Sources */,
 				4CAB3BD624082883007A84B6 /* CommonModel.swift in Sources */,
@@ -653,6 +843,7 @@
 				4CC07FC123B35A7300851B45 /* RoundImageView.swift in Sources */,
 				4C10BCF824162CFC00CDC16D /* ButtonLabelExtension.swift in Sources */,
 				4CC07FC523B35BA400851B45 /* GetMoreInfo4VC.swift in Sources */,
+				4CE10E27249DE97600453011 /* OAuthVC+NetworkExtension.swift in Sources */,
 				4CB9BC15242CF4DB00F143A1 /* DefaultData.swift in Sources */,
 				4C7C0E1723D587CF00669B38 /* CatCollectionVC.swift in Sources */,
 				4C60E75F24385B70007495DB /* CustomDashedView.swift in Sources */,
@@ -662,20 +853,32 @@
 				4C7C0E1323D4AB0100669B38 /* AlarmVC.swift in Sources */,
 				4C3B8E5B2402449C008735DE /* AuthManageVC.swift in Sources */,
 				4C8C9E6923CB574600E160B1 /* ReportDetailVC.swift in Sources */,
+				4CE10E55249E20A000453011 /* DeveloperInfoVC+DynamicFont.swift in Sources */,
 				4CD5A5D023C2F45E00A8E225 /* CustomLabel.swift in Sources */,
 				4C7C0E7E23D985D800669B38 /* CommitListService.swift in Sources */,
 				4CAB3BDC24084737007A84B6 /* PuttableService.swift in Sources */,
 				4C68D12C23B0AAB100A8F813 /* BasicExtension.swift in Sources */,
-				4CE33B3D244AF2AA000B1FC3 /* ReportDetailNavVC.swift in Sources */,
+				4CE10E20249DE35500453011 /* GetMoreInto4VC+UITextFieldExtension.swift in Sources */,
+				4CE10E30249DEE2500453011 /* HomeVC+NetworkExtension.swift in Sources */,
 				4C7C0E7A23D9826800669B38 /* CommitListModel.swift in Sources */,
 				4C7C0E6923D80E9300669B38 /* APIService.swift in Sources */,
+				4CE10E39249E140800453011 /* Debouncer.swift in Sources */,
+				4CE10E2B249DEA5500453011 /* Reachability.swift in Sources */,
 				4CAB3BD02407F170007A84B6 /* DelettableService.swift in Sources */,
+				4CE10E58249E222000453011 /* UserDataInitVC+NetworkExtension.swift in Sources */,
+				4CE10E4F249E1F9C00453011 /* SettingVC+NetworkExtension.swift in Sources */,
+				4CE10E24249DE83000453011 /* GetMoreInfo4VC+NetworkExtension.swift in Sources */,
 				4C3A3D7B2442FF5400093C50 /* RefreshTokenModel.swift in Sources */,
+				4CE10E32249DF88800453011 /* HomeVC+DynamicFont.swift in Sources */,
+				4CE10E35249E0E3600453011 /* MidRepoVC+DynamicFont.swift in Sources */,
 				4CAB3BE22408635B007A84B6 /* PostCatSelectedService.swift in Sources */,
+				4CE10E29249DE9CF00453011 /* StringExtension.swift in Sources */,
 				4C7C0E8023DF158B00669B38 /* SettingVC.swift in Sources */,
 				4C68D13523B0D02400A8F813 /* SignInVC.swift in Sources */,
 				4C3171802440D5AE004F8FA7 /* RefreshGettableService.swift in Sources */,
+				4CE10E3E249E157D00453011 /* ReportVC+CollectionViewExtension.swift in Sources */,
 				4C60E75D24383DE6007495DB /* PostLogoutService.swift in Sources */,
+				4CE10E37249E0FC900453011 /* MidRepoVC+NetworkExtension.swift in Sources */,
 				4CA5483A241BB053002B2966 /* CatCollectionService.swift in Sources */,
 				4C7B569524095625001881FE /* KeyCode.swift in Sources */,
 				4C7C0E7823D9816000669B38 /* CommitCountModel.swift in Sources */,
@@ -683,6 +886,7 @@
 				4CAB3BCE2407ECDE007A84B6 /* PosttableService.swift in Sources */,
 				4CA7A75B23FB9D51004FC110 /* ReportDetailModel.swift in Sources */,
 				4CC7D9B923C63BD5004576BB /* ReportVC.swift in Sources */,
+				4CE10E3B249E143000453011 /* MidRepoVC+TableViewExtension.swift in Sources */,
 				4C99B37B2403C4C0003DFBA6 /* InstagramVc.swift in Sources */,
 				4C2DDD0A23EAEEF200FCB36B /* TutorialCVCell.swift in Sources */,
 				4C7C0E7123D96CB900669B38 /* OAuthVC.swift in Sources */,
@@ -691,10 +895,14 @@
 				4C7C0E1123D4A11400669B38 /* CustomHeaderTVCell.swift in Sources */,
 				4C2DDD0D23EB1FD200FCB36B /* SelectCatCVCell.swift in Sources */,
 				4CE733ED23FCF0CD00DB97EB /* ReportListService.swift in Sources */,
+				4CE10E43249E167F00453011 /* ReportDetailVC+DynamicFont.swift in Sources */,
 				4C317176243F512F004F8FA7 /* NewCatCVCell.swift in Sources */,
+				4CE10E47249E17D200453011 /* ReportDetailVC+NetworkExtension.swift in Sources */,
+				4CE10E4C249E1EA200453011 /* CatCollcetionView+NetworkExtension.swift in Sources */,
 				4CA7A75923FB9D36004FC110 /* ReportListModel.swift in Sources */,
 				4C7C0E6723D8044B00669B38 /* HttpResponseCode.swift in Sources */,
 				4C7C0E6D23D8133200669B38 /* GettableService.swift in Sources */,
+				4CE10E52249E1FE400453011 /* AuthManageVC+NetworkExtension.swift in Sources */,
 				4CA54838241BB043002B2966 /* CatCollectionModel.swift in Sources */,
 				4CC07FB523B317CA00851B45 /* RoundBtn.swift in Sources */,
 				4CC07F9523B1165200851B45 /* GetMoreInfo1VC.swift in Sources */,
