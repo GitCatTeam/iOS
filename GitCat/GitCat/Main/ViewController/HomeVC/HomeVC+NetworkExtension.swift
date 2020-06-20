@@ -25,7 +25,6 @@ extension HomeVC {
 
                     let url = URL(string: resResult.data?.catImg ?? "")
 
-
                     self.catImageView.kf.setImage(with: url)
                     
                     if((resResult.data?.catImg?.contains("first"))!) {
