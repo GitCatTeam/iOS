@@ -54,6 +54,7 @@
 		4C99B3792403C46D003DFBA6 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C99B3782403C46D003DFBA6 /* Auth.storyboard */; };
 		4C99B37B2403C4C0003DFBA6 /* InstagramVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */; };
 		4C9E8E8323C05564002BDE02 /* LittleRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E8E8223C05564002BDE02 /* LittleRoundView.swift */; };
+		4CA0F393249EFF8900C87B8C /* GetMoreInto4VC+UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0F392249EFF8900C87B8C /* GetMoreInto4VC+UITextFieldExtension.swift */; };
 		4CA54838241BB043002B2966 /* CatCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA54837241BB043002B2966 /* CatCollectionModel.swift */; };
 		4CA5483A241BB053002B2966 /* CatCollectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA54839241BB053002B2966 /* CatCollectionService.swift */; };
 		4CA7A75923FB9D36004FC110 /* ReportListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7A75823FB9D36004FC110 /* ReportListModel.swift */; };
@@ -90,7 +91,6 @@
 		4CCAABCF243D9DFC00CBF56A /* DeleteUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCAABCE243D9DFC00CBF56A /* DeleteUserInfo.swift */; };
 		4CD5A5D023C2F45E00A8E225 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD5A5CF23C2F45E00A8E225 /* CustomLabel.swift */; };
 		4CE10E1B249DE12D00453011 /* GetMoreInto3VC+NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E1A249DE12D00453011 /* GetMoreInto3VC+NetworkExtension.swift */; };
-		4CE10E20249DE35500453011 /* GetMoreInto4VC+UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E1F249DE35500453011 /* GetMoreInto4VC+UITextFieldExtension.swift */; };
 		4CE10E22249DE43A00453011 /* GetMoreInfo4VC+CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E21249DE43A00453011 /* GetMoreInfo4VC+CollectionViewExtension.swift */; };
 		4CE10E24249DE83000453011 /* GetMoreInfo4VC+NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E23249DE83000453011 /* GetMoreInfo4VC+NetworkExtension.swift */; };
 		4CE10E27249DE97600453011 /* OAuthVC+NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E26249DE97600453011 /* OAuthVC+NetworkExtension.swift */; };
@@ -168,6 +168,7 @@
 		4C99B3782403C46D003DFBA6 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramVc.swift; sourceTree = "<group>"; };
 		4C9E8E8223C05564002BDE02 /* LittleRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleRoundView.swift; sourceTree = "<group>"; };
+		4CA0F392249EFF8900C87B8C /* GetMoreInto4VC+UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GetMoreInto4VC+UITextFieldExtension.swift"; sourceTree = "<group>"; };
 		4CA54837241BB043002B2966 /* CatCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCollectionModel.swift; sourceTree = "<group>"; };
 		4CA54839241BB053002B2966 /* CatCollectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCollectionService.swift; sourceTree = "<group>"; };
 		4CA7A75823FB9D36004FC110 /* ReportListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListModel.swift; sourceTree = "<group>"; };
@@ -204,7 +205,6 @@
 		4CCAABCE243D9DFC00CBF56A /* DeleteUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserInfo.swift; sourceTree = "<group>"; };
 		4CD5A5CF23C2F45E00A8E225 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		4CE10E1A249DE12D00453011 /* GetMoreInto3VC+NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetMoreInto3VC+NetworkExtension.swift"; sourceTree = "<group>"; };
-		4CE10E1F249DE35500453011 /* GetMoreInto4VC+UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GetMoreInto4VC+UITextFieldExtension.swift"; path = "/Users/cho-yoonyoung/GitCat/GitCat/GitCat/Auth/View/GetMoreInto4VC+UITextFieldExtension.swift"; sourceTree = "<absolute>"; };
 		4CE10E21249DE43A00453011 /* GetMoreInfo4VC+CollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetMoreInfo4VC+CollectionViewExtension.swift"; sourceTree = "<group>"; };
 		4CE10E23249DE83000453011 /* GetMoreInfo4VC+NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetMoreInfo4VC+NetworkExtension.swift"; sourceTree = "<group>"; };
 		4CE10E26249DE97600453011 /* OAuthVC+NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OAuthVC+NetworkExtension.swift"; sourceTree = "<group>"; };
@@ -572,9 +572,9 @@
 			isa = PBXGroup;
 			children = (
 				4CC07FC423B35BA400851B45 /* GetMoreInfo4VC.swift */,
-				4CE10E1F249DE35500453011 /* GetMoreInto4VC+UITextFieldExtension.swift */,
 				4CE10E21249DE43A00453011 /* GetMoreInfo4VC+CollectionViewExtension.swift */,
 				4CE10E23249DE83000453011 /* GetMoreInfo4VC+NetworkExtension.swift */,
+				4CA0F392249EFF8900C87B8C /* GetMoreInto4VC+UITextFieldExtension.swift */,
 			);
 			path = GetMoreInfo4VC;
 			sourceTree = "<group>";
@@ -824,6 +824,7 @@
 				4CE10E1B249DE12D00453011 /* GetMoreInto3VC+NetworkExtension.swift in Sources */,
 				4CE10E45249E16FE00453011 /* UpdateChartData.swift in Sources */,
 				4C7C0E1923D59D2B00669B38 /* CatCollectionCVCell.swift in Sources */,
+				4CA0F393249EFF8900C87B8C /* GetMoreInto4VC+UITextFieldExtension.swift in Sources */,
 				4CC07FB723B31A2C00851B45 /* VCExtension.swift in Sources */,
 				4C68D10623B09D3E00A8F813 /* AppDelegate.swift in Sources */,
 				4CE10E22249DE43A00453011 /* GetMoreInfo4VC+CollectionViewExtension.swift in Sources */,
@@ -858,7 +859,6 @@
 				4C7C0E7E23D985D800669B38 /* CommitListService.swift in Sources */,
 				4CAB3BDC24084737007A84B6 /* PuttableService.swift in Sources */,
 				4C68D12C23B0AAB100A8F813 /* BasicExtension.swift in Sources */,
-				4CE10E20249DE35500453011 /* GetMoreInto4VC+UITextFieldExtension.swift in Sources */,
 				4CE10E30249DEE2500453011 /* HomeVC+NetworkExtension.swift in Sources */,
 				4C7C0E7A23D9826800669B38 /* CommitListModel.swift in Sources */,
 				4C7C0E6923D80E9300669B38 /* APIService.swift in Sources */,
@@ -1037,14 +1037,14 @@
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 20200616;
+				CURRENT_PROJECT_VERSION = 20200621;
 				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
 				INFOPLIST_FILE = "$(SRCROOT)/GitCat/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.02;
+				MARKETING_VERSION = 1.03;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoonyoung.GitCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = dev_provision;
@@ -1060,7 +1060,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 20200616;
+				CURRENT_PROJECT_VERSION = 20200621;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
 				INFOPLIST_FILE = "$(SRCROOT)/GitCat/Resources/Info.plist";
@@ -1068,7 +1068,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.02;
+				MARKETING_VERSION = 1.03;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoonyoung.GitCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = dist_appstore;

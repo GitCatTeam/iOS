@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/cho-yoonyoung/GitCat/GitCat/GitCat/Auth/View/GetMoreInto4VC+UITextFieldExtension.swift">
-   </FileRef>
-   <FileRef
       location = "group:GitCat.xcodeproj">
    </FileRef>
    <FileRef
