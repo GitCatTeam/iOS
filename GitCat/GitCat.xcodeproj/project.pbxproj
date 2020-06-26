@@ -20,6 +20,8 @@
 		4C3171802440D5AE004F8FA7 /* RefreshGettableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C31717F2440D5AE004F8FA7 /* RefreshGettableService.swift */; };
 		4C3A3D7B2442FF5400093C50 /* RefreshTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3A3D7A2442FF5300093C50 /* RefreshTokenModel.swift */; };
 		4C3B8E5B2402449C008735DE /* AuthManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3B8E5A2402449B008735DE /* AuthManageVC.swift */; };
+		4C3F8CAA24A5DEDB009248B6 /* RepositoryAccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8CA924A5DEDB009248B6 /* RepositoryAccessVC.swift */; };
+		4C3F8CAC24A60B63009248B6 /* GetAccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8CAB24A60B63009248B6 /* GetAccessVC.swift */; };
 		4C4A923223BA2476002E5F35 /* MidRepoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A923123BA2476002E5F35 /* MidRepoVC.swift */; };
 		4C60E75D24383DE6007495DB /* PostLogoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C60E75C24383DE6007495DB /* PostLogoutService.swift */; };
 		4C60E75F24385B70007495DB /* CustomDashedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C60E75E24385B70007495DB /* CustomDashedView.swift */; };
@@ -131,6 +133,8 @@
 		4C31717F2440D5AE004F8FA7 /* RefreshGettableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshGettableService.swift; sourceTree = "<group>"; };
 		4C3A3D7A2442FF5300093C50 /* RefreshTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenModel.swift; sourceTree = "<group>"; };
 		4C3B8E5A2402449B008735DE /* AuthManageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManageVC.swift; sourceTree = "<group>"; };
+		4C3F8CA924A5DEDB009248B6 /* RepositoryAccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAccessVC.swift; sourceTree = "<group>"; };
+		4C3F8CAB24A60B63009248B6 /* GetAccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccessVC.swift; sourceTree = "<group>"; };
 		4C4A923123BA2476002E5F35 /* MidRepoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidRepoVC.swift; sourceTree = "<group>"; };
 		4C60E75C24383DE6007495DB /* PostLogoutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLogoutService.swift; sourceTree = "<group>"; };
 		4C60E75E24385B70007495DB /* CustomDashedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDashedView.swift; sourceTree = "<group>"; };
@@ -484,6 +488,7 @@
 				4CE10E1D249DE2F900453011 /* GetMoreInfo1VC */,
 				4CE10E19249DE10200453011 /* GetMoreInfo3VC */,
 				4CE10E1E249DE31F00453011 /* GetMoreInfo4VC */,
+				4C3F8CAB24A60B63009248B6 /* GetAccessVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -539,6 +544,7 @@
 				4C7C0E1223D4AB0100669B38 /* AlarmVC.swift */,
 				4C7C0E1423D5650D00669B38 /* MainTabBarVC.swift */,
 				4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */,
+				4C3F8CA924A5DEDB009248B6 /* RepositoryAccessVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -863,6 +869,7 @@
 				4C7C0E7A23D9826800669B38 /* CommitListModel.swift in Sources */,
 				4C7C0E6923D80E9300669B38 /* APIService.swift in Sources */,
 				4CE10E39249E140800453011 /* Debouncer.swift in Sources */,
+				4C3F8CAA24A5DEDB009248B6 /* RepositoryAccessVC.swift in Sources */,
 				4CE10E2B249DEA5500453011 /* Reachability.swift in Sources */,
 				4CAB3BD02407F170007A84B6 /* DelettableService.swift in Sources */,
 				4CE10E58249E222000453011 /* UserDataInitVC+NetworkExtension.swift in Sources */,
@@ -879,6 +886,7 @@
 				4CE10E3E249E157D00453011 /* ReportVC+CollectionViewExtension.swift in Sources */,
 				4C60E75D24383DE6007495DB /* PostLogoutService.swift in Sources */,
 				4CE10E37249E0FC900453011 /* MidRepoVC+NetworkExtension.swift in Sources */,
+				4C3F8CAC24A60B63009248B6 /* GetAccessVC.swift in Sources */,
 				4CA5483A241BB053002B2966 /* CatCollectionService.swift in Sources */,
 				4C7B569524095625001881FE /* KeyCode.swift in Sources */,
 				4C7C0E7823D9816000669B38 /* CommitCountModel.swift in Sources */,

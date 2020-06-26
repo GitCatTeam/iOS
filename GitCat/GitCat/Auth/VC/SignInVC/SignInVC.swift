@@ -34,11 +34,13 @@ class SignInVC: UIViewController{
         sender.backgroundColor = UIColor.white
         sender.setTitleColor(UIColor.CustomColor.skyBlue, for: UIControl.State.normal)
         
-        let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "OAuthVC")
-        dvc.modalPresentationStyle = .fullScreen
-
-       self.navigationController?.pushViewController(dvc, animated: true)
-        
+        if !isKeyPresentInUserDefaults(key: "canAccessPrivate") {
+            let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "GetAccessVC")
+            dvc.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(dvc, animated: true)
+        } else {
+            
+        }
     }
     
     @IBAction func signInTouchDownAction(_ sender: UIButton) {
@@ -51,6 +53,10 @@ class SignInVC: UIViewController{
         subTitleLabel.dynamicFont(fontSize: 17, name: "BBTreeGo_R")
         loginBtn.titleLabel?.dynamicFont(fontSize: 14, name:"BBTreeG_B")
         
+    }
+    
+    func isKeyPresentInUserDefaults(key: String) -> Bool {
+        return UserDefaults.standard.object(forKey: key) != nil
     }
 }
 

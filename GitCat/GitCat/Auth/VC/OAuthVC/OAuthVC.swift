@@ -59,8 +59,15 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
     
     func loadURL() {
         
-        let OAuthURL = URL(string: "https://a.gitcat.app/api/auth/github")
+        let canAccessPrivateRepo = UserDefaults.standard.bool(forKey: "canAccessPrivate")
+        var OAuthURL:URL!
         
+        if canAccessPrivateRepo {
+            OAuthURL = URL(string: "https://a.gitcat.app/api/auth/github")
+        } else {
+            OAuthURL = URL(string: "https://a.gitcat.app/api/auth/github")
+        }
+
         let request = URLRequest(url: OAuthURL!)
         
         webView.load(request)
@@ -68,7 +75,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
     
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if(message.name == "authCheckHandler") {
+        if message.name == "authCheckHandler" {
             //복호
             let messageBody:String? = message.body as?  String
 
@@ -102,7 +109,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
             //FIXME: DeviceToken 전달
 //            postDeviceToken()
             
-            if(isFirst == true) {
+            if isFirst {
                 UserDefaults.standard.set(false, forKey: "signUp")
                 UserDefaults.standard.set(false, forKey: "tutorialDone")
                 let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "GetMoreInfo3VC")

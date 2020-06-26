@@ -6,11 +6,9 @@
 //  Copyright © 2019 조윤영. All rights reserved.
 //
 
-
 import Foundation
 import UIKit
 import Kingfisher
-
 
 extension UIView {
     
@@ -25,8 +23,8 @@ extension UIView {
         
         self.layer.cornerRadius = radius
         self.layer.masksToBounds = true
-        
     }
+    
     func addShadow() {
         self.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         self.layer.shadowOffset = CGSize(width: 1, height: 1)
@@ -44,8 +42,6 @@ extension UIView {
         self.layer.shadowOpacity = opacity
         self.layer.masksToBounds = false
     }
-
-    //그림자 추가
 
     func topSectionRound(_radius:CGFloat = 10) {
         self.clipsToBounds = true

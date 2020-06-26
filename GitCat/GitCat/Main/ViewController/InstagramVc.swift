@@ -21,8 +21,7 @@ class InstagramVc: UIViewController , WKUIDelegate, WKNavigationDelegate{
         webView.uiDelegate = self
         webView.navigationDelegate = self
         
-        self.view.addSubview(webView)
-        
+        self.view.addSubview(webView) 
     }
     
     override func viewDidLoad() {

@@ -12,11 +12,22 @@ class SettingVC: UIViewController {
 
     @IBOutlet weak var userProfileImage: RoundImageView!
     @IBOutlet weak var userIdLabel: CustomLabel!
+    @IBOutlet weak var authManageLAbel: CustomLabel!
+    @IBOutlet weak var accessManageLabel: CustomLabel!
+    @IBOutlet weak var alaramManageLabel: CustomLabel!
+    @IBOutlet weak var catInitialBtn: UIButton!
+    @IBOutlet weak var introduceDeveloperLabel: CustomLabel!
+    @IBOutlet weak var instagramLabel: CustomLabel!
+    
+    @IBOutlet weak var settingLabel: CustomLabel!
+    @IBOutlet weak var etcLabel: CustomLabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.deleteNavigationUnderbar()
+        self.setFontSize()
         
         let imageURL = UserDefaults.standard.string(forKey: "userImage")
         
@@ -24,10 +35,28 @@ class SettingVC: UIViewController {
         userIdLabel.text = UserDefaults.standard.string(forKey: "userId")
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        userProfileImage.circleRadius()
-        userProfileImage.layer.borderColor = UIColor.clear.cgColor
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.userProfileImage.circleRadius()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.userProfileImage.circleRadius()
+        self.userProfileImage.layer.borderColor = UIColor.clear.cgColor
+    }
+
+    func setFontSize() {
+        userIdLabel.dynamicFont(fontSize: 20, name: "BBTreeG_B")
+        authManageLAbel.dynamicFont(fontSize: 16, name: "BBTreeGo_R")
+        accessManageLabel.dynamicFont(fontSize: 16, name: "BBTreeGo_R")
+        alaramManageLabel.dynamicFont(fontSize: 16, name: "BBTreeGo_R")
+        catInitialBtn.titleLabel?.dynamicFont(fontSize: 16, name: "BBTreeGo_R")
+        settingLabel.dynamicFont(fontSize: 12, name: "BBTreeGo_R")
+        etcLabel.dynamicFont(fontSize: 12, name: "BBTreeGo_R")
+        introduceDeveloperLabel.dynamicFont(fontSize: 16, name: "BBTreeGo_R")
+        instagramLabel.dynamicFont(fontSize: 16, name: "BBTreeGo_R")
     }
     
     @IBAction func goBackAction(_ sender: Any) {

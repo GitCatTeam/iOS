@@ -39,7 +39,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="고양이와 함께 하는 일일커밋!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="pXU-v3-CXa" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                <rect key="frame" x="108" y="278.5" width="198.5" height="20"/>
+                                <rect key="frame" x="108" y="278.5" width="198.5" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="198.5" id="Fvy-ww-EYJ"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="xEd-gZ-M0c"/>
@@ -92,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCg-60-Xbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2139.130434782609" y="-156.02678571428569"/>
+            <point key="canvasLocation" x="735" y="-156"/>
         </scene>
         <!--AuthVC-->
         <scene sceneID="J4D-7N-SdO">
@@ -127,7 +127,333 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdw-S5-UMK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2954" y="551"/>
+            <point key="canvasLocation" x="2236" y="-156"/>
+        </scene>
+        <!--Get AccessVC-->
+        <scene sceneID="Gb3-ml-pPB">
+            <objects>
+                <viewController storyboardIdentifier="GetAccessVC" id="Z7F-By-BlN" customClass="GetAccessVC" customModule="GitCat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="65A-8n-HWT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repository 권한 설정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tO-ec-rZq" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
+                                <rect key="frame" x="109.5" y="129" width="195" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="195" id="JLV-pA-oWp"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="gLw-bg-6v5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="22"/>
+                                <color key="textColor" name="brownishGrey"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="-1.1000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GitCat에서 커밋 내역을 수집하기 위해" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJt-8X-LZo" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
+                                <rect key="frame" x="83.5" y="162" width="247" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="IiH-0w-Pgb"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="247" id="JDw-pK-sxG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="16"/>
+                                <color key="textColor" name="brownishGrey"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="-0.65000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="접근할 GitHub Repository의 범위를 설정해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7f-vx-yue" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
+                                <rect key="frame" x="42" y="181" width="330" height="19"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" name="brownishGrey"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="-0.65000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(범위 설정은 추후 설정 메뉴에서 변경 가능합니다!)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wB8-YD-SHG" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
+                                <rect key="frame" x="38" y="212" width="338" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="338" id="SkS-60-Xrw"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="12" id="osQ-bU-A4j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="12"/>
+                                <color key="textColor" red="0.75294117647058822" green="0.75294117647058822" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="-0.59999999999999998"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8VI-mU-zep">
+                                <rect key="frame" x="73" y="258" width="268" height="130"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Public Repository만 반영하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xP3-vO-nlZ" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="32" width="268" height="18"/>
+                                        <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="18"/>
+                                        <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                <real key="value" value="-0.90000000000000002"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GitHub 계정에 public으로 공개된" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Imr-b4-2ar" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="268" height="14"/>
+                                        <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="14"/>
+                                        <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                <real key="value" value="-0.69999999999999996"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="repository만 반영합니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8T-1o-bXU" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="81" width="268" height="14"/>
+                                        <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="14"/>
+                                        <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                <real key="value" value="-0.69999999999999996"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icRepositorycheck" translatesAutoresizingMaskIntoConstraints="NO" id="WL6-lm-e4W">
+                                        <rect key="frame" x="8" y="8" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="WL6-lm-e4W" secondAttribute="height" multiplier="1:1" id="mVC-gD-QBm"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGF-Ab-nn5">
+                                        <rect key="frame" x="0.0" y="0.0" width="268" height="130"/>
+                                        <connections>
+                                            <action selector="publicSelectAction:" destination="Z7F-By-BlN" eventType="touchUpInside" id="O87-wi-UR3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="YGF-Ab-nn5" firstAttribute="leading" secondItem="8VI-mU-zep" secondAttribute="leading" id="0Gv-xc-97N"/>
+                                    <constraint firstItem="WL6-lm-e4W" firstAttribute="width" secondItem="8VI-mU-zep" secondAttribute="width" multiplier="0.0820896" id="0JO-f7-Les"/>
+                                    <constraint firstAttribute="bottom" secondItem="YGF-Ab-nn5" secondAttribute="bottom" id="FiH-nO-L1c"/>
+                                    <constraint firstItem="YGF-Ab-nn5" firstAttribute="top" secondItem="8VI-mU-zep" secondAttribute="top" id="JMi-jS-Sqg"/>
+                                    <constraint firstAttribute="trailing" secondItem="v8T-1o-bXU" secondAttribute="trailing" id="Kok-at-wmB"/>
+                                    <constraint firstAttribute="trailing" secondItem="Imr-b4-2ar" secondAttribute="trailing" id="QNS-47-WFz"/>
+                                    <constraint firstAttribute="trailing" secondItem="YGF-Ab-nn5" secondAttribute="trailing" id="QQQ-hv-RSK"/>
+                                    <constraint firstItem="xP3-vO-nlZ" firstAttribute="leading" secondItem="8VI-mU-zep" secondAttribute="leading" id="Rwc-nw-9OS"/>
+                                    <constraint firstItem="WL6-lm-e4W" firstAttribute="top" secondItem="8VI-mU-zep" secondAttribute="top" constant="8" id="bpv-RE-9hO"/>
+                                    <constraint firstItem="WL6-lm-e4W" firstAttribute="leading" secondItem="8VI-mU-zep" secondAttribute="leading" constant="8" id="diY-Vz-Gl5"/>
+                                    <constraint firstAttribute="trailing" secondItem="xP3-vO-nlZ" secondAttribute="trailing" id="f0Y-Kl-VmX"/>
+                                    <constraint firstItem="Imr-b4-2ar" firstAttribute="leading" secondItem="8VI-mU-zep" secondAttribute="leading" id="fNX-gU-HZz"/>
+                                    <constraint firstItem="v8T-1o-bXU" firstAttribute="leading" secondItem="8VI-mU-zep" secondAttribute="leading" id="iXj-4p-px2"/>
+                                    <constraint firstItem="xP3-vO-nlZ" firstAttribute="top" secondItem="8VI-mU-zep" secondAttribute="bottom" multiplier="32/130" id="kla-Xk-gkx"/>
+                                    <constraint firstItem="Imr-b4-2ar" firstAttribute="top" secondItem="xP3-vO-nlZ" secondAttribute="top" multiplier="64/32" id="pgm-lE-Eaz"/>
+                                    <constraint firstAttribute="width" secondItem="8VI-mU-zep" secondAttribute="height" multiplier="134:65" id="rwQ-X6-9yP"/>
+                                    <constraint firstItem="v8T-1o-bXU" firstAttribute="top" secondItem="Imr-b4-2ar" secondAttribute="top" multiplier="81/64" id="ttC-Lm-QAT"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCZ-o6-bzN">
+                                <rect key="frame" x="73" y="407.5" width="268" height="130"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icRepositorycheck" translatesAutoresizingMaskIntoConstraints="NO" id="pUX-U6-qu1">
+                                        <rect key="frame" x="8" y="8" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="pUX-U6-qu1" secondAttribute="height" multiplier="1:1" id="RiS-Eh-lpP"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Private Repository도 반영하기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efk-h3-u5Y" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="32" width="268" height="18"/>
+                                        <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="18"/>
+                                        <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                <real key="value" value="-0.90000000000000002"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GitHub 계정의 모든" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMz-Bb-ham" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="268" height="14"/>
+                                        <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="14"/>
+                                        <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                <real key="value" value="-0.69999999999999996"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="repository를 반영합니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iad-fo-vGQ" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="84" width="268" height="14"/>
+                                        <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="14"/>
+                                        <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                <real key="value" value="-0.69999999999999996"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQ3-HD-K4F">
+                                        <rect key="frame" x="0.0" y="0.0" width="268" height="130"/>
+                                        <connections>
+                                            <action selector="privateSelectAction:" destination="Z7F-By-BlN" eventType="touchUpInside" id="uF9-4h-2WG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tCZ-o6-bzN" secondAttribute="height" multiplier="134:65" id="0eG-Ah-88v"/>
+                                    <constraint firstAttribute="trailing" secondItem="nMz-Bb-ham" secondAttribute="trailing" id="0ru-n1-Zrn"/>
+                                    <constraint firstItem="iad-fo-vGQ" firstAttribute="leading" secondItem="tCZ-o6-bzN" secondAttribute="leading" id="AWd-ZW-9WJ"/>
+                                    <constraint firstItem="efk-h3-u5Y" firstAttribute="top" secondItem="tCZ-o6-bzN" secondAttribute="bottom" multiplier="32/130" id="Emf-Js-AOJ"/>
+                                    <constraint firstItem="nMz-Bb-ham" firstAttribute="leading" secondItem="tCZ-o6-bzN" secondAttribute="leading" id="Iwa-lw-FWP"/>
+                                    <constraint firstAttribute="trailing" secondItem="xQ3-HD-K4F" secondAttribute="trailing" id="KmI-D3-gRo"/>
+                                    <constraint firstItem="efk-h3-u5Y" firstAttribute="leading" secondItem="tCZ-o6-bzN" secondAttribute="leading" id="MA1-zj-8SF"/>
+                                    <constraint firstItem="pUX-U6-qu1" firstAttribute="top" secondItem="tCZ-o6-bzN" secondAttribute="top" constant="8" id="Mfy-Bl-4L9"/>
+                                    <constraint firstItem="xQ3-HD-K4F" firstAttribute="top" secondItem="tCZ-o6-bzN" secondAttribute="top" id="Qq1-JU-6do"/>
+                                    <constraint firstItem="pUX-U6-qu1" firstAttribute="width" secondItem="tCZ-o6-bzN" secondAttribute="width" multiplier="0.0820896" id="SXB-yb-AZ5"/>
+                                    <constraint firstItem="xQ3-HD-K4F" firstAttribute="leading" secondItem="tCZ-o6-bzN" secondAttribute="leading" id="Ty0-ig-5ZH"/>
+                                    <constraint firstItem="nMz-Bb-ham" firstAttribute="top" secondItem="efk-h3-u5Y" secondAttribute="top" multiplier="64/32" id="hhy-oS-BLn"/>
+                                    <constraint firstItem="pUX-U6-qu1" firstAttribute="leading" secondItem="tCZ-o6-bzN" secondAttribute="leading" constant="8" id="ihk-cV-bgo"/>
+                                    <constraint firstAttribute="trailing" secondItem="iad-fo-vGQ" secondAttribute="trailing" id="o6E-iz-Zca"/>
+                                    <constraint firstItem="iad-fo-vGQ" firstAttribute="top" secondItem="nMz-Bb-ham" secondAttribute="top" multiplier="81/64" constant="3" id="qtZ-Mg-2Dn"/>
+                                    <constraint firstAttribute="trailing" secondItem="efk-h3-u5Y" secondAttribute="trailing" id="uko-ZR-RHs"/>
+                                    <constraint firstAttribute="bottom" secondItem="xQ3-HD-K4F" secondAttribute="bottom" id="zzB-Cn-AG2"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot; Private Repository의 커밋은 &quot; " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jrt-1s-KeI" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
+                                <rect key="frame" x="92" y="584" width="230" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="0hI-Zw-FCK"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="VcD-Ij-XPM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="15"/>
+                                <color key="textColor" red="0.54509803921568623" green="0.79607843137254897" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="-0.75"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반영되지 않습니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqc-tR-cRA" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="602" width="414" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="cdQ-v9-VaH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="15"/>
+                                <color key="textColor" red="0.5450980392" green="0.79607843140000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="-0.75"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3iO-WM-fK7" customClass="RoundBtn" customModule="GitCat" customModuleProvider="target">
+                                <rect key="frame" x="139" y="757" width="136" height="40"/>
+                                <color key="backgroundColor" red="0.85504454370000005" green="0.8585307002" blue="0.87451320889999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3iO-WM-fK7" secondAttribute="height" multiplier="17:5" id="oSV-yY-U47"/>
+                                </constraints>
+                                <state key="normal" title="다음으로">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextAction:" destination="Z7F-By-BlN" eventType="touchUpInside" id="sC2-mi-na7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot; Private Repository 접근을 위해 읽기/쓰기가 포함된 &quot;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k00-c8-VWF">
+                                <rect key="frame" x="33" y="574" width="348.5" height="15"/>
+                                <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="15"/>
+                                <color key="textColor" red="0.54509803921568623" green="0.79607843137254897" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full-Access권한이 요청되지만," textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogh-wb-lT6">
+                                <rect key="frame" x="110" y="592" width="194" height="15"/>
+                                <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="15"/>
+                                <color key="textColor" red="0.5450980392" green="0.79607843140000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실제로는 읽기권한만 활용됩니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbR-GB-gXh">
+                                <rect key="frame" x="111" y="613" width="192.5" height="15"/>
+                                <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="15"/>
+                                <color key="textColor" red="0.5450980392" green="0.79607843140000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0tO-ec-rZq" firstAttribute="top" secondItem="oaX-AB-Hbk" secondAttribute="bottom" multiplier="134/896" id="02L-bE-jhW"/>
+                            <constraint firstItem="jrt-1s-KeI" firstAttribute="top" secondItem="tCZ-o6-bzN" secondAttribute="top" multiplier="583.5/407.5" id="34d-nV-GAC"/>
+                            <constraint firstItem="lqc-tR-cRA" firstAttribute="leading" secondItem="oaX-AB-Hbk" secondAttribute="leading" id="39c-ko-aEL"/>
+                            <constraint firstItem="k00-c8-VWF" firstAttribute="top" secondItem="tCZ-o6-bzN" secondAttribute="top" multiplier="573.5/407.5" id="7he-id-a7L"/>
+                            <constraint firstItem="Ogh-wb-lT6" firstAttribute="top" secondItem="k00-c8-VWF" secondAttribute="top" multiplier="592/574" id="9oO-qE-Ndt"/>
+                            <constraint firstItem="p7f-vx-yue" firstAttribute="top" secondItem="RJt-8X-LZo" secondAttribute="top" multiplier="181/162" id="BaU-sT-j0x"/>
+                            <constraint firstItem="8VI-mU-zep" firstAttribute="centerX" secondItem="oaX-AB-Hbk" secondAttribute="centerX" id="C2T-0q-Hoz"/>
+                            <constraint firstItem="oaX-AB-Hbk" firstAttribute="bottom" secondItem="3iO-WM-fK7" secondAttribute="bottom" multiplier="812/751" id="EB7-c1-mbM"/>
+                            <constraint firstItem="8VI-mU-zep" firstAttribute="width" secondItem="65A-8n-HWT" secondAttribute="width" multiplier="0.647343" id="EX5-hJ-Rwy"/>
+                            <constraint firstItem="oaX-AB-Hbk" firstAttribute="trailing" secondItem="lqc-tR-cRA" secondAttribute="trailing" id="EgX-7J-dpF"/>
+                            <constraint firstItem="0tO-ec-rZq" firstAttribute="centerX" secondItem="oaX-AB-Hbk" secondAttribute="centerX" id="GSm-1I-sIA"/>
+                            <constraint firstItem="k00-c8-VWF" firstAttribute="centerX" secondItem="oaX-AB-Hbk" secondAttribute="centerX" id="JTu-ch-y9z"/>
+                            <constraint firstItem="p7f-vx-yue" firstAttribute="centerX" secondItem="RJt-8X-LZo" secondAttribute="centerX" id="LGV-iQ-Qgy"/>
+                            <constraint firstItem="RJt-8X-LZo" firstAttribute="centerX" secondItem="0tO-ec-rZq" secondAttribute="centerX" id="LnU-FL-RK9"/>
+                            <constraint firstItem="8VI-mU-zep" firstAttribute="top" secondItem="wB8-YD-SHG" secondAttribute="top" multiplier="258/212" id="Qka-aD-ugR"/>
+                            <constraint firstItem="RJt-8X-LZo" firstAttribute="top" secondItem="0tO-ec-rZq" secondAttribute="top" multiplier="162/129" id="REp-gZ-S7e"/>
+                            <constraint firstItem="tCZ-o6-bzN" firstAttribute="width" secondItem="65A-8n-HWT" secondAttribute="width" multiplier="0.647343" id="Vru-Pz-H72"/>
+                            <constraint firstItem="wB8-YD-SHG" firstAttribute="top" secondItem="p7f-vx-yue" secondAttribute="top" multiplier="212/181" id="X9Q-ii-UxZ"/>
+                            <constraint firstItem="mbR-GB-gXh" firstAttribute="top" secondItem="Ogh-wb-lT6" secondAttribute="top" multiplier="610/592" constant="3" id="Y12-cD-TSo"/>
+                            <constraint firstItem="3iO-WM-fK7" firstAttribute="centerX" secondItem="oaX-AB-Hbk" secondAttribute="centerX" id="be4-oW-tuP"/>
+                            <constraint firstItem="tCZ-o6-bzN" firstAttribute="top" secondItem="8VI-mU-zep" secondAttribute="top" multiplier="408/258" id="d1i-Lj-qiT"/>
+                            <constraint firstItem="Ogh-wb-lT6" firstAttribute="centerX" secondItem="oaX-AB-Hbk" secondAttribute="centerX" id="eaI-WH-ieY"/>
+                            <constraint firstItem="lqc-tR-cRA" firstAttribute="centerX" secondItem="jrt-1s-KeI" secondAttribute="centerX" id="hwq-Oj-ec6"/>
+                            <constraint firstItem="tCZ-o6-bzN" firstAttribute="centerX" secondItem="8VI-mU-zep" secondAttribute="centerX" id="iGf-qf-czy"/>
+                            <constraint firstItem="wB8-YD-SHG" firstAttribute="centerX" secondItem="p7f-vx-yue" secondAttribute="centerX" id="j0Z-oV-cS5"/>
+                            <constraint firstItem="lqc-tR-cRA" firstAttribute="top" secondItem="jrt-1s-KeI" secondAttribute="top" multiplier="602/584" id="nmm-jy-3uW"/>
+                            <constraint firstItem="mbR-GB-gXh" firstAttribute="centerX" secondItem="oaX-AB-Hbk" secondAttribute="centerX" id="nnd-xB-WNA"/>
+                            <constraint firstItem="jrt-1s-KeI" firstAttribute="centerX" secondItem="tCZ-o6-bzN" secondAttribute="centerX" id="udJ-mc-2N6"/>
+                            <constraint firstItem="3iO-WM-fK7" firstAttribute="height" secondItem="65A-8n-HWT" secondAttribute="height" multiplier="0.0446429" id="zdL-MF-U0s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oaX-AB-Hbk"/>
+                    </view>
+                    <connections>
+                        <outlet property="miniSubTitleLabel" destination="wB8-YD-SHG" id="tJB-Og-sJy"/>
+                        <outlet property="nextBtn" destination="3iO-WM-fK7" id="Svq-cR-C2m"/>
+                        <outlet property="privateCheckBoxImage" destination="pUX-U6-qu1" id="QFj-lo-SbL"/>
+                        <outlet property="privateDesc1Label" destination="k00-c8-VWF" id="yJC-6j-5bW"/>
+                        <outlet property="privateDesc2Label" destination="Ogh-wb-lT6" id="crj-9g-FcZ"/>
+                        <outlet property="privateDesc3Label" destination="mbR-GB-gXh" id="d3a-7K-1OC"/>
+                        <outlet property="privateSubTitle1Label" destination="nMz-Bb-ham" id="MAf-TA-H3m"/>
+                        <outlet property="privateSubTitle2Label" destination="iad-fo-vGQ" id="hS6-nk-xad"/>
+                        <outlet property="privateTitleLabel" destination="efk-h3-u5Y" id="rFd-TG-J7g"/>
+                        <outlet property="privateView" destination="tCZ-o6-bzN" id="uF8-tM-aVc"/>
+                        <outlet property="publicCheckBoxImage" destination="WL6-lm-e4W" id="tC6-Fe-ooh"/>
+                        <outlet property="publicDesc1Label" destination="jrt-1s-KeI" id="9I0-Tp-Wnu"/>
+                        <outlet property="publicDesc2Label" destination="lqc-tR-cRA" id="mYt-9z-7an"/>
+                        <outlet property="publicSubTitle1Label" destination="Imr-b4-2ar" id="REM-Vo-YBZ"/>
+                        <outlet property="publicSubTitle2Label" destination="v8T-1o-bXU" id="dgy-Hc-FX4"/>
+                        <outlet property="publicTitleLabel" destination="xP3-vO-nlZ" id="B0g-UC-wOr"/>
+                        <outlet property="publicView" destination="8VI-mU-zep" id="jKt-Mf-QZk"/>
+                        <outlet property="subtitle1Label" destination="RJt-8X-LZo" id="xS8-oc-kx2"/>
+                        <outlet property="subtitle2Label" destination="p7f-vx-yue" id="FkF-kK-aoG"/>
+                        <outlet property="titleLabel" destination="0tO-ec-rZq" id="IvZ-RT-8AC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ddp-vV-LPE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1524.6376811594205" y="-156.02678571428569"/>
         </scene>
         <!--Get More Info1VC-->
         <scene sceneID="2k3-85-uPn">
@@ -138,7 +464,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개발자님에 대해 더 알고 싶어요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KU7-aF-kC2" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                <rect key="frame" x="66.5" y="129" width="281.5" height="26"/>
+                                <rect key="frame" x="66.5" y="129" width="281.5" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="281.5" id="NKG-au-CiO"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="uhB-eh-zbz"/>
@@ -153,7 +479,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인 정보는 통계 이외의 다른 용도로 사용되지 않아요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFx-Hd-tki" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                <rect key="frame" x="66" y="166" width="282" height="15.5"/>
+                                <rect key="frame" x="66" y="162" width="282" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="13" id="MPO-nw-wuf"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="282" id="h8V-UH-WPd"/>
@@ -168,16 +494,16 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgDefault" translatesAutoresizingMaskIntoConstraints="NO" id="FCh-Gy-juI">
-                                <rect key="frame" x="114.5" y="216.5" width="185" height="185.5"/>
+                                <rect key="frame" x="114.5" y="211.5" width="185" height="185.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FCh-Gy-juI" secondAttribute="height" multiplier="1:1" id="bA3-aA-GXV"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="LHI-AX-Hmf">
-                                <rect key="frame" x="108" y="431" width="198" height="35"/>
+                                <rect key="frame" x="108" y="421" width="198" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yoon980208@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="j9R-a0-QRY" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="198" height="21"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="198" height="18"/>
                                         <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="18"/>
                                         <color key="textColor" name="skyBlue"/>
                                         <nil key="highlightedColor"/>
@@ -188,7 +514,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FBD-aO-tQ7">
-                                        <rect key="frame" x="0.0" y="34" width="198" height="1"/>
+                                        <rect key="frame" x="0.0" y="31" width="198" height="1"/>
                                         <color key="backgroundColor" red="0.75295144319534302" green="0.75292283296585083" blue="0.75294226408004761" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="KNR-km-9vi"/>
@@ -206,7 +532,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별을 알려주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gra-sp-UqE" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                <rect key="frame" x="148.5" y="525" width="117" height="16"/>
+                                <rect key="frame" x="148.5" y="512" width="117" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="117" id="7F0-yM-Ra6"/>
                                     <constraint firstAttribute="height" constant="16" id="uzz-w0-3DT"/>
@@ -221,7 +547,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NYl-0F-LLd">
-                                <rect key="frame" x="91" y="565.5" width="232" height="64"/>
+                                <rect key="frame" x="91" y="551.5" width="232" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wy-9J-ewu" customClass="RoundBtn" customModule="GitCat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
@@ -281,7 +607,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsr-GM-W1K">
-                                <rect key="frame" x="198" y="813.5" width="18.5" height="14"/>
+                                <rect key="frame" x="198" y="815.5" width="18.5" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="12" id="UhP-em-s4t"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="18.5" id="Xtx-6E-eK6"/>
@@ -291,7 +617,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker alpha="0.0" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="66N-OR-JfD">
-                                <rect key="frame" x="30.5" y="551.5" width="353" height="126"/>
+                                <rect key="frame" x="30.5" y="538" width="353" height="126"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="skyBlue"/>
                                 <constraints>
@@ -356,7 +682,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BzV-05-MAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2953.6231884057975" y="-156.02678571428569"/>
+            <point key="canvasLocation" x="2888" y="502"/>
         </scene>
         <!--Get More Info3VC-->
         <scene sceneID="PSy-zZ-8qJ">
@@ -367,7 +693,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="더 나은 깃캣이 되기 위한, 사용자 현황 파악의 목적입니다 :)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEl-uQ-VzD" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                <rect key="frame" x="54.5" y="166" width="305.5" height="13"/>
+                                <rect key="frame" x="54.5" y="162" width="305.5" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="13" id="H7B-gf-RRy"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="305.5" id="Yw1-dt-Wx1"/>
@@ -382,7 +708,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ZD-nC-ugh">
-                                <rect key="frame" x="59" y="237" width="296" height="44.5"/>
+                                <rect key="frame" x="59" y="231.5" width="296" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6ZD-nC-ugh" secondAttribute="height" multiplier="67:10" id="chh-hb-uia"/>
@@ -396,7 +722,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZ1-75-3Hn">
-                                <rect key="frame" x="59" y="295" width="296" height="44"/>
+                                <rect key="frame" x="59" y="289" width="296" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yZ1-75-3Hn" secondAttribute="height" multiplier="67:10" id="COo-e3-BNI"/>
@@ -410,7 +736,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9UU-tN-922">
-                                <rect key="frame" x="59" y="355.5" width="296" height="44"/>
+                                <rect key="frame" x="59" y="349.5" width="296" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9UU-tN-922" secondAttribute="height" multiplier="67:10" id="6I7-cQ-5qD"/>
@@ -424,7 +750,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2BK-9Z-fY5">
-                                <rect key="frame" x="59" y="415.5" width="296" height="44.5"/>
+                                <rect key="frame" x="59" y="409" width="296" height="44.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2BK-9Z-fY5" secondAttribute="height" multiplier="67:10" id="rf8-lh-ihG"/>
                                 </constraints>
@@ -437,7 +763,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ldt-5D-ons">
-                                <rect key="frame" x="59" y="475.5" width="296" height="44.5"/>
+                                <rect key="frame" x="59" y="469" width="296" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ldt-5D-ons" secondAttribute="height" multiplier="67:10" id="azm-Kd-zHD"/>
                                 </constraints>
@@ -464,7 +790,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3/3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFX-I3-SiH">
-                                <rect key="frame" x="197.5" y="814.5" width="19.5" height="13"/>
+                                <rect key="frame" x="197.5" y="816.5" width="19.5" height="11"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="11" id="4g9-Ym-nNY"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="19.5" id="lrp-Yv-vDV"/>
@@ -474,7 +800,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개발을 하신 지 얼마나 되었나요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZe-L4-nEV" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                <rect key="frame" x="64" y="129" width="286" height="26"/>
+                                <rect key="frame" x="64" y="129" width="286" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="286" id="00V-fM-uKe"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="Avr-Uh-Czi"/>
@@ -534,7 +860,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAz-UY-mb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3709" y="-156"/>
+            <point key="canvasLocation" x="3643" y="502"/>
         </scene>
         <!--Get More Info4VC-->
         <scene sceneID="ZGr-9f-wvm">
@@ -545,7 +871,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="함께 할 고양이를 선택해주세요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbv-2J-cZy" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                <rect key="frame" x="69" y="137" width="276" height="26"/>
+                                <rect key="frame" x="69" y="137" width="276" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="276" id="5WC-Rc-vOm"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="bxo-JW-mdB"/>
@@ -575,7 +901,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="즐거운 커밋을 위해 우리 모두 집사가 되어보아요~" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVu-HR-aYI" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                <rect key="frame" x="54.5" y="175" width="305.5" height="15.5"/>
+                                <rect key="frame" x="54.5" y="171" width="305.5" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="305.5" id="iAJ-49-GnP"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="13" id="sQ2-70-17Q"/>
@@ -590,7 +916,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qUz-D6-rcY">
-                                <rect key="frame" x="55.5" y="249" width="303" height="314"/>
+                                <rect key="frame" x="55.5" y="242.5" width="303" height="314"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVx-gT-OK6">
                                         <rect key="frame" x="0.0" y="22" width="303" height="270.5"/>
@@ -704,7 +1030,7 @@
                                                 <rect key="frame" x="51.5" y="27.5" width="200" height="200"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스페셜 냥이는 준비중입니다!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uq7-Wm-oSU">
-                                                <rect key="frame" x="66" y="227.5" width="171" height="17.5"/>
+                                                <rect key="frame" x="66" y="227.5" width="171" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="171" id="G46-Or-hTW"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="u8v-Vn-GfY"/>
@@ -795,7 +1121,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름을 정해주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6CH-Id-QY0" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                <rect key="frame" x="149.5" y="588" width="115.5" height="19"/>
+                                <rect key="frame" x="148.5" y="581" width="117" height="16"/>
                                 <fontDescription key="fontDescription" name="BBTreeG_B" family="BBTreeG_B" pointSize="16"/>
                                 <color key="textColor" name="brownishGrey"/>
                                 <nil key="highlightedColor"/>
@@ -806,7 +1132,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="(최대 5자)" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="uY6-po-KFK">
-                                <rect key="frame" x="140" y="629.5" width="134" height="16"/>
+                                <rect key="frame" x="140" y="622" width="134" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="uY6-po-KFK" secondAttribute="height" multiplier="67:8" id="VYw-Mb-6Iq"/>
                                 </constraints>
@@ -819,7 +1145,7 @@
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0M4-E3-vgk">
-                                <rect key="frame" x="120" y="650.5" width="174.5" height="1"/>
+                                <rect key="frame" x="120" y="643" width="174.5" height="1"/>
                                 <color key="backgroundColor" red="0.75297731161117554" green="0.75285583734512329" blue="0.75686430931091309" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="krZ-qJ-sf4"/>
@@ -832,7 +1158,7 @@
                                         <rect key="frame" x="92" y="307" width="230" height="282"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숨겨진 고양씨!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CM8-ow-xGm" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="56" y="52" width="118" height="23.5"/>
+                                                <rect key="frame" x="56" y="52" width="118" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="118" id="kFz-Xo-NmX"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="p4R-VV-Xdy"/>
@@ -847,13 +1173,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgCatQuest02" translatesAutoresizingMaskIntoConstraints="NO" id="pEt-AP-i0X">
-                                                <rect key="frame" x="55" y="83" width="120" height="120"/>
+                                                <rect key="frame" x="55" y="79" width="120" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="pEt-AP-i0X" secondAttribute="height" multiplier="1:1" id="Ofe-Cr-kAs"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3명의 고양씨를 졸업시키면 만날 수 있어요." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zB5-hp-UMR" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                <rect key="frame" x="43" y="218" width="144" height="33"/>
+                                                <rect key="frame" x="43" y="214" width="144" height="28"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="8ob-Vp-fJI"/>
@@ -919,7 +1245,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새로운 고양씨!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pY3-hT-tO7" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                            <rect key="frame" x="86" y="36" width="118" height="23.5"/>
+                                                            <rect key="frame" x="86" y="36" width="118" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="118" id="Fmn-0f-LOh"/>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="iiT-5h-c0I"/>
@@ -934,14 +1260,14 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jbX-em-ABA">
-                                                            <rect key="frame" x="27.5" y="66.5" width="119" height="119"/>
+                                                            <rect key="frame" x="27.5" y="63" width="119" height="119"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="jbX-em-ABA" secondAttribute="height" multiplier="1:1" id="L2I-Te-H9P"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="숯처럼 까만 털에숯처럼 까만 털에숯처럼 까만 털에" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5d-v1-eHq" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                                            <rect key="frame" x="164" y="96" width="107.5" height="49"/>
+                                                            <rect key="frame" x="164" y="96" width="107.5" height="42"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="14"/>
                                                             <color key="textColor" name="brownishGrey"/>
@@ -1076,7 +1402,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ncS-II-K1c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4466.666666666667" y="-156.02678571428569"/>
+            <point key="canvasLocation" x="4401" y="502"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qbp-ML-9nu">
@@ -1094,11 +1420,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gEi-NF-ds6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1228.985507246377" y="-156.02678571428569"/>
+            <point key="canvasLocation" x="-175" y="-156"/>
         </scene>
     </scenes>
     <resources>
         <image name="icModulex" width="14" height="14"/>
+        <image name="icRepositorycheck" width="25" height="25"/>
         <image name="imgCatLoading" width="200" height="200"/>
         <image name="imgCatQuest02" width="120" height="120"/>
         <image name="imgDefault" width="180" height="180"/>
