@@ -11,7 +11,11 @@ import UIKit
 class RepositoryAccessVC: UIViewController {
     
     @IBOutlet weak var publicAccessLabel: CustomLabel!
+    @IBOutlet weak var publicCheckBoxImage: UIImageView!
+    
     @IBOutlet weak var privateAccessLabel: CustomLabel!
+    @IBOutlet weak var privateCheckBoxImage: UIImageView!
+    
     @IBOutlet weak var sub1Label: CustomLabel!
     @IBOutlet weak var sub2Label: CustomLabel!
     
@@ -25,6 +29,24 @@ class RepositoryAccessVC: UIViewController {
         self.setFontSize()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        setAlpha()
+        
+        let canAccessPrivateRepo = UserDefaults.standard.bool(forKey: "canAccessPrivate")
+        if canAccessPrivateRepo {
+            self.publicCheckBoxImage.alpha = 1
+        } else {
+            self.privateCheckBoxImage.alpha = 1
+        }
+    }
+    
+    func setAlpha() {
+        self.publicCheckBoxImage.alpha = 0
+        self.privateCheckBoxImage.alpha = 0
+    }
+    
     func setFontSize() {
         self.publicAccessLabel.dynamicFont(fontSize: 17, name: "BBTreeGo_R")
         self.privateAccessLabel.dynamicFont(fontSize: 17, name: "BBTreeGo_R")
@@ -33,10 +55,14 @@ class RepositoryAccessVC: UIViewController {
     }
     
     @IBAction func checkPublicAccessAction(_ sender: Any) {
-        
+        UserDefaults.standard.set(false, forKey: "canAccessPrivate")
+        self.publicCheckBoxImage.alpha = 1
+        self.privateCheckBoxImage.alpha = 0
     }
     
     @IBAction func checkPrivateAccessAction(_ sender: Any) {
-        
+        UserDefaults.standard.set(true, forKey: "canAccessPrivate")
+        self.publicCheckBoxImage.alpha = 0
+        self.privateCheckBoxImage.alpha = 1
     }
 }
