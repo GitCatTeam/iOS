@@ -16,7 +16,7 @@ import SwiftyJSON
 extension APIServie {
     
     func url(_ path: String) -> String {
-        return "https://a.gitcat.app/api" + path
+        return Secrets.BaseURL + path
     }
 }
 
