@@ -20,7 +20,6 @@ extension APIServie {
     }
 }
 
-
 class APIServiceCode {
     static let TEST = 0
     static let SERVER_ERROR = 1

@@ -13,6 +13,8 @@
 		4C1035AC23B9D1430057F0B1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1035AB23B9D1430057F0B1 /* HomeVC.swift */; };
 		4C10BCF62416293D00CDC16D /* LabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C10BCF52416293D00CDC16D /* LabelExtension.swift */; };
 		4C10BCF824162CFC00CDC16D /* ButtonLabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C10BCF724162CFC00CDC16D /* ButtonLabelExtension.swift */; };
+		4C23E2C524A8F1DF00927760 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C23E2C424A8F1DF00927760 /* UserNotifications.framework */; };
+		4C23E2C724A8F1EC00927760 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C23E2C624A8F1EB00927760 /* PushKit.framework */; };
 		4C2DDD0A23EAEEF200FCB36B /* TutorialCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DDD0923EAEEF200FCB36B /* TutorialCVCell.swift */; };
 		4C2DDD0D23EB1FD200FCB36B /* SelectCatCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DDD0C23EB1FD200FCB36B /* SelectCatCVCell.swift */; };
 		4C317176243F512F004F8FA7 /* NewCatCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C317175243F512F004F8FA7 /* NewCatCVCell.swift */; };
@@ -126,6 +128,9 @@
 		4C1035AB23B9D1430057F0B1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		4C10BCF52416293D00CDC16D /* LabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExtension.swift; sourceTree = "<group>"; };
 		4C10BCF724162CFC00CDC16D /* ButtonLabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabelExtension.swift; sourceTree = "<group>"; };
+		4C23E2C424A8F1DF00927760 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		4C23E2C624A8F1EB00927760 /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
+		4C23E2C824A8F1F700927760 /* GitCat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitCat.entitlements; sourceTree = "<group>"; };
 		4C2DDD0923EAEEF200FCB36B /* TutorialCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCVCell.swift; sourceTree = "<group>"; };
 		4C2DDD0C23EB1FD200FCB36B /* SelectCatCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCatCVCell.swift; sourceTree = "<group>"; };
 		4C317175243F512F004F8FA7 /* NewCatCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCatCVCell.swift; sourceTree = "<group>"; };
@@ -244,6 +249,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C23E2C724A8F1EC00927760 /* PushKit.framework in Frameworks */,
+				4C23E2C524A8F1DF00927760 /* UserNotifications.framework in Frameworks */,
 				4C00F1D3823749A4A6E0DE0C /* Pods_GitCat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +261,8 @@
 		2A257A301F546336F1E7EBD7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C23E2C624A8F1EB00927760 /* PushKit.framework */,
+				4C23E2C424A8F1DF00927760 /* UserNotifications.framework */,
 				4C7B5690240951C3001881FE /* Security.framework */,
 				C7FB3E5D46AAE40CBCA4F48F /* Pods_GitCat.framework */,
 			);
@@ -301,6 +310,7 @@
 		4C68D10423B09D3E00A8F813 /* GitCat */ = {
 			isa = PBXGroup;
 			children = (
+				4C23E2C824A8F1F700927760 /* GitCat.entitlements */,
 				4C9E8E9323C1D3F6002BDE02 /* Utils */,
 				4C68D11823B0A32D00A8F813 /* Resources */,
 				4CD5A5D123C2FB5500A8E225 /* Splash */,
@@ -1042,7 +1052,7 @@
 			baseConfigurationReference = 7467F6BE814B831147F82671 /* Pods-GitCat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = GitCat/GitCat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 20200621;
@@ -1066,7 +1076,8 @@
 			baseConfigurationReference = D1814F3437C4FE65FFA6ECC9 /* Pods-GitCat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_ENTITLEMENTS = GitCat/GitCat.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 20200621;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1079,7 +1090,7 @@
 				MARKETING_VERSION = 1.03;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoonyoung.GitCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = dist_appstore;
+				PROVISIONING_PROFILE_SPECIFIER = dist_provision;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
