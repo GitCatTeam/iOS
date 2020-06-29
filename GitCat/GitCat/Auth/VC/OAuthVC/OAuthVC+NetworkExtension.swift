@@ -31,9 +31,10 @@ extension OAuthVC {
                 case .accessDenied: //401
                     self.simpleAlert(title: "", message: "권한이 없습니다.")
                     break
-                case .maintainance: //419
+                case .maintainance:
+                    break //419
                     //FIXME: 서버 점검 관련 Alert창 띄우기
-                    self.simpleAlert(title: <#T##String#>, message: <#T##String#>)
+//                    self.simpleAlert(title: <#T##String#>, message: <#T##String#>)
                 case .networkFail:
                     self.networkErrorAlert()
                     break
