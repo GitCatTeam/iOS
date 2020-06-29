@@ -65,7 +65,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
         if canAccessPrivateRepo {
             OAuthURL = URL(string: "https://a.gitcat.app/api/auth/github")
         } else {
-            OAuthURL = URL(string: "https://a.gitcat.app/api/auth/github")
+            OAuthURL = URL(string: "https://a.gitcat.app/api/auth/github-public")
         }
 
         let request = URLRequest(url: OAuthURL!)
@@ -87,7 +87,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
             //FIXME - 현재 복호화된 데이터가 잘려서 날아와서 온전한 json 형태로 전환 불가
             let str = gsno(messageData)
             let replaceStr = str.replacingOccurrences(of: "h.eu", with: "{\"gi")
-
+            print(replaceStr)
             let dict = convertToDictionary(text: replaceStr)
             
             //복호화한 데이터 저장
@@ -97,6 +97,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
             let token = gsno(values["token"] as? String)
             let isFirst = gbno(values["isFirst"] as? Bool)
             let refreshToken = gsno(values["refreshToken"] as? String)
+            let isMatchScope = gbno(values["isMatchScope"] as? Bool)
             
             print("새로운 토큰:\(token)")
             print("refresh 토큰:\(refreshToken)")
@@ -106,26 +107,57 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
             UserDefaults.standard.set(token, forKey: "token")
             UserDefaults.standard.set(refreshToken, forKey: "refreshToken")
             
-            //FIXME: DeviceToken 전달
-//            postDeviceToken()
+            postDeviceToken()
+            //putDeviceToken()
             
-            if isFirst {
-                UserDefaults.standard.set(false, forKey: "signUp")
-                UserDefaults.standard.set(false, forKey: "tutorialDone")
-                let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "GetMoreInfo3VC")
-                dvc.modalPresentationStyle = .fullScreen
-                self.navigationController?.pushViewController(dvc, animated: true)
+            if !isMatchScope {
+                let cancleModeAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
+                    self.putAccess()
+                }
                 
-            }else{
-                UserDefaults.standard.set(true, forKey: "login")
-                UserDefaults.standard.set(true, forKey: "signUp")
-                UserDefaults.standard.set(true, forKey: "tutorialDone")
-                
-                let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "UserDataInitVC")
-                
-                dvc.modalPresentationStyle = .fullScreen
-                
-                self.present(dvc, animated: true, completion: nil)
+                let confirmModeAction = UIAlertAction(title: "확인", style: .destructive) { (action) in
+                    if isFirst {
+                        UserDefaults.standard.set(false, forKey: "signUp")
+                        UserDefaults.standard.set(false, forKey: "tutorialDone")
+                        
+                        let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "GetMoreInfo3VC")
+                        dvc.modalPresentationStyle = .fullScreen
+                        self.navigationController?.pushViewController(dvc, animated: true)
+                        
+                    }else{
+                        UserDefaults.standard.set(true, forKey: "login")
+                        UserDefaults.standard.set(true, forKey: "signUp")
+                        UserDefaults.standard.set(true, forKey: "tutorialDone")
+                                       
+                        let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "UserDataInitVC")
+                        dvc.modalPresentationStyle = .fullScreen
+                        self.present(dvc, animated: true, completion: nil)
+                    }
+                }
+                       
+                let alert = UIAlertController(title: "접근 권한 변경", message: "이전 설정과 다릅니다. 계속하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(confirmModeAction)
+                alert.addAction(cancleModeAction)
+                       
+                present(alert, animated:true)
+            } else {
+                if isFirst {
+                    UserDefaults.standard.set(false, forKey: "signUp")
+                    UserDefaults.standard.set(false, forKey: "tutorialDone")
+                    let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "GetMoreInfo3VC")
+                    dvc.modalPresentationStyle = .fullScreen
+                    self.navigationController?.pushViewController(dvc, animated: true)
+                    
+                }else{
+                    UserDefaults.standard.set(true, forKey: "login")
+                    UserDefaults.standard.set(true, forKey: "signUp")
+                    UserDefaults.standard.set(true, forKey: "tutorialDone")
+                    
+                    let dvc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "UserDataInitVC")
+                    
+                    dvc.modalPresentationStyle = .fullScreen
+                    self.present(dvc, animated: true, completion: nil)
+                }
             }
         }
     }

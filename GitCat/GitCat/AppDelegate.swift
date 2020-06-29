@@ -86,14 +86,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //APNs 서버에 등록한 경우
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        print("???????")
          //token 값을 가지고 온다.
         let deviceTokenString = deviceToken.map { String(format: "%02x", $0) }.joined()
 
         //console에 token 값을 표시해 준다.
         print("APNs device token: \(deviceTokenString)")
         UserDefaults.standard.set(deviceTokenString, forKey: "deviceToken")
+        print("device token:\(deviceTokenString)")
     }
+    
     //APNs 서버에 등록하지 못한 경우, 오류를 표시.
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
 

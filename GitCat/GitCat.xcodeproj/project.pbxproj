@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C00F1D3823749A4A6E0DE0C /* Pods_GitCat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7FB3E5D46AAE40CBCA4F48F /* Pods_GitCat.framework */; };
+		4C06330D24A9B1B300C1D8CA /* PutAccessibilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06330C24A9B1B300C1D8CA /* PutAccessibilityService.swift */; };
 		4C1035A623B8FEC60057F0B1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C1035A523B8FEC60057F0B1 /* Home.storyboard */; };
 		4C1035A923B9084D0057F0B1 /* 나눔손글씨 배은혜체.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C1035A723B907F50057F0B1 /* 나눔손글씨 배은혜체.ttf */; };
 		4C1035AC23B9D1430057F0B1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1035AB23B9D1430057F0B1 /* HomeVC.swift */; };
@@ -55,6 +56,7 @@
 		4C892FEA24323D7500DC61CA /* DeleteCatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C892FE924323D7500DC61CA /* DeleteCatService.swift */; };
 		4C89DC81246B993F00BBAA84 /* gif_cat_loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4C89DC80246B993F00BBAA84 /* gif_cat_loading.gif */; };
 		4C8C9E6923CB574600E160B1 /* ReportDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8C9E6823CB574600E160B1 /* ReportDetailVC.swift */; };
+		4C98302424AA59DA00F8938A /* PutDeviceTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C98302324AA59DA00F8938A /* PutDeviceTokenService.swift */; };
 		4C99B3792403C46D003DFBA6 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C99B3782403C46D003DFBA6 /* Auth.storyboard */; };
 		4C99B37B2403C4C0003DFBA6 /* InstagramVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */; };
 		4C9E8E8323C05564002BDE02 /* LittleRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9E8E8223C05564002BDE02 /* LittleRoundView.swift */; };
@@ -122,7 +124,21 @@
 		4CE733EF23FCF0D900DB97EB /* ReportDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE733EE23FCF0D900DB97EB /* ReportDetailService.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4C982FFC24AA557900F8938A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4C06330C24A9B1B300C1D8CA /* PutAccessibilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutAccessibilityService.swift; sourceTree = "<group>"; };
 		4C1035A523B8FEC60057F0B1 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		4C1035A723B907F50057F0B1 /* 나눔손글씨 배은혜체.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "나눔손글씨 배은혜체.ttf"; path = "GitCat/Resources/Fonts/나눔손글씨 배은혜체.ttf"; sourceTree = SOURCE_ROOT; };
 		4C1035AB23B9D1430057F0B1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -174,6 +190,8 @@
 		4C892FE924323D7500DC61CA /* DeleteCatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCatService.swift; sourceTree = "<group>"; };
 		4C89DC80246B993F00BBAA84 /* gif_cat_loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif_cat_loading.gif; sourceTree = "<group>"; };
 		4C8C9E6823CB574600E160B1 /* ReportDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailVC.swift; sourceTree = "<group>"; };
+		4C98300324AA559100F8938A /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		4C98302324AA59DA00F8938A /* PutDeviceTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutDeviceTokenService.swift; sourceTree = "<group>"; };
 		4C99B3782403C46D003DFBA6 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramVc.swift; sourceTree = "<group>"; };
 		4C9E8E8223C05564002BDE02 /* LittleRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LittleRoundView.swift; sourceTree = "<group>"; };
@@ -265,8 +283,17 @@
 				4C23E2C424A8F1DF00927760 /* UserNotifications.framework */,
 				4C7B5690240951C3001881FE /* Security.framework */,
 				C7FB3E5D46AAE40CBCA4F48F /* Pods_GitCat.framework */,
+				4C98300324AA559100F8938A /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C06330924A9AA6400C1D8CA /* GetAccessVC */ = {
+			isa = PBXGroup;
+			children = (
+				4C3F8CAB24A60B63009248B6 /* GetAccessVC.swift */,
+			);
+			path = GetAccessVC;
 			sourceTree = "<group>";
 		};
 		4C0BAD8423BB083000A419A8 /* Main */ = {
@@ -494,11 +521,11 @@
 			isa = PBXGroup;
 			children = (
 				4CE10E1C249DE28600453011 /* SignInVC */,
+				4C06330924A9AA6400C1D8CA /* GetAccessVC */,
 				4CE10E25249DE95D00453011 /* OAuthVC */,
 				4CE10E1D249DE2F900453011 /* GetMoreInfo1VC */,
 				4CE10E19249DE10200453011 /* GetMoreInfo3VC */,
 				4CE10E1E249DE31F00453011 /* GetMoreInfo4VC */,
-				4C3F8CAB24A60B63009248B6 /* GetAccessVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -527,6 +554,8 @@
 				4CAB3BD924083C66007A84B6 /* PostDeviceTokenService.swift */,
 				4CAB3BDD24085CF1007A84B6 /* PutAdditionalInfoService.swift */,
 				4CAB3BE12408635B007A84B6 /* PostCatSelectedService.swift */,
+				4C06330C24A9B1B300C1D8CA /* PutAccessibilityService.swift */,
+				4C98302324AA59DA00F8938A /* PutDeviceTokenService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -715,6 +744,7 @@
 				4C68D0FF23B09D3E00A8F813 /* Frameworks */,
 				4C68D10023B09D3E00A8F813 /* Resources */,
 				BBFE7AC01CF46E03C8AD77CA /* [CP] Embed Pods Frameworks */,
+				4C982FFC24AA557900F8938A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -731,7 +761,7 @@
 		4C68D0FA23B09D3E00A8F813 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1020;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "조윤영";
 				TargetAttributes = {
@@ -828,11 +858,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CBA4D55241123DC002CED2F /* PostUserDataService.swift in Sources */,
+				4C98302424AA59DA00F8938A /* PutDeviceTokenService.swift in Sources */,
 				4CCAABCF243D9DFC00CBF56A /* DeleteUserInfo.swift in Sources */,
 				4C7B568F2408DBBB001881FE /* DeleteTokenService.swift in Sources */,
 				4CE733EF23FCF0D900DB97EB /* ReportDetailService.swift in Sources */,
 				4CBA4D4B2411083F002CED2F /* HomeModel.swift in Sources */,
 				4CC07FBF23B330A600851B45 /* LittleRoundBtn.swift in Sources */,
+				4C06330D24A9B1B300C1D8CA /* PutAccessibilityService.swift in Sources */,
 				4C1035AC23B9D1430057F0B1 /* HomeVC.swift in Sources */,
 				4CAB3BDE24085CF1007A84B6 /* PutAdditionalInfoService.swift in Sources */,
 				4CC7D9BE23C64722004576BB /* ReportCVCell.swift in Sources */,
@@ -1051,6 +1083,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7467F6BE814B831147F82671 /* Pods-GitCat.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GitCat/GitCat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1075,6 +1108,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D1814F3437C4FE65FFA6ECC9 /* Pods-GitCat.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GitCat/GitCat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";

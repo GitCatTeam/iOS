@@ -39,7 +39,9 @@ class SignInVC: UIViewController{
             dvc.modalPresentationStyle = .fullScreen
             self.navigationController?.pushViewController(dvc, animated: true)
         } else {
-            
+            let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "OAuthVC")
+            dvc.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(dvc, animated: true)
         }
     }
     

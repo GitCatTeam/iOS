@@ -167,9 +167,9 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="접근할 GitHub Repository의 범위를 설정해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7f-vx-yue" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="접근할 GitHub Repository의 범위를 설정해주세요!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7f-vx-yue" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
                                 <rect key="frame" x="42" y="181" width="330" height="19"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="16"/>
                                 <color key="textColor" name="brownishGrey"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -1404,10 +1404,10 @@
             </objects>
             <point key="canvasLocation" x="4401" y="502"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Auth InitiVC-->
         <scene sceneID="qbp-ML-9nu">
             <objects>
-                <navigationController storyboardIdentifier="AuthInitiVC" automaticallyAdjustsScrollViewInsets="NO" id="R2q-J7-9T4" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AuthInitiVC" automaticallyAdjustsScrollViewInsets="NO" id="R2q-J7-9T4" customClass="AuthInitiVC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vpq-C4-1Gb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

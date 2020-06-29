@@ -1,28 +1,22 @@
 //
-//  DeleteTokenService.swift
+//  PutDeviceTokenService.swift
 //  GitCat
 //
-//  Created by 조윤영 on 28/02/2020.
+//  Created by 조윤영 on 2020/06/30.
 //  Copyright © 2020 조윤영. All rights reserved.
 //
 
-import Foundation
-
-struct DeleteTokenService: DelettableService, APIServie {
+struct PutDeviceTokenService: PuttableService, APIServie {
     
     typealias NetworkData = CommonModel
-    static let shareInstance = DeleteTokenService()
+    static let shareInstance = PutDeviceTokenService()
     
-    //MARK: Delete - https://a.gitcat.app/api/notification/device-token (토큰 삭제 API)
-
-    func deleteToken(completion: @escaping (NetworkResult<Any>) -> Void) {
+    //MARK: PUT - https://a.gitcat.app/api/notification/device-token (DeviceToken 서버로 보내기)
+    func putDeviceToken(params: [String : Any], completion: @escaping (NetworkResult<Any>) -> Void) {
         
-        let deleteURL = self.url("/notification/device-token")
-        
-        let uuid = UserDefaults.standard.string(forKey: "UUID")
-        let params : [String : Any] = ["deviceId" : uuid ?? "" ]
-        
-        delete(deleteURL, params: params) { (result) in
+         let deviceTokenURL = self.url("/notification/device-token")
+               
+        put(deviceTokenURL, params: params) { (result) in
             switch result {
                 
             case .success(let networkResult):
@@ -31,8 +25,14 @@ struct DeleteTokenService: DelettableService, APIServie {
                 case HttpResponseCode.getSuccess.rawValue : //200
                     completion(.networkSuccess(networkResult.resResult))
                     break
+                case HttpResponseCode.badRequest.rawValue : //400
+                    completion(.badRequest)
+                    break
                 case HttpResponseCode.accessDenied.rawValue : //401
                     completion(.accessDenied)
+                    break
+                case HttpResponseCode.conflict.rawValue : //409
+                    completion(.duplicated)
                     break
                 case HttpResponseCode.maintainance.rawValue: //419
                     completion(.maintainance)
@@ -49,9 +49,15 @@ struct DeleteTokenService: DelettableService, APIServie {
             case .error(let resCode):
                 switch resCode {
                     
-                case HttpResponseCode.accessDenied.rawValue.description : //401
+                case HttpResponseCode.badRequest.rawValue.description :
+                    completion(.badRequest)
+                    break
+                case HttpResponseCode.accessDenied.rawValue.description :
                     completion(.accessDenied)
-                    
+                    break
+                case HttpResponseCode.conflict.rawValue.description :
+                    completion(.duplicated)
+                    break
                 default :
                     print("Error: \(resCode)")
                     break
@@ -61,7 +67,6 @@ struct DeleteTokenService: DelettableService, APIServie {
             case .failure(_):
                 completion(.networkFail)
                 print("Fail: Network Fail")
-                break
             case .noContents:
                 break
             }
@@ -69,3 +74,4 @@ struct DeleteTokenService: DelettableService, APIServie {
         
     }
 }
+

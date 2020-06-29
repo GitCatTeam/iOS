@@ -31,6 +31,9 @@ struct CatCollectionService: GettableService, APIServie {
                 case HttpResponseCode.accessDenied.rawValue: //401
                     completion(.accessDenied)
                     break
+                case HttpResponseCode.maintainance.rawValue: //419
+                    completion(.maintainance)
+                    break
                 default:
                     print("SUCCESS: \(networkResult.resCode)")
                     break
@@ -41,9 +44,10 @@ struct CatCollectionService: GettableService, APIServie {
                 switch resCode {
                 case HttpResponseCode.badRequest.rawValue.description:
                     completion(.badRequest)
-                    
+                    break
                 case HttpResponseCode.conflict.rawValue.description:
                     completion(.duplicated)
+                    break
                 default:
                     print("ERROR: \(resCode)")
                     break

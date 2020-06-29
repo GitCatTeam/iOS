@@ -26,13 +26,16 @@ struct DeleteCatService: DelettableService, APIServie {
                     
                 case HttpResponseCode.needData.rawValue : //204
                     completion(.networkSuccess(networkResult.resResult))
-
+                    break
                 case HttpResponseCode.accessDenied.rawValue : //401
                     completion(.accessDenied)
-                    
+                    break
+                case HttpResponseCode.maintainance.rawValue: //419
+                    completion(.maintainance)
+                    break
                 case HttpResponseCode.serverErr.rawValue : //500
                     completion(.serverErr)
-                    
+                    break
                 default :
                     print("Success: \(networkResult.resCode)")
                     break

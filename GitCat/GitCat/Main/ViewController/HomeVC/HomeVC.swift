@@ -336,6 +336,8 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         
     }
     
+    
+    
     @IBAction func showScoreDetailAction(_ sender: Any) {
         UIView.animate(withDuration: 0.3, animations: {
             self.setCardBackgorund()

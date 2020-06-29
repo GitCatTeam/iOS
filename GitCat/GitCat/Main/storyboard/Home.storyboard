@@ -4463,7 +4463,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Q1-Ta-aZJ">
                                 <rect key="frame" x="0.0" y="409" width="414" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GitHub 계정 관리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tng-D3-ocv" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GitHub 계정 관리 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tng-D3-ocv" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
                                         <rect key="frame" x="16" y="10.5" width="121" height="19"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="121" id="gt3-nR-mP7"/>
@@ -4510,7 +4510,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngz-O8-CHI">
                                 <rect key="frame" x="0.0" y="450" width="414" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GitHub Repository 권한 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTh-Nb-P0V" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GitHub Repository 권한 변경" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTh-Nb-P0V" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
                                         <rect key="frame" x="16" y="10.5" width="197" height="19"/>
                                         <fontDescription key="fontDescription" name="BBTreeGo_R" family="BBTreeGo_R" pointSize="16"/>
                                         <color key="textColor" name="brownishGrey"/>
@@ -4521,25 +4521,16 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSettingNext" translatesAutoresizingMaskIntoConstraints="NO" id="jlx-Dv-D9h">
-                                        <rect key="frame" x="393" y="14" width="7" height="12"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="jlx-Dv-D9h" secondAttribute="height" multiplier="7:12" id="5DQ-1Y-BYc"/>
-                                        </constraints>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYE-lT-DpN">
                                         <rect key="frame" x="5" y="2" width="404" height="36"/>
                                         <connections>
-                                            <segue destination="0Wo-f7-Jyu" kind="show" id="r3a-P0-FIS"/>
+                                            <action selector="changeAccessibilityAction:" destination="uht-bm-ajv" eventType="touchUpInside" id="UZ1-sb-0rh"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="HYE-lT-DpN" firstAttribute="height" secondItem="ngz-O8-CHI" secondAttribute="height" multiplier="0.9" id="48B-ND-oVA"/>
-                                    <constraint firstItem="jlx-Dv-D9h" firstAttribute="width" secondItem="ngz-O8-CHI" secondAttribute="width" multiplier="0.0169082" id="Cpx-px-m8e"/>
-                                    <constraint firstAttribute="trailing" secondItem="jlx-Dv-D9h" secondAttribute="trailing" multiplier="414/400" id="KnX-5q-gkX"/>
-                                    <constraint firstItem="jlx-Dv-D9h" firstAttribute="centerY" secondItem="ngz-O8-CHI" secondAttribute="centerY" id="PlW-Qt-PUf"/>
                                     <constraint firstItem="cTh-Nb-P0V" firstAttribute="centerY" secondItem="ngz-O8-CHI" secondAttribute="centerY" id="bR6-Ir-kQH"/>
                                     <constraint firstItem="cTh-Nb-P0V" firstAttribute="leading" secondItem="ngz-O8-CHI" secondAttribute="trailing" multiplier="16/414" id="ghi-kO-Lv6"/>
                                     <constraint firstAttribute="trailing" secondItem="HYE-lT-DpN" secondAttribute="trailing" constant="5" id="gqc-jN-9Pc"/>

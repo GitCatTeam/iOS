@@ -61,17 +61,19 @@ class AuthManageVC: UIViewController {
     @IBAction func LogoutAction(_ sender: Any) {
         let cancelModeAction = UIAlertAction(title: "취소", style: .cancel)
         let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
-            self.postLogout()
             
+            //deviceToken && isPrivate 관련 삭제하기
+//            UserDefaults.standard.removeObject(forKey: "deviceToken")
+            UserDefaults.standard.removeObject(forKey: "canAccessPrivate")
+            self.deleteDeviceToken()
+            self.postLogout()
         }
         
         let alert = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(cancelModeAction)
         alert.addAction(confirmModeAction)
 
-        present(alert, animated:true){
-            //함수가 성공적으로 수행된 후 작동되는 code
-        }
+        present(alert, animated:true)
     }
     
     @IBAction func wthdrawalAction(_ sender: Any) {
@@ -79,6 +81,10 @@ class AuthManageVC: UIViewController {
     }
     
     @IBAction func okWithdrawal(_ sender: Any) {
+        //deviceToken && isPrivate 관련 삭제하기
+//        UserDefaults.standard.removeObject(forKey: "deviceToken")
+        UserDefaults.standard.removeObject(forKey: "canAccessPrivate")
+        self.deleteDeviceToken()
         self.widthdrawl()
     }
     

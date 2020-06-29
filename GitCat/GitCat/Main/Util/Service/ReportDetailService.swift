@@ -28,6 +28,9 @@ struct ReportDetailService: GettableService, APIServie {
                 case HttpResponseCode.accessDenied.rawValue: //401
                     completion(.accessDenied)
                     break
+                case HttpResponseCode.maintainance.rawValue: //419
+                    completion(.maintainance)
+                    break
                 case HttpResponseCode.serverErr.rawValue:
                     completion(.serverErr)
                     break
