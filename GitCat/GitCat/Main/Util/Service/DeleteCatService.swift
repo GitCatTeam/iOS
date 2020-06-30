@@ -31,7 +31,7 @@ struct DeleteCatService: DelettableService, APIServie {
                     completion(.accessDenied)
                     break
                 case HttpResponseCode.maintainance.rawValue: //419
-                    completion(.maintainance)
+                    completion(.maintainance(networkResult.resResult))
                     break
                 case HttpResponseCode.serverErr.rawValue : //500
                     completion(.serverErr)

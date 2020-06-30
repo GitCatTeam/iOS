@@ -36,12 +36,13 @@ class GetAccessVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-
         self.nextBtn.isEnabled = false
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.nextBtn.circleRadius()
+        self.nextBtn.addShadow()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,8 +50,10 @@ class GetAccessVC: UIViewController {
         
         self.canAccessPrivate = true
         self.nextBtn.isEnabled = false
+        setBackBtn(color: UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1))
         setStyle()
         setAlpha()
+        setFontSize()
     }
     
     func setStyle() {

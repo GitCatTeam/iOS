@@ -40,8 +40,6 @@ extension UILabel {
         self.font = UIFont(name: name, size: size * 1.7)
         break
     default:
-        print(height)
-      print("not an iPhone")
       break
     }
   }

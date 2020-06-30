@@ -13,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         //MARK - push alarm 허용 부분 - Notification
@@ -34,14 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
                 UserDefaults.standard.set(true, forKey: "pushAlarm")
                 print("사용자가 push alarm을 허락했습니다.")
-
+                
                 DispatchQueue.main.async {
                     UIApplication.shared.registerForRemoteNotifications()
                 }
             }
         }
-        
-        //MARK - 화면 이동.
         
         //로그인을 했다면,
         if(UserDefaults.standard.bool(forKey: "login")) {
@@ -79,11 +76,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.makeKeyAndVisible()
 
         }
-
         return true
         
     }
-    
     //APNs 서버에 등록한 경우
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
          //token 값을 가지고 온다.

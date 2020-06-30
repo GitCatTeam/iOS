@@ -27,7 +27,14 @@ extension UserDataInitVC {
                     self.endBackgroundTask()
                 }
                 break
-            
+            case .maintainance(let data)://419
+                let maintainDateData = data as? MaintainanceModel
+                if let resResult = maintainDateData {
+                    let startTime = resResult.startTime
+                    let endTime = resResult.endTime
+                    self.simpleAlert(title: "서버 점검", message: "더 나은 서비스를 위해    잠시 서버 점검 중입니다.   \(String(describing: startTime))시 ~ \(String(describing: endTime))시까지 서버")
+                }
+                break
             case .badRequest: //400
                 self.simpleAlert(title: "", message: "다시 시도해주세요")
                 break
@@ -44,7 +51,6 @@ extension UserDataInitVC {
                 self.simpleAlert(title: "오류", message: "다시 시도해주세요")
                 break
             }
-            
             if self.backgroundTask != .invalid {
                 self.endBackgroundTask()
             }

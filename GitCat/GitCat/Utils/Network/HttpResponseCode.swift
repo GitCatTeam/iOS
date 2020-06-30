@@ -46,7 +46,7 @@ enum NetworkResult<T> {
     case duplicated //409
     case wrongInput
     case large //413
-    case maintainance //419
+    case maintainance(T) //419
     case serverErr //500
     case requestFail //501
     case networkFail

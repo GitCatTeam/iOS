@@ -107,8 +107,7 @@ class OAuthVC: UIViewController , WKUIDelegate, WKNavigationDelegate, WKScriptMe
             UserDefaults.standard.set(token, forKey: "token")
             UserDefaults.standard.set(refreshToken, forKey: "refreshToken")
             
-            postDeviceToken()
-            //putDeviceToken()
+            putDeviceToken()
             
             if !isMatchScope {
                 let cancleModeAction = UIAlertAction(title: "취소", style: .cancel) { (action) in

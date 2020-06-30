@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension OAuthVC {
-    func postDeviceToken() {
+    func putDeviceToken() {
         
         let deviceToken = UserDefaults.standard.string(forKey: "deviceToken") ?? ""
         UserDefaults.standard.set(UUID().uuidString, forKey: "UUID")
@@ -20,7 +20,7 @@ extension OAuthVC {
             "deviceId": uuid!
         ]
         
-        PostDeviceTokenService.shareInstance.postDeviceToken(params: params) {(result) in
+        PutDeviceTokenService.shareInstance.putDeviceToken(params: params) {(result) in
                 switch result {
                 case .networkSuccess( _): //201
                     print("Device Token POST SUCCESS")
@@ -29,12 +29,25 @@ extension OAuthVC {
                     self.simpleAlert(title: "", message: "다시 시도해주세요")
                     break
                 case .accessDenied: //401
-                    self.simpleAlert(title: "", message: "권한이 없습니다.")
+                    let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
+                        UserDefaults.standard.set(false, forKey: "login")
+                        let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "AuthInitiVC")
+                        dvc.modalPresentationStyle = .fullScreen
+                                   
+                        self.present(dvc, animated: true, completion: nil)
+                    }
+                    let alert = UIAlertController(title: "로그인 필요", message: "재로그인이 필요합니다", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(confirmModeAction)
+                    self.present(alert, animated:true)
                     break
-                case .maintainance:
-                    break //419
-                    //FIXME: 서버 점검 관련 Alert창 띄우기
-//                    self.simpleAlert(title: <#T##String#>, message: <#T##String#>)
+                case .maintainance(let data)://419
+                    let maintainDateData = data as? MaintainanceModel
+                    if let resResult = maintainDateData {
+                        let startTime = resResult.startTime
+                        let endTime = resResult.endTime
+                        self.simpleAlert(title: "서버 점검", message: "더 나은 서비스를 위해    잠시 서버 점검 중입니다.   \(String(describing: startTime))시 ~ \(String(describing: endTime))시까지 서버")
+                    }
+                    break
                 case .networkFail:
                     self.networkErrorAlert()
                     break

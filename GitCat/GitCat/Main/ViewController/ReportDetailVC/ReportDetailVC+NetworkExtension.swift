@@ -88,35 +88,35 @@ extension ReportDetailVC {
                         self.statusPercentLabel2.text = "\(self.gdno(resResult.data?.languageRatio?.percentArray[1]))%"
                         self.statusPercentLabel3.text = "\(self.gdno(resResult.data?.languageRatio?.percentArray[2]))%"
                         self.statusPercentLabel4.text = "\(self.gdno(resResult.data?.languageRatio?.percentArray[3]))%"
-                        
-        
                     }
                     
                     self.repositories = resResult.data?.contributedRepository?.repoNames as! [String]
                     self.repoCommits = resResult.data?.contributedRepository?.count as! [Double]
 
                     for i in 0..<self.repositories.count {
-
                         if(self.repositories[i].count > 10) {
 
                             let index = self.repositories[i].index(self.repositories[i].startIndex, offsetBy: 10)
-
                             self.repositories[i] = "\(self.repositories[i].substring(to: index)).."
-                            
                             print(self.repositories[i])
                         }
                     }
-
                     self.updateLineChartData()
                     self.updatePieChartData()
                     self.updateBarChartData()
                     
                     self.loadingView.alpha = 0
                     self.loadingBackgroundView.alpha = 0
-                    
                 }
                 break
-                
+            case .maintainance(let data)://419
+                let maintainDateData = data as? MaintainanceModel
+                if let resResult = maintainDateData {
+                    let startTime = resResult.startTime
+                    let endTime = resResult.endTime
+                    self.simpleAlert(title: "서버 점검", message: "더 나은 서비스를 위해    잠시 서버 점검 중입니다.   \(String(describing: startTime))시 ~ \(String(describing: endTime))시까지 서버")
+                }
+                break
             case .accessDenied:
                 let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
                     UserDefaults.standard.set(false, forKey: "login")

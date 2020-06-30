@@ -32,7 +32,7 @@ struct CatCollectionService: GettableService, APIServie {
                     completion(.accessDenied)
                     break
                 case HttpResponseCode.maintainance.rawValue: //419
-                    completion(.maintainance)
+                    completion(.maintainance(networkResult.resResult))
                     break
                 default:
                     print("SUCCESS: \(networkResult.resCode)")

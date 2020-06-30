@@ -52,14 +52,13 @@ extension PuttableService {
                     
                     print(JSON(value))
                     
-                    //성공 모델
-                    if JSON(value) == JSON.null {
-                        
-                        let result : networkResult = (resCode, CommonModel()) as! (resCode: Int, resResult: Self.NetworkData)
-                        completion(.success(result))
-                        break
-                        
-                    }
+//                    if JSON(value) == JSON.null {
+//
+//                        let result : networkResult = (resCode, CommonModel()) as! (resCode: Int, resResult: Self.NetworkData)
+//                        completion(.success(result))
+//                        break
+//
+//                    }
                     
                     let decoder = JSONDecoder()
                     

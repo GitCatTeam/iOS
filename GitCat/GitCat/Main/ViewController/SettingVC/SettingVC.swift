@@ -67,11 +67,10 @@ class SettingVC: UIViewController {
         let cancelModeAction = UIAlertAction(title: "취소", style: .cancel)
         let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
             UserDefaults.standard.removeObject(forKey: "canAccessPrivate")
-            AuthManageVC().deleteDeviceToken()
-            AuthManageVC().postLogout()
+            self.deleteDeviceToken()
         }
         
-        let alert = UIAlertController(title: "권한 설정 변경", message: "권한을 변경하시겠습니까?    변경 시, 재로그인이 필요합니다.", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "권한 설정 변경", message: "권한을 변경하시겠습니까?                          변경 시, 재로그인이 필요합니다.", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(cancelModeAction)
         alert.addAction(confirmModeAction)
 

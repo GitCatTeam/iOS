@@ -66,18 +66,14 @@ extension PosttableService {
                     
                     print(JSON(value))
                     
-                    //성공 모델
-                    if JSON(value) == JSON.null {
-
-                        let result : networkResult = (resCode, CommonModel()) as! (resCode: Int, resResult: Self.NetworkData)
-                        completion(.success(result))
-                        break
-                        
-                    }
+//                    if JSON(value) == JSON.null {
+//                        let result : networkResult = (resCode, CommonModel()) as! (resCode: Int, resResult: Self.NetworkData)
+//                        completion(.success(result))
+//                        break
+//                    }
                     
                     let decoder = JSONDecoder()
                     
-                    //실패 모델
                     do {
                         let resData = try decoder.decode(NetworkData.self, from: value)
                         
@@ -86,9 +82,6 @@ extension PosttableService {
                         completion(.success(result))
                         
                     }catch{ //변수 문제 예외 예상
-                        print("Catch Post")
-                        
-                        
                         completion(.error("\(resCode)"))
                     }
                 }
@@ -99,7 +92,7 @@ extension PosttableService {
                 completion(.failure(err))
                 if let err = res.result.error {
                     if(err._code == NSURLErrorTimedOut) {
-                        print("맞아 타임에러야 이거")
+                        print("타임에러야 발생")
                     }
                 }
                 break

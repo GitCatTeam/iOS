@@ -14,17 +14,7 @@ protocol GettableService {
     associatedtype NetworkData : Codable
     typealias networkResult = (resCode: Int, resResult: NetworkData)
     func gettable(_ model:Codable,_ URL: String, method: HTTPMethod, completion: @escaping (Result<networkResult>) -> Void)
-    
 }
-
-/*
- enum Result<T> {
-     case success(T)
-     case noContents
-     case error(String)
-     case failure(Error)
- }
- */
 
 extension GettableService {
     
@@ -60,8 +50,7 @@ extension GettableService {
                         let resCode = self.gino(res.response?.statusCode)
                         print(resCode)
                         
-                        if JSON(value) == JSON.null {
-                            
+                        if JSON(value) == JSON.null {//204 처리용
                             let result : networkResult = (resCode, model) as! (resCode: Int, resResult: Self.NetworkData)
                             completion(.success(result))
                             break

@@ -31,7 +31,7 @@ class AuthManageVC: UIViewController {
         super.viewDidLoad()
         setBackBtn(color: UIColor.CustomColor.brownishGrey)
         
-        userIdLabel.text = UserDefaults.standard.string(forKey: "userId")
+        self.userIdLabel.text = gsno(UserDefaults.standard.string(forKey: "userId"))
 
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.CustomColor.brownishGrey]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
@@ -63,7 +63,6 @@ class AuthManageVC: UIViewController {
         let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
             
             //deviceToken && isPrivate 관련 삭제하기
-//            UserDefaults.standard.removeObject(forKey: "deviceToken")
             UserDefaults.standard.removeObject(forKey: "canAccessPrivate")
             self.deleteDeviceToken()
             self.postLogout()
@@ -82,7 +81,6 @@ class AuthManageVC: UIViewController {
     
     @IBAction func okWithdrawal(_ sender: Any) {
         //deviceToken && isPrivate 관련 삭제하기
-//        UserDefaults.standard.removeObject(forKey: "deviceToken")
         UserDefaults.standard.removeObject(forKey: "canAccessPrivate")
         self.deleteDeviceToken()
         self.widthdrawl()

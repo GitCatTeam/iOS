@@ -6,8 +6,6 @@
 //  Copyright © 2020 조윤영. All rights reserved.
 //
 
-//https://stackoverflow.com/questions/53729496/swift-codable-encode-structure-with-dynamic-keys
-//FIXME!
 import Foundation
 
 class CommitCountModel: Codable {

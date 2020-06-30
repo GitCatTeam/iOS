@@ -35,7 +35,7 @@ struct PutDeviceTokenService: PuttableService, APIServie {
                     completion(.duplicated)
                     break
                 case HttpResponseCode.maintainance.rawValue: //419
-                    completion(.maintainance)
+                    completion(.maintainance(networkResult.resResult))
                     break
                 case HttpResponseCode.serverErr.rawValue : //500
                     completion(.serverErr)
@@ -45,7 +45,8 @@ struct PutDeviceTokenService: PuttableService, APIServie {
                     break
                 }
                 break
-                
+            case .noContents:
+                break
             case .error(let resCode):
                 switch resCode {
                     
@@ -67,8 +68,6 @@ struct PutDeviceTokenService: PuttableService, APIServie {
             case .failure(_):
                 completion(.networkFail)
                 print("Fail: Network Fail")
-            case .noContents:
-                break
             }
         }
         

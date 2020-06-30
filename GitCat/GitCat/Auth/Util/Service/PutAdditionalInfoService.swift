@@ -39,7 +39,7 @@ struct PutAdditionalInfoService: PuttableService, APIServie {
                     completion(.serverErr)
                     break
                 case HttpResponseCode.maintainance.rawValue: //419
-                    completion(.maintainance)
+                    completion(.maintainance(networkResult.resResult))
                     break
                 default :
                     print("Success: \(networkResult.resCode)")

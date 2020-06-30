@@ -124,11 +124,6 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         if(isTutorialDone == false){
             showTutorial()
         }
-        
-//        if UIDevice.current.model.hasPrefix("iPad") {
-//            self.catChatLabel.alpha = 0
-//            self.catChatBox.alpha = 0
-//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
