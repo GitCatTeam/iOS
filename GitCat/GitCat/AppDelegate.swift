@@ -29,8 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     UserDefaults.standard.set(false, forKey: "pushAlarm")
                     print("사용자가 push alarm을 허락하지 않았습니다.")
                     return
-                }
-
+                    }
                 UserDefaults.standard.set(true, forKey: "pushAlarm")
                 print("사용자가 push alarm을 허락했습니다.")
                 
@@ -92,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //APNs 서버에 등록하지 못한 경우, 오류를 표시.
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-
+        print("APN 서버에 등록하지 못했습니다!")
     }
     
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?)

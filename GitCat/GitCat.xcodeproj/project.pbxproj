@@ -26,6 +26,8 @@
 		4C3F8CAA24A5DEDB009248B6 /* RepositoryAccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8CA924A5DEDB009248B6 /* RepositoryAccessVC.swift */; };
 		4C3F8CAC24A60B63009248B6 /* GetAccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8CAB24A60B63009248B6 /* GetAccessVC.swift */; };
 		4C4A923223BA2476002E5F35 /* MidRepoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A923123BA2476002E5F35 /* MidRepoVC.swift */; };
+		4C56C24124ADD16F003FB894 /* AlarmVC+NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C56C24024ADD16F003FB894 /* AlarmVC+NetworkExtension.swift */; };
+		4C56C24524ADD5A8003FB894 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C56C24424ADD5A8003FB894 /* AlarmVC.swift */; };
 		4C60E75D24383DE6007495DB /* PostLogoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C60E75C24383DE6007495DB /* PostLogoutService.swift */; };
 		4C60E75F24385B70007495DB /* CustomDashedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C60E75E24385B70007495DB /* CustomDashedView.swift */; };
 		4C6284112453125C00E07552 /* gif_imac_cat.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4C6284102453125C00E07552 /* gif_imac_cat.gif */; };
@@ -40,7 +42,6 @@
 		4C7B569524095625001881FE /* KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B569424095625001881FE /* KeyCode.swift */; };
 		4C7C0E0B23D489DA00669B38 /* CommitDetailTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E0A23D489DA00669B38 /* CommitDetailTVCell.swift */; };
 		4C7C0E1123D4A11400669B38 /* CustomHeaderTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E1023D4A11400669B38 /* CustomHeaderTVCell.swift */; };
-		4C7C0E1323D4AB0100669B38 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E1223D4AB0100669B38 /* AlarmVC.swift */; };
 		4C7C0E1523D5650D00669B38 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E1423D5650D00669B38 /* MainTabBarVC.swift */; };
 		4C7C0E1723D587CF00669B38 /* CatCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E1623D587CF00669B38 /* CatCollectionVC.swift */; };
 		4C7C0E1923D59D2B00669B38 /* CatCollectionCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E1823D59D2B00669B38 /* CatCollectionCVCell.swift */; };
@@ -157,6 +158,8 @@
 		4C3F8CA924A5DEDB009248B6 /* RepositoryAccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAccessVC.swift; sourceTree = "<group>"; };
 		4C3F8CAB24A60B63009248B6 /* GetAccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccessVC.swift; sourceTree = "<group>"; };
 		4C4A923123BA2476002E5F35 /* MidRepoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidRepoVC.swift; sourceTree = "<group>"; };
+		4C56C24024ADD16F003FB894 /* AlarmVC+NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlarmVC+NetworkExtension.swift"; sourceTree = "<group>"; };
+		4C56C24424ADD5A8003FB894 /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
 		4C60E75C24383DE6007495DB /* PostLogoutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLogoutService.swift; sourceTree = "<group>"; };
 		4C60E75E24385B70007495DB /* CustomDashedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDashedView.swift; sourceTree = "<group>"; };
 		4C6284102453125C00E07552 /* gif_imac_cat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif_imac_cat.gif; sourceTree = "<group>"; };
@@ -174,7 +177,6 @@
 		4C7B569424095625001881FE /* KeyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCode.swift; sourceTree = "<group>"; };
 		4C7C0E0A23D489DA00669B38 /* CommitDetailTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitDetailTVCell.swift; sourceTree = "<group>"; };
 		4C7C0E1023D4A11400669B38 /* CustomHeaderTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderTVCell.swift; sourceTree = "<group>"; };
-		4C7C0E1223D4AB0100669B38 /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
 		4C7C0E1423D5650D00669B38 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
 		4C7C0E1623D587CF00669B38 /* CatCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCollectionVC.swift; sourceTree = "<group>"; };
 		4C7C0E1823D59D2B00669B38 /* CatCollectionCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCollectionCVCell.swift; sourceTree = "<group>"; };
@@ -314,6 +316,15 @@
 				4C317175243F512F004F8FA7 /* NewCatCVCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		4C56C23F24ADD149003FB894 /* AlarmVC */ = {
+			isa = PBXGroup;
+			children = (
+				4C56C24024ADD16F003FB894 /* AlarmVC+NetworkExtension.swift */,
+				4C56C24424ADD5A8003FB894 /* AlarmVC.swift */,
+			);
+			path = AlarmVC;
 			sourceTree = "<group>";
 		};
 		4C68D0F923B09D3E00A8F813 = {
@@ -580,7 +591,7 @@
 				4CE10E50249E1FD000453011 /* AuthManageVC */,
 				4CE10E53249E208700453011 /* DeveloperInfoVC */,
 				4CE10E56249E220900453011 /* UserDataInitVC */,
-				4C7C0E1223D4AB0100669B38 /* AlarmVC.swift */,
+				4C56C23F24ADD149003FB894 /* AlarmVC */,
 				4C7C0E1423D5650D00669B38 /* MainTabBarVC.swift */,
 				4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */,
 				4C3F8CA924A5DEDB009248B6 /* RepositoryAccessVC.swift */,
@@ -898,8 +909,8 @@
 				4C60E75F24385B70007495DB /* CustomDashedView.swift in Sources */,
 				4C7C0E1523D5650D00669B38 /* MainTabBarVC.swift in Sources */,
 				4CC07FBB23B3238C00851B45 /* GetMoreInfo3VC.swift in Sources */,
+				4C56C24124ADD16F003FB894 /* AlarmVC+NetworkExtension.swift in Sources */,
 				4CAB3BCA2407EA71007A84B6 /* CatListModel.swift in Sources */,
-				4C7C0E1323D4AB0100669B38 /* AlarmVC.swift in Sources */,
 				4C3B8E5B2402449C008735DE /* AuthManageVC.swift in Sources */,
 				4C8C9E6923CB574600E160B1 /* ReportDetailVC.swift in Sources */,
 				4CE10E55249E20A000453011 /* DeveloperInfoVC+DynamicFont.swift in Sources */,
@@ -926,6 +937,7 @@
 				4C68D13523B0D02400A8F813 /* SignInVC.swift in Sources */,
 				4C3171802440D5AE004F8FA7 /* RefreshGettableService.swift in Sources */,
 				4CE10E3E249E157D00453011 /* ReportVC+CollectionViewExtension.swift in Sources */,
+				4C56C24524ADD5A8003FB894 /* AlarmVC.swift in Sources */,
 				4C60E75D24383DE6007495DB /* PostLogoutService.swift in Sources */,
 				4CE10E37249E0FC900453011 /* MidRepoVC+NetworkExtension.swift in Sources */,
 				4C3F8CAC24A60B63009248B6 /* GetAccessVC.swift in Sources */,

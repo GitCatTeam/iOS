@@ -9,6 +9,6 @@
 import Foundation
 
 class MaintainanceModel: Codable {
-    var startTime:Int?
-    var endTime: Int?
+    var startTime:String?
+    var endTime: String?
 }

@@ -64,8 +64,7 @@ class AuthManageVC: UIViewController {
             
             //deviceToken && isPrivate 관련 삭제하기
             UserDefaults.standard.removeObject(forKey: "canAccessPrivate")
-            self.deleteDeviceToken()
-            self.postLogout()
+            self.deleteDeviceTokenWhenLogout()
         }
         
         let alert = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
@@ -82,8 +81,7 @@ class AuthManageVC: UIViewController {
     @IBAction func okWithdrawal(_ sender: Any) {
         //deviceToken && isPrivate 관련 삭제하기
         UserDefaults.standard.removeObject(forKey: "canAccessPrivate")
-        self.deleteDeviceToken()
-        self.widthdrawl()
+        self.deleteDeviceTokenWhenWidthdrawl()
     }
     
     @IBAction func cancelWithdraw(_ sender: Any) {

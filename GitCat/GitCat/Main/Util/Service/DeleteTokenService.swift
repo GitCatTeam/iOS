@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct DeleteTokenService: DelettableService, APIServie {
     
@@ -19,7 +20,8 @@ struct DeleteTokenService: DelettableService, APIServie {
         
         let deleteURL = self.url("/notification/device-token")
         
-        let uuid = UserDefaults.standard.string(forKey: "UUID")
+        let uuid = UIDevice.current.identifierForVendor?.uuidString
+        print(uuid)
         let params : [String : Any] = ["deviceId" : uuid ?? "" ]
         
         delete(deleteURL, params: params) { (result) in
