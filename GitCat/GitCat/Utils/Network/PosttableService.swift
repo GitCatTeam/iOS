@@ -10,8 +10,6 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-
-
 protocol PosttableService {
     
     associatedtype NetworkData : Codable
@@ -25,7 +23,6 @@ private var alamoFireManager: SessionManager? = {
     configuration.timeoutIntervalForResource = 180000
     let alamoFireManager = Alamofire.SessionManager(configuration: configuration)
     return alamoFireManager
-
 }()
 
 extension PosttableService {
@@ -35,8 +32,6 @@ extension PosttableService {
     }
     
     func post(_ URL: String, params: [String : Any], completion: @escaping (Result<networkResult>) -> Void){
-
-        
         
         let postHeaders: HTTPHeaders = [
             "Authorization":UserDefaults.standard.string(forKey: "token")!,
@@ -48,7 +43,7 @@ extension PosttableService {
             return
         }
         
-        print("URL은 \(encodedUrl)")
+        print("URL: \(encodedUrl)")
         
         
         alamoFireManager?.request(encodedUrl, method: .post, parameters: params, encoding: JSONEncoding.default, headers: postHeaders).responseData(){
@@ -56,21 +51,13 @@ extension PosttableService {
             
             switch res.result {
             case .success:
-
                 print("Networking Post Here")
-                
                 
                 if let value = res.result.value {
                     let resCode = self.gino(res.response?.statusCode)
                     print(resCode)
                     
                     print(JSON(value))
-                    
-//                    if JSON(value) == JSON.null {
-//                        let result : networkResult = (resCode, CommonModel()) as! (resCode: Int, resResult: Self.NetworkData)
-//                        completion(.success(result))
-//                        break
-//                    }
                     
                     let decoder = JSONDecoder()
                     
@@ -98,8 +85,5 @@ extension PosttableService {
                 break
             }
         }
-        
-        
     }
 }
-

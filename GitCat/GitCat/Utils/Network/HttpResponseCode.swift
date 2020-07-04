@@ -22,10 +22,11 @@ enum HttpResponseCode: Int{
     case nullValue = 404
     case conflict = 409
     case large = 413
-    case maintainance = 419
+    
     case serverErr = 500
     case notImplemented = 501
     case nginXErr = 502
+    case maintainance = 503
 }
 
 //Access API status
@@ -46,8 +47,8 @@ enum NetworkResult<T> {
     case duplicated //409
     case wrongInput
     case large //413
-    case maintainance(T) //419
     case serverErr //500
     case requestFail //501
+    case maintainance //503
     case networkFail
 }

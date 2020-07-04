@@ -89,13 +89,8 @@ extension HomeVC {
                 alert.addAction(confirmModeAction)
                 self.present(alert, animated:true)
                 break
-            case .maintainance(let data)://419
-                let maintainDateData = data as? MaintainanceModel
-                if let resResult = maintainDateData {
-                    let startTime = resResult.startTime
-                    let endTime = resResult.endTime
-                    self.simpleAlert(title: "서버 점검", message: "더 나은 서비스를 위해    잠시 서버 점검 중입니다.   \(String(describing: startTime))시 ~ \(String(describing: endTime))시까지 서버")
-                }
+            case .maintainance:
+               self.simpleAlert(title: "서버 점검", message: "더 나은 서비스를 위해                                          잠시 서버 점검 중입니다.")
                 break
             case .dataNeeded:
                 self.showSelectNewCat()

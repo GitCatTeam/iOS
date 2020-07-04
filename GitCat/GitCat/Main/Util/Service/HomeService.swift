@@ -29,14 +29,8 @@ struct HomeService: GettableService, APIServie {
                 case HttpResponseCode.getSuccess.rawValue: //200
                     completion(.networkSuccess(networkResult.resResult))
                     break
-                case HttpResponseCode.accessDenied.rawValue: //401
-                    completion(.accessDenied)
-                    break
-                case HttpResponseCode.maintainance.rawValue: //419
-                    completion(.maintainance(networkResult.resResult))
-                    break
-                case HttpResponseCode.serverErr.rawValue:
-                    completion(.serverErr)
+                case HttpResponseCode.maintainance.rawValue: //503
+                    completion(.maintainance)
                     break
                 case HttpResponseCode.needData.rawValue:
                     completion(.dataNeeded)
@@ -49,9 +43,13 @@ struct HomeService: GettableService, APIServie {
                 switch resCode {
                 case HttpResponseCode.badRequest.rawValue.description:
                     completion(.badRequest)
-                    
+                    break
                 case HttpResponseCode.conflict.rawValue.description:
                     completion(.duplicated)
+                    break
+                case HttpResponseCode.serverErr.rawValue.description:
+                    completion(.serverErr)
+                    break
                 default:
                     print("ERROR: \(resCode)")
                     break

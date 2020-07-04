@@ -25,20 +25,8 @@ struct PutAccessibilityService: PuttableService, APIServie {
                 case HttpResponseCode.getSuccess.rawValue : //200
                     completion(.networkSuccess(networkResult.resResult))
                     break
-                case HttpResponseCode.badRequest.rawValue : //400
-                    completion(.badRequest)
-                    break
-                case HttpResponseCode.accessDenied.rawValue : //401
-                    completion(.accessDenied)
-                    break
-                case HttpResponseCode.conflict.rawValue : //409
-                    completion(.duplicated)
-                    break
-                case HttpResponseCode.maintainance.rawValue: //419
-                    completion(.maintainance(networkResult.resResult))
-                    break
-                case HttpResponseCode.serverErr.rawValue : //500
-                    completion(.serverErr)
+                case HttpResponseCode.maintainance.rawValue: //503
+                    completion(.maintainance)
                     break
                 default :
                     print("Success: \(networkResult.resCode)")
@@ -48,15 +36,17 @@ struct PutAccessibilityService: PuttableService, APIServie {
                 
             case .error(let resCode):
                 switch resCode {
-                    
-                case HttpResponseCode.badRequest.rawValue.description :
+                case HttpResponseCode.badRequest.rawValue.description : //400
                     completion(.badRequest)
                     break
-                case HttpResponseCode.accessDenied.rawValue.description :
+                case HttpResponseCode.accessDenied.rawValue.description : //401
                     completion(.accessDenied)
                     break
                 case HttpResponseCode.conflict.rawValue.description : //409
                     completion(.duplicated)
+                    break
+                case HttpResponseCode.maintainance.rawValue.description: //419
+                    completion(.maintainance)
                     break
                 default :
                     print("Error: \(resCode)")

@@ -49,16 +49,13 @@ extension RefreshGettableService {
                         let resCode = self.gino(res.response?.statusCode)
                         print(resCode)
                         
-
                         //성공 모델
                         if JSON(value) == JSON.null {
 
                             let result : networkResult = (resCode, model) as! (resCode: Int, resResult: Self.NetworkData)
                             completion(.success(result))
                             break
-                            
                         }
-                        
                         
                         let decoder = JSONDecoder()
                         

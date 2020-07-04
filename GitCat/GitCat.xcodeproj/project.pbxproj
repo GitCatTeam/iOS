@@ -37,7 +37,6 @@
 		4C68D10D23B09D4000A8F813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C68D10C23B09D4000A8F813 /* Assets.xcassets */; };
 		4C68D12C23B0AAB100A8F813 /* BasicExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68D12B23B0AAB100A8F813 /* BasicExtension.swift */; };
 		4C68D13523B0D02400A8F813 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68D13423B0D02400A8F813 /* SignInVC.swift */; };
-		4C73E5AE24AB03C60010A518 /* MaintainanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C73E5AD24AB03C60010A518 /* MaintainanceModel.swift */; };
 		4C7B568F2408DBBB001881FE /* DeleteTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B568E2408DBBB001881FE /* DeleteTokenService.swift */; };
 		4C7B569524095625001881FE /* KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B569424095625001881FE /* KeyCode.swift */; };
 		4C7C0E0B23D489DA00669B38 /* CommitDetailTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E0A23D489DA00669B38 /* CommitDetailTVCell.swift */; };
@@ -171,7 +170,6 @@
 		4C68D11123B09D4000A8F813 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C68D12B23B0AAB100A8F813 /* BasicExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicExtension.swift; sourceTree = "<group>"; };
 		4C68D13423B0D02400A8F813 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
-		4C73E5AD24AB03C60010A518 /* MaintainanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintainanceModel.swift; sourceTree = "<group>"; };
 		4C7B568E2408DBBB001881FE /* DeleteTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTokenService.swift; sourceTree = "<group>"; };
 		4C7B5690240951C3001881FE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		4C7B569424095625001881FE /* KeyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCode.swift; sourceTree = "<group>"; };
@@ -479,7 +477,6 @@
 				4CAB3BCD2407ECDE007A84B6 /* PosttableService.swift */,
 				4CAB3BCF2407F170007A84B6 /* DelettableService.swift */,
 				4CAB3BD524082883007A84B6 /* CommonModel.swift */,
-				4C73E5AD24AB03C60010A518 /* MaintainanceModel.swift */,
 				4CAB3BDB24084737007A84B6 /* PuttableService.swift */,
 				4CB9BC14242CF4DB00F143A1 /* DefaultData.swift */,
 				4C7B569424095625001881FE /* KeyCode.swift */,
@@ -870,7 +867,6 @@
 			files = (
 				4CBA4D55241123DC002CED2F /* PostUserDataService.swift in Sources */,
 				4C98302424AA59DA00F8938A /* PutDeviceTokenService.swift in Sources */,
-				4C73E5AE24AB03C60010A518 /* MaintainanceModel.swift in Sources */,
 				4CCAABCF243D9DFC00CBF56A /* DeleteUserInfo.swift in Sources */,
 				4C7B568F2408DBBB001881FE /* DeleteTokenService.swift in Sources */,
 				4CE733EF23FCF0D900DB97EB /* ReportDetailService.swift in Sources */,
@@ -1110,7 +1106,7 @@
 				MARKETING_VERSION = 1.03;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoonyoung.GitCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = dev_provision;
+				PROVISIONING_PROFILE_SPECIFIER = development_pro;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1136,7 +1132,7 @@
 				MARKETING_VERSION = 1.03;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoonyoung.GitCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = dist_provision;
+				PROVISIONING_PROFILE_SPECIFIER = distribution_pro;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

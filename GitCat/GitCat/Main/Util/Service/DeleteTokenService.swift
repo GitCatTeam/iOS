@@ -21,7 +21,6 @@ struct DeleteTokenService: DelettableService, APIServie {
         let deleteURL = self.url("/notification/device-token")
         
         let uuid = UIDevice.current.identifierForVendor?.uuidString
-        print(uuid)
         let params : [String : Any] = ["deviceId" : uuid ?? "" ]
         
         delete(deleteURL, params: params) { (result) in
@@ -33,14 +32,8 @@ struct DeleteTokenService: DelettableService, APIServie {
                 case HttpResponseCode.getSuccess.rawValue : //200
                     completion(.networkSuccess(networkResult.resResult))
                     break
-                case HttpResponseCode.accessDenied.rawValue : //401
-                    completion(.accessDenied)
-                    break
-                case HttpResponseCode.maintainance.rawValue: //419
-                    completion(.maintainance(networkResult.resResult))
-                    break
-                case HttpResponseCode.serverErr.rawValue : //500
-                    completion(.serverErr)
+                case HttpResponseCode.maintainance.rawValue: //503
+                    completion(.maintainance)
                     break
                 default :
                     print("Success: \(networkResult.resCode)")
@@ -53,7 +46,10 @@ struct DeleteTokenService: DelettableService, APIServie {
                     
                 case HttpResponseCode.accessDenied.rawValue.description : //401
                     completion(.accessDenied)
-                    
+                    break
+                case HttpResponseCode.serverErr.rawValue.description : //500
+                    completion(.serverErr)
+                    break
                 default :
                     print("Error: \(resCode)")
                     break

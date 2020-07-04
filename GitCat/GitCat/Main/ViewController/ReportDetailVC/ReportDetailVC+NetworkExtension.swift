@@ -28,7 +28,7 @@ extension ReportDetailVC {
       
                     //상위 수치 3개
                     self.averageCount.text = resResult.data?.avgCount
-                    self.compareCount.text = "+\(self.gsno(resResult.data?.comparedLastMonth))"
+                    self.compareCount.text = "\(self.gsno(resResult.data?.comparedLastMonth))"
                     
                     //커밋수 통계 - Line Chart
                     self.days = resResult.data?.dailyCount?.dayArray  as! [String]
@@ -109,13 +109,8 @@ extension ReportDetailVC {
                     self.loadingBackgroundView.alpha = 0
                 }
                 break
-            case .maintainance(let data)://419
-                let maintainDateData = data as? MaintainanceModel
-                if let resResult = maintainDateData {
-                    let startTime = resResult.startTime
-                    let endTime = resResult.endTime
-                    self.simpleAlert(title: "서버 점검", message: "더 나은 서비스를 위해    잠시 서버 점검 중입니다.   \(String(describing: startTime))시 ~ \(String(describing: endTime))시까지 서버")
-                }
+            case .maintainance:
+                self.simpleAlert(title: "서버 점검", message: "더 나은 서비스를 위해                                          잠시 서버 점검 중입니다.")
                 break
             case .accessDenied:
                 let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
