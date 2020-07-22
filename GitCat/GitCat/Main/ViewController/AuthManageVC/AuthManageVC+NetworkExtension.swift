@@ -83,6 +83,7 @@ extension AuthManageVC {
         DeleteTokenService.shareInstance.deleteToken { (result) in
             switch result {
             case .networkSuccess(_):
+                print("hi")
                 self.postLogout()
                 break
             case .dataNeeded:

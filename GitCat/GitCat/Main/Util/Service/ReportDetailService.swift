@@ -25,6 +25,15 @@ struct ReportDetailService: GettableService, APIServie {
                 case HttpResponseCode.getSuccess.rawValue:
                     completion(.networkSuccess(networkResult.resResult))
                     break
+                case HttpResponseCode.badRequest.rawValue:
+                    completion(.badRequest)
+                    break
+                case HttpResponseCode.accessDenied.rawValue : //401
+                    completion(.accessDenied)
+                    break
+                case HttpResponseCode.conflict.rawValue:
+                    completion(.duplicated)
+                    break
                 case HttpResponseCode.maintainance.rawValue: //503
                     completion(.maintainance)
                     break
@@ -36,13 +45,10 @@ struct ReportDetailService: GettableService, APIServie {
                 
             case .error(let resCode):
                 switch resCode {
-                case HttpResponseCode.badRequest.rawValue.description:
-                    completion(.badRequest)
+                case HttpResponseCode.accessDenied.rawValue.description:
+                    completion(.accessDenied)
                     break
-                case HttpResponseCode.conflict.rawValue.description:
-                    completion(.duplicated)
-                    break
-                case HttpResponseCode.serverErr.rawValue.description:
+                case HttpResponseCode.serverErr.rawValue.description : //500
                     completion(.serverErr)
                     break
                 default:

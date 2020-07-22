@@ -37,7 +37,6 @@ class AuthManageVC: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         
         self.setAlpha()
-        self.setFontSize()
     }
     
     override func viewDidLayoutSubviews() {
@@ -46,14 +45,7 @@ class AuthManageVC: UIViewController {
         withdrawCardView.roundRadius(radius: 10)
         withdrawCardView.customShadow(width: 1, height: 2, radius: 11, opacity: 0.16)
     }
-    
-    func setFontSize() {
-        self.userIdDescLabel.dynamicFont(fontSize: 16, name: "BBTreeGo_R")
-        self.userIdLabel.dynamicFont(fontSize: 16, name: "BBTreeG_L")
-        self.logoutLabel.dynamicFont(fontSize: 16, name: "BBTreeGo_R")
-        self.resignLabel.dynamicFont(fontSize: 16, name: "BBTreeGo_R")
-    }
-    
+
     func setAlpha() {
         backgroundView.alpha = 0;
     }

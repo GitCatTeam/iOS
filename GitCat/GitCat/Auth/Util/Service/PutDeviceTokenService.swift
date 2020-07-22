@@ -41,7 +41,7 @@ struct PutDeviceTokenService: PuttableService, APIServie {
                 case HttpResponseCode.badRequest.rawValue.description :
                     completion(.badRequest)
                     break
-                case HttpResponseCode.accessDenied.rawValue.description :
+                case HttpResponseCode.accessDenied.rawValue.description : //401
                     completion(.accessDenied)
                     break
                 case HttpResponseCode.conflict.rawValue.description :

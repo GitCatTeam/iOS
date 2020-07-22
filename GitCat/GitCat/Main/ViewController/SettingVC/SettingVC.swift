@@ -28,7 +28,6 @@ class SettingVC: UIViewController {
         
         self.deleteNavigationUnderbar()
         self.setFontSize()
-        
         let imageURL = UserDefaults.standard.string(forKey: "userImage")
         
         userProfileImage.setImage(imageURL, defaultImgPath: "imgDefault")
@@ -49,14 +48,6 @@ class SettingVC: UIViewController {
 
     func setFontSize() {
         userIdLabel.dynamicFont(fontSize: 20, name: "BBTreeG_B")
-        authManageLAbel.dynamicFont(fontSize: 16, name: "BBTreeGo_R")
-        accessManageLabel.dynamicFont(fontSize: 16, name: "BBTreeGo_R")
-        alaramManageLabel.dynamicFont(fontSize: 16, name: "BBTreeGo_R")
-        catInitialBtn.titleLabel?.dynamicFont(fontSize: 16, name: "BBTreeGo_R")
-        settingLabel.dynamicFont(fontSize: 12, name: "BBTreeGo_R")
-        etcLabel.dynamicFont(fontSize: 12, name: "BBTreeGo_R")
-        introduceDeveloperLabel.dynamicFont(fontSize: 16, name: "BBTreeGo_R")
-        instagramLabel.dynamicFont(fontSize: 16, name: "BBTreeGo_R")
     }
     
     @IBAction func goBackAction(_ sender: Any) {

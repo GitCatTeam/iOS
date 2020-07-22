@@ -13,6 +13,7 @@ extension HomeVC {
         registerBackgroundTask()
         HomeService.sharedInstance.getHomeData { (result) in
             switch result {
+                
             case .networkSuccess(let data) :
                 let detailData = data as? HomeModel
                     
@@ -22,14 +23,16 @@ extension HomeVC {
                     self.todayScoreLabel.text = "\(resResult.data?.todayScore ?? 0)"
                     self.catNameLabel.text = resResult.data?.catName
                     
-
                     let url = URL(string: resResult.data?.catImg ?? "")
-
                     self.catImageView.kf.setImage(with: url)
-                    
+
                     if((resResult.data?.catImg?.contains("first"))!) {
-                        self.chatBoxLeadingConstraint.constant = 20
-                    }else{
+                         if UIDevice.current.model.hasPrefix("iPad") {
+                            self.chatBoxLeadingConstraint.constant = 100
+                         } else {
+                            self.chatBoxLeadingConstraint.constant = 60
+                        }
+                    } else {
                         self.chatBoxLeadingConstraint.constant = 0
                     }
 
@@ -171,6 +174,5 @@ extension HomeVC {
         print("Background task ended.")
         UIApplication.shared.endBackgroundTask(backgroundTask)
         backgroundTask = .invalid
-        
     }
 }

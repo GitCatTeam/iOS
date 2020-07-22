@@ -28,6 +28,9 @@ struct PostCatSelectedService: PosttableService, APIServie {
                 case HttpResponseCode.postSuccess.rawValue : //201
                     completion(.networkSuccess(networkResult.resResult))
                     break
+                case HttpResponseCode.accessDenied.rawValue : //401
+                    completion(.accessDenied)
+                    break
                 case HttpResponseCode.maintainance.rawValue: //503
                     completion(.maintainance)
                     break

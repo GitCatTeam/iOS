@@ -11,6 +11,7 @@ import UIKit
 import Alamofire
 
 extension UserDataInitVC {
+    
     func postUserData() {
         registerBackgroundTask()
 
@@ -91,6 +92,7 @@ extension UserDataInitVC {
                 break
             
             case .accessDenied:
+                print("hi")
                 let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
                     UserDefaults.standard.set(false, forKey: "login")
                     let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "AuthInitiVC")

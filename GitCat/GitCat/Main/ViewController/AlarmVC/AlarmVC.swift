@@ -17,7 +17,6 @@ class AlarmVC: UIViewController {
             
             self.navigationItem.title = "알림 설정"
 
-            setFontSize()
             setBackBtn(color: UIColor.CustomColor.brownishGrey)
             
             let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.CustomColor.brownishGrey]
@@ -41,10 +40,6 @@ class AlarmVC: UIViewController {
                 deleteDeviceToken()
             }
         }
-    
-    func setFontSize() {
-        self.switchLabel.dynamicFont(fontSize: 16, name: "BBTreeGo_R")
-    }
         
     //    @IBAction func selectAlarmSystemAction(_ sender: Any) {
     //        let bellModeAction = UIAlertAction(title: "벨소리", style: .default) { (action) in

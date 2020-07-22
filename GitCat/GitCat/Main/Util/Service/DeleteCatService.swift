@@ -27,6 +27,9 @@ struct DeleteCatService: DelettableService, APIServie {
                 case HttpResponseCode.needData.rawValue : //204
                     completion(.networkSuccess(networkResult.resResult))
                     break
+                case HttpResponseCode.accessDenied.rawValue : //401
+                    completion(.accessDenied)
+                    break
                 case HttpResponseCode.maintainance.rawValue: //503
                     completion(.maintainance)
                     break
@@ -38,8 +41,7 @@ struct DeleteCatService: DelettableService, APIServie {
                 
             case .error(let resCode):
                 switch resCode {
-                    
-                case HttpResponseCode.accessDenied.rawValue.description : //401
+                case HttpResponseCode.accessDenied.rawValue.description: //401
                     completion(.accessDenied)
                     break
                 case HttpResponseCode.serverErr.rawValue.description : //500

@@ -174,12 +174,18 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         self.present(dvc, animated: true, completion: nil)
     }
     
-    
     @IBAction func leaveCloseAction(_ sender: Any) {
         isCatLeave = false
         
         UIView.animate(withDuration: 0.3, animations: {
              self.itemUpgradeCardView.alpha = 0
+            self.tabBarController?.tabBar.alpha = 1
+
+            self.tabBarController?.tabBar.isUserInteractionEnabled = true
+            self.catImageView.image = UIImage(named: "imgCatNull")
+            self.catCollectionBarItem.isEnabled = true
+            self.settingBarItem.isEnabled = true
+            self.refreshBarItem.isEnabled = true
          })
 
          if(self.isCatGraduate == false && self.isCatItemUpgrade == false) {

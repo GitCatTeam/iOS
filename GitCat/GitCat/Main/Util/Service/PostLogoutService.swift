@@ -28,9 +28,15 @@ struct PostLogoutService: PosttableService, APIServie {
                 case HttpResponseCode.postSuccess.rawValue : //201
                     completion(.networkSuccess(networkResult.resResult))
                     break
+                case HttpResponseCode.badRequest.rawValue : //400
+                    completion(.badRequest)
+                    break
+                case HttpResponseCode.accessDenied.rawValue: //401
+                    completion(.accessDenied)
+                    break
                 case HttpResponseCode.maintainance.rawValue: //503
-                completion(.maintainance)
-                break
+                    completion(.maintainance)
+                    break
                 default :
                     print("Success: \(networkResult.resCode)")
                     break
@@ -39,10 +45,6 @@ struct PostLogoutService: PosttableService, APIServie {
                 
             case .error(let resCode):
                 switch resCode {
-                    
-                case HttpResponseCode.badRequest.rawValue.description : //400
-                    completion(.badRequest)
-                    break
                 case HttpResponseCode.accessDenied.rawValue.description : //401
                     completion(.accessDenied)
                     break

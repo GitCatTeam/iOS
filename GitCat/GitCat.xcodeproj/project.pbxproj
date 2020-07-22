@@ -1096,14 +1096,14 @@
 				CODE_SIGN_ENTITLEMENTS = GitCat/GitCat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 20200621;
+				CURRENT_PROJECT_VERSION = 20200707;
 				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
 				INFOPLIST_FILE = "$(SRCROOT)/GitCat/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.03;
+				MARKETING_VERSION = 1.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoonyoung.GitCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = development_pro;
@@ -1121,7 +1121,7 @@
 				CODE_SIGN_ENTITLEMENTS = GitCat/GitCat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 20200621;
+				CURRENT_PROJECT_VERSION = 20200707;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
 				INFOPLIST_FILE = "$(SRCROOT)/GitCat/Resources/Info.plist";
@@ -1129,7 +1129,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.03;
+				MARKETING_VERSION = 1.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoonyoung.GitCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = distribution_pro;
