@@ -122,6 +122,9 @@
 		4CE10E58249E222000453011 /* UserDataInitVC+NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE10E57249E222000453011 /* UserDataInitVC+NetworkExtension.swift */; };
 		4CE733ED23FCF0CD00DB97EB /* ReportListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE733EC23FCF0CD00DB97EB /* ReportListService.swift */; };
 		4CE733EF23FCF0D900DB97EB /* ReportDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE733EE23FCF0D900DB97EB /* ReportDetailService.swift */; };
+		4CF4CD4224E63C3B00C0D544 /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF4CD4124E63C3B00C0D544 /* LineChartView.swift */; };
+		4CF4CD4424E63C4700C0D544 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF4CD4324E63C4600C0D544 /* BarChartView.swift */; };
+		4CF4CD4624E63C5F00C0D544 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF4CD4524E63C5F00C0D544 /* PieChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -257,6 +260,9 @@
 		4CE10E57249E222000453011 /* UserDataInitVC+NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDataInitVC+NetworkExtension.swift"; sourceTree = "<group>"; };
 		4CE733EC23FCF0CD00DB97EB /* ReportListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportListService.swift; sourceTree = "<group>"; };
 		4CE733EE23FCF0D900DB97EB /* ReportDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailService.swift; sourceTree = "<group>"; };
+		4CF4CD4124E63C3B00C0D544 /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
+		4CF4CD4324E63C4600C0D544 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
+		4CF4CD4524E63C5F00C0D544 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		7467F6BE814B831147F82671 /* Pods-GitCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitCat.debug.xcconfig"; path = "Target Support Files/Pods-GitCat/Pods-GitCat.debug.xcconfig"; sourceTree = "<group>"; };
 		C7FB3E5D46AAE40CBCA4F48F /* Pods_GitCat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitCat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1814F3437C4FE65FFA6ECC9 /* Pods-GitCat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitCat.release.xcconfig"; path = "Target Support Files/Pods-GitCat/Pods-GitCat.release.xcconfig"; sourceTree = "<group>"; };
@@ -494,6 +500,9 @@
 				4C7C0E1023D4A11400669B38 /* CustomHeaderTVCell.swift */,
 				4C7C0E1823D59D2B00669B38 /* CatCollectionCVCell.swift */,
 				4C2DDD0923EAEEF200FCB36B /* TutorialCVCell.swift */,
+				4CF4CD4124E63C3B00C0D544 /* LineChartView.swift */,
+				4CF4CD4324E63C4600C0D544 /* BarChartView.swift */,
+				4CF4CD4524E63C5F00C0D544 /* PieChartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -894,6 +903,7 @@
 				4CE10E4A249E1E3300453011 /* CatCollectionVC+CollectionViewExtension.swift in Sources */,
 				4CBA4D5124112377002CED2F /* UserDataInitVC.swift in Sources */,
 				4CC07F9323B0F28100851B45 /* RoundView.swift in Sources */,
+				4CF4CD4624E63C5F00C0D544 /* PieChartView.swift in Sources */,
 				4CAB3BD624082883007A84B6 /* CommonModel.swift in Sources */,
 				4C7C0E7C23D985C200669B38 /* CommitCountService.swift in Sources */,
 				4CC07FC123B35A7300851B45 /* RoundImageView.swift in Sources */,
@@ -906,6 +916,7 @@
 				4C7C0E1523D5650D00669B38 /* MainTabBarVC.swift in Sources */,
 				4CC07FBB23B3238C00851B45 /* GetMoreInfo3VC.swift in Sources */,
 				4C56C24124ADD16F003FB894 /* AlarmVC+NetworkExtension.swift in Sources */,
+				4CF4CD4424E63C4700C0D544 /* BarChartView.swift in Sources */,
 				4CAB3BCA2407EA71007A84B6 /* CatListModel.swift in Sources */,
 				4C3B8E5B2402449C008735DE /* AuthManageVC.swift in Sources */,
 				4C8C9E6923CB574600E160B1 /* ReportDetailVC.swift in Sources */,
@@ -921,6 +932,7 @@
 				4C3F8CAA24A5DEDB009248B6 /* RepositoryAccessVC.swift in Sources */,
 				4CE10E2B249DEA5500453011 /* Reachability.swift in Sources */,
 				4CAB3BD02407F170007A84B6 /* DelettableService.swift in Sources */,
+				4CF4CD4224E63C3B00C0D544 /* LineChartView.swift in Sources */,
 				4CE10E58249E222000453011 /* UserDataInitVC+NetworkExtension.swift in Sources */,
 				4CE10E4F249E1F9C00453011 /* SettingVC+NetworkExtension.swift in Sources */,
 				4CE10E24249DE83000453011 /* GetMoreInfo4VC+NetworkExtension.swift in Sources */,
@@ -1096,14 +1108,14 @@
 				CODE_SIGN_ENTITLEMENTS = GitCat/GitCat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 20200707;
+				CURRENT_PROJECT_VERSION = 20200826;
 				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
 				INFOPLIST_FILE = "$(SRCROOT)/GitCat/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.10;
+				MARKETING_VERSION = 1.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoonyoung.GitCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = development_pro;
@@ -1121,7 +1133,7 @@
 				CODE_SIGN_ENTITLEMENTS = GitCat/GitCat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 20200707;
+				CURRENT_PROJECT_VERSION = 20200826;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
 				INFOPLIST_FILE = "$(SRCROOT)/GitCat/Resources/Info.plist";
@@ -1129,7 +1141,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.10;
+				MARKETING_VERSION = 1.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoonyoung.GitCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = distribution_pro;

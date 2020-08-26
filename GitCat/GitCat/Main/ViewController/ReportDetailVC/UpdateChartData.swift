@@ -6,170 +6,54 @@
 //  Copyright © 2020 조윤영. All rights reserved.
 //
 
-import Foundation
-import Charts
+import UIKit
 
 extension ReportDetailVC {
     func updateLineChartData() {
-        var lineChartEntries = [ChartDataEntry]()
+        let lineChartFrame = CGRect(x: 0, y: 0, width: self.lineChart.frame.width, height: self.lineChart.frame.height)
+        let lineChartView = LineChartView(frame: lineChartFrame, values: commitNumbers, dates: days, animated: true)
+        lineChartView.center = CGPoint(x: self.lineChart.frame.size.width / 2, y: self.lineChart.frame.size.height / 2)
         
-        for i in 0..<commitNumbers.count {
-            let value = ChartDataEntry(x: Double(i), y: Double(commitNumbers[i]))
-            lineChartEntries.append(value)
-        }
-        
-        let line = LineChartDataSet(entries:lineChartEntries, label:"Number")
-
-        line.colors = [UIColor.clear]
-        line.mode = .cubicBezier
-        line.drawFilledEnabled = true
-        line.fillColor = UIColor.CustomColor.skyBlue
-        line.circleColors = [#colorLiteral(red: 0.537254902, green: 0.8, blue: 0.9647058824, alpha: 1)]
-        line.drawCirclesEnabled = true
-        line.drawCircleHoleEnabled = true
-        line.circleRadius = 2
-        line.circleHoleRadius = 1
-
-        
-        line.drawValuesEnabled = false
-        let data = LineChartData()
-        
-        data.addDataSet(line)
-        
-        self.lineChart.xAxis.labelPosition = .bottom
-        self.lineChart.xAxis.drawGridLinesEnabled = false
-        self.lineChart.xAxis.axisLineDashPhase = CGFloat(signOf: 0,magnitudeOf: 0)
-        self.lineChart.xAxis.gridColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
-        self.lineChart.xAxis.labelTextColor = UIColor.CustomColor.brownishGrey
-
-        if UIDevice.current.model.hasPrefix("iPad") {
-            self.lineChart.xAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 18)!
-        }else{
-            self.lineChart.xAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 11)!
-        }
-        
-        self.lineChart.leftAxis.drawAxisLineEnabled = false
-        self.lineChart.leftAxis.gridColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
-        self.lineChart.leftAxis.labelTextColor = #colorLiteral(red: 0.5320672393, green: 0.8002378345, blue: 0.9608486295, alpha: 1)
-        self.lineChart.leftAxis.gridLineDashLengths = [2,3]
-        
-        if UIDevice.current.model.hasPrefix("iPad") {
-            self.lineChart.leftAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 18)!
-        } else {
-            self.lineChart.leftAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 11)!
-        }
-
-        self.lineChart.rightAxis.drawAxisLineEnabled = false
-        self.lineChart.rightAxis.drawGridLinesEnabled = false
-        self.lineChart.rightAxis.drawLabelsEnabled = false
-        
-        self.lineChart.legend.enabled = false
-        self.lineChart.chartDescription?.text = ""
-        self.lineChart.doubleTapToZoomEnabled = false
-        self.lineChart.pinchZoomEnabled = false
-        
-        self.lineChart.xAxis.valueFormatter = IndexAxisValueFormatter(values:days)
-        self.lineChart.xAxis.granularity = 1
-        
-        self.lineChart.data = data
-        
+        self.lineChart.addSubview(lineChartView)
     }
 
     func updatePieChartData() {
-
-        self.pieChart.legend.enabled = false
-                
-        self.pieChart.chartDescription?.text = ""
-        self.pieChart.centerText = "언어 비율\n(%)"
-        self.pieChart.drawCenterTextEnabled = true
-        self.pieChart.clipsToBounds = false
-        self.pieChart.highlightPerTapEnabled = false
-        self.pieChart.transparentCircleColor = UIColor.clear
-        self.pieChart.transparentCircleRadiusPercent = 0.0
-
+        let pieChartFrame = CGRect(x: 0, y: 0, width: self.pieChart.frame.width, height: self.pieChart.frame.height)
+         let pieChartColors = [ #colorLiteral(red: 0.537254902, green: 0.8, blue: 0.9647058824, alpha: 1), #colorLiteral(red: 0.7960784314, green: 0.9215686275, blue: 1, alpha: 1), #colorLiteral(red: 0.9490196078, green: 0.9803921569, blue: 1, alpha: 1), #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1) ]
+        let pieChartView = PieChartView(frame: pieChartFrame, values: self.percentOfLanguage, colors: pieChartColors, width: Double(self.pieChart.frame.size.width))
+        pieChartView.center = CGPoint(x: self.pieChart.frame.size.width / 2, y: self.pieChart.frame.size.height / 2)
+        self.pieChart.addSubview(pieChartView)
+        
+        addPieChartLabel()
+    }
+    
+    func addPieChartLabel() {
+        //설명 Label 추가
+        var pieChartDesciptionLabel: UILabel!
+        pieChartDesciptionLabel = UILabel(frame: CGRect(x: self.pieChart.frame.width/2, y: self.pieChart.frame.height/2, width: 50, height: 50))
+        pieChartDesciptionLabel.center = CGPoint(x: self.pieChart.frame.size.width / 2, y: self.pieChart.frame.size.height / 2)
+        pieChartDesciptionLabel.numberOfLines = 2
+        
         let paragraphStyle = NSMutableParagraphStyle(); paragraphStyle.alignment = .center
+        let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "BBTreeG_B", size: 12.0)!,
+                                        NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1),
+                                        NSAttributedString.Key.paragraphStyle: paragraphStyle
+                                    ]
+        let myAttrString = NSAttributedString(string: "언어 비율\n(%)", attributes: myAttribute)
+        pieChartDesciptionLabel.attributedText = myAttrString
+        pieChartDesciptionLabel.dynamicFont(fontSize: 12, name: "BBTreeG_B")
         
-        if UIDevice.current.model.hasPrefix("iPad") {
-            let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "BBTreeGo_R", size: 20.0)!,
-                                       NSAttributedString.Key.foregroundColor : UIColor.CustomColor.brownishGrey, NSAttributedString.Key.paragraphStyle: paragraphStyle
-                   ]
-            let myAttrString = NSAttributedString(string: "언어 비율\n(%)", attributes: myAttribute)
-            self.pieChart.centerAttributedText = myAttrString
-        }
-        else{
-            let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "BBTreeGo_R", size: 12.0)!,
-                                NSAttributedString.Key.foregroundColor : UIColor.CustomColor.brownishGrey, NSAttributedString.Key.paragraphStyle: paragraphStyle
-            ]
-            let myAttrString = NSAttributedString(string: "언어 비율\n(%)", attributes: myAttribute)
-            self.pieChart.centerAttributedText = myAttrString
-        }
-                   
-        let chartDataSet = PieChartDataSet(entries: percentOfLanguageEntries, label: nil)
-        
-        chartDataSet.drawValuesEnabled = false
-        
-        let chartData = PieChartData(dataSet: chartDataSet)
-        
-        //색 리스트 초기화해주는 공간
-        
-        let colors = [#colorLiteral(red: 0.537254902, green: 0.8, blue: 0.9647058824, alpha: 1),#colorLiteral(red: 0.797280252, green: 0.9200312495, blue: 1, alpha: 1), #colorLiteral(red: 0.9490196078, green: 0.981259644, blue: 1, alpha: 1), #colorLiteral(red: 0.9332618117, green: 0.9333737493, blue: 0.9332236052, alpha: 1)]
-        chartDataSet.colors = colors
-        
-        
-        self.pieChart.data = chartData
+        pieChart.addSubview(pieChartDesciptionLabel)
     }
 
     func updateBarChartData() {
-        setBarChart(dataPoints: repositories, values: repoCommits)
-    }
-
-    func setBarChart(dataPoints: [String], values: [Double]) {
-        self.barChart.noDataText = "데이터가 없습니다."
-
-        self.barChart.xAxis.valueFormatter = IndexAxisValueFormatter(values:dataPoints)
-
-        self.barChart.xAxis.granularity = 1
-        self.barChart.xAxis.labelPosition = .bottom
-        self.barChart.xAxis.labelTextColor = UIColor.CustomColor.brownishGrey
+        let barChartFrame = CGRect(x: 0, y: 0, width: self.barChart.frame.width, height: self.barChart.frame.height)
+        let barChartColors = [ #colorLiteral(red: 0.8, green: 0.9215686275, blue: 1, alpha: 1), #colorLiteral(red: 0.5411764706, green: 0.7960784314, blue: 0.9647058824, alpha: 1), #colorLiteral(red: 0.9490196078, green: 0.9803921569, blue: 1, alpha: 1)]
+        let barTitles:[String] = repositories
+        let barValues:[Double] = repoCommits
+        let barChartView = BarChartView(frame: barChartFrame, values: barValues, titles: barTitles, colors: barChartColors, animated: true)
         
-        if UIDevice.current.model.hasPrefix("iPad") {
-            self.barChart.xAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 18)!
-        }else{
-            self.barChart.xAxis.labelFont = UIFont(name: "BBTreeGo_R", size: 11)!
-        }
-        
-        self.barChart.xAxis.drawGridLinesEnabled = false
-
-        self.barChart.leftAxis.drawGridLinesEnabled = false
-        self.barChart.leftAxis.drawAxisLineEnabled = false
-        self.barChart.leftAxis.drawLabelsEnabled = false
-        
-        self.barChart.rightAxis.drawLabelsEnabled = false
-        self.barChart.rightAxis.drawAxisLineEnabled = false
-        self.barChart.rightAxis.drawGridLinesEnabled = false
-        
-        self.barChart.legend.enabled = false
-        self.barChart.doubleTapToZoomEnabled = false
-        self.barChart.pinchZoomEnabled = false
-        self.barChart.highlightFullBarEnabled = false
-        self.barChart.highlightPerTapEnabled = false
-        self.barChart.highlightPerDragEnabled = false
-        
-
-        for i in 0..<dataPoints.count {
-            
-            let dataEntry = BarChartDataEntry(x: Double(i), yValues: [values[i]])
-            dataEntries1.append(dataEntry)
-        }
-
-        let chartDataSet = BarChartDataSet(entries: dataEntries1, label: nil)
-        
-        chartDataSet.colors = [#colorLiteral(red: 0.8022227883, green: 0.9198918939, blue: 1, alpha: 1), #colorLiteral(red: 0.5390568376, green: 0.7959131598, blue: 0.9652681947, alpha: 1), #colorLiteral(red: 0.8410330415, green: 0.8754420877, blue: 0.8878466487, alpha: 1)]
-        
-        
-        let chartData = BarChartData(dataSet: chartDataSet)
-        chartData.barWidth = 0.3
-
-        self.barChart.data = chartData
+        barChartView.center = CGPoint(x: self.barChart.frame.size.width / 2, y: self.barChart.frame.size.height / 2)
+        self.barChart.addSubview(barChartView)
     }
 }

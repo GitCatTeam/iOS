@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import Charts
 
 extension ReportDetailVC {
     func setReportDetailData(id:Int) {
@@ -34,15 +33,14 @@ extension ReportDetailVC {
                     self.days = resResult.data?.dailyCount?.dayArray  as! [String]
                     self.commitNumbers = resResult.data?.dailyCount?.countArray as! [Int]
                     
-                    //사용 언어 비율 - Pie Chart
-                    //PieChartDataEntry(value: 10)
-                    let ratios:[Double] = resResult.data?.languageRatio?.percentArray as! [Double]
-                    for ratio in ratios {
-                        self.percentOfLanguageEntries += [PieChartDataEntry(value: ratio)]
+                    for i in 0..<self.commitNumbers.count {
+                        print(self.commitNumbers[i])
                     }
                     
+                    //사용 언어 비율 - Pie Chart
+                    //PieChartDataEntry(value: 10)
+                    self.percentOfLanguage = resResult.data?.languageRatio?.percentArray as! [Double]
                     let resultLanguageList:[ResultLanguagesModel] = resResult.data?.languageRatio?.resultLanguages as! [ResultLanguagesModel]
-                    
                     
                     if (resultLanguageList.count == 1) {
                         self.statusView1.alpha = 1
@@ -95,14 +93,15 @@ extension ReportDetailVC {
 
                     for i in 0..<self.repositories.count {
                         if(self.repositories[i].count > 10) {
-
                             let index = self.repositories[i].index(self.repositories[i].startIndex, offsetBy: 10)
                             self.repositories[i] = "\(self.repositories[i].substring(to: index)).."
                             print(self.repositories[i])
                         }
                     }
                     self.updateLineChartData()
-                    self.updatePieChartData()
+                    if(resultLanguageList.count != 0) {
+                        self.updatePieChartData()
+                    }
                     self.updateBarChartData()
                     
                     self.loadingView.alpha = 0
@@ -156,7 +155,6 @@ extension ReportDetailVC {
         print("Background task ended.")
         UIApplication.shared.endBackgroundTask(backgroundTask)
         backgroundTask = .invalid
-        
     }
 }
 

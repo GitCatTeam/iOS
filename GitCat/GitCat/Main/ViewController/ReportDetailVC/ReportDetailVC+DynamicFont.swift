@@ -41,6 +41,5 @@ extension ReportDetailVC {
         self.description1.dynamicFont(fontSize: 11, name: "BBTreeGo_R")
         self.description2.dynamicFont(fontSize: 11, name: "BBTreeGo_R")
         self.description3.dynamicFont(fontSize: 11, name: "BBTreeGo_R")
-        
     }
 }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Charts
 
 class ReportDetailVC: UIViewController {
     @IBOutlet var realBaseView: UIView!
@@ -75,7 +74,7 @@ class ReportDetailVC: UIViewController {
     @IBOutlet weak var top3Label: CustomLabel!
     
     //MARK: PIECHART
-    var percentOfLanguageEntries = [PieChartDataEntry]()
+    var percentOfLanguage:[Double] = []
     
     //MARK: LINECHART
     var days : [String] = []
@@ -84,9 +83,7 @@ class ReportDetailVC: UIViewController {
     //MARK: BARCHART
     var repositories = [String]()
     var repoCommits = [Double]()
-    var dataEntries1 = [BarChartDataEntry]()
-    var dataEntries2 = [BarChartDataEntry]()
-    
+
     var id:Int!
     var reportTitle:String!
     var totalCommit:String!
@@ -100,19 +97,16 @@ class ReportDetailVC: UIViewController {
         reportTitle = UserDefaults.standard.string(forKey: "reportTitle")
         totalCommit = UserDefaults.standard.string(forKey: "reportTotalCount")
         
-        percentOfLanguageEntries = [] //사용언어비율 pieChart 데이터 초기화
-        
         self.navigationItem.title = reportTitle
         self.totalCount.text = totalCommit
         setReportDetailData(id: id)
         
         if UIDevice.current.model.hasPrefix("iPad") {
-                   view5.alpha = 0
+            view5.alpha = 0
         }
         
         setStyle()
         setFontSize()
-    
     }
     
     @IBAction func goBackAction(_ sender: Any) {
@@ -120,7 +114,6 @@ class ReportDetailVC: UIViewController {
     }
 
     func setStyle() {
-        
         self.loadingBackgroundView.alpha = 1
         
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor(red: 137/255, green: 204/255, blue: 246/255, alpha: 1)]
@@ -157,6 +150,5 @@ class ReportDetailVC: UIViewController {
         self.statusView1.alpha = 0
         self.statusView2.alpha = 0
         self.statusView3.alpha = 0
-
     }
 }

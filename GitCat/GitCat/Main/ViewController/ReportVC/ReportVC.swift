@@ -24,11 +24,16 @@ class ReportVC: UIViewController {
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.deleteNavigationUnderbar()
         self.loadingView.loadGif(name: "gif_loading2")
+        
         self.noDataImageView.alpha = 0
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.alpha = 1
-        setReportList()
+        //MARK: 리포트 점검으로 인해 서버로 데이터 요청을 잠시 일시적으로 닫아둠.
+//        setReportList()
+        self.loadingView.alpha = 0
+        self.noDataImageView.image = UIImage(named: "imgSorryreport01")
+        self.noDataImageView.alpha = 1
     }
 }
