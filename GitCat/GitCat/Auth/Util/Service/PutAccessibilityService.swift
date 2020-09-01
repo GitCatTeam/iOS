@@ -6,7 +6,7 @@
 //  Copyright © 2020 조윤영. All rights reserved.
 //
 
-struct PutAccessibilityService: PuttableService, APIServie {
+struct PutAccessibilityService: PuttableService, APIService {
     
     typealias NetworkData = CommonModel
     static let shareInstance = PutAccessibilityService()

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct DeleteTokenService: DelettableService, APIServie {
+struct DeleteTokenService: DelettableService, APIService {
     
     typealias NetworkData = CommonModel
     static let shareInstance = DeleteTokenService()

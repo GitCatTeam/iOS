@@ -8,7 +8,7 @@
 
 
 import Foundation
-struct HomeService: GettableService, APIServie {
+struct HomeService: GettableService, APIService {
      
     typealias NetworkData = HomeModel
     static let sharedInstance = HomeService()

@@ -7,7 +7,7 @@
 //
 
 
-struct DeleteCatService: DelettableService, APIServie {
+struct DeleteCatService: DelettableService, APIService {
     
     typealias NetworkData = CommonModel
     static let shareInstance = DeleteCatService()

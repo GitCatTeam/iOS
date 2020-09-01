@@ -10,7 +10,7 @@ import Foundation
 
 
 
-struct PostUserDataService: PosttableService, APIServie {
+struct PostUserDataService: PosttableService, APIService {
     
     typealias NetworkData = CommonModel
     static let shareInstance = PostUserDataService()

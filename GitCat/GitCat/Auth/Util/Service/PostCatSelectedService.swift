@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PostCatSelectedService: PosttableService, APIServie {
+struct PostCatSelectedService: PosttableService, APIService {
     
     typealias NetworkData = CommonModel
     static let shareInstance = PostCatSelectedService()

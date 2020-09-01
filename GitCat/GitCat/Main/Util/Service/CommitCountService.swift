@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct CommitCountService: GettableService, APIServie {
+struct CommitCountService: GettableService, APIService {
      
     typealias NetworkData = CommitCountModel
     static let sharedInstance = CommitCountService()

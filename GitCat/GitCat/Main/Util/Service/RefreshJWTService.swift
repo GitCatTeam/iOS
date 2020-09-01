@@ -12,7 +12,7 @@ import Alamofire
 
 
 
-struct RefreshJWTService: RefreshGettableService, APIServie {
+struct RefreshJWTService: RefreshGettableService, APIService {
 
      
     typealias NetworkData = RefreshTokenModel

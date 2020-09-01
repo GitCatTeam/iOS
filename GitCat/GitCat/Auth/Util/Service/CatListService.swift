@@ -6,7 +6,7 @@
 //  Copyright © 2020 조윤영. All rights reserved.
 //
 
-struct CatListService: GettableService, APIServie {
+struct CatListService: GettableService, APIService {
      
     typealias NetworkData = CatListModel
     static let sharedInstance = CatListService()

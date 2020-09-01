@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DeleteUserInfo: DelettableService, APIServie {
+struct DeleteUserInfo: DelettableService, APIService {
     
     typealias NetworkData = CommonModel
     static let shareInstance = DeleteUserInfo()

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct CatCollectionService: GettableService, APIServie {
+struct CatCollectionService: GettableService, APIService {
     
     typealias NetworkData = CatCollectionModel
     static let sharedInstance = CatCollectionService()

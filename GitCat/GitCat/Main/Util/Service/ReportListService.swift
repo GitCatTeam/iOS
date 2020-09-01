@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct ReportListService: GettableService, APIServie {
+struct ReportListService: GettableService, APIService {
      
     typealias NetworkData = ReportListModel
     static let sharedInstance = ReportListService()

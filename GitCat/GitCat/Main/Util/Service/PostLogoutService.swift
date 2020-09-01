@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PostLogoutService: PosttableService, APIServie {
+struct PostLogoutService: PosttableService, APIService {
     
     typealias NetworkData = CommonModel
     static let shareInstance = PostLogoutService()

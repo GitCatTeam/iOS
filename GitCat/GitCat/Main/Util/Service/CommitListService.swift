@@ -6,7 +6,7 @@
 //  Copyright © 2020 조윤영. All rights reserved.
 //
 import Foundation
-struct CommitListService: GettableService, APIServie {
+struct CommitListService: GettableService, APIService {
     
     typealias NetworkData = CommitListModel
     static let sharedInstance = CommitListService()

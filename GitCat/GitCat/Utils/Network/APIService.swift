@@ -6,14 +6,14 @@
 //  Copyright © 2020 조윤영. All rights reserved.
 //
 
-protocol APIServie {
+protocol APIService {
     
 }
 import Alamofire
 import UIKit
 import SwiftyJSON
 
-extension APIServie {
+extension APIService {
     
     func url(_ path: String) -> String {
         return Secrets.BaseURL + path

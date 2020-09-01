@@ -6,7 +6,7 @@
 //  Copyright © 2020 조윤영. All rights reserved.
 //
 
-struct PutDeviceTokenService: PuttableService, APIServie {
+struct PutDeviceTokenService: PuttableService, APIService {
     
     typealias NetworkData = CommonModel
     static let shareInstance = PutDeviceTokenService()

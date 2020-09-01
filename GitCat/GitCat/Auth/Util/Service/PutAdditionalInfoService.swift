@@ -7,14 +7,14 @@
 //
 
 
-struct PutAdditionalInfoService: PuttableService, APIServie {
+struct PutAdditionalInfoService: PuttableService, APIService {
     
     typealias NetworkData = CommonModel
     static let shareInstance = PutAdditionalInfoService()
     
     //MARK: PUT - https://a.gitcat.app/api/auth/additional (부가정보 서버롤 보내기)
     func putAdditionalInfo(params: [String : Any], completion: @escaping (NetworkResult<Any>) -> Void) {
-        
+
         let modURL = self.url("/auth/additional")
         
         put(modURL, params: params) { (result) in
