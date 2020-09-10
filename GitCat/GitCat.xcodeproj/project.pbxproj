@@ -132,6 +132,8 @@
 		4CF4CD4224E63C3B00C0D544 /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF4CD4124E63C3B00C0D544 /* LineChartView.swift */; };
 		4CF4CD4424E63C4700C0D544 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF4CD4324E63C4600C0D544 /* BarChartView.swift */; };
 		4CF4CD4624E63C5F00C0D544 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF4CD4524E63C5F00C0D544 /* PieChartView.swift */; };
+		4CFAA066250A0EBF005B69C6 /* 나눔손글씨 바른히피.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CFAA064250A0442005B69C6 /* 나눔손글씨 바른히피.ttf */; };
+		4CFAA067250A0EC8005B69C6 /* SSYoungestDaughterRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CFAA065250A044A005B69C6 /* SSYoungestDaughterRegular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -299,6 +301,8 @@
 		4CF4CD4124E63C3B00C0D544 /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
 		4CF4CD4324E63C4600C0D544 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
 		4CF4CD4524E63C5F00C0D544 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
+		4CFAA064250A0442005B69C6 /* 나눔손글씨 바른히피.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "나눔손글씨 바른히피.ttf"; sourceTree = "<group>"; };
+		4CFAA065250A044A005B69C6 /* SSYoungestDaughterRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SSYoungestDaughterRegular.ttf; sourceTree = "<group>"; };
 		7467F6BE814B831147F82671 /* Pods-GitCat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitCat.debug.xcconfig"; path = "Target Support Files/Pods-GitCat/Pods-GitCat.debug.xcconfig"; sourceTree = "<group>"; };
 		C7FB3E5D46AAE40CBCA4F48F /* Pods_GitCat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitCat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1814F3437C4FE65FFA6ECC9 /* Pods-GitCat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitCat.release.xcconfig"; path = "Target Support Files/Pods-GitCat/Pods-GitCat.release.xcconfig"; sourceTree = "<group>"; };
@@ -472,6 +476,8 @@
 		4C68D12123B0A50A00A8F813 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				4CFAA065250A044A005B69C6 /* SSYoungestDaughterRegular.ttf */,
+				4CFAA064250A0442005B69C6 /* 나눔손글씨 바른히피.ttf */,
 				4C1035A723B907F50057F0B1 /* 나눔손글씨 배은혜체.ttf */,
 				4CC07FAE23B314A200851B45 /* 20958980_UTOIMAGE_유토이미지고딕_B_OTF.otf */,
 				4CC07FAD23B314A200851B45 /* 20958982_UTOIMAGE_유토이미지고딕_L_OTF.otf */,
@@ -948,8 +954,10 @@
 				4CC07FAF23B314A200851B45 /* 20958984_UTOIMAGE_유토이미지고딕_R_OTF.otf in Resources */,
 				4C68D10D23B09D4000A8F813 /* Assets.xcassets in Resources */,
 				4CC07FB223B314F200851B45 /* 20958980_UTOIMAGE_유토이미지고딕_B_OTF.otf in Resources */,
+				4CFAA067250A0EC8005B69C6 /* SSYoungestDaughterRegular.ttf in Resources */,
 				4C1035A923B9084D0057F0B1 /* 나눔손글씨 배은혜체.ttf in Resources */,
 				4C64F6382431E8D40009EC46 /* Splash.storyboard in Resources */,
+				4CFAA066250A0EBF005B69C6 /* 나눔손글씨 바른히피.ttf in Resources */,
 				4C747B2624FD128000739D00 /* Localizable.strings in Resources */,
 				4C64F63A2431EA400009EC46 /* LaunchScreen.storyboard in Resources */,
 				4CBA4D49241102D2002CED2F /* gif_loading2.gif in Resources */,

@@ -11,6 +11,7 @@ import UIKit
 class HomeVC: UIViewController, TutorialCellDelegate {
     @IBOutlet weak var titleLabel: CustomLabel!
     
+    @IBOutlet weak var catChatBox: UIImageView!
     @IBOutlet weak var catChatLabel: UILabel!
 
     @IBOutlet weak var OverlayView: UIView!
@@ -36,29 +37,19 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     @IBOutlet weak var graduateCardView: UIView!
     @IBOutlet weak var itemUpgradeCardView: UIView!
     @IBOutlet weak var leaveCardView: UIView!
+
+    @IBOutlet weak var todayCommitCountLabel: CustomLabel! //오늘의 커밋 값
+    @IBOutlet weak var todayCommitDescLabel: CustomLabel! //오늘의 커밋 라벨
     
-    
-    @IBOutlet weak var todayCommitCountLabel: CustomLabel!
-    @IBOutlet weak var todayCommitShowLabel: CustomLabel!
-    
-    @IBOutlet weak var catNameLabel: UILabel!
-    @IBOutlet weak var todayScoreLabel: UILabel!
+    @IBOutlet weak var catNameLabel: UILabel! //고양이 이름
+//    @IBOutlet weak var todayScoreLabel: UILabel!
     @IBOutlet weak var catImageView: UIImageView!
-    @IBOutlet weak var leftScoreLabel: UILabel!
+//    @IBOutlet weak var leftScoreLabel: UILabel!
     
     @IBOutlet weak var loadingView: UIImageView!
     @IBOutlet weak var loadingBackgroundView: UIView!
     
-    @IBOutlet weak var todayScoreDescLabel: CustomLabel!
-    @IBOutlet weak var leftScoreDescLabel: CustomLabel!
-    @IBOutlet weak var itemLabel: CustomLabel!
-    
     @IBOutlet weak var selectCatBtn: UIButton!
-    
-    @IBOutlet weak var bottomBoxBorder: UIImageView!
-    @IBOutlet weak var bottomBox: UIView!
-    
-    @IBOutlet weak var catChatBox: UIImageView!
     
     @IBOutlet weak var graduateTitleLabel: CustomLabel!
     @IBOutlet weak var graduateSubTitle1: CustomLabel!
@@ -92,7 +83,6 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     @IBOutlet weak var scoreAlertSubLabel6: CustomLabel!
     @IBOutlet weak var scoreAlertSubLabel7: CustomLabel!
     
-    @IBOutlet weak var chatBoxLeadingConstraint: NSLayoutConstraint!
     
     let cellIdentifier = "TutorialCVCell"
     
@@ -329,9 +319,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         self.catImageView.image = UIImage(named: "imgCatNull")
         self.selectCatBtn.alpha = 1
         
-        self.todayScoreLabel.text = "-"
-        self.bottomBox.alpha = 0
-        self.bottomBoxBorder.alpha = 0
+        self.todayCommitCountLabel.text = "-"
         self.catChatBox.alpha = 0
         self.catChatLabel.alpha = 0
         
@@ -339,13 +327,13 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     
     
     
-    @IBAction func showScoreDetailAction(_ sender: Any) {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.setCardBackgorund()
-            self.cardBackgroundView.alpha = 1
-            self.scoreAlertView.alpha = 1
-        })
-    }
+//    @IBAction func showScoreDetailAction(_ sender: Any) {
+//        UIView.animate(withDuration: 0.3, animations: {
+//            self.setCardBackgorund()
+//            self.cardBackgroundView.alpha = 1
+//            self.scoreAlertView.alpha = 1
+//        })
+//    }
     
     @IBAction func closeScoreInfoAction(_ sender: Any) {
         dismissCardBackground()

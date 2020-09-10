@@ -11,16 +11,15 @@ extension HomeVC {
     func setLabelFontSize() {
         self.titleLabel.dynamicFont(fontSize: 28, name: "BBTreeG_L")
         
-        self.todayCommitCountLabel.dynamicFont(fontSize: 130, name: "NanumBaeEunHyeCe")
-        self.todayCommitShowLabel.dynamicFont(fontSize: 35, name:"BBTreeG_L")
-        self.catChatLabel.dynamicFont(fontSize: 20, name: "NanumBaeEunHyeCe")
-        self.todayScoreDescLabel.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
-        self.todayScoreLabel.dynamicFont(fontSize: 28, name: "NanumBaeEunHyeCe")
-        
-        self.leftScoreDescLabel.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
-        self.leftScoreLabel.dynamicFont(fontSize: 28, name:"NanumBaeEunHyeCe")
+        self.todayCommitCountLabel.dynamicFont(fontSize: 70, name: "SangSangYoungestDaughter")
+        self.catChatLabel.dynamicFont(fontSize: 20, name: "NanumBaReunHiPi")
+//        self.todayScoreDescLabel.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
+//        self.todayScoreLabel.dynamicFont(fontSize: 28, name: "NanumBaeEunHyeCe")
+//
+//        self.leftScoreDescLabel.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
+//        self.leftScoreLabel.dynamicFont(fontSize: 28, name:"NanumBaeEunHyeCe")
         self.catNameLabel.dynamicFont(fontSize: 28, name:"NanumBaeEunHyeCe")
-        self.itemLabel.dynamicFont(fontSize: 18, name:"NanumBaeEunHyeCe")
+//        self.itemLabel.dynamicFont(fontSize: 18, name:"NanumBaeEunHyeCe")
         self.selectCatBtn.titleLabel?.dynamicFont(fontSize: 14, name: "BBTreeG_B")
         
         self.graduateTitleLabel.dynamicFont(fontSize: 20, name: "BBTreeG_B")

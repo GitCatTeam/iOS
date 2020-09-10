@@ -20,28 +20,18 @@ extension HomeVC {
                 if let resResult = detailData {
                         
                     self.todayCommitCountLabel.text = "\(resResult.data?.todayCommitCount ?? 0)"
-                    self.todayScoreLabel.text = "\(resResult.data?.todayScore ?? 0)"
+//                    self.todayCommitCountLabel.text = "\(resResult.data?.todayScore ?? 0)"
                     self.catNameLabel.text = resResult.data?.catName
                     
                     let url = URL(string: resResult.data?.catImg ?? "")
                     self.catImageView.kf.setImage(with: url)
-
-                    if((resResult.data?.catImg?.contains("first"))!) {
-                         if UIDevice.current.model.hasPrefix("iPad") {
-                            self.chatBoxLeadingConstraint.constant = 100
-                         } else {
-                            self.chatBoxLeadingConstraint.constant = 60
-                        }
-                    } else {
-                        self.chatBoxLeadingConstraint.constant = 0
-                    }
-
-                    self.itemLabel.text = "("+(resResult.data?.nextLevelStr ?? "")+")"
-                    self.leftScoreLabel.text = "\(self.gino(resResult.data?.nextLevelScore))"
+//
+//                    self.itemLabel.text = "("+(resResult.data?.nextLevelStr ?? "")+")"
+//                    self.leftScoreLabel.text = "\(self.gino(resResult.data?.nextLevelScore))"
                         
-                    if(resResult.data?.ments?.count != 0) {
-                        self.catChatLabel.text = resResult.data?.ments?[0]
-                    }
+//                    if(resResult.data?.ments?.count != 0) {
+//                        self.catChatLabel.text = resResult.data?.ments?[0]
+//                    }
                         
                     if(resResult.data?.ments?.count != 0) {
                         self.mentsBox = resResult.data?.ments ?? []
@@ -70,10 +60,10 @@ extension HomeVC {
                         self.showSelectNewCat()
                     }
                     
-                    if(resResult.data?.ments?.count != 0 ) {
-                        self.timer.invalidate()
-                        self.timer = Timer.scheduledTimer(timeInterval: 8.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
-                    }
+//                    if(resResult.data?.ments?.count != 0 ) {
+//                        self.timer.invalidate()
+//                        self.timer = Timer.scheduledTimer(timeInterval: 8.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
+//                    }
                 }
                 self.loadingView.alpha = 0
                 self.loadingBackgroundView.alpha = 0
