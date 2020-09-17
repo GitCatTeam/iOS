@@ -877,6 +877,9 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 커밋" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bC-4w-vph" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
                                         <rect key="frame" x="147.5" y="45" width="119" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="119" id="Pyk-Aj-bEE"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="SeN-CM" family="SeoulNamsan CM" pointSize="28"/>
                                         <color key="textColor" name="brownishGrey"/>
                                         <nil key="highlightedColor"/>
@@ -901,25 +904,25 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bQ-Ib-XKO" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                        <rect key="frame" x="165" y="78.5" width="84.5" height="91"/>
+                                        <rect key="frame" x="165" y="78" width="84.5" height="91"/>
                                         <fontDescription key="fontDescription" name="SangSangYoungestDaughter" family="상상토끼 꽃집막내딸" pointSize="70"/>
                                         <color key="textColor" name="skyBlue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="macCatOrange01" translatesAutoresizingMaskIntoConstraints="NO" id="SJ9-xS-T0Y">
-                                        <rect key="frame" x="42" y="243.5" width="330" height="247"/>
+                                        <rect key="frame" x="41.5" y="242" width="331" height="247.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="SJ9-xS-T0Y" secondAttribute="height" multiplier="330:247" id="Edw-OB-4gY"/>
                                         </constraints>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgCattalk" translatesAutoresizingMaskIntoConstraints="NO" id="MQ9-Ym-WrV">
-                                        <rect key="frame" x="72" y="180.5" width="270" height="74"/>
+                                        <rect key="frame" x="72" y="179.5" width="270" height="74"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="MQ9-Ym-WrV" secondAttribute="height" multiplier="135:37" id="HbZ-UN-DWm"/>
+                                            <constraint firstAttribute="width" secondItem="MQ9-Ym-WrV" secondAttribute="height" multiplier="135:37" id="rSf-SC-q69"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GGGGGGGGGGGGGGGGGG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FB7-9j-sE9" customClass="CustomLabel" customModule="GitCat" customModuleProvider="target">
-                                        <rect key="frame" x="93" y="199.5" width="228.5" height="23"/>
+                                        <rect key="frame" x="93" y="198" width="228.5" height="23.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="228.5" id="oOi-GX-eE0"/>
                                         </constraints>
@@ -933,7 +936,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGZ-Zc-1IN">
-                                        <rect key="frame" x="43.5" y="490.5" width="327" height="132"/>
+                                        <rect key="frame" x="43.5" y="489" width="327" height="132"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="고양씨이름이다냥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQH-gV-nHH">
                                                 <rect key="frame" x="109.5" y="24" width="108.5" height="17"/>
@@ -1000,7 +1003,6 @@
                                             <constraint firstItem="bs0-hx-d64" firstAttribute="width" secondItem="PGZ-Zc-1IN" secondAttribute="width" multiplier="0.0458716" id="kd1-l3-s0R"/>
                                             <constraint firstItem="2VS-rH-Cmd" firstAttribute="leading" secondItem="bs0-hx-d64" secondAttribute="trailing" id="lhh-Mf-yrD"/>
                                             <constraint firstItem="bNY-oX-9cI" firstAttribute="top" secondItem="tQH-gV-nHH" secondAttribute="top" multiplier="48/24" id="msf-72-zb1"/>
-                                            <constraint firstAttribute="width" secondItem="PGZ-Zc-1IN" secondAttribute="height" multiplier="109:44" id="pG9-Y8-59p"/>
                                             <constraint firstItem="Jr5-2E-EtD" firstAttribute="centerX" secondItem="PGZ-Zc-1IN" secondAttribute="centerX" id="ppL-e4-ktj"/>
                                             <constraint firstItem="tQH-gV-nHH" firstAttribute="top" secondItem="PGZ-Zc-1IN" secondAttribute="bottom" multiplier="24/132" id="vaa-gG-7CJ"/>
                                             <constraint firstItem="qQ7-hk-JjK" firstAttribute="leading" secondItem="6JS-8e-GP0" secondAttribute="trailing" constant="4" id="w8h-A8-ICB"/>
@@ -1010,25 +1012,25 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="PGZ-Zc-1IN" firstAttribute="top" secondItem="SJ9-xS-T0Y" secondAttribute="bottom" id="3Nc-vI-4uW"/>
+                                    <constraint firstItem="PGZ-Zc-1IN" firstAttribute="centerX" secondItem="BAz-MP-jtV" secondAttribute="centerX" id="3Ap-Nb-IsX"/>
+                                    <constraint firstItem="PGZ-Zc-1IN" firstAttribute="top" secondItem="SJ9-xS-T0Y" secondAttribute="top" multiplier="489/242" id="3Nc-vI-4uW"/>
                                     <constraint firstItem="g13-dk-Wul" firstAttribute="height" secondItem="BAz-MP-jtV" secondAttribute="height" multiplier="0.0606897" id="3XO-pz-I0U"/>
                                     <constraint firstItem="SJ9-xS-T0Y" firstAttribute="centerX" secondItem="BAz-MP-jtV" secondAttribute="centerX" id="5Wl-Gv-spr"/>
                                     <constraint firstItem="SJ9-xS-T0Y" firstAttribute="top" secondItem="6bQ-Ib-XKO" secondAttribute="top" multiplier="243.5/78.5" id="9bN-zl-lYY"/>
                                     <constraint firstItem="4bC-4w-vph" firstAttribute="centerX" secondItem="BAz-MP-jtV" secondAttribute="centerX" id="AKU-qi-WMe"/>
                                     <constraint firstItem="6bQ-Ib-XKO" firstAttribute="top" secondItem="4bC-4w-vph" secondAttribute="top" multiplier="78/45" id="BXC-kd-Eze"/>
-                                    <constraint firstItem="MQ9-Ym-WrV" firstAttribute="width" secondItem="BAz-MP-jtV" secondAttribute="width" multiplier="0.652174" id="Blm-wi-Ijv"/>
                                     <constraint firstItem="MQ9-Ym-WrV" firstAttribute="top" secondItem="6bQ-Ib-XKO" secondAttribute="top" multiplier="180.5/78.5" id="CUR-mW-gKj"/>
                                     <constraint firstItem="FB7-9j-sE9" firstAttribute="centerY" secondItem="MQ9-Ym-WrV" secondAttribute="centerY" multiplier="0.97" id="Caz-2s-2gE"/>
-                                    <constraint firstItem="4bC-4w-vph" firstAttribute="top" secondItem="BAz-MP-jtV" secondAttribute="bottom" multiplier="40/641" id="Gpc-oi-EJf"/>
+                                    <constraint firstItem="4bC-4w-vph" firstAttribute="top" secondItem="BAz-MP-jtV" secondAttribute="bottom" multiplier="45/725" id="Gpc-oi-EJf"/>
                                     <constraint firstAttribute="bottom" secondItem="g13-dk-Wul" secondAttribute="bottom" constant="85" id="NGx-l0-EKA"/>
-                                    <constraint firstItem="FB7-9j-sE9" firstAttribute="height" secondItem="MQ9-Ym-WrV" secondAttribute="height" multiplier="0.310811" id="Pje-lw-DNx"/>
+                                    <constraint firstItem="PGZ-Zc-1IN" firstAttribute="width" secondItem="BAz-MP-jtV" secondAttribute="width" multiplier="0.789855" id="S6l-tU-i64"/>
                                     <constraint firstItem="g13-dk-Wul" firstAttribute="centerX" secondItem="BAz-MP-jtV" secondAttribute="centerX" id="X8s-L2-uCe"/>
                                     <constraint firstItem="FB7-9j-sE9" firstAttribute="centerX" secondItem="MQ9-Ym-WrV" secondAttribute="centerX" id="XcB-JO-LNO"/>
-                                    <constraint firstItem="PGZ-Zc-1IN" firstAttribute="centerX" secondItem="BAz-MP-jtV" secondAttribute="centerX" id="Y8T-rh-CzD"/>
                                     <constraint firstItem="MQ9-Ym-WrV" firstAttribute="centerX" secondItem="BAz-MP-jtV" secondAttribute="centerX" id="ZGd-81-bRY"/>
-                                    <constraint firstItem="SJ9-xS-T0Y" firstAttribute="width" secondItem="BAz-MP-jtV" secondAttribute="width" multiplier="0.797101" id="kmz-H6-HcY"/>
+                                    <constraint firstItem="PGZ-Zc-1IN" firstAttribute="height" secondItem="BAz-MP-jtV" secondAttribute="height" multiplier="0.182069" id="dXc-Cl-usH"/>
+                                    <constraint firstItem="MQ9-Ym-WrV" firstAttribute="height" secondItem="BAz-MP-jtV" secondAttribute="height" multiplier="0.102069" id="l3e-w6-tkg"/>
+                                    <constraint firstItem="SJ9-xS-T0Y" firstAttribute="height" secondItem="BAz-MP-jtV" secondAttribute="height" multiplier="0.341379" id="pty-Qc-M3d"/>
                                     <constraint firstItem="6bQ-Ib-XKO" firstAttribute="centerX" secondItem="BAz-MP-jtV" secondAttribute="centerX" id="s99-Hq-hR3"/>
-                                    <constraint firstItem="PGZ-Zc-1IN" firstAttribute="width" secondItem="BAz-MP-jtV" secondAttribute="width" multiplier="0.789855" id="vD4-X5-NW1"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1088,6 +1090,7 @@
                         <outlet property="collectionView" destination="AUr-sS-Tib" id="aeO-d7-SDO"/>
                         <outlet property="commitCalendarArrow" destination="qKA-xN-7iO" id="Jjn-Vy-cOP"/>
                         <outlet property="commitReportDescription" destination="Rrq-hb-fkk" id="OAh-hO-Nlg"/>
+                        <outlet property="currentScoreLabel" destination="2VS-rH-Cmd" id="Z7q-y2-L7j"/>
                         <outlet property="graduateBtn" destination="rti-7X-lTq" id="bDo-ep-tM7"/>
                         <outlet property="graduateCardView" destination="4uT-oU-thp" id="A8Q-TN-ls7"/>
                         <outlet property="graduateCatName" destination="BkR-it-Dsd" id="0wW-ep-aPe"/>
@@ -1110,6 +1113,8 @@
                         <outlet property="leaveSubTitle6" destination="cYc-Ui-orc" id="JR8-6U-mlc"/>
                         <outlet property="loadingBackgroundView" destination="uv1-EH-2ok" id="rXr-6K-phq"/>
                         <outlet property="loadingView" destination="wlb-rZ-2TI" id="ej4-LD-t2V"/>
+                        <outlet property="nextItemLabel" destination="qQ7-hk-JjK" id="6BQ-1V-5S0"/>
+                        <outlet property="nextLevelLeftPointLabel" destination="6JS-8e-GP0" id="mDp-Iv-Twc"/>
                         <outlet property="pageControl" destination="tWN-Ku-0e8" id="iGN-6J-IkE"/>
                         <outlet property="refreshBarItem" destination="JSt-jc-apk" id="AWs-yi-RvJ"/>
                         <outlet property="reportArrow" destination="zgB-Pj-ULw" id="LAd-yT-8Qn"/>

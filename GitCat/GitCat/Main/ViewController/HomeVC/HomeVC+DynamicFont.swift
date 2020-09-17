@@ -11,14 +11,11 @@ extension HomeVC {
     func setLabelFontSize() {
         self.titleLabel.dynamicFont(fontSize: 28, name: "SeN-CM")
         self.todayCommitCountLabel.dynamicFont(fontSize: 70, name: "SangSangYoungestDaughter")
-        self.catChatLabel.dynamicFont(fontSize: 20, name: "NanumBaReunHiPi")
-//        self.todayScoreDescLabel.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
-//        self.todayScoreLabel.dynamicFont(fontSize: 28, name: "NanumBaeEunHyeCe")
-//
-//        self.leftScoreDescLabel.dynamicFont(fontSize: 16, name:"BBTreeGo_R")
-//        self.leftScoreLabel.dynamicFont(fontSize: 28, name:"NanumBaeEunHyeCe")
+        self.catChatLabel.dynamicFont(fontSize: 18, name: "NanumBaReunHiPi")
         self.catNameLabel.dynamicFont(fontSize: 14, name:"SeN-CB")
-//        self.itemLabel.dynamicFont(fontSize: 18, name:"NanumBaeEunHyeCe")
+        self.currentScoreLabel.dynamicFont(fontSize: 12, name: "SeN-CM")
+        self.nextLevelLeftPointLabel.dynamicFont(fontSize: 12, name: "SeN-CM")
+        self.nextItemLabel.dynamicFont(fontSize: 12, name: "SeN-CB")
         self.selectCatBtn.titleLabel?.dynamicFont(fontSize: 14, name: "BBTreeG_B")
         
         self.graduateTitleLabel.dynamicFont(fontSize: 20, name: "BBTreeG_B")

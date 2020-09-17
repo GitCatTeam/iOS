@@ -33,7 +33,7 @@ class GradientSlider: UISlider {
             self.setMinimumTrackImage(try self.gradientImage(
             size: self.trackRect(forBounds: self.bounds).size,
             colorSet: [trackColor1.cgColor, trackColor2.cgColor, trackColor3.cgColor, trackColor4.cgColor]),
-                                  for: .normal)
+                                      for: .normal)
             self.setMaximumTrackImage(try self.gradientImage(
             size: self.trackRect(forBounds: self.bounds).size,
             colorSet: [maxTrackColor.cgColor, maxTrackColor.cgColor]),
@@ -83,6 +83,4 @@ class GradientSlider: UISlider {
         super.init(coder: aDecoder)
         setup()
     }
-
-
 }

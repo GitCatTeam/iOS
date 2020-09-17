@@ -14,7 +14,12 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     @IBOutlet weak var catChatBox: UIImageView!
     @IBOutlet weak var catChatLabel: UILabel! //GGGGG
     @IBOutlet weak var catInfoBox: UIView!
-    @IBOutlet weak var sliderView: UISlider!
+    @IBOutlet weak var sliderView: GradientSlider!
+    
+    @IBOutlet weak var currentScoreLabel: UILabel!
+    @IBOutlet weak var nextLevelLeftPointLabel: UILabel!
+    @IBOutlet weak var nextItemLabel: UILabel!
+    
     
     @IBOutlet weak var OverlayView: UIView!
     
@@ -220,9 +225,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     
     @objc func fireTimer() {
         mentPos += 1
-        
         self.catChatLabel.text = mentsBox[mentPos]
-
         if mentPos >= 7 {
             mentPos = -1
         }
@@ -230,19 +233,15 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     
     func startTutorialAction() {
         UIView.animate(withDuration: 0.3, animations: {
-            
             UserDefaults.standard.set(true, forKey: "tutorialDone")
             self.OverlayView.alpha = 0
             
-            
             self.tabBarController?.tabBar.alpha = 1
-
             self.tabBarController?.tabBar.isUserInteractionEnabled = true
             
             self.catCollectionBarItem.isEnabled = true
             self.settingBarItem.isEnabled = true
             self.refreshBarItem.isEnabled = true
-
         });
     }
     
@@ -265,7 +264,6 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         self.OverlayView.alpha = 0
         
         self.loadingBackgroundView.alpha = 1
-
     }
     
     func setStyle() {
@@ -303,6 +301,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         self.catInfoBox.roundRadius(radius: 14)
         self.catInfoBox.addShadow()
 
+        self.sliderView.thickness = self.catInfoBox.frame.height / 10
     }
     
     func showTutorial(){
