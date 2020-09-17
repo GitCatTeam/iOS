@@ -9,11 +9,13 @@
 import UIKit
 
 class HomeVC: UIViewController, TutorialCellDelegate {
-    @IBOutlet weak var titleLabel: CustomLabel!
-    
-    @IBOutlet weak var catChatBox: UIImageView!
-    @IBOutlet weak var catChatLabel: UILabel!
+    @IBOutlet weak var titleLabel: CustomLabel! //오늘의 커밋
 
+    @IBOutlet weak var catChatBox: UIImageView!
+    @IBOutlet weak var catChatLabel: UILabel! //GGGGG
+    @IBOutlet weak var catInfoBox: UIView!
+    @IBOutlet weak var sliderView: UISlider!
+    
     @IBOutlet weak var OverlayView: UIView!
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -39,12 +41,9 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     @IBOutlet weak var leaveCardView: UIView!
 
     @IBOutlet weak var todayCommitCountLabel: CustomLabel! //오늘의 커밋 값
-    @IBOutlet weak var todayCommitDescLabel: CustomLabel! //오늘의 커밋 라벨
     
     @IBOutlet weak var catNameLabel: UILabel! //고양이 이름
-//    @IBOutlet weak var todayScoreLabel: UILabel!
-    @IBOutlet weak var catImageView: UIImageView!
-//    @IBOutlet weak var leftScoreLabel: UILabel!
+    @IBOutlet weak var catImageView: UIImageView! //고양이 이미지
     
     @IBOutlet weak var loadingView: UIImageView!
     @IBOutlet weak var loadingBackgroundView: UIView!
@@ -270,16 +269,12 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     }
     
     func setStyle() {
-        self.highlightView.layer.borderWidth = 0
-        self.highlightView.circleRadius()
-        
-        self.graduateCardView.roundRadius(radius: 10)
-        self.graduateCardView.customShadow(width: 1, height: 2, radius: 11, opacity: 0.16)
-        self.itemUpgradeCardView.roundRadius(radius: 10)
-        self.itemUpgradeCardView.customShadow(width: 1, height: 2, radius: 11, opacity: 0.16)
+        setTutorialStyle()
+        setAlertViewStyle()
         
         self.loadingView.loadGif(name: "gif_loading2")
         
+        setCatInfoBoxStyle()
         self.selectCatBtn.layer.borderColor = UIColor.clear.cgColor
         self.selectCatBtn.circleRadius()
         self.selectCatBtn.customShadow(width: 1, height: 1, radius: 56.5, opacity: 0.1)
@@ -290,6 +285,24 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         
         scoreAlertView.roundRadius(radius: 10)
         scoreAlertView.customShadow(width: 1, height: 2, radius: 11, opacity: 0.16)
+    }
+    
+    func setTutorialStyle() {
+        self.highlightView.layer.borderWidth = 0
+        self.highlightView.circleRadius()
+    }
+    
+    func setAlertViewStyle() {
+        self.graduateCardView.roundRadius(radius: 10)
+        self.graduateCardView.customShadow(width: 1, height: 2, radius: 11, opacity: 0.16)
+        self.itemUpgradeCardView.roundRadius(radius: 10)
+        self.itemUpgradeCardView.customShadow(width: 1, height: 2, radius: 11, opacity: 0.16)
+    }
+    
+    func setCatInfoBoxStyle() {
+        self.catInfoBox.roundRadius(radius: 14)
+        self.catInfoBox.addShadow()
+
     }
     
     func showTutorial(){
