@@ -12,10 +12,21 @@ extension HomeVC {
         self.titleLabel.dynamicFont(fontSize: 28, name: "SeN-CM")
         self.todayCommitCountLabel.dynamicFont(fontSize: 70, name: "SangSangYoungestDaughter")
         self.catChatLabel.dynamicFont(fontSize: 18, name: "NanumBaReunHiPi")
+        
+        self.currentLevelLabel.dynamicFont(fontSize: 14, name: "SeN-CB")
         self.catNameLabel.dynamicFont(fontSize: 14, name:"SeN-CB")
-        self.currentScoreLabel.dynamicFont(fontSize: 12, name: "SeN-CM")
-        self.nextLevelLeftPointLabel.dynamicFont(fontSize: 12, name: "SeN-CM")
-        self.nextItemLabel.dynamicFont(fontSize: 12, name: "SeN-CB")
+        
+        self.firstBarLabel.dynamicFont(fontSize: 14, name: "SeN-CM")
+        self.scoreSumLabel.dynamicFont(fontSize: 14, name: "SeN-CM")
+        self.todayScoreLabel.dynamicFont(fontSize: 14, name: "SeN-CM")
+        
+        self.secondBarLabel.dynamicFont(fontSize: 14, name: "SeN-CM")
+        self.nextItemLabel.dynamicFont(fontSize: 14, name: "SeN-CM")
+        self.nextLevelLeftPointLabel.dynamicFont(fontSize: 14, name: "SeN-CM")
+        
+        self.thirdBarLabel.dynamicFont(fontSize: 14, name: "SeN-CM")
+        self.graduateLeftPointLabel.dynamicFont(fontSize: 14, name: "SeN-CM")
+        
         self.selectCatBtn.titleLabel?.dynamicFont(fontSize: 14, name: "BBTreeG_B")
         
         self.graduateTitleLabel.dynamicFont(fontSize: 20, name: "BBTreeG_B")

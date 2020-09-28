@@ -5,6 +5,7 @@
 //  Created by 조윤영 on 30/12/2019.
 //  Copyright © 2019 조윤영. All rights reserved.
 //
+//TODO - 프로그레스바 아이패드 상에서 회색 부분 안보임
 
 import UIKit
 
@@ -15,11 +16,6 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     @IBOutlet weak var catChatLabel: UILabel! //GGGGG
     @IBOutlet weak var catInfoBox: UIView!
     @IBOutlet weak var sliderView: GradientSlider!
-    
-    @IBOutlet weak var currentScoreLabel: UILabel!
-    @IBOutlet weak var nextLevelLeftPointLabel: UILabel!
-    @IBOutlet weak var nextItemLabel: UILabel!
-    
     
     @IBOutlet weak var OverlayView: UIView!
     
@@ -49,6 +45,21 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     
     @IBOutlet weak var catNameLabel: UILabel! //고양이 이름
     @IBOutlet weak var catImageView: UIImageView! //고양이 이미지
+    
+    
+    @IBOutlet weak var firstBarLabel: UILabel!
+    @IBOutlet weak var secondBarLabel: UILabel!
+    @IBOutlet weak var thirdBarLabel: CustomLabel!
+    
+    
+    @IBOutlet weak var currentLevelLabel: CustomLabel!
+    @IBOutlet weak var levelSliderView: GradientSlider!
+    @IBOutlet weak var scoreSumLabel: CustomLabel!
+    @IBOutlet weak var todayScoreLabel: CustomLabel!
+    @IBOutlet weak var nextItemLabel: UILabel!
+    @IBOutlet weak var nextLevelLeftPointLabel: UILabel!
+    @IBOutlet weak var graduateLeftPointLabel: CustomLabel!
+    
     
     @IBOutlet weak var loadingView: UIImageView!
     @IBOutlet weak var loadingBackgroundView: UIView!
@@ -118,12 +129,13 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         if(isTutorialDone == false){
             showTutorial()
         }
+        
+        self.sliderView.isEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         tabBarController?.tabBar.alpha = 1
-
     }
     
     override func viewWillLayoutSubviews() {
@@ -337,15 +349,13 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         
     }
     
-    
-    
-//    @IBAction func showScoreDetailAction(_ sender: Any) {
-//        UIView.animate(withDuration: 0.3, animations: {
-//            self.setCardBackgorund()
-//            self.cardBackgroundView.alpha = 1
-//            self.scoreAlertView.alpha = 1
-//        })
-//    }
+    @IBAction func showScoreDetailAction(_ sender: Any) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.setCardBackgorund()
+            self.cardBackgroundView.alpha = 1
+            self.scoreAlertView.alpha = 1
+        })
+    }
     
     @IBAction func closeScoreInfoAction(_ sender: Any) {
         dismissCardBackground()

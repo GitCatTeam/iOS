@@ -14,10 +14,6 @@
 		4C1035AC23B9D1430057F0B1 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1035AB23B9D1430057F0B1 /* HomeVC.swift */; };
 		4C10BCF62416293D00CDC16D /* LabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C10BCF52416293D00CDC16D /* LabelExtension.swift */; };
 		4C10BCF824162CFC00CDC16D /* ButtonLabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C10BCF724162CFC00CDC16D /* ButtonLabelExtension.swift */; };
-		4C18C37324FB4F2700BE6EF0 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C18C37224FB4F2700BE6EF0 /* NotificationCenter.framework */; };
-		4C18C37624FB4F2700BE6EF0 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18C37524FB4F2700BE6EF0 /* TodayViewController.swift */; };
-		4C18C37924FB4F2700BE6EF0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C18C37724FB4F2700BE6EF0 /* MainInterface.storyboard */; };
-		4C18C37D24FB4F2700BE6EF0 /* GitcatWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4C18C37124FB4F2700BE6EF0 /* GitcatWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4C23E2C524A8F1DF00927760 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C23E2C424A8F1DF00927760 /* UserNotifications.framework */; };
 		4C23E2C724A8F1EC00927760 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C23E2C624A8F1EB00927760 /* PushKit.framework */; };
 		4C2DDD0A23EAEEF200FCB36B /* TutorialCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DDD0923EAEEF200FCB36B /* TutorialCVCell.swift */; };
@@ -37,6 +33,8 @@
 		4C6284112453125C00E07552 /* gif_imac_cat.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4C6284102453125C00E07552 /* gif_imac_cat.gif */; };
 		4C64F6382431E8D40009EC46 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C64F6372431E8D40009EC46 /* Splash.storyboard */; };
 		4C64F63A2431EA400009EC46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C64F6392431EA400009EC46 /* LaunchScreen.storyboard */; };
+		4C672BBE25218060002A6511 /* FAQVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C672BBD25218060002A6511 /* FAQVC.swift */; };
+		4C672BC4252182CB002A6511 /* PostCalendarReloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C672BC3252182CB002A6511 /* PostCalendarReloadService.swift */; };
 		4C68D10623B09D3E00A8F813 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68D10523B09D3E00A8F813 /* AppDelegate.swift */; };
 		4C68D10D23B09D4000A8F813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C68D10C23B09D4000A8F813 /* Assets.xcassets */; };
 		4C68D12C23B0AAB100A8F813 /* BasicExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C68D12B23B0AAB100A8F813 /* BasicExtension.swift */; };
@@ -143,13 +141,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4C18C37B24FB4F2700BE6EF0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4C68D0FA23B09D3E00A8F813 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4C18C37024FB4F2700BE6EF0;
-			remoteInfo = GitcatWidget;
-		};
 		4C747B3324FE1F2300739D00 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4C68D0FA23B09D3E00A8F813 /* Project object */;
@@ -166,7 +157,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				4C18C37D24FB4F2700BE6EF0 /* GitcatWidget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,11 +170,7 @@
 		4C1035AB23B9D1430057F0B1 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		4C10BCF52416293D00CDC16D /* LabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExtension.swift; sourceTree = "<group>"; };
 		4C10BCF724162CFC00CDC16D /* ButtonLabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonLabelExtension.swift; sourceTree = "<group>"; };
-		4C18C37124FB4F2700BE6EF0 /* GitcatWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GitcatWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C18C37224FB4F2700BE6EF0 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		4C18C37524FB4F2700BE6EF0 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		4C18C37824FB4F2700BE6EF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		4C18C37A24FB4F2700BE6EF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C23E2C424A8F1DF00927760 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		4C23E2C624A8F1EB00927760 /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
 		4C23E2C824A8F1F700927760 /* GitCat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitCat.entitlements; sourceTree = "<group>"; };
@@ -205,6 +191,8 @@
 		4C6284102453125C00E07552 /* gif_imac_cat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif_imac_cat.gif; sourceTree = "<group>"; };
 		4C64F6372431E8D40009EC46 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		4C64F6392431EA400009EC46 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4C672BBD25218060002A6511 /* FAQVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQVC.swift; sourceTree = "<group>"; };
+		4C672BC3252182CB002A6511 /* PostCalendarReloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCalendarReloadService.swift; sourceTree = "<group>"; };
 		4C68D10223B09D3E00A8F813 /* GitCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C68D10523B09D3E00A8F813 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C68D10C23B09D4000A8F813 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -321,14 +309,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4C18C36E24FB4F2700BE6EF0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4C18C37324FB4F2700BE6EF0 /* NotificationCenter.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4C68D0FF23B09D3E00A8F813 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -381,16 +361,6 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		4C18C37424FB4F2700BE6EF0 /* GitcatWidget */ = {
-			isa = PBXGroup;
-			children = (
-				4C18C37524FB4F2700BE6EF0 /* TodayViewController.swift */,
-				4C18C37724FB4F2700BE6EF0 /* MainInterface.storyboard */,
-				4C18C37A24FB4F2700BE6EF0 /* Info.plist */,
-			);
-			path = GitcatWidget;
-			sourceTree = "<group>";
-		};
 		4C2DDD0B23EB1FB700FCB36B /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,7 +383,6 @@
 			isa = PBXGroup;
 			children = (
 				4C68D10423B09D3E00A8F813 /* GitCat */,
-				4C18C37424FB4F2700BE6EF0 /* GitcatWidget */,
 				4C747B2F24FE1F2300739D00 /* GitCatTests */,
 				4C68D10323B09D3E00A8F813 /* Products */,
 				538C12053FE7C5153A087EC7 /* Pods */,
@@ -425,7 +394,6 @@
 			isa = PBXGroup;
 			children = (
 				4C68D10223B09D3E00A8F813 /* GitCat.app */,
-				4C18C37124FB4F2700BE6EF0 /* GitcatWidget.appex */,
 				4C747B2E24FE1F2300739D00 /* GitCatTests.xctest */,
 			);
 			name = Products;
@@ -552,6 +520,7 @@
 				4C60E75C24383DE6007495DB /* PostLogoutService.swift */,
 				4CCAABCE243D9DFC00CBF56A /* DeleteUserInfo.swift */,
 				4C31717D2440D3D4004F8FA7 /* RefreshJWTService.swift */,
+				4C672BC3252182CB002A6511 /* PostCalendarReloadService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -702,6 +671,7 @@
 				4C7C0E1423D5650D00669B38 /* MainTabBarVC.swift */,
 				4C99B37A2403C4C0003DFBA6 /* InstagramVc.swift */,
 				4C3F8CA924A5DEDB009248B6 /* RepositoryAccessVC.swift */,
+				4C672BBD25218060002A6511 /* FAQVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -853,23 +823,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4C18C37024FB4F2700BE6EF0 /* GitcatWidget */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4C18C38024FB4F2700BE6EF0 /* Build configuration list for PBXNativeTarget "GitcatWidget" */;
-			buildPhases = (
-				4C18C36D24FB4F2700BE6EF0 /* Sources */,
-				4C18C36E24FB4F2700BE6EF0 /* Frameworks */,
-				4C18C36F24FB4F2700BE6EF0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = GitcatWidget;
-			productName = GitcatWidget;
-			productReference = 4C18C37124FB4F2700BE6EF0 /* GitcatWidget.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		4C68D10123B09D3E00A8F813 /* GitCat */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C68D11423B09D4000A8F813 /* Build configuration list for PBXNativeTarget "GitCat" */;
@@ -884,7 +837,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				4C18C37C24FB4F2700BE6EF0 /* PBXTargetDependency */,
 			);
 			name = GitCat;
 			productName = GitCat;
@@ -919,9 +871,6 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "조윤영";
 				TargetAttributes = {
-					4C18C37024FB4F2700BE6EF0 = {
-						CreatedOnToolsVersion = 11.6;
-					};
 					4C68D10123B09D3E00A8F813 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
@@ -946,21 +895,12 @@
 			projectRoot = "";
 			targets = (
 				4C68D10123B09D3E00A8F813 /* GitCat */,
-				4C18C37024FB4F2700BE6EF0 /* GitcatWidget */,
 				4C747B2D24FE1F2300739D00 /* GitCatTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4C18C36F24FB4F2700BE6EF0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4C18C37924FB4F2700BE6EF0 /* MainInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4C68D10023B09D3E00A8F813 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1040,14 +980,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4C18C36D24FB4F2700BE6EF0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4C18C37624FB4F2700BE6EF0 /* TodayViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4C68D0FE23B09D3E00A8F813 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1110,11 +1042,13 @@
 				4C3F8CAA24A5DEDB009248B6 /* RepositoryAccessVC.swift in Sources */,
 				4CE10E2B249DEA5500453011 /* Reachability.swift in Sources */,
 				4CAB3BD02407F170007A84B6 /* DelettableService.swift in Sources */,
+				4C672BC4252182CB002A6511 /* PostCalendarReloadService.swift in Sources */,
 				4CF4CD4224E63C3B00C0D544 /* LineChartView.swift in Sources */,
 				4CE10E58249E222000453011 /* UserDataInitVC+NetworkExtension.swift in Sources */,
 				4CE10E4F249E1F9C00453011 /* SettingVC+NetworkExtension.swift in Sources */,
 				4CE10E24249DE83000453011 /* GetMoreInfo4VC+NetworkExtension.swift in Sources */,
 				4C3A3D7B2442FF5400093C50 /* RefreshTokenModel.swift in Sources */,
+				4C672BBE25218060002A6511 /* FAQVC.swift in Sources */,
 				4CE10E32249DF88800453011 /* HomeVC+DynamicFont.swift in Sources */,
 				4CE10E35249E0E3600453011 /* MidRepoVC+DynamicFont.swift in Sources */,
 				4CAB3BE22408635B007A84B6 /* PostCatSelectedService.swift in Sources */,
@@ -1171,11 +1105,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4C18C37C24FB4F2700BE6EF0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4C18C37024FB4F2700BE6EF0 /* GitcatWidget */;
-			targetProxy = 4C18C37B24FB4F2700BE6EF0 /* PBXContainerItemProxy */;
-		};
 		4C747B3424FE1F2300739D00 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4C68D10123B09D3E00A8F813 /* GitCat */;
@@ -1184,14 +1113,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4C18C37724FB4F2700BE6EF0 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C18C37824FB4F2700BE6EF0 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
 		4C747B2824FD128000739D00 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1204,48 +1125,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		4C18C37E24FB4F2700BE6EF0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
-				INFOPLIST_FILE = GitcatWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoonyoung.GitCat.GitcatWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		4C18C37F24FB4F2700BE6EF0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
-				INFOPLIST_FILE = GitcatWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoonyoung.GitCat.GitcatWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		4C68D11223B09D4000A8F813 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1373,14 +1252,14 @@
 				CODE_SIGN_ENTITLEMENTS = GitCat/GitCat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 20200826;
+				CURRENT_PROJECT_VERSION = 202009281;
 				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
 				INFOPLIST_FILE = "$(SRCROOT)/GitCat/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.12;
+				MARKETING_VERSION = 1.20;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoonyoung.GitCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = development_pro;
@@ -1398,7 +1277,7 @@
 				CODE_SIGN_ENTITLEMENTS = GitCat/GitCat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 20200826;
+				CURRENT_PROJECT_VERSION = 202009281;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = KT2XM3Z9DZ;
 				INFOPLIST_FILE = "$(SRCROOT)/GitCat/Resources/Info.plist";
@@ -1406,7 +1285,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.12;
+				MARKETING_VERSION = 1.20;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoonyoung.GitCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = distribution_pro;
@@ -1460,15 +1339,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4C18C38024FB4F2700BE6EF0 /* Build configuration list for PBXNativeTarget "GitcatWidget" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4C18C37E24FB4F2700BE6EF0 /* Debug */,
-				4C18C37F24FB4F2700BE6EF0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4C68D0FD23B09D3E00A8F813 /* Build configuration list for PBXProject "GitCat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

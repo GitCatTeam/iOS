@@ -30,10 +30,6 @@ class ReportVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.alpha = 1
-        //MARK: 리포트 점검으로 인해 서버로 데이터 요청을 잠시 일시적으로 닫아둠.
-//        setReportList()
-        self.loadingView.alpha = 0
-        self.noDataImageView.image = UIImage(named: "imgSorryreport01")
-        self.noDataImageView.alpha = 1
+        setReportList()
     }
 }

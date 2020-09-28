@@ -1,25 +1,24 @@
 //
-//  PostUserDataService.swift
+//  PostCalendarReloadService.swift
 //  GitCat
 //
-//  Created by 조윤영 on 05/03/2020.
+//  Created by 조윤영 on 2020/09/28.
 //  Copyright © 2020 조윤영. All rights reserved.
 //
 
 import Foundation
-struct PostUserDataService: PosttableService, APIService {
+struct PostCalendarReloadService: PosttableService, APIService {
     
     typealias NetworkData = CommonModel
-    static let shareInstance = PostUserDataService()
+    static let shareInstance = PostCalendarReloadService()
     
-    //MARK: POST - https://a.gitcat.app/api/home/commits (로딩과정에서 사용자의 Github 커밋 데이터 불러오기 API)
+    //MARK: POST - https://a.gitcat.app/api/v1/calender/commit (커밋 달력 새로고침 API)
     
-    func postUserData(completion: @escaping (NetworkResult<Any>) -> Void) {
-        
-        let userDataURL = self.url("/home/commits")
+    func postCalendarReload(date: String, completion: @escaping (NetworkResult<Any>) -> Void) {
+        let calendarReloadURL = self.url("/calender/commit?date=\(date)")
         
         //커밋 데이터 업데이트
-        post(userDataURL, params: [:]) { (result) in
+        post(calendarReloadURL, params: [:]) { (result) in
             switch result {
             case .success(let networkResult):
                 switch networkResult.resCode {

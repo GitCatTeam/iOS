@@ -9,10 +9,6 @@
 protocol APIService {
     
 }
-import Alamofire
-import UIKit
-import SwiftyJSON
-
 extension APIService {
     
     func url(_ path: String) -> String {

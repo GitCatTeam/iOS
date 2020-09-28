@@ -11,7 +11,6 @@ import Alamofire
 import SwiftyJSON
 
 protocol PosttableService {
-    
     associatedtype NetworkData : Codable
     typealias networkResult = (resCode: Int, resResult: NetworkData)
     func post(_ URL: String, params: [String : Any], completion: @escaping (Result<networkResult>) -> Void)

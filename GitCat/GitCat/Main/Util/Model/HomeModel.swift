@@ -12,16 +12,25 @@ class HomeModel:Codable {
     var message:String?
     var data:HomeDataModel?
 }
+
 class HomeDataModel:Codable {
     var todayCommitCount:Int?
-    var catImg:String?
+    var todayScore: Int?
     var catName:String?
-    var catLevel:Int?
+    var catImg:String?
+    
+    var totalScore: Int?
+    var currentLevel: Int?
+    var currentItem: String?
+    var nextLevel: Int?
+    var nextLevelItem: String?
+    var nextLevelScore: Int?
+    var graduScore: Int?
+    var progressPer: Int?
+    
+    var ments:[String]?
+    
     var isLevelUp:Bool?
     var isGraduate:Bool?
-    var todayScore:Int?
-    var nextLevelScore:Int?
-    var nextLevelStr:String?
-    var ments:[String]?
     var isLeave:Bool?
 }

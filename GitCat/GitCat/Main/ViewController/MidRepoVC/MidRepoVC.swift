@@ -153,7 +153,15 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
         self.commits = []
         self.tableView.reloadData()
         
-        loadData()
+        let values = Calendar.current.dateComponents([Calendar.Component.month, Calendar.Component.year], from: self.calendar.currentPage)
+        
+        let intYear:Int = gino(values.year)
+        let intMonth:Int = gino(values.month)
+        
+        currentMonth = intMonth
+        currentYear = intYear
+
+        loadData(year: intYear, month: intMonth)
     }
 
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {

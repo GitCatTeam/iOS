@@ -18,20 +18,32 @@ extension HomeVC {
                 let detailData = data as? HomeModel
                     
                 if let resResult = detailData {
-                        
-                    self.todayCommitCountLabel.text = "\(resResult.data?.todayCommitCount ?? 0)"
-//                    self.todayCommitCountLabel.text = "\(resResult.data?.todayScore ?? 0)"
-                    self.catNameLabel.text = resResult.data?.catName
+                    self.todayCommitCountLabel.text = "\(self.gino(resResult.data?.todayCommitCount))"
                     
-                    let url = URL(string: resResult.data?.catImg ?? "")
+                    let url = URL(string: self.gsno(resResult.data?.catImg))
                     self.catImageView.kf.setImage(with: url)
-//
-//                    self.itemLabel.text = "("+(resResult.data?.nextLevelStr ?? "")+")"
-//                    self.leftScoreLabel.text = "\(self.gino(resResult.data?.nextLevelScore))"
-                        
-//                    if(resResult.data?.ments?.count != 0) {
-//                        self.catChatLabel.text = resResult.data?.ments?[0]
-//                    }
+                    
+                    self.currentLevelLabel.text = "Lv.\(self.gino(resResult.data?.currentLevel)) \(self.gsno(resResult.data?.currentItem)) | "
+                    self.catNameLabel.text = self.gsno(resResult.data?.catName)
+                    self.levelSliderView.value = Float(self.gino(resResult.data?.progressPer)) / 100
+
+                    let currentLevel = self.gino(resResult.data?.currentLevel)
+                    
+                    if(currentLevel == 1) {
+                        self.levelSliderView.sliderThumbImage = UIImage(named: "icPencil")
+                    } else if(currentLevel == 2) {
+                        self.levelSliderView.sliderThumbImage = UIImage(named: "icMac")
+                    } else if(currentLevel == 3) {
+                        self.levelSliderView.sliderThumbImage = UIImage(named: "icMacpro")
+                    } else {
+                        self.levelSliderView.sliderThumbImage = UIImage(named: "icGaugebarricon")
+                    }
+                    
+                    self.scoreSumLabel.text = "총 \(self.gino(resResult.data?.totalScore))점을 획득했어요!"
+                    self.todayScoreLabel.text = "(오늘 득점은 \(self.gino(resResult.data?.todayScore))점)"
+                    self.nextItemLabel.text = "Lv.\(self.gino(resResult.data?.nextLevel)) \(self.gsno(resResult.data?.nextLevelItem))"
+                    self.nextLevelLeftPointLabel.text = "이 되려면 \(self.gino(resResult.data?.nextLevelScore))점이 더 필요해요!"
+                    self.graduateLeftPointLabel.text = "졸업까지 \(self.gino(resResult.data?.graduScore))점이 필요해요!"
                         
                     if(resResult.data?.ments?.count != 0) {
                         self.mentsBox = resResult.data?.ments ?? []

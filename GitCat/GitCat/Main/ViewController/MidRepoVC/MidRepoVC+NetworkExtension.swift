@@ -151,56 +151,53 @@ extension MidRepoVC {
         
     }
     
-    func loadData() {
-           registerBackgroundTask()
-           PostUserDataService.shareInstance.postUserData { (result) in
-                   switch result {
-                       case .networkSuccess( _): //201
-                           print("UserData POST SUCCESS")
-                           let values = Calendar.current.dateComponents([Calendar.Component.month, Calendar.Component.year], from: self.calendar.currentPage)
-                           
-                           let intYear:Int = self.gino(values.year)
-                           let intMonth:Int = self.gino(values.month)
-                           
-                           print("초기화: \(intYear)년 \(intMonth)월")
-                           
-                           self.currentMonth = intMonth
-                           self.currentYear = intYear
-                           
-                           
-                           
-                           self.setCalendarCommitBackgroundColor(year: intYear, month: intMonth, isFirst:true)
-                           let showCommitDate:String = self.formatter2.string(from: Date())
-                           self.setCommitData(date: showCommitDate)
-                           break
-                           
-                       case .badRequest: //400
-                           self.simpleAlert(title: "", message: "다시 시도해주세요")
-                           break
-                           
-                       case .accessDenied: //401
+    func loadData(year: Int, month: Int) {
+        registerBackgroundTask()
+        
+        if (month<10) {
+            selectedMonth = ("0" + String(month))
+        }else{
+            selectedMonth = String(month)
+        }
+        selectedYear = String(year)
+    
+        PostCalendarReloadService.shareInstance.postCalendarReload(date: "\(gsno(selectedYear))\(gsno(selectedMonth))") { (result) in
+                switch result {
+                    case .networkSuccess( _): //201
+                        print("UserData POST SUCCESS")
 
-                           let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
-                               UserDefaults.standard.set(false, forKey: "login")
-                               let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "AuthInitiVC")
-                               dvc.modalPresentationStyle = .fullScreen
+                        self.setCalendarCommitBackgroundColor(year: year, month: month, isFirst:true)
+                        let showCommitDate:String = self.formatter2.string(from: Date())
+                        self.setCommitData(date: showCommitDate)
+                        break
+                           
+                    case .badRequest: //400
+                        self.simpleAlert(title: "", message: "다시 시도해주세요")
+                        break
+                           
+                    case .accessDenied: //401
+
+                        let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
+                            UserDefaults.standard.set(false, forKey: "login")
+                            let dvc = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "AuthInitiVC")
+                            dvc.modalPresentationStyle = .fullScreen
                                               
-                               self.present(dvc, animated: true, completion: nil)
-                            }
+                            self.present(dvc, animated: true, completion: nil)
+                        }
                                           
-                           let alert = UIAlertController(title: "로그인 필요", message: "재로그인이 필요합니다", preferredStyle: UIAlertController.Style.alert)
+                        let alert = UIAlertController(title: "로그인 필요", message: "재로그인이 필요합니다", preferredStyle: UIAlertController.Style.alert)
                                           
-                           alert.addAction(confirmModeAction)
-                           self.present(alert, animated:true)
-                           break
+                        alert.addAction(confirmModeAction)
+                        self.present(alert, animated:true)
+                        break
                            
-                       case .networkFail:
-                           self.networkErrorAlert()
-                           break
+                    case .networkFail:
+                        self.networkErrorAlert()
+                        break
                            
-                       default:
-                           self.simpleAlert(title: "오류", message: "다시 시도해주세요")
-                           break
+                    default:
+                        self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                        break
                }
            }
            

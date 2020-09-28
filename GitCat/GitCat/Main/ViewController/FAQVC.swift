@@ -1,19 +1,16 @@
 //
-//  InstagramVc.swift
+//  FAQVC.swift
 //  GitCat
 //
-//  Created by 조윤영 on 24/02/2020.
+//  Created by 조윤영 on 2020/09/28.
 //  Copyright © 2020 조윤영. All rights reserved.
 //
 
 import UIKit
 import WebKit
 import SystemConfiguration
-
-class InstagramVc: UIViewController, WKUIDelegate, WKNavigationDelegate {
-    
+class FAQVC: UIViewController, WKUIDelegate, WKNavigationDelegate {
     @IBOutlet weak var webView: WKWebView!
-    
     
     override func loadView() {
         super.loadView()
@@ -21,7 +18,7 @@ class InstagramVc: UIViewController, WKUIDelegate, WKNavigationDelegate {
         webView.uiDelegate = self
         webView.navigationDelegate = self
         
-        self.view.addSubview(webView) 
+        self.view.addSubview(webView)
     }
     
     override func viewDidLoad() {
@@ -37,7 +34,7 @@ class InstagramVc: UIViewController, WKUIDelegate, WKNavigationDelegate {
     
     func loadURL() {
 
-        let InstagramURL = URL(string: "https://instagram.com/gitcat_story")
+        let InstagramURL = URL(string: "https://www.notion.so/gitcat/QnA-05f9209a6dfe4e4086b6d4e47191466b")
         let request = URLRequest(url: InstagramURL!)
         
         webView.load(request)

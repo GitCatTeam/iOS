@@ -17,6 +17,8 @@ class SettingVC: UIViewController {
     @IBOutlet weak var alaramManageLabel: CustomLabel!
     @IBOutlet weak var catInitialBtn: UIButton!
     @IBOutlet weak var introduceDeveloperLabel: CustomLabel!
+    
+    @IBOutlet weak var FAQLabel: CustomLabel!
     @IBOutlet weak var instagramLabel: CustomLabel!
     
     @IBOutlet weak var settingLabel: CustomLabel!

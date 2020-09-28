@@ -91,8 +91,6 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if(collectionView == self.collectionView ) {
-            
-            
             if(currentCatList[indexPath.row].isAvailable! != false) {
                 let selectedCell:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as! SelectCatCVCell
                 selectedCell.roundView.layer.borderColor = #colorLiteral(red: 0.4652857184, green: 0.8005116582, blue: 0.9823767543, alpha: 1)
@@ -106,7 +104,6 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
                         self.topConstraint.constant -= 50
                     }))
                 }
- 
             } else {
             
                 alertSubTitleLabel.text = gsno(currentCatList[indexPath.row].description)
