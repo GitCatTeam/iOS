@@ -30,7 +30,7 @@ class AuthManageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackBtn(color: UIColor.CustomColor.brownishGrey)
-        
+        setLocalization()
         self.userIdLabel.text = gsno(UserDefaults.standard.string(forKey: "userId"))
 
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.CustomColor.brownishGrey]
@@ -51,15 +51,19 @@ class AuthManageVC: UIViewController {
     }
     
     @IBAction func LogoutAction(_ sender: Any) {
-        let cancelModeAction = UIAlertAction(title: "취소", style: .cancel)
-        let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
+        let okTitle = "OK".localized()
+        let cancleTitle = "Cancel".localized()
+        let cancelModeAction = UIAlertAction(title: cancleTitle, style: .cancel)
+        let confirmModeAction = UIAlertAction(title: okTitle, style: .default) { (action) in
             
             //deviceToken && isPrivate 관련 삭제하기
             UserDefaults.standard.removeObject(forKey: "canAccessPrivate")
             self.deleteDeviceTokenWhenLogout()
         }
         
-        let alert = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
+        let logoutTitle = "Sign Out".localized()
+        let logoutMessage = "Do you want to SignOut?".localized()
+        let alert = UIAlertController(title: logoutTitle, message: logoutMessage, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(cancelModeAction)
         alert.addAction(confirmModeAction)
 

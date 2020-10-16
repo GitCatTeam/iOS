@@ -31,5 +31,43 @@
 //MARK: 아이템 업그레이드 팝업창
 "Item Upgrade!" = "Item Upgrade!";
 "Your item has been upgraded." = "Your item has been upgraded.";
-"It's much better than before!" = "It's much better than before!";
+"It's much better than before!" = "It's much better than before!"; //내가 수정한 내용
+"Keep up the good work :)" = "Keep up the good work :)"; //내가 추가한 내용
 
+/*===================================*/
+//MARK: 설정화면
+/*===================================*/
+
+"Settings" = "Settings";
+"GitHub Account Settings" = "GitHub Account Settings";
+"GitHub Repository Permission" = "GitHub Repository Permission";
+"Change GitHub Repository Permission" = "Change GitHub Repository Permission";
+"Do you want to change your permission?                                              you need to signIn again" = "Do you want to change your permission?                                              you need to signIn again";
+"Notifications Settings" = "Notifications Settings";
+"Reset Coding Buddies" = "Reset Coding Buddies"; //Reset Cats
+"Would you like to let go of all your adorable cats?                                    Released cats cannot be brought back." = "Would you like to let go of all your adorable cats?                                    Released cats cannot be brought back.";
+
+"Other" = "Other";
+"Developers Information" = "Developers Information"; //About Developers
+"FAQ" = "FAQ"; //내가 추가한 내용
+"Send Feedback" = "Send Feedback"; //내가 추가한 내용
+"GitCat Instagram" = "GitCat Instagram"; //Instagram
+
+//MARK: 로그인 계정 화면
+"GitHub Account Settings" = "GitHub Account Settings";
+"GitHub Login" = "GitHub Login"; //github account
+"Do you want to SignOut?" = "Do you want to SignOut?";
+"Sign Out" = "Sign Out";
+"Delete GitCat Account" = "Delete GitCat Account";
+
+//MARK: 회원 탈퇴 팝업창
+"Delete GitCat Account" = "Delete GitCat Account";
+"Delete all data within GitCat?" = "Delete all data within GitCat?"; //내 임의로 줄인 내용
+"Deleting GitCat account is permanent" = "Deleting GitCat account is permanent";
+"and it cannot be undone." = "and it cannot be undone.";
+"OK" = "Confirm";
+"Cancel" = "Cancel";
+
+//MARK: 알림 설정 화면
+"Notifications Settings" = "Notifications Settings";
+"Allow App Notification" = "Allow App Notification";

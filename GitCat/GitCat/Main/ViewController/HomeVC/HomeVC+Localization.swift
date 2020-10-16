@@ -10,7 +10,7 @@ import Foundation
 
 extension HomeVC {
     func setLocalization() {
-        self.titleLabel.text = NSLocalizedString("Today's Commit", comment: "")
+        self.titleLabel.text = "Today's Commit".localized()
 //        self.todayCommitCountLabel.dynamicFont(fontSize: 70, name: "SangSangYoungestDaughter")
 //        self.catChatLabel.dynamicFont(fontSize: 18, name: "NanumBaReunHiPi")
 //
@@ -30,39 +30,39 @@ extension HomeVC {
 //
 //        self.selectCatBtn.titleLabel?.dynamicFont(fontSize: 14, name: "BBTreeG_B")
 //
-        self.graduateTitleLabel.text = NSLocalizedString("HAPPY Graduation!", comment: "")
-        self.graduateSubTitle1.text = NSLocalizedString("Congratulations!", comment: "")
-        self.graduateSubTitle2.text = NSLocalizedString("Thank you for your hard work :)", comment: "")
-        self.graduateCatName.text = NSLocalizedString("your cat has syccessfully graduated.", comment: "")
-        self.graduateBtn.titleLabel?.text = NSLocalizedString("Go check it out", comment: "")
+        self.graduateTitleLabel.text = "HAPPY Graduation!".localized()
+        self.graduateSubTitle2.text = "Congratulations!".localized()
+        self.graduateSubTitle1.text = "Thank you for your hard work :)".localized()
+        self.graduateCatName.text = "cat has successfully graduated.".localized()
+        self.graduateBtn.setTitle(NSLocalizedString("Go check it out", comment: ""), for: .normal)
         
-        self.itemTitleLabel.text = NSLocalizedString("Item Upgrade!", comment: "")
+        self.itemTitleLabel.text = "Item Upgrade!".localized()
         
-        self.itemTitleLabel3.text = NSLocalizedString("Your item has been upgraded.", comment: "")
-        self.itemSubTitleLabel.text = NSLocalizedString("It's much better than before!", comment: "")
-        self.itemSubTitleLabel2.text = NSLocalizedString("Keep up the good work :)", comment: "")
+        self.itemTitleLabel3.text = "Your item has been upgraded.".localized()
+        self.itemSubTitleLabel.text = "It's much better than before!".localized()
+        self.itemSubTitleLabel2.text = "Keep up the good work :)".localized()
 
-        self.leaveCardTitleLabel.text = NSLocalizedString("[Breaking News]", comment: "")
-        self.leaveSubTitle1.text = NSLocalizedString("Unfortunately,", comment: "")
-        self.leaveSubTitle3.text = NSLocalizedString(" has left.", comment: "")
-        self.leaveSubTitle4.text = NSLocalizedString("In order to stop your", comment: "")
-        self.leaveSubTitle6.text = NSLocalizedString("buddies from leaving,", comment: "")
-        self.leaveSubTitle5.text = NSLocalizedString("more consistent commit is required", comment: "")
+        self.leaveCardTitleLabel.text = "[Breaking News]".localized()
+        self.leaveSubTitle1.text = "Unfortunately,".localized()
+        self.leaveSubTitle3.text = " has left.".localized()
+        self.leaveSubTitle4.text = "In order to stop your".localized()
+        self.leaveSubTitle6.text = "buddies from leaving,".localized()
+        self.leaveSubTitle5.text = "more consistent commit is required".localized()
 
 
 //        self.commitReportDescription.dynamicFont(fontSize: 32, name: "NanumBaeEunHyeCe")
 //        self.catCollectionDescription.dynamicFont(fontSize: 32, name: "NanumBaeEunHyeCe")
 //
-        self.scoreAlertTitleLabel1.text = NSLocalizedString("Hang on!", comment: "")
-        self.scoreAlertTitleLabel2.text = NSLocalizedString("how can we earn points", comment: "")
-        self.scoreAlertSubLabel1.text = NSLocalizedString("- if you commit at least once after", comment: "")
-        self.scoreAlertSubLabel2.text = NSLocalizedString("you've met the cat, you get 1 point.", comment: "")
-        self.scoreAlertSubLabel3.text = NSLocalizedString("- if you commit in git more than", comment: "")
-        self.scoreAlertSubLabel4.text = NSLocalizedString("5 times, you can get at most 1 point.", comment: "")
-        self.scoreAlertSubLabel5.text = NSLocalizedString("* You are able to help your first cat", comment: "")
-        self.scoreAlertSubLabel6.text = NSLocalizedString("graduate once you receive 1 point", comment: "")
-        self.scoreAlertSubLabel7.text = NSLocalizedString("but it'll get harder and harder", comment: "")
-        self.scoreAlertSubLabel8.text = NSLocalizedString("for your next cats. Good luck!", comment: "")
+        self.scoreAlertTitleLabel1.text = "Hang on!".localized()
+        self.scoreAlertTitleLabel2.text = "how can we earn points".localized()
+        self.scoreAlertSubLabel1.text = "- if you commit at least once after".localized()
+        self.scoreAlertSubLabel2.text = "you've met the cat, you get 1 point.".localized()
+        self.scoreAlertSubLabel3.text = "- if you commit in git more than".localized()
+        self.scoreAlertSubLabel4.text = "5 times, you can get at most 1 point.".localized()
+        self.scoreAlertSubLabel5.text = "* You are able to help your first cat".localized()
+        self.scoreAlertSubLabel6.text = "graduate once you receive 1 point".localized()
+        self.scoreAlertSubLabel7.text = "but it'll get harder and harder".localized()
+        self.scoreAlertSubLabel8.text = "for your next cats. Good luck!".localized()
         
     }
 }

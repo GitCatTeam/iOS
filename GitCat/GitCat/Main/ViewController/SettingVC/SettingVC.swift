@@ -20,7 +20,7 @@ class SettingVC: UIViewController {
     
     @IBOutlet weak var FAQLabel: CustomLabel!
     @IBOutlet weak var instagramLabel: CustomLabel!
-    
+    @IBOutlet weak var feedbackLabel: CustomLabel!
     @IBOutlet weak var settingLabel: CustomLabel!
     @IBOutlet weak var etcLabel: CustomLabel!
     
@@ -30,6 +30,7 @@ class SettingVC: UIViewController {
         
         self.deleteNavigationUnderbar()
         self.setFontSize()
+        self.setLocalization()
         let imageURL = UserDefaults.standard.string(forKey: "userImage")
         
         userProfileImage.setImage(imageURL, defaultImgPath: "imgDefault")
@@ -57,13 +58,17 @@ class SettingVC: UIViewController {
     }
     
     @IBAction func changeAccessibilityAction(_ sender: Any) {
-        let cancelModeAction = UIAlertAction(title: "취소", style: .cancel)
-        let confirmModeAction = UIAlertAction(title: "확인", style: .default) { (action) in
+        let cancelTitle = "Cancel".localized()
+        let okTitle = "OK".localized()
+        let permissionChangeTitle =  "Change GitHub Repository Permission".localized()
+        let permissionChangeMessage = "Do you want to change your permission?                                              you need to signIn again".localized()
+        let cancelModeAction = UIAlertAction(title: cancelTitle, style: .cancel)
+        let confirmModeAction = UIAlertAction(title: okTitle, style: .default) { (action) in
             UserDefaults.standard.removeObject(forKey: "canAccessPrivate")
             self.deleteDeviceToken()
         }
         
-        let alert = UIAlertController(title: "권한 설정 변경", message: "권한을 변경하시겠습니까?                          변경 시, 재로그인이 필요합니다.", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: permissionChangeTitle, message:permissionChangeMessage, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(cancelModeAction)
         alert.addAction(confirmModeAction)
 
@@ -71,13 +76,17 @@ class SettingVC: UIViewController {
     }
     
     @IBAction func initializeCatAction(_ sender: Any) {
-        let cancleModeAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
+        let cancelTitle = "Cancel".localized()
+        let okTitle = "OK".localized()
+        let cancleModeAction = UIAlertAction(title: cancelTitle, style: .cancel) { (action) in
         }
-        let confirmModeAction = UIAlertAction(title: "확인", style: .destructive) { (action) in
+        let confirmModeAction = UIAlertAction(title: okTitle, style: .destructive) { (action) in
             self.setCatInitialized()
         }
         
-        let alert = UIAlertController(title: "고양이 초기화", message: "귀여운 고양이들을 보내시겠습니까?             한 번 떠난 고양이는 되돌아오지 못합니다!", preferredStyle: UIAlertController.Style.alert)
+        let initializeCatTitle = "Reset Coding Buddies".localized()
+        let intializeCatMessage = "Would you like to let go of all your adorable cats?                                    Released cats cannot be brought back.".localized()
+        let alert = UIAlertController(title: initializeCatTitle, message: intializeCatMessage, preferredStyle: UIAlertController.Style.alert)
         
         alert.addAction(confirmModeAction)
         alert.addAction(cancleModeAction)
@@ -86,4 +95,9 @@ class SettingVC: UIViewController {
             //함수가 성공적으로 수행된 후 작동되는 code
         }
     }
+    
+    @IBAction func sendFeedbackAction(_ sender: Any) {
+        
+    }
+    
 }

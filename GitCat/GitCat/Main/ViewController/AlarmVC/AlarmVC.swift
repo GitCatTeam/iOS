@@ -18,7 +18,7 @@ class AlarmVC: UIViewController {
             self.navigationItem.title = "알림 설정"
 
             setBackBtn(color: UIColor.CustomColor.brownishGrey)
-            
+            setLocalization()
             let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.CustomColor.brownishGrey]
             navigationController?.navigationBar.titleTextAttributes = textAttributes
             

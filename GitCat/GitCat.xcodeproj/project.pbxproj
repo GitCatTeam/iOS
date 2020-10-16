@@ -41,6 +41,9 @@
 		4C340B1A25398A6C0079DEF9 /* HttpResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E6623D8044B00669B38 /* HttpResponseCode.swift */; };
 		4C340B7D2539A4460079DEF9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C747B2824FD128000739D00 /* Localizable.strings */; };
 		4C340B812539A5C20079DEF9 /* HomeVC+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C340B802539A5C20079DEF9 /* HomeVC+Localization.swift */; };
+		4C340B852539DF2F0079DEF9 /* SettingVC+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C340B842539DF2F0079DEF9 /* SettingVC+Localization.swift */; };
+		4C340B892539E3E20079DEF9 /* AuthManageVC+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C340B882539E3E20079DEF9 /* AuthManageVC+Localization.swift */; };
+		4C340B8D2539E7F60079DEF9 /* AlarmVC+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C340B8C2539E7F60079DEF9 /* AlarmVC+Localization.swift */; };
 		4C3A3D7B2442FF5400093C50 /* RefreshTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3A3D7A2442FF5300093C50 /* RefreshTokenModel.swift */; };
 		4C3B8E5B2402449C008735DE /* AuthManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3B8E5A2402449B008735DE /* AuthManageVC.swift */; };
 		4C3F8CAA24A5DEDB009248B6 /* RepositoryAccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8CA924A5DEDB009248B6 /* RepositoryAccessVC.swift */; };
@@ -231,6 +234,9 @@
 		4C340AF9253986050079DEF9 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C340B0E253989F10079DEF9 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C340B802539A5C20079DEF9 /* HomeVC+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC+Localization.swift"; sourceTree = "<group>"; };
+		4C340B842539DF2F0079DEF9 /* SettingVC+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingVC+Localization.swift"; sourceTree = "<group>"; };
+		4C340B882539E3E20079DEF9 /* AuthManageVC+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthManageVC+Localization.swift"; sourceTree = "<group>"; };
+		4C340B8C2539E7F60079DEF9 /* AlarmVC+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlarmVC+Localization.swift"; sourceTree = "<group>"; };
 		4C3A3D7A2442FF5300093C50 /* RefreshTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenModel.swift; sourceTree = "<group>"; };
 		4C3B8E5A2402449B008735DE /* AuthManageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManageVC.swift; sourceTree = "<group>"; };
 		4C3F8CA924A5DEDB009248B6 /* RepositoryAccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAccessVC.swift; sourceTree = "<group>"; };
@@ -458,6 +464,7 @@
 			children = (
 				4C56C24024ADD16F003FB894 /* AlarmVC+NetworkExtension.swift */,
 				4C56C24424ADD5A8003FB894 /* AlarmVC.swift */,
+				4C340B8C2539E7F60079DEF9 /* AlarmVC+Localization.swift */,
 			);
 			path = AlarmVC;
 			sourceTree = "<group>";
@@ -866,6 +873,7 @@
 			children = (
 				4C7C0E7F23DF158B00669B38 /* SettingVC.swift */,
 				4CE10E4E249E1F9C00453011 /* SettingVC+NetworkExtension.swift */,
+				4C340B842539DF2F0079DEF9 /* SettingVC+Localization.swift */,
 			);
 			path = SettingVC;
 			sourceTree = "<group>";
@@ -875,6 +883,7 @@
 			children = (
 				4C3B8E5A2402449B008735DE /* AuthManageVC.swift */,
 				4CE10E51249E1FE400453011 /* AuthManageVC+NetworkExtension.swift */,
+				4C340B882539E3E20079DEF9 /* AuthManageVC+Localization.swift */,
 			);
 			path = AuthManageVC;
 			sourceTree = "<group>";
@@ -1155,6 +1164,7 @@
 				4CAB3BDE24085CF1007A84B6 /* PutAdditionalInfoService.swift in Sources */,
 				4CC7D9BE23C64722004576BB /* ReportCVCell.swift in Sources */,
 				4CE10E40249E15C500453011 /* ReportVC+NetworkExtension.swift in Sources */,
+				4C340B892539E3E20079DEF9 /* AuthManageVC+Localization.swift in Sources */,
 				4CE10E1B249DE12D00453011 /* GetMoreInto3VC+NetworkExtension.swift in Sources */,
 				4CE10E45249E16FE00453011 /* UpdateChartData.swift in Sources */,
 				4C7C0E1923D59D2B00669B38 /* CatCollectionCVCell.swift in Sources */,
@@ -1187,6 +1197,7 @@
 				4CC07FBB23B3238C00851B45 /* GetMoreInfo3VC.swift in Sources */,
 				4C56C24124ADD16F003FB894 /* AlarmVC+NetworkExtension.swift in Sources */,
 				4CF4CD4424E63C4700C0D544 /* BarChartView.swift in Sources */,
+				4C340B852539DF2F0079DEF9 /* SettingVC+Localization.swift in Sources */,
 				4CAB3BCA2407EA71007A84B6 /* CatListModel.swift in Sources */,
 				4C3B8E5B2402449C008735DE /* AuthManageVC.swift in Sources */,
 				4C8C9E6923CB574600E160B1 /* ReportDetailVC.swift in Sources */,
@@ -1252,6 +1263,7 @@
 				4CC07FB523B317CA00851B45 /* RoundBtn.swift in Sources */,
 				4CC07F9523B1165200851B45 /* GetMoreInfo1VC.swift in Sources */,
 				4CC07F9123B0EE1000851B45 /* ColorPalette.swift in Sources */,
+				4C340B8D2539E7F60079DEF9 /* AlarmVC+Localization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

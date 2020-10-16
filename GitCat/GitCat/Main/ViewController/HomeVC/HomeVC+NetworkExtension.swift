@@ -78,7 +78,7 @@ extension HomeVC {
                     }
                 }
 
-                self.showItemUpgradeCard()
+                self.showGraduateCard()
                 self.loadingView.alpha = 0
                 self.loadingBackgroundView.alpha = 0
                 break

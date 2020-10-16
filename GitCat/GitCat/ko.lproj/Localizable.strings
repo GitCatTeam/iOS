@@ -26,7 +26,7 @@
 //MARK: 고양이 졸업 팝업창
 "HAPPY Graduation!" = "졸업을 축하해요!";
 "Congratulations!" = "츅하합니다~!";
-"your cat has syccessfully graduated." = "고양씨가 졸업했어요";
+"cat has successfully graduated." = "고양씨가 졸업했어요";
 "Thank you for your hard work :)" = "그동안 수고하셨어요 :)";
 "Go check it out" = "확인하러 가기";
 
@@ -37,5 +37,38 @@
 "Keep up the good work :)" = "개발이 좀 더 수월해지겠어요!";
 
 /*===================================*/
-//MARK: 홈화면
+//MARK: 설정화면
 /*===================================*/
+"Settings" = "설정";
+"GitHub Account Settings" = "GitHub 계정 관리";
+"GitHub Repository Permission" = "GitHub Repository 권한 설정";
+"Change GitHub Repository Permission" = "권한 설정 변경";
+"Do you want to change your permission?                                              you need to signIn again" = "권한을 변경하시겠습니까?                          변경 시, 재로그인이 필요합니다.";
+
+"Notifications Settings" = "알림 설정";
+"Reset Coding Buddies" = "고양씨 초기화"; //Reset Cats
+"Would you like to let go of all your adorable cats?                                    Released cats cannot be brought back."= "귀여운 고양이들을 보내시겠습니까?             한 번 떠난 고양이는 되돌아오지 못합니다!";
+"Other" = "기타";
+"Developers Information" = "개발자 소개"; //About Developers
+"FAQ" = "자주 묻는 질문 FAQ"; //내가 추가한 내용
+"Send Feedback" = "피드백 보내기"; //내가 추가한 내용
+"GitCat Instagram" = "깃캣 인스타그램"; //Instagram
+
+//MARK: 로그인 계정 화면
+"GitHub Account Settings" = "GitHub 계정 관리";
+"GitHub Login" = "로그인 계정"; //github account
+"Sign Out" = "계정 로그아웃";
+"Do you want to logout?" = "로그아웃 하시겠습니까?";
+"Delete GitCat Account" = "GitCat 탈퇴하기";
+
+//MARK: 회원 탈퇴 팝업창
+"Delete GitCat Account" = "GitCat 탈퇴하기";
+"Delete all data within GitCat?" = "GitCat 내의 모든 정보를 삭제하고"; //내 임의로 줄인 내용
+"Deleting GitCat account is permanent" = "정말로 탈퇴하시겠습니까?";
+"and it cannot be undone." = "사라진 계정 정보는 복구할 수 없습니다!";
+"OK" = "확인";
+"Cancel" = "취소";
+
+//MARK: 알림 설정 화면
+"Notifications Settings" = "알림 설정";
+"Allow App Notification" = "앱 알림받기";

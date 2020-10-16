@@ -12,6 +12,11 @@ let keyData = Secrets.PrivatekeyData
 let ivData = Secrets.PrivateivData
 
 extension String {
+    
+    func localized(bundle: Bundle = .main, tableName: String = "Localizable") -> String {
+        return NSLocalizedString(self, tableName: tableName, value: "**\(self)**", comment: "")
+    }
+    
     func aesDecrypt() throws -> String {
         
         let encryptedData: NSData = self.hexStringToData()
