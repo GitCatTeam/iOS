@@ -129,8 +129,6 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         if(isTutorialDone == false){
             showTutorial()
         }
-        
-        self.sliderView.isEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -346,7 +344,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         self.todayCommitCountLabel.text = "-"
         self.catChatBox.alpha = 0
         self.catChatLabel.alpha = 0
-        
+        self.catInfoBox.alpha = 0
     }
     
     @IBAction func showScoreDetailAction(_ sender: Any) {

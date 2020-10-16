@@ -13,4 +13,10 @@ target 'GitCat' do
   pod 'SwiftGifOrigin'
   pod 'CryptoSwift'
   pod 'JWTDecode'
+  
+  target 'GitCatWidgetExtension' do
+    pod 'Alamofire', '4.7.3'
+  end
 end
+
+

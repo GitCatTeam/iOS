@@ -72,10 +72,10 @@ extension HomeVC {
                         self.showSelectNewCat()
                     }
                     
-//                    if(resResult.data?.ments?.count != 0 ) {
-//                        self.timer.invalidate()
-//                        self.timer = Timer.scheduledTimer(timeInterval: 8.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
-//                    }
+                    if(resResult.data?.ments?.count != 0 ) {
+                        self.timer.invalidate()
+                        self.timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
+                    }
                 }
                 self.loadingView.alpha = 0
                 self.loadingBackgroundView.alpha = 0
