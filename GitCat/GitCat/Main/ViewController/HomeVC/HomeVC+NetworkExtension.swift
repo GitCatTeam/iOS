@@ -77,6 +77,8 @@ extension HomeVC {
                         self.timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.fireTimer), userInfo: nil, repeats: true)
                     }
                 }
+
+                self.showItemUpgradeCard()
                 self.loadingView.alpha = 0
                 self.loadingBackgroundView.alpha = 0
                 break

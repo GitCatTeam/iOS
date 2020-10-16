@@ -97,7 +97,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     @IBOutlet weak var scoreAlertSubLabel5: CustomLabel!
     @IBOutlet weak var scoreAlertSubLabel6: CustomLabel!
     @IBOutlet weak var scoreAlertSubLabel7: CustomLabel!
-    
+    @IBOutlet weak var scoreAlertSubLabel8: UILabel!
     
     let cellIdentifier = "TutorialCVCell"
     
@@ -123,6 +123,7 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         setAlpha()
         setHomeData()
         setItemCardBackgroundView()
+        setLocalization()
         
         let isTutorialDone = UserDefaults.standard.bool(forKey: "tutorialDone")
         

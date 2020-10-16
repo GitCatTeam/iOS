@@ -34,7 +34,7 @@ extension HomeVC {
         self.graduateSubTitle2.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         self.graduateCatName.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
 
-        self.itemTitleLabel.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
+        self.itemTitleLabel.dynamicFont(fontSize: 20, name: "BBTreeG_B")
         self.itemSubTitleLabel.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         self.itemSubTitleLabel2.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         self.itemTitleLabel3.dynamicFont(fontSize: 14, name: "BBTreeGo_R")

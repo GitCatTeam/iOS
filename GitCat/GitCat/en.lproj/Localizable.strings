@@ -1,7 +1,35 @@
-/* 
-  Localizable.strings
-  GitCat
+//MARK: 홈화면
+"Today's Commit" = "Today's Commit";
 
-  Created by 조윤영 on 2020/08/31.
-  Copyright © 2020 조윤영. All rights reserved.
-*/
+//MARK: 점수 도움말 팝업창
+"Hang on!" = "Hang on!";
+"how can we earn points" = "how can we earn points";
+"- if you commit at least once after" = "- if you commit at least once after";
+"you've met the cat, you get 1 point." = "you've met the cat, you get 1 point.";
+"- if you commit in git more than" = "- if you commit in git more than";
+"5 times, you can get at most 1 point." = "5 times, you can get at most 1 point.";
+"* You are able to help your first cat" = "* You are able to help your first cat";
+"graduate once you receive 1 point" = "graduate once you receive 1 point";
+"but it'll get harder and harder" = "but it'll get harder and harder";
+"for your next cats. Good luck!" = "for your next cats. Good luck!";
+
+//MARK: 고양이 가출 팝업창
+"[Breaking News]" = "[Breaking News]";
+"Unfortunately," = "Unfortunately,";
+" has left." = " has left.";
+"In order to stop your" = "In order to stop your";
+"buddies from leaving," = "buddies from leaving,";
+"more consistent commit is required" = "more consistent commit is required";
+
+//MARK: 고양이 졸업 팝업창
+"HAPPY Graduation!" = "HAPPY Graduation!";
+"Congratulations!" = "Congratulations!";
+"cat has successfully graduated." = "cat has successfully graduated.";
+"Thank you for your hard work :)" = "Thank you for your hard work :)";
+"Go check it out" = "Go check it out";
+
+//MARK: 아이템 업그레이드 팝업창
+"Item Upgrade!" = "Item Upgrade!";
+"Your item has been upgraded." = "Your item has been upgraded.";
+"It's much better than before!" = "It's much better than before!";
+

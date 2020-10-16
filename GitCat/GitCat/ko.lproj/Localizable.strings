@@ -1,7 +1,41 @@
-/* 
-  Localizable.strings
-  GitCat
+/*===================================*/
+//MARK: 홈화면
+/*===================================*/
+"Today's Commit" = "오늘의 커밋";
 
-  Created by 조윤영 on 2020/08/31.
-  Copyright © 2020 조윤영. All rights reserved.
-*/
+//MARK: 점수 도움말 팝업창
+"Hang on!" = "잠깐!";
+"how can we earn points" = "점수는 어떻게 얻나요?";
+"- if you commit at least once after" = "- 고양씨를 생성한 이후 커밋을 했다면,";
+"you've met the cat, you get 1 point." = "1점을 얻을 수 있어요.";
+"- if you commit in git more than" = "- 5개 이상의 커밋을 하면, 1점을 추가로";
+"5 times, you can get at most 1 point." = "획득할 수 있어요. (하루 최대 2점 득점)";
+"* You are able to help your first cat" = "* 첫 고양씨는 커밋으로 1점만 획득해도";
+"graduate once you receive 1 point" = "졸업할 수 있지만, 다음 고양씨부터는";
+"but it'll get harder and harder" = "점점 난이도가 올라갑니다! 화이팅!";
+"for your next cats. Good luck!" = "";
+
+//MARK: 고양이 가출 팝업창
+"[Breaking News]" = "[속보] 고양씨 떠나다...";
+"Unfortunately," = "저런!";
+" has left." = "씨가 떠나고 말았어요.";
+"In order to stop your" = "앞으로 다른 고양씨들도";
+"buddies from leaving," = "떠나보내지 않으려면";
+"more consistent commit is required" = "조금 더 꾸준한 커밋이 필요해요.";
+
+//MARK: 고양이 졸업 팝업창
+"HAPPY Graduation!" = "졸업을 축하해요!";
+"Congratulations!" = "츅하합니다~!";
+"your cat has syccessfully graduated." = "고양씨가 졸업했어요";
+"Thank you for your hard work :)" = "그동안 수고하셨어요 :)";
+"Go check it out" = "확인하러 가기";
+
+//MARK: 아이템 업그레이드 팝업창
+"Item Upgrade!" = "아이템 업그레이드!";
+"Your item has been upgraded." = "고양씨의 아이템이";
+"It's much better than before!" = "업그레이드 되었어요.";
+"Keep up the good work :)" = "개발이 좀 더 수월해지겠어요!";
+
+/*===================================*/
+//MARK: 홈화면
+/*===================================*/

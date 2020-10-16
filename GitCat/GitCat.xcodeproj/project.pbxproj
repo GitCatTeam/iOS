@@ -39,6 +39,8 @@
 		4C340B1425398A260079DEF9 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBA4D4A2411083F002CED2F /* HomeModel.swift */; };
 		4C340B1725398A530079DEF9 /* KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B569424095625001881FE /* KeyCode.swift */; };
 		4C340B1A25398A6C0079DEF9 /* HttpResponseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7C0E6623D8044B00669B38 /* HttpResponseCode.swift */; };
+		4C340B7D2539A4460079DEF9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C747B2824FD128000739D00 /* Localizable.strings */; };
+		4C340B812539A5C20079DEF9 /* HomeVC+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C340B802539A5C20079DEF9 /* HomeVC+Localization.swift */; };
 		4C3A3D7B2442FF5400093C50 /* RefreshTokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3A3D7A2442FF5300093C50 /* RefreshTokenModel.swift */; };
 		4C3B8E5B2402449C008735DE /* AuthManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3B8E5A2402449B008735DE /* AuthManageVC.swift */; };
 		4C3F8CAA24A5DEDB009248B6 /* RepositoryAccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8CA924A5DEDB009248B6 /* RepositoryAccessVC.swift */; };
@@ -228,6 +230,7 @@
 		4C340AF0253985EA0079DEF9 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C340AF9253986050079DEF9 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C340B0E253989F10079DEF9 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C340B802539A5C20079DEF9 /* HomeVC+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC+Localization.swift"; sourceTree = "<group>"; };
 		4C3A3D7A2442FF5300093C50 /* RefreshTokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenModel.swift; sourceTree = "<group>"; };
 		4C3B8E5A2402449B008735DE /* AuthManageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManageVC.swift; sourceTree = "<group>"; };
 		4C3F8CA924A5DEDB009248B6 /* RepositoryAccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAccessVC.swift; sourceTree = "<group>"; };
@@ -810,6 +813,7 @@
 				4CE10E2D249DED5D00453011 /* HomeVC+CollectionViewExtension.swift */,
 				4CE10E2F249DEE2500453011 /* HomeVC+NetworkExtension.swift */,
 				4CE10E31249DF88800453011 /* HomeVC+DynamicFont.swift */,
+				4C340B802539A5C20079DEF9 /* HomeVC+Localization.swift */,
 			);
 			path = HomeVC;
 			sourceTree = "<group>";
@@ -1014,6 +1018,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C1D3B8325396297008D2F9B /* Assets.xcassets in Resources */,
+				4C340B7D2539A4460079DEF9 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1198,6 +1203,7 @@
 				4CE10E2B249DEA5500453011 /* Reachability.swift in Sources */,
 				4CAB3BD02407F170007A84B6 /* DelettableService.swift in Sources */,
 				4C672BC4252182CB002A6511 /* PostCalendarReloadService.swift in Sources */,
+				4C340B812539A5C20079DEF9 /* HomeVC+Localization.swift in Sources */,
 				4C1D3B8625396297008D2F9B /* GitCatWidget.intentdefinition in Sources */,
 				4CF4CD4224E63C3B00C0D544 /* LineChartView.swift in Sources */,
 				4CE10E58249E222000453011 /* UserDataInitVC+NetworkExtension.swift in Sources */,
