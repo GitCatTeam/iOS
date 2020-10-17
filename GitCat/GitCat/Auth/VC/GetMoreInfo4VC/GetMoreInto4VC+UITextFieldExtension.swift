@@ -17,6 +17,6 @@ extension GetMoreInfo4VC: UITextFieldDelegate{
                return false
            }
            let newLength = currentCharacterCount + string.count - range.length
-        return newLength <= 6
+        return newLength <= 9
     }
 }

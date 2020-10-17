@@ -63,5 +63,6 @@ extension HomeVC {
         self.scoreAlertSubLabel7.text = "but it'll get harder and harder".localized()
         self.scoreAlertSubLabel8.text = "for your next cats. Good luck!".localized()
         
+        self.selectCatBtn.setTitle("Select your coding buddy".localized(), for: .normal)
     }
 }

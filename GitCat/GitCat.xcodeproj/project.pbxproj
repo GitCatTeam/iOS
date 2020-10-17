@@ -51,6 +51,7 @@
 		4C49046D253ACA1400260830 /* SignInVC+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C49046C253ACA1400260830 /* SignInVC+Localization.swift */; };
 		4C490471253ACBEE00260830 /* GetAccessVC+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C490470253ACBEE00260830 /* GetAccessVC+Localization.swift */; };
 		4C490475253B0F8900260830 /* GetMoreInfo3VC+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C490474253B0F8900260830 /* GetMoreInfo3VC+Localization.swift */; };
+		4C490479253B43BB00260830 /* GetMoreInfo4VC+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C490478253B43BB00260830 /* GetMoreInfo4VC+Localization.swift */; };
 		4C4A923223BA2476002E5F35 /* MidRepoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A923123BA2476002E5F35 /* MidRepoVC.swift */; };
 		4C56C24124ADD16F003FB894 /* AlarmVC+NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C56C24024ADD16F003FB894 /* AlarmVC+NetworkExtension.swift */; };
 		4C56C24524ADD5A8003FB894 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C56C24424ADD5A8003FB894 /* AlarmVC.swift */; };
@@ -247,6 +248,7 @@
 		4C49046C253ACA1400260830 /* SignInVC+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInVC+Localization.swift"; sourceTree = "<group>"; };
 		4C490470253ACBEE00260830 /* GetAccessVC+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetAccessVC+Localization.swift"; sourceTree = "<group>"; };
 		4C490474253B0F8900260830 /* GetMoreInfo3VC+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetMoreInfo3VC+Localization.swift"; sourceTree = "<group>"; };
+		4C490478253B43BB00260830 /* GetMoreInfo4VC+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetMoreInfo4VC+Localization.swift"; sourceTree = "<group>"; };
 		4C4A923123BA2476002E5F35 /* MidRepoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidRepoVC.swift; sourceTree = "<group>"; };
 		4C56C24024ADD16F003FB894 /* AlarmVC+NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlarmVC+NetworkExtension.swift"; sourceTree = "<group>"; };
 		4C56C24424ADD5A8003FB894 /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
@@ -809,6 +811,7 @@
 				4CE10E21249DE43A00453011 /* GetMoreInfo4VC+CollectionViewExtension.swift */,
 				4CE10E23249DE83000453011 /* GetMoreInfo4VC+NetworkExtension.swift */,
 				4CA0F392249EFF8900C87B8C /* GetMoreInto4VC+UITextFieldExtension.swift */,
+				4C490478253B43BB00260830 /* GetMoreInfo4VC+Localization.swift */,
 			);
 			path = GetMoreInfo4VC;
 			sourceTree = "<group>";
@@ -1193,6 +1196,7 @@
 				4CBA4D4D24110998002CED2F /* HomeService.swift in Sources */,
 				4CE10E4A249E1E3300453011 /* CatCollectionVC+CollectionViewExtension.swift in Sources */,
 				4CBA4D5124112377002CED2F /* UserDataInitVC.swift in Sources */,
+				4C490479253B43BB00260830 /* GetMoreInfo4VC+Localization.swift in Sources */,
 				4CC07F9323B0F28100851B45 /* RoundView.swift in Sources */,
 				4CF4CD4624E63C5F00C0D544 /* PieChartView.swift in Sources */,
 				4CAB3BD624082883007A84B6 /* CommonModel.swift in Sources */,

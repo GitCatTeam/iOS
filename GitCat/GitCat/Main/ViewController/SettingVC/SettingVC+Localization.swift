@@ -10,16 +10,16 @@ import Foundation
 
 extension SettingVC {
     func setLocalization() {
-        settingLabel.text = "Settings".localized()
-        authManageLAbel.text = "GitHub Account Settings".localized()
-        accessManageLabel.text = "GitHub Repository Permission".localized()
-        alaramManageLabel.text = "Notifications Settings".localized()
-        catInitialBtn.setTitle(NSLocalizedString("Reset Coding Buddie", comment: ""), for: .normal)
+        self.settingLabel.text = "Settings".localized()
+        self.authManageLAbel.text = "GitHub Account Settings".localized()
+        self.accessManageLabel.text = "GitHub Repository Permission".localized()
+        self.alaramManageLabel.text = "Notifications Settings".localized()
+        self.catInitialBtn.setTitle(NSLocalizedString("Reset Coding Buddie", comment: ""), for: .normal)
         
-        etcLabel.text = "Other".localized()
-        introduceDeveloperLabel.text = "Developers Information".localized()
-        FAQLabel.text = "FAQ".localized()
-        instagramLabel.text = "GitCat Instagram";
-        feedbackLabel.text = "Send Feedback";
+        self.etcLabel.text = "Other".localized()
+        self.introduceDeveloperLabel.text = "Developers Information".localized()
+        self.FAQLabel.text = "FAQ".localized()
+        self.instagramLabel.text = "GitCat Instagram";
+        self.feedbackLabel.text = "Send Feedback";
     }
 }

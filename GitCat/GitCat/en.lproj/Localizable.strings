@@ -128,3 +128,15 @@
 "About 1 year" = "About 1 year";
 "About 3 year" = "About 3 year";
 "More than 5 years" = "More than 5 years";
+
+/*===================================*/
+//MARK: 고양이 선택 화면
+/*===================================*/
+"Select your coding buddy!" = "Select your coding buddy!";
+"Make a coding buddy for more enjoyable commit!" = "Make a coding buddy for more enjoyable commit!";
+"Origin" = "Origin";
+"Special" = "Special";
+"Name your coding buddy" = "Name your coding buddy";
+"Start" = "Start";
+"(Maximum 8 Characters)" = "(Maximum 8 Characters)";
+"Select your coding buddy" = "Select your coding buddy";

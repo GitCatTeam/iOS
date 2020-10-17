@@ -129,3 +129,15 @@
 "About 1 year" = "1년차";
 "About 3 year" = "3년차";
 "More than 5 years" = "5년차 이상";
+
+/*===================================*/
+//MARK: 고양이 선택 화면
+/*===================================*/
+"Select your coding buddy!" = "함께 할 고양씨를 선택해주세요!";
+"Make a coding buddy for more enjoyable commit!" = "즐거운 커밋을 위해 우리 모두 집사가 되어 보아요~";
+"Origin" = "기본";
+"Special" = "스페셜";
+"Name your coding buddy" = "이름을 정해주세요";
+"Start" = "시작하기";
+"(Maximum 8 Characters)" = "(8자 이내로 입력하세요)";
+"Select your coding buddy" = "고양이 다시 선택하러 가기";

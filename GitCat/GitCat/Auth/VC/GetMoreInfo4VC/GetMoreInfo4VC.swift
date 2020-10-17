@@ -36,9 +36,6 @@ class GetMoreInfo4VC: UIViewController {
     
     @IBOutlet weak var nextMove4Btn: RoundBtn!
     
-    @IBOutlet weak var preparingView: UIImageView!
-    @IBOutlet weak var preparingLavel: UILabel!
-    
     @IBOutlet weak var alertView: UIView!
     
     @IBOutlet weak var alertcardView: UIView!
@@ -64,7 +61,7 @@ class GetMoreInfo4VC: UIViewController {
     let cellIdentifier = "SelectCatCVCell"
     let cellIdentifier2 = "NewCatCVCell"
     
-    private let MAX_LENGTH = 5
+    private let MAX_LENGTH = 8
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +80,7 @@ class GetMoreInfo4VC: UIViewController {
         initAlpha()
         setButtonSelect()
         animateView()
+        setLocalization()
         
         catNameTextField.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(_:)), name: UITextField.textDidChangeNotification, object: catNameTextField)
@@ -91,8 +89,8 @@ class GetMoreInfo4VC: UIViewController {
     @objc private func textDidChange(_ notification: Notification) {
         if let textField = notification.object as? UITextField {
             if let text = textField.text {
-                if text.count > 5 {
-                    let index = text.index(text.startIndex, offsetBy: 5)
+                if text.count > 8 {
+                    let index = text.index(text.startIndex, offsetBy: 8)
                     let newString = text.substring(to: index)
 
                     textField.text = newString
@@ -129,8 +127,6 @@ class GetMoreInfo4VC: UIViewController {
         specialBtn.titleLabel?.dynamicFont(fontSize: 15, name:"BBTreeG_B")
         catNameLabel.dynamicFont(fontSize: 16, name:"BBTreeG_B")
 
-        preparingLavel.dynamicFont(fontSize: 15, name: "BBTreeG_B")
-        
         alertTitleLabel.dynamicFont(fontSize: 20, name: "BBTreeG_B")
         alertSubTitleLabel.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         
@@ -178,10 +174,6 @@ class GetMoreInfo4VC: UIViewController {
         
         self.collectionView.reloadData()
         dismissCatNameTextField()
-    
-        self.preparingLavel.alpha = 0
-        self.preparingView.alpha = 0
-        
     }
     
     @IBAction func specialBtnAction(_ sender: Any) {
@@ -195,10 +187,6 @@ class GetMoreInfo4VC: UIViewController {
         self.collectionView.reloadData()
         self.catNameTextField.text = ""
         dismissCatNameTextField()
-        
-        self.preparingLavel.alpha = 1
-        self.preparingView.alpha = 1
-        
     }
 
     @IBAction func nameFieldEditingChangedAction(_ sender: Any) {
@@ -236,13 +224,10 @@ class GetMoreInfo4VC: UIViewController {
         self.catNameLabel.alpha = 0
         self.catNameTextField.alpha = 0
         self.catNameUnderBar.alpha = 0
-        self.preparingLavel.alpha = 0
-        self.preparingView.alpha = 0
         self.alertView.alpha = 0
         self.alertcardView.alpha = 0
         self.newCatCollectionView.alpha = 0
         self.pageControl.alpha = 0
-        
     }
     
     func showCatNameTextField() {
@@ -250,7 +235,6 @@ class GetMoreInfo4VC: UIViewController {
             self.catNameLabel.alpha = 1
             self.catNameTextField.alpha = 1
             self.catNameUnderBar.alpha = 1
-            
         }))
     }
     
@@ -263,7 +247,6 @@ class GetMoreInfo4VC: UIViewController {
         
         nextMove4Btn.isEnabled = false
         nextMove4Btn.backgroundColor = UIColor(red: 220/255, green: 221/255, blue: 225/255, alpha: 1)
-
     }
     
     func animateView() {
@@ -294,7 +277,6 @@ class GetMoreInfo4VC: UIViewController {
         self.alertcardView.layer.masksToBounds = false
         self.alertcardView.layer.cornerRadius = 10
         self.alertcardView.customShadow(width: 1, height: 2, radius: 4, opacity: 0.16)
-        
     }
     
     func setButtonSelect() {
@@ -308,17 +290,14 @@ class GetMoreInfo4VC: UIViewController {
         self.specialBtnBottomBorder.alpha = 0
 
         self.basicBtn.isSelected = true
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         registerForKeyboardNotifications()
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         unregisterForKeyboardNotifications()
-        
     }
     
     func registerForKeyboardNotifications() {

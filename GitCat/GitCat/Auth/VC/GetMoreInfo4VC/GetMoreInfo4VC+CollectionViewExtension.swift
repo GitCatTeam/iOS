@@ -43,19 +43,19 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
         
         //선택 고양이 리스트 셀 구현
         if(collectionView == self.collectionView) {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? SelectCatCVCell
-            
-            //새로 지급된 고양이인지 판별
-            if(currentCatList[indexPath.row].isNew == true) {
-                cell?.NewBadgeView.alpha = 1
-            } else {
-                cell?.NewBadgeView.alpha = 0
-            }
-            
-            let imageURL = gsno(currentCatList[indexPath.row].profileImg)
-            cell?.catImageView.setImage(imageURL, defaultImgPath: "imgDefault")
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? SelectCatCVCell {
+                //새로 지급된 고양이인지 판별
+                if(currentCatList[indexPath.row].isNew == true) {
+                    cell.NewBadgeView.alpha = 1
+                } else {
+                    cell.NewBadgeView.alpha = 0
+                }
+                
+                let imageURL = gsno(currentCatList[indexPath.row].profileImg)
+                cell.catImageView.setImage(imageURL, defaultImgPath: "imgDefault")
 
-            return cell!
+                return cell
+            }
         }
         return UICollectionViewCell()
     }
@@ -92,8 +92,10 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if(collectionView == self.collectionView ) {
             if(currentCatList[indexPath.row].isAvailable! != false) {
-                let selectedCell:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as! SelectCatCVCell
-                selectedCell.roundView.layer.borderColor = #colorLiteral(red: 0.4652857184, green: 0.8005116582, blue: 0.9823767543, alpha: 1)
+                if let selectedCell:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as? SelectCatCVCell {
+                    selectedCell.roundView.layer.borderColor = #colorLiteral(red: 0.4652857184, green: 0.8005116582, blue: 0.9823767543, alpha: 1)
+                }
+                
                 catId = gino(currentCatList[indexPath.row].id)
                 
                 showCatNameTextField()
@@ -105,7 +107,6 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
                     }))
                 }
             } else {
-            
                 alertSubTitleLabel.text = gsno(currentCatList[indexPath.row].description)
                
                 let imageURL = gsno(self.currentCatList[indexPath.row].profileImg)
@@ -113,9 +114,9 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
                 
                 showAlertView()
                 
-                let cell:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as! SelectCatCVCell
-                cell.isSelected = false
-                
+                if let cell:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as? SelectCatCVCell {
+                    cell.isSelected = false
+                }
                 dismissCatNameTextField()
             }
         }
@@ -124,8 +125,9 @@ extension GetMoreInfo4VC: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if(collectionView == self.collectionView ) {
             
-            let cellToDeselect:SelectCatCVCell = collectionView.cellForItem(at: indexPath)! as! SelectCatCVCell
-            cellToDeselect.roundView.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
+            if let cellToDeselect:SelectCatCVCell = collectionView.cellForItem(at: indexPath) as? SelectCatCVCell {
+                cellToDeselect.roundView.layer.borderColor = #colorLiteral(red: 0.7529411765, green: 0.7529411765, blue: 0.7529411765, alpha: 1)
+            }
         }
     }
     
