@@ -36,6 +36,7 @@ class GetAccessVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setLocalization()
         self.nextBtn.isEnabled = false
     }
 

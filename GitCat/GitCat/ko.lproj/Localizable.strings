@@ -36,6 +36,23 @@
 "It's much better than before!" = "업그레이드 되었어요.";
 "Keep up the good work :)" = "개발이 좀 더 수월해지겠어요!";
 
+//MARK: 튜토리얼 팝업창
+"Collection Button" = "냥콜렉션 버튼";
+"Monthly Commit State & Monthly Commit Report" = "이번 달 커밋 현황 & 월별 커밋 통계";
+
+"Help your coding buddies grow" = "커밋으로 고양씨 성장시키기";
+"Commit everyday, consistently." = "매일 꾸준히 커밋해보세요.";
+"Coding buddy's coding environment will improve." = "고양씨의 개발환경이 4단계에 걸쳐 개선됩니다.";
+
+"Help your buddies graduate!" = "고양씨 졸업시키기";
+"Graduated buddies will graduate but don't worry!" = "졸업한 고양씨들은, 우측 상단의 냥콜렉션에서";
+"You can see their graduation picture once you click the collection button." = "졸업 사진으로 만나볼 수 있어요!";
+"Look over your progression " = "달력과 리포트로 나의 개발 돌아보기";
+"Check out commit history through" = "하단의 커밋달력을 통해 일일 커밋 현황을,";
+"the commit calendar and commit stats by the report." = "리포트를 통해 매달 개발 통계를 확인할 수 있어요.";
+"Complete tutorial and meet your coding buddy!" = "튜토리얼 진행하고 고양이 받기";
+"Begin tutorial" =  "튜토리얼 시작하기";
+
 /*===================================*/
 //MARK: 설정화면
 /*===================================*/
@@ -72,3 +89,43 @@
 //MARK: 알림 설정 화면
 "Notifications Settings" = "알림 설정";
 "Allow App Notification" = "앱 알림받기";
+
+/*===================================*/
+//MARK: 랜딩 화면
+/*===================================*/
+"Daily commit with your coding buddy!" = "고양씨와 함께 하는 일일커밋!";
+"Sign in with GitHub" = "Github 계정으로 시작하기";
+
+/*===================================*/
+//MARK: Repository 권한 설정 화면
+/*===================================*/
+"Repository Permission Settings" = "Repository 권한 설정";
+"Select the boundary for GitHub repository" = "GitCat에서 커밋 내역을 수집하기 위해";
+"to collect your commit history" = "접근할 GitHub Repository의 범위를 설정해주세요!";
+"(This can be modified later in the settings)" = "(범위 설정은 추후 설정 메뉴에서 변경 가능합니다)";
+"Include Private Repository" = "Public Repository만 반영하기";
+"Grant permission to all repositories" = "GitHub 계정에 public으로 공개된";
+"associated with the GitHub account." = "repository만 반영합니다";
+"Public Repository Only" = "Private Repository도 반영하기";
+"Grant permission to only public repositories" = "GitHub 계정의 모든";
+"associated with the GitHub account" = "repository를 반영합니다.";
+
+"\" To access private repository \"" = "\" Private Repository 접근을 위해 읽기/쓰기가 포함된  \"";
+"it asks for full-access permission that includes" = "Full-Access권한이 요청되지만,";
+"both read/write. (but only read permission is granted.)" = "실제로는 읽기권한만 활용됩니다";
+
+"\" Commits from private repositories \"" = "\" Private repository의 커밋은 \"";
+"do not count" = "반영되지 않습니다";
+
+"Next" = "다음으로";
+
+/*===================================*/
+//MARK: 개발 경력 조사 화면
+/*===================================*/
+"How long have you been coding for?" = "개발을 하신 지 얼마나 되었나요?";
+"We only ask you this to make GitCat better :)" = "더 나은 깃캣이 되기 위한, 사용자 현황 파악의 목적입니다 :)";
+"Interested" = "관심이 있음";
+"Related Student" = "관련 학부생/대학원생";
+"About 1 year" = "1년차";
+"About 3 year" = "3년차";
+"More than 5 years" = "5년차 이상";

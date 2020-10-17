@@ -21,6 +21,7 @@ class SignInVC: UIViewController{
         
         setNavigationBar()
         setLabelSize()
+        setLocalization()
     }
     
     override func viewDidLayoutSubviews() {

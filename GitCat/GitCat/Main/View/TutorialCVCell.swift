@@ -32,7 +32,7 @@ class TutorialCVCell: UICollectionViewCell {
     override func awakeFromNib() {
         
         super.awakeFromNib()
-        
+        self.tutorialStartBtn.setTitle("Begin tutorial".localized(), for: .normal)
     }
 
     override func layoutSubviews() {

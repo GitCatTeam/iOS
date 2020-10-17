@@ -37,6 +37,7 @@ class GetMoreInfo3VC: UIViewController {
         setButtonColor()
         nextBtn3.addShadow()
         initAlpha()
+        setLocalization()
         
         nextBtn3.isEnabled = false
         animateView()

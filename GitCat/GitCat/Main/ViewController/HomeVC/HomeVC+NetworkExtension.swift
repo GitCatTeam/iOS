@@ -78,7 +78,6 @@ extension HomeVC {
                     }
                 }
 
-                self.showGraduateCard()
                 self.loadingView.alpha = 0
                 self.loadingBackgroundView.alpha = 0
                 break

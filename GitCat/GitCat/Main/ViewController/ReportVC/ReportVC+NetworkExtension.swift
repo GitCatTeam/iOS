@@ -21,6 +21,7 @@ extension ReportVC {
                     self.loadingView.alpha = 0
                     
                     if(self.reportDataList.count == 0) {
+                        print("뭐지?")
                         self.noDataImageView.alpha = 1
                     }else{
                         self.noDataImageView.alpha = 0

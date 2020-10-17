@@ -47,7 +47,7 @@ extension HomeVC {
         self.leaveSubTitle5.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         self.leaveSubTitle6.dynamicFont(fontSize: 14, name: "BBTreeGo_R")
         
-        self.commitReportDescription.dynamicFont(fontSize: 32, name: "NanumBaeEunHyeCe")
+        self.commitReportDescription.dynamicFont(fontSize: 28, name: "NanumBaeEunHyeCe")
         self.catCollectionDescription.dynamicFont(fontSize: 32, name: "NanumBaeEunHyeCe")
         
         self.scoreAlertTitleLabel1.dynamicFont(fontSize: 20, name: "BBTreeG_B")

@@ -34,6 +34,24 @@
 "It's much better than before!" = "It's much better than before!"; //내가 수정한 내용
 "Keep up the good work :)" = "Keep up the good work :)"; //내가 추가한 내용
 
+//MARK: 튜토리얼 팝업창
+"Collection Button" = "Collection Button";
+"Monthly Commit State & Monthly Commit Report" = "Monthly Commit State & Monthly Commit Report";
+
+"Help your coding buddies grow" = "Help your coding buddies grow";
+"Commit everyday, consistently." = "Commit everyday, consistently.";
+"Coding buddy's coding environment will improve." = "Coding buddy's coding environment will improve.";
+
+"Help your buddies graduate!" = "Help your buddies graduate!";
+"Graduated buddies will graduate but don't worry!" = "Graduated buddies will graduate but don't worry!";
+"You can see their graduation picture once you click the collection button." = "You can see their graduation picture once you click the collection button.";
+
+"Look over your progression " = "Look over your progression ";
+"Check out commit history through" = "Check out commit history through";
+"the commit calendar and commit stats by the report." = "the commit calendar and commit stats by the report.";
+"Complete tutorial and meet your coding buddy!" = "Complete tutorial and meet your coding buddy!";
+"Begin tutorial" =  "Begin tutorial";
+
 /*===================================*/
 //MARK: 설정화면
 /*===================================*/
@@ -71,3 +89,42 @@
 //MARK: 알림 설정 화면
 "Notifications Settings" = "Notifications Settings";
 "Allow App Notification" = "Allow App Notification";
+
+/*===================================*/
+//MARK: 랜딩 화면
+/*===================================*/
+"Daily commit with your coding buddy!" = "Daily commit with your coding buddy!";
+"Sign in with GitHub" = "Sign in with GitHub";
+
+/*===================================*/
+//MARK: Repository 권한 설정 화면
+/*===================================*/
+"Repository Permission Settings" = "Repository Permission Settings";
+"Select the boundary for GitHub repository" = "Select the boundary for GitHub repository";
+"to collect your commit history" = "to collect your commit history";
+"(This can be modified later in the settings)" = "(This can be modified later in the settings)";
+"Include Private Repository" = "Include Private Repository";
+"Grant permission to all repositories" = "Grant permission to all repositories";
+"associated with the GitHub account." = "associated with the GitHub account.";
+"Public Repository Only" = "Public Repository Only";
+"Grant permission to only public repositories" = "Grant permission to only public repositories";
+"associated with the GitHub account" = "associated with the GitHub account";
+
+"\" To access private repository \"" = "\" To access private repository \"";
+"it asks for full-access permission that includes" = "it asks for full-access permission that includes";
+"both read/write. (but only read permission is granted.)" = "both read/write. (but only read permission is granted.)";
+
+"\" Commits from private repositories \"" = "\" Commits from private repositories \"";
+"do not count" = "do not count";
+"Next" = "Next";
+
+/*===================================*/
+//MARK: 개발 경력 조사 화면
+/*===================================*/
+"How long have you been coding for?" = "How long have you been coding for?";
+"We only ask you this to make GitCat better :)" = "We only ask you this to make GitCat better :)";
+"Interested" = "Interested";
+"Related Student" = "Related Student";
+"About 1 year" = "About 1 year";
+"About 3 year" = "About 3 year";
+"More than 5 years" = "More than 5 years";

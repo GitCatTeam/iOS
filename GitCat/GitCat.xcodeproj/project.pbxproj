@@ -48,6 +48,9 @@
 		4C3B8E5B2402449C008735DE /* AuthManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3B8E5A2402449B008735DE /* AuthManageVC.swift */; };
 		4C3F8CAA24A5DEDB009248B6 /* RepositoryAccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8CA924A5DEDB009248B6 /* RepositoryAccessVC.swift */; };
 		4C3F8CAC24A60B63009248B6 /* GetAccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3F8CAB24A60B63009248B6 /* GetAccessVC.swift */; };
+		4C49046D253ACA1400260830 /* SignInVC+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C49046C253ACA1400260830 /* SignInVC+Localization.swift */; };
+		4C490471253ACBEE00260830 /* GetAccessVC+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C490470253ACBEE00260830 /* GetAccessVC+Localization.swift */; };
+		4C490475253B0F8900260830 /* GetMoreInfo3VC+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C490474253B0F8900260830 /* GetMoreInfo3VC+Localization.swift */; };
 		4C4A923223BA2476002E5F35 /* MidRepoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A923123BA2476002E5F35 /* MidRepoVC.swift */; };
 		4C56C24124ADD16F003FB894 /* AlarmVC+NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C56C24024ADD16F003FB894 /* AlarmVC+NetworkExtension.swift */; };
 		4C56C24524ADD5A8003FB894 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C56C24424ADD5A8003FB894 /* AlarmVC.swift */; };
@@ -241,6 +244,9 @@
 		4C3B8E5A2402449B008735DE /* AuthManageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManageVC.swift; sourceTree = "<group>"; };
 		4C3F8CA924A5DEDB009248B6 /* RepositoryAccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAccessVC.swift; sourceTree = "<group>"; };
 		4C3F8CAB24A60B63009248B6 /* GetAccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccessVC.swift; sourceTree = "<group>"; };
+		4C49046C253ACA1400260830 /* SignInVC+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInVC+Localization.swift"; sourceTree = "<group>"; };
+		4C490470253ACBEE00260830 /* GetAccessVC+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetAccessVC+Localization.swift"; sourceTree = "<group>"; };
+		4C490474253B0F8900260830 /* GetMoreInfo3VC+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetMoreInfo3VC+Localization.swift"; sourceTree = "<group>"; };
 		4C4A923123BA2476002E5F35 /* MidRepoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidRepoVC.swift; sourceTree = "<group>"; };
 		4C56C24024ADD16F003FB894 /* AlarmVC+NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlarmVC+NetworkExtension.swift"; sourceTree = "<group>"; };
 		4C56C24424ADD5A8003FB894 /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
@@ -423,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				4C3F8CAB24A60B63009248B6 /* GetAccessVC.swift */,
+				4C490470253ACBEE00260830 /* GetAccessVC+Localization.swift */,
 			);
 			path = GetAccessVC;
 			sourceTree = "<group>";
@@ -773,6 +780,7 @@
 			children = (
 				4CC07FBA23B3238C00851B45 /* GetMoreInfo3VC.swift */,
 				4CE10E1A249DE12D00453011 /* GetMoreInto3VC+NetworkExtension.swift */,
+				4C490474253B0F8900260830 /* GetMoreInfo3VC+Localization.swift */,
 			);
 			path = GetMoreInfo3VC;
 			sourceTree = "<group>";
@@ -781,6 +789,7 @@
 			isa = PBXGroup;
 			children = (
 				4C68D13423B0D02400A8F813 /* SignInVC.swift */,
+				4C49046C253ACA1400260830 /* SignInVC+Localization.swift */,
 			);
 			path = SignInVC;
 			sourceTree = "<group>";
@@ -1157,6 +1166,7 @@
 				4CCAABCF243D9DFC00CBF56A /* DeleteUserInfo.swift in Sources */,
 				4C7B568F2408DBBB001881FE /* DeleteTokenService.swift in Sources */,
 				4CE733EF23FCF0D900DB97EB /* ReportDetailService.swift in Sources */,
+				4C49046D253ACA1400260830 /* SignInVC+Localization.swift in Sources */,
 				4CBA4D4B2411083F002CED2F /* HomeModel.swift in Sources */,
 				4CC07FBF23B330A600851B45 /* LittleRoundBtn.swift in Sources */,
 				4C06330D24A9B1B300C1D8CA /* PutAccessibilityService.swift in Sources */,
@@ -1171,10 +1181,12 @@
 				4CA0F393249EFF8900C87B8C /* GetMoreInto4VC+UITextFieldExtension.swift in Sources */,
 				4CC07FB723B31A2C00851B45 /* VCExtension.swift in Sources */,
 				4C68D10623B09D3E00A8F813 /* AppDelegate.swift in Sources */,
+				4C490471253ACBEE00260830 /* GetAccessVC+Localization.swift in Sources */,
 				4CE10E22249DE43A00453011 /* GetMoreInfo4VC+CollectionViewExtension.swift in Sources */,
 				4C4A923223BA2476002E5F35 /* MidRepoVC.swift in Sources */,
 				4CE10E2E249DED5D00453011 /* HomeVC+CollectionViewExtension.swift in Sources */,
 				4C9E8E8323C05564002BDE02 /* LittleRoundView.swift in Sources */,
+				4C490475253B0F8900260830 /* GetMoreInfo3VC+Localization.swift in Sources */,
 				4C31717E2440D3D4004F8FA7 /* RefreshJWTService.swift in Sources */,
 				4C7C9AB02404D0D20047C610 /* DeveloperInfoVC.swift in Sources */,
 				4C7C0E0B23D489DA00669B38 /* CommitDetailTVCell.swift in Sources */,

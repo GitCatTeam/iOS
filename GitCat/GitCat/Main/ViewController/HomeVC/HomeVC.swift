@@ -103,9 +103,22 @@ class HomeVC: UIViewController, TutorialCellDelegate {
     
     let chapterData:[String] = ["01","02","03","04"]
     let imageData:[UIImage] = [ UIImage(named: "imgTutorial1")!, UIImage(named: "imgTutorial2")!, UIImage(named: "img_tutorial3")!, UIImage(named: "imgTutorial4")!]
-    let titleData:[String] = ["커밋으로 고양씨 성장시키기", "고양씨 졸업시키기", "달력과 리포트로 나의 개발 돌아보기", "튜토리얼 완료하고 고양이 받자!"]
-    let content1Data:[String] = ["매일 꾸준히 커밋해보세요.", "졸업한 고양씨들은, 우측 상단의 냥컬렉션에서", "하단의 커밋달력을 통해 일일 커밋 현황을,", "어플 사용에 익숙해 지는 겸, 간단한 미션을 완료하면"]
-    let content2Data:[String] = ["고양씨의 개발환경이 4단계에 걸쳐 개선됩니다.", "졸업 사진으로 만나볼 수 있어요! ", " 리포트를 통해 매달 개발 통계를 확인할 수 있어요.", "고양이 한 마리를 데려갈 수 있어요."]
+    
+    let title1: String = "Help your coding buddies grow".localized()
+    let content11: String = "Commit everyday, consistently.".localized()
+    let content12 = "Coding buddy's coding environment will improve.".localized()
+    
+    let title2: String = "Help your buddies graduate!".localized()
+    let content21 = "Graduated buddies will graduate but don't worry!".localized()
+    let content22 = "You can see their graduation picture once you click the collection button.".localized()
+    let title3: String = "Look over your progression ".localized()
+    let content31 = "Check out commit history through".localized()
+    let content32 = "the commit calendar and commit stats by the report.".localized()
+    let title4: String = "Complete tutorial and meet your coding buddy!".localized();
+    
+    var titleData = [String]()
+    var content1Data = [String]()
+    var content2Data = [String]()
     
     var mentsBox = [String]()
     var mentPos = 0
@@ -130,6 +143,11 @@ class HomeVC: UIViewController, TutorialCellDelegate {
         if(isTutorialDone == false){
             showTutorial()
         }
+        
+        titleData = [title1, title2, title3, title4]
+        content1Data = [content11, content21, content31, ""]
+        content2Data = [content12, content22, content32, ""]
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -49,10 +49,9 @@ extension HomeVC {
         self.leaveSubTitle6.text = "buddies from leaving,".localized()
         self.leaveSubTitle5.text = "more consistent commit is required".localized()
 
+        self.commitReportDescription.text = "Monthly Commit State & Monthly Commit Report".localized()
+        self.catCollectionDescription.text = "Collection Button".localized()
 
-//        self.commitReportDescription.dynamicFont(fontSize: 32, name: "NanumBaeEunHyeCe")
-//        self.catCollectionDescription.dynamicFont(fontSize: 32, name: "NanumBaeEunHyeCe")
-//
         self.scoreAlertTitleLabel1.text = "Hang on!".localized()
         self.scoreAlertTitleLabel2.text = "how can we earn points".localized()
         self.scoreAlertSubLabel1.text = "- if you commit at least once after".localized()
