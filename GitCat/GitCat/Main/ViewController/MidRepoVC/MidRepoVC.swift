@@ -19,6 +19,10 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     @IBOutlet weak var status2: UIView!
     @IBOutlet weak var status3: UIView!
     @IBOutlet weak var status4: UIView!
+    @IBOutlet weak var statusLabel1: UILabel!
+    @IBOutlet weak var statusLabel2: UILabel!
+    @IBOutlet weak var statusLabel3: UILabel!
+    @IBOutlet weak var statusLabel4: UILabel!
     
     @IBOutlet weak var loadingBackgroundView: UIView!
     @IBOutlet weak var loadingView: UIImageView!
@@ -88,6 +92,7 @@ class MidRepoVC: UIViewController, UIGestureRecognizerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
+        setLocalization()
         
         if UIDevice.current.model.hasPrefix("iPad") {
             self.calendarHeightConstraint.constant = 450

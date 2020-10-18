@@ -140,3 +140,19 @@
 "Start" = "Start";
 "(Maximum 8 Characters)" = "(Maximum 8 Characters)";
 "Select your coding buddy" = "Select your coding buddy";
+
+/*===================================*/
+//MARK: 커밋 달력 화면
+/*===================================*/
+"Commit Calendar" = "Commit Calendar";
+"0" = "0";
+"1 ~ 5" = "1 ~ 5";
+"6 ~ 10" = "6 ~ 10";
+"10+" = "10+";
+"Today's Commit" = "Today's Commit";
+"Received Point" = "Received Point";
+"Total Commit" = "Total Commit";
+"Received Item" = "Received Item";
+"Commit History Details" = "Commit History Details";
+"None!" = "None!";
+"No commit history available!" = "No commit history available";

@@ -141,3 +141,19 @@
 "Start" = "시작하기";
 "(Maximum 8 Characters)" = "(8자 이내로 입력하세요)";
 "Select your coding buddy" = "고양이 다시 선택하러 가기";
+
+/*===================================*/
+//MARK: 커밋 달력 화면
+/*===================================*/
+"Commit Calendar" = "커밋 달력";
+"0" = "0개";
+"1 ~ 5" = "1 ~ 5개";
+"6 ~ 10" = "6 ~ 10개";
+"10+" = "10+개";
+"Today's Commit" = "오늘의 커밋";
+"Received Point" = "얻은 점수";
+"Total Commit" = "총 커밋수";
+"Received Item" = "얻은 아이템";
+"Commit History Details" = "커밋 내역 상세";
+"None!" = "없음!";
+"No commit history available!" = "커밋 기록이 없습니다!";

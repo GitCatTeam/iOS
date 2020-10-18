@@ -52,6 +52,7 @@
 		4C490471253ACBEE00260830 /* GetAccessVC+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C490470253ACBEE00260830 /* GetAccessVC+Localization.swift */; };
 		4C490475253B0F8900260830 /* GetMoreInfo3VC+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C490474253B0F8900260830 /* GetMoreInfo3VC+Localization.swift */; };
 		4C490479253B43BB00260830 /* GetMoreInfo4VC+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C490478253B43BB00260830 /* GetMoreInfo4VC+Localization.swift */; };
+		4C49047D253B552400260830 /* MidRepoVC+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C49047C253B552400260830 /* MidRepoVC+Localization.swift */; };
 		4C4A923223BA2476002E5F35 /* MidRepoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A923123BA2476002E5F35 /* MidRepoVC.swift */; };
 		4C56C24124ADD16F003FB894 /* AlarmVC+NetworkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C56C24024ADD16F003FB894 /* AlarmVC+NetworkExtension.swift */; };
 		4C56C24524ADD5A8003FB894 /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C56C24424ADD5A8003FB894 /* AlarmVC.swift */; };
@@ -249,6 +250,7 @@
 		4C490470253ACBEE00260830 /* GetAccessVC+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetAccessVC+Localization.swift"; sourceTree = "<group>"; };
 		4C490474253B0F8900260830 /* GetMoreInfo3VC+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetMoreInfo3VC+Localization.swift"; sourceTree = "<group>"; };
 		4C490478253B43BB00260830 /* GetMoreInfo4VC+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetMoreInfo4VC+Localization.swift"; sourceTree = "<group>"; };
+		4C49047C253B552400260830 /* MidRepoVC+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MidRepoVC+Localization.swift"; sourceTree = "<group>"; };
 		4C4A923123BA2476002E5F35 /* MidRepoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidRepoVC.swift; sourceTree = "<group>"; };
 		4C56C24024ADD16F003FB894 /* AlarmVC+NetworkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlarmVC+NetworkExtension.swift"; sourceTree = "<group>"; };
 		4C56C24424ADD5A8003FB894 /* AlarmVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
@@ -845,6 +847,7 @@
 				4CE10E36249E0FC900453011 /* MidRepoVC+NetworkExtension.swift */,
 				4CE10E38249E140800453011 /* Debouncer.swift */,
 				4CE10E3A249E143000453011 /* MidRepoVC+TableViewExtension.swift */,
+				4C49047C253B552400260830 /* MidRepoVC+Localization.swift */,
 			);
 			path = MidRepoVC;
 			sourceTree = "<group>";
@@ -1239,6 +1242,7 @@
 				4C3A3D7B2442FF5400093C50 /* RefreshTokenModel.swift in Sources */,
 				4C672BBE25218060002A6511 /* FAQVC.swift in Sources */,
 				4CE10E32249DF88800453011 /* HomeVC+DynamicFont.swift in Sources */,
+				4C49047D253B552400260830 /* MidRepoVC+Localization.swift in Sources */,
 				4CE10E35249E0E3600453011 /* MidRepoVC+DynamicFont.swift in Sources */,
 				4CAB3BE22408635B007A84B6 /* PostCatSelectedService.swift in Sources */,
 				4CE10E29249DE9CF00453011 /* StringExtension.swift in Sources */,
