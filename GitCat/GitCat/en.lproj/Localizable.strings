@@ -1,5 +1,6 @@
 //MARK: 홈화면
 "Today's Commit" = "Today's Commit";
+"Home" = "Home";
 
 //MARK: 점수 도움말 팝업창
 "Hang on!" = "Hang on!";
@@ -90,6 +91,9 @@
 "Notifications Settings" = "Notifications Settings";
 "Allow App Notification" = "Allow App Notification";
 
+//MARK: 개발자 소개 화면
+"Developers Information" = "Developers Information";
+
 /*===================================*/
 //MARK: 랜딩 화면
 /*===================================*/
@@ -156,3 +160,28 @@
 "Commit History Details" = "Commit History Details";
 "None!" = "None!";
 "No commit history available!" = "No commit history available";
+
+/*===================================*/
+//MARK: 리포트 목록 화면
+/*===================================*/
+"Report" = "Report";
+"Total Commit" = "Total Commit";
+"Main Language" = "Main Language";
+
+/*===================================*/
+//MARK: 리포트 내용 화면
+/*===================================*/
+"Since Last Month" = "Since Last Month";
+"Total Commit" = "Total Commit";
+"Daily average"  = "Daily average" ;
+"Commit Count Stats" = "Commit Count Stats";
+"Ratio of used programming languages" = "Ratio of used programming languages";
+"Repository Contribution" = "Repository Contribution";
+"This Month's Review" = "This Month's Review";
+"Ratio\n(%)" = "Ratio\n(%)";
+
+/*===================================*/
+//MARK: 냥컬렉션 화면
+/*===================================*/
+"Cat Collection" = "Cat Collection";
+"- name:" = "- name:";

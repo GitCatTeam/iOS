@@ -9,6 +9,7 @@
 import Foundation
 extension MidRepoVC {
     func setLocalization() {
+        self.navigationItem.title = "Commit Calendar".localized()
         self.statusLabel1.text = "0".localized()
         self.statusLabel2.text = "1 ~ 5".localized()
         self.statusLabel3.text = "6 ~ 10".localized()

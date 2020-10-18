@@ -23,7 +23,7 @@ class CatCollectionVC: UIViewController {
         
         getCatCollection()
         setStyle()
-        
+        self.navigationItem.title = "Cat Collection".localized()
     }
     
     func setStyle() {

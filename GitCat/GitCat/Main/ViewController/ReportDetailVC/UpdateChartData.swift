@@ -39,7 +39,8 @@ extension ReportDetailVC {
                                         NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1),
                                         NSAttributedString.Key.paragraphStyle: paragraphStyle
                                     ]
-        let myAttrString = NSAttributedString(string: "언어 비율\n(%)", attributes: myAttribute)
+        let ratio = "Ratio\n(%)".localized()
+        let myAttrString = NSAttributedString(string: ratio, attributes: myAttribute)
         pieChartDesciptionLabel.attributedText = myAttrString
         pieChartDesciptionLabel.dynamicFont(fontSize: 12, name: "BBTreeG_B")
         

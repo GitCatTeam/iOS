@@ -34,6 +34,12 @@ class ReportCVCell: UICollectionViewCell {
         
         bottomView.bottomSectionRound(_radius: 8)
         setFontSize()
+        setLocalization()
+    }
+    
+    func setLocalization() {
+        self.commitCountDescLabel.text = "Total Commit".localized()
+        self.languageDescLabel.text = "Main Language".localized()
     }
     
     func setFontSize() {

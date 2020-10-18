@@ -14,5 +14,9 @@ class MainTabBarVC: UITabBarController {
         super.viewDidLoad()
 
         self.selectedIndex = 1;
+        
+        tabBar.items![0].title = "Commit Calendar".localized()
+        tabBar.items![1].title = "Home".localized()
+        tabBar.items![2].title = "Report".localized()
     }
 }

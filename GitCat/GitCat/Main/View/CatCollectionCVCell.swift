@@ -36,6 +36,7 @@ class CatCollectionCVCell: UICollectionViewCell {
         self.layer.shadowOpacity = 0.12
         self.layer.masksToBounds = false
 
+        self.catNameDescLabel.text = "- name:".localized()
         
         carBoderView.layer.borderColor = UIColor(red: 236/255, green: 236/255, blue: 236/255, alpha: 1).cgColor
         carBoderView.layer.borderWidth = 1

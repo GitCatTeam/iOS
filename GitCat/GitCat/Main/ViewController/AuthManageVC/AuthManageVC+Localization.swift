@@ -9,7 +9,7 @@
 import Foundation
 extension AuthManageVC {
     func setLocalization() {
-        self.navigationController?.title = "GitHub Account Settings".localized()
+        self.navigationItem.title = "GitHub Account Settings".localized()
         userIdDescLabel.text = "GitHub Login".localized()
         logoutLabel.text = "Sign Out".localized()
         resignLabel.text = "Delete GitCat Account".localized()

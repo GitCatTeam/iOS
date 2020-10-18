@@ -24,7 +24,7 @@ class ReportVC: UIViewController {
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.deleteNavigationUnderbar()
         self.loadingView.loadGif(name: "gif_loading2")
-
+        self.navigationItem.title = "Report".localized()
     }
     
     override func viewWillAppear(_ animated: Bool) {

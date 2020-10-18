@@ -49,6 +49,7 @@ class DeveloperInfoVC: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         
         setFont()
+        self.navigationItem.title = "Developers Information".localized()
         self.tabBarController?.tabBar.alpha = 0
         
     }

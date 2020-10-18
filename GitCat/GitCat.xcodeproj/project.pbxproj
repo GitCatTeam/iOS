@@ -26,6 +26,7 @@
 		4C1D3BA125397B56008D2F9B /* WidgetDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1D3B9C253975A3008D2F9B /* WidgetDataModel.swift */; };
 		4C23E2C524A8F1DF00927760 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C23E2C424A8F1DF00927760 /* UserNotifications.framework */; };
 		4C23E2C724A8F1EC00927760 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C23E2C624A8F1EB00927760 /* PushKit.framework */; };
+		4C291FF3253C3082002CBC57 /* ReportVC+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C291FF2253C3082002CBC57 /* ReportVC+Localization.swift */; };
 		4C2DDD0A23EAEEF200FCB36B /* TutorialCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DDD0923EAEEF200FCB36B /* TutorialCVCell.swift */; };
 		4C2DDD0D23EB1FD200FCB36B /* SelectCatCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2DDD0C23EB1FD200FCB36B /* SelectCatCVCell.swift */; };
 		4C317176243F512F004F8FA7 /* NewCatCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C317175243F512F004F8FA7 /* NewCatCVCell.swift */; };
@@ -230,6 +231,7 @@
 		4C23E2C424A8F1DF00927760 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		4C23E2C624A8F1EB00927760 /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
 		4C23E2C824A8F1F700927760 /* GitCat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GitCat.entitlements; sourceTree = "<group>"; };
+		4C291FF2253C3082002CBC57 /* ReportVC+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReportVC+Localization.swift"; sourceTree = "<group>"; };
 		4C2DDD0923EAEEF200FCB36B /* TutorialCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCVCell.swift; sourceTree = "<group>"; };
 		4C2DDD0C23EB1FD200FCB36B /* SelectCatCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCatCVCell.swift; sourceTree = "<group>"; };
 		4C317175243F512F004F8FA7 /* NewCatCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCatCVCell.swift; sourceTree = "<group>"; };
@@ -869,6 +871,7 @@
 				4CE10E42249E167F00453011 /* ReportDetailVC+DynamicFont.swift */,
 				4CE10E44249E16FE00453011 /* UpdateChartData.swift */,
 				4CE10E46249E17D200453011 /* ReportDetailVC+NetworkExtension.swift */,
+				4C291FF2253C3082002CBC57 /* ReportVC+Localization.swift */,
 			);
 			path = ReportDetailVC;
 			sourceTree = "<group>";
@@ -1282,6 +1285,7 @@
 				4CA54838241BB043002B2966 /* CatCollectionModel.swift in Sources */,
 				4CC07FB523B317CA00851B45 /* RoundBtn.swift in Sources */,
 				4CC07F9523B1165200851B45 /* GetMoreInfo1VC.swift in Sources */,
+				4C291FF3253C3082002CBC57 /* ReportVC+Localization.swift in Sources */,
 				4CC07F9123B0EE1000851B45 /* ColorPalette.swift in Sources */,
 				4C340B8D2539E7F60079DEF9 /* AlarmVC+Localization.swift in Sources */,
 			);

@@ -2,6 +2,7 @@
 //MARK: 홈화면
 /*===================================*/
 "Today's Commit" = "오늘의 커밋";
+"Home" = "홈";
 
 //MARK: 점수 도움말 팝업창
 "Hang on!" = "잠깐!";
@@ -90,6 +91,9 @@
 "Notifications Settings" = "알림 설정";
 "Allow App Notification" = "앱 알림받기";
 
+//MARK: 개발자 소개 화면
+"Developers Information" = "개발자 소개";
+
 /*===================================*/
 //MARK: 랜딩 화면
 /*===================================*/
@@ -157,3 +161,28 @@
 "Commit History Details" = "커밋 내역 상세";
 "None!" = "없음!";
 "No commit history available!" = "커밋 기록이 없습니다!";
+
+/*===================================*/
+//MARK: 리포트 목록 화면
+/*===================================*/
+"Report" = "리포트";
+"Total Commit" = "총 커밋 수";
+"Main Language" = "주 사용 언어";
+
+/*===================================*/
+//MARK: 리포트 내용 화면
+/*===================================*/
+"Since Last Month" = "지난달 대비";
+"Total Commit" = "총 커밋수";
+"Daily average" = "하루 평균";
+"Commit Count Stats" = "커밋수 통계";
+"Ratio of used programming languages" = "사용 언어 비율";
+"Repository Contribution" = "기여 레파지토리";
+"This Month's Review" = "이번달 세줄평";
+"Ratio\(%)" = "언어 비율\n(%)";
+
+/*===================================*/
+//MARK: 냥컬렉션 화면
+/*===================================*/
+"Cat Collection" = "냥컬렉션";
+"- name:" = "- 이름:";

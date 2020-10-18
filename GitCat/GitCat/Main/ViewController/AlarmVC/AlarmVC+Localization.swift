@@ -9,7 +9,7 @@
 import Foundation
 extension AlarmVC {
     func setLocalization() {
-        self.navigationController?.title = "Notifications Settings".localized()
+        self.navigationItem.title = "Notifications Settings".localized()
         self.switchLabel.text = "Allow App Notification".localized()
     }
 }

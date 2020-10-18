@@ -107,6 +107,7 @@ class ReportDetailVC: UIViewController {
         
         setStyle()
         setFontSize()
+        setLocalization()
     }
     
     @IBAction func goBackAction(_ sender: Any) {
